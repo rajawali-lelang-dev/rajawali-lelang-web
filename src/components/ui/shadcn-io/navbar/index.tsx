@@ -61,7 +61,9 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       logoHref = '/',
       logoSrc = '/images/logo.png',
       navigationLinks = defaultNavigationLinks,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSignInClick,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onCtaClick,
       ...props
     },
@@ -87,6 +89,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     const combinedRef = React.useCallback((node: HTMLElement | null) => {
       containerRef.current = node;
       if (typeof ref === 'function') ref(node);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       else if (ref) (ref as any).current = node;
     }, [ref]);
 
