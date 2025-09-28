@@ -35,14 +35,14 @@ export const ActionCard: React.FC<ActionCardProps> = ({
         className,
       ].join(' ')}
     >
-      <div className="h-26 w-26 rounded-full bg-rose-50 flex items-center justify-center transition-all duration-200 group-hover:scale-[1.06]">
+      <div className="h-full w-full bg-transparent flex items-center justify-center transition-all duration-200 group-hover:scale-[1.06]">
         {imgSrc ? (
-          <Image src={imgSrc} alt={imgAlt} width={48} height={48} className="object-contain" />
+          <Image src={imgSrc} alt={imgAlt} width={48} height={48} className="object-contain w-3/4" />
         ) : (
           icon ?? null
         )}
       </div>
-      <div className="text-sm font-medium text-slate-700">{title}</div>
+      <div className="text-xs font-medium text-slate-700">{title}</div>
     </div>
   );
 
