@@ -12,7 +12,7 @@ export interface WaveProps {
  * - Pass className to change height (e.g. "h-24 md:h-36") or spacing.
  */
 export const Wave: React.FC<WaveProps> = ({
-  className = 'relative -mt-6 h-36 md:h-48 lg:h-72',
+  className = 'relative -mt-6 h-36 md:h-48 lg:h-72 z-0 pointer-events-none',
   gradientId = 'waveGrad',
   style,
 }) => {

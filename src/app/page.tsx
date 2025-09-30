@@ -9,35 +9,35 @@ import Wave from '@/components/vector/wave';
     {
       title: 'Dive Villa Thoddoo Villa',
       href: '/property/1',
-      imageSrc: '/images/sample-villa-1.jpg',
+      imageSrc: '/images/assets/item-card.svg',
       location: 'Bintaro, Jakarta Selatan',
       price: 'Rp 1.250.000.000',
       area: '180 m²',
       beds: 3,
       baths: 2,
-      likes: 25,
+      carSpace: 2,
     },
     {
       title: 'Dive Villa Thoddoo Villa',
       href: '/property/2',
-      imageSrc: '/images/sample-villa-1.jpg',
+      imageSrc: '/images/assets/item-card.svg',
       location: 'Bintaro, Jakarta Selatan',
       price: 'Rp 1.350.000.000',
       area: '200 m²',
       beds: 4,
       baths: 3,
-      likes: 18,
+      carSpace: 3,
     },
     {
       title: 'Dive Villa Thoddoo Villa',
       href: '/property/3',
-      imageSrc: '/images/sample-villa-1.jpg',
+      imageSrc: '/images/assets/item-card.svg',
       location: 'Bintaro, Jakarta Selatan',
       price: 'Rp 980.000.000',
       area: '150 m²',
       beds: 2,
       baths: 1,
-      likes: 12,
+      carSpace: 2,
     },
   ];
 
@@ -92,60 +92,43 @@ export default function Home() {
         </div>
 
       </section>
-      <div>
-        <div className="w-full max-w-6xl mx-auto px-6 flex flex-row flex-wrap items-start justify-center gap-8 mt-6">
+      <div className="mx-auto max-w-6xl px-6 mt-12">
+        <div className="w-full h-full max-w-6xl mx-auto px-6 flex flex-row flex-wrap items-start justify-center gap-8 mt-6">
           <ActionCard
             title="Carikan Properti"
             href="/search"
-            icon={
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-rose-600">
-                <path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M21 21l-4.5-4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            }
+            imgSrc="/images/assets/magnifying-glass.svg"
           />
 
           <ActionCard
             title="Iklankan Properti"
             href="/sell"
-            icon={
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-rose-600">
-                <path d="M4 7h16v10H4z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M9 7v-2h6v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            }
+            imgSrc="/images/assets/megaphone.svg"
           />
 
           <ActionCard
             title="Kalkulator KPR"
             href="/calculator"
-            icon={
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-rose-600">
-                <rect x="6" y="3" width="12" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M9 7h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-            }
+            imgSrc="/images/assets/calculator.svg"
           />
 
           <ActionCard
             title="Forum Pertanyaan"
             href="/forum"
-            imgSrc="/images/assets/envelope-front.png"
+            imgSrc="/images/assets/envelope.svg"
           />
         </div>
       </div>
       <div className="relative mt-2">
         <Wave className="w-full md:h-48 lg:h-72" gradientId="heroWave" />
 
-        <div className="absolute inset-x-0 -top-4 z-40 px-6">
+        <div className="absolute inset-x-0 top-8 z-10 lg:px-12 md:px-6">
           <h2 className="text-primary-500 text-xl font-manrope font-bold">Properti Unggulan</h2>
           <p className="mt-1 text-sm text-slate-500">Dari tanah hingga bangunan, semua ada di sini</p>
-        </div>
-
-        <div className="mx-auto max-w-6xl px-6 mt-12">
-          <div className="flex flex-row flex-wrap items-stretch justify-start gap-6 z-40">
+          <div className="mx-auto max-w-6xl px-6 mt-4 relative z-20">
+          <div className="flex flex-row flex-wrap items-stretch justify-center gap-6 z-40">
             {featured.map((item) => (
-              <div key={item.href} className="w-full sm:w-[48%] md:w-1/3">
+              <div key={item.href} className="w-full sm:w-[48%] md:w-3/10">
                 <ItemCard
                   title={item.title}
                   href={item.href}
@@ -155,12 +138,15 @@ export default function Home() {
                   area={item.area}
                   beds={item.beds}
                   baths={item.baths}
-                  likes={item.likes}
+                  CarSpace={item.carSpace}
                 />
               </div>
             ))}
           </div>
         </div>
+        </div>
+
+        
       </div>
 
     </main>

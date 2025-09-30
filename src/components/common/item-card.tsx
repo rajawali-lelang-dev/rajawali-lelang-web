@@ -14,6 +14,7 @@ export interface ItemCardProps {
   baths?: number;
   likes?: number;
   className?: string;
+  CarSpace?: number;
 }
 
 export const ItemCard: React.FC<ItemCardProps> = ({
@@ -49,36 +50,29 @@ export const ItemCard: React.FC<ItemCardProps> = ({
 
       <div className="p-4">
         <h3 className="text-sm md:text-base font-semibold text-slate-800">{title}</h3>
-        {location && <p className="mt-1 text-xs text-slate-500">{location}</p>}
-
-        <div className="mt-3 flex items-center justify-between">
-          <div className="text-sm font-bold text-primary-600">{price ?? ''}</div>
-          <div className="text-xs text-slate-500">{area ?? ''}</div>
+        <div className='flex items-center mt-1 gap-2'>
+          <Image src='/images/assets/item-card/location.svg' alt='' width={0} height={0} className="object-contain w-1/20" />
+          <span className="mt-1 text-sm text-slate-500">{location}</span>
         </div>
 
-        <div className="mt-3 flex items-center gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-1">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-slate-400">
-              <path d="M3 12h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+        <div className="mt-3 flex justify-between gap-2 text-xs text-slate-500">
+          <div className="flex items-center">
+            <Image src='/images/assets/item-card/target.svg' alt='' width={14} height={14} className="object-contain w-1/4" />
+            <span>{area ?? 0}</span>
+          </div>
+          <div className="flex items-center">
+            <Image src='/images/assets/item-card/bed.svg' alt='' width={0} height={0} className="object-contain w-1/4" />
             <span>{beds ?? 0} Beds</span>
           </div>
 
-          <div className="flex items-center gap-1">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-slate-400">
-              <path d="M3 12h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+          <div className="flex items-center">
+            <Image src='/images/assets/item-card/shower.svg' alt='' width={14} height={14} className="object-contain w-1/4" />
             <span>{baths ?? 0} Baths</span>
           </div>
-
-          {likes !== undefined && (
-            <div className="ml-auto flex items-center gap-1">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-rose-500">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" strokeWidth="0" />
-              </svg>
-              <span>{likes}</span>
-            </div>
-          )}
+          <div className="flex items-center">
+            <Image src='/images/assets/item-card/car.svg' alt='' width={14} height={14} className="object-contain w-1/4" />
+            <span>{baths ?? 0} Cars</span>
+          </div>
         </div>
       </div>
     </article>
