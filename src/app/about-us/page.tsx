@@ -105,7 +105,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image.png"
+                      src="/images/about-us/misi_1.png"
                       alt="Menyediakan layanan lelang yang transparan"
                       fill
                       className="object-cover rounded-lg"
@@ -120,7 +120,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image(1).png"
+                      src="/images/about-us/misi_2.png"
                       alt="Mengintegrasikan teknologi digital"
                       fill
                       className="object-cover rounded-lg"
@@ -135,7 +135,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image(2).png"
+                      src="/images/about-us/misi_3.png"
                       alt="Memaksimalkan nilai aset klien"
                       fill
                       className="object-cover rounded-lg"
@@ -150,7 +150,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image(3).png"
+                      src="/images/about-us/misi_4.png"
                       alt="Meningkatkan kepercayaan publik"
                       fill
                       className="object-cover rounded-lg"

@@ -192,6 +192,7 @@
   
   body {
     @apply bg-background text-foreground font-manrope;  /* Tambahkan font-manrope di body */
+    zoom: 80%; /* Set default zoom to 80% */
   }
   
   /* Smooth scrolling untuk semua anchor links */
