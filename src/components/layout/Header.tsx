@@ -1,10 +1,16 @@
+'use client'
+
 import React from 'react'
-import Navbar from './Navbar'
+import { usePathname } from 'next/navigation'
+import { Navbar01 } from '../ui/shadcn-io/navbar'
 
 const Header = () => {
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+
   return (
     <header className="w-full">
-      <Navbar />
+      <Navbar01 isHomePage={isHomePage} />
     </header>
   )
 }
