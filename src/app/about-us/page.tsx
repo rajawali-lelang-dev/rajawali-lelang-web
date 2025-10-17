@@ -15,7 +15,7 @@ export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
-        <div className="absolute -left-56 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30">
+        <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30">
           <div className="relative w-full h-full">
              <Image
                 src="/images/about-us/elipsis.png"
@@ -105,7 +105,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image.png"
+                      src="/images/about-us/misi_1.png"
                       alt="Menyediakan layanan lelang yang transparan"
                       fill
                       className="object-cover rounded-lg"
@@ -120,7 +120,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image(1).png"
+                      src="/images/about-us/misi_2.png"
                       alt="Mengintegrasikan teknologi digital"
                       fill
                       className="object-cover rounded-lg"
@@ -135,7 +135,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image(2).png"
+                      src="/images/about-us/misi_3.png"
                       alt="Memaksimalkan nilai aset klien"
                       fill
                       className="object-cover rounded-lg"
@@ -150,7 +150,7 @@ export default function AboutUsPage() {
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                   <div className="relative h-32 mb-3">
                     <Image
-                      src="/images/about-us/image(3).png"
+                      src="/images/about-us/misi_4.png"
                       alt="Meningkatkan kepercayaan publik"
                       fill
                       className="object-cover rounded-lg"
@@ -168,7 +168,7 @@ export default function AboutUsPage() {
       </div>
         {/* Layanan Kami Section */}
       <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
-        <div className="absolute -left-56 top-[400px] -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30 overflow-x-hidden">
+        <div className="absolute -left-32 top-[400px] -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30 overflow-x-hidden">
           <div className="relative w-full h-full">
              <Image
                 src="/images/about-us/elipsis.png"
@@ -179,7 +179,7 @@ export default function AboutUsPage() {
               />
           </div>
         </div>
-         <div className="absolute -right-40 top-3/4 -translate-y-1/2 w-32 h-64 pointer-events-none hidden lg:block opacity-30 overflow-x-hidden">
+         <div className="absolute -right-20 top-3/4 -translate-y-1/2 w-32 h-64 pointer-events-none hidden lg:block opacity-30 overflow-x-hidden">
           <div className="relative w-full h-full">
              <Image
                 src="/images/about-us/elipsis.png"
