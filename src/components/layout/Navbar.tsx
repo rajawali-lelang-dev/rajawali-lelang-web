@@ -10,6 +10,7 @@ const Navbar = () => {
 
   const navItems = [
     { label: 'Beranda', href: '/', active: true },
+    { label: 'Tentang Kami', href: '/about-us', active: true },
     { label: 'Dijual', href: '/dijual' },
     { label: 'Disewa', href: '/disewa' },
     { label: 'Properti Baru', href: '/properti-baru' },

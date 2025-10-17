@@ -8,7 +8,7 @@
 @font-face {
   font-family: 'Manrope';
   src: url('/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
-  font-weight: 200 800; /* Variable font weight range */
+  font-weight: 200 800;
   font-style: normal;
   font-display: swap;
 }
@@ -18,6 +18,48 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-manrope: 'Manrope', var(--font-geist-sans);
+  
+  /* Primary Colors - Update sesuai tailwind config */
+  --color-primary: #3b82f6;           /* primary-500 */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #154367;
+  --color-primary-600: #133D5E;
+  --color-primary-700: #0F3049;
+  --color-primary-800: #091C2B;
+  --color-primary-900: #1e3a8a;
+  
+  /* Secondary Colors - Update sesuai tailwind config */
+  --color-secondary: #ef4444;         /* secondary-500 */
+  --color-secondary-50: #fef2f2;
+  --color-secondary-100: #fee2e2;
+  --color-secondary-200: #fecaca;
+  --color-secondary-300: #fca5a5;
+  --color-secondary-400: #f87171;
+  --color-secondary-500: #ef4444;
+  --color-secondary-600: #dc2626;
+  --color-secondary-700: #b91c1c;
+  --color-secondary-800: #991b1b;
+  --color-secondary-900: #7f1d1d;
+  
+  /* Neutral Colors */
+  --color-neutral-50: #fafafa;
+  --color-neutral-75: #f5f5f5;
+  --color-neutral-100: #eeeeee;
+  --color-neutral-200: #e0e0e0;
+  --color-neutral-300: #bdbdbd;
+  --color-neutral-400: #9e9e9e;
+  --color-neutral-500: #757575;
+  --color-neutral-600: #616161;
+  --color-neutral-700: #424242;
+  --color-neutral-800: #303030;
+  --color-neutral-900: #212121;
+
+  /* ...existing theme variables... */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -40,9 +82,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -51,26 +91,17 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-manrope: 'Manrope', var(--font-geist-sans); /* Add Manrope font variable */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
   }
 
   @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
   }
 }
 
@@ -80,10 +111,13 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  
+  /* Update primary & secondary untuk mencocokkan config */
+  --primary: #3b82f6;                    /* Biru, bukan hitam */
+  --primary-foreground: #ffffff;         /* Putih untuk kontras */
+  --secondary: #ef4444;                  /* Merah, bukan abu */
+  --secondary-foreground: #ffffff;       /* Putih untuk kontras */
+  
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.3487 0.0737 246.06);
@@ -116,10 +150,13 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  
+  /* Dark mode primary & secondary */
+  --primary: #60a5fa;                    /* Biru lebih terang untuk dark */
+  --primary-foreground: #1e3a8a;         /* Biru gelap */
+  --secondary: #f87171;                  /* Merah lebih terang untuk dark */
+  --secondary-foreground: #7f1d1d;       /* Merah gelap */
+  
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
@@ -147,7 +184,122 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* Offset untuk fixed navbar */
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-manrope;  /* Tambahkan font-manrope di body */
+  }
+  
+  /* Smooth scrolling untuk semua anchor links */
+  a[href^="#"] {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar styling (optional, untuk estetika) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-lg;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+  
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.primary.400') theme('colors.neutral.100');
+  }
+}
+
+/* Scroll-based animations */
+@layer utilities {
+  /* Fade in from bottom animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Fade in from left */
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Fade in from right */
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Scale fade in */
+  .fade-in-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Stagger delay untuk animasi berurutan */
+  .delay-100 {
+    transition-delay: 0.1s;
+  }
+  
+  .delay-200 {
+    transition-delay: 0.2s;
+  }
+  
+  .delay-300 {
+    transition-delay: 0.3s;
+  }
+  
+  .delay-400 {
+    transition-delay: 0.4s;
+  }
+  
+  .delay-500 {
+    transition-delay: 0.5s;
+  }
+}
+
+/* View Transitions API support (for modern browsers) */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.3s;
   }
 }
