@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Navbar01 } from '@/components/ui/shadcn-io/navbar';
 import { ActionCard } from '@/components/common/action-card';
-import ItemCard from '@/components/common/item-card';
+import ItemCardCarousel from '@/components/common/ItemCardCarousel';
 import Wave from '@/components/vector/wave';
+import ReviewCarousel from '@/components/common/ReviewCard';
+import { FadeInUp, FadeInScale } from '@/components/common/ScrollAnimation';
 
   const featured = [
     {
-      title: 'Dive Villa Thoddoo Villa',
+      title: 'Dive Villa Thoddoo Villa', 
       href: '/property/1',
       imageSrc: '/images/assets/item-card.svg',
       location: 'Bintaro, Jakarta Selatan',
@@ -39,22 +39,81 @@ import Wave from '@/components/vector/wave';
       baths: 1,
       carSpace: 2,
     },
+     {
+      title: 'Dive Villa Thoddoo Villa',
+      href: '/property/3',
+      imageSrc: '/images/assets/item-card.svg',
+      location: 'Bintaro, Jakarta Selatan',
+      price: 'Rp 980.000.000',
+      area: '150 m²',
+      beds: 2,
+      baths: 1,
+      carSpace: 2,
+    },
+     {
+      title: 'Dive Villa Thoddoo Villa',
+      href: '/property/3',
+      imageSrc: '/images/assets/item-card.svg',
+      location: 'Bintaro, Jakarta Selatan',
+      price: 'Rp 980.000.000',
+      area: '150 m²',
+      beds: 2,
+      baths: 1,
+      carSpace: 2,
+    },
+     {
+      title: 'Dive Villa Thoddoo Villa',
+      href: '/property/3',
+      imageSrc: '/images/assets/item-card.svg',
+      location: 'Bintaro, Jakarta Selatan',
+      price: 'Rp 980.000.000',
+      area: '150 m²',
+      beds: 2,
+      baths: 1,
+      carSpace: 2,
+    },
   ];
 
+  const reviews = [
+    {
+      name: 'Sinta Aulia',
+      role: 'Pembeli',
+      review: 'Platformnya simple dan informatif! Saya bisa cari properti lelang sesuai budget tanpa ribet, bahkan ada panduan lengkap. Dalam waktu singkat, saya berhasil temukan properti impian saya!'
+    },
+    {
+      name: 'Budi Santoso',
+      role: 'Investor',
+      review: 'RajawaLiLelangIndo bikin proses lelang jadi jelas dan lebih transparan dan cepat. Saya bisa bandingkan harga dan lokasi dengan mudah — sangat ideal untuk strategi investasi saya.'
+    },
+    {
+      name: 'Maria Widjaja',
+      role: 'Agen Properti',
+      review: 'RajawaLiLelangIndo bantu saya menjangkau pasar yang lebih luas. Dalam waktu singkat, banyak properti saya yang dillihat calon pembeli — hasilnya closing lebih cepat!'
+    },
+    {
+      name: 'Dimas Ramadhan',
+      role: 'Pembeli',
+      review: 'Awalnya saya ragu ikut lelang, tapi platform ini bikin prosesnya jelas dan gampang diikuti. Semua informasi yang saya butuhkan lengkap, jadi saya merasa aman saat bidding.'
+    },
+    {
+      name: 'Keyla Putri',
+      role: 'Investor',
+      review: 'Saya suka dengan transparansi dan kemudahan yang ditawarkan. Data properti lengkap, proses lelang jelas, dan support tim sangat membantu. Investasi properti jadi lebih mudah!'
+    },
+  ];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section dengan background image yang naik ke bawah navbar */}
-      <section className="relative w-screen">
+      <section className="relative w-full min-h-screen">
         <Image
           src="/images/hero2.png"
           alt="Hero background"
           priority
-          width={1920}
-          height={1080}
+          fill
           sizes="100vw"
-          className="w-screen h-auto"
+          className="object-cover"
         />
 
         {/* Gradient overlay */}
@@ -94,68 +153,70 @@ export default function Home() {
       </section>
       
       {/* Action Cards Section */}
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-row flex-wrap items-start justify-center gap-8">
-          <ActionCard
-            title="Carikan Properti"
-            href="/search"
-            imgSrc="/images/assets/magnifying-glass.svg"
-          />
+      <FadeInUp delay={0}>
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <div className="flex flex-row flex-wrap items-start justify-center gap-8">
+            <FadeInScale delay={100}>
+              <ActionCard
+                title="Carikan Properti"
+                href="/search"
+                imgSrc="/images/assets/magnifying-glass.svg"
+              />
+            </FadeInScale>
 
-          <ActionCard
-            title="Iklankan Properti"
-            href="/sell"
-            imgSrc="/images/assets/megaphone.svg"
-          />
+            <FadeInScale delay={200}>
+              <ActionCard
+                title="Iklankan Properti"
+                href="/sell"
+                imgSrc="/images/assets/megaphone.svg"
+              />
+            </FadeInScale>
 
-          <ActionCard
-            title="Kalkulator KPR"
-            href="/calculator"
-            imgSrc="/images/assets/calculator.svg"
-          />
+            <FadeInScale delay={300}>
+              <ActionCard
+                title="Kalkulator KPR"
+                href="/calculator"
+                imgSrc="/images/assets/calculator.svg"
+              />
+            </FadeInScale>
 
-          <ActionCard
-            title="Forum Pertanyaan"
-            href="/forum"
-            imgSrc="/images/assets/envelope.svg"
-          />
+            <FadeInScale delay={400}>
+              <ActionCard
+                title="Forum Pertanyaan"
+                href="/forum"
+                imgSrc="/images/assets/envelope.svg"
+              />
+            </FadeInScale>
+          </div>
         </div>
-      </div>
+      </FadeInUp>
       
       {/* Featured Properties Section */}
       <div className="relative w-full bg-gradient-to-b from-white to-blue-50 pb-16">
-        <Wave className="w-full h-32 md:h-48 lg:h-72 -mt-1" gradientId="heroWave" />
+        <Wave className="w-full h-32 md:h-48 lg:h-72 mt-8" gradientId="heroWave" />
 
-        <div className="max-w-6xl mx-auto px-4 md:px-6 -mt-32 md:-mt-48 lg:-mt-64 relative z-10">
-          <div className="text-center mb-8">
-            <h2 className="text-primary-500 text-2xl md:text-3xl font-manrope font-bold">
-              Properti Unggulan
-            </h2>
-            <p className="mt-2 text-sm md:text-base text-neutral-600">
-              Dari tanah hingga bangunan, semua ada di sini
-            </p>
-          </div>
+        <div className="w-full px-4 md:px-8 -mt-32 md:-mt-48 lg:-mt-64 relative z-10">
+          <FadeInUp delay={0}>
+            <div className="text-center mb-8">
+              <h2 className="text-primary-500 text-2xl md:text-3xl font-manrope font-bold">
+                Properti Unggulan
+              </h2>
+              <p className="mt-2 text-sm md:text-base text-neutral-600">
+                Dari tanah hingga bangunan, semua ada di sini
+              </p>
+            </div>
+          </FadeInUp>
           
-          <div className="flex flex-row flex-wrap items-stretch justify-center gap-6">
-            {featured.map((item) => (
-              <div key={item.href} className="w-full sm:w-[60%] lg:w-[31%]">
-                <ItemCard
-                  title={item.title}
-                  href={item.href}
-                  imageSrc={item.imageSrc}
-                  location={item.location}
-                  price={item.price}
-                  area={item.area}
-                  beds={item.beds}
-                  baths={item.baths}
-                  CarSpace={item.carSpace}
-                />
-              </div>
-            ))}
-          </div>
+          <FadeInUp delay={200}>
+            <ItemCardCarousel items={featured} />
+          </FadeInUp>
         </div>
       </div>
 
+      {/* Reviews Section */}
+      <FadeInUp delay={0} className="min-h-screen">
+        <ReviewCarousel reviews={reviews} />
+      </FadeInUp>
     </div>
   );
 }

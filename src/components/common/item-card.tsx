@@ -23,11 +23,9 @@ export const ItemCard: React.FC<ItemCardProps> = ({
   imageSrc,
   imageAlt = '',
   location,
-  price,
   area,
   beds,
   baths,
-  likes,
   className = '',
 }) => {
   const card = (

@@ -27,10 +27,10 @@
   --color-primary-200: #bfdbfe;
   --color-primary-300: #93c5fd;
   --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
+  --color-primary-500: #154367;
+  --color-primary-600: #133D5E;
+  --color-primary-700: #0F3049;
+  --color-primary-800: #091C2B;
   --color-primary-900: #1e3a8a;
   
   /* Secondary Colors - Update sesuai tailwind config */
@@ -184,7 +184,122 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* Offset untuk fixed navbar */
+  }
+  
   body {
     @apply bg-background text-foreground font-manrope;  /* Tambahkan font-manrope di body */
+  }
+  
+  /* Smooth scrolling untuk semua anchor links */
+  a[href^="#"] {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar styling (optional, untuk estetika) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-lg;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+  
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.primary.400') theme('colors.neutral.100');
+  }
+}
+
+/* Scroll-based animations */
+@layer utilities {
+  /* Fade in from bottom animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Fade in from left */
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Fade in from right */
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Scale fade in */
+  .fade-in-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Stagger delay untuk animasi berurutan */
+  .delay-100 {
+    transition-delay: 0.1s;
+  }
+  
+  .delay-200 {
+    transition-delay: 0.2s;
+  }
+  
+  .delay-300 {
+    transition-delay: 0.3s;
+  }
+  
+  .delay-400 {
+    transition-delay: 0.4s;
+  }
+  
+  .delay-500 {
+    transition-delay: 0.5s;
+  }
+}
+
+/* View Transitions API support (for modern browsers) */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.3s;
   }
 }
