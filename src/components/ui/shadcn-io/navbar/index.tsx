@@ -50,7 +50,6 @@ export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
 // Default navigation links
 const defaultNavigationLinks: Navbar01NavLink[] = [
   { href: '/', label: 'Beranda'},
-  { href: '/about-us', label: 'Tentang Kami'},
   { 
     href: '/catalog', 
     label: 'Dijual',
@@ -61,6 +60,7 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
       { href: '/dijual/mesin', label: 'Mesin' },
     ]
   },
+  { href: '/products', label: 'Products'},
   { 
     href: '/disewa', 
     label: 'Disewa',
