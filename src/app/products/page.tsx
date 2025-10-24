@@ -7,106 +7,13 @@ import {
   FadeInRight,
   FadeInScale,
 } from "@/components/common/ScrollAnimation";
+import { properties } from "@/lib/properti";
 
 export const metadata: Metadata = {
   title: "Tentang Kami | Rajawali Lelang Indonesia",
   description:
     "Profil dan sejarah Rajawali Lelang Indonesia - Platform lelang properti terpercaya z-0",
 };
-
-export interface Property {
-  id: string;
-  title: string;
-  location: string;
-  price: number;
-  landArea: number; // sqm
-  buildingArea: number; // sqm
-  certificateType: "SHM" | "HGB";
-  description: string;
-  status: "Lelang Aktif" | "Featured" | "Segera";
-  image: string;
-}
-
-export const properties: Property[] = [
-  {
-    id: "1",
-    title: "Rumah Mewah 2 Lantai di Menteng",
-    location: "Menteng, Jakarta Pusat",
-    price: 8500000000,
-    landArea: 450,
-    buildingArea: 380,
-    certificateType: "SHM",
-    description:
-      "Rumah mewah dengan desain modern minimalis, dilengkapi kolam renang, taman luas, dan garasi untuk 3 mobil. Lokasi strategis dekat dengan pusat kota.",
-    status: "Featured",
-    image: "/images/products/villa.png",
-  },
-  {
-    id: "2",
-    title: "Ruko 3 Lantai Tepi Jalan Raya",
-    location: "Kelapa Gading, Jakarta Utara",
-    price: 4200000000,
-    landArea: 120,
-    buildingArea: 300,
-    certificateType: "HGB",
-    description:
-      "Ruko strategis di jalan utama dengan lalu lintas tinggi, cocok untuk usaha retail atau kantor. Kondisi bangunan terawat dengan 4 kamar mandi.",
-    status: "Lelang Aktif",
-    image: "/images/products/villa.png",
-  },
-  {
-    id: "3",
-    title: "Villa View Gunung di Puncak",
-    location: "Cisarua, Puncak, Bogor",
-    price: 3500000000,
-    landArea: 600,
-    buildingArea: 250,
-    certificateType: "SHM",
-    description:
-      "Villa asri dengan pemandangan gunung dan udara sejuk. Dilengkapi 4 kamar tidur, gazebo, dan taman yang luas. Akses jalan mudah.",
-    status: "Segera",
-    image: "/images/products/villa.png",
-  },
-  {
-    id: "4",
-    title: "Apartemen Premium 2BR Tower A",
-    location: "Sudirman, Jakarta Selatan",
-    price: 2800000000,
-    landArea: 0,
-    buildingArea: 95,
-    certificateType: "HGB",
-    description:
-      "Apartemen premium dengan view kota, furnished lengkap, fasilitas kolam renang, gym, dan keamanan 24 jam. Lokasi dekat MRT dan pusat bisnis.",
-    status: "Featured",
-    image: "/images/products/villa.png",
-  },
-  {
-    id: "5",
-    title: "Tanah Kavling Siap Bangun",
-    location: "BSD City, Tangerang Selatan",
-    price: 1500000000,
-    landArea: 300,
-    buildingArea: 0,
-    certificateType: "SHM",
-    description:
-      "Tanah kavling hook dalam cluster premium BSD, sudah ada IMB untuk pembangunan rumah 2 lantai. Lingkungan asri dan aman dengan fasilitas lengkap.",
-    status: "Lelang Aktif",
-    image: "/images/products/villa.png",
-  },
-  {
-    id: "6",
-    title: "Gudang Industri Strategis",
-    location: "Cakung, Jakarta Timur",
-    price: 6200000000,
-    landArea: 800,
-    buildingArea: 600,
-    certificateType: "HGB",
-    description:
-      "Gudang dengan tinggi 8 meter, loading dock untuk container, akses kontainer 40ft, dan kantor 2 lantai. Dekat dengan tol dan pelabuhan.",
-    status: "Segera",
-    image: "/images/products/villa.png",
-  },
-];
 
 export default function ProductsPage() {
   return (
@@ -115,9 +22,9 @@ export default function ProductsPage() {
         <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30"></div>
         {/* Header Section */}
         <FadeInUp delay={0}>
-          <div className="mb-16">
+          <div className="mb-8">
             <h1 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-4">
-              Tentang RajawaliLelangIndo
+              Lelang Properti
             </h1>
             <p className="font-manrope text-primary-600 text-lg md:text-xl leading-relaxed max-w-4xl">
               Mitra terpercaya dalam dunia lelang modern — profesional,
@@ -126,7 +33,7 @@ export default function ProductsPage() {
           </div>
         </FadeInUp>
 
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+        <div className="bg-white rounded-2xl shadow-lg px-6 py-3 mb-8">
           {/* Search Input */}
           <div className="mb-4 relative">
             <input

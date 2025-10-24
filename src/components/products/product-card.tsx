@@ -10,7 +10,7 @@ interface ProductCardProps {
   buildingArea: number;
   certificateType: "SHM" | "HGB";
   description: string;
-  status: "Lelang Aktif" | "Featured" | "Segera";
+  status: "Lelang Aktif" | "Featured" | "Segera" | "Default" | "Available" | "Sold";
   image: string;
 }
 

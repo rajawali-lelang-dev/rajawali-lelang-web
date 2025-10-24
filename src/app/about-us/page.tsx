@@ -30,7 +30,7 @@ export default function AboutUsPage() {
         <FadeInUp delay={0}>
           <div className="mb-16">
             <h1 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-4">
-              Tentang RajawaliLelangIndo
+              Tentang Rajawali Lelang Indonesia
             </h1>
             <p className="font-manrope text-primary-600 text-lg md:text-xl leading-relaxed max-w-4xl">
               Mitra terpercaya dalam dunia lelang modern — profesional, transparan, dan inovatif.
@@ -65,7 +65,7 @@ export default function AboutUsPage() {
         </div>
       </div>
          {/* Visi & Misi Section - Full Width */}
-      <div className="relative py-16 overflow-hidden bg-primary-50 w-full">
+      <div id="visi-misi" className="relative py-16 overflow-hidden bg-primary-50 w-full">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 pointer-events-none hidden lg:block opacity-30">
           <div className="relative w-full h-full">
              <Image
@@ -289,7 +289,7 @@ export default function AboutUsPage() {
         </FadeInUp>
 
         {/* Tata Cara Lelang Section */}
-        <div className="mb-16">
+        <div id="tata-cara" className="mb-16">
           <FadeInUp delay={0}>
             <h2 className="font-manrope font-bold text-4xl text-primary-600 mb-4">
               Tata Cara Lelang
@@ -339,7 +339,7 @@ export default function AboutUsPage() {
       </div>
 
       {/* Dasar Hukum Lelang Section */}
-      <div className="py-16 bg-secondary-50 w-full">
+      <div id="dasar-hukum" className="py-16 bg-secondary-50 w-full">
         <div className="absolute -left-20 top-7/8 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block opacity-30 overflow-x-hidden">
           <div className="relative w-full h-full">
              <Image

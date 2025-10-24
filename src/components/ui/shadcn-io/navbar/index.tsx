@@ -51,6 +51,17 @@ export interface Navbar01Props extends React.HTMLAttributes<HTMLElement> {
 const defaultNavigationLinks: Navbar01NavLink[] = [
   { href: '/', label: 'Beranda'},
   { 
+    href: '/about-us', 
+    label: 'Tentang Kami',
+    dropdown : [
+      { href: '/about-us#profil', label: 'Profil Perusahaan' },
+      { href: '/about-us#visi-misi', label: 'Visi & Misi' },
+      { href: '/about-us#layanan', label: 'Layanan Kami' },
+      { href: '/about-us#tata-cara', label: 'Tata Cara' },
+      { href: '/about-us#dasar-hukum', label: 'Dasar Hukum'}
+    ]
+  },
+  { 
     href: '/catalog', 
     label: 'Dijual',
     dropdown: [
@@ -60,20 +71,15 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
       { href: '/dijual/mesin', label: 'Mesin' },
     ]
   },
-  { href: '/products', label: 'Products'},
-  { 
-    href: '/disewa', 
-    label: 'Disewa',
-    dropdown: [
-      { href: '/disewa/properti', label: 'Properti' },
-      { href: '/disewa/perhiasan', label: 'Perhiasan' },
-      { href: '/disewa/mobil', label: 'Mobil' },
-      { href: '/disewa/mesin', label: 'Mesin' },
+  { href: '/products', label: 'Produk Kami',
+    dropdown : [
+      { href: '/products', label: 'Lelang Properti' },
+      { href: '/products/lelang-aset-bank', label: 'Lelang Aset Bank' },
     ]
   },
-  { href: '#newPrperties', label: 'Properti Baru' },
-  { href: '#bankAssets', label: 'Aset Bank' },
-  { href: '#kpr', label: 'KPR' },
+  { href: '/asset-lelang', label: 'Aset Lelang' },
+  { href: '/kpr', label: 'KPR' },
+  { href: '/lelang-terdekat', label: 'Lelang Terdekat' },
 ];
 
 export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
@@ -95,6 +101,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     const [isMobile, setIsMobile] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [isScrolled, setIsScrolled] = useState(false);
     const containerRef = useRef<HTMLElement>(null);
     const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -112,6 +119,16 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       return () => resizeObserver.disconnect();
     }, []);
 
+    // Scroll effect
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 20);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const combinedRef = React.useCallback((node: HTMLElement | null) => {
       containerRef.current = node;
       if (typeof ref === 'function') ref(node);
@@ -119,18 +136,30 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       else if (ref) (ref as any).current = node;
     }, [ref]);
 
-    // Background color berdasarkan page
-    const headerBgClass = isHomePage 
-      ? 'bg-transparent' 
-      : 'bg-transparent';
+    // Dynamic styling based on scroll - FIXED
+    const headerBgClass = isScrolled
+      ? 'navbar-scrolled-bg backdrop-blur-md shadow-lg border-transparent'
+      : isHomePage 
+        ? 'bg-transparent border-transparent' 
+        : 'bg-transparent border-transparent';
     
-    const textColorClass = isHomePage
-      ? 'text-white'
-      : 'text-primary-500';
+    const textColorClass = isScrolled
+      ? 'text-primary-600'
+      : isHomePage
+        ? 'text-white'
+        : 'text-primary-500';
     
-    const hoverBgClass = isHomePage
-      ? 'hover:bg-white/10'
-      : 'hover:bg-gray-800/50';
+    const hoverBgClass = isScrolled
+      ? 'hover:bg-primary-100/80'  // FIXED: primary-100 cocok dengan primary-600 text
+      : isHomePage
+        ? 'hover:bg-white/10'
+        : 'hover:bg-primary-100/50';
+
+    const activeBgClass = isScrolled
+      ? 'bg-primary-200/60'  // FIXED: primary-200 untuk active state
+      : isHomePage
+        ? 'bg-white/15'
+        : 'bg-primary-200/40';
 
     const handleMouseEnter = (label: string) => {
       if (dropdownTimeoutRef.current) {
@@ -153,7 +182,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       <header
         ref={combinedRef}
         className={cn(
-          'fixed top-0 left-0 z-50 w-full h-20 md:h-24 border-b border-transparent px-4 md:px-6 transition-colors duration-300',
+          'fixed top-0 left-0 z-50 w-full h-20 md:h-24 border-b px-4 md:px-6 transition-all duration-300',
           headerBgClass,
           className
         )}
@@ -192,8 +221,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                             'flex items-center gap-1 px-3 py-2 rounded-lg text-sm lg:text-base font-manrope font-medium transition-colors',
                             textColorClass,
                             hoverBgClass,
-                            link.active && !isHomePage && 'bg-blue-800/60',
-                            link.active && isHomePage && 'bg-white/15'
+                            link.active && activeBgClass
                           )}
                         >
                           {link.label}
@@ -206,12 +234,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                         {/* Dropdown Menu */}
                         {openDropdown === link.label && (
                           <div 
-                            className={cn(
-                              "absolute top-full left-0 mt-1 w-48 rounded-lg shadow-lg border overflow-hidden",
-                              isHomePage 
-                                ? "bg-white/95 backdrop-blur-md border-white/20" 
-                                : "bg-white border-gray-200"
-                            )}
+                            className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
                             onMouseEnter={() => handleMouseEnter(link.label)}
                             onMouseLeave={handleMouseLeave}
                           >
@@ -219,12 +242,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                className={cn(
-                                  "block px-4 py-3 text-sm font-manrope transition-colors",
-                                  isHomePage
-                                    ? "text-primary-700 hover:bg-primary-50"
-                                    : "text-gray-700 hover:bg-gray-100"
-                                )}
+                                className="block px-4 py-3 text-sm font-manrope text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
                               >
                                 {item.label}
                               </Link>
@@ -239,8 +257,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                           'px-3 py-2 rounded-lg text-sm lg:text-base font-manrope font-medium transition-colors',
                           textColorClass,
                           hoverBgClass,
-                          link.active && !isHomePage && 'bg-blue-800/60',
-                          link.active && isHomePage && 'bg-white/15'
+                          link.active && activeBgClass
                         )}
                       >
                         {link.label}
@@ -253,8 +270,8 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
               <button 
                 className={cn(
                   'p-2 rounded-md transition-colors',
-                  'text-white/90',
-                  hoverBgClass
+                  isScrolled ? 'text-primary-600' : 'text-white/90',
+                  isScrolled ? 'hover:bg-primary-100/80' : 'hover:bg-white/10'
                 )}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
@@ -269,9 +286,11 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
         {isMobile && isMenuOpen && (
           <div className={cn(
             'absolute top-full left-0 right-0 shadow-lg border-t',
-            isHomePage 
-              ? 'bg-primary-400/95 backdrop-blur-md border-white/10' 
-              : 'bg-gradient-to-r from-primary-200 via-blue-300 to-blue-400 border-blue-700'
+            isScrolled
+              ? 'navbar-mobile-scrolled-bg backdrop-blur-md border-white/10'
+              : isHomePage 
+                ? 'bg-primary-400/95 backdrop-blur-md border-white/10' 
+                : 'bg-gradient-to-r from-primary-200 via-blue-300 to-blue-400 border-blue-700'
           )}>
             <ul className="flex flex-col py-4 px-4 gap-2">
               {navigationLinks.map((link) => (
@@ -282,9 +301,8 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                         onClick={() => toggleMobileDropdown(link.label)}
                         className={cn(
                           'flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-manrope font-medium transition-colors',
-                          'text-white',
-                          isHomePage ? 'hover:bg-white/10' : 'hover:bg-blue-800/50',
-                          link.active && 'bg-blue-800/60'
+                          'text-white hover:bg-white/20',
+                          link.active && 'bg-white/25'
                         )}
                       >
                         {link.label}
@@ -301,11 +319,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                             <Link
                               key={item.href}
                               href={item.href}
-                              className={cn(
-                                'block px-4 py-2 rounded-lg text-sm font-manrope transition-colors',
-                                'text-white/90',
-                                isHomePage ? 'hover:bg-white/10' : 'hover:bg-blue-800/50'
-                              )}
+                              className="block px-4 py-2 rounded-lg text-sm font-manrope transition-colors text-white/90 hover:bg-white/15"
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {item.label}
@@ -319,9 +333,8 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                       href={link.href}
                       className={cn(
                         'block px-4 py-3 rounded-lg text-base font-manrope font-medium transition-colors',
-                        'text-white',
-                        isHomePage ? 'hover:bg-white/10' : 'hover:bg-blue-800/50',
-                        link.active && 'bg-blue-800/60'
+                        'text-white hover:bg-white/20',
+                        link.active && 'bg-white/25'
                       )}
                       onClick={() => setIsMenuOpen(false)}
                     >
