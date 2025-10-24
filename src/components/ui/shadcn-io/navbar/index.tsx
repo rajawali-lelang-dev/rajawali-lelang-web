@@ -63,7 +63,7 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
   },
   { 
     href: '/catalog', 
-    label: 'Dijual',
+    label: 'Aset Jual',
     dropdown: [
       { href: '/dijual/properti', label: 'Properti' },
       { href: '/dijual/perhiasan', label: 'Perhiasan' },
@@ -71,13 +71,15 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
       { href: '/dijual/mesin', label: 'Mesin' },
     ]
   },
-  { href: '/products', label: 'Produk Kami',
+  { href: '/aset-lelang', label: 'Aset Lelang',
     dropdown : [
-      { href: '/products', label: 'Lelang Properti' },
-      { href: '/products/lelang-aset-bank', label: 'Lelang Aset Bank' },
+      { href: '/aset-lelang', label: 'Properti' },
+      { href: '/aset-lelang/perhiasan', label: 'Perhiasan' },
+      { href: '/aset-lelang/mobil', label: 'Mobil' },
+      { href: '/aset-lelang/mesin', label: 'Mesin' },
+
     ]
   },
-  { href: '/asset-lelang', label: 'Aset Lelang' },
   { href: '/kpr', label: 'KPR' },
   { href: '/lelang-terdekat', label: 'Lelang Terdekat' },
 ];
