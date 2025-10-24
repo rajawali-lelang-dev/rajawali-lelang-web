@@ -108,7 +108,7 @@ export default function Home() {
       {/* Hero Section dengan background image yang naik ke bawah navbar */}
       <section className="relative w-full min-h-screen">
         <Image
-          src="/images/hero2.png"
+          src="/images/hero.svg"
           alt="Hero background"
           priority
           fill
