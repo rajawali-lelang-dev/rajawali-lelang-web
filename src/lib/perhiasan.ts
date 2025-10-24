@@ -46,7 +46,7 @@ export const perhiasans: Perhiasan[] = [
     description:
       "Cincin berlian solitaire 0.5 karat dari Tiffany & Co, setting platinum, sertifikat GIA, cocok untuk tunangan atau hadiah spesial.",
     status: "Featured",
-    image: "/images/products/cincin-berlian.png",
+    image: "/images/products/perhiasan/perhiasan1.jpg",
   },
   {
     id: "P2",
@@ -63,7 +63,7 @@ export const perhiasans: Perhiasan[] = [
     description:
       "Kalung emas 24 karat murni, berat 15 gram, design klasik dan elegan. Cocok untuk investasi atau koleksi pribadi.",
     status: "Available",
-    image: "/images/products/kalung-emas.png",
+    image: "/images/products/perhiasan/perhiasan1.jpg",
   },
   {
     id: "P3",
@@ -79,7 +79,7 @@ export const perhiasans: Perhiasan[] = [
     description:
       "Gelang mutiara air tawar grade AAA, ukuran 8-9mm, warna putih natural dengan kilau sempurna. Kualitas export dengan sertifikat keaslian.",
     status: "Available",
-    image: "/images/products/gelang-mutiara.png",
+    image: "/images/products/perhiasan/perhiasan1.jpg",
   },
   {
     id: "P4",
@@ -97,7 +97,7 @@ export const perhiasans: Perhiasan[] = [
     description:
       "Anting berlian emas putih 18 karat, total berlian 0.3 karat, design modern dan elegan, cocok untuk acara formal.",
     status: "Featured",
-    image: "/images/products/anting-berlian.png",
+    image: "/images/products/perhiasan/perhiasan1.jpg",
   },
   {
     id: "P5",
@@ -114,7 +114,7 @@ export const perhiasans: Perhiasan[] = [
     description:
       "Bros antik dari era 1920an, perak sterling dengan batu safir natural. Kondisi sangat baik, cocok untuk kolektor atau pecinta barang antik.",
     status: "Available",
-    image: "/images/products/bros-antik.png",
+    image: "/images/products/perhiasan/perhiasan1.jpg",
   },
 ];
 

@@ -46,7 +46,7 @@ export const mesins: Mesin[] = [
     description:
       "Excavator Komatsu PC200-8 tahun 2018, kondisi sangat terawat, service record lengkap, cocok untuk proyek konstruksi besar.",
     status: "Featured",
-    image: "/images/products/excavator.png",
+    image: "/images/products/mesin/mesin1.jpg",
   },
   {
     id: "MS2",
@@ -65,7 +65,7 @@ export const mesins: Mesin[] = [
     description:
       "Generator Cummins 500 KVA, mesin diesel, silent type, automatic start, cocok untuk pabrik atau gedung perkantoran.",
     status: "Available",
-    image: "/images/products/generator.png",
+    image: "/images/products/mesin/mesin1.jpg",
   },
   {
     id: "MS3",
@@ -84,7 +84,7 @@ export const mesins: Mesin[] = [
     description:
       "Forklift Toyota 3 ton diesel, lifting height 4.5m, side shift, fork positioner, kondisi sangat prima dan siap kerja.",
     status: "Available",
-    image: "/images/products/forklift.png",
+    image: "/images/products/mesin/mesin1.jpg",
   },
   {
     id: "MS4",
@@ -103,7 +103,7 @@ export const mesins: Mesin[] = [
     description:
       "Kompresor angin Atlas Copco GA75, screw type, oil-injected, tekanan 8 bar, cocok untuk industri manufaktur.",
     status: "Featured",
-    image: "/images/products/kompresor.png",
+    image: "/images/products/mesin/mesin1.jpg",
   },
   {
     id: "MS5",
@@ -122,7 +122,7 @@ export const mesins: Mesin[] = [
     description:
       "Crane truck Hino Ranger dengan kapasitas crane 10 ton, boom length 15m, kondisi mesin sehat, surat-surat lengkap.",
     status: "Available",
-    image: "/images/products/crane-truck.png",
+    image: "/images/products/mesin/mesin1.jpg",
   },
 ];
 

@@ -53,7 +53,7 @@ export const mobils: Mobil[] = [
     description:
       "Toyota Avanza 2020 kondisi istimewa, service record resmi Toyota, interior bersih dan terawat. Pajak panjang, siap pakai.",
     status: "Available",
-    image: "/images/products/mobil-avanza.png",
+    image: "/images/products/mobil/porsche.jpeg",
   },
   {
     id: "M2",
@@ -74,7 +74,7 @@ export const mobils: Mobil[] = [
     description:
       "Honda CR-V Turbo 2019 full original, tidak bekas tabrakan, ban baru semua, interior seperti baru. Full option dengan sunroof.",
     status: "Featured",
-    image: "/images/products/mobil-crv.png",
+    image: "/images/products/mobil/porsche.jpeg",
   },
   {
     id: "M3",
@@ -95,7 +95,7 @@ export const mobils: Mobil[] = [
     description:
       "Pajero Sport Dakar 2018 matic diesel, sangat irit dan bertenaga. Service rutin di bengkel resmi, kondisi mesin prima.",
     status: "Available",
-    image: "/images/products/mobil-pajero.png",
+    image: "/images/products/mobil/porsche.jpeg",
   },
   {
     id: "M4",
@@ -116,7 +116,7 @@ export const mobils: Mobil[] = [
     description:
       "Mazda CX-5 Elite 2021 seperti baru, km rendah, full service record Mazda, interior kulit asli sangat mewah. Bonus asuransi 1 tahun.",
     status: "Featured",
-    image: "/images/products/mobil-cx5.png",
+    image: "/images/products/mobil/porsche.jpeg",
   },
   {
     id: "M5",
@@ -137,7 +137,7 @@ export const mobils: Mobil[] = [
     description:
       "Daihatsu Terios 2017 manual, cocok untuk harian atau adventure. Mesin sehat, kaki-kaki empuk, AC dingin. Harga nego.",
     status: "Available",
-    image: "/images/products/mobil-terios.png",
+    image: "/images/products/mobil/porsche.jpeg",
   },
 ];
 
