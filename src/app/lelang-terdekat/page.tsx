@@ -86,7 +86,7 @@ export default function NearestLelangPage() {
         {/* Auction Schedule List */}
         <div className="space-y-6">
           {upcomingAuctions.map((auction, index) => (
-            <FadeInUp key={auction.id} delay={index * 100}>
+            <FadeInUp key={auction.id} >
               <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                   {/* Left Section - Date & Time */}

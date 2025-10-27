@@ -112,7 +112,7 @@ export default function KprPage() {
         {/* KPR Services Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {kprServices.map((service, index) => (
-            <FadeInUp key={service.id} delay={index * 100}>
+            <FadeInUp key={service.id} >
               <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-8 h-full">
                 {/* Icon */}
                 <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-4xl mb-4">
@@ -222,7 +222,7 @@ export default function KprPage() {
           </FadeInUp>
           <div className="grid md:grid-cols-5 gap-6">
             {kprSteps.map((item, index) => (
-              <FadeInUp key={item.step} delay={index * 100}>
+              <FadeInUp key={item.step}>
                 <div className="bg-white rounded-xl shadow-md p-6 text-center relative">
                   {/* Step Number */}
                   <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
