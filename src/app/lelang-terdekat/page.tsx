@@ -3,6 +3,8 @@ import { FadeInUp } from '@/components/common/ScrollAnimation'
 import Image from 'next/image'
 import LelangCard from '@/components/lelang-terdekat/LelangCard'
 import { lelangProperties } from '@/lib/properti'
+import React from 'react'
+import ContactSection from '@/components/layout/contact'
 
 export const metadata: Metadata = {
   title: 'Jadwal Lelang Terdekat | Rajawali Lelang Indonesia',

@@ -8,6 +8,7 @@ import {
   FadeInScale,
 } from "@/components/common/ScrollAnimation";
 import { properties } from "@/lib/properti";
+import ContactSection from "@/components/layout/contact";
 
 export const metadata: Metadata = {
   title: "Tentang Kami | Rajawali Lelang Indonesia",
@@ -163,32 +164,10 @@ export default function ProductsPage() {
             />
           ))}
         </div>
-      </div>
 
-      {/* CTA Section */}
-      <div className="container mx-auto px-6 md:px-12 py-12 relative z-10 max-w-7xl">
-        <div className="relative py-16 px-8 overflow-hidden bg-gradient-to-r from-primary-900 via-primary-700 to-primary-600 rounded-3xl">
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <h2 className="font-manrope font-bold text-3xl md:text-4xl text-white mb-4">
-              Tertarik Lelang Properti Bersama Kami?
-            </h2>
-            <p className="font-manrope text-white/90 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
-              Kami bantu wujudkan investasi properti Anda dengan proses yang mudah
-              dan transparan.
-            </p>
-            <a
-              href="https://wa.me/6281234567890?text=Saya tertarik untuk lelang properti bersama Rajawali Lelang Indonesia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-3 rounded-lg transition-colors text-lg">
-                Hubungi Kami Sekarang
-              </button>
-            </a>
-          </div>
-        </div>
+        {/* CTA Section */}
+        <ContactSection />
       </div>
-      
     </div>
   );
 }
