@@ -2,39 +2,44 @@
 
 import Image from 'next/image'
 import { CalendarDays, Clock, MapPin } from 'lucide-react'
-import dayjs from 'dayjs'
+import { getCountdownText, getStatusBadgeColor } from '@/lib/lelang-utils'
 
 interface LelangCardProps {
   image: string
   title: string
-  date: string // format: '25 Okt 2025'
-  time: string
+  tanggalLelang: string // ISO 8601 format
   location: string
   type: string
-  status: string
+  status: "Lelang Aktif" | "Lelang Segera" | "Lelang Selesai"
 }
 
 export default function LelangCard({
   image,
   title,
-  date,
-  time,
+  tanggalLelang,
   location,
   type,
   status
 }: LelangCardProps) {
 
-  // Konversi tanggal lelang ke dayjs
-  const now = dayjs()
-  const eventDate = dayjs(date, 'DD MMM YYYY')
-  const daysLeft = eventDate.diff(now, 'day')
+  // Format tanggal dan waktu
+  const lelangDate = new Date(tanggalLelang)
+  const formattedDate = lelangDate.toLocaleDateString('id-ID', { 
+    day: '2-digit', 
+    month: 'short', 
+    year: 'numeric' 
+  })
+  const formattedTime = lelangDate.toLocaleTimeString('id-ID', { 
+    hour: '2-digit', 
+    minute: '2-digit',
+    hour12: false 
+  }) + ' WIB'
 
-  // Warna badge status
-  const statusColor = {
-    'Lelang Aktif': 'bg-green-100 text-green-700',
-    'Segera Dibuka': 'bg-orange-100 text-orange-700',
-    'Akan Datang': 'bg-blue-100 text-blue-700',
-  }[status]
+  // Countdown text
+  const countdownText = getCountdownText(tanggalLelang)
+  
+  // Status badge color
+  const statusColor = getStatusBadgeColor(status)
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-neutral-100 flex flex-col md:flex-row overflow-hidden mb-6">
@@ -53,7 +58,7 @@ export default function LelangCard({
         {/* Badge kanan atas */}
         <div className="absolute top-4 right-4">
           <span className="bg-primary-100 text-primary-700 text-sm font-semibold px-3 py-1 rounded-full">
-            {daysLeft > 0 ? `${daysLeft} hari lagi` : 'Hari ini'}
+            {countdownText}
           </span>
         </div>
 
@@ -75,10 +80,10 @@ export default function LelangCard({
         {/* Info */}
         <div className="flex flex-col gap-1 text-sm text-neutral-600 mb-5">
           <div className="flex items-center gap-2">
-            <CalendarDays size={16} /> {date}
+            <CalendarDays size={16} /> {formattedDate}
           </div>
           <div className="flex items-center gap-2">
-            <Clock size={16} /> {time}
+            <Clock size={16} /> {formattedTime}
           </div>
           <div className="flex items-center gap-2">
             <MapPin size={16} /> {location}

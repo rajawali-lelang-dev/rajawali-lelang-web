@@ -20,7 +20,8 @@ export interface BaseItemDijual extends BaseItem {
 export interface BaseItemLelang extends Omit<BaseItem, 'status'> {
   startPrice: number;
   endPrice: number;
-  batasWaktuLelang: string;
+  tanggalLelang: string; // format ISO 8601 - tanggal pelaksanaan lelang
+  batasWaktuLelang: string; // format ISO 8601 - batas waktu pendaftaran/penawaran
   location: string;
   provinsi: string;
   kota: string;

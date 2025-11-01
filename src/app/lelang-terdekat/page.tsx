@@ -3,6 +3,10 @@ import { FadeInUp } from '@/components/common/ScrollAnimation'
 import Image from 'next/image'
 import LelangCard from '@/components/lelang-terdekat/LelangCard'
 import { lelangProperties } from '@/lib/properti'
+import { lelangMobils } from '@/lib/mobil'
+import { lelangPerhiasans } from '@/lib/perhiasan'
+import { lelangMesins } from '@/lib/mesin'
+import { sortByTanggalLelang, filterLelangAktif } from '@/lib/lelang-utils'
 import React from 'react'
 import ContactSection from '@/components/layout/contact'
 
@@ -11,17 +15,18 @@ export const metadata: Metadata = {
   description: 'Jangan lewatkan kesempatan untuk mendapatkan properti impian Anda. Tandai kalender Anda!',
 }
 
-// ...existing code...
-
-const formatDateTime = (iso?: string) => {
-  if (!iso) return { date: '-', time: '-' }
-  const d = new Date(iso)
-  const date = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' })
-  const time = d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', hour12: false }) + ' WIB'
-  return { date, time }
-}
-
 export default function NearestLelangPage() {
+  // Gabungkan semua data lelang
+  const allLelang = [
+    ...lelangProperties,
+    ...lelangMobils,
+    ...lelangPerhiasans,
+    ...lelangMesins,
+  ]
+
+  // Filter hanya yang masih aktif dan sort berdasarkan tanggal terdekat
+  const upcomingLelang = sortByTanggalLelang(filterLelangAktif(allLelang))
+
   return (
     <div className="min-h-screen">
       <section className="relative w-full py-20 md:py-28 overflow-hidden">
@@ -73,42 +78,46 @@ export default function NearestLelangPage() {
             />
             <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
               <option>Semua Jenis</option>
-              <option>Rumah</option>
-              <option>Ruko</option>
-              <option>Tanah</option>
+              <option>Properti</option>
+              <option>Mobil</option>
+              <option>Perhiasan</option>
+              <option>Mesin</option>
             </select>
             <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
               <option>Semua Lokasi</option>
               <option>Jakarta</option>
-              <option>Bali</option>
-              <option>Bogor</option>
+              <option>Banten</option>
+              <option>Jawa Barat</option>
             </select>
             <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
               <option>Semua Status</option>
               <option>Lelang Aktif</option>
-              <option>Selesai</option>
+              <option>Lelang Segera</option>
             </select>
           </div>
         </div>
       </section>
 
       <div className="py-6 max-w-6xl mx-auto px-6 md:px-12">
-        {lelangProperties.map((p) => {
-          const { date, time } = formatDateTime(p.batasWaktuLelang)
-          return (
+        {upcomingLelang.length > 0 ? (
+          upcomingLelang.map((item) => (
             <LelangCard
-              key={p.id}
-              image={p.image ?? `/images/lelang-terdekat/${p.id}.jpg`}
-              title={p.title}
-              date={date}
-              time={time}
-              location={p.location}
-              type={p.type}
-              status={p.status}
+              key={item.id}
+              image={item.image ?? `/images/lelang-terdekat/${item.id}.jpg`}
+              title={item.title}
+              tanggalLelang={item.tanggalLelang}
+              location={item.location}
+              type={item.type}
+              status={item.status}
             />
-          )
-        })}
+          ))
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-lg text-neutral-600">Tidak ada lelang yang akan datang saat ini.</p>
+          </div>
+        )}
       </div>
+      <ContactSection />
     </div>
   )
 }

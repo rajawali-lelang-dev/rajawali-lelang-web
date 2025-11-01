@@ -31,7 +31,6 @@ export default function DijualLayout({
       {/* Header Section */}
       <div className="container mx-auto px-6 md:px-12 py-2 pt-20 md:pt-24 relative z-10 max-w-7xl">
         <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30"></div>
-
         <FadeInUp delay={0}>
           <div className="mb-2">
             <h1 className="font-manrope font-bold text-4xl md:text-4xl text-primary-600 mb-4">

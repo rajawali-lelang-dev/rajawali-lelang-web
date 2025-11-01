@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { BaseItemDijual, BaseItemLelang } from './data';
 
 // Property Type
@@ -18,6 +19,7 @@ export interface PropertiDilelang extends BaseItemLelang {
   landArea: number;
   buildingArea: number;
   certificateType: "SHM" | "HGB";
+  
 }
 
 // Mock Data - Properties (NON-LELANG)
@@ -138,7 +140,8 @@ export const lelangProperties: PropertiDilelang[] = [
     image: "/images/products/villa.png",
     startPrice: 6800000000,
     endPrice: 8500000000,
-    batasWaktuLelang: "2025-12-31T00:00:00Z",
+    tanggalLelang: "2025-11-15T10:00:00+07:00",
+    batasWaktuLelang: "2025-11-14T17:00:00+07:00",
   },
   {
     id: "L2",
@@ -156,7 +159,8 @@ export const lelangProperties: PropertiDilelang[] = [
     image: "/images/products/villa.png",
     startPrice: 3000000000,
     endPrice: 4200000000,
-    batasWaktuLelang: "2025-11-30T00:00:00Z",
+    tanggalLelang: "2025-11-08T14:00:00+07:00",
+    batasWaktuLelang: "2025-11-07T17:00:00+07:00",
   },
   {
     id: "L3",
@@ -174,7 +178,8 @@ export const lelangProperties: PropertiDilelang[] = [
     image: "/images/products/villa.png",
     startPrice: 2800000000,
     endPrice: 3500000000,
-    batasWaktuLelang: "2025-10-15T00:00:00Z",
+    tanggalLelang: "2025-11-05T09:00:00+07:00",
+    batasWaktuLelang: "2025-11-04T17:00:00+07:00",
   },
   {
     id: "L4",
@@ -192,7 +197,8 @@ export const lelangProperties: PropertiDilelang[] = [
     image: "/images/products/villa.png",
     startPrice: 2200000000,
     endPrice: 2800000000,
-    batasWaktuLelang: "2026-01-31T00:00:00Z",
+    tanggalLelang: "2025-11-22T11:00:00+07:00",
+    batasWaktuLelang: "2025-11-21T17:00:00+07:00",
   },
   {
     id: "L5",
@@ -210,7 +216,8 @@ export const lelangProperties: PropertiDilelang[] = [
     image: "/images/products/villa.png",
     startPrice: 1200000000,
     endPrice: 1500000000,
-    batasWaktuLelang: "2025-09-30T00:00:00Z",
+    tanggalLelang: "2025-11-12T13:00:00+07:00",
+    batasWaktuLelang: "2025-11-11T17:00:00+07:00",
   },
   {
     id: "L6",
@@ -228,7 +235,8 @@ export const lelangProperties: PropertiDilelang[] = [
     image: "/images/products/villa.png",
     startPrice: 5000000000,
     endPrice: 6200000000,
-    batasWaktuLelang: "2025-08-31T00:00:00Z",
+    tanggalLelang: "2025-11-03T10:00:00+07:00",
+    batasWaktuLelang: "2025-11-02T17:00:00+07:00",
   },
 ];
 
