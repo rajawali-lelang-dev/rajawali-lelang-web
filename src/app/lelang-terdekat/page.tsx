@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { FadeInUp } from '@/components/common/ScrollAnimation'
-import Link from 'next/link'
+import Image from 'next/image'
+import LelangCard from '@/components/lelang-terdekat/LelangCard'
+import { lelangProperties } from '@/lib/properti'
 import React from 'react'
 import ContactSection from '@/components/layout/contact'
 
@@ -9,135 +11,103 @@ export const metadata: Metadata = {
   description: 'Jangan lewatkan kesempatan untuk mendapatkan properti impian Anda. Tandai kalender Anda!',
 }
 
-interface AuctionSchedule {
-  id: string
-  date: string
-  time: string
-  title: string
-  location: string
-  type: string
-}
+// ...existing code...
 
-const upcomingAuctions: AuctionSchedule[] = [
-  {
-    id: '1',
-    date: '25 Okt 2025',
-    time: '10:00 WIB',
-    title: 'Rumah Tinggal, Jakarta Utara',
-    location: 'Jakarta Utara',
-    type: 'Lelang Eksekusi Hak Tanggungan'
-  },
-  {
-    id: '2',
-    date: '12 Nov 2025',
-    time: '14:00 WIB',
-    title: 'Tanah Kavling, Bali',
-    location: 'Bali',
-    type: 'Lelang Sukarela'
-  },
-  {
-    id: '3',
-    date: '15 Nov 2025',
-    time: '09:00 WIB',
-    title: 'Ruko 3 Lantai, Tangerang',
-    location: 'Tangerang Selatan',
-    type: 'Lelang Eksekusi Hak Tanggungan'
-  },
-  {
-    id: '4',
-    date: '20 Nov 2025',
-    time: '11:00 WIB',
-    title: 'Apartemen 2BR, Jakarta Selatan',
-    location: 'Jakarta Selatan',
-    type: 'Lelang Sukarela'
-  },
-  {
-    id: '5',
-    date: '25 Nov 2025',
-    time: '13:00 WIB',
-    title: 'Villa View Gunung, Bogor',
-    location: 'Puncak, Bogor',
-    type: 'Lelang Eksekusi'
-  },
-  {
-    id: '6',
-    date: '01 Des 2025',
-    time: '10:00 WIB',
-    title: 'Gudang Industri, Bekasi',
-    location: 'Bekasi Timur',
-    type: 'Lelang Sukarela'
-  }
-]
+const formatDateTime = (iso?: string) => {
+  if (!iso) return { date: '-', time: '-' }
+  const d = new Date(iso)
+  const date = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' })
+  const time = d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', hour12: false }) + ' WIB'
+  return { date, time }
+}
 
 export default function NearestLelangPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
-      <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 max-w-6xl">
-        {/* Header Section */}
-        <FadeInUp delay={0}>
-          <div className="text-center mb-12">
-            <h1 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-4">
-              Jadwal Lelang Terdekat
-            </h1>
-            <p className="font-manrope text-neutral-700 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              Jangan lewatkan kesempatan untuk mendapatkan properti impian Anda. Tandai kalender Anda!
-            </p>
-          </div>
-        </FadeInUp>
+    <div className="min-h-screen">
+      <section className="relative w-full py-20 md:py-28 overflow-hidden">
+        <Image
+          src="/images/lelang-terdekat/hero.svg"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover object-center"
+        />
 
-        {/* Auction Schedule List */}
-        <div className="space-y-6">
-          {upcomingAuctions.map((auction, index) => (
-            <FadeInUp key={auction.id} delay={index * 100}>
-              <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-6 md:p-8">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                  {/* Left Section - Date & Time */}
-                  <div className="flex items-start gap-6">
-                    {/* Calendar Icon */}
-                    <div className="flex-shrink-0 w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                        <line x1="16" y1="2" x2="16" y2="6" />
-                        <line x1="8" y1="2" x2="8" y2="6" />
-                        <line x1="3" y1="10" x2="21" y2="10" />
-                      </svg>
-                    </div>
-
-                    {/* Date, Time & Property Info */}
-                    <div>
-                      <h3 className="font-manrope font-bold text-xl text-neutral-800 mb-1">
-                        {auction.date}
-                      </h3>
-                      <p className="font-manrope text-sm text-neutral-600 mb-3">
-                        {auction.time}
-                      </p>
-                      <h4 className="font-manrope font-semibold text-lg text-primary-600 mb-1">
-                        {auction.title}
-                      </h4>
-                      <p className="font-manrope text-sm text-neutral-700">
-                        {auction.type}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Right Section - Action Button */}
-                  <div className="flex-shrink-0">
-                    <Link href={`/lelang-terdekat/${auction.id}`}>
-                      <button className="w-full md:w-auto px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors">
-                        Lihat Detail
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </FadeInUp>
-          ))}
+        {/* Clock SVG (kiri bawah) */}
+        <div className="absolute bottom-2 left-16 w-48 h-48 md:w-64 md:h-64">
+          <Image
+            src="/images/lelang-terdekat/clock.svg"
+            alt="Clock illustration"
+            fill
+            className="object-contain"
+          />
         </div>
 
-        {/* CTA Section */}
-        <FadeInUp delay={500}>
-            <ContactSection />
-        </FadeInUp>
+        {/* Notification Bell SVG (kanan atas) */}
+        <div className="absolute top-24 right-64 w-24 h-24 md:w-32 md:h-32">
+          <Image
+            src="/images/lelang-terdekat/notification.svg"
+            alt="Notification bell"
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        {/* Konten Teks */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center md:text-left">
+          <FadeInUp delay={0}>
+            <h1 className="font-manrope font-extrabold text-4xl md:text-6xl text-[#103B73] leading-tight mb-4">
+              Jadwal Lelang Terdekat
+            </h1>
+            <p className="text-lg md:text-xl text-primary-700 mb-8">
+              Properti impian Anda menunggu di sini. Siap untuk menawarnya?
+            </p>
+          </FadeInUp>
+
+          {/* Search Filter Box */}
+          <div className="bg-white shadow-md rounded-xl flex flex-col md:flex-row items-center gap-3 p-4 md:p-6">
+            <input
+              type="text"
+              placeholder="Cari lokasi atau jenis properti..."
+              className="w-full md:flex-1 border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            />
+            <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
+              <option>Semua Jenis</option>
+              <option>Rumah</option>
+              <option>Ruko</option>
+              <option>Tanah</option>
+            </select>
+            <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
+              <option>Semua Lokasi</option>
+              <option>Jakarta</option>
+              <option>Bali</option>
+              <option>Bogor</option>
+            </select>
+            <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
+              <option>Semua Status</option>
+              <option>Lelang Aktif</option>
+              <option>Selesai</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <div className="py-6 max-w-6xl mx-auto px-6 md:px-12">
+        {lelangProperties.map((p) => {
+          const { date, time } = formatDateTime(p.batasWaktuLelang)
+          return (
+            <LelangCard
+              key={p.id}
+              image={p.image ?? `/images/lelang-terdekat/${p.id}.jpg`}
+              title={p.title}
+              date={date}
+              time={time}
+              location={p.location}
+              type={p.type}
+              status={p.status}
+            />
+          )
+        })}
       </div>
     </div>
   )

@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
+import { getAllProvinces, getCitiesByProvince, ProvinsiIndonesia } from '@/lib/province';
 
 const HamburgerIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>) => (
   <svg
@@ -63,7 +64,7 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
   },
   { 
     href: '/catalog', 
-    label: 'Aset Jual',
+    label: 'Aset Non Lelang',
     dropdown: [
       { href: '/dijual/properti', label: 'Properti' },
       { href: '/dijual/perhiasan', label: 'Perhiasan' },
@@ -100,9 +101,16 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
     },
     ref
   ) => {
+    const provinces = useMemo(() => getAllProvinces(), []);
     const [isMobile, setIsMobile] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openProvince, setOpenProvince] = useState<ProvinsiIndonesia | null>(null);
+  const provinceTimeoutRef = useRef<number | null>(null);
+    const dropdownRef = useRef<HTMLDivElement | null>(null);
+    const [dropdownAlign, setDropdownAlign] = useState<'left' | 'right'>('left');
+    const [mobileLocationOpen, setMobileLocationOpen] = useState(false);
+    const [mobileOpenProvince, setMobileOpenProvince] = useState<ProvinsiIndonesia | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
     const containerRef = useRef<HTMLElement>(null);
     const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -176,9 +184,30 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
       }, 200);
     };
 
+    // When a wide dropdown opens, check if it overflows to the right and align to the right if needed
+    useEffect(() => {
+      if (!openDropdown) return;
+      // run after render so dropdownRef is available
+      const t = setTimeout(() => {
+        const el = dropdownRef.current;
+        if (!el) return setDropdownAlign('left');
+        const rect = el.getBoundingClientRect();
+        const padding = 12; // keep small gap from viewport edge
+        if (rect.right > window.innerWidth - padding) setDropdownAlign('right');
+        else setDropdownAlign('left');
+      }, 10);
+      return () => clearTimeout(t);
+    }, [openDropdown]);
+
     const toggleMobileDropdown = (label: string) => {
       setOpenDropdown(openDropdown === label ? null : label);
     };
+
+    const handleProvinceEnter = (provinsi: ProvinsiIndonesia) => {
+      if (provinceTimeoutRef.current) clearTimeout(provinceTimeoutRef.current);
+      setOpenProvince(provinsi);
+    };
+
 
     return (
       <header
@@ -235,20 +264,84 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                         
                         {/* Dropdown Menu */}
                         {openDropdown === link.label && (
-                          <div 
-                            className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
+                          // Special two-column flyout for location-aware links
+                          <div
+                            ref={dropdownRef}
+                            className={cn(
+                              'absolute top-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50',
+                              // align left or right depending on available space
+              (link.label === 'Aset Non Lelang' || link.label === 'Aset Lelang')
+                ? 'left-1/2 transform -translate-x-1/2 w-[720px] p-4'
+                : 'left-0 w-48'
+                            )}
                             onMouseEnter={() => handleMouseEnter(link.label)}
                             onMouseLeave={handleMouseLeave}
                           >
-                            {link.dropdown.map((item) => (
-                              <Link
-                                key={item.href}
-                                href={item.href}
-                                className="block px-4 py-3 text-sm font-manrope text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
-                              >
-                                {item.label}
-                              </Link>
-                            ))}
+                            { (link.label === 'Aset Non Lelang' || link.label === 'Aset Lelang') ? (
+                              <div className="relative flex gap-6">
+                                {/* Left: categories */}
+                                <div className="min-w-[300px] max-h-80 overflow-auto">
+                                  {link.dropdown.map((item) => (
+                                    <Link
+                                      key={item.href}
+                                      href={item.href}
+                                      className="block px-4 py-3 text-sm font-manrope text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors rounded-md"
+                                    >
+                                      {item.label}
+                                    </Link>
+                                  ))}
+                                </div>
+
+                                {/* Right: provinces list (hover to show cities to the right) */}
+                                <div className="flex-1 flex relative">
+                                  <div className="w-64 max-h-80 overflow-auto border-l border-gray-100 pl-4 scroll-hidden">
+                                    {provinces.map((prov) => (
+                                      <button
+                                        key={prov}
+                                        onMouseEnter={() => handleProvinceEnter(prov)}
+                                        className={cn(
+                                          'w-full text-left px-3 py-2 text-sm rounded-md transition-colors hover:bg-gray-50',
+                                          openProvince === prov ? 'bg-gray-50 font-semibold text-primary-600' : 'text-gray-700'
+                                        )}
+                                      >
+                                        {prov}
+                                      </button>
+                                    ))}
+                                  </div>
+
+                                  {/* Cities panel (appears to the right of provinces) */}
+                                  {openProvince && (
+                                    <div
+                                      onMouseEnter={() => { if (provinceTimeoutRef.current) clearTimeout(provinceTimeoutRef.current); }}
+                                      className="absolute left-full top-0 ml-3 w-56 max-h-80 overflow-auto bg-white border border-gray-100 rounded-md shadow-md p-2"
+                                    >
+                                      {getCitiesByProvince(openProvince).map((kota) => (
+                                        <Link
+                                          key={kota}
+                                          href={`/catalog?provinsi=${encodeURIComponent(openProvince)}&kota=${encodeURIComponent(kota)}`}
+                                          className="block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-50"
+                                        >
+                                          {kota}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            ) : (
+                              // fallback simple dropdown
+                              <div className="w-48">
+                                {link.dropdown.map((item) => (
+                                  <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className="block px-4 py-3 text-sm font-manrope text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                                  >
+                                    {item.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         )}
                       </>
@@ -327,6 +420,48 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                               {item.label}
                             </Link>
                           ))}
+
+                          {/* Mobile location picker (for Aset links) */}
+                          {(link.label === 'Aset Non Lelang' || link.label === 'Aset Lelang') && (
+                            <div className="mt-3">
+                              <button
+                                onClick={() => setMobileLocationOpen(!mobileLocationOpen)}
+                                className="w-full text-left px-4 py-2 rounded-lg text-sm font-manrope font-medium text-white/90 hover:bg-white/15"
+                              >
+                                Pilih Lokasi
+                              </button>
+
+                              {mobileLocationOpen && (
+                                <div className="mt-2 max-h-64 overflow-auto border-t border-white/10 pt-2">
+                                  {provinces.map((prov) => (
+                                    <div key={prov} className="mb-1">
+                                      <button
+                                        onClick={() => setMobileOpenProvince(mobileOpenProvince === prov ? null : prov)}
+                                        className="w-full text-left px-4 py-2 rounded-md text-sm text-white/90 hover:bg-white/10"
+                                      >
+                                        {prov}
+                                      </button>
+
+                                      {mobileOpenProvince === prov && (
+                                        <div className="ml-4 mt-1 space-y-1">
+                                          {getCitiesByProvince(prov).map((kota) => (
+                                            <Link
+                                              key={kota}
+                                              href={`${link.href}?provinsi=${encodeURIComponent(prov)}&kota=${encodeURIComponent(kota)}`}
+                                              className="block px-4 py-2 rounded-md text-sm text-white/80 hover:bg-white/10"
+                                              onClick={() => setIsMenuOpen(false)}
+                                            >
+                                              {kota}
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
