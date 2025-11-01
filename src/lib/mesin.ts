@@ -147,7 +147,8 @@ export const lelangMesins: MesinLelang[] = [
     image: "/images/products/bulldozer.png",
     startPrice: 950000000,
     endPrice: 1200000000,
-    batasWaktuLelang: "2025-11-25T00:00:00Z",
+    tanggalLelang: "2025-11-17T09:00:00+07:00",
+    batasWaktuLelang: "2025-11-16T17:00:00+07:00",
   },
   {
     id: "LMS2",
@@ -168,7 +169,8 @@ export const lelangMesins: MesinLelang[] = [
     image: "/images/products/wheel-loader.png",
     startPrice: 1100000000,
     endPrice: 1400000000,
-    batasWaktuLelang: "2025-12-10T00:00:00Z",
+    tanggalLelang: "2025-11-25T10:00:00+07:00",
+    batasWaktuLelang: "2025-11-24T17:00:00+07:00",
   },
   {
     id: "LMS3",
@@ -189,7 +191,8 @@ export const lelangMesins: MesinLelang[] = [
     image: "/images/products/genset-perkins.png",
     startPrice: 750000000,
     endPrice: 950000000,
-    batasWaktuLelang: "2025-10-28T00:00:00Z",
+    tanggalLelang: "2025-11-07T14:00:00+07:00",
+    batasWaktuLelang: "2025-11-06T17:00:00+07:00",
   },
 ];
 
