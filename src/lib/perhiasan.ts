@@ -139,7 +139,8 @@ export const lelangPerhiasans: PerhiasanLelang[] = [
     image: "/images/products/perhiasan/perhiasan1.jpg",
     startPrice: 120000000,
     endPrice: 180000000,
-    batasWaktuLelang: "2025-11-20T00:00:00Z",
+    tanggalLelang: "2025-11-13T13:00:00+07:00",
+    batasWaktuLelang: "2025-11-12T17:00:00+07:00",
   },
   {
     id: "LP2",
@@ -159,7 +160,8 @@ export const lelangPerhiasans: PerhiasanLelang[] = [
     image: "/images/products/cincin-zamrud.png",
     startPrice: 250000000,
     endPrice: 350000000,
-    batasWaktuLelang: "2025-12-05T00:00:00Z",
+    tanggalLelang: "2025-11-20T10:00:00+07:00",
+    batasWaktuLelang: "2025-11-19T17:00:00+07:00",
   },
   {
     id: "LP3",
@@ -179,7 +181,8 @@ export const lelangPerhiasans: PerhiasanLelang[] = [
     image: "/images/products/bvlgari-set.png",
     startPrice: 180000000,
     endPrice: 250000000,
-    batasWaktuLelang: "2025-10-25T00:00:00Z",
+    tanggalLelang: "2025-11-06T15:00:00+07:00",
+    batasWaktuLelang: "2025-11-05T17:00:00+07:00",
   },
 ];
 
