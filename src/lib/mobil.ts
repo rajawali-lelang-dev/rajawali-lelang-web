@@ -164,7 +164,8 @@ export const lelangMobils: MobilLelang[] = [
     image: "/images/products/mobil-bmw.png",
     startPrice: 450000000,
     endPrice: 580000000,
-    batasWaktuLelang: "2025-11-15T00:00:00Z",
+    tanggalLelang: "2025-11-10T10:00:00+07:00",
+    batasWaktuLelang: "2025-11-09T17:00:00+07:00",
   },
   {
     id: "LM2",
@@ -187,7 +188,8 @@ export const lelangMobils: MobilLelang[] = [
     image: "/images/products/mobil-mercy.png",
     startPrice: 600000000,
     endPrice: 750000000,
-    batasWaktuLelang: "2025-12-01T00:00:00Z",
+    tanggalLelang: "2025-11-18T14:00:00+07:00",
+    batasWaktuLelang: "2025-11-17T17:00:00+07:00",
   },
   {
     id: "LM3",
@@ -210,7 +212,8 @@ export const lelangMobils: MobilLelang[] = [
     image: "/images/products/mobil-fortuner.png",
     startPrice: 350000000,
     endPrice: 420000000,
-    batasWaktuLelang: "2025-10-30T00:00:00Z",
+    tanggalLelang: "2025-11-04T11:00:00+07:00",
+    batasWaktuLelang: "2025-11-03T17:00:00+07:00",
   },
 ];
 

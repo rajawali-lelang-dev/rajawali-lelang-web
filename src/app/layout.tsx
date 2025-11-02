@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rajawali Lelang Indonesia",
   description: "Platform lelang properti terpercaya di Indonesia",
+  icons: {
+    icon: "/logo.png"
+  },
 };
 
 export default function RootLayout({
