@@ -1,14 +1,9 @@
-﻿import { Metadata } from "next";
-import React from "react";
+﻿"use client";
+
+import React, { useState, useMemo } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { mobils } from "@/lib/mobil";
-
-export const metadata: Metadata = {
-  title: "Mobil Dijual | Rajawali Lelang Indonesia",
-  description:
-    "Temukan mobil terbaik untuk dijual - Sedan, SUV, MPV, Hatchback, dan Pickup dengan harga terjangkau.",
-};
 
 const filterConfig = {
   placeholder: "Cari merk, model, atau tipe mobil...",
@@ -59,31 +54,96 @@ const filterConfig = {
 };
 
 export default function MobilDijualPage() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filters, setFilters] = useState<Record<string, string>>({});
+
+  const filteredMobils = useMemo(() => {
+    return mobils.filter((mobil) => {
+      // Search filter
+      if (searchTerm) {
+        const searchLower = searchTerm.toLowerCase();
+        const matchesSearch =
+          mobil.title.toLowerCase().includes(searchLower) ||
+          mobil.location.toLowerCase().includes(searchLower) ||
+          mobil.brand.toLowerCase().includes(searchLower);
+        if (!matchesSearch) return false;
+      }
+
+      // Price filter
+      if (filters.price) {
+        const [min, max] = filters.price.split("-").map(Number);
+        if (max) {
+          if (mobil.price < min || mobil.price > max) return false;
+        } else {
+          if (mobil.price < min) return false;
+        }
+      }
+
+      // Brand filter
+      if (filters.brand) {
+        if (mobil.brand.toLowerCase() !== filters.brand.toLowerCase())
+          return false;
+      }
+
+      // Transmission filter
+      if (filters.transmission) {
+        if (mobil.transmission.toLowerCase() !== filters.transmission.toLowerCase())
+          return false;
+      }
+
+      // Year filter
+      if (filters.year) {
+        const [min, max] = filters.year.split("-").map(Number);
+        if (max) {
+          if (mobil.year < min || mobil.year > max) return false;
+        } else {
+          if (mobil.year < min) return false;
+        }
+      }
+
+      return true;
+    });
+  }, [searchTerm, filters]);
+
   return (
     <AsetLayout
       title="Mobil Dijual"
       description="Temukan mobil terbaik untuk dijual dengan proses yang mudah, aman, dan menguntungkan"
       filterConfig={filterConfig}
+      onSearch={setSearchTerm}
+      onFilterChange={setFilters}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {mobils.map((mobil) => (
-          <AsetCard
-            key={mobil.id}
-            id={mobil.id}
-            title={mobil.title}
-            location={mobil.location}
-            price={mobil.price}
-            image={mobil.image}
-            status={mobil.status}
-            type="mobil"
-            mode="dijual"
-            additionalInfo={[
-              { label: "Brand", value: mobil.brand },
-              { label: "Tahun", value: mobil.year.toString() },
-              { label: "Transmisi", value: mobil.transmission },
-            ]}
-          />
-        ))}
+        {filteredMobils.length > 0 ? (
+          filteredMobils.map((mobil) => (
+            <AsetCard
+              key={mobil.id}
+              id={mobil.id}
+              title={mobil.title}
+              location={mobil.location}
+              price={mobil.price}
+              image={mobil.image}
+              status={mobil.status}
+              type="mobil"
+              mode="dijual"
+              additionalInfo={[
+                { label: "Brand", value: mobil.brand },
+                { label: "Tahun", value: mobil.year.toString() },
+                { label: "Transmisi", value: mobil.transmission },
+              ]}
+            />
+          ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <p className="text-gray-500 text-lg">
+              Tidak ada mobil yang sesuai dengan filter Anda
+            </p>
+          </div>
+        )}
+      </div>
+
+      <div className="mt-6 text-center text-gray-600">
+        Menampilkan {filteredMobils.length} dari {mobils.length} mobil
       </div>
     </AsetLayout>
   );

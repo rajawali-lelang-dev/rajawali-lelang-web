@@ -1,14 +1,9 @@
-﻿import { Metadata } from "next";
-import React from "react";
+﻿"use client";
+
+import React, { useState, useMemo } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { mesins } from "@/lib/mesin";
-
-export const metadata: Metadata = {
-  title: "Mesin Lelang | Rajawali Lelang Indonesia",
-  description:
-    "Ikuti lelang mesin dan alat berat - Excavator, Generator, Forklift, Crane, Kompresor, dan Mesin Industri dengan harga lelang terbaik.",
-};
 
 const filterConfig = {
   placeholder: "Cari merek, model, atau tipe mesin...",
@@ -60,31 +55,81 @@ const filterConfig = {
 };
 
 export default function MesinLelangPage() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filters, setFilters] = useState<Record<string, string>>({});
+
+  const filteredMesins = useMemo(() => {
+    return mesins.filter((mesin) => {
+      if (searchTerm) {
+        const searchLower = searchTerm.toLowerCase();
+        const matchesSearch =
+          mesin.title.toLowerCase().includes(searchLower) ||
+          mesin.location.toLowerCase().includes(searchLower) ||
+          mesin.brand.toLowerCase().includes(searchLower);
+        if (!matchesSearch) return false;
+      }
+      if (filters.status) {
+        if (mesin.status.toLowerCase() !== filters.status.toLowerCase())
+          return false;
+      }
+      if (filters.type) {
+        if (!mesin.title.toLowerCase().includes(filters.type.toLowerCase()))
+          return false;
+      }
+      if (filters.brand) {
+        if (mesin.brand.toLowerCase() !== filters.brand.toLowerCase())
+          return false;
+      }
+      if (filters.year) {
+        const [min, max] = filters.year.split("-").map(Number);
+        if (max) {
+          if (mesin.year < min || mesin.year > max) return false;
+        } else {
+          if (mesin.year < min) return false;
+        }
+      }
+      return true;
+    });
+  }, [searchTerm, filters]);
+
   return (
     <AsetLayout
       title="Mesin Lelang"
       description="Ikuti lelang mesin dan alat berat terbaik dengan proses yang mudah, aman, dan menguntungkan"
       filterConfig={filterConfig}
+      onSearch={setSearchTerm}
+      onFilterChange={setFilters}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {mesins.map((mesin) => (
-          <AsetCard
-            key={mesin.id}
-            id={mesin.id}
-            title={mesin.title}
-            location={mesin.location}
-            price={mesin.price}
-            image={mesin.image}
-            status={mesin.status}
-            type="mesin"
-            mode="lelang"
-            additionalInfo={[
-              { label: "Brand", value: mesin.brand },
-              { label: "Kondisi", value: mesin.condition },
-              { label: "Tahun", value: mesin.year.toString() },
-            ]}
-          />
-        ))}
+        {filteredMesins.length > 0 ? (
+          filteredMesins.map((mesin) => (
+            <AsetCard
+              key={mesin.id}
+              id={mesin.id}
+              title={mesin.title}
+              location={mesin.location}
+              price={mesin.price}
+              image={mesin.image}
+              status={mesin.status}
+              type="mesin"
+              mode="lelang"
+              additionalInfo={[
+                { label: "Brand", value: mesin.brand },
+                { label: "Kondisi", value: mesin.condition },
+                { label: "Tahun", value: mesin.year.toString() },
+              ]}
+            />
+          ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <p className="text-gray-500 text-lg">
+              Tidak ada mesin yang sesuai dengan filter Anda
+            </p>
+          </div>
+        )}
+      </div>
+      <div className="mt-6 text-center text-gray-600">
+        Menampilkan {filteredMesins.length} dari {mesins.length} mesin
       </div>
     </AsetLayout>
   );

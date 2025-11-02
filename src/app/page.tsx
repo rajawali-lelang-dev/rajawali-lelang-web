@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { ActionCard } from '@/components/common/action-card';
 import ItemCardCarousel from '@/components/common/ItemCardCarousel';
 import Wave from '@/components/vector/wave';
@@ -103,6 +107,35 @@ import { FadeInUp, FadeInScale } from '@/components/common/ScrollAnimation';
   ];
 
 export default function Home() {
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showFilters, setShowFilters] = useState(false);
+  const [filters, setFilters] = useState({
+    price: "",
+    landArea: "",
+    buildingArea: "",
+    sortBy: "",
+  });
+
+  const handleSearch = () => {
+    // Build query string from search and filters
+    const params = new URLSearchParams();
+    if (searchTerm) params.set("search", searchTerm);
+    if (filters.price) params.set("price", filters.price);
+    if (filters.landArea) params.set("landArea", filters.landArea);
+    if (filters.buildingArea) params.set("buildingArea", filters.buildingArea);
+    if (filters.sortBy) params.set("sortBy", filters.sortBy);
+    
+    // Navigate to properti dijual page with filters
+    router.push(`/aset/dijual/properti?${params.toString()}`);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section dengan background image yang naik ke bawah navbar */}
@@ -125,13 +158,17 @@ export default function Home() {
           <div className="rounded-xl bg-transparent mt-4">
             <div className="mt-4 relative">
               <input
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={handleKeyPress}
                 placeholder="Lokasi, keyword, area, project, developer"
                 className="w-full rounded-lg border px-4 py-3 pr-12 bg-white/95 text-sm focus:outline-none"
               />
               <button
                 type="button"
                 aria-label="search"
-                className="absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-secondary-400 flex items-center justify-center text-white shadow-sm"
+                onClick={handleSearch}
+                className="absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-secondary-400 flex items-center justify-center text-white shadow-sm hover:bg-secondary-500 transition-colors"
               >
                 {/* white magnifying glass */}
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -140,12 +177,57 @@ export default function Home() {
                 </svg>
               </button>
             </div>
-            <div className="mt-4 flex items-center gap-3">
-              <button type="button" className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500">Filter</button>
-              <button type="button" className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500">Urutkan</button>
-              <button type="button" className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500">Harga</button>
-              <button type="button" className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500">Luas Tanah</button>
-              <button type="button" className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500">Luas Bangunan</button>
+            <div className="mt-4 flex items-center gap-3 flex-wrap">
+              <button 
+                type="button" 
+                onClick={() => setShowFilters(!showFilters)}
+                className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500 hover:bg-gray-100 transition-colors"
+              >
+                {showFilters ? "Sembunyikan Filter" : "Filter"}
+              </button>
+              <select
+                value={filters.sortBy}
+                onChange={(e) => setFilters({ ...filters, sortBy: e.target.value })}
+                className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500 hover:bg-gray-100 transition-colors"
+              >
+                <option value="">Urutkan</option>
+                <option value="price-asc">Harga Terendah</option>
+                <option value="price-desc">Harga Tertinggi</option>
+                <option value="newest">Terbaru</option>
+              </select>
+              <select
+                value={filters.price}
+                onChange={(e) => setFilters({ ...filters, price: e.target.value })}
+                className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500 hover:bg-gray-100 transition-colors"
+              >
+                <option value="">Harga</option>
+                <option value="0-1000000000">&lt; 1 Miliar</option>
+                <option value="1000000000-5000000000">1 - 5 Miliar</option>
+                <option value="5000000000-10000000000">5 - 10 Miliar</option>
+                <option value="10000000000-999999999999999999">&gt; 10 Miliar</option>
+              </select>
+              <select
+                value={filters.landArea}
+                onChange={(e) => setFilters({ ...filters, landArea: e.target.value })}
+                className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500 hover:bg-gray-100 transition-colors"
+              >
+                <option value="">Luas Tanah</option>
+                <option value="0-100">&lt; 100 m²</option>
+                <option value="100-300">100 - 300 m²</option>
+                <option value="300-500">300 - 500 m²</option>
+                <option value="500+">&gt; 500 m²</option>
+              </select>
+              <select
+                value={filters.buildingArea}
+                onChange={(e) => setFilters({ ...filters, buildingArea: e.target.value })}
+                className="rounded-lg bg-white px-3 py-1 text-xs text-gray-500 hover:bg-gray-100 transition-colors"
+              >
+                <option value="">Luas Bangunan</option>
+                <option value="0-100">&lt; 100 m²</option>
+                <option value="100-200">100 - 200 m²</option>
+                <option value="200-300">200 - 300 m²</option>
+                <option value="300+">&gt; 300 m²</option>
+              </select>
             </div>
           </div>
         </div>

@@ -1,14 +1,9 @@
-import { Metadata } from "next";
-import React from "react";
+"use client";
+
+import React, { useState, useMemo } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { properties } from "@/lib/properti";
-
-export const metadata: Metadata = {
-  title: "Properti Lelang | Rajawali Lelang Indonesia",
-  description:
-    "Ikuti lelang properti terbaik - Rumah, Apartemen, Ruko, Villa, Tanah, dan Gudang dengan harga kompetitif.",
-};
 
 const filterConfig = {
   placeholder: "Cari lokasi, area, atau nama properti...",
@@ -60,36 +55,100 @@ const filterConfig = {
 };
 
 export default function PropertiLelangPage() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filters, setFilters] = useState<Record<string, string>>({});
+
+  const filteredProperties = useMemo(() => {
+    return properties.filter((property) => {
+      // Search filter
+      if (searchTerm) {
+        const searchLower = searchTerm.toLowerCase();
+        const matchesSearch =
+          property.title.toLowerCase().includes(searchLower) ||
+          property.location.toLowerCase().includes(searchLower) ||
+          property.description.toLowerCase().includes(searchLower);
+        if (!matchesSearch) return false;
+      }
+
+      // Price filter
+      if (filters.price) {
+        const [min, max] = filters.price.split("-").map(Number);
+        if (max) {
+          if (property.price < min || property.price > max) return false;
+        } else {
+          if (property.price < min) return false;
+        }
+      }
+
+      // Land area filter
+      if (filters.landArea) {
+        const [min, max] = filters.landArea.split("-").map(Number);
+        if (max) {
+          if (property.landArea < min || property.landArea > max) return false;
+        } else {
+          if (property.landArea < min) return false;
+        }
+      }
+
+      // Type filter
+      if (filters.type) {
+        if (!property.title.toLowerCase().includes(filters.type.toLowerCase()))
+          return false;
+      }
+
+      // Status filter
+      if (filters.status) {
+        if (property.status.toLowerCase() !== filters.status.toLowerCase())
+          return false;
+      }
+
+      return true;
+    });
+  }, [searchTerm, filters]);
+
   return (
     <AsetLayout
       title="Properti Lelang"
       description="Ikuti lelang properti terbaik dengan proses yang mudah, aman, dan menguntungkan"
       filterConfig={filterConfig}
+      onSearch={setSearchTerm}
+      onFilterChange={setFilters}
     >
-      {/* Products Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {properties.map((property) => (
-          <AsetCard
-            key={property.id}
-            id={property.id}
-            title={property.title}
-            location={property.location}
-            price={property.price}
-            image={property.image}
-            status={property.status}
-            type="properti"
-            mode="lelang"
-            additionalInfo={[
-              ...(property.landArea > 0
-                ? [{ label: "Tanah", value: `${property.landArea} m²` }]
-                : []),
-              ...(property.buildingArea > 0
-                ? [{ label: "Bangunan", value: `${property.buildingArea} m²` }]
-                : []),
-              { label: "Sertifikat", value: property.certificateType },
-            ]}
-          />
-        ))}
+        {filteredProperties.length > 0 ? (
+          filteredProperties.map((property) => (
+            <AsetCard
+              key={property.id}
+              id={property.id}
+              title={property.title}
+              location={property.location}
+              price={property.price}
+              image={property.image}
+              status={property.status}
+              type="properti"
+              mode="lelang"
+              additionalInfo={[
+                ...(property.landArea > 0
+                  ? [{ label: "Tanah", value: `${property.landArea} m²` }]
+                  : []),
+                ...(property.buildingArea > 0
+                  ? [{ label: "Bangunan", value: `${property.buildingArea} m²` }]
+                  : []),
+                { label: "Sertifikat", value: property.certificateType },
+              ]}
+            />
+          ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <p className="text-gray-500 text-lg">
+              Tidak ada properti yang sesuai dengan filter Anda
+            </p>
+          </div>
+        )}
+      </div>
+
+      <div className="mt-6 text-center text-gray-600">
+        Menampilkan {filteredProperties.length} dari {properties.length} properti
       </div>
     </AsetLayout>
   );
