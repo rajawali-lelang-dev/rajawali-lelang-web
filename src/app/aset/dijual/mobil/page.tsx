@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import React from "react";
-import DijualCard from "@/components/dijual/dijual-card";
-import { mesins } from "@/lib/mesin";
+import DijualCard from "@/components/aset/dijual/dijual-card";
+import { mobils } from "@/lib/mobil";
 
 export const metadata: Metadata = {
-  title: "Mesin Dijual | Rajawali Lelang Indonesia",
+  title: "Mobil Dijual | Rajawali Lelang Indonesia",
   description:
-    "Temukan mesin dan alat berat terbaik untuk dijual - Excavator, Generator, Forklift, Crane, Kompresor, dan Mesin Industri dengan harga terjangkau.",
+    "Temukan mobil terbaik untuk dijual - Sedan, SUV, MPV, Hatchback, Pickup, dan Sport dengan harga terjangkau.",
 };
 
-export default function MesinPage() {
+export default function MobilPage() {
   return (
     <>
       {/* Filter Section */}
@@ -18,7 +18,7 @@ export default function MesinPage() {
         <div className="mb-4 relative">
           <input
             type="text"
-            placeholder="             Cari merek, model, atau tipe mesin..."
+            placeholder="             Cari merek, model, atau tipe mobil..."
             className="w-full rounded-lg border border-gray-300 px-4 py-3 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           <button
@@ -53,70 +53,68 @@ export default function MesinPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
             <option value="">Harga</option>
-            <option value="0-200000000">&lt; 200 Juta</option>
-            <option value="200000000-500000000">200 - 500 Juta</option>
-            <option value="500000000-1000000000">500 Juta - 1 Miliar</option>
-            <option value="1000000000-2000000000">1 - 2 Miliar</option>
-            <option value="2000000000+">&gt; 2 Miliar</option>
+            <option value="0-100000000">&lt; 100 Juta</option>
+            <option value="100000000-200000000">100 - 200 Juta</option>
+            <option value="200000000-400000000">200 - 400 Juta</option>
+            <option value="400000000-700000000">400 - 700 Juta</option>
+            <option value="700000000+">&gt; 700 Juta</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Tipe Mesin</option>
-            <option value="alat-berat">Alat Berat</option>
-            <option value="mesin-industri">Mesin Industri</option>
-            <option value="generator">Generator</option>
-            <option value="kompresor">Kompresor</option>
-            <option value="forklift">Forklift</option>
-            <option value="crane">Crane</option>
+            <option value="">Tipe Mobil</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="mpv">MPV</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="pickup">Pickup</option>
+            <option value="sport">Sport</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
             <option value="">Merek</option>
-            <option value="komatsu">Komatsu</option>
-            <option value="caterpillar">Caterpillar</option>
-            <option value="volvo">Volvo</option>
-            <option value="hitachi">Hitachi</option>
-            <option value="cummins">Cummins</option>
-            <option value="perkins">Perkins</option>
-            <option value="atlas-copco">Atlas Copco</option>
             <option value="toyota">Toyota</option>
-            <option value="hino">Hino</option>
+            <option value="honda">Honda</option>
             <option value="mitsubishi">Mitsubishi</option>
+            <option value="mazda">Mazda</option>
+            <option value="daihatsu">Daihatsu</option>
+            <option value="suzuki">Suzuki</option>
+            <option value="nissan">Nissan</option>
+            <option value="bmw">BMW</option>
+            <option value="mercedes-benz">Mercedes-Benz</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
             <option value="">Tahun</option>
-            <option value="2023-2025">2023 - 2025</option>
-            <option value="2020-2022">2020 - 2022</option>
-            <option value="2017-2019">2017 - 2019</option>
-            <option value="2014-2016">2014 - 2016</option>
-            <option value="0-2013">&lt; 2014</option>
+            <option value="2024-2025">2024 - 2025</option>
+            <option value="2021-2023">2021 - 2023</option>
+            <option value="2018-2020">2018 - 2020</option>
+            <option value="2015-2017">2015 - 2017</option>
+            <option value="0-2014">&lt; 2015</option>
           </select>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Kondisi</option>
-            <option value="baru">Baru</option>
-            <option value="bekas-sangat-baik">Bekas - Sangat Baik</option>
-            <option value="bekas-baik">Bekas - Baik</option>
-            <option value="perlu-perbaikan">Perlu Perbaikan</option>
+            <option value="">Transmisi</option>
+            <option value="manual">Manual</option>
+            <option value="automatic">Automatic</option>
+            <option value="cvt">CVT</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Kapasitas</option>
-            <option value="0-50">Kecil (&lt; 50 KW/Ton)</option>
-            <option value="50-200">Sedang (50 - 200 KW/Ton)</option>
-            <option value="200-500">Besar (200 - 500 KW/Ton)</option>
-            <option value="500+">Sangat Besar (&gt; 500 KW/Ton)</option>
+            <option value="">Bahan Bakar</option>
+            <option value="bensin">Bensin</option>
+            <option value="diesel">Diesel</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="electric">Electric</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Jam Operasi</option>
-            <option value="0-2000">&lt; 2,000 jam</option>
-            <option value="2000-5000">2,000 - 5,000 jam</option>
-            <option value="5000-10000">5,000 - 10,000 jam</option>
-            <option value="10000+">&gt; 10,000 jam</option>
+            <option value="">Kilometer</option>
+            <option value="0-20000">&lt; 20,000 km</option>
+            <option value="20000-50000">20,000 - 50,000 km</option>
+            <option value="50000-100000">50,000 - 100,000 km</option>
+            <option value="100000+">&gt; 100,000 km</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
@@ -168,11 +166,11 @@ export default function MesinPage() {
 
       {/* Products Grid */}
       <div className="grid grid-cols-3 sm:grid-cols-3 gap-6">
-        {mesins.map((mesin) => (
+        {mobils.map((mobil) => (
           <DijualCard
-            key={mesin.id}
-            item={mesin}
-            href={`/dijual/mesin/${mesin.id}`}
+            key={mobil.id}
+            item={mobil}
+            href={`/aset/dijual/mobil/${mobil.id}`}
           />
         ))}
       </div>

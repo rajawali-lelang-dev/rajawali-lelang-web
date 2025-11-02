@@ -247,7 +247,7 @@ export default function PropertiPage() {
                 description={property.description}
                 status={property.status}
                 image={property.image}
-                href={`/aset-lelang/properti/${property.id}`}
+                href={`/aset/lelang/properti/${property.id}`}
               />
             ))}
           </div>

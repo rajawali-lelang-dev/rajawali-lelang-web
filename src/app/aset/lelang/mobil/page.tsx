@@ -2,23 +2,23 @@
 
 import React, { useState, useMemo } from "react";
 import ContactSection from "@/components/layout/contact";
-import { lelangPerhiasans, getPerhiasanTypes, getMaterialTypes } from "@/lib/perhiasan";
+import { lelangMobils, getMobilTypes, getUniqueBrands } from "@/lib/mobil";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function PerhiasanLelangPage() {
+export default function MobilLelangPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filters, setFilters] = useState({
     priceRange: "",
-    weight: "",
+    year: "",
     type: "",
-    material: "",
+    brand: "",
     status: "",
   });
 
   // Get filter options
-  const perhiasanTypes = getPerhiasanTypes();
-  const materialTypes = getMaterialTypes();
+  const mobilTypes = getMobilTypes();
+  const brands = getUniqueBrands();
 
   // Format price
   const formatPrice = (price: number) => {
@@ -44,16 +44,17 @@ export default function PerhiasanLelangPage() {
   };
 
   // Filter logic
-  const filteredPerhiasans = useMemo(() => {
-    return lelangPerhiasans.filter((item) => {
+  const filteredMobils = useMemo(() => {
+    return lelangMobils.filter((item) => {
       // Search filter
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         const matchesSearch =
           item.title.toLowerCase().includes(query) ||
           item.location.toLowerCase().includes(query) ||
-          item.description.toLowerCase().includes(query) ||
-          (item.brand && item.brand.toLowerCase().includes(query));
+          item.brand.toLowerCase().includes(query) ||
+          item.model.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query);
         if (!matchesSearch) return false;
       }
 
@@ -67,21 +68,22 @@ export default function PerhiasanLelangPage() {
         }
       }
 
-      // Weight filter (in grams)
-      if (filters.weight) {
-        const [min, max] = filters.weight.split("-").map(Number);
-        if (max) {
-          if (item.weight < min || item.weight > max) return false;
+      // Year filter
+      if (filters.year) {
+        const currentYear = new Date().getFullYear();
+        if (filters.year === "2020+") {
+          if (item.year < 2020) return false;
         } else {
-          if (item.weight < min) return false;
+          const [min, max] = filters.year.split("-").map(Number);
+          if (item.year < min || item.year > max) return false;
         }
       }
 
       // Type filter
       if (filters.type && item.type !== filters.type) return false;
 
-      // Material filter
-      if (filters.material && item.material !== filters.material) return false;
+      // Brand filter
+      if (filters.brand && item.brand !== filters.brand) return false;
 
       // Status filter
       if (filters.status && item.status !== filters.status) return false;
@@ -98,9 +100,9 @@ export default function PerhiasanLelangPage() {
     setSearchQuery("");
     setFilters({
       priceRange: "",
-      weight: "",
+      year: "",
       type: "",
-      material: "",
+      brand: "",
       status: "",
     });
   };
@@ -114,7 +116,7 @@ export default function PerhiasanLelangPage() {
           <div className="mb-4 relative">
             <input
               type="text"
-              placeholder="             Cari lokasi, jenis perhiasan, atau merek..."
+              placeholder="             Cari lokasi, merek, model, atau tipe mobil..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-4 py-3 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -155,24 +157,23 @@ export default function PerhiasanLelangPage() {
               className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               <option value="">Harga</option>
-              <option value="0-50000000">&lt; 50 Juta</option>
-              <option value="50000000-100000000">50 - 100 Juta</option>
-              <option value="100000000-200000000">100 - 200 Juta</option>
-              <option value="200000000-500000000">200 - 500 Juta</option>
-              <option value="500000000+">&gt; 500 Juta</option>
+              <option value="0-200000000">&lt; 200 Juta</option>
+              <option value="200000000-400000000">200 - 400 Juta</option>
+              <option value="400000000-600000000">400 - 600 Juta</option>
+              <option value="600000000-1000000000">600 Juta - 1 Miliar</option>
+              <option value="1000000000+">&gt; 1 Miliar</option>
             </select>
 
             <select
-              value={filters.weight}
-              onChange={(e) => handleFilterChange("weight", e.target.value)}
+              value={filters.year}
+              onChange={(e) => handleFilterChange("year", e.target.value)}
               className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
-              <option value="">Berat</option>
-              <option value="0-5">&lt; 5 gram</option>
-              <option value="5-10">5 - 10 gram</option>
-              <option value="10-20">10 - 20 gram</option>
-              <option value="20-50">20 - 50 gram</option>
-              <option value="50+">&gt; 50 gram</option>
+              <option value="">Tahun</option>
+              <option value="2020+">2020 ke atas</option>
+              <option value="2017-2019">2017 - 2019</option>
+              <option value="2014-2016">2014 - 2016</option>
+              <option value="2010-2013">2010 - 2013</option>
             </select>
 
             <select
@@ -180,8 +181,8 @@ export default function PerhiasanLelangPage() {
               onChange={(e) => handleFilterChange("type", e.target.value)}
               className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
-              <option value="">Jenis Perhiasan</option>
-              {perhiasanTypes.map((type) => (
+              <option value="">Tipe Mobil</option>
+              {mobilTypes.map((type) => (
                 <option key={type} value={type}>
                   {type}
                 </option>
@@ -189,14 +190,14 @@ export default function PerhiasanLelangPage() {
             </select>
 
             <select
-              value={filters.material}
-              onChange={(e) => handleFilterChange("material", e.target.value)}
+              value={filters.brand}
+              onChange={(e) => handleFilterChange("brand", e.target.value)}
               className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
-              <option value="">Material</option>
-              {materialTypes.map((material) => (
-                <option key={material} value={material}>
-                  {material}
+              <option value="">Merek</option>
+              {brands.map((brand) => (
+                <option key={brand} value={brand}>
+                  {brand}
                 </option>
               ))}
             </select>
@@ -256,24 +257,35 @@ export default function PerhiasanLelangPage() {
 
       {/* Products Grid */}
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        {filteredPerhiasans.length > 0 ? (
+        {filteredMobils.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {filteredPerhiasans.map((perhiasan) => (
-              <div key={perhiasan.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+            {filteredMobils.map((mobil) => (
+              <div key={mobil.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
                 {/* Image Section */}
                 <div className="relative h-52 w-full">
-                  <Image src={perhiasan.image} alt={perhiasan.title} fill className="object-cover" />
+                  <Image src={mobil.image} alt={mobil.title} fill className="object-cover" />
                   {/* Status Badge */}
-                  <div className={`absolute top-3 right-3 ${getStatusColor(perhiasan.status)} text-white px-3 py-1 rounded-md text-xs font-semibold`}>
-                    {perhiasan.status}
+                  <div className={`absolute top-3 right-3 ${getStatusColor(mobil.status)} text-white px-3 py-1 rounded-md text-xs font-semibold`}>
+                    {mobil.status}
+                  </div>
+                  {/* Year Badge */}
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-semibold text-gray-800">
+                    {mobil.year}
                   </div>
                 </div>
 
                 {/* Content Section */}
                 <div className="p-4">
+                  {/* Brand & Model */}
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-semibold text-primary-600 uppercase">{mobil.brand}</span>
+                    <span className="text-xs text-gray-400">•</span>
+                    <span className="text-xs text-gray-600">{mobil.type}</span>
+                  </div>
+
                   {/* Title */}
                   <h3 className="font-manrope font-bold text-lg text-neutral-800 mb-1 line-clamp-1">
-                    {perhiasan.title}
+                    {mobil.title}
                   </h3>
 
                   {/* Location */}
@@ -282,52 +294,60 @@ export default function PerhiasanLelangPage() {
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
-                    {perhiasan.location}
+                    {mobil.location}
                   </p>
 
                   {/* Price Range */}
                   <div className="mb-3">
                     <p className="text-xs text-gray-600 mb-1">Harga Awal</p>
                     <p className="font-manrope font-bold text-xl text-red-600">
-                      {formatPrice(perhiasan.startPrice)}
+                      {formatPrice(mobil.startPrice)}
                     </p>
                   </div>
 
-                  {/* Perhiasan Details */}
-                  <div className="flex items-center gap-4 mb-3 text-xs text-neutral-600">
+                  {/* Mobil Details */}
+                  <div className="grid grid-cols-2 gap-2 mb-3 text-xs text-neutral-600">
                     <div className="flex items-center gap-1">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <circle cx="12" cy="12" r="10" />
-                        <path d="M12 6v6l4 2" />
+                        <polyline points="12 6 12 12 16 14" />
                       </svg>
-                      <span>{perhiasan.weight}g</span>
+                      <span>{mobil.mileage.toLocaleString('id-ID')} km</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                       </svg>
-                      <span>{perhiasan.material}</span>
+                      <span>{mobil.transmission}</span>
                     </div>
-                    {perhiasan.karat && (
-                      <div className="flex items-center gap-1">
-                        <span>{perhiasan.karat}K</span>
-                      </div>
-                    )}
+                    <div className="flex items-center gap-1">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M12 2v20M2 12h20" />
+                      </svg>
+                      <span>{mobil.fuelType}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10" />
+                      </svg>
+                      <span>{mobil.engineCapacity} cc</span>
+                    </div>
                   </div>
 
                   {/* Description */}
                   <p className="font-manrope text-xs text-neutral-600 mb-4 line-clamp-2 leading-relaxed">
-                    {perhiasan.description}
+                    {mobil.description}
                   </p>
 
                   <div className="grid md:grid-cols-[80%_20%] gap-2">
-                    <Link href={`/aset-lelang/perhiasan/${perhiasan.id}`} className="w-full">
+                    <Link href={`/aset/lelang/mobil/${mobil.id}`} className="w-full">
                       <button className="w-full text-primary-600 hover:bg-neutral-100 bg-white border-1 border-primary-600 font-semibold py-2.5 rounded-lg transition-colors">
                         Lihat Detail
                       </button>
                     </Link>
                     <Link
-                      href={`https://wa.me/6281234567890?text=Saya tertarik dengan ${perhiasan.title}`}
+                      href={`https://wa.me/6281234567890?text=Saya tertarik dengan ${mobil.title}`}
                       target="_blank"
                       className="w-full"
                     >
@@ -359,7 +379,7 @@ export default function PerhiasanLelangPage() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-gray-700 mb-2">
-              Tidak ada perhiasan ditemukan
+              Tidak ada mobil ditemukan
             </h3>
             <p className="text-gray-500 mb-4">
               Coba ubah filter pencarian Anda

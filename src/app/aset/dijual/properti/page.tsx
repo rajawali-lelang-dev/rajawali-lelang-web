@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import React from "react";
-import DijualCard from "@/components/dijual/dijual-card";
-import { perhiasans } from "@/lib/perhiasan";
+import DijualCard from "@/components/aset/dijual/dijual-card";
+import { properties } from "@/lib/properti";
 
 export const metadata: Metadata = {
-  title: "Perhiasan Dijual | Rajawali Lelang Indonesia",
+  title: "Properti Dijual | Rajawali Lelang Indonesia",
   description:
-    "Temukan perhiasan terbaik untuk dijual - Cincin, Kalung, Gelang, Anting, Bros, dan Liontin dengan harga terjangkau.",
+    "Temukan properti terbaik untuk dijual - Rumah, Ruko, Villa, Apartemen, Tanah, dan Gudang dengan harga terjangkau.",
 };
 
-export default function PerhiasanPage() {
+export default function PropertyPage() {
   return (
     <>
       {/* Filter Section */}
@@ -18,7 +18,7 @@ export default function PerhiasanPage() {
         <div className="mb-4 relative">
           <input
             type="text"
-            placeholder="             Cari brand, material, atau jenis perhiasan..."
+            placeholder="             Cari lokasi, area, atau nama properti..."
             className="w-full rounded-lg border border-gray-300 px-4 py-3 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           <button
@@ -53,64 +53,28 @@ export default function PerhiasanPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
             <option value="">Harga</option>
-            <option value="0-10000000">&lt; 10 Juta</option>
-            <option value="10000000-50000000">10 - 50 Juta</option>
-            <option value="50000000-100000000">50 - 100 Juta</option>
-            <option value="100000000-500000000">100 - 500 Juta</option>
-            <option value="500000000+">&gt; 500 Juta</option>
+            <option value="0-1000000000">&lt; 1 Miliar</option>
+            <option value="1000000000-5000000000">1 - 5 Miliar</option>
+            <option value="5000000000-10000000000">5 - 10 Miliar</option>
+            <option value="10000000000+">&gt; 10 Miliar</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Jenis Perhiasan</option>
-            <option value="cincin">Cincin</option>
-            <option value="kalung">Kalung</option>
-            <option value="gelang">Gelang</option>
-            <option value="anting">Anting</option>
-            <option value="bros">Bros</option>
-            <option value="liontin">Liontin</option>
+            <option value="">Luas Tanah</option>
+            <option value="0-100">&lt; 100 m²</option>
+            <option value="100-300">100 - 300 m²</option>
+            <option value="300-500">300 - 500 m²</option>
+            <option value="500+">&gt; 500 m²</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Material</option>
-            <option value="emas">Emas</option>
-            <option value="perak">Perak</option>
-            <option value="platinum">Platinum</option>
-            <option value="berlian">Berlian</option>
-            <option value="mutiara">Mutiara</option>
-            <option value="batu-permata">Batu Permata</option>
-          </select>
-
-          <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Kondisi</option>
-            <option value="baru">Baru</option>
-            <option value="bekas-sangat-baik">Bekas - Sangat Baik</option>
-            <option value="bekas-baik">Bekas - Baik</option>
-            <option value="antik">Antik</option>
-          </select>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-          <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Berat (gram)</option>
-            <option value="0-5">&lt; 5 gram</option>
-            <option value="5-10">5 - 10 gram</option>
-            <option value="10-20">10 - 20 gram</option>
-            <option value="20+">&gt; 20 gram</option>
-          </select>
-
-          <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Karat</option>
-            <option value="18">18K</option>
-            <option value="22">22K</option>
-            <option value="24">24K</option>
-          </select>
-
-          <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option value="">Brand</option>
-            <option value="tiffany">Tiffany & Co</option>
-            <option value="cartier">Cartier</option>
-            <option value="bvlgari">Bvlgari</option>
-            <option value="other">Lainnya</option>
+            <option value="">Jenis Properti</option>
+            <option value="rumah">Rumah</option>
+            <option value="ruko">Ruko</option>
+            <option value="villa">Villa</option>
+            <option value="apartemen">Apartemen</option>
+            <option value="tanah">Tanah</option>
+            <option value="gudang">Gudang</option>
           </select>
 
           <select className="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
@@ -161,12 +125,12 @@ export default function PerhiasanPage() {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 gap-6">
-        {perhiasans.map((perhiasan) => (
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-6">
+        {properties.map((property) => (
           <DijualCard
-            key={perhiasan.id}
-            item={perhiasan}
-            href={`/dijual/perhiasan/${perhiasan.id}`}
+            key={property.id}
+            item={property}
+            href={`/aset/dijual/properti/${property.id}`}
           />
         ))}
       </div>

@@ -343,7 +343,7 @@ export default function MesinLelangPage() {
                   </p>
 
                   <div className="grid md:grid-cols-[80%_20%] gap-2">
-                    <Link href={`/aset-lelang/mesin/${mesin.id}`} className="w-full">
+                    <Link href={`/aset/lelang/mesin/${mesin.id}`} className="w-full">
                       <button className="w-full text-primary-600 hover:bg-neutral-100 bg-white border-1 border-primary-600 font-semibold py-2.5 rounded-lg transition-colors">
                         Lihat Detail
                       </button>

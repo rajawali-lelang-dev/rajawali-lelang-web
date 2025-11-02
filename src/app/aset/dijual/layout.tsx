@@ -18,7 +18,7 @@ export default function DijualLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname() || "/dijual/properti";
+  const pathname = usePathname() || "/aset/dijual/properti";
   const parts = pathname.split("/").filter(Boolean);
   const category = parts[1] ?? "properti";
 
