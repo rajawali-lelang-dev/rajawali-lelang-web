@@ -48,7 +48,7 @@ const property = properties[0]
             </span>
             <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
               property.status === 'Featured' ? 'bg-yellow-400 text-slate-900' :
-              property.status === 'Lelang Aktif' ? 'bg-red-500 text-white' :
+              property.status === 'Available' ? 'bg-red-500 text-white' :
               'bg-blue-500 text-white'
             }`}>
               {property.status}

@@ -6,7 +6,8 @@ import { Navbar01 } from '../ui/shadcn-io/navbar'
 
 const Header = () => {
   const pathname = usePathname()
-  const isHomePage = pathname === '/'
+  const homePageRoutes = ['/', '/find-properti', '/iklankan-properti'];
+  const isHomePage = homePageRoutes.includes(pathname);
 
   return (
     <header className="w-full">
