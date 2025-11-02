@@ -271,10 +271,7 @@ export default function KprPage() {
           </FadeInUp>
         </div>
 
-        {/* CTA Section */}
-        <FadeInUp delay={0}>
-            <ContactSection />
-        </FadeInUp>
+
       </div>
     </div>
   )
