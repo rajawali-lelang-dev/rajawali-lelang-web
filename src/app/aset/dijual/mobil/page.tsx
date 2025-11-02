@@ -1,14 +1,20 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { mobils } from "@/lib/mobil";
+import { vehicles } from "@/lib/mobil";
+import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
   placeholder: "Cari merk, model, atau tipe mobil...",
   filters: [
     [
+      {
+        label: "Provinsi",
+        name: "provinsi",
+        options: getAllProvinces().map(p => ({ value: p, label: p })),
+      },
       {
         label: "Harga",
         name: "price",
@@ -57,7 +63,16 @@ export default function MobilDijualPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  const filteredMobils = useMemo(() => {
+  // Check for province from navbar on mount
+  useEffect(() => {
+    const selectedProvince = sessionStorage.getItem('selectedProvince');
+    if (selectedProvince) {
+      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+      sessionStorage.removeItem('selectedProvince');
+    }
+  }, []);
+
+  const filteredVehicles = useMemo(() => {
     return mobils.filter((mobil) => {
       // Search filter
       if (searchTerm) {
@@ -67,6 +82,11 @@ export default function MobilDijualPage() {
           mobil.location.toLowerCase().includes(searchLower) ||
           mobil.brand.toLowerCase().includes(searchLower);
         if (!matchesSearch) return false;
+      }
+
+      // Province filter
+      if (filters.provinsi) {
+        if (mobil.provinsi !== filters.provinsi) return false;
       }
 
       // Price filter

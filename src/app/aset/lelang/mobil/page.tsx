@@ -1,14 +1,20 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { mobils } from "@/lib/mobil";
+import { vehicles } from "@/lib/mobil";
+import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
   placeholder: "Cari merk, model, atau tipe mobil...",
   filters: [
     [
+      {
+        label: "Provinsi",
+        name: "provinsi",
+        options: getAllProvinces().map(p => ({ value: p, label: p })),
+      },
       {
         label: "Status",
         name: "status",
@@ -56,7 +62,16 @@ export default function MobilLelangPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  const filteredMobils = useMemo(() => {
+  // Check for province from navbar on mount
+  useEffect(() => {
+    const selectedProvince = sessionStorage.getItem('selectedProvince');
+    if (selectedProvince) {
+      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+      sessionStorage.removeItem('selectedProvince');
+    }
+  }, []);
+
+  const filteredVehicles = useMemo(() => {
     return mobils.filter((mobil) => {
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
@@ -65,6 +80,9 @@ export default function MobilLelangPage() {
           mobil.location.toLowerCase().includes(searchLower) ||
           mobil.brand.toLowerCase().includes(searchLower);
         if (!matchesSearch) return false;
+      }
+      if (filters.provinsi) {
+        if (mobil.provinsi !== filters.provinsi) return false;
       }
       if (filters.status) {
         if (mobil.status.toLowerCase() !== filters.status.toLowerCase())

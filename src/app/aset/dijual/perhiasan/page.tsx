@@ -1,14 +1,20 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { perhiasans } from "@/lib/perhiasan";
+import { jewelry } from "@/lib/perhiasan";
+import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
   placeholder: "Cari brand, material, atau jenis perhiasan...",
   filters: [
     [
+      {
+        label: "Provinsi",
+        name: "provinsi",
+        options: getAllProvinces().map(p => ({ value: p, label: p })),
+      },
       {
         label: "Harga",
         name: "price",
@@ -58,7 +64,16 @@ export default function PerhiasanDijualPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  const filteredPerhiasans = useMemo(() => {
+  // Check for province from navbar on mount
+  useEffect(() => {
+    const selectedProvince = sessionStorage.getItem('selectedProvince');
+    if (selectedProvince) {
+      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+      sessionStorage.removeItem('selectedProvince');
+    }
+  }, []);
+
+  const filteredJewelry = useMemo(() => {
     return perhiasans.filter((perhiasan) => {
       // Search filter
       if (searchTerm) {
@@ -68,6 +83,11 @@ export default function PerhiasanDijualPage() {
           perhiasan.location.toLowerCase().includes(searchLower) ||
           perhiasan.material.toLowerCase().includes(searchLower);
         if (!matchesSearch) return false;
+      }
+
+      // Province filter
+      if (filters.provinsi) {
+        if (perhiasan.provinsi !== filters.provinsi) return false;
       }
 
       // Price filter

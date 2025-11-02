@@ -1,14 +1,20 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { properties } from "@/lib/properti";
+import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
   placeholder: "Cari lokasi, area, atau nama properti...",
   filters: [
     [
+      {
+        label: "Provinsi",
+        name: "provinsi",
+        options: getAllProvinces().map(p => ({ value: p, label: p })),
+      },
       {
         label: "Harga",
         name: "price",
@@ -58,6 +64,16 @@ export default function PropertiDijualPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
+  // Check for province from navbar on mount
+  useEffect(() => {
+    const selectedProvince = sessionStorage.getItem('selectedProvince');
+    if (selectedProvince) {
+      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+      // Clear it so it doesn't apply on every page visit
+      sessionStorage.removeItem('selectedProvince');
+    }
+  }, []);
+
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
       // Search filter
@@ -68,6 +84,11 @@ export default function PropertiDijualPage() {
           property.location.toLowerCase().includes(searchLower) ||
           property.description.toLowerCase().includes(searchLower);
         if (!matchesSearch) return false;
+      }
+
+      // Province filter
+      if (filters.provinsi) {
+        if (property.provinsi !== filters.provinsi) return false;
       }
 
       // Price filter

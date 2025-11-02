@@ -1,14 +1,20 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { mesins } from "@/lib/mesin";
+import { machines } from "@/lib/mesin";
+import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
   placeholder: "Cari merek, model, atau tipe mesin...",
   filters: [
     [
+      {
+        label: "Provinsi",
+        name: "provinsi",
+        options: getAllProvinces().map(p => ({ value: p, label: p })),
+      },
       {
         label: "Status",
         name: "status",
@@ -58,7 +64,16 @@ export default function MesinLelangPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  const filteredMesins = useMemo(() => {
+  // Check for province from navbar on mount
+  useEffect(() => {
+    const selectedProvince = sessionStorage.getItem('selectedProvince');
+    if (selectedProvince) {
+      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+      sessionStorage.removeItem('selectedProvince');
+    }
+  }, []);
+
+  const filteredMachines = useMemo(() => {
     return mesins.filter((mesin) => {
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
@@ -67,6 +82,9 @@ export default function MesinLelangPage() {
           mesin.location.toLowerCase().includes(searchLower) ||
           mesin.brand.toLowerCase().includes(searchLower);
         if (!matchesSearch) return false;
+      }
+      if (filters.provinsi) {
+        if (mesin.provinsi !== filters.provinsi) return false;
       }
       if (filters.status) {
         if (mesin.status.toLowerCase() !== filters.status.toLowerCase())

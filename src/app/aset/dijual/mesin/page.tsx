@@ -1,14 +1,20 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { mesins } from "@/lib/mesin";
+import { machines } from "@/lib/mesin";
+import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
   placeholder: "Cari merek, model, atau tipe mesin...",
   filters: [
     [
+      {
+        label: "Provinsi",
+        name: "provinsi",
+        options: getAllProvinces().map(p => ({ value: p, label: p })),
+      },
       {
         label: "Harga",
         name: "price",
@@ -59,7 +65,16 @@ export default function MesinDijualPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  const filteredMesins = useMemo(() => {
+  // Check for province from navbar on mount
+  useEffect(() => {
+    const selectedProvince = sessionStorage.getItem('selectedProvince');
+    if (selectedProvince) {
+      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+      sessionStorage.removeItem('selectedProvince');
+    }
+  }, []);
+
+  const filteredMachines = useMemo(() => {
     return mesins.filter((mesin) => {
       // Search filter
       if (searchTerm) {
@@ -69,6 +84,11 @@ export default function MesinDijualPage() {
           mesin.location.toLowerCase().includes(searchLower) ||
           mesin.brand.toLowerCase().includes(searchLower);
         if (!matchesSearch) return false;
+      }
+
+      // Province filter
+      if (filters.provinsi) {
+        if (mesin.provinsi !== filters.provinsi) return false;
       }
 
       // Price filter
