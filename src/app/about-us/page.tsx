@@ -196,7 +196,7 @@ export default function AboutUsPage() {
               Layanan Kami
             </h2>
             <p className="font-manrope text-neutral-700 text-lg mb-8">
-              RLI Auction menawarkan berbagai layanan meliputi:
+              Rajawali Lelang Indo action menawarkan berbagai layanan meliputi:
             </p>
           </FadeInUp>
           

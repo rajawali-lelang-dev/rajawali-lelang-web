@@ -66,18 +66,18 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
     href: '/catalog', 
     label: 'Aset Non Lelang',
     dropdown: [
-      { href: '/dijual/properti', label: 'Properti' },
-      { href: '/dijual/perhiasan', label: 'Perhiasan' },
-      { href: '/dijual/mobil', label: 'Mobil' },
-      { href: '/dijual/mesin', label: 'Mesin' },
+      { href: '/aset/dijual/properti', label: 'Properti' },
+      { href: '/aset/dijual/perhiasan', label: 'Perhiasan' },
+      { href: '/aset/dijual/mobil', label: 'Mobil' },
+      { href: '/aset/dijual/mesin', label: 'Mesin' },
     ]
   },
-  { href: '/aset-lelang', label: 'Aset Lelang',
+  { href: '/aset/lelang', label: 'Aset Lelang',
     dropdown : [
-      { href: '/aset-lelang/properti', label: 'Properti' },
-      { href: '/aset-lelang/perhiasan', label: 'Perhiasan' },
-      { href: '/aset-lelang/mobil', label: 'Mobil' },
-      { href: '/aset-lelang/mesin', label: 'Mesin' },
+      { href: '/aset/lelang/properti', label: 'Properti' },
+      { href: '/aset/lelang/perhiasan', label: 'Perhiasan' },
+      { href: '/aset/lelang/mobil', label: 'Mobil' },
+      { href: '/aset/lelang/mesin', label: 'Mesin' },
 
     ]
   },

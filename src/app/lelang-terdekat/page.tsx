@@ -117,7 +117,6 @@ export default function NearestLelangPage() {
           </div>
         )}
       </div>
-      <ContactSection />
     </div>
   )
 }
