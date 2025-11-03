@@ -393,7 +393,7 @@ const property = properties[0]
             <h2 className="font-manrope font-bold text-3xl text-slate-800">
               Properti Lainnya yang Tersedia
             </h2>
-            <Link href="/aset-lelang" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2">
+            <Link href="/aset/lelang" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2">
               Lihat Semua
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
