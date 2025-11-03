@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { machines } from "@/lib/mesin";
+import {mesins} from "@/lib/mesin";
 import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
@@ -119,8 +119,8 @@ export default function MesinLelangPage() {
       onFilterChange={setFilters}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredMesins.length > 0 ? (
-          filteredMesins.map((mesin) => (
+        {filteredMachines.length > 0 ? (
+          filteredMachines.map((mesin) => (
             <AsetCard
               key={mesin.id}
               id={mesin.id}
@@ -147,7 +147,7 @@ export default function MesinLelangPage() {
         )}
       </div>
       <div className="mt-6 text-center text-gray-600">
-        Menampilkan {filteredMesins.length} dari {mesins.length} mesin
+        Menampilkan {filteredMachines.length} dari {mesins.length} mesin
       </div>
     </AsetLayout>
   );

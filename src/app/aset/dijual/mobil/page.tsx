@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { vehicles } from "@/lib/mobil";
+import { mobils } from "@/lib/mobil";
 import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
@@ -134,8 +134,8 @@ export default function MobilDijualPage() {
       onFilterChange={setFilters}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredMobils.length > 0 ? (
-          filteredMobils.map((mobil) => (
+        {filteredVehicles.length > 0 ? (
+          filteredVehicles.map((mobil) => (
             <AsetCard
               key={mobil.id}
               id={mobil.id}
@@ -163,7 +163,7 @@ export default function MobilDijualPage() {
       </div>
 
       <div className="mt-6 text-center text-gray-600">
-        Menampilkan {filteredMobils.length} dari {mobils.length} mobil
+        Menampilkan {filteredVehicles.length} dari {mobils.length} mobil
       </div>
     </AsetLayout>
   );

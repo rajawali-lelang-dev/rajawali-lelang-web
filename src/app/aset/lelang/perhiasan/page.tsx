@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { jewelry } from "@/lib/perhiasan";
+import { perhiasans } from "@/lib/perhiasan";
 import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
@@ -118,8 +118,8 @@ export default function PerhiasanLelangPage() {
       onFilterChange={setFilters}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredPerhiasans.length > 0 ? (
-          filteredPerhiasans.map((perhiasan) => (
+        {filteredJewelry.length > 0 ? (
+          filteredJewelry.map((perhiasan) => (
             <AsetCard
               key={perhiasan.id}
               id={perhiasan.id}
@@ -146,7 +146,7 @@ export default function PerhiasanLelangPage() {
         )}
       </div>
       <div className="mt-6 text-center text-gray-600">
-        Menampilkan {filteredPerhiasans.length} dari {perhiasans.length} perhiasan
+        Menampilkan {filteredJewelry.length} dari {perhiasans.length} perhiasan
       </div>
     </AsetLayout>
   );

@@ -2,11 +2,14 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { properties } from '@/lib/properti'
-import { mobils } from '@/lib/mobil'
-import { perhiasans } from '@/lib/perhiasan'
-import { mesins } from '@/lib/mesin'
+import { properties, Property } from '@/lib/properti'
+import { mobils, Mobil } from '@/lib/mobil'
+import { perhiasans, Perhiasan } from '@/lib/perhiasan'
+import { mesins, Mesin } from '@/lib/mesin'
 import AsetCard from '@/components/aset/aset-card'
+
+// Union type for all items
+type AsetItem = Property | Mobil | Perhiasan | Mesin
 
 interface PageProps {
   params: Promise<{
@@ -16,7 +19,7 @@ interface PageProps {
   }>
 }
 
-function getItemById(type: string, id: string) {
+function getItemById(type: string, id: string): AsetItem | undefined {
   switch (type) {
     case 'properti':
       return properties.find(p => p.id === id)
@@ -27,11 +30,11 @@ function getItemById(type: string, id: string) {
     case 'mesin':
       return mesins.find(m => m.id === id)
     default:
-      return null
+      return undefined
   }
 }
 
-function getAllItems(type: string) {
+function getAllItems(type: string): AsetItem[] {
   switch (type) {
     case 'properti':
       return properties
@@ -94,28 +97,24 @@ export default async function AsetDetailPage({ params }: PageProps) {
       return [
         ...(item.landArea > 0 ? [{ label: 'Tanah', value: `${item.landArea} m²` }] : []),
         ...(item.buildingArea > 0 ? [{ label: 'Bangunan', value: `${item.buildingArea} m²` }] : []),
-        { label: 'Sertifikat', value: item.certificateType },
+        { label: 'Sertifikat', value: item.certificateType ?? '' },
       ]
     }
     if (type === 'mobil' && 'brand' in item) {
       return [
-        { label: 'Brand', value: item.brand },
-        { label: 'Tahun', value: item.year.toString() },
-        { label: 'Transmisi', value: item.transmission },
+        { label: 'Brand', value: item.brand ?? '' },
       ]
     }
     if (type === 'perhiasan' && 'material' in item) {
       return [
-        { label: 'Material', value: item.material },
+        { label: 'Material', value: item.material ?? '' },
         { label: 'Berat', value: `${item.weight} gram` },
         ...(item.karat ? [{ label: 'Karat', value: `${item.karat}K` }] : []),
       ]
     }
     if (type === 'mesin' && 'brand' in item) {
       return [
-        { label: 'Brand', value: item.brand },
-        { label: 'Kondisi', value: item.condition },
-        { label: 'Tahun', value: item.year.toString() },
+        { label: 'Brand', value: item.brand ?? '' },
       ]
     }
     return []
@@ -133,7 +132,7 @@ export default async function AsetDetailPage({ params }: PageProps) {
             </span>
             <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
               item.status === 'Featured' ? 'bg-yellow-400 text-slate-900' :
-              item.status === 'Lelang Aktif' || item.status === 'Available' ? 'bg-red-500 text-white' :
+              item.status === 'Available' ? 'bg-red-500 text-white' :
               'bg-blue-500 text-white'
             }`}>
               {item.status}
@@ -320,7 +319,7 @@ export default async function AsetDetailPage({ params }: PageProps) {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {otherItems.map((otherItem: any) => (
+            {otherItems.map((otherItem) => (
               <AsetCard
                 key={otherItem.id}
                 id={otherItem.id}
