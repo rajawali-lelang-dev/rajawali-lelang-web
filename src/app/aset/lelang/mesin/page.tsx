@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import {mesins} from "@/lib/mesin";
+import { lelangMesins } from "@/lib/mesin";
 import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
@@ -19,9 +19,9 @@ const filterConfig = {
         label: "Status",
         name: "status",
         options: [
-          { value: "active", label: "Lelang Aktif" },
-          { value: "featured", label: "Featured" },
-          { value: "segera", label: "Segera" },
+          { value: "Lelang Aktif", label: "Lelang Aktif" },
+          { value: "Lelang Segera", label: "Lelang Segera" },
+          { value: "Lelang Selesai", label: "Lelang Selesai" },
         ],
       },
       {
@@ -67,14 +67,21 @@ export default function MesinLelangPage() {
   // Check for province from navbar on mount
   useEffect(() => {
     const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+    const selectedKota = sessionStorage.getItem('selectedKota');
+    
+    if (selectedProvince || selectedKota) {
+      setFilters(prev => ({
+        ...prev,
+        ...(selectedProvince && { provinsi: selectedProvince }),
+        ...(selectedKota && { kota: selectedKota })
+      }));
       sessionStorage.removeItem('selectedProvince');
+      sessionStorage.removeItem('selectedKota');
     }
   }, []);
 
   const filteredMachines = useMemo(() => {
-    return mesins.filter((mesin) => {
+    return lelangMesins.filter((mesin) => {
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         const matchesSearch =
@@ -86,8 +93,11 @@ export default function MesinLelangPage() {
       if (filters.provinsi) {
         if (mesin.provinsi !== filters.provinsi) return false;
       }
+      if (filters.kota) {
+        if (mesin.kota !== filters.kota) return false;
+      }
       if (filters.status) {
-        if (mesin.status.toLowerCase() !== filters.status.toLowerCase())
+        if (mesin.status !== filters.status)
           return false;
       }
       if (filters.type) {
@@ -126,7 +136,7 @@ export default function MesinLelangPage() {
               id={mesin.id}
               title={mesin.title}
               location={mesin.location}
-              price={mesin.price}
+              price={mesin.startPrice}
               image={mesin.image}
               status={mesin.status}
               type="mesin"
@@ -147,7 +157,7 @@ export default function MesinLelangPage() {
         )}
       </div>
       <div className="mt-6 text-center text-gray-600">
-        Menampilkan {filteredMachines.length} dari {mesins.length} mesin
+        Menampilkan {filteredMachines.length} dari {lelangMesins.length} mesin
       </div>
     </AsetLayout>
   );

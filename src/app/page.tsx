@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ActionCard } from '@/components/common/action-card';
 import ItemCardCarousel from '@/components/common/ItemCardCarousel';
@@ -10,80 +10,11 @@ import Wave from '@/components/vector/wave';
 import ReviewCarousel from '@/components/common/ReviewCard';
 import { FadeInUp, FadeInScale } from '@/components/common/ScrollAnimation';
 import LelangCard from '@/components/lelang-terdekat/LelangCard';
-import { lelangProperties } from '@/lib/properti';
+import { lelangProperties, properties } from '@/lib/properti';
 import { lelangMobils } from '@/lib/mobil';
 import { lelangPerhiasans } from '@/lib/perhiasan';
 import { lelangMesins } from '@/lib/mesin';
 import { sortByTanggalLelang, filterLelangAktif } from '@/lib/lelang-utils';
-
-  const featured = [
-    {
-      title: 'Dive Villa Thoddoo Villa', 
-      href: '/property/1',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 1.250.000.000',
-      area: '180 m²',
-      beds: 3,
-      baths: 2,
-      carSpace: 2,
-    },
-    {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/2',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 1.350.000.000',
-      area: '200 m²',
-      beds: 4,
-      baths: 3,
-      carSpace: 3,
-    },
-    {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-     {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-     {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-     {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-  ];
 
   const reviews = [
     {
@@ -123,6 +54,23 @@ export default function Home() {
     buildingArea: "",
     sortBy: "",
   });
+
+  // Get top 8 newest properties for featured section
+  const featuredProperties = useMemo(() => {
+    return properties
+      .slice(0, 8) // Take top 8 properties
+      .map(property => ({
+        title: property.title,
+        href: `/aset/dijual/properti/${property.id}`,
+        imageSrc: property.image,
+        location: property.location,
+        price: `Rp ${property.price.toLocaleString('id-ID')}`,
+        area: `${property.landArea} m²`,
+        beds: 0, // Not available in current data structure
+        baths: 0, // Not available in current data structure
+        carSpace: 0, // Not available in current data structure
+      }));
+  }, []);
 
   const handleSearch = () => {
     // Build query string from search and filters
@@ -348,7 +296,7 @@ export default function Home() {
           </FadeInUp>
           
           <FadeInUp delay={200}>
-            <ItemCardCarousel items={featured} />
+            <ItemCardCarousel items={featuredProperties} />
           </FadeInUp>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { perhiasans } from "@/lib/perhiasan";
+import { lelangPerhiasans } from "@/lib/perhiasan";
 import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
@@ -19,9 +19,9 @@ const filterConfig = {
         label: "Status",
         name: "status",
         options: [
-          { value: "active", label: "Lelang Aktif" },
-          { value: "featured", label: "Featured" },
-          { value: "segera", label: "Segera" },
+          { value: "Lelang Aktif", label: "Lelang Aktif" },
+          { value: "Lelang Segera", label: "Lelang Segera" },
+          { value: "Lelang Selesai", label: "Lelang Selesai" },
         ],
       },
       {
@@ -66,14 +66,21 @@ export default function PerhiasanLelangPage() {
   // Check for province from navbar on mount
   useEffect(() => {
     const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+    const selectedKota = sessionStorage.getItem('selectedKota');
+    
+    if (selectedProvince || selectedKota) {
+      setFilters(prev => ({
+        ...prev,
+        ...(selectedProvince && { provinsi: selectedProvince }),
+        ...(selectedKota && { kota: selectedKota })
+      }));
       sessionStorage.removeItem('selectedProvince');
+      sessionStorage.removeItem('selectedKota');
     }
   }, []);
 
   const filteredJewelry = useMemo(() => {
-    return perhiasans.filter((perhiasan) => {
+    return lelangPerhiasans.filter((perhiasan) => {
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         const matchesSearch =
@@ -85,8 +92,11 @@ export default function PerhiasanLelangPage() {
       if (filters.provinsi) {
         if (perhiasan.provinsi !== filters.provinsi) return false;
       }
+      if (filters.kota) {
+        if (perhiasan.kota !== filters.kota) return false;
+      }
       if (filters.status) {
-        if (perhiasan.status.toLowerCase() !== filters.status.toLowerCase())
+        if (perhiasan.status !== filters.status)
           return false;
       }
       if (filters.type) {
@@ -125,7 +135,7 @@ export default function PerhiasanLelangPage() {
               id={perhiasan.id}
               title={perhiasan.title}
               location={perhiasan.location}
-              price={perhiasan.price}
+              price={perhiasan.startPrice}
               image={perhiasan.image}
               status={perhiasan.status}
               type="perhiasan"
@@ -146,7 +156,7 @@ export default function PerhiasanLelangPage() {
         )}
       </div>
       <div className="mt-6 text-center text-gray-600">
-        Menampilkan {filteredJewelry.length} dari {perhiasans.length} perhiasan
+        Menampilkan {filteredJewelry.length} dari {lelangPerhiasans.length} perhiasan
       </div>
     </AsetLayout>
   );

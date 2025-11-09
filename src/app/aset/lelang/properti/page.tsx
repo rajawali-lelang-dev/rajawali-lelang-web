@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { properties } from "@/lib/properti";
+import { lelangProperties } from "@/lib/properti";
 import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
@@ -51,9 +51,9 @@ const filterConfig = {
         label: "Status Lelang",
         name: "status",
         options: [
-          { value: "aktif", label: "Lelang Aktif" },
-          { value: "featured", label: "Featured" },
-          { value: "segera", label: "Segera" },
+          { value: "Lelang Aktif", label: "Lelang Aktif" },
+          { value: "Lelang Segera", label: "Lelang Segera" },
+          { value: "Lelang Selesai", label: "Lelang Selesai" },
         ],
       },
     ],
@@ -67,14 +67,21 @@ export default function PropertiLelangPage() {
   // Check for province from navbar on mount
   useEffect(() => {
     const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+    const selectedKota = sessionStorage.getItem('selectedKota');
+    
+    if (selectedProvince || selectedKota) {
+      setFilters(prev => ({
+        ...prev,
+        ...(selectedProvince && { provinsi: selectedProvince }),
+        ...(selectedKota && { kota: selectedKota })
+      }));
       sessionStorage.removeItem('selectedProvince');
+      sessionStorage.removeItem('selectedKota');
     }
   }, []);
 
   const filteredProperties = useMemo(() => {
-    return properties.filter((property) => {
+    return lelangProperties.filter((property) => {
       // Search filter
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
@@ -90,13 +97,18 @@ export default function PropertiLelangPage() {
         if (property.provinsi !== filters.provinsi) return false;
       }
 
+      // Kota filter
+      if (filters.kota) {
+        if (property.kota !== filters.kota) return false;
+      }
+
       // Price filter
       if (filters.price) {
         const [min, max] = filters.price.split("-").map(Number);
         if (max) {
-          if (property.price < min || property.price > max) return false;
+          if (property.startPrice < min || property.endPrice > max) return false;
         } else {
-          if (property.price < min) return false;
+          if (property.startPrice < min) return false;
         }
       }
 
@@ -112,13 +124,13 @@ export default function PropertiLelangPage() {
 
       // Type filter
       if (filters.type) {
-        if (!property.title.toLowerCase().includes(filters.type.toLowerCase()))
+        if (property.type.toLowerCase() !== filters.type.toLowerCase())
           return false;
       }
 
       // Status filter
       if (filters.status) {
-        if (property.status.toLowerCase() !== filters.status.toLowerCase())
+        if (property.status !== filters.status)
           return false;
       }
 
@@ -142,7 +154,7 @@ export default function PropertiLelangPage() {
               id={property.id}
               title={property.title}
               location={property.location}
-              price={property.price}
+              price={property.startPrice}
               image={property.image}
               status={property.status}
               type="properti"
@@ -168,7 +180,7 @@ export default function PropertiLelangPage() {
       </div>
 
       <div className="mt-6 text-center text-gray-600">
-        Menampilkan {filteredProperties.length} dari {properties.length} properti
+        Menampilkan {filteredProperties.length} dari {lelangProperties.length} properti
       </div>
     </AsetLayout>
   );

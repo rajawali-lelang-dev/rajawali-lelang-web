@@ -15,7 +15,7 @@ export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
-        <div className="absolute -left-48 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30">
+         <div className="absolute -left-48 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30 overflow-hidden">
           <div className="relative w-full h-full">
              <Image
                 src="/images/about-us/elipsis.png"
@@ -339,11 +339,11 @@ export default function AboutUsPage() {
       </div>
 
       {/* Dasar Hukum Lelang Section */}
-      <div id="dasar-hukum" className="py-16 bg-secondary-50 w-full">
-        <div className="absolute -left-20 top-7/8 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block opacity-30 overflow-x-hidden">
+      <div id="dasar-hukum" className="py-16 bg-primary-50 w-full">
+        <div className="absolute -left-20 top-7/8 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block opacity-30 overflow-x-hidden rotate-180">
           <div className="relative w-full h-full">
              <Image
-                src="/images/about-us/elipsis_red.png"
+                src="/images/about-us/elipsis.png"
                 alt="Decorator"
                 fill
                 className="object-contain"
@@ -353,10 +353,10 @@ export default function AboutUsPage() {
         </div>
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <FadeInUp delay={0}>
-            <h2 className="font-manrope font-bold text-4xl text-secondary-900 mb-4">
+            <h2 className="font-manrope font-bold text-4xl text-primary-900 mb-4">
               Dasar Hukum Lelang
             </h2>
-            <p className="font-manrope text-secondary-700 text-lg mb-12">
+            <p className="font-manrope text-primary-700 text-lg mb-12">
               Landasan hukum yang mengatur pelaksanaan lelang di Indonesia
             </p>
           </FadeInUp>
