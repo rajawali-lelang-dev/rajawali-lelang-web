@@ -2,81 +2,19 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import Link from "next/link";
 import { ActionCard } from '@/components/common/action-card';
 import ItemCardCarousel from '@/components/common/ItemCardCarousel';
 import Wave from '@/components/vector/wave';
 import ReviewCarousel from '@/components/common/ReviewCard';
 import { FadeInUp, FadeInScale } from '@/components/common/ScrollAnimation';
-
-  const featured = [
-    {
-      title: 'Dive Villa Thoddoo Villa', 
-      href: '/property/1',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 1.250.000.000',
-      area: '180 m²',
-      beds: 3,
-      baths: 2,
-      carSpace: 2,
-    },
-    {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/2',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 1.350.000.000',
-      area: '200 m²',
-      beds: 4,
-      baths: 3,
-      carSpace: 3,
-    },
-    {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-     {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-     {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-     {
-      title: 'Dive Villa Thoddoo Villa',
-      href: '/property/3',
-      imageSrc: '/images/assets/item-card.svg',
-      location: 'Bintaro, Jakarta Selatan',
-      price: 'Rp 980.000.000',
-      area: '150 m²',
-      beds: 2,
-      baths: 1,
-      carSpace: 2,
-    },
-  ];
+import LelangCard from '@/components/lelang-terdekat/LelangCard';
+import { lelangProperties, properties } from '@/lib/properti';
+import { lelangMobils } from '@/lib/mobil';
+import { lelangPerhiasans } from '@/lib/perhiasan';
+import { lelangMesins } from '@/lib/mesin';
+import { sortByTanggalLelang, filterLelangAktif } from '@/lib/lelang-utils';
 
   const reviews = [
     {
@@ -116,6 +54,23 @@ export default function Home() {
     buildingArea: "",
     sortBy: "",
   });
+
+  // Get top 8 newest properties for featured section
+  const featuredProperties = useMemo(() => {
+    return properties
+      .slice(0, 8) // Take top 8 properties
+      .map(property => ({
+        title: property.title,
+        href: `/aset/dijual/properti/${property.id}`,
+        imageSrc: property.image,
+        location: property.location,
+        price: `Rp ${property.price.toLocaleString('id-ID')}`,
+        area: `${property.landArea} m²`,
+        beds: 0, // Not available in current data structure
+        baths: 0, // Not available in current data structure
+        carSpace: 0, // Not available in current data structure
+      }));
+  }, []);
 
   const handleSearch = () => {
     // Build query string from search and filters
@@ -233,6 +188,57 @@ export default function Home() {
         </div>
 
       </section>
+
+      {/* Lelang Terdekat Section */}
+      <section className="py-12 bg-gradient-to-br from-primary-50 via-primary-100 to-neutral-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <FadeInUp delay={0}>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+              <div>
+                <h2 className="text-3xl font-bold text-primary-900 mb-2">Lelang Terdekat</h2>
+                <p className="text-neutral-600">Jangan lewatkan kesempatan lelang terbaik!</p>
+              </div>
+              <Link 
+                href="/lelang-terdekat"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors shadow-md hover:shadow-lg"
+              >
+                Lihat Semua
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="transition-transform group-hover:translate-x-1">
+                  <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            </div>
+          </FadeInUp>
+
+          <div className="grid grid-cols-1 gap-6">
+            {(() => {
+              // Aggregate all lelang items
+              const allLelang = [
+                ...lelangProperties.map(item => ({ ...item, type: 'Properti' as const })),
+                ...lelangMobils.map(item => ({ ...item, type: 'Mobil' as const })),
+                ...lelangPerhiasans.map(item => ({ ...item, type: 'Perhiasan' as const })),
+                ...lelangMesins.map(item => ({ ...item, type: 'Mesin' as const })),
+              ];
+
+              // Filter active and sort by date, take top 5
+              const upcomingLelang = sortByTanggalLelang(filterLelangAktif(allLelang)).slice(0, 5);
+
+              return upcomingLelang.map((item, index) => (
+                <FadeInScale key={`${item.type}-${item.id}`} >
+                  <LelangCard
+                    image={item.image}
+                    title={item.title}
+                    tanggalLelang={item.tanggalLelang}
+                    location={item.location}
+                    type={item.type}
+                    status={item.status}
+                  />
+                </FadeInScale>
+              ));
+            })()}
+          </div>
+        </div>
+      </section>
       
       {/* Action Cards Section */}
       <FadeInUp delay={0}>
@@ -290,7 +296,7 @@ export default function Home() {
           </FadeInUp>
           
           <FadeInUp delay={200}>
-            <ItemCardCarousel items={featured} />
+            <ItemCardCarousel items={featuredProperties} />
           </FadeInUp>
         </div>
       </div>

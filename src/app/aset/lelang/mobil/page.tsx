@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
-import { mobils } from "@/lib/mobil";
+import { lelangMobils } from "@/lib/mobil";
 import { getAllProvinces } from "@/lib/province";
 
 const filterConfig = {
@@ -19,9 +19,9 @@ const filterConfig = {
         label: "Status",
         name: "status",
         options: [
-          { value: "active", label: "Lelang Aktif" },
-          { value: "featured", label: "Featured" },
-          { value: "segera", label: "Segera" },
+          { value: "Lelang Aktif", label: "Lelang Aktif" },
+          { value: "Lelang Segera", label: "Lelang Segera" },
+          { value: "Lelang Selesai", label: "Lelang Selesai" },
         ],
       },
       {
@@ -65,14 +65,21 @@ export default function MobilLelangPage() {
   // Check for province from navbar on mount
   useEffect(() => {
     const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
+    const selectedKota = sessionStorage.getItem('selectedKota');
+    
+    if (selectedProvince || selectedKota) {
+      setFilters(prev => ({
+        ...prev,
+        ...(selectedProvince && { provinsi: selectedProvince }),
+        ...(selectedKota && { kota: selectedKota })
+      }));
       sessionStorage.removeItem('selectedProvince');
+      sessionStorage.removeItem('selectedKota');
     }
   }, []);
 
   const filteredVehicles = useMemo(() => {
-    return mobils.filter((mobil) => {
+    return lelangMobils.filter((mobil) => {
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         const matchesSearch =
@@ -84,8 +91,11 @@ export default function MobilLelangPage() {
       if (filters.provinsi) {
         if (mobil.provinsi !== filters.provinsi) return false;
       }
+      if (filters.kota) {
+        if (mobil.kota !== filters.kota) return false;
+      }
       if (filters.status) {
-        if (mobil.status.toLowerCase() !== filters.status.toLowerCase())
+        if (mobil.status !== filters.status)
           return false;
       }
       if (filters.brand) {
@@ -124,7 +134,7 @@ export default function MobilLelangPage() {
               id={mobil.id}
               title={mobil.title}
               location={mobil.location}
-              price={mobil.price}
+              price={mobil.startPrice}
               image={mobil.image}
               status={mobil.status}
               type="mobil"
@@ -145,7 +155,7 @@ export default function MobilLelangPage() {
         )}
       </div>
       <div className="mt-6 text-center text-gray-600">
-        Menampilkan {filteredVehicles.length} dari {mobils.length} mobil
+        Menampilkan {filteredVehicles.length} dari {lelangMobils.length} mobil
       </div>
     </AsetLayout>
   );

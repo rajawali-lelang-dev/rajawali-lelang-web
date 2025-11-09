@@ -316,17 +316,24 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                                         onMouseEnter={() => handleProvinceEnter(prov)}
                                         onMouseLeave={handleProvinceLeave}
                                       >
-                                        <button
+                                        <Link
+                                          href={`${link.href}?provinsi=${encodeURIComponent(prov)}`}
                                           className={cn(
                                             'w-full text-left px-3 py-2.5 text-sm rounded-lg transition-colors flex items-center justify-between group',
                                             openProvince === prov 
                                               ? 'bg-primary-50 text-primary-600 font-medium' 
                                               : 'text-gray-700 hover:bg-gray-50'
                                           )}
+                                          onClick={() => {
+                                            // Store province in sessionStorage for page to read
+                                            sessionStorage.setItem('selectedProvince', prov);
+                                            setOpenDropdown(null);
+                                            setOpenProvince(null);
+                                          }}
                                         >
                                           <span>{prov}</span>
                                           <ChevronDown className="w-4 h-4 -rotate-90 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        </button>
+                                        </Link>
 
                                         {/* Cities submenu - appears to the right */}
                                         {openProvince === prov && (
@@ -466,12 +473,27 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                                 <div className="mt-2 max-h-64 overflow-auto border-t border-white/10 pt-2">
                                   {provinces.map((prov) => (
                                     <div key={prov} className="mb-1">
-                                      <button
-                                        onClick={() => setMobileOpenProvince(mobileOpenProvince === prov ? null : prov)}
-                                        className="w-full text-left px-4 py-2 rounded-md text-sm text-white/90 hover:bg-white/10"
-                                      >
-                                        {prov}
-                                      </button>
+                                      <div className="flex items-center">
+                                        <Link
+                                          href={`${link.href}?provinsi=${encodeURIComponent(prov)}`}
+                                          className="flex-1 text-left px-4 py-2 rounded-md text-sm text-white/90 hover:bg-white/10"
+                                          onClick={() => {
+                                            sessionStorage.setItem('selectedProvince', prov);
+                                            setIsMenuOpen(false);
+                                          }}
+                                        >
+                                          {prov}
+                                        </Link>
+                                        <button
+                                          onClick={() => setMobileOpenProvince(mobileOpenProvince === prov ? null : prov)}
+                                          className="px-2 py-2 text-white/70 hover:text-white"
+                                        >
+                                          <ChevronDown className={cn(
+                                            "w-4 h-4 transition-transform",
+                                            mobileOpenProvince === prov && "rotate-180"
+                                          )} />
+                                        </button>
+                                      </div>
 
                                       {mobileOpenProvince === prov && (
                                         <div className="ml-4 mt-1 space-y-1">
@@ -480,7 +502,11 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                                               key={kota}
                                               href={`${link.href}?provinsi=${encodeURIComponent(prov)}&kota=${encodeURIComponent(kota)}`}
                                               className="block px-4 py-2 rounded-md text-sm text-white/80 hover:bg-white/10"
-                                              onClick={() => setIsMenuOpen(false)}
+                                              onClick={() => {
+                                                sessionStorage.setItem('selectedProvince', prov);
+                                                sessionStorage.setItem('selectedKota', kota);
+                                                setIsMenuOpen(false);
+                                              }}
                                             >
                                               {kota}
                                             </Link>
