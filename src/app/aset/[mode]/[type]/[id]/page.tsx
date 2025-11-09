@@ -123,7 +123,7 @@ export default async function AsetDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-slate-100">
       {/* Hero Section with Background */}
-      <div className="relative bg-gradient-to-r from-[#1C1A1C] to-[#2D446B] pt-20 pb-32">
+      <div className="relative pt-20 pb-32 bg-primary-100 ">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           {/* Badges */}
           <div className="flex gap-2 mb-4">
@@ -140,7 +140,7 @@ export default async function AsetDetailPage({ params }: PageProps) {
           </div>
 
           {/* Title and Location */}
-          <h1 className="font-manrope font-bold text-4xl md:text-5xl text-white mb-3">
+          <h1 className="font-manrope font-bold text-4xl md:text-5xl text-primary-700 mb-3">
             {item.title}
           </h1>
           {item.location && (
@@ -154,7 +154,7 @@ export default async function AsetDetailPage({ params }: PageProps) {
           )}
 
           {/* Price */}
-          <div className="text-white mb-2">
+          <div className="text-primary-700 mb-2">
             <p className="text-5xl font-bold mb-2">{formatPrice(item.price)}</p>
             {mode === 'lelang' && (
               <p className="text-white/80 text-sm">Penawaran Terbuka — Harga dapat berubah sesuai lelang</p>
