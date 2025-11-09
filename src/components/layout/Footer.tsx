@@ -10,20 +10,16 @@ const Footer = () => {
       { label: 'Tentang Kami', href: '/about-us' },
       { label: 'Karir', href: '/career' },
       { label: 'Blog', href: '/blog' },
-      { label: 'Kontak', href: '/contact' },
     ],
     services: [
-      { label: 'Properti Dijual', href: '/dijual' },
-      { label: 'Properti Disewa', href: '/disewa' },
-      { label: 'Properti Baru', href: '/properti-baru' },
-      { label: 'Aset Bank', href: '/aset-bank' },
-      { label: 'Kalkulator KPR', href: '/kpr' },
+      { label: 'Properti Dijual', href: '/aset/dijual/properti' },
+      { label: 'Properti Lelang', href: '/aset/lelang/properti' },
     ],
     support: [
       { label: 'Pusat Bantuan', href: '/help' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Syarat & Ketentuan', href: '/terms' },
-      { label: 'Kebijakan Privasi', href: '/privacy' },
+      { label: 'FAQ', href: '/ho' },
+      { label: 'Syarat & Ketentuan', href: '/about-us' },
+      { label: 'Kebijakan Privasi', href: '/about-us' },
     ],
   }
 
