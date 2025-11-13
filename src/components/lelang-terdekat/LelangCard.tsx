@@ -5,7 +5,7 @@ import { CalendarDays, Clock, MapPin } from 'lucide-react'
 import { getCountdownText, getStatusBadgeColor } from '@/lib/lelang-utils'
 
 interface LelangCardProps {
-  image: string
+  image: string[]
   title: string
   tanggalLelang: string // ISO 8601 format
   location: string
@@ -46,7 +46,7 @@ export default function LelangCard({
       {/* Gambar */}
       <div className="relative w-full md:w-1/3 h-56 md:h-auto">
         <Image
-          src={image}
+          src={image[0]}
           alt={title}
           fill
           className="object-cover"

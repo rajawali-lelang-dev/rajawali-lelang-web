@@ -362,7 +362,11 @@ export default function DijualCard({
     >
       <div className="relative h-52 w-full">
         <Image
-          src={item.image}
+          src={
+            Array.isArray(item.image)
+              ? item.image[0] ?? "/placeholder.png"
+              : item.image ?? "/placeholder.png"
+          }
           alt={item.title}
           fill
           className="object-cover"

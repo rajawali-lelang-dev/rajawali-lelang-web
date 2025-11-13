@@ -84,7 +84,7 @@ const property = properties[0]
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="relative h-96">
                 <Image
-                  src={property.image}
+                  src={Array.isArray(property.image) ? property.image[0] : property.image || '/images/default-property.jpg'}
                   alt={property.title}
                   fill
                   className="object-cover"
@@ -104,7 +104,7 @@ const property = properties[0]
                 {[1, 2, 3, 4, 5].map((i) => (
                   <div key={i} className="relative h-20 rounded-lg overflow-hidden cursor-pointer hover:opacity-80">
                     <Image
-                      src={property.image}
+                      src={Array.isArray(property.image) ? (property.image[i - 1] ?? property.image[0]) : property.image || '/images/default-property.jpg'}
                       alt={`Thumbnail ${i}`}
                       fill
                       className="object-cover"
@@ -407,6 +407,7 @@ const property = properties[0]
               <ProductCard
                 key={prop.id}
                 {...prop}
+                image={prop.image ?? ['/images/default-property.jpg']}
               />
             ))}
           </div>

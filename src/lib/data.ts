@@ -5,7 +5,7 @@ export interface BaseItem {
   type: string;
   description: string;
   status: string;
-  image: string;
+  image?: string[];
 }
 
 // Base Interface untuk item yang dijual (non-lelang)

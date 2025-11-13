@@ -136,7 +136,7 @@ export default function PerhiasanLelangPage() {
               title={perhiasan.title}
               location={perhiasan.location}
               price={perhiasan.startPrice}
-              image={perhiasan.image}
+              image={perhiasan.image || []}
               status={perhiasan.status}
               type="perhiasan"
               mode="lelang"

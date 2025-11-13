@@ -142,7 +142,7 @@ export default function MobilDijualPage() {
               title={mobil.title}
               location={mobil.location}
               price={mobil.price}
-              image={mobil.image}
+              image={mobil.image || []}
               status={mobil.status}
               type="mobil"
               mode="dijual"

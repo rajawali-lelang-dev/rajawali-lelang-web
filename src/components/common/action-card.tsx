@@ -5,10 +5,6 @@ import Image from 'next/image';
 export interface ActionCardProps {
   title: string;
   href?: string;
-  /**
-   * Prefer passing a React node for vector icons (SVG component).
-   * If imgSrc is provided it will render a Next/Image instead.
-   */
   icon?: React.ReactNode;
   imgSrc?: string;
   imgAlt?: string;
@@ -30,19 +26,21 @@ export const ActionCard: React.FC<ActionCardProps> = ({
       role={href ? undefined : 'button'}
       onClick={onClick}
       className={[
-        'group flex flex-col items-center justify-center gap-4 rounded-lg bg-white shadow-md py-6 px-8 text-center transition-transform duration-200',
+        'group flex flex-col items-center justify-center gap-4',
+        'w-40 h-40', // ✅ Fixed width and height
+        'rounded-lg bg-white shadow-md py-6 px-8 text-center transition-transform duration-200',
         'hover:scale-[1.02] hover:shadow-xl',
         className,
       ].join(' ')}
     >
-      <div className="h-full w-full bg-transparent flex items-center justify-center transition-all duration-200 group-hover:scale-[1.06]">
+      <div className="h-12 w-12 flex items-center justify-center transition-all duration-200 group-hover:scale-[1.06]">
         {imgSrc ? (
-          <Image src={imgSrc} alt={imgAlt} width={48} height={48} className="object-contain w-3/4" />
+          <Image src={imgSrc} alt={imgAlt} width={48} height={48} className="object-contain" />
         ) : (
           icon ?? null
         )}
       </div>
-      <div className="text-xs font-medium text-slate-700">{title}</div>
+      <div className="text-xs font-medium text-slate-700 line-clamp-2">{title}</div>
     </div>
   );
 
