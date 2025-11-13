@@ -145,7 +145,7 @@ export default function PropertiDijualPage() {
               title={property.title}
               location={property.location}
               price={property.price}
-              image={property.image}
+              image={property.image || []}
               status={property.status}
               type="properti"
               mode="dijual"

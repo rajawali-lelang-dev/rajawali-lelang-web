@@ -144,7 +144,7 @@ export default function MesinDijualPage() {
               title={mesin.title}
               location={mesin.location}
               price={mesin.price}
-              image={mesin.image}
+              image={mesin.image ?? []}
               status={mesin.status}
               type="mesin"
               mode="dijual"

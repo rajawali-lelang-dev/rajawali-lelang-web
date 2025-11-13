@@ -11,7 +11,7 @@ interface ProductCardProps {
   certificateType: "SHM" | "HGB";
   description: string;
   status: "Lelang Aktif" | "Lelang Segera" | "Lelang Selesai" | "Featured" | "Segera" | "Default" | "Available" | "Sold";
-  image: string;
+  image: string[];
   href?: string;
 }
 
@@ -60,7 +60,7 @@ export default function ProductCard({
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
       {/* Image Section */}
       <div className="relative h-52 w-full">
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image src={image[0]} alt={title} fill className="object-cover" />
         {/* Status Badge */}
         <div
           className={`absolute top-3 right-3 ${getStatusColor()} text-white px-3 py-1 rounded-md text-xs font-semibold`}

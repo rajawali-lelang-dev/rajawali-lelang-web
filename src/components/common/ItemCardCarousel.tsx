@@ -8,7 +8,7 @@ interface ItemCardCarouselProps {
   items: ItemCardProps[]
 }
 
-export default function ItemCardCarousel({ items }: ItemCardCarouselProps) {
+export default function   ItemCardCarousel({ items }: ItemCardCarouselProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)

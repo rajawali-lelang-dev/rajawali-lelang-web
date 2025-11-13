@@ -62,7 +62,7 @@ export default function Home() {
       .map(property => ({
         title: property.title,
         href: `/aset/dijual/properti/${property.id}`,
-        imageSrc: property.image,
+        imageSrc: Array.isArray(property.image) ? property.image[0] : property.image ?? `/images/properti/${property.id}.jpg`,  
         location: property.location,
         price: `Rp ${property.price.toLocaleString('id-ID')}`,
         area: `${property.landArea} m²`,
@@ -70,7 +70,7 @@ export default function Home() {
         baths: 0, // Not available in current data structure
         carSpace: 0, // Not available in current data structure
       }));
-  }, []);
+  }, [properties]);
 
   const handleSearch = () => {
     // Build query string from search and filters
@@ -226,7 +226,7 @@ export default function Home() {
               return upcomingLelang.map((item, index) => (
                 <FadeInScale key={`${item.type}-${item.id}`} >
                   <LelangCard
-                    image={item.image}
+                    image={item.image || [`/images/lelang-terdekat/${item.id}.jpg`]}
                     title={item.title}
                     tanggalLelang={item.tanggalLelang}
                     location={item.location}

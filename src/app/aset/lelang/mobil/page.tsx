@@ -135,7 +135,7 @@ export default function MobilLelangPage() {
               title={mobil.title}
               location={mobil.location}
               price={mobil.startPrice}
-              image={mobil.image}
+              image={mobil.image || []}
               status={mobil.status}
               type="mobil"
               mode="lelang"

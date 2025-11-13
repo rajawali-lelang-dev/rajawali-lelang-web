@@ -143,7 +143,7 @@ export default function PerhiasanDijualPage() {
               title={perhiasan.title}
               location={perhiasan.location}
               price={perhiasan.price}
-              image={perhiasan.image}
+              image={perhiasan.image || []}
               status={perhiasan.status}
               type="perhiasan"
               mode="dijual"

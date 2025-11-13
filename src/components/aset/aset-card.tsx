@@ -6,7 +6,7 @@ interface AsetCardProps {
   title: string;
   location?: string;
   price: number;
-  image: string;
+  image: string[] | [];
   status?: string;
   type: 'properti' | 'mobil' | 'perhiasan' | 'mesin';
   mode: 'dijual' | 'lelang';
@@ -62,7 +62,7 @@ export default function AsetCard({
         {/* Image Section */}
         <div className="relative h-52 w-full">
           <Image
-            src={image}
+            src={image[0]}
             alt={title}
             fill
             className="object-cover"
@@ -116,7 +116,7 @@ export default function AsetCard({
 
           {/* Price */}
           <div className="mt-auto">
-            <p className="font-manrope font-bold text-xl text-red-600">
+            <p className="font-manrope font-bold text-xl text-green-600">
               {formatPrice(price)}
             </p>
           </div>

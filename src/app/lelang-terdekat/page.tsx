@@ -103,8 +103,8 @@ export default function NearestLelangPage() {
           upcomingLelang.map((item) => (
             <LelangCard
               key={item.id}
-              image={item.image ?? `/images/lelang-terdekat/${item.id}.jpg`}
-              title={item.title}
+              image={item.image ?? [`/images/lelang-terdekat/${item.id}.jpg`]}
+              title={item.title ?? 'Judul Tidak Tersedia'}
               tanggalLelang={item.tanggalLelang}
               location={item.location}
               type={item.type}
