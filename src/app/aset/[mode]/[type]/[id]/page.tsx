@@ -1,25 +1,22 @@
-import { Metadata } from 'next'
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, useParams } from 'next/navigation'
 import { properties, Property, lelangProperties, PropertiDilelang } from '@/lib/properti'
 import { mobils, Mobil, lelangMobils, MobilLelang } from '@/lib/mobil'
 import { perhiasans, Perhiasan, lelangPerhiasans, PerhiasanLelang } from '@/lib/perhiasan'
 import { mesins, Mesin, lelangMesins, MesinLelang } from '@/lib/mesin'
 import AsetCard from '@/components/aset/aset-card'
+import ImageGallery from '@/components/aset/ImageGallery'
+import { useEffect } from 'react'
 
 // Union type for all items (both dijual and lelang)
 type AsetItem = Property | PropertiDilelang | Mobil | MobilLelang | Perhiasan | PerhiasanLelang | Mesin | MesinLelang
 type AsetItemLelang = PropertiDilelang | MobilLelang | PerhiasanLelang | MesinLelang
 type AsetItemDijual = Property | Mobil | Perhiasan | Mesin
 
-interface PageProps {
-  params: Promise<{
-    mode: 'dijual' | 'lelang'
-    type: 'properti' | 'mobil' | 'perhiasan' | 'mesin'
-    id: string
-  }>
-}
+
 
 function getItemById(type: string, id: string, mode: string): AsetItem | undefined {
   if (mode === 'lelang') {
@@ -83,24 +80,23 @@ function getAllItems(type: string, mode: string): AsetItem[] {
   }
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { mode, type, id } = await params
-  const item = getItemById(type, id, mode)
-  
-  if (!item) {
-    return {
-      title: 'Item Tidak Ditemukan | Rajawali Lelang Indonesia',
+export default function AsetDetailPage() {
+  const params = useParams<{
+    mode: 'dijual' | 'lelang'
+    type: 'properti' | 'mobil' | 'perhiasan' | 'mesin'
+    id: string
+  }>()
+  const { mode, type, id } = params
+
+  // Update document title
+  useEffect(() => {
+    const item = getItemById(type, id, mode)
+    if (item) {
+      document.title = `${item.title} | Rajawali Lelang Indonesia`
+    } else {
+      document.title = 'Item Tidak Ditemukan | Rajawali Lelang Indonesia'
     }
-  }
-
-  return {
-    title: `${item.title} | Rajawali Lelang Indonesia`,
-    description: item.description,
-  }
-}
-
-export default async function AsetDetailPage({ params }: PageProps) {
-  const { mode, type, id } = await params
+  }, [type, id, mode])
   const item = getItemById(type, id, mode)
 
   if (!item) {
@@ -239,34 +235,11 @@ export default async function AsetDetailPage({ params }: PageProps) {
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column - Images and Details */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Main Image Gallery */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="relative h-96">
-                <Image
-                  src={(item.image && item.image.length > 0) ? item.image[0] : `/images/${type}/${item.id}.jpg`}  
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded text-sm">
-                  1 / {item.image?.length || 1}
-                </div>
-              </div>
-              
-              {/* Thumbnail Gallery */}
-              <div className="grid grid-cols-5 gap-2 p-4">
-                {(item.image || []).slice(0, 5).map((img: string, i: number) => (
-                  <div key={i} className="relative h-20 rounded-lg overflow-hidden cursor-pointer hover:opacity-80">
-                    <Image
-                      src={img}
-                      alt={`Thumbnail ${i + 1}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Image Gallery */}
+            <ImageGallery
+              images={item.image && item.image.length > 0 ? item.image : [`/images/${type}/${item.id}.jpg`]}
+              title={item.title}
+            />
 
             {/* Item Summary */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
@@ -323,7 +296,7 @@ export default async function AsetDetailPage({ params }: PageProps) {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center py-3 border-b border-slate-200">
                   <span className="text-slate-600 text-sm">Harga</span>
-                  <span className="font-semibold text-red-600">{formatPrice(getPrice())}</span>
+                  <span className="font-semibold text-primary-600">{formatPrice(getPrice())}</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-slate-200">
                   <span className="text-slate-600 text-sm">Status</span>
@@ -331,14 +304,6 @@ export default async function AsetDetailPage({ params }: PageProps) {
                 </div>
                 {isLelang(item) && (
                   <>
-                    <div className="flex justify-between items-center py-3 border-b border-slate-200">
-                      <span className="text-slate-600 text-sm">Tanggal Lelang</span>
-                      <span className="font-semibold text-slate-800">{formatDateTime(item.tanggalLelang)}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-3">
-                      <span className="text-slate-600 text-sm">Batas Waktu</span>
-                      <span className="font-semibold text-slate-800">{formatDateTime(item.batasWaktuLelang)}</span>
-                    </div>
                   </>
                 )}
               </div>
