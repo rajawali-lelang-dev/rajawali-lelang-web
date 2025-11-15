@@ -73,6 +73,33 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "2025-11-20",
     batasWaktuLelang: "2025-11-24",
   },
+  {
+    id: "L2",
+    title: "RUMAH TINGGAL TANAH 871 M",
+    type: "Rumah",
+    location: "Jl Intan Rspp Utara No. kav 8, Cilandak Bar., Kec Cilandak, Kota Jakarta Selatan, DKI Jakarta",
+    provinsi: "DKI Jakarta",
+    kota: "Jakarta Selatan",
+    landArea: 871,
+    buildingArea: 608,
+    certificateType: "SHM",
+    description:
+    `- 10 Menit ke RS Fatmawati
+      - ⁠10 Menit ke MRT Fatmawati
+      - ⁠10 Menit ke Cilandak Town Square
+      - ⁠15 Menit ke halte Fatmawati
+      - ⁠20 Menit ke Urban Forest Cipete`,
+    status: "Lelang Aktif",
+    image: [
+      "/images/products/properties/lelang/PL2/image1.jpg",
+      "/images/products/properties/lelang/PL2/image2.jpg",
+      "/images/products/properties/lelang/PL2/image3.jpg"
+    ],
+    startPrice: 6800000000,
+    endPrice: 7200000000,
+    tanggalLelang: "2025-11-20",
+    batasWaktuLelang: "2025-11-24",
+  },
  
 ];
 
