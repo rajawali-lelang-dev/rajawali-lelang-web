@@ -69,8 +69,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1C6c4LYMoQgbnuO-lyuQQI4H4lVls4ej4")
     ],
     endPrice: 8671000000,
-    tanggalLelang: "2025-11-20",
-    batasWaktuLelang: "2025-11-24",
+    tanggalLelang: "2025-11-28",
+    batasWaktuLelang: "2025-11-28",
   },
   {
     id: "L2",
@@ -122,8 +122,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Ut996Ab2DUnBVl63ySGp28OLg93r7CmH")
     ],
     endPrice: 730000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L4",
@@ -149,8 +149,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1gz2DuYu8vOVvALumPJmseRfOs04WPWf1")
     ],
     endPrice: 1532000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L5",
@@ -177,8 +177,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1PRBY8G17Dd0ZEKcYz1rlXpFp3yfkZ1D0")
     ],
     endPrice: 1000000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L6",
@@ -203,8 +203,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh")
     ],
     endPrice: 850000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L7",
@@ -230,8 +230,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1HkH42v74D7c2mysvKOFkUqmSxtiqjN1u")
     ],
     endPrice: 700000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L8",
@@ -256,8 +256,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1I8CqC8y3nBFJexDH0AXo9hnHEIp0ClLg")
     ],
     endPrice: 728100000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L9",
@@ -283,8 +283,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1u_vEuWbtQUbHib0hEfJ6p7no0URmMh54")
     ],
     endPrice: 3265020000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L10",
@@ -309,8 +309,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1HKlWKZ8Eq9qDhoxBJYRNc-L1kSFfiFfe")
     ],
     endPrice: 900900000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L11",
@@ -335,8 +335,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1r4rfXomcp7CoAlG0jv-9MV0tsvzd4WOw")
     ],
     endPrice: 413100000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L12",
@@ -362,8 +362,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1IRn_v1LvIj6x0cKYXQycBBUN7HzeVfCa")
     ],
     endPrice: 10301214000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "2026-01-22",
+    batasWaktuLelang: "-",
   },
   {
     id: "L13",
@@ -389,8 +389,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=17RVM1f4l7p4-UUz4Nyh2pWQpA1v7R817")
     ],
     endPrice: 995000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L14",
@@ -416,8 +416,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=17GnYJtTVX6gavSOYmaugWviV_9mip3-3")
     ],
     endPrice: 8671000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L15",
@@ -442,8 +442,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1bVWmRKpIdGOm9gD09N7-_gnJqaAjHR_H")
     ],
     endPrice: 340000000,
-    tanggalLelang: "2025-11-22",
-    batasWaktuLelang: "2025-11-30",
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
  
 ];

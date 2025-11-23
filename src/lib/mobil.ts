@@ -102,29 +102,7 @@ export const mobils: Mobil[] = [
 
 // Mock Data - Mobil Lelang
 export const lelangMobils: MobilLelang[] = [
-  {
-    id: "LM1",
-    title: "BMW 320i Sport",
-    type: "Sedan",
-    brand: "BMW",
-    model: "320i",
-    year: 2019,
-    location: "Jakarta Selatan",
-    provinsi: "DKI Jakarta",
-    kota: "Jakarta Selatan",
-    mileage: 42000,
-    transmission: "Automatic",
-    fuelType: "Bensin",
-    color: "Hitam",
-    engineCapacity: 2000,
-    description:
-      "BMW 320i Sport 2019 full spec, interior M Sport package, kondisi sangat terawat, service record lengkap di BMW Astra.",
-    status: "Lelang Aktif",
-    image: ["/images/products/mobil-bmw.png"],
-    endPrice: 580000000,
-    tanggalLelang: "2025-11-10T10:00:00+07:00",
-    batasWaktuLelang: "2025-11-09T17:00:00+07:00",
-  },
+
 ];
 
 // Helper functions

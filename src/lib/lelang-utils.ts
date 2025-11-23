@@ -23,6 +23,7 @@ export const getJamSampaiLelang = (tanggalLelang: string): number => {
 
 
 export const formatTanggalLelang = (tanggalLelang: string): string => {
+  if (tanggalLelang === '-') return '-';
   return dayjs(tanggalLelang).format('DD MMM YYYY');
 };
 
