@@ -70,7 +70,6 @@ export const lelangPerhiasans: PerhiasanLelang[] = [
       "Kalung Cartier Love dengan berlian total 1.2 karat, emas putih 18k, kondisi 95% seperti baru, box dan sertifikat lengkap.",
     status: "Lelang Aktif",
     image: ["/images/products/perhiasan/perhiasan1.jpg"],
-    startPrice: 120000000,
     endPrice: 180000000,
     tanggalLelang: "2025-11-13T13:00:00+07:00",
     batasWaktuLelang: "2025-11-12T17:00:00+07:00",

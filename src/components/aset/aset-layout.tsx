@@ -63,7 +63,7 @@ export default function AsetLayout({
   };
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 py-16 pt-20 md:pt-24 relative z-10 max-w-screen-2xl">
         {/* Header */}
         <div className="mb-8">
           <h1 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-4">

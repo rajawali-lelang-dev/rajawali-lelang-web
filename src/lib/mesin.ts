@@ -70,7 +70,6 @@ export const lelangMesins: MesinLelang[] = [
       "Bulldozer Caterpillar D6R tahun 2015, blade VPAT, ripper, undercarriage 70%, cocok untuk land clearing atau mining.",
     status: "Lelang Aktif",
     image: ["/images/products/bulldozer.png"],
-    startPrice: 950000000,
     endPrice: 1200000000,
     tanggalLelang: "2025-11-17T09:00:00+07:00",
     batasWaktuLelang: "2025-11-16T17:00:00+07:00",

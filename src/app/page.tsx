@@ -191,7 +191,7 @@ export default function Home() {
 
       {/* Lelang Terdekat Section */}
       <section className="py-12 bg-gradient-to-br from-primary-50 via-primary-100 to-neutral-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-12 xl:px-16">
           <FadeInUp delay={0}>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
               <div>
@@ -242,7 +242,7 @@ export default function Home() {
       
       {/* Action Cards Section */}
       <FadeInUp delay={0}>
-        <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="mx-auto max-w-screen-2xl px-6 lg:px-12 xl:px-16 py-12">
           <div className="flex flex-row flex-wrap items-start justify-center gap-8">
             <FadeInScale delay={100}>
               <ActionCard

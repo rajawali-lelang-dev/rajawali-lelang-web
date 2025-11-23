@@ -107,10 +107,8 @@ export default function PropertiLelangPage() {
         const [min, max] = filters.price.split("-").map(Number);
         // Use Number.isFinite to properly detect numeric max (handles "10000000000+" which yields NaN)
         if (Number.isFinite(max)) {
-          const endPrice = property.endPrice ?? property.startPrice;
-          if (property.startPrice < min || endPrice > max) return false;
-        } else {
-          if (property.startPrice < min) return false;
+          const endPrice = property.endPrice;
+          if (endPrice > max) return false;
         }
       }
 
@@ -156,7 +154,7 @@ export default function PropertiLelangPage() {
               id={property.id}
               title={property.title}
               location={property.location}
-              price={property.startPrice}
+              price={property.endPrice}
               image={property.image || []}
               status={property.status}
               type="properti"
