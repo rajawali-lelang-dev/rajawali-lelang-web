@@ -105,18 +105,18 @@ export default function AsetDetailPage() {
 
   // Helper to check if item is lelang
   const isLelang = (item: AsetItem): item is AsetItemLelang => {
-    return 'startPrice' in item && 'endPrice' in item
+    return 'endPrice' in item
   }
 
   // Helper to check if item is dijual
   const isDijual = (item: AsetItem): item is AsetItemDijual => {
-    return 'price' in item && !('startPrice' in item)
+    return 'price' in item && !('endPrice' in item)
   }
 
   // Helper to get price
   const getPrice = () => {
     if (isLelang(item)) {
-      return item.startPrice
+      return item.endPrice
     }
     if (isDijual(item)) {
       return item.price
@@ -186,7 +186,7 @@ export default function AsetDetailPage() {
     <div className="min-h-screen bg-slate-100">
       {/* Hero Section with Background */}
       <div className="relative pt-20 pb-32 bg-primary-100 ">
-        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+        <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 max-w-screen-2xl">
           {/* Badges */}
           <div className="flex gap-2 mb-4">
             <span className="bg-white text-slate-700 px-3 py-1 rounded-full text-xs font-semibold">
@@ -231,7 +231,7 @@ export default function AsetDetailPage() {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl -mt-20 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 xl:px-20 max-w-screen-2xl -mt-20 relative z-10">
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left Column - Images and Details */}
           <div className="lg:col-span-2 space-y-6">
@@ -357,7 +357,7 @@ export default function AsetDetailPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {otherItems.map((otherItem) => {
               const otherPrice = isLelang(otherItem) 
-                ? otherItem.startPrice 
+                ? otherItem.endPrice 
                 : isDijual(otherItem) 
                   ? otherItem.price 
                   : 0;
