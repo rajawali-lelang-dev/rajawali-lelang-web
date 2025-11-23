@@ -7,9 +7,7 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { label: 'Tentang Kami', href: '/about-us' },
-      { label: 'Karir', href: '/career' },
-      { label: 'Blog', href: '/blog' },
+      { label: 'Tentang Kami', href: '/about-us' }
     ],
     services: [
       { label: 'Properti Dijual', href: '/aset/dijual/properti' },

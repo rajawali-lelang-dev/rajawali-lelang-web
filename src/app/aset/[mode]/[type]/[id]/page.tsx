@@ -155,28 +155,28 @@ export default function AsetDetailPage() {
 
   // Type-specific additional info
   const getAdditionalInfo = () => {
-    if (type === 'properti' && 'landArea' in item) {
+    if (type === 'properti' && 'landArea' in otherItems[0]) {
       return [
-        ...(item.landArea > 0 ? [{ label: 'Tanah', value: `${item.landArea} m²` }] : []),
-        ...(item.buildingArea > 0 ? [{ label: 'Bangunan', value: `${item.buildingArea} m²` }] : []),
-        { label: 'Sertifikat', value: item.certificateType ?? '' },
+        ...(otherItems[0].landArea > 0 ? [{ label: 'Tanah', value: `${otherItems[0].landArea} m²` }] : []),
+        ...(otherItems[0].buildingArea > 0 ? [{ label: 'Bangunan', value: `${otherItems[0].buildingArea} m²` }] : []),
+        { label: 'Sertifikat', value: otherItems[0].certificateType ?? '' },
       ]
     }
-    if (type === 'mobil' && 'brand' in item) {
+    if (type === 'mobil' && 'brand' in otherItems[0]) {
       return [
-        { label: 'Brand', value: item.brand ?? '' },
+        { label: 'Brand', value: otherItems[0].brand ?? '' },
       ]
     }
-    if (type === 'perhiasan' && 'material' in item) {
+    if (type === 'perhiasan' && 'material' in otherItems[0]) {
       return [
-        { label: 'Material', value: item.material ?? '' },
-        { label: 'Berat', value: `${item.weight} gram` },
-        ...(item.karat ? [{ label: 'Karat', value: `${item.karat}K` }] : []),
+        { label: 'Material', value: otherItems[0].material ?? '' },
+        { label: 'Berat', value: `${otherItems[0].weight} gram` },
+        ...(otherItems[0].karat ? [{ label: 'Karat', value: `${otherItems[0].karat}K` }] : []),
       ]
     }
-    if (type === 'mesin' && 'brand' in item) {
+    if (type === 'mesin' && 'brand' in otherItems[0]) {
       return [
-        { label: 'Brand', value: item.brand ?? '' },
+        { label: 'Brand', value: otherItems[0].brand ?? '' },
       ]
     }
     return []
@@ -284,7 +284,7 @@ export default function AsetDetailPage() {
                 </button>
               </Link>
             </div>
-          </div>
+          </div> 
 
           {/* Right Column - Sidebar */}
           <div className="lg:col-span-1">
