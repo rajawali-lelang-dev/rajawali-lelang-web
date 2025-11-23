@@ -84,7 +84,7 @@ export default function ReviewCarousel({ reviews }: ReviewCarouselProps) {
 
   return (
     <div className="relative w-full overflow-hidden py-12 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-6 mb-8">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 xl:px-16 mb-8">
         <h2 className="text-center font-manrope font-bold text-3xl text-neutral-900 mb-2">
           Apa <span className="text-primary-600">Kata Mereka</span> yang Sudah Lelang Bersama Kami?
         </h2>

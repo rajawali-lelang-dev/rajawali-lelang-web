@@ -121,7 +121,6 @@ export const lelangMobils: MobilLelang[] = [
       "BMW 320i Sport 2019 full spec, interior M Sport package, kondisi sangat terawat, service record lengkap di BMW Astra.",
     status: "Lelang Aktif",
     image: ["/images/products/mobil-bmw.png"],
-    startPrice: 450000000,
     endPrice: 580000000,
     tanggalLelang: "2025-11-10T10:00:00+07:00",
     batasWaktuLelang: "2025-11-09T17:00:00+07:00",

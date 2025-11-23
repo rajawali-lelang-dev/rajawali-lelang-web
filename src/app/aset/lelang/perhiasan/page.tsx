@@ -135,7 +135,7 @@ export default function PerhiasanLelangPage() {
               id={perhiasan.id}
               title={perhiasan.title}
               location={perhiasan.location}
-              price={perhiasan.startPrice}
+              price={perhiasan.endPrice}
               image={perhiasan.image || []}
               status={perhiasan.status}
               type="perhiasan"

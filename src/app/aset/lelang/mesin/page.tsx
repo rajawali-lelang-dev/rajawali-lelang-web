@@ -136,7 +136,7 @@ export default function MesinLelangPage() {
               id={mesin.id}
               title={mesin.title}
               location={mesin.location}
-              price={mesin.startPrice}
+              price={mesin.endPrice}
               image={mesin.image ?? []}
               status={mesin.status}
               type="mesin"

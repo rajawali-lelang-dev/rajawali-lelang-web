@@ -18,7 +18,20 @@ export const metadata: Metadata = {
   title: "Rajawali Lelang Indonesia",
   description: "Platform lelang properti terpercaya di Indonesia",
   icons: {
-    icon: "/logo.png"
+    icon: "/images/assets/logo_rli.png",
+    apple: "/images/assets/logo_rli.png",
+  },
+  openGraph: {
+    title: "Rajawali Lelang Indonesia",
+    description: "Platform lelang properti terpercaya di Indonesia",
+    images: ["/images/assets/logo_rli.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rajawali Lelang Indonesia",
+    description: "Platform lelang properti terpercaya di Indonesia",
+    images: ["/images/assets/logo_rli.png"],
   },
 };
 
