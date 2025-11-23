@@ -32,7 +32,7 @@ const Footer = () => {
               Temukan properti impian Anda dengan mudah, aman, dan menguntungkan.
             </p>
             
-            {/* Office Address */}
+            {/* Office Address (commit) */}
             <div className="mb-6">
               <h4 className="font-manrope font-semibold text-sm text-primary-700 mb-3">Alamat Kantor</h4>
               <div className="flex items-start gap-2 text-primary-500">
