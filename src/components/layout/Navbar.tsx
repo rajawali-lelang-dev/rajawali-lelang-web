@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
@@ -13,6 +13,25 @@ const Navbar = () => {
   const [isDijualOpen, setIsDijualOpen] = useState(false)
   const [isLelangOpen, setIsLelangOpen] = useState(false)
   const [isProvinsiOpen, setIsProvinsiOpen] = useState(false)
+  const navRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsDijualOpen(false)
+        setIsLelangOpen(false)
+        setIsProvinsiOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [])
   
   const provinces = getAllProvinces()
 
@@ -61,8 +80,8 @@ const Navbar = () => {
     <nav className="relative w-full bg-primary-200 shadow-md">
 
       {/* Navbar content */}
-      <div className="relative z-20 px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div ref={navRef} className="relative z-20 px-4 lg:px-8 xl:px-16 2xl:px-24">
+        <div className="flex items-center justify-between h-16 lg:h-20 max-w-screen-2xl mx-auto">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
@@ -82,26 +101,48 @@ const Navbar = () => {
               item.hasDropdown ? (
                 <div
                   key={item.label}
-                  className="relative group"
+                  className="relative"
                   onMouseEnter={() => {
-                    if (item.label === 'Dijual') setIsDijualOpen(true)
-                    if (item.label === 'Lelang') setIsLelangOpen(true)
-                    if (item.label === 'Pilih Provinsi') setIsProvinsiOpen(true)
+                    // Only handle hover on non-touch devices
+                    if (window.matchMedia('(hover: hover)').matches) {
+                      if (item.label === 'Dijual') setIsDijualOpen(true)
+                      if (item.label === 'Lelang') setIsLelangOpen(true)
+                      if (item.label === 'Pilih Provinsi') setIsProvinsiOpen(true)
+                    }
                   }}
                   onMouseLeave={() => {
-                    if (item.label === 'Dijual') setIsDijualOpen(false)
-                    if (item.label === 'Lelang') setIsLelangOpen(false)
-                    if (item.label === 'Pilih Provinsi') setIsProvinsiOpen(false)
+                    // Only handle hover on non-touch devices
+                    if (window.matchMedia('(hover: hover)').matches) {
+                      if (item.label === 'Dijual') setIsDijualOpen(false)
+                      if (item.label === 'Lelang') setIsLelangOpen(false)
+                      if (item.label === 'Pilih Provinsi') setIsProvinsiOpen(false)
+                    }
                   }}
                 >
-                  <button className="font-manrope font-medium text-sm xl:text-base text-neutral-400 hover:text-red-400 transition-colors duration-200 flex items-center gap-1">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      if (item.label === 'Dijual') setIsDijualOpen(!isDijualOpen)
+                      if (item.label === 'Lelang') setIsLelangOpen(!isLelangOpen)
+                      if (item.label === 'Pilih Provinsi') setIsProvinsiOpen(!isProvinsiOpen)
+                    }}
+                    className="font-manrope font-medium text-sm xl:text-base text-neutral-400 hover:text-red-400 transition-colors duration-200 flex items-center gap-1"
+                  >
                     {item.label}
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className={`w-4 h-4 transition-transform ${
+                      (item.label === 'Dijual' && isDijualOpen) || 
+                      (item.label === 'Lelang' && isLelangOpen) ||
+                      (item.label === 'Pilih Provinsi' && isProvinsiOpen)
+                        ? 'rotate-180'
+                        : ''
+                    }`} />
                   </button>
                   
                   {/* Dropdown Menu - Province Special */}
                   {item.isProvinsi ? (
-                    <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
+                    <div className={`absolute top-full left-0 md:left-auto md:right-0 mt-2 w-[calc(100vw-2rem)] md:w-80 max-w-md bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 max-h-[60vh] md:max-h-96 overflow-y-auto ${
+                      isProvinsiOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+                    }`}>
                       <div className="p-3 border-b border-gray-200 sticky top-0 bg-white">
                         <p className="text-xs font-semibold text-gray-600 mb-2">Pilih Provinsi untuk:</p>
                         <div className="flex gap-2">
@@ -111,19 +152,19 @@ const Navbar = () => {
                       </div>
                       <div className="py-2">
                         {provinces.map((province) => (
-                          <div key={province} className="px-4 py-2 hover:bg-gray-50 group/province">
-                            <div className="flex items-center justify-between">
+                          <div key={province} className="px-4 py-3 hover:bg-gray-50">
+                            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2">
                               <span className="text-sm text-gray-700 font-medium">{province}</span>
-                              <div className="flex gap-1 opacity-0 group-hover/province:opacity-100 transition-opacity">
+                              <div className="flex gap-1.5 flex-shrink-0">
                                 <button
                                   onClick={() => handleProvinceSelect(province, 'dijual')}
-                                  className="text-xs px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+                                  className="text-xs px-3 py-1.5 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 transition-colors touch-manipulation"
                                 >
                                   Dijual
                                 </button>
                                 <button
                                   onClick={() => handleProvinceSelect(province, 'lelang')}
-                                  className="text-xs px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+                                  className="text-xs px-3 py-1.5 bg-green-500 text-white rounded hover:bg-green-600 active:bg-green-700 transition-colors touch-manipulation"
                                 >
                                   Lelang
                                 </button>
@@ -135,13 +176,17 @@ const Navbar = () => {
                     </div>
                   ) : (
                     /* Regular Dropdown Menu */
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className={`absolute top-full left-0 mt-2 w-[calc(100vw-2rem)] md:w-56 max-w-xs bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 z-50 ${
+                      ((item.label === 'Dijual' && isDijualOpen) || (item.label === 'Lelang' && isLelangOpen)) 
+                        ? 'opacity-100 visible' 
+                        : 'opacity-0 invisible pointer-events-none'
+                    }`}>
                       <div className="py-2">
                         {item.items?.map((subItem) => (
                           <Link
                             key={subItem.label}
                             href={subItem.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors touch-manipulation"
                           >
                             {subItem.label}
                           </Link>

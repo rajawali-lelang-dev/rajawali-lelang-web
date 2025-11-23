@@ -10,7 +10,7 @@ import Wave from '@/components/vector/wave';
 import ReviewCarousel from '@/components/common/ReviewCard';
 import { FadeInUp, FadeInScale } from '@/components/common/ScrollAnimation';
 import LelangCard from '@/components/lelang-terdekat/LelangCard';
-import { lelangProperties, properties } from '@/lib/properti';
+import { lelangProperties } from '@/lib/properti';
 import { lelangMobils } from '@/lib/mobil';
 import { lelangPerhiasans } from '@/lib/perhiasan';
 import { lelangMesins } from '@/lib/mesin';
@@ -55,22 +55,22 @@ export default function Home() {
     sortBy: "",
   });
 
-  // Get top 8 newest properties for featured section
+  // Get top 8 newest lelang properties for featured section
   const featuredProperties = useMemo(() => {
-    return properties
+    return lelangProperties
       .slice(0, 8) // Take top 8 properties
       .map(property => ({
         title: property.title,
-        href: `/aset/dijual/properti/${property.id}`,
+        href: `/aset/lelang/properti/${property.id}`,
         imageSrc: Array.isArray(property.image) ? property.image[0] : property.image ?? `/images/properti/${property.id}.jpg`,  
         location: property.location,
-        price: `Rp ${property.price.toLocaleString('id-ID')}`,
+        price: `Rp ${property.endPrice.toLocaleString('id-ID')}`,
         area: `${property.landArea} m²`,
         beds: 0, // Not available in current data structure
         baths: 0, // Not available in current data structure
         carSpace: 0, // Not available in current data structure
       }));
-  }, [properties]);
+  }, []);
 
   const handleSearch = () => {
     // Build query string from search and filters
@@ -247,7 +247,7 @@ export default function Home() {
             <FadeInScale delay={100}>
               <ActionCard
                 title="Carikan Properti"
-                href="/search"
+                href="/find-properti"
                 imgSrc="/images/assets/magnifying-glass.svg"
               />
             </FadeInScale>
@@ -255,7 +255,7 @@ export default function Home() {
             <FadeInScale delay={200}>
               <ActionCard
                 title="Iklankan Properti"
-                href="/sell"
+                href="/iklankan-properti"
                 imgSrc="/images/assets/megaphone.svg"
               />
             </FadeInScale>
