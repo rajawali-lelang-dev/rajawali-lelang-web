@@ -119,7 +119,7 @@ const Footer = () => {
             <h3 className="font-manrope font-bold text-lg mb-4">Perusahaan</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link 
                     href={link.href} 
                     className="font-manrope text-sm text-primary-500 hover:text-primary-500 transition-colors"
@@ -136,7 +136,7 @@ const Footer = () => {
             <h3 className="font-manrope font-bold text-lg mb-4">Layanan</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link 
                     href={link.href} 
                     className="font-manrope text-sm text-primary-500 hover:text-primary-500 transition-colors"
@@ -153,7 +153,7 @@ const Footer = () => {
             <h3 className="font-manrope font-bold text-lg mb-4">Dukungan</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link 
                     href={link.href} 
                     className="font-manrope text-sm text-primary-500 hover:text-white transition-colors"

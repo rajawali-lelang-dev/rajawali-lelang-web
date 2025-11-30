@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     const oauth2Client = new google.auth.OAuth2(
       process.env.GOOGLE_CLIENT_ID,
       process.env.GOOGLE_CLIENT_SECRET,
-      "http://localhost:3000" // Redirect URI (not used in server-side flow)
+      "https://rajawali-lelang-web.vercel.app" // Redirect URI (not used in server-side flow)
     );
 
     // Set refresh token to automatically get access tokens
