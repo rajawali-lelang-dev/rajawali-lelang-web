@@ -271,7 +271,6 @@ export default function KprPage() {
           </FadeInUp>
         </div>
 
-
       </div>
     </div>
   )
