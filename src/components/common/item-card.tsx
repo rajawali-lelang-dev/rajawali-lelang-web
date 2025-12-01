@@ -24,19 +24,17 @@ export const ItemCard: React.FC<ItemCardProps> = ({
   imageAlt = '',
   location,
   area,
-  beds,
-  baths,
   className = '',
 }) => {
   const card = (
     <article
       className={[
         'rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden',
-        'flex-shrink-0',
+        'flex-shrink-0 flex flex-col h-full',
         className,
       ].join(' ')}
     >
-      <div className="w-full h-44 md:h-48 relative bg-slate-100">
+      <div className="w-full h-44 md:h-48 relative bg-slate-100 flex-shrink-0">
         <Image
           src={imageSrc}
           alt={imageAlt || title}
@@ -46,39 +44,26 @@ export const ItemCard: React.FC<ItemCardProps> = ({
         />
       </div>
 
-      <div className="p-4">
-        <h3 className="text-sm md:text-base font-semibold text-slate-800">{title}</h3>
-        <div className='flex items-center mt-1 gap-2'>
+      <div className="p-4 flex flex-col flex-grow">
+        <h3 className="text-sm md:text-base font-semibold text-slate-800 line-clamp-2 min-h-[2.5rem]">{title}</h3>
+        <div className='flex items-center mt-1 gap-2 min-h-[1.75rem]'>
           <Image src='/images/assets/item-card/location.svg' alt='' width={0} height={0} className="object-contain w-1/20" />
-          <span className="mt-1 text-sm text-slate-500">{location}</span>
+          <span className="text-sm text-slate-500 line-clamp-1">{location}</span>
         </div>
 
-        <div className="mt-3 flex justify-between gap-2 text-xs text-slate-500">
+        {/* <div className="mt-auto pt-3 flex justify-between gap-2 text-xs text-slate-500">
           <div className="flex items-center">
             <Image src='/images/assets/item-card/target.svg' alt='' width={14} height={14} className="object-contain w-1/4" />
             <span>{area ?? 0}</span>
           </div>
-          <div className="flex items-center">
-            <Image src='/images/assets/item-card/bed.svg' alt='' width={0} height={0} className="object-contain w-1/4" />
-            <span>{beds ?? 0} Beds</span>
-          </div>
-
-          <div className="flex items-center">
-            <Image src='/images/assets/item-card/shower.svg' alt='' width={14} height={14} className="object-contain w-1/4" />
-            <span>{baths ?? 0} Baths</span>
-          </div>
-          <div className="flex items-center">
-            <Image src='/images/assets/item-card/car.svg' alt='' width={14} height={14} className="object-contain w-1/4" />
-            <span>{baths ?? 0} Cars</span>
-          </div>
-        </div>
+        </div> */}
       </div>
     </article>
   );
 
   if (href) {
     return (
-      <Link href={href} className="block">
+      <Link href={href} className="block h-full">
         {card}
       </Link>
     );

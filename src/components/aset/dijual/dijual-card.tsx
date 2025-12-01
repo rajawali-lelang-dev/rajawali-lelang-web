@@ -421,7 +421,7 @@ export default function DijualCard({
             </button>
           </Link>
             <Link
-            href={`https://wa.me/6285168611131?text=Saya tertarik dengan ${item.title}`}
+            href={`https://wa.me/628170005646?text=Saya tertarik dengan ${item.title}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full"

@@ -132,13 +132,13 @@ export default function   ItemCardCarousel({ items }: ItemCardCarouselProps) {
         }}
       >
         {items.map((item, index) => (
-          <div key={index} className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+          <div key={index} className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-[360px]">
             <ItemCard {...item} />
           </div>
         ))}
         {/* Duplicate items for seamless loop effect */}
         {items.map((item, index) => (
-          <div key={`duplicate-${index}`} className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+          <div key={`duplicate-${index}`} className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-[360px]">
             <ItemCard {...item} />
           </div>
         ))}

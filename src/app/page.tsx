@@ -66,9 +66,6 @@ export default function Home() {
         location: property.location,
         price: `Rp ${property.endPrice.toLocaleString('id-ID')}`,
         area: `${property.landArea} m²`,
-        beds: 0, // Not available in current data structure
-        baths: 0, // Not available in current data structure
-        carSpace: 0, // Not available in current data structure
       }));
   }, []);
 
@@ -232,6 +229,7 @@ export default function Home() {
                     location={item.location}
                     type={item.type}
                     status={item.status}
+                    jamLelang={'jamLelang' in item ? item.jamLelang : undefined}
                   />
                 </FadeInScale>
               ));
