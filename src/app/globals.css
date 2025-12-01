@@ -188,10 +188,14 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* Offset untuk fixed navbar */
+    min-width: 100%;
+    width: 100%;
   }
   
   body {
     @apply bg-background text-foreground font-manrope;  /* Tambahkan font-manrope di body */
+    min-width: 1280px; /* Minimum width to prevent excessive zoom out */
+    width: 100%;
   }
   
   /* Smooth scrolling untuk semua anchor links */

@@ -32,57 +32,58 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
-    id: "L1",
-    title: "RUMAH KANTOR EKS HOTEL TANAH",
-    type: "Rumah",
-    location: "Kemang Utara, Jakarta Selatan",
-    provinsi: "DKI Jakarta",
-    kota: "Jakarta Selatan",
-    landArea: 326,
-    buildingArea: 918,
+    id: "L13",
+    title: "SEGERA LELANG TANAH PEKARANGAN",
+    type: "Tanah",
+    location: "Desa Sukodadi, Kecamatan Wagir, Kabupaten Malang",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 1346,
+    buildingArea: 0,
     certificateType: "SHM",
     description:
-    `- 5 menit ke RS Siloam Mampang\n
-    - 10 menit ke MRT Haji Nawi\n
-    - 20 menit ke toll cawang\n
-    - 10 menit ke Lippo Mall Kemang\n
-    - 5 Menit ke halte bussway`,
+    `- 2 menit dari Kolam Renang Lembah Wagir
+      - 15 menit dari Universitas PGRI Kanjuruhan
+      - 20 menit dari Bonderland Waterpark
+      - 25 menit dari Rumah Sakit Panti Nirmala
+      - 30 menit dari Mall Sarinah Malang`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1nO5q-s4lXvbvmj89omMxn7qBOituH5PZ"),
-      getDriveImageUrl("https://drive.google.com/open?id=1DKWjMd7hRETEnZaOxN1RvyuP0O1Yph-P"),
-      getDriveImageUrl("https://drive.google.com/open?id=1jee8lyzJM3qogdXG1oj0ijMBtTrBIecf"),
-      getDriveImageUrl("https://drive.google.com/open?id=1C6c4LYMoQgbnuO-lyuQQI4H4lVls4ej4")
+      getDriveImageUrl("https://drive.google.com/open?id=1AOed3A9fjfmN1KrWcNdUslz6Ob_YLpkF"),
+      getDriveImageUrl("https://drive.google.com/open?id=1QVI3RaLgW8nu3MCIDsmotyQY13dqEmRF"),
+      getDriveImageUrl("https://drive.google.com/open?id=10BBdVSewEDCxPHZqfQYF4aHlYhvqg7dW"),
+      getDriveImageUrl("https://drive.google.com/open?id=17RVM1f4l7p4-UUz4Nyh2pWQpA1v7R817")
     ],
-    endPrice: 8671000000,
-    tanggalLelang: "2025-11-28",
-    batasWaktuLelang: "2025-11-28",
+    endPrice: 995000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
-    id: "L2",
-    title: "RUMAH TINGGAL TANAH 871 M",
+    id: "L7",
+    title: "SEGERA LELANG RUMAH 2 LANTAI",
     type: "Rumah",
-    location: "Jl Intan Rspp Utara No. kav 8, Cilandak Bar., Kec Cilandak, Kota Jakarta Selatan, DKI Jakarta",
-    provinsi: "DKI Jakarta",
-    kota: "Jakarta Selatan",
-    landArea: 871,
-    buildingArea: 608,
-    certificateType: "SHM",
+    location: "Perumahan Puncak Buring Indah Blok B7 No. 06, Kelurahan Buring, Kecamatan Kedungkandang, Kota Malang",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 202,
+    buildingArea: 204,
+    certificateType: "HGB",
     description:
-    `- 10 Menit ke RS Fatmawati
-      - ⁠10 Menit ke MRT Fatmawati
-      - ⁠10 Menit ke Cilandak Town Square
-      - ⁠15 Menit ke halte Fatmawati
-      - ⁠20 Menit ke Urban Forest Cipete`,
+    `- 4 menit dari GOR Ken Arok
+      - 5 menit dari Alun-Alun Kedungkandang
+      - 11 menit dari Stadion Gelora Tlogowaru
+      - 10 menit dari RSUD Kota Malang
+      - 30 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1jK_y9O0PupxNyNdgmj-t037dkxD0s8b1"),
-      getDriveImageUrl("https://drive.google.com/open?id=1yoZ835EZKhAGkdjikrA-Kfy4E0StBsxx"),
-      getDriveImageUrl("https://drive.google.com/open?id=1GsGeIyI_og68ht44KVbtdXmSxwBDBFCD")
+      getDriveImageUrl("https://drive.google.com/open?id=18grkZC6d61ztj699nzYMjDh6r54tQAUS"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Lj19rpbqYwIUY-Rsjb-KDQqFrVowMeEn"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ArJpaS146I4q4rDf7dnegOx8ziwDzmJr"),
+      getDriveImageUrl("https://drive.google.com/open?id=1HkH42v74D7c2mysvKOFkUqmSxtiqjN1u")
     ],
-    endPrice: 10305000000,
-    tanggalLelang: "2025-11-20",
-    batasWaktuLelang: "2025-11-24",
+    endPrice: 700000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
   },
   {
     id: "L3",
@@ -192,33 +193,7 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
-  {
-    id: "L7",
-    title: "SEGERA LELANG RUMAH 2 LANTAI",
-    type: "Rumah",
-    location: "Perumahan Puncak Buring Indah Blok B7 No. 06, Kelurahan Buring, Kecamatan Kedungkandang, Kota Malang",
-    provinsi: "Jawa Timur",
-    kota: "Malang",
-    landArea: 202,
-    buildingArea: 204,
-    certificateType: "HGB",
-    description:
-    `- 4 menit dari GOR Ken Arok
-      - 5 menit dari Alun-Alun Kedungkandang
-      - 11 menit dari Stadion Gelora Tlogowaru
-      - 10 menit dari RSUD Kota Malang
-      - 30 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=18grkZC6d61ztj699nzYMjDh6r54tQAUS"),
-      getDriveImageUrl("https://drive.google.com/open?id=1Lj19rpbqYwIUY-Rsjb-KDQqFrVowMeEn"),
-      getDriveImageUrl("https://drive.google.com/open?id=1ArJpaS146I4q4rDf7dnegOx8ziwDzmJr"),
-      getDriveImageUrl("https://drive.google.com/open?id=1HkH42v74D7c2mysvKOFkUqmSxtiqjN1u")
-    ],
-    endPrice: 700000000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
+  
   {
     id: "L8",
     title: "SEGERA LELANG RUMAH TINGGAL",
@@ -351,33 +326,6 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "2026-01-22",
     batasWaktuLelang: "-",
     jamLelang: "14:15 WIB",
-  },
-  {
-    id: "L13",
-    title: "SEGERA LELANG TANAH PEKARANGAN",
-    type: "Tanah",
-    location: "Desa Sukodadi, Kecamatan Wagir, Kabupaten Malang",
-    provinsi: "Jawa Timur",
-    kota: "Malang",
-    landArea: 1346,
-    buildingArea: 0,
-    certificateType: "SHM",
-    description:
-    `- 2 menit dari Kolam Renang Lembah Wagir
-      - 15 menit dari Universitas PGRI Kanjuruhan
-      - 20 menit dari Bonderland Waterpark
-      - 25 menit dari Rumah Sakit Panti Nirmala
-      - 30 menit dari Mall Sarinah Malang`,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1AOed3A9fjfmN1KrWcNdUslz6Ob_YLpkF"),
-      getDriveImageUrl("https://drive.google.com/open?id=1QVI3RaLgW8nu3MCIDsmotyQY13dqEmRF"),
-      getDriveImageUrl("https://drive.google.com/open?id=10BBdVSewEDCxPHZqfQYF4aHlYhvqg7dW"),
-      getDriveImageUrl("https://drive.google.com/open?id=17RVM1f4l7p4-UUz4Nyh2pWQpA1v7R817")
-    ],
-    endPrice: 995000000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
   },
   {
     id: "L14",
