@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   publisher: "Rajawali Lelang Indonesia",
   icons: {
     icon: [
-      { url: "/images/assets/logo_rli.png" },
-      { url: "/favicon.ico", sizes: "any" }
+      { url: "/icon.ico", sizes: "any" },
+      { url: "/images/assets/logo_rli.png" }
     ],
     apple: "/images/assets/logo_rli.png",
-    shortcut: "/images/assets/logo_rli.png",
+    shortcut: "/icon.ico",
   },
   openGraph: {
     title: "Rajawali Lelang Indonesia",
