@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://rajawalilelang.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://rajawalilelangindo.com'),
   title: "Rajawali Lelang Indonesia",
   description: "Platform lelang properti terpercaya di Indonesia",
   icons: {

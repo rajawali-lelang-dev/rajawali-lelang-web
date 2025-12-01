@@ -49,9 +49,9 @@ export const lelangProperties: PropertiDilelang[] = [
     - 5 Menit ke halte bussway`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1nO5q-s4lXvbvmj89omMxn7qBOituH5PZ"),
       getDriveImageUrl("https://drive.google.com/open?id=1DKWjMd7hRETEnZaOxN1RvyuP0O1Yph-P"),
       getDriveImageUrl("https://drive.google.com/open?id=1jee8lyzJM3qogdXG1oj0ijMBtTrBIecf"),
-      getDriveImageUrl("https://drive.google.com/open?id=1nO5q-s4lXvbvmj89omMxn7qBOituH5PZ"),
       getDriveImageUrl("https://drive.google.com/open?id=1C6c4LYMoQgbnuO-lyuQQI4H4lVls4ej4")
     ],
     endPrice: 8671000000,
@@ -102,9 +102,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 19 Menit dari Bandara Abdul Rachman Saleh`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1soba2SUIajRhXWH6wsS0nsXm-deu83Gl"),
       getDriveImageUrl("https://drive.google.com/open?id=1NC4LbXRp2zGMiv2sb_gu-4sQmCYy4OVY"),
       getDriveImageUrl("https://drive.google.com/open?id=1R5s52yfdP1e5vpfdZz8WIjxVN7yvoLen"),
-      getDriveImageUrl("https://drive.google.com/open?id=1soba2SUIajRhXWH6wsS0nsXm-deu83Gl"),
       getDriveImageUrl("https://drive.google.com/open?id=1Ut996Ab2DUnBVl63ySGp28OLg93r7CmH")
     ],
     endPrice: 730000000,
@@ -184,9 +184,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh"),
       getDriveImageUrl("https://drive.google.com/open?id=1PKVPY9FjBhGyQZE53c9W2RQLx1I2qD6t"),
-      getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU"),
-      getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh")
+      getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU")
     ],
     endPrice: 850000000,
     tanggalLelang: "-",
@@ -398,9 +398,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 35 menit dari Taman Kota GBK`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=17GnYJtTVX6gavSOYmaugWviV_9mip3-3"),
       getDriveImageUrl("https://drive.google.com/open?id=1AIU9dpFV5NFBo_iJmGQUmB9yr3KS5157"),
-      getDriveImageUrl("https://drive.google.com/open?id=1ZCohstX3fLeko0zu4Y9G545r1b-9w3ku"),
-      getDriveImageUrl("https://drive.google.com/open?id=17GnYJtTVX6gavSOYmaugWviV_9mip3-3")
+      getDriveImageUrl("https://drive.google.com/open?id=1ZCohstX3fLeko0zu4Y9G545r1b-9w3ku")
     ],
     endPrice: 8671000000,
     tanggalLelang: "-",

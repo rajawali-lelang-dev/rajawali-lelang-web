@@ -11,6 +11,7 @@ interface LelangCardProps {
   location: string
   type: string
   status: "Lelang Aktif" | "Lelang Segera" | "Lelang Selesai"
+  jamLelang?: string
 }
 
 export default function LelangCard({
@@ -19,21 +20,18 @@ export default function LelangCard({
   tanggalLelang,
   location,
   type,
-  status
+  status,
+  jamLelang,
 }: LelangCardProps) {
 
-  // Format tanggal dan waktu
-  const lelangDate = new Date(tanggalLelang)
-  const formattedDate = lelangDate.toLocaleDateString('id-ID', { 
-    day: '2-digit', 
-    month: 'short', 
-    year: 'numeric' 
-  })
-  const formattedTime = lelangDate.toLocaleTimeString('id-ID', { 
-    hour: '2-digit', 
-    minute: '2-digit',
-    hour12: false 
-  }) + ' WIB'
+  // Format tanggal
+  const formattedDate = tanggalLelang === '-' 
+    ? '-' 
+    : new Date(tanggalLelang).toLocaleDateString('id-ID', { 
+        day: '2-digit', 
+        month: 'short', 
+        year: 'numeric' 
+      })
 
   // Countdown text
   const countdownText = getCountdownText(tanggalLelang)
@@ -83,7 +81,7 @@ export default function LelangCard({
             <CalendarDays size={16} /> {formattedDate}
           </div>
           <div className="flex items-center gap-2">
-            <Clock size={16} /> {formattedTime}
+            <Clock size={16} /> {jamLelang || "-"}
           </div>
           <div className="flex items-center gap-2">
             <MapPin size={16} /> {location}
@@ -92,12 +90,12 @@ export default function LelangCard({
 
         {/* Tombol */}
         <a 
-          href={`https://wa.me/6285168611131?text=Saya tertarik dengan lelang ${title}`}
+          href={`https://wa.me/628170005646?text=Saya tertarik dengan lelang ${title}`}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#4C6782] hover:bg-[#3b5268] text-white font-medium rounded-lg px-5 py-2 flex items-center justify-center gap-2 w-fit transition-colors"
         >
-          <span>💬</span> Hubungi Kami
+          <span></span> Hubungi Kami
         </a>
       </div>
     </div>

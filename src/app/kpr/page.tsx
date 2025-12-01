@@ -142,7 +142,7 @@ export default function KprPage() {
                 </ul>
 
                 {/* Action Button */}
-                <Link href={`https://wa.me/6285168611131?text=Saya tertarik dengan layanan ${service.title}`} target="_blank" rel="noopener noreferrer">
+                <Link href={`https://wa.me/628170005646?text=Saya tertarik dengan layanan ${service.title}`} target="_blank" rel="noopener noreferrer">
                   <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
                     Konsultasi Sekarang
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
