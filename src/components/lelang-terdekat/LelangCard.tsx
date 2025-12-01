@@ -91,9 +91,14 @@ export default function LelangCard({
         </div>
 
         {/* Tombol */}
-        <button className="bg-[#4C6782] hover:bg-[#3b5268] text-white font-medium rounded-lg px-5 py-2 flex items-center justify-center gap-2 w-fit">
+        <a 
+          href={`https://wa.me/6285168611131?text=Saya tertarik dengan lelang ${title}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#4C6782] hover:bg-[#3b5268] text-white font-medium rounded-lg px-5 py-2 flex items-center justify-center gap-2 w-fit transition-colors"
+        >
           <span>💬</span> Hubungi Kami
-        </button>
+        </a>
       </div>
     </div>
   )

@@ -97,7 +97,7 @@ export default function KprPage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-white to-blue-50 overflow-hidden">
       {/* Hero Section */}
-      <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-16 pt-20 md:pt-24 max-w-7xl">
         <FadeInUp delay={0}>
           <div className="text-center mb-16">
             <h1 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-4">
@@ -142,7 +142,7 @@ export default function KprPage() {
                 </ul>
 
                 {/* Action Button */}
-                <Link href={`https://wa.me/6281234567890?text=Saya tertarik dengan layanan ${service.title}`} target="_blank">
+                <Link href={`https://wa.me/6285168611131?text=Saya tertarik dengan layanan ${service.title}`} target="_blank" rel="noopener noreferrer">
                   <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
                     Konsultasi Sekarang
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

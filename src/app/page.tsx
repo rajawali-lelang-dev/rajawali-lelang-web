@@ -270,8 +270,8 @@ export default function Home() {
 
             <FadeInScale delay={400}>
               <ActionCard
-                title="Forum Pertanyaan"
-                href="/forum"
+                title="FAQ Properti Lelang"
+                href="/faq"
                 imgSrc="/images/assets/envelope.svg"
               />
             </FadeInScale>

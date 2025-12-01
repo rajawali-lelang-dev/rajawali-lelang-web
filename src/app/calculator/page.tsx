@@ -6,7 +6,7 @@ import React from 'react'
 export default function CalculatorPage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-white to-blue-50">
-      <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-16 pt-20 md:pt-24 max-w-7xl">
         <FadeInUp delay={0}>
           <div className="text-center mb-12">
             <h1 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-4">

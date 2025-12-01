@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -10,7 +9,7 @@ const Footer = () => {
       { label: 'Tentang Kami', href: '/about-us' }
     ],
     services: [
-      { label: 'Properti Dijual', href: '/aset/dijual/properti' },
+      { label: 'Properti Non Lelang', href: '/aset/dijual/properti' },
       { label: 'Properti Lelang', href: '/aset/lelang/properti' },
     ],
     support: [
