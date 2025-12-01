@@ -62,7 +62,11 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
       { href: '/about-us#dasar-hukum', label: 'Dasar Hukum'}
     ]
   },
-  { 
+  { href: '/kpr', label: 'KPR' },
+  { href: '/lelang-terdekat', label: 'Lelang Terdekat' },
+  { href: '/find-properti', label: 'Cari Properti' },
+  { href: '/iklankan-properti', label: 'Iklankan Properti' },
+   { 
     href: '/catalog', 
     label: 'Aset Non Lelang',
     dropdown: [
@@ -81,10 +85,6 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
 
     ]
   },
-  { href: '/kpr', label: 'KPR' },
-  { href: '/lelang-terdekat', label: 'Lelang Terdekat' },
-  { href: '/find-properti', label: 'Cari Properti' },
-  { href: '/iklankan-properti', label: 'Iklankan Properti' },
 ];
 
 export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(

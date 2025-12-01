@@ -34,69 +34,7 @@ export interface MobilLelang extends BaseItemLelang {
 
 // Mock Data - Mobil (NON-LELANG)
 export const mobils: Mobil[] = [
-  {
-    id: "M1",
-    title: "Toyota Avanza 1.3 G MT",
-    type: "MPV",
-    brand: "Toyota",
-    model: "Avanza",
-    year: 2020,
-    location: "Jakarta Selatan",
-    provinsi: "DKI Jakarta",
-    kota: "Jakarta Selatan",
-    price: 185000000,
-    mileage: 45000,
-    transmission: "Manual",
-    fuelType: "Bensin",
-    color: "Silver Metalik",
-    engineCapacity: 1300,
-    description:
-      "Toyota Avanza 2020 kondisi istimewa, service record resmi Toyota, interior bersih dan terawat. Pajak panjang, siap pakai.",
-    status: "Available",
-    image: ["/images/products/mobil/porsche.jpeg"] ,
-  },
-  {
-    id: "M2",
-    title: "Honda CR-V 1.5 Turbo Prestige",
-    type: "SUV",
-    brand: "Honda",
-    model: "CR-V",
-    year: 2019,
-    location: "Tangerang Selatan",
-    provinsi: "Banten",
-    kota: "Tangerang Selatan",
-    price: 450000000,
-    mileage: 35000,
-    transmission: "CVT",
-    fuelType: "Bensin",
-    color: "Putih Mutiara",
-    engineCapacity: 1500,
-    description:
-      "Honda CR-V Turbo 2019 full original, tidak bekas tabrakan, ban baru semua, interior seperti baru. Full option dengan sunroof.",
-    status: "Featured",
-    image: ["/images/products/mobil/porsche.jpeg"],
-  },
-  {
-    id: "M3",
-    title: "Mitsubishi Pajero Sport Dakar 4x2",
-    type: "SUV",
-    brand: "Mitsubishi",
-    model: "Pajero Sport",
-    year: 2018,
-    location: "Bogor",
-    provinsi: "Jawa Barat",
-    kota: "Bogor",
-    price: 380000000,
-    mileage: 68000,
-    transmission: "Automatic",
-    fuelType: "Diesel",
-    color: "Hitam",
-    engineCapacity: 2400,
-    description:
-      "Pajero Sport Dakar 2018 matic diesel, sangat irit dan bertenaga. Service rutin di bengkel resmi, kondisi mesin prima.",
-    status: "Available",
-    image: ["/images/products/mobil/porsche.jpeg"],
-  },
+  
   
 ];
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
          <div className="absolute -left-48 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30 overflow-hidden">
           <div className="relative w-full h-full">
              <Image

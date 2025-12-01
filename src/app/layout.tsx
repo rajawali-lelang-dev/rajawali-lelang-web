@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://rajawalilelang.com'),
   title: "Rajawali Lelang Indonesia",
   description: "Platform lelang properti terpercaya di Indonesia",
   icons: {
@@ -24,14 +25,23 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rajawali Lelang Indonesia",
     description: "Platform lelang properti terpercaya di Indonesia",
-    images: ["/images/assets/logo_rli.png"],
+    images: [
+      {
+        url: "/images/assets/logo_rli.png",
+        width: 1200,
+        height: 630,
+        alt: "Rajawali Lelang Indonesia Logo",
+      }
+    ],
     type: "website",
+    siteName: "Rajawali Lelang Indonesia",
   },
   twitter: {
     card: "summary_large_image",
     title: "Rajawali Lelang Indonesia",
     description: "Platform lelang properti terpercaya di Indonesia",
     images: ["/images/assets/logo_rli.png"],
+    creator: "@rajawalilelang",
   },
 };
 

@@ -80,8 +80,9 @@ const Navbar = () => {
     <nav className="relative w-full bg-primary-200 shadow-md">
 
       {/* Navbar content */}
-      <div ref={navRef} className="relative z-20 px-4 lg:px-8 xl:px-16 2xl:px-24">
-        <div className="flex items-center justify-between h-16 lg:h-20 max-w-screen-2xl mx-auto">
+      <div ref={navRef} className="relative z-20 w-full">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
@@ -96,7 +97,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 2xl:space-x-8">
             {navItems.map((item) => (
               item.hasDropdown ? (
                 <div
@@ -318,6 +319,7 @@ const Navbar = () => {
             </div>
           </div>
         )}
+        </div>
       </div>
     </nav>
   )

@@ -19,27 +19,13 @@ export interface PropertiDilelang extends BaseItemLelang {
   landArea: number;
   buildingArea: number;
   certificateType: "SHM" | "HGB";
+  jamLelang? : string;
   
 }
 
 // Mock Data - Properties (NON-LELANG)
 export const properties: Property[] = [
-  {
-    id: "1",
-    title: "Rumah Mewah 2 Lantai di Menteng",
-    type: "Rumah",
-    location: "Menteng, Jakarta Pusat",
-    provinsi: "DKI Jakarta",
-    kota: "Jakarta Pusat",
-    price: 8500000000,
-    landArea: 450,
-    buildingArea: 380,
-    certificateType: "SHM",
-    description:
-      "Rumah mewah dengan desain modern minimalis, dilengkapi kolam renang, taman luas, dan garasi untuk 3 mobil. Lokasi strategis dekat dengan pusat kota.",
-    status: "Featured",
-    image: ["/images/products/villa.png"],
-  },
+
  
 ];
 
@@ -364,6 +350,7 @@ export const lelangProperties: PropertiDilelang[] = [
     endPrice: 10301214000,
     tanggalLelang: "2026-01-22",
     batasWaktuLelang: "-",
+    jamLelang: "14:15 WIB",
   },
   {
     id: "L13",

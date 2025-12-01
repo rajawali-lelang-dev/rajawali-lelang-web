@@ -16,7 +16,7 @@ export interface Perhiasan extends BaseItemDijual {
   status: "Available" | "Featured" | "Sold";
 }
 
-// PerhiasanLelang Interface - extends BaseItemLelang
+// PerhiasanLelang Interface - extpends BaseItemLelang
 export interface PerhiasanLelang extends BaseItemLelang {
   type: PerhiasanType;
   material: MaterialType;
@@ -35,6 +35,7 @@ export const perhiasans: Perhiasan[] = [
 
 // Mock Data - Perhiasan Lelang
 export const lelangPerhiasans: PerhiasanLelang[] = [
+ 
 
 ];
 
