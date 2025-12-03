@@ -154,29 +154,29 @@ export default function AsetDetailPage() {
   const otherItems = allItems.filter(i => i.id !== item.id).slice(0, 3)
 
   // Type-specific additional info
-  const getAdditionalInfo = () => {
-    if (type === 'properti' && 'landArea' in otherItems[0]) {
+  const getAdditionalInfo = (targetItem: AsetItem) => {
+    if (type === 'properti' && 'landArea' in targetItem) {
       return [
-        ...(otherItems[0].landArea > 0 ? [{ label: 'Tanah', value: `${otherItems[0].landArea} m²` }] : []),
-        ...(otherItems[0].buildingArea > 0 ? [{ label: 'Bangunan', value: `${otherItems[0].buildingArea} m²` }] : []),
-        { label: 'Sertifikat', value: otherItems[0].certificateType ?? '' },
+        ...(targetItem.landArea > 0 ? [{ label: 'Tanah', value: `${targetItem.landArea} m²` }] : []),
+        ...(targetItem.buildingArea > 0 ? [{ label: 'Bangunan', value: `${targetItem.buildingArea} m²` }] : []),
+        { label: 'Sertifikat', value: targetItem.certificateType ?? '' },
       ]
     }
-    if (type === 'mobil' && 'brand' in otherItems[0]) {
+    if (type === 'mobil' && 'brand' in targetItem) {
       return [
-        { label: 'Brand', value: otherItems[0].brand ?? '' },
+        { label: 'Brand', value: targetItem.brand ?? '' },
       ]
     }
-    if (type === 'perhiasan' && 'material' in otherItems[0]) {
+    if (type === 'perhiasan' && 'material' in targetItem) {
       return [
-        { label: 'Material', value: otherItems[0].material ?? '' },
-        { label: 'Berat', value: `${otherItems[0].weight} gram` },
-        ...(otherItems[0].karat ? [{ label: 'Karat', value: `${otherItems[0].karat}K` }] : []),
+        { label: 'Material', value: targetItem.material ?? '' },
+        { label: 'Berat', value: `${targetItem.weight} gram` },
+        ...(targetItem.karat ? [{ label: 'Karat', value: `${targetItem.karat}K` }] : []),
       ]
     }
-    if (type === 'mesin' && 'brand' in otherItems[0]) {
+    if (type === 'mesin' && 'brand' in targetItem) {
       return [
-        { label: 'Brand', value: otherItems[0].brand ?? '' },
+        { label: 'Brand', value: targetItem.brand ?? '' },
       ]
     }
     return []
@@ -261,7 +261,7 @@ export default function AsetDetailPage() {
               </h2>
               
               <div className="grid grid-cols-2 gap-4 mb-6">
-                {getAdditionalInfo().map((info, index) => (
+                {getAdditionalInfo(item).map((info, index) => (
                   <div key={index} className="bg-blue-50 border border-blue-200 rounded-xl p-4">
                     <p className="text-slate-600 text-sm mb-1">{info.label}</p>
                     <p className="font-bold text-xl text-slate-800">{info.value}</p>
@@ -385,7 +385,7 @@ export default function AsetDetailPage() {
                   status={otherItem.status}
                   type={type}
                   mode={mode}
-                  additionalInfo={getAdditionalInfo()}
+                  additionalInfo={getAdditionalInfo(otherItem)}
                 />
               );
             })}

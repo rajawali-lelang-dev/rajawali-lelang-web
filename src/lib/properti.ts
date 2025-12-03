@@ -89,9 +89,9 @@ export const lelangProperties: PropertiDilelang[] = [
     id: "L3",
     title: "SEGERA LELANG GUDANG",
     type: "Gudang",
-    location: "Desa Bogotanjung, Kec. Gabus, Kab. Pati, Prov. Jawa Tengah",
-    provinsi: "Jawa Tengah",
-    kota: "Pati",
+    location: "Perumahan Mutiara Kampus Blok B-11, Desa Tegalgondo, Kec. Karangploso, Kab. Malang ",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
     landArea: 978,
     buildingArea: 42,
     certificateType: "SHM",
@@ -274,13 +274,13 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L11",
+    id: "L20",
     title: "SEGERA LELANG TANAH",
     type: "Tanah",
-    location: "Perumahan Mutiara Kampus Blok B-11, Desa Tegalgondo, Kec. Karangploso, Kab. Malang",
-    provinsi: "Jawa Timur",
-    kota: "Malang",
-    landArea: 149,
+    location: "Desa Bogotanjung, Kec. Gabus, Kab. Pati, Prov. Jawa Tengah",
+    provinsi: "Jawa Tengah",
+    kota: "Pati",
+    landArea: 1007,
     buildingArea: 0,
     certificateType: "HGB",
     description:
@@ -355,21 +355,22 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L15",
+    id: "L22",
     title: "SEGERA LELANG TANAH",
     type: "Tanah",
     location: "Dusun Robyong RT. 005/ RW. 001, Desa Pakisjajar, Kec. Pakis, Kabupaten Malang",
     provinsi: "Jawa Timur",
     kota: "Malang",
-    landArea: 1007,
-    buildingArea: 0,
+    landArea: 978,
+    buildingArea: 42,
     certificateType: "SHM",
     description:
-    `- 6 menit dari SMK Taruna Bangsa Pati
-      - 11 menit dari Kolam Renang Selulop
-      - 15 menit dari Alun-alun Kayen
-      - 16 menit dari Luwes Pati Mall
-      - 21 menit dari Rumah Sakit Keluarga Sehat`,
+    ` -	14 menit dari Wendit Recreational Park
+      -	14 menit dari Pintu Tol Kota Malang
+      -	17 menit dari RS. TNI AU Lanud Abdulrachman Saleh
+      -	19 menit dari Kampus Binus Malang
+      -	19 Menit dari Bandara Abdul Rachman Saleh
+    `,
     status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1UaF56w87cVfpvWCysCKefXCPC2TT6O7q"),
@@ -377,8 +378,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1bVWmRKpIdGOm9gD09N7-_gnJqaAjHR_H")
     ],
     endPrice: 340000000,
-    tanggalLelang: "-",
+    tanggalLelang: "24-12-2025",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
  
 ];
