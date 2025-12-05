@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { lelangMobils } from "@/lib/mobil";
@@ -59,24 +60,31 @@ const filterConfig = {
 };
 
 export default function MobilLelangPage() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    const selectedKota = sessionStorage.getItem('selectedKota');
+    const provinsiParam = searchParams.get('provinsi');
+    const kotaParam = searchParams.get('kota');
+    const statusParam = searchParams.get('status');
+    const brandParam = searchParams.get('brand');
+    const transmissionParam = searchParams.get('transmission');
+    const yearParam = searchParams.get('year');
     
-    if (selectedProvince || selectedKota) {
-      setFilters(prev => ({
-        ...prev,
-        ...(selectedProvince && { provinsi: selectedProvince }),
-        ...(selectedKota && { kota: selectedKota })
-      }));
-      sessionStorage.removeItem('selectedProvince');
-      sessionStorage.removeItem('selectedKota');
+    const urlFilters: Record<string, string> = {};
+    if (provinsiParam) urlFilters.provinsi = provinsiParam;
+    if (kotaParam) urlFilters.kota = kotaParam;
+    if (statusParam) urlFilters.status = statusParam;
+    if (brandParam) urlFilters.brand = brandParam;
+    if (transmissionParam) urlFilters.transmission = transmissionParam;
+    if (yearParam) urlFilters.year = yearParam;
+    
+    if (Object.keys(urlFilters).length > 0) {
+      setFilters(urlFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredVehicles = useMemo(() => {
     return lelangMobils.filter((mobil) => {

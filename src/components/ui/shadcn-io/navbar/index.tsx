@@ -67,7 +67,7 @@ const defaultNavigationLinks: Navbar01NavLink[] = [
   { href: '/find-properti', label: 'Cari Properti' },
   { href: '/iklankan-properti', label: 'Iklankan Properti' },
    { 
-    href: '/catalog', 
+    href: '/aset/dijual', 
     label: 'Aset Non Lelang',
     dropdown: [
       { href: '/aset/dijual/properti', label: 'Properti' },

@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { mesins } from "@/lib/mesin";
@@ -62,17 +63,31 @@ const filterConfig = {
 };
 
 export default function MesinDijualPage() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
-      sessionStorage.removeItem('selectedProvince');
+    const initialFilters: Record<string, string> = {};
+    const provinsi = searchParams.get('provinsi');
+    const kota = searchParams.get('kota');
+    const status = searchParams.get('status');
+    const type = searchParams.get('type');
+    const brand = searchParams.get('brand');
+    const year = searchParams.get('year');
+
+    if (provinsi) initialFilters.provinsi = provinsi;
+    if (kota) initialFilters.kota = kota;
+    if (status) initialFilters.status = status;
+    if (type) initialFilters.type = type;
+    if (brand) initialFilters.brand = brand;
+    if (year) initialFilters.year = year;
+
+    if (Object.keys(initialFilters).length > 0) {
+      setFilters(initialFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredMachines = useMemo(() => {
     return mesins.filter((mesin) => {
