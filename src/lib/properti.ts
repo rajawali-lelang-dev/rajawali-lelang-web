@@ -104,13 +104,13 @@ export const lelangProperties: PropertiDilelang[] = [
     - 19 Menit dari Bandara Abdul Rachman Saleh`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1R5s52yfdP1e5vpfdZz8WIjxVN7yvoLen"),
       getDriveImageUrl("https://drive.google.com/open?id=1soba2SUIajRhXWH6wsS0nsXm-deu83Gl"),
+      getDriveImageUrl("https://drive.google.com/open?id=1R5s52yfdP1e5vpfdZz8WIjxVN7yvoLen"),
       getDriveImageUrl("https://drive.google.com/open?id=1NC4LbXRp2zGMiv2sb_gu-4sQmCYy4OVY"),
       getDriveImageUrl("https://drive.google.com/open?id=1Ut996Ab2DUnBVl63ySGp28OLg93r7CmH")
     ],
     endPrice: 730000000,
-    tanggalLelang: "2026-12-24",
+    tanggalLelang: "2025-12-24",
     batasWaktuLelang: "-",
     jamLelang: "10:00 WIB",
   },
