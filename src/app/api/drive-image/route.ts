@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Initialize OAuth2 client with your company's credentials
+    // Initialize OAuth2 client with your company's credentialssss
     const oauth2Client = new google.auth.OAuth2(
       process.env.GOOGLE_CLIENT_ID,
       process.env.GOOGLE_CLIENT_SECRET,
