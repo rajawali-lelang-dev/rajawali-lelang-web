@@ -196,7 +196,7 @@ export default function AboutUsPage() {
               Layanan Kami
             </h2>
             <p className="font-manrope text-neutral-700 text-lg mb-8">
-              Rajawali Lelang Indonesia action menawarkan berbagai layanan meliputi:
+              Rajawali Lelang Indonesia menawarkan berbagai layanan meliputi:
             </p>
           </FadeInUp>
           
