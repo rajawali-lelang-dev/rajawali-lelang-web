@@ -13,7 +13,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, iconSrc, imageSrc, href }: ServiceCardProps) {
   const CardContent = (
-    <div className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer h-48 sm:h-56">
+    <div className="relative overflow-hidden rounded-lg shadow-lg h-48 sm:h-56">
       {/* Background Image */}
       <Image
         src={imageSrc}

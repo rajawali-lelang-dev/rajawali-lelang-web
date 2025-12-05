@@ -84,13 +84,21 @@ const kprSteps = [
   }
 ]
 
-const requiredDocuments = [
+const requiredDocumentsKaryawan = [
   'KTP & Kartu Keluarga',
   'NPWP',
   'Slip gaji 3 bulan terakhir',
   'Rekening koran 3 bulan terakhir',
   'Surat keterangan kerja',
   'Dokumen kepemilikan properti (untuk take over)'
+]
+
+const requiredDocumentsPengusaha = [
+  'KTP, KK, NPWP',
+  'SIUP, NIB, Akta Pendirian',
+  'Laporan keuangan (rekening koran 3 bulan terakhir, laporan laba rugi, neraca)',
+  'Rencana bisnis',
+  'Dokumen agunan (sertifikat tanah/bangunan, dll)'
 ]
 
 export default function KprPage() {
@@ -253,19 +261,75 @@ export default function KprPage() {
         <div className="mb-16">
           <FadeInUp delay={0}>
             <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-              <h2 className="font-manrope font-bold text-3xl text-primary-600 mb-6 text-center">
+              <h2 className="font-manrope font-bold text-3xl text-primary-600 mb-8 text-center">
                 Dokumen yang Diperlukan
               </h2>
-              <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-                {requiredDocuments.map((doc, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#3b82f6" strokeWidth="2"/>
-                      <polyline points="14 2 14 8 20 8" stroke="#3b82f6" strokeWidth="2"/>
-                    </svg>
-                    <span className="font-manrope text-neutral-700">{doc}</span>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Karyawan Documents */}
+                <div>
+                  <div className="flex flex-col items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+                        <circle cx="12" cy="7" r="4" stroke="#3b82f6" strokeWidth="2"/>
+                      </svg>
+                    </div>
+                    <h3 className="font-manrope font-bold text-xl text-neutral-800">
+                      Untuk Karyawan
+                    </h3>
                   </div>
-                ))}
+                  <div className="space-y-3">
+                    {requiredDocumentsKaryawan.map((doc, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 mt-0.5">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#3b82f6" strokeWidth="2"/>
+                          <polyline points="14 2 14 8 20 8" stroke="#3b82f6" strokeWidth="2"/>
+                        </svg>
+                        <span className="font-manrope text-sm text-neutral-700">{doc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pengusaha Documents */}
+                <div>
+                  <div className="flex flex-col items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-primary-200 rounded-lg flex items-center justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"/>
+                        <circle cx="12" cy="7" r="4" stroke="#3b82f6" strokeWidth="2"/>
+                      </svg>
+                    </div>
+                    <h3 className="font-manrope font-bold text-xl text-neutral-800">
+                      Untuk Pengusaha
+                    </h3>
+                  </div>
+                  <div className="space-y-3">
+                    {requiredDocumentsPengusaha.map((doc, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 mt-0.5">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1e40af" strokeWidth="2"/>
+                          <polyline points="14 2 14 8 20 8" stroke="#1e40af" strokeWidth="2"/>
+                        </svg>
+                        <span className="font-manrope text-sm text-neutral-700">{doc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Note */}
+              <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <div className="flex items-start gap-3">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                    <circle cx="12" cy="12" r="10" stroke="#f59e0b" strokeWidth="2"/>
+                    <path d="M12 8v4M12 16h.01" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                  <p className="font-manrope text-sm text-neutral-700">
+                    <span className="font-semibold">Catatan:</span> Pihak bank akan mengevaluasi kemampuan bayar dan kelayakan bisnis sebelum menyetujui kredit.
+                  </p>
+                </div>
               </div>
             </div>
           </FadeInUp>
