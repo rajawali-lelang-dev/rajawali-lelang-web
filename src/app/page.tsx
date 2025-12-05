@@ -87,7 +87,7 @@ export default function Home() {
       handleSearch();
     }
   };
-
+//trigger push
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section dengan background image yang naik ke bawah navbar */}
