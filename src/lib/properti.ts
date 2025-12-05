@@ -96,16 +96,17 @@ export const lelangProperties: PropertiDilelang[] = [
     buildingArea: 42,
     certificateType: "SHM",
     description:
-`     - 6 menit dari SMK Taruna Bangsa Pati
-      - 11 menit dari Kolam Renang Selulop
-      - 15 menit dari Alun-alun Kayen
-      - 16 menit dari Luwes Pati Mall
-      - 21 menit dari Rumah Sakit Keluarga Sehat`,
+    `
+    - 14 menit dari Wendit Recreational Park
+    - 14 menit dari Pintu Tol Kota Malang
+    - 17 menit dari RS. TNI AU Lanud Andulrachman Saleh
+    - 19 menit dari Kampus Binus Malang
+    - 19 Menit dari Bandara Abdul Rachman Saleh`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1R5s52yfdP1e5vpfdZz8WIjxVN7yvoLen"),
       getDriveImageUrl("https://drive.google.com/open?id=1soba2SUIajRhXWH6wsS0nsXm-deu83Gl"),
       getDriveImageUrl("https://drive.google.com/open?id=1NC4LbXRp2zGMiv2sb_gu-4sQmCYy4OVY"),
-      getDriveImageUrl("https://drive.google.com/open?id=1R5s52yfdP1e5vpfdZz8WIjxVN7yvoLen"),
       getDriveImageUrl("https://drive.google.com/open?id=1Ut996Ab2DUnBVl63ySGp28OLg93r7CmH")
     ],
     endPrice: 730000000,
@@ -131,10 +132,10 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Hawai Waterpark`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1gz2DuYu8vOVvALumPJmseRfOs04WPWf1"),
       getDriveImageUrl("https://drive.google.com/open?id=1iAglJSkpx6Y-BW723tOHPWkWfcl-9feU"),
       getDriveImageUrl("https://drive.google.com/open?id=1rnGTuAXB_ouDZMGKo0i5-5C60C8W1a1T"),
-      getDriveImageUrl("https://drive.google.com/open?id=1nFPE1rB-Eujf-po34-gMNB3Z_UJarOpk"),
-      getDriveImageUrl("https://drive.google.com/open?id=1gz2DuYu8vOVvALumPJmseRfOs04WPWf1")
+      getDriveImageUrl("https://drive.google.com/open?id=1nFPE1rB-Eujf-po34-gMNB3Z_UJarOpk")
     ],
     endPrice: 1532000000,
     tanggalLelang: "-",
@@ -186,9 +187,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU"),
       getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh"),
-      getDriveImageUrl("https://drive.google.com/open?id=1PKVPY9FjBhGyQZE53c9W2RQLx1I2qD6t"),
-      getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU")
+      getDriveImageUrl("https://drive.google.com/open?id=1PKVPY9FjBhGyQZE53c9W2RQLx1I2qD6t")
     ],
     endPrice: 850000000,
     tanggalLelang: "-",
@@ -266,8 +267,8 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Gerbang tol Singosari`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1NI1RzCDilSyObDclwv-z8cRijisAgG9g"),
       getDriveImageUrl("https://drive.google.com/open?id=1MXHxN73N9dk8yrzXuPdao9jNRvS3EBzB"),
+      getDriveImageUrl("https://drive.google.com/open?id=1NI1RzCDilSyObDclwv-z8cRijisAgG9g"),
       getDriveImageUrl("https://drive.google.com/open?id=1HKlWKZ8Eq9qDhoxBJYRNc-L1kSFfiFfe")
     ],
     endPrice: 900900000,
@@ -292,9 +293,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Gerbang tol Singosari`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1r4rfXomcp7CoAlG0jv-9MV0tsvzd4WOw"),
       getDriveImageUrl("https://drive.google.com/open?id=1rXNqLRUBYV_g2TEz4eJWqi814kUEfQlB"),
-      getDriveImageUrl("https://drive.google.com/open?id=1we9gxGCu0MEWAt9UJ61xOiURiHXkcfMi"),
-      getDriveImageUrl("https://drive.google.com/open?id=1r4rfXomcp7CoAlG0jv-9MV0tsvzd4WOw")
+      getDriveImageUrl("https://drive.google.com/open?id=1we9gxGCu0MEWAt9UJ61xOiURiHXkcfMi")
     ],
     endPrice: 413100000,
     tanggalLelang: "-",
@@ -318,10 +319,10 @@ export const lelangProperties: PropertiDilelang[] = [
       - 20 Menit ke Urban Forest Cipete`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1IRn_v1LvIj6x0cKYXQycBBUN7HzeVfCa"),
       getDriveImageUrl("https://drive.google.com/open?id=1zXgfS549ahPkfq6quba-McNtOdQSjJZY"),
       getDriveImageUrl("https://drive.google.com/open?id=1YlgldiulKBSjbTWYLg6O4bVs1UTjz8q7"),
-      getDriveImageUrl("https://drive.google.com/open?id=1q68qVfrdhw9tOPDy_Mc3_dmrwEAQgfoj"),
-      getDriveImageUrl("https://drive.google.com/open?id=1IRn_v1LvIj6x0cKYXQycBBUN7HzeVfCa")
+      getDriveImageUrl("https://drive.google.com/open?id=1q68qVfrdhw9tOPDy_Mc3_dmrwEAQgfoj")
     ],
     endPrice: 10301214000,
     tanggalLelang: "2026-01-22",

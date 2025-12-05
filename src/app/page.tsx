@@ -78,8 +78,8 @@ export default function Home() {
     if (filters.buildingArea) params.set("buildingArea", filters.buildingArea);
     if (filters.sortBy) params.set("sortBy", filters.sortBy);
     
-    // Navigate to properti dijual page with filters
-    router.push(`/aset/dijual/properti?${params.toString()}`);
+    // Navigate to properti dilelang page with filters
+    router.push(`/aset/lelang/properti?${params.toString()}`);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
