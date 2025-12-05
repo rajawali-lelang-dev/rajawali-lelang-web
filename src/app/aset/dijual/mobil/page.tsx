@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
@@ -60,7 +60,7 @@ const filterConfig = {
   ],
 };
 
-export default function MobilDijualPage() {
+function MobilDijualContent() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
@@ -181,5 +181,13 @@ export default function MobilDijualPage() {
         Menampilkan {filteredVehicles.length} dari {mobils.length} mobil
       </div>
     </AsetLayout>
+  );
+}
+
+export default function MobilDijualPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MobilDijualContent />
+    </Suspense>
   );
 }

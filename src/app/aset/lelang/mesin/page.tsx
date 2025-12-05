@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
@@ -61,7 +61,7 @@ const filterConfig = {
   ],
 };
 
-export default function MesinLelangPage() {
+function MesinLelangContent() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
@@ -168,5 +168,13 @@ export default function MesinLelangPage() {
         Menampilkan {filteredMachines.length} dari {lelangMesins.length} mesin
       </div>
     </AsetLayout>
+  );
+}
+
+export default function MesinLelangPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MesinLelangContent />
+    </Suspense>
   );
 }

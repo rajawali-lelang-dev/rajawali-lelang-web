@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
@@ -61,7 +61,7 @@ const filterConfig = {
   ],
 };
 
-export default function PropertiLelangPage() {
+function PropertiLelangContent() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
@@ -191,5 +191,13 @@ export default function PropertiLelangPage() {
         Menampilkan {filteredProperties.length} dari {lelangProperties.length} properti
       </div>
     </AsetLayout>
+  );
+}
+
+export default function PropertiLelangPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PropertiLelangContent />
+    </Suspense>
   );
 }
