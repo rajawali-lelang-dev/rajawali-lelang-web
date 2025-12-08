@@ -109,6 +109,7 @@ export default function NearestLelangPage() {
               location={item.location}
               type={item.type}
               status={item.status}
+              jamLelang={'jamLelang' in item ? item.jamLelang : undefined}
             />
           ))
         ) : (

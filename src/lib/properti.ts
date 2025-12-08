@@ -87,7 +87,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "L3",
-    title: "SEGERA LELANG GUDANG",
+    title: "AGUNAN LELANG GUDANG",
     type: "Gudang",
     location: "Dusun Robyong RT. 005/ RW. 001, Desa Pakisjajar, Kec. Pakis, Kabupaten Malang ",
     provinsi: "Jawa Timur",
@@ -187,8 +187,8 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU"),
       getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh"),
+      getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU"),
       getDriveImageUrl("https://drive.google.com/open?id=1PKVPY9FjBhGyQZE53c9W2RQLx1I2qD6t")
     ],
     endPrice: 850000000,
@@ -293,8 +293,8 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Gerbang tol Singosari`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1r4rfXomcp7CoAlG0jv-9MV0tsvzd4WOw"),
       getDriveImageUrl("https://drive.google.com/open?id=1rXNqLRUBYV_g2TEz4eJWqi814kUEfQlB"),
+      getDriveImageUrl("https://drive.google.com/open?id=1r4rfXomcp7CoAlG0jv-9MV0tsvzd4WOw"),
       getDriveImageUrl("https://drive.google.com/open?id=1we9gxGCu0MEWAt9UJ61xOiURiHXkcfMi")
     ],
     endPrice: 413100000,
