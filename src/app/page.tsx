@@ -288,7 +288,7 @@ export default function Home() {
                 Properti Unggulan
               </h2>
               <p className="mt-2 text-sm md:text-base text-neutral-600">
-                Dari tanah hingga bangunan, semua ada di sini
+                Kami menyediakan berbagai macam jenis properti dengan harga terjangkau.
               </p>
             </div>
           </FadeInUp>

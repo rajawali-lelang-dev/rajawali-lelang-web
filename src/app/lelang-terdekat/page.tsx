@@ -39,7 +39,7 @@ export default function NearestLelangPage() {
         />
 
         {/* Clock SVG (kiri bawah) */}
-        <div className="absolute bottom-2 left-16 w-48 h-48 md:w-64 md:h-64">
+        <div className="absolute bottom-2 left-8 w-48 h-48 md:w-64 md:h-64">
           <Image
             src="/images/lelang-terdekat/clock.svg"
             alt="Clock illustration"
