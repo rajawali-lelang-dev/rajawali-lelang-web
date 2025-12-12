@@ -116,7 +116,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "L4",
-    title: "AGUNAN LELANG GUDANG",
+    title: "AGUNAN LELANG RUKO 2 LANTAI",
     type: "Ruko",
     location: "Jl. Gajayana, Kelurahan Ketawanggede, Kecamatan Lowokwaru, Kota Malang",
     provinsi: "Jawa Timur",
@@ -385,35 +385,6 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "",
     batasWaktuLelang: "-",
   },
-  {
-    id: "L23",
-    title: "SEGERA LELANG TANAH BARU",
-    type: "Tanah",
-    location: "Desa Bogotanjung, Kec. Gabus, Kab. Pati, Prov. Jawa Tengah",
-    provinsi: "Jawa Tengah",
-    kota: "Pati",
-    landArea: 1007,
-    buildingArea: 0,
-    certificateType: "SHM",
-    description:
-    `  
-      - 6 menit dari SMK Taruna Bangsa Pati
-      - 11 menit dari Kolam Renang Selulop
-      - 15 menit dari Alun-alun Kayen
-      - 16 menit dari Luwes Pati Mall
-      - 21 menit dari Rumah Sakit Keluarga Sehat
-    `,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1UaF56w87cVfpvWCysCKefXCPC2TT6O7q"),
-      getDriveImageUrl("https://drive.google.com/open?id=1pOQh184CdbfziqRrXrdWgmX3b7fc6W3y"),
-      getDriveImageUrl("https://drive.google.com/open?id=1bVWmRKpIdGOm9gD09N7-_gnJqaAjHR_H")
-    ],
-    endPrice: 340000000,
-    tanggalLelang: "",
-    batasWaktuLelang: "-",
-  }
- 
 ];
 
 // Helper: Get unique provinces from all properties

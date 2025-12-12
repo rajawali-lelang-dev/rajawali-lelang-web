@@ -25,7 +25,7 @@ export default function FindPropertiPage() {
                 Temukan Properti Impian Anda
               </h1>
               <p className="font-manrope text-xl md:text-2xl mb-8 text-neutral-200">
-                Untuk menemukan properti yang sesuai dengan kebutuhan anda
+                Konsultasi gratis dengan tim profesional kami untuk menemukan properti yang sesuai dengan kebutuhan Anda
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

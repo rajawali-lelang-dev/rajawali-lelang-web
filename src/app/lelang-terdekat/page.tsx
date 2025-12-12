@@ -38,26 +38,6 @@ export default function NearestLelangPage() {
           className="object-cover object-center"
         />
 
-        {/* Clock SVG (kiri bawah) */}
-        <div className="absolute bottom-2 left-8 w-48 h-48 md:w-64 md:h-64">
-          <Image
-            src="/images/lelang-terdekat/clock.svg"
-            alt="Clock illustration"
-            fill
-            className="object-contain"
-          />
-        </div>
-
-        {/* Notification Bell SVG (kanan atas) */}
-        <div className="absolute top-24 right-64 w-24 h-24 md:w-32 md:h-32">
-          <Image
-            src="/images/lelang-terdekat/notification.svg"
-            alt="Notification bell"
-            fill
-            className="object-contain"
-          />
-        </div>
-
         {/* Konten Teks */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center md:text-left">
           <FadeInUp delay={0}>
