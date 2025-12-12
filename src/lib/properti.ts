@@ -138,7 +138,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1nFPE1rB-Eujf-po34-gMNB3Z_UJarOpk")
     ],
     endPrice: 1532000000,
-    tanggalLelang: "2026-06-21",
+    tanggalLelang: "2026-01-21",
     batasWaktuLelang: "-",
     jamLelang: "11:00 WIB",
   },

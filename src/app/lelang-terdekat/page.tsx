@@ -38,6 +38,16 @@ export default function NearestLelangPage() {
           className="object-cover object-center"
         />
 
+        {/* Notification Bell SVG (kanan atas) */}
+        <div className="absolute top-24 right-64 w-24 h-24 md:w-32 md:h-32">
+          <Image
+            src="/images/lelang-terdekat/notification.svg"
+            alt="Notification bell"
+            fill
+            className="object-contain"
+          />
+        </div>
+
         {/* Konten Teks */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center md:text-left">
           <FadeInUp delay={0}>
