@@ -89,8 +89,8 @@ export default function AboutUsPage() {
             {/* Visi Card */}
             <FadeInLeft delay={100}>
               <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg w-full h-full">
-                <h3 className="font-manrope font-bold text-3xl text-primary-600 mb-6">Visi</h3>
-                <p className="font-manrope text-neutral-700 text-base leading-relaxed">
+                <h3 className="font-manrope font-bold text-3xl text-primary-600 mb-6 text-center">Visi</h3>
+                <p className="font-manrope text-neutral-700 text-base leading-relaxed text-center">
                   Menjadi balai lelang terdepan di Indonesia yang mengedepankan profesionalisme, inovasi, dan kepercayaan, serta mampu memberikan kontribusi nyata bagi perkembangan industri lelang nasional
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function AboutUsPage() {
             {/* Misi Card */}
             <FadeInRight delay={200}>
               <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-                <h3 className="font-manrope font-bold text-3xl text-primary-600 mb-6">Misi</h3>
+                <h3 className="font-manrope font-bold text-3xl text-primary-600 mb-6 text-center">Misi</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Misi Item 1 */}
                 <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
@@ -111,7 +111,7 @@ export default function AboutUsPage() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed">
+                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed text-center">
                     Menyediakan layanan lelang yang transparan, akurat, dan sesuai regulasi
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export default function AboutUsPage() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed">
+                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed text-center">
                     Mengintegrasikan teknologi digital untuk memperluas akses pasar lelang
                   </p>
                 </div>
@@ -141,13 +141,13 @@ export default function AboutUsPage() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed">
+                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed text-center">
                     Memaksimalkan nilai aset klien melalui strategi pemasaran yang efektif
                   </p>
                 </div>
 
                 {/* Misi Item 4 */}
-                <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow text-center">
                   <div className="relative h-32 mb-3">
                     <Image
                       src="/images/about-us/misi_4.png"
@@ -156,7 +156,7 @@ export default function AboutUsPage() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed">
+                  <p className="font-manrope text-neutral-700 text-sm leading-relaxed text-center">
                     Meningkatkan kepercayaan publik terhadap industri lelang di Indonesia
                   </p>
                 </div>
