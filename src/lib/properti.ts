@@ -225,7 +225,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "L9",
-    title: "SEGERA LELANG TANAH DAN BANGUNAN",
+    title: "SEGERA LELANG GUDAN DAN PABRIK",
     type: "Tanah",
     location: "Jalan Raya Asrikaton Gang Anggrek 2 RT 10 RW 03, Desa Asrikaton, Kec. Pakis, Kab. Malang",
     provinsi: "Jawa Timur",
@@ -354,8 +354,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1ZCohstX3fLeko0zu4Y9G545r1b-9w3ku")
     ],
     endPrice: 8000000000,
-    tanggalLelang: "2026-12-23",
-    batasWaktuLelang: "14:20 WIB",
+    tanggalLelang: "2026-12-24",
+    batasWaktuLelang: "-",
+    jamLelang: "14:20 WIB",
   },
   {
     id: "L22",
@@ -403,9 +404,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 16 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1cNW2kjVK2xc4Et3Y4dgvJZtJ_M9WjtUB"),
       getDriveImageUrl("https://drive.google.com/open?id=1HfAD51PiTAN34N8CCCiOZU0nyNt9P3fP"),
-      getDriveImageUrl("https://drive.google.com/open?id=1EHJLs_ItHNpw3QFQJHmf3h8s2Ik-a7kU"),
-      getDriveImageUrl("https://drive.google.com/open?id=1cNW2kjVK2xc4Et3Y4dgvJZtJ_M9WjtUB")
+      getDriveImageUrl("https://drive.google.com/open?id=1EHJLs_ItHNpw3QFQJHmf3h8s2Ik-a7kU")
     ],
     endPrice: 770000000,
     tanggalLelang: "-",
@@ -599,32 +600,6 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1aXJy3uAXfqqpxaz7nL3rPX_4bGtfoWQu")
     ],
     endPrice: 744000000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-  {
-    id: "L31",
-    title: "SEGERA LELANG RUMAH TINGGAL 2 LANTAI",
-    type: "Rumah",
-    location: "Perumahan Persada Prapen Mas, Jl. Prapen Indah Timur IV Blok AC No. 10 Kel. Panjangjiwo, Kec. Tenggilis Mejoyo, Surabaya",
-    provinsi: "Jawa Timur",
-    kota: "Surabaya",
-    landArea: 165,
-    buildingArea: 221,
-    certificateType: "SHM",
-    description:
-    `- 5 menit dari RS Ubaya
-      - 7 menit dari Universitas Surabaya
-      - 17 menit dari Royal Plaza
-      - 20 menit dari Pintu Tol Waru
-      - 20 menit dari Taman Bungkul Surabaya`,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1I1j6rRtyKI-i2j3l3CouihVGiE3DUD39"),
-      getDriveImageUrl("https://drive.google.com/open?id=1qOSJjXMv5CZKshC5iTOgtP_jwz8xMaJF"),
-      getDriveImageUrl("https://drive.google.com/open?id=1i0gBcRwYQFbiVqi1iuSMJXuQSyi7EVn9")
-    ],
-    endPrice: 2521226225,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },

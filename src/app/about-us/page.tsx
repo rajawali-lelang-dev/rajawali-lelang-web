@@ -15,17 +15,6 @@ export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
-         <div className="absolute -left-48 top-1/2 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30 overflow-hidden">
-          <div className="relative w-full h-full">
-             <Image
-                src="/images/about-us/elipsis.png"
-                alt="Decorator"
-                fill
-                className="object-contain"
-                priority
-              />
-          </div>
-        </div>
         {/* Header Section */}
         <FadeInUp delay={0}>
           <div className="mb-16">
@@ -66,18 +55,6 @@ export default function AboutUsPage() {
       </div>
          {/* Visi & Misi Section - Full Width */}
       <div id="visi-misi" className="relative py-16 overflow-hidden bg-primary-50 w-full">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 pointer-events-none hidden lg:block opacity-30">
-          <div className="relative w-full h-full">
-             <Image
-                src="/images/about-us/elipsis.png"
-                alt="Decorator"
-                fill
-                className="object-contain"
-                priority
-              />
-          </div>
-        </div>
-
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
           <FadeInUp delay={0}>
             <h2 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-12">
@@ -168,28 +145,6 @@ export default function AboutUsPage() {
       </div>
         {/* Layanan Kami Section */}
       <div className="container mx-auto px-6 md:px-12 py-16 pt-20 md:pt-24 relative z-10 max-w-7xl">
-        <div className="absolute -left-48 top-[400px] -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block rotate-180 opacity-30 overflow-x-hidden">
-          <div className="relative w-full h-full">
-             <Image
-                src="/images/about-us/elipsis.png"
-                alt="Decorator"
-                fill
-                className="object-contain"
-                priority
-              />
-          </div>
-        </div>
-         <div className="absolute -right-32 top-3/4 -translate-y-1/2 w-32 h-64 pointer-events-none hidden lg:block opacity-30 overflow-x-hidden">
-          <div className="relative w-full h-full">
-             <Image
-                src="/images/about-us/elipsis.png"
-                alt="Decorator"
-                fill
-                className="object-contain"
-                priority
-              />
-          </div>
-        </div>
         <div className="mb-16">
           <FadeInUp delay={0}>
             <h2 className="font-manrope font-bold text-4xl text-primary-600 mb-4">
@@ -340,17 +295,6 @@ export default function AboutUsPage() {
 
       {/* Dasar Hukum Lelang Section */}
       <div id="dasar-hukum" className="py-16 bg-primary-50 w-full">
-        <div className="absolute -left-20 top-7/8 -translate-y-1/2 w-64 h-64 pointer-events-none hidden lg:block opacity-30 overflow-x-hidden rotate-180">
-          <div className="relative w-full h-full">
-             <Image
-                src="/images/about-us/elipsis.png"
-                alt="Decorator"
-                fill
-                className="object-contain"
-                priority
-              />
-          </div>
-        </div>
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <FadeInUp delay={0}>
             <h2 className="font-manrope font-bold text-4xl text-primary-900 mb-4">
