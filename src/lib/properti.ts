@@ -404,9 +404,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 16 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1EHJLs_ItHNpw3QFQJHmf3h8s2Ik-a7kU"),
       getDriveImageUrl("https://drive.google.com/open?id=1cNW2kjVK2xc4Et3Y4dgvJZtJ_M9WjtUB"),
       getDriveImageUrl("https://drive.google.com/open?id=1HfAD51PiTAN34N8CCCiOZU0nyNt9P3fP"),
-      getDriveImageUrl("https://drive.google.com/open?id=1EHJLs_ItHNpw3QFQJHmf3h8s2Ik-a7kU")
     ],
     endPrice: 770000000,
     tanggalLelang: "-",
@@ -430,9 +430,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 18 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1tg3chY_xJa6Yh247l97Un6yjh0_hAiIh"),
       getDriveImageUrl("https://drive.google.com/open?id=19KXYp2EtxmxG4U_WVdYawAMSajuSTm6i"),
-      getDriveImageUrl("https://drive.google.com/open?id=1a1ltrfNqvrNm4au4VpODLsGVFcnTqqY4"),
-      getDriveImageUrl("https://drive.google.com/open?id=1tg3chY_xJa6Yh247l97Un6yjh0_hAiIh")
+      getDriveImageUrl("https://drive.google.com/open?id=1a1ltrfNqvrNm4au4VpODLsGVFcnTqqY4")
     ],
     endPrice: 625000000,
     tanggalLelang: "-",
@@ -456,9 +456,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 17 menit dari Mall Olympic Garden (MOG)`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1PGpVzmGICVPD87uLvq0kHA66pMnJhFJD"),
       getDriveImageUrl("https://drive.google.com/open?id=1Vg8yqFKfZNYglcnxlQLyiFVJm3lwm57u"),
-      getDriveImageUrl("https://drive.google.com/open?id=1x36j5cQ-qtVElwIQz-aommqdSXzlv7bq"),
-      getDriveImageUrl("https://drive.google.com/open?id=1PGpVzmGICVPD87uLvq0kHA66pMnJhFJD")
+      getDriveImageUrl("https://drive.google.com/open?id=1x36j5cQ-qtVElwIQz-aommqdSXzlv7bq")
     ],
     endPrice: 1250000000,
     tanggalLelang: "-",
@@ -515,9 +515,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 15 menit dari Batu Secret Zoo`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1newpHYXbOT7UWlSaRNV7TZuqDPusoO4d"),
       getDriveImageUrl("https://drive.google.com/open?id=1nGcaUd6uYxPlAG5FZWiZnD2bGTL3ZGbi"),
       getDriveImageUrl("https://drive.google.com/open?id=1PqJOypVTj5sPmJs-dksbFKWf1aAGQSrq"),
-      getDriveImageUrl("https://drive.google.com/open?id=1newpHYXbOT7UWlSaRNV7TZuqDPusoO4d"),
       getDriveImageUrl("https://drive.google.com/open?id=1Kei9XFkJi4cbW6t7o28xWx7hAvsdPWjX")
     ],
     endPrice: 635000000,
@@ -553,7 +553,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "L29",
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG",
     type: "Rumah",
     location: "Kampung Mekarjati RT.031 RW.007 Kel. Pusakajaya, Kec. Pusakajaya, Kab. Subang, Jawa Barat",
     provinsi: "Jawa Barat",
@@ -574,8 +574,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1usZo0LPBN88bzAVGZjVkUwnfBLedNvNv")
     ],
     endPrice: 340000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-01-20",
     batasWaktuLelang: "-",
+    jamLelang: "10:35 WIB",
   },
   {
     id: "L30",
@@ -595,9 +596,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 18 menit dari Gerbang Tol Kota Malang`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1aXJy3uAXfqqpxaz7nL3rPX_4bGtfoWQu"),
       getDriveImageUrl("https://drive.google.com/open?id=19SAp1CpCdiewqs0TCfqw54EAlJ_KTrpa"),
-      getDriveImageUrl("https://drive.google.com/open?id=1mACy1IBPR9K2xMbBdbjasEPbGArltEIx"),
-      getDriveImageUrl("https://drive.google.com/open?id=1aXJy3uAXfqqpxaz7nL3rPX_4bGtfoWQu")
+      getDriveImageUrl("https://drive.google.com/open?id=1mACy1IBPR9K2xMbBdbjasEPbGArltEIx")
     ],
     endPrice: 744000000,
     tanggalLelang: "-",
@@ -726,8 +727,8 @@ export const lelangProperties: PropertiDilelang[] = [
       - 27 menit dari Jalan Raya Magelang-Yogya`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1DX9_OoyNUchu8SbY0qLI5EiVtKpQQ_pb"),
       getDriveImageUrl("https://drive.google.com/open?id=1X-7jOXaa-g5dwrGkhswivktFhlAF596G"),
+      getDriveImageUrl("https://drive.google.com/open?id=1DX9_OoyNUchu8SbY0qLI5EiVtKpQQ_pb"),
       getDriveImageUrl("https://drive.google.com/open?id=1_e_zxTtHTVtVoJTlLsOo6IsAxz7CuTmG"),
       getDriveImageUrl("https://drive.google.com/open?id=1FX1-qMs5iOvP0Xa2jRmCMAUWVLqalWoT")
     ],
@@ -753,9 +754,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari SMKN 1 Tempel`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1emxleX7PBYwfNco-Ia3SwfWyAe0-crAX"),
       getDriveImageUrl("https://drive.google.com/open?id=1Gi-43PTqQVpE8UvJAIbq24QLwYgUeKIu"),
-      getDriveImageUrl("https://drive.google.com/open?id=1CySdE_r8MkuKVvSwB1S9pHBlIEA9edg_"),
-      getDriveImageUrl("https://drive.google.com/open?id=1emxleX7PBYwfNco-Ia3SwfWyAe0-crAX")
+      getDriveImageUrl("https://drive.google.com/open?id=1CySdE_r8MkuKVvSwB1S9pHBlIEA9edg_")
     ],
     endPrice: 112840000,
     tanggalLelang: "-",
@@ -920,10 +921,10 @@ export const lelangProperties: PropertiDilelang[] = [
       - 15 menit dari Grojogan Watu Purbo`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1tMlgASCcLuKqLBULMP4ar7-wt5yo064J"),
       getDriveImageUrl("https://drive.google.com/open?id=1aiOxL7o-zyPyoTcJFud6ncFj-PFuZW__"),
       getDriveImageUrl("https://drive.google.com/open?id=1N8e_tf6CAPM0K5EQtogT0DWuTXPSNyIC"),
       getDriveImageUrl("https://drive.google.com/open?id=1wrKJVJAHmVu6VNDaDOe4Wca0pVRag_hr"),
-      getDriveImageUrl("https://drive.google.com/open?id=1tMlgASCcLuKqLBULMP4ar7-wt5yo064J")
     ],
     endPrice: 1132937000,
     tanggalLelang: "-",
@@ -947,10 +948,10 @@ export const lelangProperties: PropertiDilelang[] = [
       - 19 menit dari SMK Negeri 1 Salam`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1hrWmni2r1AdOkWpB4PgLaybVufkXjOIB"),
       getDriveImageUrl("https://drive.google.com/open?id=13471UWwBN58mJrxC4K88SYxQIEP7eRG2"),
       getDriveImageUrl("https://drive.google.com/open?id=1Kettsz661lrxtlL8klArKu8AlcO5nc8T"),
       getDriveImageUrl("https://drive.google.com/open?id=1lntsoF5HWPyzEXhI61-ObcljBrQBxW7U"),
-      getDriveImageUrl("https://drive.google.com/open?id=1hrWmni2r1AdOkWpB4PgLaybVufkXjOIB")
     ],
     endPrice: 1537813000,
     tanggalLelang: "-",
@@ -974,9 +975,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 25 menit dari Universitas Teknologi Yogyakarta`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=19IdpDgjlSyhmoyXicezv7AuRv53hSflu"),
       getDriveImageUrl("https://drive.google.com/open?id=1VmWwl9QlPHys_GPWjt0k11QicuoLWM1c"),
-      getDriveImageUrl("https://drive.google.com/open?id=1jfxES4TUsqxhyn_ovnI546H_bhN1bqdB"),
-      getDriveImageUrl("https://drive.google.com/open?id=19IdpDgjlSyhmoyXicezv7AuRv53hSflu")
+      getDriveImageUrl("https://drive.google.com/open?id=1jfxES4TUsqxhyn_ovnI546H_bhN1bqdB")
     ],
     endPrice: 587941000,
     tanggalLelang: "-",
@@ -1025,9 +1026,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari SMKN 1 Tempel`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1-8OMsYtYakbMlkHNvaKeaCUcImftq2aK"),
       getDriveImageUrl("https://drive.google.com/open?id=1am5SLf8LaowWMXR_XCmJ0ClVwlQHPlS8"),
       getDriveImageUrl("https://drive.google.com/open?id=1K-nkRdhrxEFlcrSIem2cCdatCfWWOW0N"),
-      getDriveImageUrl("https://drive.google.com/open?id=1-8OMsYtYakbMlkHNvaKeaCUcImftq2aK"),
       getDriveImageUrl("https://drive.google.com/open?id=1f9uGRr_iXu-JRzkYQgG5xogJBBSx6CFA"),
       getDriveImageUrl("https://drive.google.com/open?id=19YmMdWA7-KkSN6SKmCl9sIpHpjyQy0vH")
     ],
@@ -1113,34 +1114,6 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=10T55vHa2CI7LGO1Sl5Yl2Qiv7Zr74cnH")
     ],
     endPrice: 233800000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-  {
-    id: "L51",
-    title: "SEGERA LELANG GUDANG",
-    type: "Gudang",
-    location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
-    provinsi: "Jawa Tengah",
-    kota: "Magelang",
-    landArea: 1983,
-    buildingArea: 1277,
-    certificateType: "SHM",
-    description:
-    `⦁ 10 menit dari Taman Sabo Dam Nglumut 
-      ⦁ 11 menit dari Puskesmas Salam Magelang
-      ⦁ 12 menit dari Jl. Raya Magelang-Yogyakarta
-      ⦁ 14 menit dari Pasar Tempel Sleman
-      ⦁ 14 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1am5SLf8LaowWMXR_XCmJ0ClVwlQHPlS8"),
-      getDriveImageUrl("https://drive.google.com/open?id=1K-nkRdhrxEFlcrSIem2cCdatCfWWOW0N"),
-      getDriveImageUrl("https://drive.google.com/open?id=1-8OMsYtYakbMlkHNvaKeaCUcImftq2aK"),
-      getDriveImageUrl("https://drive.google.com/open?id=1f9uGRr_iXu-JRzkYQgG5xogJBBSx6CFA"),
-      getDriveImageUrl("https://drive.google.com/open?id=19YmMdWA7-KkSN6SKmCl9sIpHpjyQy0vH")
-    ],
-    endPrice: 1077991000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
@@ -1353,10 +1326,10 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 15 menit dari GOR Dhananjaya Magelang`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1wPVz-ZXc6hxaOySEVyqmc2IfcBJU4mzf"),
       getDriveImageUrl("https://drive.google.com/open?id=1Alg7RM-jrKUMZ7eXhNOEciXMJh9FgONC"),
       getDriveImageUrl("https://drive.google.com/open?id=1qA1ERPRPgV2I0cRYf_rkb86sOrcXgVHq"),
       getDriveImageUrl("https://drive.google.com/open?id=1DteFGhsorcwdIkd5BbyohMQHCcyTUXIc"),
-      getDriveImageUrl("https://drive.google.com/open?id=1wPVz-ZXc6hxaOySEVyqmc2IfcBJU4mzf")
     ],
     endPrice: 1091430000,
     tanggalLelang: "-",
@@ -1433,9 +1406,9 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 15 menit dari Candi Borobudur Magelang`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1KF3SGqSRTfGZ60h2wWpjVlbpfBFFiM7L"),
       getDriveImageUrl("https://drive.google.com/open?id=1a4qeQmyW9FFh41ipjqjMr6Q23hqwVil_"),
       getDriveImageUrl("https://drive.google.com/open?id=19u1isvcIrW839awX8Xoj50KU3hcS3ql_"),
-      getDriveImageUrl("https://drive.google.com/open?id=1KF3SGqSRTfGZ60h2wWpjVlbpfBFFiM7L"),
       getDriveImageUrl("https://drive.google.com/open?id=1WFfRTijfud9N3iDRC-t4yBwREuo-3Asg")
     ],
     endPrice: 5567919000,
@@ -1460,10 +1433,10 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 25 mnt Gerbang Tol Banyurejo`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=12bgqax2JvRJ8WDJxQxvjQ3X8KY6Fn-Zr"),
       getDriveImageUrl("https://drive.google.com/open?id=1I3EgdBj5NS-vuz0qcJ0wkrj88OuI27RZ"),
       getDriveImageUrl("https://drive.google.com/open?id=1qfuMbJf_0msEykXi5sEzkB4CFZF_I8no"),
-      getDriveImageUrl("https://drive.google.com/open?id=1Wc8wHHiJBkyfsO44uWleOSk_r-TRC3vm"),
-      getDriveImageUrl("https://drive.google.com/open?id=12bgqax2JvRJ8WDJxQxvjQ3X8KY6Fn-Zr")
+      getDriveImageUrl("https://drive.google.com/open?id=1Wc8wHHiJBkyfsO44uWleOSk_r-TRC3vm")
     ],
     endPrice: 1609156000,
     tanggalLelang: "-",
@@ -1487,8 +1460,8 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 17 menit dari Armada Town Square Mall`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=14zkVMYlarW9QPqK_-FqchJyozLyfzO_-"),
       getDriveImageUrl("https://drive.google.com/open?id=1Fpnvs_HHnu-XROzn_b1u5ZyBu-DQdMJ2"),
+      getDriveImageUrl("https://drive.google.com/open?id=14zkVMYlarW9QPqK_-FqchJyozLyfzO_-"),
       getDriveImageUrl("https://drive.google.com/open?id=1DeOmZsUDk_u7Ay7lebQXnzHGfMQCQ8Lu")
     ],
     endPrice: 317200000,

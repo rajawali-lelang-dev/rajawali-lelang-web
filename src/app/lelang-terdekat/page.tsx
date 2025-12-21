@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+'use client'
+
 import { FadeInUp } from '@/components/common/ScrollAnimation'
 import Image from 'next/image'
 import LelangCard from '@/components/lelang-terdekat/LelangCard'
@@ -7,25 +8,69 @@ import { lelangMobils } from '@/lib/mobil'
 import { lelangPerhiasans } from '@/lib/perhiasan'
 import { lelangMesins } from '@/lib/mesin'
 import { sortByTanggalLelang, filterLelangAktif } from '@/lib/lelang-utils'
-import React from 'react'
-import ContactSection from '@/components/layout/contact'
-
-export const metadata: Metadata = {
-  title: 'Jadwal Lelang Terdekat | Rajawali Lelang Indonesia',
-  description: 'Jangan lewatkan kesempatan untuk mendapatkan properti impian Anda. Tandai kalender Anda!',
-}
+import React, { useState, useMemo } from 'react'
+import { BaseItemLelang } from '@/lib/data'
 
 export default function NearestLelangPage() {
+  // State untuk filter
+  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedType, setSelectedType] = useState('Semua Jenis')
+  const [selectedLocation, setSelectedLocation] = useState('Semua Lokasi')
+  const [selectedStatus, setSelectedStatus] = useState('Semua Status')
+
   // Gabungkan semua data lelang
-  const allLelang = [
+  const allLelang = useMemo(() => [
     ...lelangProperties,
     ...lelangMobils,
     ...lelangPerhiasans,
     ...lelangMesins,
-  ]
+  ], [])
 
-  // Filter hanya yang masih aktif dan sort berdasarkan tanggal terdekat
-  const upcomingLelang = sortByTanggalLelang(filterLelangAktif(allLelang))
+  // Filter dan sort data lelang
+  const upcomingLelang = useMemo(() => {
+    let filtered = filterLelangAktif(allLelang)
+
+    // Filter berdasarkan search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase()
+      filtered = filtered.filter(item => 
+        item.title.toLowerCase().includes(query) ||
+        item.location.toLowerCase().includes(query) ||
+        item.provinsi?.toLowerCase().includes(query) ||
+        item.kota?.toLowerCase().includes(query)
+      )
+    }
+
+    // Filter berdasarkan type
+    if (selectedType !== 'Semua Jenis') {
+      filtered = filtered.filter(item => {
+        const itemType = item.type.toLowerCase()
+        const filterType = selectedType.toLowerCase()
+        
+        // Handle different type classifications
+        if (filterType === 'properti') {
+          return ['rumah', 'ruko', 'villa', 'apartemen', 'tanah', 'gudang'].includes(itemType)
+        }
+        return itemType === filterType || item.type === selectedType
+      })
+    }
+
+    // Filter berdasarkan lokasi
+    if (selectedLocation !== 'Semua Lokasi') {
+      filtered = filtered.filter(item => 
+        item.provinsi === selectedLocation || 
+        item.kota === selectedLocation ||
+        item.location.includes(selectedLocation)
+      )
+    }
+
+    // Filter berdasarkan status
+    if (selectedStatus !== 'Semua Status') {
+      filtered = filtered.filter(item => item.status === selectedStatus)
+    }
+
+    return sortByTanggalLelang(filtered)
+  }, [allLelang, searchQuery, selectedType, selectedLocation, selectedStatus])
 
   return (
     <div className="min-h-screen">
@@ -64,22 +109,36 @@ export default function NearestLelangPage() {
             <input
               type="text"
               placeholder="Cari lokasi atau jenis properti..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full md:flex-1 border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
-            <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
+            <select 
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+              className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500"
+            >
               <option>Semua Jenis</option>
               <option>Properti</option>
               <option>Mobil</option>
               <option>Perhiasan</option>
               <option>Mesin</option>
             </select>
-            <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
+            <select 
+              value={selectedLocation}
+              onChange={(e) => setSelectedLocation(e.target.value)}
+              className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500"
+            >
               <option>Semua Lokasi</option>
               <option>Jakarta</option>
               <option>Banten</option>
               <option>Jawa Barat</option>
             </select>
-            <select className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500">
+            <select 
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+              className="w-full md:w-auto border border-neutral-200 rounded-lg px-4 py-2 text-neutral-700 focus:ring-2 focus:ring-primary-500"
+            >
               <option>Semua Status</option>
               <option>Lelang Aktif</option>
               <option>Lelang Segera</option>
@@ -89,6 +148,19 @@ export default function NearestLelangPage() {
       </section>
 
       <div className="py-6 max-w-6xl mx-auto px-6 md:px-12">
+        {/* Tampilkan info hasil pencarian */}
+        {(searchQuery || selectedType !== 'Semua Jenis' || selectedLocation !== 'Semua Lokasi' || selectedStatus !== 'Semua Status') && (
+          <div className="mb-4 p-4 bg-blue-50 rounded-lg">
+            <p className="text-sm text-blue-800">
+              Menampilkan <span className="font-semibold">{upcomingLelang.length}</span> hasil lelang
+              {searchQuery && ` untuk "${searchQuery}"`}
+              {selectedType !== 'Semua Jenis' && ` • ${selectedType}`}
+              {selectedLocation !== 'Semua Lokasi' && ` • ${selectedLocation}`}
+              {selectedStatus !== 'Semua Status' && ` • ${selectedStatus}`}
+            </p>
+          </div>
+        )}
+
         {upcomingLelang.length > 0 ? (
           upcomingLelang.map((item) => (
             <LelangCard
@@ -104,7 +176,11 @@ export default function NearestLelangPage() {
           ))
         ) : (
           <div className="text-center py-16">
-            <p className="text-lg text-neutral-600">Tidak ada lelang yang akan datang saat ini.</p>
+            <p className="text-lg text-neutral-600">
+              {searchQuery || selectedType !== 'Semua Jenis' || selectedLocation !== 'Semua Lokasi' || selectedStatus !== 'Semua Status'
+                ? 'Tidak ada lelang yang cocok dengan filter Anda.'
+                : 'Tidak ada lelang yang akan datang saat ini.'}
+            </p>
           </div>
         )}
       </div>
