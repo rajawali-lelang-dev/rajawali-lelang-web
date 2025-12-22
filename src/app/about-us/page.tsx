@@ -81,7 +81,7 @@ export default function AboutUsPage() {
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
           <FadeInUp delay={0}>
             <h2 className="font-manrope font-bold text-4xl md:text-5xl text-primary-600 mb-12">
-              Visi & Misi
+              Ini Buat Ngetes
             </h2>
           </FadeInUp>
           
