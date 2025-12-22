@@ -16,7 +16,7 @@ Panduan lengkap untuk mengerjakan dan mengembangkan proyek Rajawali Lelang Web.
 
 ---
 
-## 🏗️ Struktur Proyek
+## 🏗️ Struktur Proyek A
 
 Proyek ini adalah aplikasi web Next.js 15 dengan TypeScript yang menggunakan:
 - **Framework**: Next.js 15 (App Router)
