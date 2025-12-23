@@ -13,9 +13,7 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   experimental: {
-    turbo: {
-      root: __dirname,
-    },
+    // Bagian turbo telah dihapus untuk memperbaiki error build di Vercel
   },
 };
 
