@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { CalendarDays, Clock, MapPin } from 'lucide-react'
+import { CalendarDays, Clock, MapPin, Bell } from 'lucide-react'
 import { getCountdownText, getStatusBadgeColor } from '@/lib/lelang-utils'
 
 interface LelangCardProps {
@@ -88,15 +88,28 @@ export default function LelangCard({
           </div>
         </div>
 
-        {/* Tombol */}
-        <a 
-          href={`https://wa.me/628170005646?text=Saya tertarik dengan lelang ${title}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#4C6782] hover:bg-[#3b5268] text-white font-medium rounded-lg px-5 py-2 flex items-center justify-center gap-2 w-fit transition-colors"
-        >
-          <span></span> Hubungi Kami
-        </a>
+        {/* Container Tombol */}
+        <div className="flex flex-wrap gap-3">
+          {/* Tombol Hubungi Kami */}
+          <a 
+            href={`https://wa.me/628170005646?text=Saya tertarik dengan lelang ${title}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#4C6782] hover:bg-[#3b5268] text-white font-medium rounded-lg px-5 py-2 flex items-center justify-center gap-2 w-fit transition-colors"
+          >
+            Hubungi Kami
+          </a>
+
+          {/* Tombol Notify Me (Maroon) */}
+          <a 
+            href="https://forms.gle/W6kgkHx5hPU4YpKt6" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#800000] hover:bg-[#600000] text-white font-medium rounded-lg px-5 py-2 flex items-center justify-center gap-2 w-fit transition-colors"
+          >
+            <Bell size={18} /> Notify Me
+          </a>
+        </div>
       </div>
     </div>
   )
