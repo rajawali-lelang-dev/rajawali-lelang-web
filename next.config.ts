@@ -4,6 +4,13 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     remotePatterns: [],
+    // Tambahkan localPatterns untuk mengizinkan query string pada API internal
+    localPatterns: [
+      {
+        pathname: '/api/drive-image',
+        search: '',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -13,7 +20,7 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   experimental: {
-    // Bagian turbo telah dihapus untuk memperbaiki error build di Vercel
+    // Bagian turbo tetap dihapus untuk menghindari error sebelumnya
   },
 };
 
