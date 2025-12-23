@@ -13,9 +13,8 @@
 const { google } = require('googleapis');
 const readline = require('readline');
 
-// TODO: Replace these with your OAuth credentials from Google Cloud Console
-const CLIENT_ID = 'YOUR_CLIENT_ID.apps.googleusercontent.com';
-const CLIENT_SECRET = 'YOUR_CLIENT_SECRET';
+const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const REDIRECT_URI = 'http://localhost:3000';
 
 const oauth2Client = new google.auth.OAuth2(

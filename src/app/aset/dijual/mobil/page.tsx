@@ -1,6 +1,7 @@
 ﻿"use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { mobils } from "@/lib/mobil";
@@ -59,18 +60,32 @@ const filterConfig = {
   ],
 };
 
-export default function MobilDijualPage() {
+function MobilDijualContent() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
-      sessionStorage.removeItem('selectedProvince');
+    const initialFilters: Record<string, string> = {};
+    const provinsi = searchParams.get('provinsi');
+    const kota = searchParams.get('kota');
+    const status = searchParams.get('status');
+    const brand = searchParams.get('brand');
+    const transmission = searchParams.get('transmission');
+    const year = searchParams.get('year');
+
+    if (provinsi) initialFilters.provinsi = provinsi;
+    if (kota) initialFilters.kota = kota;
+    if (status) initialFilters.status = status;
+    if (brand) initialFilters.brand = brand;
+    if (transmission) initialFilters.transmission = transmission;
+    if (year) initialFilters.year = year;
+
+    if (Object.keys(initialFilters).length > 0) {
+      setFilters(initialFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredVehicles = useMemo(() => {
     return mobils.filter((mobil) => {
@@ -166,5 +181,13 @@ export default function MobilDijualPage() {
         Menampilkan {filteredVehicles.length} dari {mobils.length} mobil
       </div>
     </AsetLayout>
+  );
+}
+
+export default function MobilDijualPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MobilDijualContent />
+    </Suspense>
   );
 }

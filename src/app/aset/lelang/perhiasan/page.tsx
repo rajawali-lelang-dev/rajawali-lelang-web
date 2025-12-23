@@ -1,6 +1,7 @@
 ﻿"use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { lelangPerhiasans } from "@/lib/perhiasan";
@@ -59,25 +60,32 @@ const filterConfig = {
   ],
 };
 
-export default function PerhiasanLelangPage() {
+function PerhiasanLelangContent() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    const selectedKota = sessionStorage.getItem('selectedKota');
+    const provinsiParam = searchParams.get('provinsi');
+    const kotaParam = searchParams.get('kota');
+    const statusParam = searchParams.get('status');
+    const typeParam = searchParams.get('type');
+    const materialParam = searchParams.get('material');
+    const weightParam = searchParams.get('weight');
     
-    if (selectedProvince || selectedKota) {
-      setFilters(prev => ({
-        ...prev,
-        ...(selectedProvince && { provinsi: selectedProvince }),
-        ...(selectedKota && { kota: selectedKota })
-      }));
-      sessionStorage.removeItem('selectedProvince');
-      sessionStorage.removeItem('selectedKota');
+    const urlFilters: Record<string, string> = {};
+    if (provinsiParam) urlFilters.provinsi = provinsiParam;
+    if (kotaParam) urlFilters.kota = kotaParam;
+    if (statusParam) urlFilters.status = statusParam;
+    if (typeParam) urlFilters.type = typeParam;
+    if (materialParam) urlFilters.material = materialParam;
+    if (weightParam) urlFilters.weight = weightParam;
+    
+    if (Object.keys(urlFilters).length > 0) {
+      setFilters(urlFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredJewelry = useMemo(() => {
     return lelangPerhiasans.filter((perhiasan) => {
@@ -159,5 +167,13 @@ export default function PerhiasanLelangPage() {
         Menampilkan {filteredJewelry.length} dari {lelangPerhiasans.length} perhiasan
       </div>
     </AsetLayout>
+  );
+}
+
+export default function PerhiasanLelangPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PerhiasanLelangContent />
+    </Suspense>
   );
 }

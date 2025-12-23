@@ -26,7 +26,7 @@ export default function IklankanPropertiPage() {
               </div>
 
               <h1 className="font-manrope font-bold text-4xl md:text-6xl mb-6">
-                Iklankan Properti Anda Bersama RajawaliLelangIndonesia
+                Iklankan Properti Anda Bersama Rajawali Lelang Indonesia
               </h1>
               <p className="font-manrope text-lg md:text-xl mb-8 text-white/90 leading-relaxed">
                 Jangkau ribuan calon pembeli dan penyewa dengan layanan iklan properti profesional kami

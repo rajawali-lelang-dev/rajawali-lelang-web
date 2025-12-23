@@ -26,13 +26,15 @@ export const metadata: Metadata = {
   creator: "Rajawali Lelang Indonesia",
   publisher: "Rajawali Lelang Indonesia",
   icons: {
-    icon: [
-      { url: "/images/assets/logo_rli.png" },
-      { url: "/favicon.ico", sizes: "any" }
-    ],
-    apple: "/images/assets/logo_rli.png",
-    shortcut: "/images/assets/logo_rli.png",
-  },
+  icon: [
+    {
+      url: "/favicon.ico",
+      type: "image/x-icon",
+    },
+  ],
+  apple: "/images/assets/logo_rli.png",
+},
+
   openGraph: {
     title: "Rajawali Lelang Indonesia",
     description: "Platform lelang properti terpercaya di Indonesia. Temukan properti impian Anda dengan mudah, aman, dan menguntungkan.",
@@ -78,6 +80,18 @@ export default function RootLayout({
     <html lang="id" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.8, maximum-scale=2.0" />
+         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Rajawali Lelang Indonesia",
+              "url": "https://rajawalilelangindo.com",
+              "logo": "https://rajawalilelangindo.com/images/assets/logo_rli.png",
+            }),
+          }}
+        />
       </head>
       <body className="antialiased min-h-screen flex flex-col" style={{ minWidth: '100%', overflow: 'auto' }}>
         <Header />

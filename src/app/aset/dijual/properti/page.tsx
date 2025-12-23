@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { properties } from "@/lib/properti";
@@ -60,19 +61,32 @@ const filterConfig = {
   ],
 };
 
-export default function PropertiDijualPage() {
+function PropertiDijualContent() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
-      // Clear it so it doesn't apply on every page visit
-      sessionStorage.removeItem('selectedProvince');
+    const provinsiParam = searchParams.get('provinsi');
+    const kotaParam = searchParams.get('kota');
+    const priceParam = searchParams.get('price');
+    const typeParam = searchParams.get('type');
+    const statusParam = searchParams.get('status');
+    const landAreaParam = searchParams.get('landArea');
+    
+    const urlFilters: Record<string, string> = {};
+    if (provinsiParam) urlFilters.provinsi = provinsiParam;
+    if (kotaParam) urlFilters.kota = kotaParam;
+    if (priceParam) urlFilters.price = priceParam;
+    if (typeParam) urlFilters.type = typeParam;
+    if (statusParam) urlFilters.status = statusParam;
+    if (landAreaParam) urlFilters.landArea = landAreaParam;
+    
+    if (Object.keys(urlFilters).length > 0) {
+      setFilters(urlFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredProperties = useMemo(() => {
     return properties.filter((property) => {
@@ -174,5 +188,13 @@ export default function PropertiDijualPage() {
         Menampilkan {filteredProperties.length} dari {properties.length} properti
       </div>
     </AsetLayout>
+  );
+}
+
+export default function PropertiDijualPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PropertiDijualContent />
+    </Suspense>
   );
 }

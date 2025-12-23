@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { lelangProperties } from "@/lib/properti";
@@ -60,25 +61,32 @@ const filterConfig = {
   ],
 };
 
-export default function PropertiLelangPage() {
+function PropertiLelangContent() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    const selectedKota = sessionStorage.getItem('selectedKota');
+    const provinsiParam = searchParams.get('provinsi');
+    const kotaParam = searchParams.get('kota');
+    const priceParam = searchParams.get('price');
+    const typeParam = searchParams.get('type');
+    const statusParam = searchParams.get('status');
+    const landAreaParam = searchParams.get('landArea');
     
-    if (selectedProvince || selectedKota) {
-      setFilters(prev => ({
-        ...prev,
-        ...(selectedProvince && { provinsi: selectedProvince }),
-        ...(selectedKota && { kota: selectedKota })
-      }));
-      sessionStorage.removeItem('selectedProvince');
-      sessionStorage.removeItem('selectedKota');
+    const urlFilters: Record<string, string> = {};
+    if (provinsiParam) urlFilters.provinsi = provinsiParam;
+    if (kotaParam) urlFilters.kota = kotaParam;
+    if (priceParam) urlFilters.price = priceParam;
+    if (typeParam) urlFilters.type = typeParam;
+    if (statusParam) urlFilters.status = statusParam;
+    if (landAreaParam) urlFilters.landArea = landAreaParam;
+    
+    if (Object.keys(urlFilters).length > 0) {
+      setFilters(urlFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredProperties = useMemo(() => {
     return lelangProperties.filter((property) => {
@@ -183,5 +191,13 @@ export default function PropertiLelangPage() {
         Menampilkan {filteredProperties.length} dari {lelangProperties.length} properti
       </div>
     </AsetLayout>
+  );
+}
+
+export default function PropertiLelangPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PropertiLelangContent />
+    </Suspense>
   );
 }

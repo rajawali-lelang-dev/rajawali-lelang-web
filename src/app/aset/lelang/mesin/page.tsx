@@ -1,6 +1,7 @@
 ﻿"use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { lelangMesins } from "@/lib/mesin";
@@ -60,25 +61,32 @@ const filterConfig = {
   ],
 };
 
-export default function MesinLelangPage() {
+function MesinLelangContent() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    const selectedKota = sessionStorage.getItem('selectedKota');
+    const provinsiParam = searchParams.get('provinsi');
+    const kotaParam = searchParams.get('kota');
+    const statusParam = searchParams.get('status');
+    const typeParam = searchParams.get('type');
+    const brandParam = searchParams.get('brand');
+    const yearParam = searchParams.get('year');
     
-    if (selectedProvince || selectedKota) {
-      setFilters(prev => ({
-        ...prev,
-        ...(selectedProvince && { provinsi: selectedProvince }),
-        ...(selectedKota && { kota: selectedKota })
-      }));
-      sessionStorage.removeItem('selectedProvince');
-      sessionStorage.removeItem('selectedKota');
+    const urlFilters: Record<string, string> = {};
+    if (provinsiParam) urlFilters.provinsi = provinsiParam;
+    if (kotaParam) urlFilters.kota = kotaParam;
+    if (statusParam) urlFilters.status = statusParam;
+    if (typeParam) urlFilters.type = typeParam;
+    if (brandParam) urlFilters.brand = brandParam;
+    if (yearParam) urlFilters.year = yearParam;
+    
+    if (Object.keys(urlFilters).length > 0) {
+      setFilters(urlFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredMachines = useMemo(() => {
     return lelangMesins.filter((mesin) => {
@@ -160,5 +168,13 @@ export default function MesinLelangPage() {
         Menampilkan {filteredMachines.length} dari {lelangMesins.length} mesin
       </div>
     </AsetLayout>
+  );
+}
+
+export default function MesinLelangPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MesinLelangContent />
+    </Suspense>
   );
 }

@@ -36,10 +36,11 @@ const Navbar = () => {
   const provinces = getAllProvinces()
 
   const handleProvinceSelect = (province: string, type: 'dijual' | 'lelang') => {
-    // Store the selected province in sessionStorage so the filter page can use it
-    sessionStorage.setItem('selectedProvince', province)
-    // Navigate to the properti page which will auto-apply the filter
-    router.push(`/aset/${type}/properti`)
+    // Navigate with provinsi query param - will show all categories (properti, mobil, perhiasan, mesin)
+    router.push(`/aset/${type}?provinsi=${encodeURIComponent(province)}`)
+    // Close dropdowns
+    setIsProvinsiOpen(false)
+    setIsMenuOpen(false)
   }
 
   const navItems = [
@@ -49,7 +50,7 @@ const Navbar = () => {
       label: 'Dijual', 
       hasDropdown: true,
       items: [
-        { label: 'Semua Aset Dijual', href: '/aset/dijual/properti' },
+        { label: 'Semua Aset Dijual', href: '/aset/dijual' },
         { label: 'Properti', href: '/aset/dijual/properti' },
         { label: 'Mobil', href: '/aset/dijual/mobil' },
         { label: 'Perhiasan', href: '/aset/dijual/perhiasan' },
@@ -60,7 +61,7 @@ const Navbar = () => {
       label: 'Lelang', 
       hasDropdown: true,
       items: [
-        { label: 'Semua Aset Lelang', href: '/aset/lelang/properti' },
+        { label: 'Semua Aset Lelang', href: '/aset/lelang' },
         { label: 'Properti', href: '/aset/lelang/properti' },
         { label: 'Mobil', href: '/aset/lelang/mobil' },
         { label: 'Perhiasan', href: '/aset/lelang/perhiasan' },

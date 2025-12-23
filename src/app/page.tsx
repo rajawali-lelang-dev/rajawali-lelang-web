@@ -25,12 +25,12 @@ import { sortByTanggalLelang, filterLelangAktif } from '@/lib/lelang-utils';
     {
       name: 'Budi Santoso',
       role: 'Investor',
-      review: 'RajawaLiLelangIndo bikin proses lelang jadi jelas dan lebih transparan dan cepat. Saya bisa bandingkan harga dan lokasi dengan mudah — sangat ideal untuk strategi investasi saya.'
+      review: 'RajawaLi Lelang Indonesia bikin proses lelang jadi jelas dan lebih transparan dan cepat. Saya bisa bandingkan harga dan lokasi dengan mudah — sangat ideal untuk strategi investasi saya.'
     },
     {
       name: 'Maria Widjaja',
       role: 'Agen Properti',
-      review: 'RajawaLiLelangIndo bantu saya menjangkau pasar yang lebih luas. Dalam waktu singkat, banyak properti saya yang dillihat calon pembeli — hasilnya closing lebih cepat!'
+      review: 'RajawaLi Lelang Indonesia bantu saya menjangkau pasar yang lebih luas. Dalam waktu singkat, banyak properti saya yang dillihat calon pembeli — hasilnya closing lebih cepat!'
     },
     {
       name: 'Dimas Ramadhan',
@@ -87,7 +87,7 @@ export default function Home() {
       handleSearch();
     }
   };
-
+//trigger push
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section dengan background image yang naik ke bawah navbar */}
@@ -288,7 +288,7 @@ export default function Home() {
                 Properti Unggulan
               </h2>
               <p className="mt-2 text-sm md:text-base text-neutral-600">
-                Dari tanah hingga bangunan, semua ada di sini
+                Kami menyediakan berbagai macam jenis properti dengan harga terjangkau.
               </p>
             </div>
           </FadeInUp>

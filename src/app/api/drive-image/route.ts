@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Initialize OAuth2 client with your company's credentials
+    // Initialize OAuth2 client with your company's credentialssss
     const oauth2Client = new google.auth.OAuth2(
       process.env.GOOGLE_CLIENT_ID,
       process.env.GOOGLE_CLIENT_SECRET,
@@ -39,11 +39,26 @@ export async function GET(request: NextRequest) {
 
     const drive = google.drive({ version: "v3", auth: oauth2Client });
 
-    // Get file metadata first to check if it exists
+    // Get file metadata first to check if it exists and get ETag
     const metadata = await drive.files.get({
       fileId: fileId,
-      fields: "mimeType, name",
+      fields: "mimeType, name, md5Checksum, modifiedTime",
     });
+
+    // Generate ETag from md5Checksum or modifiedTime for cache validation
+    const etag = metadata.data.md5Checksum || metadata.data.modifiedTime || fileId;
+    
+    // Check if client has cached version (304 Not Modified)
+    const clientETag = request.headers.get('if-none-match');
+    if (clientETag === `"${etag}"`) {
+      return new NextResponse(null, { 
+        status: 304,
+        headers: {
+          "ETag": `"${etag}"`,
+          "Cache-Control": "public, max-age=31536000, immutable",
+        }
+      });
+    }
 
     // Get file content
     const response = await drive.files.get(
@@ -56,13 +71,18 @@ export async function GET(request: NextRequest) {
       }
     );
 
-    // Return image with proper headers
-    return new NextResponse(response.data as ArrayBuffer, {
+    // Convert to Buffer for proper handling
+    const imageBuffer = Buffer.from(response.data as ArrayBuffer);
+
+    // Return image with proper caching headers
+    return new NextResponse(imageBuffer, {
       status: 200,
       headers: {
         "Content-Type": metadata.data.mimeType || "image/jpeg",
         "Cache-Control": "public, max-age=31536000, immutable",
         "Content-Disposition": `inline; filename="${metadata.data.name}"`,
+        "Content-Length": imageBuffer.length.toString(),
+        "ETag": `"${etag}"`,
       },
     });
   } catch (error: unknown) {

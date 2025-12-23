@@ -1,6 +1,7 @@
 ﻿"use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import AsetCard from "@/components/aset/aset-card";
 import AsetLayout from "@/components/aset/aset-layout";
 import { perhiasans } from "@/lib/perhiasan";
@@ -60,18 +61,32 @@ const filterConfig = {
   ],
 };
 
-export default function PerhiasanDijualPage() {
+function PerhiasanDijualContent() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState<Record<string, string>>({});
 
-  // Check for province from navbar on mount
+  // Initialize filters from URL query params
   useEffect(() => {
-    const selectedProvince = sessionStorage.getItem('selectedProvince');
-    if (selectedProvince) {
-      setFilters(prev => ({ ...prev, provinsi: selectedProvince }));
-      sessionStorage.removeItem('selectedProvince');
+    const initialFilters: Record<string, string> = {};
+    const provinsi = searchParams.get('provinsi');
+    const kota = searchParams.get('kota');
+    const status = searchParams.get('status');
+    const type = searchParams.get('type');
+    const material = searchParams.get('material');
+    const weight = searchParams.get('weight');
+
+    if (provinsi) initialFilters.provinsi = provinsi;
+    if (kota) initialFilters.kota = kota;
+    if (status) initialFilters.status = status;
+    if (type) initialFilters.type = type;
+    if (material) initialFilters.material = material;
+    if (weight) initialFilters.weight = weight;
+
+    if (Object.keys(initialFilters).length > 0) {
+      setFilters(initialFilters);
     }
-  }, []);
+  }, [searchParams]);
 
   const filteredJewelry = useMemo(() => {
     return perhiasans.filter((perhiasan) => {
@@ -167,5 +182,13 @@ export default function PerhiasanDijualPage() {
         Menampilkan {filteredJewelry.length} dari {perhiasans.length} perhiasan
       </div>
     </AsetLayout>
+  );
+}
+
+export default function PerhiasanDijualPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PerhiasanDijualContent />
+    </Suspense>
   );
 }
