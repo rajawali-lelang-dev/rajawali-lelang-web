@@ -1,0 +1,178 @@
+﻿"use client";
+
+import React, { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import AsetCard from "@/components/aset/aset-card";
+import AsetLayout from "@/components/aset/aset-layout";
+import { lelangMobils } from "@/lib/mobil";
+import { getAllProvinces } from "@/lib/province";
+
+const filterConfig = {
+  placeholder: "Cari merk, model, atau tipe mobil...",
+  filters: [
+    [
+      {
+        label: "Provinsi",
+        name: "provinsi",
+        options: getAllProvinces().map(p => ({ value: p, label: p })),
+      },
+      {
+        label: "Status",
+        name: "status",
+        options: [
+          { value: "Lelang Aktif", label: "Lelang Aktif" },
+          { value: "Lelang Segera", label: "Lelang Segera" },
+          { value: "Lelang Selesai", label: "Lelang Selesai" },
+        ],
+      },
+      {
+        label: "Merk",
+        name: "brand",
+        options: [
+          { value: "toyota", label: "Toyota" },
+          { value: "honda", label: "Honda" },
+          { value: "suzuki", label: "Suzuki" },
+          { value: "mitsubishi", label: "Mitsubishi" },
+          { value: "daihatsu", label: "Daihatsu" },
+        ],
+      },
+      {
+        label: "Transmisi",
+        name: "transmission",
+        options: [
+          { value: "manual", label: "Manual" },
+          { value: "automatic", label: "Automatic" },
+          { value: "cvt", label: "CVT" },
+        ],
+      },
+      {
+        label: "Tahun",
+        name: "year",
+        options: [
+          { value: "2020-2025", label: "2020 - 2025" },
+          { value: "2015-2019", label: "2015 - 2019" },
+          { value: "2010-2014", label: "2010 - 2014" },
+          { value: "0-2009", label: "< 2010" },
+        ],
+      },
+    ],
+  ],
+};
+
+function MobilLelangContent() {
+  const searchParams = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filters, setFilters] = useState<Record<string, string>>({});
+
+  // Initialize filters from URL query params
+  useEffect(() => {
+    const provinsiParam = searchParams.get('provinsi');
+    const kotaParam = searchParams.get('kota');
+    const statusParam = searchParams.get('status');
+    const brandParam = searchParams.get('brand');
+    const transmissionParam = searchParams.get('transmission');
+    const yearParam = searchParams.get('year');
+    
+    const urlFilters: Record<string, string> = {};
+    if (provinsiParam) urlFilters.provinsi = provinsiParam;
+    if (kotaParam) urlFilters.kota = kotaParam;
+    if (statusParam) urlFilters.status = statusParam;
+    if (brandParam) urlFilters.brand = brandParam;
+    if (transmissionParam) urlFilters.transmission = transmissionParam;
+    if (yearParam) urlFilters.year = yearParam;
+    
+    if (Object.keys(urlFilters).length > 0) {
+      setFilters(urlFilters);
+    }
+  }, [searchParams]);
+
+  const filteredVehicles = useMemo(() => {
+    return lelangMobils.filter((mobil) => {
+      if (searchTerm) {
+        const searchLower = searchTerm.toLowerCase();
+        const matchesSearch =
+          mobil.title.toLowerCase().includes(searchLower) ||
+          mobil.location.toLowerCase().includes(searchLower) ||
+          mobil.brand.toLowerCase().includes(searchLower);
+        if (!matchesSearch) return false;
+      }
+      if (filters.provinsi) {
+        if (mobil.provinsi !== filters.provinsi) return false;
+      }
+      if (filters.kota) {
+        if (mobil.kota !== filters.kota) return false;
+      }
+      if (filters.status) {
+        if (mobil.status !== filters.status)
+          return false;
+      }
+      if (filters.brand) {
+        if (mobil.brand.toLowerCase() !== filters.brand.toLowerCase())
+          return false;
+      }
+      if (filters.transmission) {
+        if (mobil.transmission.toLowerCase() !== filters.transmission.toLowerCase())
+          return false;
+      }
+      if (filters.year) {
+        const [min, max] = filters.year.split("-").map(Number);
+        if (max) {
+          if (mobil.year < min || mobil.year > max) return false;
+        } else {
+          if (mobil.year < min) return false;
+        }
+      }
+      return true;
+    });
+  }, [searchTerm, filters]);
+
+  return (
+    <AsetLayout
+      title="Mobil Lelang"
+      description="Ikuti lelang mobil terbaik dengan proses yang mudah, aman, dan menguntungkan"
+      filterConfig={filterConfig}
+      onSearch={setSearchTerm}
+      onFilterChange={setFilters}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredVehicles.length > 0 ? (
+          filteredVehicles.map((mobil) => (
+            <AsetCard
+              key={mobil.id}
+              id={mobil.id}
+              title={mobil.title}
+              location={mobil.location}
+              price={mobil.endPrice}
+              image={mobil.image || []}
+              status={mobil.status}
+              type="mobil"
+              mode="lelang"
+              additionalInfo={[
+                { label: "Brand", value: mobil.brand },
+                { label: "Tahun", value: mobil.year.toString() },
+                { label: "Transmisi", value: mobil.transmission },
+              ]}
+            />
+          ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <p className="text-gray-500 text-lg">
+              Tidak ada mobil yang sesuai dengan filter Anda
+            </p>
+          </div>
+        )}
+      </div>
+      <div className="mt-6 text-center text-gray-600">
+        Menampilkan {filteredVehicles.length} dari {lelangMobils.length} mobil
+      </div>
+    </AsetLayout>
+  );
+}
+
+export default function MobilLelangPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MobilLelangContent />
+    </Suspense>
+  );
+}
