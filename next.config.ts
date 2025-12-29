@@ -1,22 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
+    unoptimized: true, // Mencegah error INVALID_IMAGE_OPTIMIZE_REQUEST
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: 'drive.google.com',
       },
     ],
-    unoptimized: true, 
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
   },
 };
-
-export default nextConfig;
+module.exports = nextConfig;
