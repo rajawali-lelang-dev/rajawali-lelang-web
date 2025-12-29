@@ -71,7 +71,7 @@ const getStatusColor = () => {
       case "lelang segera":
       case "segera":
       case "coming soon": 
-        return "bg-red-500";   // Merah
+        return "bg-red-100";   // Merah
       case "lelang selesai":
       case "sold": 
         return "bg-gray-500";  // Abu-abu
