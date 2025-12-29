@@ -3,52 +3,57 @@
  */
 
 /**
- * Extract file ID from various Google Drive URL formats or return the ID if already extracted
+ * Ekstrak file ID dari berbagai format URL Google Drive
+ * Mendukung: URL panjang, URL ringkas, atau ID mentah
  */
 export function extractDriveFileId(input: string): string {
   if (!input) return '';
   
+  const str = input.trim();
+
   // Jika input adalah URL panjang
-  if (input.includes('drive.google.com')) {
-    // Match: ?id=FILE_ID or &id=FILE_ID
-    const idMatch = input.match(/[?&]id=([^&]+)/);
+  if (str.includes('drive.google.com')) {
+    // Pola 1: ?id=FILE_ID atau &id=FILE_ID
+    const idMatch = str.match(/[?&]id=([^&]+)/);
     if (idMatch) return idMatch[1];
     
-    // Match: /file/d/FILE_ID/ or /d/FILE_ID/
-    const fileMatch = input.match(/\/d\/([^/]+)/);
+    // Pola 2: /file/d/FILE_ID/ atau /d/FILE_ID/
+    const fileMatch = str.match(/\/d\/([^/]+)/);
     if (fileMatch) return fileMatch[1];
   }
 
-  // Jika input bukan URL, asumsikan itu adalah ID file langsung
-  // (Menghapus spasi jika ada)
-  return input.trim();
+  // Jika bukan URL, asumsikan input adalah ID file langsung
+  return str;
 }
 
 /**
- * Convert Google Drive URL or ID to API proxy URL
+ * Konversi URL Drive ke API proxy internal
  */
 export function getDriveImageUrl(input: string): string {
   const fileId = extractDriveFileId(input);
   if (!fileId) return input; 
   
+  // Mengarahkan ke endpoint API lokal untuk menghindari CORS/Access Denied
   return `/api/drive-image?fileId=${fileId}`;
 }
 
 /**
- * Convert array of Google Drive URLs to proxied URLs
+ * Mengonversi array URL
  */
 export function convertDriveUrls(urls: string[]): string[] {
   return urls.map(url => getDriveImageUrl(url));
 }
 
 /**
- * Parse CSV image column
+ * Parsing string CSV menjadi array URL proxy
  */
 export function parseDriveImages(imageString: string): string[] {
   if (!imageString) return [];
+  
   const urls = imageString
     .split(',')
     .map(url => url.trim())
     .filter(url => url.length > 0);
+  
   return convertDriveUrls(urls);
 }
