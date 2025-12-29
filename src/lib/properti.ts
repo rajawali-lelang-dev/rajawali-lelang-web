@@ -49,10 +49,10 @@ export const lelangProperties: PropertiDilelang[] = [
       - 30 menit dari Mall Sarinah Malang`,
     status: "Lelang Aktif",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1AOed3A9fjfmN1KrWcNdUslz6Ob_YLpkF"),
-      getDriveImageUrl("https://drive.google.com/open?id=1QVI3RaLgW8nu3MCIDsmotyQY13dqEmRF"),
-      getDriveImageUrl("https://drive.google.com/open?id=10BBdVSewEDCxPHZqfQYF4aHlYhvqg7dW"),
-      getDriveImageUrl("https://drive.google.com/open?id=17RVM1f4l7p4-UUz4Nyh2pWQpA1v7R817")
+      getDriveImageUrl("https://drive.google.com/file/d/1AOed3A9fjfmN1KrWcNdUslz6Ob_YLpkF/view?usp=sharing"),
+      getDriveImageUrl("https://drive.google.com/file/d/1QVI3RaLgW8nu3MCIDsmotyQY13dqEmRF/view?usp=sharing"),
+      getDriveImageUrl("https://drive.google.com/file/d/10BBdVSewEDCxPHZqfQYF4aHlYhvqg7dW/view?usp=sharing"),
+      getDriveImageUrl("https://drive.google.com/open?id=17RVM1f4l7p4-UUz4Nyh2pWQpA1v7R817/view?usp=sharing")
     ],
     endPrice: 995000000,
     tanggalLelang: "-",

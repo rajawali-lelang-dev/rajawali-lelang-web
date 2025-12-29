@@ -8,13 +8,16 @@ const nextConfig = {
     // Opsional: lakukan hal yang sama untuk error type agar build tidak terhenti
     ignoreBuildErrors: true,
   },
-  images: {
+ images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**',
       },
     ],
+    // Tambahkan baris ini untuk keamanan tambahan
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
   },
 };
 
