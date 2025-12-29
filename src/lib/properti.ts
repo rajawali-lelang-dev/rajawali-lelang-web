@@ -578,7 +578,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "L32",
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     type: "Rumah",
     location: "Gang Amin No. 55 RT.001 RW 002 Kel. Petukangan Utara, Kec. Pesanggrahan, Kota Jakarta Selatan, DKI Jakarta",
     provinsi: "DKI Jakarta",
@@ -599,8 +599,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1GhhemlLQiTgJlUFoJpBlKCj6bo6qk9wH")
     ],
     endPrice: 330000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-03",
     batasWaktuLelang: "-",
+    jamLelang: "10:35 WIB",
   },
   {
     id: "L33",
