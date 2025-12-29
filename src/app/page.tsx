@@ -226,7 +226,7 @@ return upcomingLelang.map((item, index) => (
       image={item.image || [`/images/lelang-terdekat/${item.id}.jpg`]}
       title={item.title}
       // COBA GANTI KE endPrice JIKA price TIDAK MUNCUL
-      harga={item.endPrice || item.price} 
+      harga={item.endPrice}
       tanggalLelang={item.tanggalLelang}
       location={item.location}
       type={item.type}

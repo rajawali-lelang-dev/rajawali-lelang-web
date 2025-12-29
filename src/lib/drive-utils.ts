@@ -3,7 +3,7 @@ export function extractDriveFileId(input: string): string {
   const str = input.trim();
 
   if (str.includes('drive.google.com')) {
-    // Mencari ID setelah 'id=' atau di dalam path '/d/'
+    // Mengambil ID dari pattern /d/ID atau ?id=ID
     const idMatch = str.match(/[?&]id=([^&/]+)/) || str.match(/\/d\/([^&/]+)/);
     if (idMatch) return idMatch[1].replace(/['"\s]/g, '');
   }
@@ -13,6 +13,6 @@ export function extractDriveFileId(input: string): string {
 export function getDriveImageUrl(input: string): string {
   const fileId = extractDriveFileId(input);
   if (!fileId) return ''; 
-  // Mengarahkan ke API route yang Anda buat
+  // Pastikan mengarah ke API route yang menggunakan OAuth2 Refresh Token
   return `/api/drive-image?fileId=${fileId}`;
 }
