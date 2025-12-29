@@ -601,7 +601,7 @@ export const lelangProperties: PropertiDilelang[] = [
     endPrice: 330000000,
     tanggalLelang: "2026-02-03",
     batasWaktuLelang: "-",
-    jamLelang: "10:35 WIB",
+    jamLelang: "10:30 WIB",
   },
   {
     id: "L33",
