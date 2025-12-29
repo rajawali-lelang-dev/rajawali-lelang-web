@@ -61,15 +61,24 @@ export default function AsetCard({
     }).format(price);
   };
 
-  const getStatusColor = () => {
+const getStatusColor = () => {
     if (!status) return "bg-gray-500";
-    switch (status.toLowerCase()) {
+    const s = status.toLowerCase();
+    switch (s) {
       case "lelang aktif":
-      case "available": return "bg-green-200";
-      case "featured": return "bg-yellow-500";
+      case "available": 
+        return "bg-green-200"; // Hijau muda soft
+      case "lelang segera":
       case "segera":
-      case "coming soon": return "bg-blue-500";
-      default: return "bg-gray-500";
+      case "coming soon": 
+        return "bg-red-500";   // Merah
+      case "lelang selesai":
+      case "sold": 
+        return "bg-gray-500";  // Abu-abu
+      case "featured": 
+        return "bg-yellow-500";
+      default: 
+        return "bg-gray-500";
     }
   };
 
@@ -89,12 +98,13 @@ export default function AsetCard({
               fill
               className="object-cover"
             />
-            {status && (
-              <div className={`absolute top-3 right-3 ${getStatusColor()} text-green px-3 py-1 rounded-md text-xs font-semibold z-10`}>
-                {status}
-              </div>
-            )}
-
+{status && (
+  <div className={`absolute top-3 right-3 ${getStatusColor()} ${
+    status.toLowerCase() === "lelang aktif" ? "text-green-900" : "text-white"
+  } px-3 py-1 rounded-md text-xs font-semibold z-10 uppercase`}>
+    {status}
+  </div>
+)}
             {/* Navigasi Panah Gambar */}
             {hasMultipleImages && (
               <>
