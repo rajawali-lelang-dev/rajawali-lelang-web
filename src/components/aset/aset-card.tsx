@@ -65,7 +65,7 @@ export default function AsetCard({
     if (!status) return "bg-gray-500";
     switch (status.toLowerCase()) {
       case "lelang aktif":
-      case "available": return "bg-green-100 text-green-700";
+      case "available": return "bg-green-200";
       case "featured": return "bg-yellow-500";
       case "segera":
       case "coming soon": return "bg-blue-500";
@@ -90,7 +90,7 @@ export default function AsetCard({
               className="object-cover"
             />
             {status && (
-              <div className={`absolute top-3 right-3 ${getStatusColor()} text-white px-3 py-1 rounded-md text-xs font-semibold z-10`}>
+              <div className={`absolute top-3 right-3 ${getStatusColor()} text-green px-3 py-1 rounded-md text-xs font-semibold z-10`}>
                 {status}
               </div>
             )}
