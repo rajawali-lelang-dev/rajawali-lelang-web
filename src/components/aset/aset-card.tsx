@@ -101,7 +101,7 @@ const getStatusColor = () => {
 {status && (
   <div className={`absolute top-3 right-3 ${getStatusColor()} ${
     status.toLowerCase() === "lelang aktif" ? "text-green-900" : "text-white"
-  } px-3 py-1 rounded-md text-xs font-semibold z-10 uppercase`}>
+  } px-3 py-1 rounded-md text-xs font-semibold z-10`}>
     {status}
   </div>
 )}
