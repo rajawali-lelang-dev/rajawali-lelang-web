@@ -47,7 +47,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 20 menit dari Bonderland Waterpark
       - 25 menit dari Rumah Sakit Panti Nirmala
       - 30 menit dari Mall Sarinah Malang`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/file/d/1AOed3A9fjfmN1KrWcNdUslz6Ob_YLpkF/view?usp=sharing"),
       getDriveImageUrl("https://drive.google.com/file/d/1QVI3RaLgW8nu3MCIDsmotyQY13dqEmRF/view?usp=sharing"),
@@ -74,7 +74,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Stadion Gelora Tlogowaru
       - 10 menit dari RSUD Kota Malang
       - 30 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=18grkZC6d61ztj699nzYMjDh6r54tQAUS"),
       getDriveImageUrl("https://drive.google.com/open?id=1Lj19rpbqYwIUY-Rsjb-KDQqFrVowMeEn"),
@@ -102,7 +102,7 @@ export const lelangProperties: PropertiDilelang[] = [
     - 17 menit dari RS. TNI AU Lanud Andulrachman Saleh
     - 19 menit dari Kampus Binus Malang
     - 19 Menit dari Bandara Abdul Rachman Saleh`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1soba2SUIajRhXWH6wsS0nsXm-deu83Gl"),
       getDriveImageUrl("https://drive.google.com/open?id=1R5s52yfdP1e5vpfdZz8WIjxVN7yvoLen"),
@@ -110,9 +110,8 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Ut996Ab2DUnBVl63ySGp28OLg93r7CmH")
     ],
     endPrice: 730000000,
-    tanggalLelang: "2025-12-24",
+    tanggalLelang: "-",
     batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
   },
   {
     id: "L4",
@@ -158,7 +157,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Taman Rekreasi Sengkaling
       - 25 menit Alun-Alun Malang
       - 30 menit dari Stasiun Malang Kota`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1JXLtC0E0FPzNExyWyyGNeun6F2tbRTz-"),
       getDriveImageUrl("https://drive.google.com/open?id=1OjNJa-W-wvTBHigHEkSqrFiPBdZqo1tW"),
@@ -186,7 +185,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Stadion Gelora Tlogowaru
       - 10 menit dari RSUD Kota Malang
       - 30 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh"),
       getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU"),
@@ -213,7 +212,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 17 menit dari Mall Dinoyo City
       - 17 menit dari Malang Skyland
       - 20 menit dari Pintu Tol Singosari`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=18sA0rzUsUBVeKhLgLzJxteGlUACiBC70"),
       getDriveImageUrl("https://drive.google.com/open?id=14b5WfCRkio_o7s9SL4L5T0GIHHxIawPs"),
@@ -239,7 +238,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari Universitas Negeri Malang
       - 15 menit dari Terminal Arjosari Malang
       - 20 menit dari Rumah Sakit Lavalette`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1EmLGbxODWt1228-tGnGJmRfe3qXSP_g7"),
       getDriveImageUrl("https://drive.google.com/open?id=1IEsHpYPVqLMd365TKoaKzH8JUGtha07v"),
@@ -266,7 +265,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Taman Rekreasi Sengkaling
       - 10 menit dari Rumah Sakit UMM
       - 30 menit dari Gerbang tol Singosari`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1MXHxN73N9dk8yrzXuPdao9jNRvS3EBzB"),
       getDriveImageUrl("https://drive.google.com/open?id=1NI1RzCDilSyObDclwv-z8cRijisAgG9g"),
@@ -292,7 +291,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Taman Rekreasi Sengkaling
       - 10 menit dari Rumah Sakit UMM
       - 30 menit dari Gerbang tol Singosari`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1rXNqLRUBYV_g2TEz4eJWqi814kUEfQlB"),
       getDriveImageUrl("https://drive.google.com/open?id=1r4rfXomcp7CoAlG0jv-9MV0tsvzd4WOw"),
@@ -348,7 +347,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 16 menit dari Luwes Pati Mall
       - 21 menit dari Rumah Sakit Keluarga Sehat
     `,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1UaF56w87cVfpvWCysCKefXCPC2TT6O7q"),
       getDriveImageUrl("https://drive.google.com/open?id=1pOQh184CdbfziqRrXrdWgmX3b7fc6W3y"),
@@ -374,7 +373,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Alun-Alun Malang
       - 16 menit dari Stasiun Malang
       - 16 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1EHJLs_ItHNpw3QFQJHmf3h8s2Ik-a7kU"),
       getDriveImageUrl("https://drive.google.com/open?id=1cNW2kjVK2xc4Et3Y4dgvJZtJ_M9WjtUB"),
@@ -400,7 +399,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari Alun-Alun Malang
       - 15 menit dari Stasiun Pakisaji
       - 18 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1tg3chY_xJa6Yh247l97Un6yjh0_hAiIh"),
       getDriveImageUrl("https://drive.google.com/open?id=19KXYp2EtxmxG4U_WVdYawAMSajuSTm6i"),
@@ -426,7 +425,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 13 menit dari Alun-Alun Malang
       - 16 menit dari Stasiun Malang
       - 17 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1PGpVzmGICVPD87uLvq0kHA66pMnJhFJD"),
       getDriveImageUrl("https://drive.google.com/open?id=1Vg8yqFKfZNYglcnxlQLyiFVJm3lwm57u"),
@@ -452,7 +451,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 5 menit dari Florawisata Santerra De Laponte
       - 14 menit dari Air Terjun Coban Rondo
       - 19 menit dari Alun-Alun Batu`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1NoNeGjlU1-n4nAdgU-X6lI_9qREpAmQ_"),
       getDriveImageUrl("https://drive.google.com/open?id=1z_TLz2b3ejYrDiFbpkBxw8B1-GglGUco"),
@@ -485,7 +484,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Rumah Sakit Baptis Batu
       - 13 menit dari Jatim Park 3
       - 15 menit dari Batu Secret Zoo`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1newpHYXbOT7UWlSaRNV7TZuqDPusoO4d"),
       getDriveImageUrl("https://drive.google.com/open?id=1nGcaUd6uYxPlAG5FZWiZnD2bGTL3ZGbi"),
@@ -512,7 +511,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 21 menit dari Klinik Pertamina IHC Cinere
       - 22 menit dari Gerbang Tol Pamulang
       - 23 menit dari Taman Warga Bukit Cinere Indah`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1DQcB0bGrC3B1-NfyAJEjeNICclUtiZ_F"),
       getDriveImageUrl("https://drive.google.com/open?id=1I_f_AwY7atgputuU_ZfPct_9E7yFcXQB"),
@@ -525,7 +524,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "L29",
-    title: "AGUNAN LELANG",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     type: "Rumah",
     location: "Kampung Mekarjati RT.031 RW.007 Kel. Pusakajaya, Kec. Pusakajaya, Kab. Subang, Jawa Barat",
     provinsi: "Jawa Barat",
@@ -566,7 +565,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 16 menit dari Mall Olympic Garden (MOG)
       - 16 menit dari Alun-Alun Malang
       - 18 menit dari Gerbang Tol Kota Malang`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1aXJy3uAXfqqpxaz7nL3rPX_4bGtfoWQu"),
       getDriveImageUrl("https://drive.google.com/open?id=19SAp1CpCdiewqs0TCfqw54EAlJ_KTrpa"),
@@ -619,7 +618,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Bandara Abdul Rachman Saleh
       - 11 menit dari Universitas Negeri Malang, Kampus II
       - 28 menit dari Alun-Alun Malang`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ufRe3LUL6kLNh4bQv0hTF-9oc6rnNkPS"),
       getDriveImageUrl("https://drive.google.com/open?id=1M_yVZF8nZsfrcdwGtxrqBIMJngZ9QsMw"),
@@ -646,7 +645,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 22 menit dari Gerbang Tol Kota Malang
       - 25 menit dari Binus Malang
       - 26 menit dari Alun-Alun Malang`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1gG1EPmvR2CaSCs5ERXAKwYJNvFzdDtfq"),
       getDriveImageUrl("https://drive.google.com/open?id=1hPPwksqqhebrH6RzTwPPgtA_BQfNmSG-"),
@@ -672,7 +671,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Taman Sabo Dam Nglumut
       - 20 menit dari Puskesmas Srumbung
       - 27 menit dari Jalan Raya Magelang-Yogya`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1Ht7AooYIBMABGE2upjqL3dR7t3EKFG1-"),
       getDriveImageUrl("https://drive.google.com/open?id=13VAEUmd0XgGA1Fxuom8a-91dOCksFswF"),
@@ -698,7 +697,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Taman Sabo Dam Nglumut
       - 20 menit dari Puskesmas Srumbung
       - 27 menit dari Jalan Raya Magelang-Yogya`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1X-7jOXaa-g5dwrGkhswivktFhlAF596G"),
       getDriveImageUrl("https://drive.google.com/open?id=1DX9_OoyNUchu8SbY0qLI5EiVtKpQQ_pb"),
@@ -725,7 +724,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Jalan Raya Magelang-Yogya
       - 14 menit dari Pasar Tempel Sleman
       - 14 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1emxleX7PBYwfNco-Ia3SwfWyAe0-crAX"),
       getDriveImageUrl("https://drive.google.com/open?id=1Gi-43PTqQVpE8UvJAIbq24QLwYgUeKIu"),
@@ -751,7 +750,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 13 menit dari Jalan Raya Magelang-Yogya
       - 15 menit dari Pasar Tempel Sleman
       - 16 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1_mfqTEkVvIPJy9u8vyqCRXSJ76uhySdc"),
       getDriveImageUrl("https://drive.google.com/open?id=1pSiViRT_wmECcZzQQvmToD89MfU31DCt"),
@@ -778,7 +777,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari Jalan Raya Magelang-Yogya
       - 15 menit dari Pasar Tempel Sleman
       - 15 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1xHUAaMIiQRmtM3OZuICLSUwY6b6vPaTj"),
       getDriveImageUrl("https://drive.google.com/open?id=1TdGcOMXdgOhnOcA7q68j2a7EIfVI_xj8"),
@@ -804,7 +803,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Jalan Raya Magelang-Yogya
       - 12 menit dari Pasar Tempel Sleman
       - 14 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1HJ7IEsGFOF3Nf8n7vgDsB8dmrXhkK4Fo"),
       getDriveImageUrl("https://drive.google.com/open?id=1WH3WdetgXjaYocOv9C_erLEwAsbPzqNs"),
@@ -837,7 +836,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Jalan Raya Magelang-Yogya
       - 14 menit dari Pasar Tempel Sleman
       - 15 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1r6cQQ_HbqxgxXSOlYleaKl4rkLJvgeSU"),
       getDriveImageUrl("https://drive.google.com/open?id=1rZWkpIECvILNvgApKIswdgA0I5u4o48L"),
@@ -863,7 +862,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 16 menit dari SMKN 1 Tempel
       - 20 menit ke RSUD Sleman, Yogyakarta
       - 24 menit ke Terminal Drs. Prajitno Muntilan`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1qaiCbCwOY4IDg5JgLg0a6KpGKfJ_aGKZ"),
       getDriveImageUrl("https://drive.google.com/open?id=1LvcQ86CVx6K3ISZPg_f0hF7DnEScWHj1"),
@@ -892,7 +891,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Embung Mranggen
       - 14 menit dari SD Islam Muhammadiyah
       - 15 menit dari Grojogan Watu Purbo`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1tMlgASCcLuKqLBULMP4ar7-wt5yo064J"),
       getDriveImageUrl("https://drive.google.com/open?id=1aiOxL7o-zyPyoTcJFud6ncFj-PFuZW__"),
@@ -919,7 +918,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 13 menit dari Jalan Raya Magelang-Yogya
       - 15 menit dari Grojogan Watu Purbo
       - 19 menit dari SMK Negeri 1 Salam`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1hrWmni2r1AdOkWpB4PgLaybVufkXjOIB"),
       getDriveImageUrl("https://drive.google.com/open?id=13471UWwBN58mJrxC4K88SYxQIEP7eRG2"),
@@ -946,7 +945,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari Gerbang Tol Banyurejo
       - 14 menit dari Desa Wisata Kelor
       - 25 menit dari Universitas Teknologi Yogyakarta`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=19IdpDgjlSyhmoyXicezv7AuRv53hSflu"),
       getDriveImageUrl("https://drive.google.com/open?id=1VmWwl9QlPHys_GPWjt0k11QicuoLWM1c"),
@@ -972,7 +971,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari Gerbang Tol Banyurejo
       - 15 menit dari Desa Wisata Kelor
       - 27 menit dari Universitas Teknologi Yogyakarta`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1vUDoIxcK10OykkP38-aqn1viTD2Y2Jud"),
       getDriveImageUrl("https://drive.google.com/open?id=1dgInw1cLT7UgMQjzf69ac81kcf_9MLQo")
@@ -997,7 +996,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Jl. Raya Magelang-Yogyakarta
       - 14 menit dari Pasar Tempel Sleman
       - 14 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1-8OMsYtYakbMlkHNvaKeaCUcImftq2aK"),
       getDriveImageUrl("https://drive.google.com/open?id=1am5SLf8LaowWMXR_XCmJ0ClVwlQHPlS8"),
@@ -1025,7 +1024,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 5 menit dari SDN Gondowangi 1
       - 8 menit dari Puskesmas Mungkid
       - 16 menit dari Armada Town Square Mall`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1OyvLU5ufNWctNa6_iZyLJ32Pb3ohDr9P"),
       getDriveImageUrl("https://drive.google.com/open?id=1gQqVCNv5P68YLqKLlXtaq46mbd2t8L4u"),
@@ -1051,7 +1050,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 5 menit dari SDN Gondowangi 1
       - 8 menit dari Puskesmas Mungkid
       - 17 menit dari Armada Town Square Mall`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1v-X6hz1QblV2p8zWZ_a02X30P6llP6Cq"),
       getDriveImageUrl("https://drive.google.com/open?id=14F9FDdf4sLHDKsCzGu2A1FJpNHV3dyTd"),
@@ -1079,7 +1078,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 8 menit dari Jalan Raya Magelang-Yogya
       - 9 menit dari Puskesmas Mungkid
       - 17 menit dari Armada Town Square Mall`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=14CxEtdWR47v8TkTcPAf0yvfMm4xlZNLY"),
       getDriveImageUrl("https://drive.google.com/open?id=1FoOFKw9ZOk7HF5ZQ6MHMroc19dnj3sbI"),
@@ -1106,7 +1105,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 5 menit dari SDN Gondowangi 1
       ⦁ 8 menit dari Puskesmas Mungkid
       ⦁ 16 menit dari Armada Town Square Mall`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1OyvLU5ufNWctNa6_iZyLJ32Pb3ohDr9P"),
       getDriveImageUrl("https://drive.google.com/open?id=1gQqVCNv5P68YLqKLlXtaq46mbd2t8L4u"),
@@ -1132,7 +1131,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 5 menit dari SDN Gondowangi 1
       ⦁ 8 menit dari Puskesmas Mungkid
       ⦁ 17 menit dari Armada Town Square Mall`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1v-X6hz1QblV2p8zWZ_a02X30P6llP6Cq"),
       getDriveImageUrl("https://drive.google.com/open?id=14F9FDdf4sLHDKsCzGu2A1FJpNHV3dyTd"),
@@ -1160,7 +1159,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 8 menit dari Jalan Raya Magelang-Yogya
       ⦁ 9 menit dari Puskesmas Mungkid
       ⦁ 17 menit dari Armada Town Square Mall`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=14CxEtdWR47v8TkTcPAf0yvfMm4xlZNLY"),
       getDriveImageUrl("https://drive.google.com/open?id=1FoOFKw9ZOk7HF5ZQ6MHMroc19dnj3sbI"),
@@ -1187,7 +1186,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 12 menit dari Puskesmas Salam Magelang
       ⦁ 14 menit dari Pasar Tempel Sleman
       ⦁ 15 menit dari SMKN 1 Tempel`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=17nONxHgw8UW3bhKpY-6XKuj2uT7LedwV"),
       getDriveImageUrl("https://drive.google.com/open?id=1qWGcacQKBc_Zy9NyrGbYGwr-qxXkqdia"),
@@ -1218,7 +1217,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 22 mnt Kampus 2 Universitas Muhammadiyah Magelang
       ⦁ 22 mnt Salut Magelang Raya
       ⦁ 24 mnt Wisata Punthuk Setumbu`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1xoNvfKSglVRC7doLzEhzb6eQXpUCYjvX"),
       getDriveImageUrl("https://drive.google.com/open?id=13BwpjNGX4tBfkZtsleLPe2W6U-Eg7gYo"),
@@ -1245,7 +1244,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 8 menit dari SMA Negeri 1 Salaman
       ⦁ 9 menit dari Terminal Salaman
       ⦁ 21 menit dari Candi Borobudur Magelang`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1gpECisLzSoUoecPv9D44XNVtjRdr0gfN"),
       getDriveImageUrl("https://drive.google.com/open?id=1BDYyegdR64XcPvxH5TY4ZV4NLWMQME2M"),
@@ -1271,7 +1270,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 15 menit dari SMKN 1 Tempel
       ⦁ 19 menit ke RSUD Sleman, Yogyakarta
       ⦁ 21 menit ke Terminal Drs. Prajitno Muntilan`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1yw-EXkeqHr95zvQBU9LQHxAfWvLKe99E"),
       getDriveImageUrl("https://drive.google.com/open?id=1WJgYNQBPB6IBrcd2EbJLqoNcY5nFI-mt"),
@@ -1297,7 +1296,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 10 menit dari Pasar Tempuran
       ⦁ 12 menit dari RSUD Bukit Menoreh
       ⦁ 15 menit dari GOR Dhananjaya Magelang`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1wPVz-ZXc6hxaOySEVyqmc2IfcBJU4mzf"),
       getDriveImageUrl("https://drive.google.com/open?id=1Alg7RM-jrKUMZ7eXhNOEciXMJh9FgONC"),
@@ -1324,7 +1323,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 13 menit dari SMKN 1 Tempel
       ⦁ 18 menit ke RSUD Sleman, Yogyakarta
       ⦁ 20 menit ke Terminal Drs. Prajitno Muntilan`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1EJ-opTi7wa2cCi7m4bULVeKrievVMUFq"),
       getDriveImageUrl("https://drive.google.com/open?id=1lAlITBNzwcHl3mZfod_p98jqOPmXv_Bw"),
@@ -1351,7 +1350,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 6 menit dari RSUD Bukit Menoreh
       ⦁ 9 menit dari Terminal Salaman
       ⦁ 15 menit dari Candi Borobudur Magelang`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1KF3SGqSRTfGZ60h2wWpjVlbpfBFFiM7L"),
       getDriveImageUrl("https://drive.google.com/open?id=1a4qeQmyW9FFh41ipjqjMr6Q23hqwVil_"),
@@ -1378,7 +1377,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 20 mnt RS Umum 'Aisyiyah Muntilan
       ⦁ 23 mnt SMA Negeri 1 Muntilan
       ⦁ 25 mnt Gerbang Tol Banyurejo`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=12bgqax2JvRJ8WDJxQxvjQ3X8KY6Fn-Zr"),
       getDriveImageUrl("https://drive.google.com/open?id=1I3EgdBj5NS-vuz0qcJ0wkrj88OuI27RZ"),
@@ -1405,7 +1404,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 8 menit dari Jalan Raya Magelang-Yogya
       ⦁ 9 menit dari Puskesmas Mungkid
       ⦁ 17 menit dari Armada Town Square Mall`,
-    status: "Lelang Aktif",
+    status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1Fpnvs_HHnu-XROzn_b1u5ZyBu-DQdMJ2"),
       getDriveImageUrl("https://drive.google.com/open?id=14zkVMYlarW9QPqK_-FqchJyozLyfzO_-"),
