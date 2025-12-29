@@ -1334,32 +1334,6 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L61",
-    title: "SEGERA LELANG RUMAH TINGGAL DAN KANDANG AYAM",
-    type: "Rumah",
-    location: "Jalan Bulu, Desa Jerukagung, Kec. Srumbung Kab. Magelang, Jawa Tengah",
-    provinsi: "Jawa Tengah",
-    kota: "Magelang",
-    landArea: 1330,
-    buildingArea: 826,
-    certificateType: "SHM",
-    description:
-    `⦁ 7 menit dari Puskesmas Srumbung
-      ⦁ 10 menit dari Embung Mranggen
-      ⦁ 12 menit dari Jalan Raya Magelang-Yogya
-      ⦁ 15 menit dari SMKN 1 Tempel
-      ⦁ 15 menit dari Grojogan Watu Purbo`,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=180JJZ47Dm0i4F30zTLqK97l2dmT4vcF9"),
-      getDriveImageUrl("https://drive.google.com/open?id=1rj7IBlvA64w1EVZ2ALPpS4jL69IDV8sm"),
-      getDriveImageUrl("https://drive.google.com/open?id=15KGFzOESMFps2fw3jR-N7y8C7mkmxQVe")
-    ],
-    endPrice: 818948000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-  {
     id: "L62",
     title: "SEGERA LELANG TANAH DAN POS JAGA",
     type: "Tanah",
