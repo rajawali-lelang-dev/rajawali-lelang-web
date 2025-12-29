@@ -8,14 +8,16 @@ const nextConfig = {
     // Opsional: lakukan hal yang sama untuk error type agar build tidak terhenti
     ignoreBuildErrors: true,
   },
- images: {
+  images: {
+    // Mengizinkan semua domain agar gambar Google Drive tidak terblokir
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**',
       },
     ],
-    // Tambahkan baris ini untuk keamanan tambahan
+    // Mematikan optimasi gambar secara global jika Anda masih sering menemui error 400
+    unoptimized: true, 
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
   },
