@@ -65,7 +65,7 @@ export default function AsetCard({
     if (!status) return "bg-gray-500";
     switch (status.toLowerCase()) {
       case "lelang aktif":
-      case "available": return "bg-red-500";
+      case "available": return "bg-green-100 text-green-700";
       case "featured": return "bg-yellow-500";
       case "segera":
       case "coming soon": return "bg-blue-500";
