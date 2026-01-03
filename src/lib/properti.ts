@@ -2,7 +2,7 @@ import { BaseItemDijual, BaseItemLelang } from './data';
 import { getDriveImageUrl } from './drive-utils';
 
 // Property Type
-export type PropertyType = "Rumah" | "Ruko" | "Villa" | "Apartemen" | "Tanah" | "Gudang";
+export type PropertyType = "Rumah" | "Ruko" | "Villa" | "Apartemen" | "Tanah" | "Gudang" | "Hotel";
 
 // Property Interface - extends BaseItemDijual
 export interface Property extends BaseItemDijual {
@@ -18,7 +18,7 @@ export interface PropertiDilelang extends BaseItemLelang {
   type: PropertyType;
   landArea: number;
   buildingArea: number;
-  certificateType: "SHM" | "HGB";
+  certificateType: "SHM" | "HGB" | "SHMSRS" | "SHP" | "SHSRS";
   jamLelang? : string;
   
 }
@@ -1411,6 +1411,179 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1DeOmZsUDk_u7Ay7lebQXnzHGfMQCQ8Lu")
     ],
     endPrice: 317200000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+    {
+    id: "L65",
+    title: "SEGERA LELANG KIOS APARTEMEN",
+    type: "Apartemen",
+    location: " Apartement Kalibata City Blok Borneo Lantai Dasar No.B/CL/15 Jalan Taman Makam Pahlawan Kalibata, Kel. Rawajati, Kec. Pancoran, Jakarta Selatan",
+    provinsi: "DKI Jakarta",
+    kota: "Jakarta Selatan",
+    landArea: 6.23,
+    buildingArea: 6.23,
+    certificateType: "SHMSRS",
+    description:
+    `⦁ 5 menit dari Stasiun Duren Kalibata
+      ⦁ 6 menit dari Universitas Trilogi
+      ⦁ 7 menit dari Mal Kalibata City Square
+      ⦁ 10 menit dari Gerbang Tol Cawang
+      ⦁ 14 menit dari RSU Budhi Asih`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1JCduHLiG1hyZvhZYTZaxhKKMWTxWIAVy"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wHdlD-4KwHwK6VQx-9XXjhpskwmnBzc4"),
+      getDriveImageUrl("https://drive.google.com/open?id=1kRnAdD1xZzGYpw8JWufNssTisI1h__DP"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-uIVC1aFkxlppz5zjwt8zD89J69bxWkN"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ehEk-7Q0oKAeg66V7I5aK_3wz20P7Lt2"),
+      getDriveImageUrl("https://drive.google.com/open?id=1TTrdk-XVKAmjL3VdUUg7ECz_kpa-TLGR"),
+      getDriveImageUrl("https://drive.google.com/open?id=1cGjMKO1IJLjC5lMf2JPOTn5mAmCzwSq-")
+    ],
+    endPrice: 390600000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  {
+    id: "L66",
+    title: "SEGERA LELANG HOTEL",
+    type: "Hotel",
+    location: "Jalan Tlogo Indah No. 64, Kel. Tlogomas, Kec. Lowokwaru, Kota Malang",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 318,
+    buildingArea: 922,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari Universitas Islam Malang
+      - 2 menit dari Mall Dinoyo City
+      - 3 menit dari RSI UNISMA
+      - 10 menit dari Halte Veteran Kota Malang
+      - 10 menit dari Taman Rekreasi Sengkaling`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1A0tJ4UY8wLC_Yo-xK52OioLanQNaxZvz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1W7BYxlOqRem2V2Ch3643Yr8szPJq4JlI"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dlate49mVK_yw_eXHltze6fzw1gs2cVg"),
+      getDriveImageUrl("https://drive.google.com/open?id=1b2FN1XpDGKhtlR0ff6aj37ZXhAFfp7xO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1m8Y4I9Kzfu9AT8JSaYfwt5GRtjQlxxE7")
+    ],
+    endPrice: 2856000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+    {
+    id: "L67",
+    title: "SEGERA LELANG HOTEL",
+    type: "Hotel",
+    location: "Jalan Tlogo Indah No. 64, Kel. Tlogomas, Kec. Lowokwaru, Kota Malang",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 318,
+    buildingArea: 922,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari Universitas Islam Malang
+      - 2 menit dari Mall Dinoyo City
+      - 3 menit dari RSI UNISMA
+      - 10 menit dari Halte Veteran Kota Malang
+      - 10 menit dari Taman Rekreasi Sengkaling`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1A0tJ4UY8wLC_Yo-xK52OioLanQNaxZvz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1W7BYxlOqRem2V2Ch3643Yr8szPJq4JlI"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dlate49mVK_yw_eXHltze6fzw1gs2cVg"),
+      getDriveImageUrl("https://drive.google.com/open?id=1b2FN1XpDGKhtlR0ff6aj37ZXhAFfp7xO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1m8Y4I9Kzfu9AT8JSaYfwt5GRtjQlxxE7")
+    ],
+    endPrice: 2856000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  {
+    id: "L67",
+    title: "SEGERA LELANG HOTEL",
+    type: "Hotel",
+    location: "Jalan Tlogo Indah No. 64, Kel. Tlogomas, Kec. Lowokwaru, Kota Malang",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 318,
+    buildingArea: 922,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari Universitas Islam Malang
+      - 2 menit dari Mall Dinoyo City
+      - 3 menit dari RSI UNISMA
+      - 10 menit dari Halte Veteran Kota Malang
+      - 10 menit dari Taman Rekreasi Sengkaling`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1A0tJ4UY8wLC_Yo-xK52OioLanQNaxZvz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1W7BYxlOqRem2V2Ch3643Yr8szPJq4JlI"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dlate49mVK_yw_eXHltze6fzw1gs2cVg"),
+      getDriveImageUrl("https://drive.google.com/open?id=1b2FN1XpDGKhtlR0ff6aj37ZXhAFfp7xO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1m8Y4I9Kzfu9AT8JSaYfwt5GRtjQlxxE7")
+    ],
+    endPrice: 2856000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  {
+    id: "L68",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    type: "Rumah",
+    location: " Kampung Railat No. 40, 76 & 51, RT.002 RW.007, Kel. Leuwinanggung, Kec. Tapos, Kotamadya Depok, Jawa Barat",
+    provinsi: "Jawa Barat",
+    kota: "Depok",
+    landArea: 374,
+    buildingArea: 142,
+    certificateType: "SHM",
+    description:
+    `- 3 menit dari SMA Negeri 7 Kota Depok
+      - 12 menit dari Mall Ciputra Cibubur
+      - 12 menit dari Gerbang Tol Cimanggis
+      - 16 menit dari Puskesmas Sukatani
+      - 19 menit dari Halte Transjakarta Cibubur Junction`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1K783-TyVv-Xo61LQFSTO_NCARuolsUC6"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dfYE8-gUQx5vLp-nrD0O__tM-ZZU8ATa"),
+      getDriveImageUrl("https://drive.google.com/open?id=1fici7SDaI8N9ZWR1RaaEcSbJ9SIL6rwZ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ta2jzf_S4TGOV4VM7s3DdvYtWNcCGj7V"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Ib2Jh5NBIElk2nQXBCO1L2fAMdbUIjuL"),
+      getDriveImageUrl("https://drive.google.com/open?id=1P-TgIcqr5tNyp2ZOygJ_YFm7OmHScPuh"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Lg76lxMkmlJd9Vv6D5gur6nDbFcgbQuZ")
+    ],
+    endPrice: 1519600000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  {
+    id: "L69",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    type: "Rumah",
+    location: "Jl. H. Nasa Syamsudin No. 48E, RT.002 RW.007 Kel. Kedaung, Kec. Pamulang Kota, Tangerang Selatan",
+    provinsi: "Banten",
+    kota: "Tangerang Selatan",
+    landArea: 161,
+    buildingArea: 110,
+    certificateType: "SHM",
+    description:
+    `- 9 menit dari RSU Hermina Ciputat
+      - 13 menit dari Living Plaza Ciputat
+      - 13 menit dari Stasiun Jurangmangu
+      - 13 menit dari UIN Syarif Hidayatullah
+      - 15 menit dari Gerbang Tol Pamulang`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=16KwUBNpb1R6NdiAfpL7CuOobVyUBwNfc"),
+      getDriveImageUrl("https://drive.google.com/open?id=19l2Y6tNhwtl9crj2qDx5XrYL0Gd7HKEz"),
+      getDriveImageUrl("https://drive.google.com/open?id=17ZdQFKFnhhAcXifujEyyu_kk-68qtMbk"),
+      getDriveImageUrl("https://drive.google.com/open?id=1F_IbSNwONYfncML2sBFyKLVIVk-nPOJk"),
+      getDriveImageUrl("https://drive.google.com/open?id=1p8_Cxh8vKLoI1-2g6GVJlMFdHI12fOLS"),
+      getDriveImageUrl("https://drive.google.com/open?id=1f1Sb8PJlKFPI7XJw9_GPt__cceLeTSZU")
+    ],
+    endPrice: 1519600000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
