@@ -25,15 +25,19 @@ export const metadata: Metadata = {
   authors: [{ name: "Rajawali Lelang Indonesia" }],
   creator: "Rajawali Lelang Indonesia",
   publisher: "Rajawali Lelang Indonesia",
+  
+  // Perbaikan bagian Ikon agar muncul di Google Search
   icons: {
-  icon: [
-    {
-      url: "/favicon.ico",
-      type: "image/x-icon",
-    },
-  ],
-  apple: "/images/assets/logo_rli.png",
-},
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" }, // Ikon browser
+      { url: "/images/assets/logo_rli.png", sizes: "48x48", type: "image/png" }, // Ukuran minimal Google
+      { url: "/images/assets/logo_rli.png", sizes: "96x96", type: "image/png" },
+      { url: "/images/assets/logo_rli.png", sizes: "144x144", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/assets/logo_rli.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 
   openGraph: {
     title: "Rajawali Lelang Indonesia",
@@ -79,8 +83,11 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
+        {/* Viewport Meta Tag */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.8, maximum-scale=2.0" />
-         <script
+        
+        {/* Struktur JSON-LD untuk membantu Google mengenali Logo & Organisasi */}
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -89,6 +96,13 @@ export default function RootLayout({
               "name": "Rajawali Lelang Indonesia",
               "url": "https://rajawalilelangindo.com",
               "logo": "https://rajawalilelangindo.com/images/assets/logo_rli.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+62-xxx-xxxx-xxxx", // Silakan ganti dengan nomor kantor Anda
+                "contactType": "customer service",
+                "areaServed": "ID",
+                "availableLanguage": "Indonesian"
+              }
             }),
           }}
         />
