@@ -1617,6 +1617,88 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
+      {
+    id: "L72",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    type: "Rumah",
+    location: " Jl. Damai Ujung (Gang H. Hamim) No. 72, RT.009 RW.003, Kel. Cipete Utara, Kec. Kebayoran Baru, Kotamdya Jakarta Selatan, DKI Jakarta",
+    provinsi: "Jakarta Selatan",
+    kota: "DKI Jakarta",
+    landArea: 87,
+    buildingArea: 58,
+    certificateType: "SHM",
+    description:
+    `- 7 menit dari RSUD Kebayoran Baru
+      - 8 menit dari MRT Haji Nawi
+      - 10 menit dari Lippo Mall Kemang
+      - 11 menit dari Taman Literasi Martha Tiahahu
+      - 12 menit dari Blok M Square`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1Exj3gXCVG_mQ48ZcT_jh6sV1Rif4rMMd"),
+      getDriveImageUrl("https://drive.google.com/open?id=1cfWGmMY4rKHZ5t9ccX8RT9DVe0qCGkZl"),
+      getDriveImageUrl("https://drive.google.com/open?id=1VIOJjmXKOAhUNuLMNu-pJ1ycf4OsRzI5"),
+      getDriveImageUrl("https://drive.google.com/open?id=1CCFSA2gHwkhnjGGOlZRyZtVSnWsy3AMz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1NlhYpwe7QfPtMSgMStJZg3nLCgkKbiWX")
+    ],
+    endPrice: 950040000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+      {
+    id: "L73",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    type: "Rumah",
+    location: " Jalan Kapuk Muara No. 25, RT.007 RW 004, Kel. Kapuk Muara, Kec. Penjaringan, Kotamadya Jakarta Utara, DKI Jakarta",
+    provinsi: "Jakarta Utara",
+    kota: "DKI Jakarta",
+    landArea: 27,
+    buildingArea: 52.5,
+    certificateType: "SHM",
+    description:
+    `- 3 menit dari Hari Hari Pasar Swalayan Duta Harapan Indah
+      - 5 menit dari SMP Negeri 112 Jakarta
+      - 6 menit dari Puskesmas Penjaringan
+      - 6 menit dari Halte Kampung Gusti
+      - 10 menit dari Penjaringan City Forest Park`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1PnpTu73Esed-S5WuhnQg2SWUEXT3gkvr"),
+      getDriveImageUrl("https://drive.google.com/open?id=1IZ-CR4ksB3UpllvnzxU1mrT2DgGSo8NP"),
+      getDriveImageUrl("https://drive.google.com/open?id=1SuyraJ2sEqIJ5Ou20rvr-qIKcPc1IiPI"),
+      getDriveImageUrl("https://drive.google.com/open?id=1W6K08EqxV61SPRt_0uPUwgIg4KL01RYG"),
+      getDriveImageUrl("https://drive.google.com/open?id=1IEzwtFD8XlDs-Gulxp6Ab5yc5CvN1sIV")
+    ],
+    endPrice: 163900000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+      {
+    id: "L74",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    type: "Rumah",
+    location: "Kampung Poncol Jl. Harapan II No. 8 RT.003 RW.002 Kel. Cipadu Kec. Larangan, Kota Tangerang",
+    provinsi: "Banten",
+    kota: "Tangerang",
+    landArea: 58,
+    buildingArea: 113,
+    certificateType: "SHM",
+    description:
+    `- 4 menit dari RS Murni Teguh Ciledug
+      - 5 menit dari Universitas Budi Luhur
+      - 8 menit dari Halte Puribeta 2
+      - 8 menit dari Puri Beta Waterpark
+      - 11 menit dari Ciplaz Ciledug`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1x0TbUEC2_GIXcz86n-i1h1bt7YdPLQUA"),
+      getDriveImageUrl("https://drive.google.com/open?id=1zkBKjeupJhoCVkDrZQl4Y_tr4j6bnmrh"),
+      getDriveImageUrl("https://drive.google.com/open?id=1t_xZGjcRvyG27z5ustODzcW6-d79OKlZ")
+    ],
+    endPrice: 580200000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
 ];// Helper: Get unique provinces from all properties
 export const getUniqueProvinces = (): string[] => {
   const allProvinces = [
