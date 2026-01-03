@@ -1559,7 +1559,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1p8_Cxh8vKLoI1-2g6GVJlMFdHI12fOLS"),
       getDriveImageUrl("https://drive.google.com/open?id=1f1Sb8PJlKFPI7XJw9_GPt__cceLeTSZU")
     ],
-    endPrice: 1519600000,
+    endPrice: 1377700000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
