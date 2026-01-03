@@ -1663,9 +1663,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Penjaringan City Forest Park`,
     status: "Lelang Segera",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1SuyraJ2sEqIJ5Ou20rvr-qIKcPc1IiPI"),
       getDriveImageUrl("https://drive.google.com/open?id=1PnpTu73Esed-S5WuhnQg2SWUEXT3gkvr"),
       getDriveImageUrl("https://drive.google.com/open?id=1IZ-CR4ksB3UpllvnzxU1mrT2DgGSo8NP"),
-      getDriveImageUrl("https://drive.google.com/open?id=1SuyraJ2sEqIJ5Ou20rvr-qIKcPc1IiPI"),
       getDriveImageUrl("https://drive.google.com/open?id=1W6K08EqxV61SPRt_0uPUwgIg4KL01RYG"),
       getDriveImageUrl("https://drive.google.com/open?id=1IEzwtFD8XlDs-Gulxp6Ab5yc5CvN1sIV")
     ],
@@ -1691,8 +1691,8 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Ciplaz Ciledug`,
     status: "Lelang Segera",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1x0TbUEC2_GIXcz86n-i1h1bt7YdPLQUA"),
       getDriveImageUrl("https://drive.google.com/open?id=1zkBKjeupJhoCVkDrZQl4Y_tr4j6bnmrh"),
+      getDriveImageUrl("https://drive.google.com/open?id=1x0TbUEC2_GIXcz86n-i1h1bt7YdPLQUA"),
       getDriveImageUrl("https://drive.google.com/open?id=1t_xZGjcRvyG27z5ustODzcW6-d79OKlZ")
     ],
     endPrice: 580200000,
