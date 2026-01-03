@@ -1432,10 +1432,10 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 14 menit dari RSU Budhi Asih`,
     status: "Lelang Segera",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1-uIVC1aFkxlppz5zjwt8zD89J69bxWkN"),
       getDriveImageUrl("https://drive.google.com/open?id=1JCduHLiG1hyZvhZYTZaxhKKMWTxWIAVy"),
       getDriveImageUrl("https://drive.google.com/open?id=1wHdlD-4KwHwK6VQx-9XXjhpskwmnBzc4"),
       getDriveImageUrl("https://drive.google.com/open?id=1kRnAdD1xZzGYpw8JWufNssTisI1h__DP"),
-      getDriveImageUrl("https://drive.google.com/open?id=1-uIVC1aFkxlppz5zjwt8zD89J69bxWkN"),
       getDriveImageUrl("https://drive.google.com/open?id=1ehEk-7Q0oKAeg66V7I5aK_3wz20P7Lt2"),
       getDriveImageUrl("https://drive.google.com/open?id=1TTrdk-XVKAmjL3VdUUg7ECz_kpa-TLGR"),
       getDriveImageUrl("https://drive.google.com/open?id=1cGjMKO1IJLjC5lMf2JPOTn5mAmCzwSq-")
@@ -1608,8 +1608,8 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Kolam Renang Vanda Tirta`,
     status: "Lelang Segera",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1BsEoX546T7pskXa0GxJTB2CkADNEqjeM"),
       getDriveImageUrl("https://drive.google.com/open?id=1qavcAEmbR0Z1C0c6zJMSGPT2HuTneNbi"),
+      getDriveImageUrl("https://drive.google.com/open?id=1BsEoX546T7pskXa0GxJTB2CkADNEqjeM"),
       getDriveImageUrl("https://drive.google.com/open?id=1Eqi_j3fu78Bjxcw15rvP4-8QJRF-qm19"),
       getDriveImageUrl("https://drive.google.com/open?id=1lAIJomju7lZFR7u2CHJMVUJhaFtb6YVL")
     ],
