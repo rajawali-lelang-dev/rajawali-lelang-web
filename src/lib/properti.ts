@@ -2,7 +2,7 @@ import { BaseItemDijual, BaseItemLelang } from './data';
 import { getDriveImageUrl } from './drive-utils';
 
 // Property Type
-export type PropertyType = "Rumah" | "Ruko" | "Villa" | "Apartemen" | "Tanah" | "Gudang" | "Hotel";
+export type PropertyType = "Rumah" | "Ruko" | "Villa" | "Apartemen" | "Tanah" | "Gudang" | "Hotel" | "Toko";
 
 // Property Interface - extends BaseItemDijual
 export interface Property extends BaseItemDijual {
@@ -1462,69 +1462,45 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Taman Rekreasi Sengkaling`,
     status: "Lelang Segera",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1A0tJ4UY8wLC_Yo-xK52OioLanQNaxZvz"),
-      getDriveImageUrl("https://drive.google.com/open?id=1W7BYxlOqRem2V2Ch3643Yr8szPJq4JlI"),
-      getDriveImageUrl("https://drive.google.com/open?id=1dlate49mVK_yw_eXHltze6fzw1gs2cVg"),
-      getDriveImageUrl("https://drive.google.com/open?id=1b2FN1XpDGKhtlR0ff6aj37ZXhAFfp7xO"),
-      getDriveImageUrl("https://drive.google.com/open?id=1m8Y4I9Kzfu9AT8JSaYfwt5GRtjQlxxE7")
+      getDriveImageUrl("https://drive.google.com/open?id=13fG8bethayU5SJcvK2MqrvZ_q2IIwQTI"),
+      getDriveImageUrl("https://drive.google.com/open?id=1yF66lt1n4NaB-HuIZ6bmXXmnEgFVxn28"),
+      getDriveImageUrl("https://drive.google.com/open?id=17ZfGXcZtjgyb7gzIOSzq5Z76SV64Rv62"),
+      getDriveImageUrl("https://drive.google.com/open?id=1gZ7b4DoeELNYbLOQmz7k-z5J8JNIV_oH"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wbGE7udF_onObBPMvRt0QBD5lx6timOr"),
+      getDriveImageUrl("https://drive.google.com/open?id=1108vTrUapr1lFWRqf5p2KB3u7nlR-o_L"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Oc1eswlc96Naw0U2113FrGPcEfOXwvut"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Anp6KJTE3VBUDatfkBXHbszlVfnEzmbU"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ZM3tdpZ-8JsQRakEpePVbUBP8TamZVKV")
     ],
     endPrice: 2856000000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
-    {
+   {
     id: "L67",
-    title: "SEGERA LELANG HOTEL",
-    type: "Hotel",
-    location: "Jalan Tlogo Indah No. 64, Kel. Tlogomas, Kec. Lowokwaru, Kota Malang",
-    provinsi: "Jawa Timur",
-    kota: "Malang",
-    landArea: 318,
-    buildingArea: 922,
+    title: "SEGERA LELANG KIOS",
+    type: "Toko",
+    location: "Jl. Siliwangi RT.001 RW.002, Kel. Sukasari, Kec. Bogor Timur, Kota Bogor, Jawa Barat",
+    provinsi: "Jawa Barat",
+    kota: "Bogor",
+    landArea: 20,
+    buildingArea: 20,
     certificateType: "SHM",
     description:
-    `- 2 menit dari Universitas Islam Malang
-      - 2 menit dari Mall Dinoyo City
-      - 3 menit dari RSI UNISMA
-      - 10 menit dari Halte Veteran Kota Malang
-      - 10 menit dari Taman Rekreasi Sengkaling`,
+    `- 1 menit dari Rumah Sakit Vania
+      - 12 menit dari Stasiun Batutulis
+      - 14 menit dari Lippo Plaza Ekalokasari
+      - 17 menit dari Universitas Pakuan
+      - 20 menit dari Alun-Alun Bogor`,
     status: "Lelang Segera",
     image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1A0tJ4UY8wLC_Yo-xK52OioLanQNaxZvz"),
-      getDriveImageUrl("https://drive.google.com/open?id=1W7BYxlOqRem2V2Ch3643Yr8szPJq4JlI"),
-      getDriveImageUrl("https://drive.google.com/open?id=1dlate49mVK_yw_eXHltze6fzw1gs2cVg"),
-      getDriveImageUrl("https://drive.google.com/open?id=1b2FN1XpDGKhtlR0ff6aj37ZXhAFfp7xO"),
-      getDriveImageUrl("https://drive.google.com/open?id=1m8Y4I9Kzfu9AT8JSaYfwt5GRtjQlxxE7")
+      getDriveImageUrl("https://drive.google.com/open?id=1qnRBp_7Ox9GiH7wYnL7Djvwy38D761Sj"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dapo7PTc5ib3HpYN9HCIcLGxJZxxXXb8"),
+      getDriveImageUrl("https://drive.google.com/open?id=1zz_1M_s0D1fJO-baYl7qrHpigavXwrQE"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-38wRMuHIEK863Q_zmeeBNJNK5nnmS6q"),
+      getDriveImageUrl("https://drive.google.com/open?id=12wpweOuhWeapw9OcdtbfRH8ilUT2TNNA")
     ],
-    endPrice: 2856000000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-  {
-    id: "L67",
-    title: "SEGERA LELANG HOTEL",
-    type: "Hotel",
-    location: "Jalan Tlogo Indah No. 64, Kel. Tlogomas, Kec. Lowokwaru, Kota Malang",
-    provinsi: "Jawa Timur",
-    kota: "Malang",
-    landArea: 318,
-    buildingArea: 922,
-    certificateType: "SHM",
-    description:
-    `- 2 menit dari Universitas Islam Malang
-      - 2 menit dari Mall Dinoyo City
-      - 3 menit dari RSI UNISMA
-      - 10 menit dari Halte Veteran Kota Malang
-      - 10 menit dari Taman Rekreasi Sengkaling`,
-    status: "Lelang Segera",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1A0tJ4UY8wLC_Yo-xK52OioLanQNaxZvz"),
-      getDriveImageUrl("https://drive.google.com/open?id=1W7BYxlOqRem2V2Ch3643Yr8szPJq4JlI"),
-      getDriveImageUrl("https://drive.google.com/open?id=1dlate49mVK_yw_eXHltze6fzw1gs2cVg"),
-      getDriveImageUrl("https://drive.google.com/open?id=1b2FN1XpDGKhtlR0ff6aj37ZXhAFfp7xO"),
-      getDriveImageUrl("https://drive.google.com/open?id=1m8Y4I9Kzfu9AT8JSaYfwt5GRtjQlxxE7")
-    ],
-    endPrice: 2856000000,
+    endPrice: 480000000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
@@ -1584,6 +1560,60 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1f1Sb8PJlKFPI7XJw9_GPt__cceLeTSZU")
     ],
     endPrice: 1519600000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+    {
+    id: "L70",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    type: "Rumah",
+    location: "Duren Panjer RT.003 RW.002, Desa Tunggalpager, Kec. Pungging, Kab. Mojokerto, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 1.131,
+    buildingArea: 865,
+    certificateType: "SHM",
+    description:
+    `- 4 menit dari RSUD Prof. Dr. Soekandar
+      - 6 menit dari Pasar Raya Mojosari
+      - 8 menit dari SMKN 1 Pungging
+      - 8 menit dari Stadion Gelora Gajah Mada
+      - 12 menit dari Alun Alun Ngoro Mojokerto`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1zMgODqhHNIp47Jt3fwbNkZhbGtE8Qi5S"),
+      getDriveImageUrl("https://drive.google.com/open?id=1zfCNY1GCAE7I_cgRtInJYUE7iDGINpBP"),
+      getDriveImageUrl("https://drive.google.com/open?id=13GG_5vN36OtN_6gS72VIu1Mn_uONerpk"),
+      getDriveImageUrl("https://drive.google.com/open?id=1LB3tT-zm98Ib-qyu1WsrS9caJJYY31QW")
+    ],
+    endPrice: 1475000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+    {
+    id: "L71",
+    title: "SEGERA LELANG BENGKEL",
+    type: "Gudang",
+    location: "Jl. KH. Romli Tamim No. 18, Kel. Jelakombo, Kec. Jombang, Kab. Jombang",
+    provinsi: "Jawa Timur",
+    kota: "Jombang",
+    landArea: 1110,
+    buildingArea: 125,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Pasar Kebon
+      - 6 menit dari SD Negeri Karangasem
+      - 9 menit dari Rumah Sakit Sido Waras
+      - 12 menit dari Stadion Gelora Gajah Mada
+      - 12 menit dari Kolam Renang Vanda Tirta`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1BsEoX546T7pskXa0GxJTB2CkADNEqjeM"),
+      getDriveImageUrl("https://drive.google.com/open?id=1qavcAEmbR0Z1C0c6zJMSGPT2HuTneNbi"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Eqi_j3fu78Bjxcw15rvP4-8QJRF-qm19"),
+      getDriveImageUrl("https://drive.google.com/open?id=1lAIJomju7lZFR7u2CHJMVUJhaFtb6YVL")
+    ],
+    endPrice: 6500000000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
