@@ -33,7 +33,7 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
-    id: "L13",
+    id: "RLI_ELP_0000",
     title: "SEGERA LELANG TANAH PEKARANGAN",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -61,7 +61,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L7",
+    id: "RLI_ELP_0001",
     title: "SEGERA LELANG RUMAH 2 LANTAI",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -89,7 +89,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L3",
+    id: "RLI_ELP_0002",
     title: "AGUNAN LELANG GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -118,7 +118,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L4",
+    id: "RLI_ELP_0003",
     title: "AGUNAN LELANG RUKO 2 LANTAI",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
@@ -147,7 +147,7 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "11:00 WIB",
   },
   {
-    id: "L5",
+    id: "RLI_ELP_0004",
     title: "SEGERA LELANG TANAH DAN BANGUNAN",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -176,7 +176,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L6",
+    id: "RLI_ELP_0005",
     title: "SEGERA LELANG RUMAH 2 LANTAI",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -204,7 +204,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   
   {
-    id: "L8",
+    id: "RLI_ELP_0006",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -231,7 +231,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L9",
+    id: "RLI_ELP_0007",
     title: "SEGERA LELANG GUDANG DAN PABRIK",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -259,7 +259,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L10",
+    id: "RLI_ELP_0008",
     title: "SEGERA LELANG RUMAH KOS",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -286,7 +286,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L20",
+    id: "RLI_ELP_0009",
     title: "SEGERA LELANG TANAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -313,7 +313,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L12",
+    id: "RLI_ELP_0010",
     title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -342,7 +342,7 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "14:15 WIB",
   },
   {
-    id: "L22",
+    id: "RLI_ELP_0011",
     title: "SEGERA LELANG TANAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -371,7 +371,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L23",
+    id: "RLI_ELP_0012",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -398,7 +398,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L24",
+    id: "RLI_ELP_0013",
     title: "SEGERA LELANG TOKO",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
@@ -425,7 +425,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L25",
+    id: "RLI_ELP_0014",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -452,7 +452,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L26",
+    id: "RLI_ELP_0015",
     title: "SEGERA LELANG HOTEL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Villa",
@@ -486,7 +486,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L27",
+    id: "RLI_ELP_0016",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -514,7 +514,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L28",
+    id: "RLI_ELP_0017",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -542,7 +542,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L29",
+    id: "RLI_ELP_0018",
     title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -570,7 +570,7 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "10:35 WIB",
   },
   {
-    id: "L30",
+    id: "RLI_ELP_0019",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -597,7 +597,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L32",
+    id: "RLI_ELP_0020",
     title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -625,7 +625,7 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "10:30 WIB",
   },
   {
-    id: "L33",
+    id: "RLI_ELP_0021",
     title: "SEGERA LELANG RUKO",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
@@ -653,7 +653,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L34",
+    id: "RLI_ELP_0022",
     title: "SEGERA LELANG RUMAH TINGGAL 2 LANTAI",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -680,7 +680,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L35",
+    id: "RLI_ELP_0023",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -707,7 +707,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L36",
+    id: "RLI_ELP_0024",
     title: "SEGERA LELANG GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -735,7 +735,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L37",
+    id: "RLI_ELP_0025",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -762,7 +762,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L38",
+    id: "RLI_ELP_0026",
     title: "SEGERA LELANG KANDANG AYAM",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -790,7 +790,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L39",
+    id: "RLI_ELP_0027",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -817,7 +817,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L40",
+    id: "RLI_ELP_0028",
     title: "SEGERA LELANG RUMAH TINGGAL, KANTOR DAN GARASI",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -851,7 +851,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L41",
+    id: "RLI_ELP_0029",
     title: "SEGERA LELANG KANDANG AYAM",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -878,7 +878,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L42",
+    id: "RLI_ELP_0030",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -908,7 +908,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L43",
+    id: "RLI_ELP_0031",
     title: "SEGERA LELANG KANDANG AYAM",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -936,7 +936,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L44",
+    id: "RLI_ELP_0032",
     title: "SEGERA LELANG KANDANG AYAM DAN GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -964,7 +964,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L45",
+    id: "RLI_ELP_0033",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -991,7 +991,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L46",
+    id: "RLI_ELP_0034",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1017,7 +1017,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L47",
+    id: "RLI_ELP_0035",
     title: "SEGERA LELANG GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -1046,7 +1046,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L48",
+    id: "RLI_ELP_0036",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1073,7 +1073,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L49",
+    id: "RLI_ELP_0037",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1102,7 +1102,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L50",
+    id: "RLI_ELP_0038",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1130,7 +1130,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L52",
+    id: "RLI_ELP_0039",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1157,7 +1157,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L53",
+    id: "RLI_ELP_0040",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1186,7 +1186,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L54",
+    id: "RLI_ELP_0041",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1214,7 +1214,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L55",
+    id: "RLI_ELP_0042",
     title: "SEGERA LELANG KANDANG AYAM DAN GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -1246,7 +1246,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L56",
+    id: "RLI_ELP_0043",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1273,7 +1273,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L57",
+    id: "RLI_ELP_0044",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1301,7 +1301,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L58",
+    id: "RLI_ELP_0045",
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1328,7 +1328,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L59",
+    id: "RLI_ELP_0046",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1356,7 +1356,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L60",
+    id: "RLI_ELP_0047",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1383,7 +1383,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L62",
+    id: "RLI_ELP_0048",
     title: "SEGERA LELANG TANAH DAN POS JAGA",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1412,7 +1412,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L63",
+    id: "RLI_ELP_0049",
     title: "SEGERA LELANG KANDANG AYAM DAN GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -1440,7 +1440,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L64",
+    id: "RLI_ELP_0050",
     title: "SEGERA LELANG TANAH SAWAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1467,7 +1467,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
     {
-    id: "L65",
+    id: "RLI_ELP_0051",
     title: "SEGERA LELANG KIOS APARTEMEN",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Apartemen",
@@ -1498,7 +1498,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L66",
+    id: "RLI_ELP_0052",
     title: "SEGERA LELANG HOTEL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Hotel",
@@ -1531,7 +1531,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
    {
-    id: "L67",
+    id: "RLI_ELP_0053",
     title: "SEGERA LELANG KIOS",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Toko",
@@ -1560,7 +1560,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L68",
+    id: "RLI_ELP_0054",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1591,7 +1591,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "L69",
+    id: "RLI_ELP_0055",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1621,7 +1621,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
     {
-    id: "L70",
+    id: "RLI_ELP_0056",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1649,7 +1649,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
     {
-    id: "L71",
+    id: "RLI_ELP_0057",
     title: "SEGERA LELANG BENGKEL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
@@ -1677,7 +1677,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
       {
-    id: "L72",
+    id: "RLI_ELP_0058",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1706,7 +1706,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
       {
-    id: "L73",
+    id: "RLI_ELP_0059",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1735,7 +1735,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
       {
-    id: "L74",
+    id: "RLI_ELP_0060",
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",

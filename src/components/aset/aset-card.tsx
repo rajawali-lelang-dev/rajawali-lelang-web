@@ -34,43 +34,39 @@ export default function AsetCard({
   additionalInfo = []
 }: AsetCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isSheetHidden, setIsSheetHidden] = useState(false);
   const searchParams = useSearchParams();
   const isAdminMode = searchParams.get('admin') === 'true';
 
-  // Fungsi Terminate Otomatis: Salin ID & Beri Instruksi
-  const handleAdminHide = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    try {
-      // Salin ID ke Clipboard agar admin tinggal Paste di VS Code
-      await navigator.clipboard.writeText(id);
-      
-      const confirmHide = confirm(
-        `ID ASET "${id}" BERHASIL DISALIN!\n\n` +
-        `Langkah selanjutnya:\n` +
-        `1. Buka VS Code & buka file properti.ts\n` +
-        `2. Tekan Ctrl+F lalu Ctrl+V untuk cari ID ini\n` +
-        `3. Tambahkan baris -> isHidden: true,\n` +
-        `4. Jalankan file UPDATE_WEB.bat\n\n` +
-        `Lanjut proses?`
-      );
-      
-      if (confirmHide) {
-        console.log(`Admin mengonfirmasi takedown untuk ID: ${id}`);
-      }
-    } catch (err) {
-      alert("Gagal menyalin ID secara otomatis. Silakan catat manual ID: " + id);
-    }
-  };
+  // Link Google Sheets Anda
+  const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
 
   useEffect(() => {
-    if (image.length <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % image.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [image.length]);
+    const checkTakedown = async () => {
+      try {
+        const response = await fetch(SHEET_URL);
+        const csvText = await response.text();
+        
+        // Memecah CSV menjadi baris dan membersihkan spasi/karakter aneh
+        const hiddenIds = csvText.split(/\r?\n/).map(row => row.trim());
+        
+        // Jika ID aset ini ada di dalam daftar Sheet, maka sembunyikan
+        if (hiddenIds.includes(id)) {
+          setIsSheetHidden(true);
+        }
+      } catch (error) {
+        console.error("Gagal sinkronisasi dengan Google Sheets:", error);
+      }
+    };
+
+    checkTakedown();
+  }, [id]);
+
+  // Status Akhir: Sembunyi jika di-hide di koding ATAU ada di Google Sheets
+  const finalIsHidden = isHidden || isSheetHidden;
+
+  // Jika bukan admin dan statusnya hidden, kartu tidak akan dirender sama sekali
+  if (finalIsHidden && !isAdminMode) return null;
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("id-ID", {
@@ -91,32 +87,17 @@ export default function AsetCard({
   const detailUrl = `/aset/${mode}/${type}/${id}`;
 
   return (
-    <div className={`relative group/card h-full transition-all duration-300 ${isHidden ? 'opacity-40 grayscale pointer-events-none' : ''}`}>
+    <div className={`relative group/card h-full transition-all duration-300 ${finalIsHidden ? 'opacity-40 grayscale-[0.7]' : ''}`}>
       
-      {/* TOMBOL QUICK HIDE (Hanya Admin) */}
-      {isAdminMode && !isHidden && (
-        <button
-          onClick={handleAdminHide}
-          title="Salin ID & Takedown"
-          className="absolute -top-3 -left-3 z-[60] bg-red-600 hover:bg-black text-white w-12 h-12 rounded-full shadow-2xl flex flex-col items-center justify-center border-2 border-white transition-all transform hover:scale-110 active:scale-90"
-        >
-          <span className="text-[9px] font-bold leading-none mb-0.5">HIDE</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      )}
-
-      {/* INDIKATOR ID & STATUS UNTUK ADMIN */}
+      {/* INDIKATOR ADMIN: Menunjukkan ID dan Status Takedown */}
       {isAdminMode && (
-        <div className="absolute top-2 left-10 z-30 flex gap-1 pointer-events-none">
-          <span className="bg-black/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm font-mono shadow-md">
+        <div className="absolute top-2 left-2 z-30 flex flex-col gap-1 pointer-events-none">
+          <span className="bg-black text-white text-[10px] px-2 py-0.5 rounded font-mono shadow-md w-fit">
             ID: {id}
           </span>
-          {isHidden && (
-            <span className="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase shadow-md">
-              OFFLINE
+          {finalIsHidden && (
+            <span className="bg-red-600 text-white text-[9px] px-2 py-0.5 rounded font-bold uppercase shadow-md animate-pulse w-fit">
+              OFFLINE (Sheet)
             </span>
           )}
         </div>
@@ -153,17 +134,6 @@ export default function AsetCard({
                 </svg>
                 {location}
               </p>
-            )}
-
-            {additionalInfo.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-3 text-xs text-neutral-600">
-                {additionalInfo.map((info, index) => (
-                  <div key={index} className="flex items-center gap-1">
-                    <span className="font-semibold">{info.label}:</span>
-                    <span>{info.value}</span>
-                  </div>
-                ))}
-              </div>
             )}
 
             <div className="mt-auto">
