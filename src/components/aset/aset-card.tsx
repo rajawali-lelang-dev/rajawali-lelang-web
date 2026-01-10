@@ -133,6 +133,19 @@ export default function AsetCard({
           </div>
         </div>
       </Link>
+            {/* Tombol Lonceng (Ditaruh di luar Link Utama) */}
+      <a
+        href="https://forms.gle/W6kgkHx5hPU4YpKt6"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()} 
+        className="absolute bottom-4 right-4 bg-[#800000] hover:bg-[#600000] text-white p-3 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95 z-20 flex items-center justify-center"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg>
+      </a>
     </div>
   );
 }
