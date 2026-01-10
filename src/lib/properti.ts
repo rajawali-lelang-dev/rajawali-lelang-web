@@ -11,6 +11,7 @@ export interface Property extends BaseItemDijual {
   buildingArea: number;
   certificateType: "SHM" | "HGB";
   status: "Available" | "Featured" | "Sold";
+  isHidden?: boolean; // <-- Tambahkan ini
 }
 
 // PropertiDilelang Interface - extends BaseItemLelang
@@ -20,7 +21,7 @@ export interface PropertiDilelang extends BaseItemLelang {
   buildingArea: number;
   certificateType: "SHM" | "HGB" | "SHMSRS" | "SHP" | "SHSRS";
   jamLelang? : string;
-  
+  isHidden?: boolean; // <-- Tambahkan ini
 }
 
 // Mock Data - Properties (NON-LELANG)
@@ -34,6 +35,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L13",
     title: "SEGERA LELANG TANAH PEKARANGAN",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sukodadi, Kecamatan Wagir, Kabupaten Malang",
     provinsi: "Jawa Timur",
@@ -61,6 +63,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L7",
     title: "SEGERA LELANG RUMAH 2 LANTAI",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Puncak Buring Indah Blok B7 No. 06, Kelurahan Buring, Kecamatan Kedungkandang, Kota Malang",
     provinsi: "Jawa Timur",
@@ -88,6 +91,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L3",
     title: "AGUNAN LELANG GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Dusun Robyong RT. 005/ RW. 001, Desa Pakisjajar, Kec. Pakis, Kabupaten Malang ",
     provinsi: "Jawa Timur",
@@ -116,6 +120,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L4",
     title: "AGUNAN LELANG RUKO 2 LANTAI",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
     location: "Jl. Gajayana, Kelurahan Ketawanggede, Kecamatan Lowokwaru, Kota Malang",
     provinsi: "Jawa Timur",
@@ -144,6 +149,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L5",
     title: "SEGERA LELANG TANAH DAN BANGUNAN",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Jl. Mertojoyo Barat, Kelurahan Merjosari Kecamatan Lowokwaru Kota Malang",
     provinsi: "Jawa Timur",
@@ -172,6 +178,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L6",
     title: "SEGERA LELANG RUMAH 2 LANTAI",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Puncak Buring Indah Blok B7 No. 18, Kelurahan Buring, Kecamatan Kedungkandang, Kota Malang",
     provinsi: "Jawa Timur",
@@ -199,6 +206,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L8",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Desa Tegalgondo, Kecamatan Karangploso, Kabupaten Malang",
     provinsi: "Jawa Timur",
@@ -225,6 +233,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L9",
     title: "SEGERA LELANG GUDANG DAN PABRIK",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Jalan Raya Asrikaton Gang Anggrek 2 RT 10 RW 03, Desa Asrikaton, Kec. Pakis, Kab. Malang",
     provinsi: "Jawa Timur",
@@ -252,6 +261,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L10",
     title: "SEGERA LELANG RUMAH KOS",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Mutiara Kampus Blok A-11, Desa Tegalgondo, Kec. Karangploso, Kab. Malang",
     provinsi: "Jawa Timur",
@@ -278,6 +288,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L20",
     title: "SEGERA LELANG TANAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: " Perumahan Mutiara Kampus Blok B-11,  Desa Tegalgondo, Kec. Karangploso, Kab. Malang",
     provinsi: "Jawa Tengah",
@@ -304,6 +315,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L12",
     title: "AGUNAN LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jl. Komplek RSPP, Jalan Intan Kavling No. 8 Kel. Cilandak Barat Kec. Cilandak, Jakarta Selatan, DKI Jakarta",
     provinsi: "DKI Jakarta",
@@ -332,6 +344,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L22",
     title: "SEGERA LELANG TANAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Bogotanjung, Kec. Gabus, Kab. Pati, Prov. Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -360,6 +373,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L23",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Green Living Jalan Satsui Tubun Kav. 21 Kel. Gadang, Kec, Sukun, Kota Malang, Provinsi Jawa Timur",
     provinsi: "Jawa Timur",
@@ -386,6 +400,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L24",
     title: "SEGERA LELANG TOKO",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
     location: "Jl. Segaran No. 62 RT.03 RW.06, Desa Kendalpayak, Kec. Pakisaji, Kab. Malang, Jawa Timur",
     provinsi: "Jawa Timur",
@@ -412,6 +427,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L25",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Green Living Blok C No. 1, Jalan Satsui Tubun, Kel. Gadang, Kec. Sukun, Kota Malang",
     provinsi: "Jawa Timur",
@@ -438,6 +454,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L26",
     title: "SEGERA LELANG HOTEL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Villa",
     location: "Perumahan Pondok Asri Kencana Blok B14 dan B16, Jalan Paralayang RT. 35 RW. 7, Desa Pandesari, Kec. Pujon, Kab. Malang, Jawa Timur",
     provinsi: "Jawa Timur",
@@ -471,6 +488,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L27",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Jl. Setapak Desa Tlekung, Kec. Junrejo, Kota Batu",
     provinsi: "Jawa Timur",
@@ -498,6 +516,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L28",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Wisma Mas Blok B-1 No. 29, Kel. Cinangka, Kec. Sawangan, Kota Depok",
     provinsi: "Jawa Barat",
@@ -525,6 +544,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L29",
     title: "AGUNAN LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Kampung Mekarjati RT.031 RW.007 Kel. Pusakajaya, Kec. Pusakajaya, Kab. Subang, Jawa Barat",
     provinsi: "Jawa Barat",
@@ -552,6 +572,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L30",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jl. Danau Tempe I F3-A10 RT 05 RW 12 Kel. Sawojajar, Kec. Kedungkandang, Malang",
     provinsi: "Jawa Timur",
@@ -578,6 +599,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L32",
     title: "AGUNAN LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Gang Amin No. 55 RT.001 RW 002 Kel. Petukangan Utara, Kec. Pesanggrahan, Kota Jakarta Selatan, DKI Jakarta",
     provinsi: "DKI Jakarta",
@@ -605,6 +627,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L33",
     title: "SEGERA LELANG RUKO",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
     location: "Jl. Krajan RT.008 RW.006 Kel. Bunutwetan, Kec. Pakis, Kab. Malang, Jawa Timur",
     provinsi: "Jawa Timur",
@@ -632,6 +655,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L34",
     title: "SEGERA LELANG RUMAH TINGGAL 2 LANTAI",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jl. Bandara Iswahyudi II Blok BF No. 7 Perumahan Buring Satelit RT 011 RW 008 Kel. Cemorokandang, Kec. Kedungkandang, Malang",
     provinsi: "Jawa Timur",
@@ -658,6 +682,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L35",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Kemiren, Kec. Srumbung, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -684,6 +709,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L36",
     title: "SEGERA LELANG GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Kemiren, Kec. Srumbung, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -711,6 +737,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L37",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -737,6 +764,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L38",
     title: "SEGERA LELANG KANDANG AYAM",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -764,6 +792,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L39",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -790,6 +819,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L40",
     title: "SEGERA LELANG RUMAH TINGGAL, KANTOR DAN GARASI",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -823,6 +853,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L41",
     title: "SEGERA LELANG KANDANG AYAM",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -849,6 +880,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L42",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -878,6 +910,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L43",
     title: "SEGERA LELANG KANDANG AYAM",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Jerukagung, Kec. Srumbung, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -905,6 +938,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L44",
     title: "SEGERA LELANG KANDANG AYAM DAN GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Jerukagung, Kec. Srumbung, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -932,6 +966,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L45",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Desa Salam, Kec. Salam, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -958,6 +993,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L46",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Salam, Kec. Salam, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -983,6 +1019,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L47",
     title: "SEGERA LELANG GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1011,6 +1048,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L48",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1037,6 +1075,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L49",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1065,6 +1104,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L50",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1092,6 +1132,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L52",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1118,6 +1159,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L53",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1146,6 +1188,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L54",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1173,6 +1216,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L55",
     title: "SEGERA LELANG KANDANG AYAM DAN GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1204,6 +1248,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L56",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sidoagung, Kec. Tempuran Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1230,6 +1275,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L57",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sidoagung, Kec. Tempuran Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1257,6 +1303,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L58",
     title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1283,6 +1330,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L59",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Tanggulrejo, Kec. Tempuran, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1310,6 +1358,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L60",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Jalan Lingkungan, Desa Sudimoro, Kec. Srumbung Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1336,6 +1385,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L62",
     title: "SEGERA LELANG TANAH DAN POS JAGA",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sidoagung, Kec. Tempuran Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1364,6 +1414,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L63",
     title: "SEGERA LELANG KANDANG AYAM DAN GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Desa Jerukagung, Kec. Srumbung, Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1391,6 +1442,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L64",
     title: "SEGERA LELANG TANAH SAWAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
     provinsi: "Jawa Tengah",
@@ -1417,6 +1469,7 @@ export const lelangProperties: PropertiDilelang[] = [
     {
     id: "L65",
     title: "SEGERA LELANG KIOS APARTEMEN",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Apartemen",
     location: " Apartement Kalibata City Blok Borneo Lantai Dasar No.B/CL/15 Jalan Taman Makam Pahlawan Kalibata, Kel. Rawajati, Kec. Pancoran, Jakarta Selatan",
     provinsi: "DKI Jakarta",
@@ -1447,6 +1500,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L66",
     title: "SEGERA LELANG HOTEL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Hotel",
     location: "Jalan Tlogo Indah No. 64, Kel. Tlogomas, Kec. Lowokwaru, Kota Malang",
     provinsi: "Jawa Timur",
@@ -1479,6 +1533,7 @@ export const lelangProperties: PropertiDilelang[] = [
    {
     id: "L67",
     title: "SEGERA LELANG KIOS",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Toko",
     location: "Jl. Siliwangi RT.001 RW.002, Kel. Sukasari, Kec. Bogor Timur, Kota Bogor, Jawa Barat",
     provinsi: "Jawa Barat",
@@ -1507,6 +1562,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L68",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: " Kampung Railat No. 40, 76 & 51, RT.002 RW.007, Kel. Leuwinanggung, Kec. Tapos, Kotamadya Depok, Jawa Barat",
     provinsi: "Jawa Barat",
@@ -1537,6 +1593,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L69",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jl. H. Nasa Syamsudin No. 48E, RT.002 RW.007 Kel. Kedaung, Kec. Pamulang Kota, Tangerang Selatan",
     provinsi: "Banten",
@@ -1566,6 +1623,7 @@ export const lelangProperties: PropertiDilelang[] = [
     {
     id: "L70",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Duren Panjer RT.003 RW.002, Desa Tunggalpager, Kec. Pungging, Kab. Mojokerto, Jawa Timur",
     provinsi: "Jawa Timur",
@@ -1593,6 +1651,7 @@ export const lelangProperties: PropertiDilelang[] = [
     {
     id: "L71",
     title: "SEGERA LELANG BENGKEL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Jl. KH. Romli Tamim No. 18, Kel. Jelakombo, Kec. Jombang, Kab. Jombang",
     provinsi: "Jawa Timur",
@@ -1620,6 +1679,7 @@ export const lelangProperties: PropertiDilelang[] = [
       {
     id: "L72",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: " Jl. Damai Ujung (Gang H. Hamim) No. 72, RT.009 RW.003, Kel. Cipete Utara, Kec. Kebayoran Baru, Kotamdya Jakarta Selatan, DKI Jakarta",
     provinsi: "Jakarta Selatan",
@@ -1648,6 +1708,7 @@ export const lelangProperties: PropertiDilelang[] = [
       {
     id: "L73",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: " Jalan Kapuk Muara No. 25, RT.007 RW 004, Kel. Kapuk Muara, Kec. Penjaringan, Kotamadya Jakarta Utara, DKI Jakarta",
     provinsi: "Jakarta Utara",
@@ -1676,6 +1737,7 @@ export const lelangProperties: PropertiDilelang[] = [
       {
     id: "L74",
     title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Kampung Poncol Jl. Harapan II No. 8 RT.003 RW.002 Kel. Cipadu Kec. Larangan, Kota Tangerang",
     provinsi: "Banten",

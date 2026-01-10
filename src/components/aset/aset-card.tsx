@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation"; // Import untuk deteksi admin
 
 interface AsetCardProps {
   id: string;
@@ -13,6 +14,7 @@ interface AsetCardProps {
   status?: string;
   type: 'properti' | 'mobil' | 'perhiasan' | 'mesin';
   mode: 'dijual' | 'lelang';
+  isHidden?: boolean; // Tambahan properti untuk hide aset
   additionalInfo?: {
     label: string;
     value: string;
@@ -28,10 +30,15 @@ export default function AsetCard({
   status,
   type,
   mode,
+  isHidden = false, // Default: tidak tersembunyi
   additionalInfo = []
 }: AsetCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const hasMultipleImages = image.length > 1;
+  
+  // Deteksi apakah sedang dalam mode admin via URL (?admin=true)
+  const searchParams = useSearchParams();
+  const isAdminMode = searchParams.get('admin') === 'true';
 
   useEffect(() => {
     if (!hasMultipleImages) return;
@@ -61,20 +68,20 @@ export default function AsetCard({
     }).format(price);
   };
 
-const getStatusColor = () => {
+  const getStatusColor = () => {
     if (!status) return "bg-gray-500";
     const s = status.toLowerCase();
     switch (s) {
       case "lelang aktif":
       case "available": 
-        return "bg-green-200"; // Hijau muda soft
+        return "bg-green-200";
       case "lelang segera":
       case "segera":
       case "coming soon": 
-        return "bg-red-100";   // Merah
+        return "bg-red-100";
       case "lelang selesai":
       case "sold": 
-        return "bg-gray-500";  // Abu-abu
+        return "bg-gray-500";
       case "featured": 
         return "bg-yellow-500";
       default: 
@@ -85,10 +92,25 @@ const getStatusColor = () => {
   const detailUrl = `/aset/${mode}/${type}/${id}`;
 
   return (
-    <div className="relative group/card h-full">
-      {/* Wrapper Link Utama: Membungkus seluruh kartu agar area foto & teks bisa dipencet */}
+    <div className={`relative group/card h-full transition-all duration-300 ${isHidden ? 'opacity-40 grayscale-[0.5]' : ''}`}>
+      
+      {/* LABEL ADMIN (Hanya muncul jika ?admin=true) */}
+      {isAdminMode && (
+        <div className="absolute -top-2 left-2 z-30 flex gap-1">
+          <span className="bg-black text-white text-[10px] px-2 py-0.5 rounded shadow-lg font-mono">
+            ID: {id}
+          </span>
+          {isHidden && (
+            <span className="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded shadow-lg font-bold animate-pulse">
+              HIDDEN
+            </span>
+          )}
+        </div>
+      )}
+
+      {/* Wrapper Link Utama */}
       <Link href={detailUrl} className="block h-full">
-        <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden h-full flex flex-col cursor-pointer">
+        <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden h-full flex flex-col cursor-pointer ring-1 ring-black/5">
           
           {/* Image Section */}
           <div className="relative h-52 w-full group">
@@ -97,16 +119,19 @@ const getStatusColor = () => {
               alt={title}
               fill
               className="object-cover"
+              unoptimized // Sesuai next.config.js Anda untuk Google Drive
             />
-{status && (
-  <div className={`absolute top-3 right-3 ${getStatusColor()} ${
-    status.toLowerCase() === "lelang aktif" ? "text-green-900" : 
-    (status.toLowerCase() === "lelang segera" || status.toLowerCase() === "segera") ? "text-red-900" : 
-    "text-white"
-  } px-3 py-1 rounded-md text-xs font-semibold z-10`}>
-    {status}
-  </div>
-)}
+
+            {status && (
+              <div className={`absolute top-3 right-3 ${getStatusColor()} ${
+                status.toLowerCase() === "lelang aktif" ? "text-green-900" : 
+                (status.toLowerCase() === "lelang segera" || status.toLowerCase() === "segera") ? "text-red-900" : 
+                "text-white"
+              } px-3 py-1 rounded-md text-xs font-semibold z-10 shadow-sm`}>
+                {status}
+              </div>
+            )}
+
             {/* Navigasi Panah Gambar */}
             {hasMultipleImages && (
               <>
@@ -161,7 +186,7 @@ const getStatusColor = () => {
         </div>
       </Link>
 
-      {/* Tombol Lonceng: Ditaruh di luar Link Utama agar klik-nya tidak bertabrakan */}
+      {/* Tombol Lonceng (Ditaruh di luar Link Utama) */}
       <a
         href="https://forms.gle/W6kgkHx5hPU4YpKt6"
         target="_blank"
