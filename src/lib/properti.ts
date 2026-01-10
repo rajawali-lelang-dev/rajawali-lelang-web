@@ -35,7 +35,7 @@ export const lelangProperties: PropertiDilelang[] = [
   {
     id: "L13",
     title: "SEGERA LELANG TANAH PEKARANGAN",
-    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    isHidden: false, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Sukodadi, Kecamatan Wagir, Kabupaten Malang",
     provinsi: "Jawa Timur",
