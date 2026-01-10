@@ -36,35 +36,49 @@ export default function AsetCard({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isSheetHidden, setIsSheetHidden] = useState(false);
   const searchParams = useSearchParams();
-  const isAdminMode = searchParams.get('admin') === 'true';
+  
+  // FITUR PASSWORD: Ganti 'rajawali2024' dengan password pilihan Anda
+  const ADMIN_PASSWORD = "rajawali2024"; 
+  const isAdminMode = searchParams.get('admin') === 'true' && searchParams.get('pass') === ADMIN_PASSWORD;
 
   const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
 
   useEffect(() => {
     const checkTakedown = async () => {
       try {
-        const response = await fetch(`${SHEET_URL}&t=${new Date().getTime()}`);
+        // Anti-Cache: Memaksa browser mengambil data terbaru setiap detik
+        const response = await fetch(`${SHEET_URL}&nocache=${new Date().getTime()}`, {
+          cache: 'no-store'
+        });
         const csvText = await response.text();
-        const hiddenIds = csvText
-          .split(/\r?\n/)
-          .map(row => row.split(',')[0].replace(/['"]+/g, '').trim())
-          .filter(row => row !== "");
+        
+        // Logika scan ID yang lebih kuat (memeriksa semua kolom dan baris)
+        const rows = csvText.split(/\r?\n/);
+        let found = false;
 
-        if (hiddenIds.includes(id.trim())) {
-          setIsSheetHidden(true);
-        } else {
-          setIsSheetHidden(false); // Reset jika ID dihapus dari sheet
+        for (const row of rows) {
+          const columns = row.split(',').map(c => c.replace(/['"]+/g, '').trim());
+          if (columns.includes(id.trim())) {
+            found = true;
+            break;
+          }
         }
+        
+        setIsSheetHidden(found);
       } catch (error) {
         console.error("Gagal sinkronisasi Sheet:", error);
       }
     };
 
     checkTakedown();
+    // Re-check setiap 30 detik jika halaman tidak di-refresh
+    const interval = setInterval(checkTakedown, 30000);
+    return () => clearInterval(interval);
   }, [id]);
 
   const finalIsHidden = isHidden || isSheetHidden;
 
+  // Filter Publik: Jika hidden, langsung hilang
   if (finalIsHidden && !isAdminMode) return null;
 
   const formatPrice = (price: number) => {
@@ -86,7 +100,7 @@ export default function AsetCard({
   return (
     <div className={`relative group/card h-full transition-all duration-500 ${finalIsHidden ? 'opacity-40 grayscale-[0.8]' : 'opacity-100'}`}>
       
-      {/* LABEL ADMIN */}
+      {/* LABEL ADMIN (Hanya muncul jika Password Benar) */}
       {isAdminMode && (
         <div className="absolute top-3 left-3 z-30 flex flex-col gap-1.5 pointer-events-none">
           <span className="bg-black/80 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-md font-mono shadow-xl border border-white/20 w-fit">
@@ -94,17 +108,15 @@ export default function AsetCard({
           </span>
           {finalIsHidden && (
             <span className="bg-red-600 text-white text-[9px] px-2 py-1 rounded-md font-bold uppercase shadow-lg animate-pulse border border-red-400">
-              HIDDEN ON SHEET
+              OFFLINE (Sheet)
             </span>
           )}
         </div>
       )}
 
-      {/* TAMPILAN KARTU UTAMA */}
+      {/* TAMPILAN KARTU */}
       <Link href={`/aset/${mode}/${type}/${id}`} className="block h-full shadow-sm hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden bg-white ring-1 ring-black/5">
         <div className="flex flex-col h-full">
-          
-          {/* Bagian Gambar */}
           <div className="relative h-56 w-full overflow-hidden">
             <Image
               src={image[currentImageIndex] || "/images/placeholder.jpg"}
@@ -113,9 +125,6 @@ export default function AsetCard({
               className="object-cover transition-transform duration-700 group-hover/card:scale-110"
               unoptimized
             />
-            {/* Overlay Gradient Hitam agar teks status lebih kontras */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-            
             {status && (
               <div className={`absolute top-3 right-3 ${getStatusColor()} px-3 py-1 rounded-full text-[10px] font-bold z-10 shadow-md uppercase tracking-wider`}>
                 {status}
@@ -123,19 +132,10 @@ export default function AsetCard({
             )}
           </div>
 
-          {/* Bagian Konten */}
           <div className="p-5 flex-1 flex flex-col">
             <h3 className="font-manrope font-extrabold text-base text-neutral-800 mb-3 line-clamp-2 uppercase leading-tight group-hover/card:text-[#800000] transition-colors">
               {title}
             </h3>
-            
-            {location && (
-              <p className="text-xs text-neutral-500 mb-4 flex items-center gap-1.5">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-                {location}
-              </p>
-            )}
-
             <div className="mt-auto pt-4 border-t border-gray-100">
               <span className="text-[10px] text-gray-400 font-semibold block mb-1">HARGA ASSET</span>
               <p className="font-manrope font-black text-xl text-green-700">
