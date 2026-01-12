@@ -32,6 +32,65 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+      {
+    id: "RLI_ELP_0062",
+    title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Desa Kepuhpandak, Kecamatan Kutorejo, Kabupaten Mojokerto",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 2515,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Pasar Kebon
+      -	5 menit dari SD Negeri Karangasem
+      - 11 menit dari Rumah Sakit Sido Waras
+      - 14 menit dari Stadion Gelora Gajah Mada
+      - 14 menit dari Kolam Renang Vanda Tirta`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1eyeUURd7N67i3eFYC4vGsPvzDqOoBTmR"),
+      getDriveImageUrl("https://drive.google.com/open?id=1pCKeI_UtO060t38yCwy_RrV6k-qtA6uc"),
+      getDriveImageUrl("https://drive.google.com/open?id=1B_wXy3DFDycGlwtJ2sFFsp-K_IFA7Wnd")
+    ],
+    endPrice: 377280000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+    {
+    id: "RLI_ELP_0061",
+    title: "SEGERA LELANG BENGKEL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Jalan Kutorejo - Bangsal, Desa Kaligoro, Kec. Kutorejo, Kab. Mojokerto, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 1110,
+    buildingArea: 125,
+    certificateType: "SHM",
+    description:
+    `-  1 menit dari Pasar Kebon
+      - 6 menit dari SD Negeri Karangasem
+      - 9 menit dari Rumah Sakit Sido Waras
+      - 12 menit dari Stadion Gelora Gajah Mada
+      - 12 menit dari Kolam Renang Vanda Tirta`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1A3S4_bF_cmfAzMTy4fM-FfD5rriccqMY"),
+      getDriveImageUrl("https://drive.google.com/open?id=1QW7oDM6jvmsUJqao2WWmedr12sVgjC0m"),
+      getDriveImageUrl("https://drive.google.com/open?id=1FOgsC6G4pOH7AsND52KQs-tLSvF0d83D"),
+      getDriveImageUrl("https://drive.google.com/open?id=1pkmMG4qTPr1-b5_XI3-33dhFPY-xmpsL"),
+      getDriveImageUrl("https://drive.google.com/open?id=1MC7JdtdZy2OLi7vZI5tcB9SpwwxmApFu"),
+      getDriveImageUrl("https://drive.google.com/open?id=1zU9likrUxCQeKasipEDLxZQx2ffESQ5r"),
+      getDriveImageUrl("https://drive.google.com/open?id=1GANiHoA6s0AVCpXjiU5OqFWPM2YAHSP9")
+    ],
+    endPrice: 483600000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
   {
     id: "RLI_ELP_0000",
     title: "SEGERA LELANG TANAH PEKARANGAN",
