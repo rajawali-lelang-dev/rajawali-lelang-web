@@ -15,6 +15,10 @@ interface AsetCardProps {
   type: 'properti' | 'mobil' | 'perhiasan' | 'mesin';
   mode: 'dijual' | 'lelang';
   isHidden?: boolean;
+  additionalInfo?: {
+    label: string;
+    value: string;
+  }[];
 }
 
 export default function AsetCard({
@@ -27,89 +31,101 @@ export default function AsetCard({
   type,
   mode,
   isHidden = false,
+  additionalInfo = []
 }: AsetCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isSheetHidden, setIsSheetHidden] = useState(false);
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(false); // Status Login Admin
   
   const searchParams = useSearchParams();
   const isAdminParam = searchParams.get('admin') === 'true';
 
-  const SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
-  const SHEET_EDIT_LINK = "https://docs.google.com/spreadsheets/d/1oZ_zh6W6JIJIC0jnbeUujw2Sm0_v2LskfRZFsnNq10E/edit";
+  const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
 
-  // 1. Logika Password (Lebih Aman)
+  // 1. Logika Password Pop-up
   useEffect(() => {
-    if (isAdminParam && !isAuthorized) {
-      // Timeout kecil agar prompt tidak bentrok dengan proses render browser
-      const timer = setTimeout(() => {
+    if (isAdminParam) {
+      // Cek apakah sudah pernah login di sesi ini (agar tidak pop-up terus saat pindah kartu)
+      const sessionAuth = sessionStorage.getItem("admin_auth");
+      
+      if (sessionAuth === "true") {
+        setIsAuthorized(true);
+      } else {
         const password = prompt("PERTANYAAN KEAMANAN:\n\nSiapakah Patriot kita?");
+        
+        // Jawaban: LaLiLuLeLo (Case Sensitive)
         if (password === "LaLiLuLeLo") {
+          sessionStorage.setItem("admin_auth", "true");
           setIsAuthorized(true);
         } else {
-          alert("Akses Ditolak.");
-          const url = new URL(window.location.href);
-          url.searchParams.delete('admin');
-          window.location.href = url.pathname;
+          alert("Jawaban Salah! Akses Admin Ditolak.");
+          // Hilangkan parameter admin dari URL jika salah
+          window.location.href = window.location.pathname;
         }
-      }, 500);
-      return () => clearTimeout(timer);
+      }
     }
-  }, [isAdminParam, isAuthorized]);
+  }, [isAdminParam]);
 
-  // 2. Cek Status Takedown (Lebih Stabil)
+  // 2. Logika Cek Takedown dari Google Sheets
   useEffect(() => {
-    const checkStatus = async () => {
+    const checkTakedown = async () => {
       try {
-        const res = await fetch(`${SHEET_CSV}&t=${Date.now()}`);
-        if (!res.ok) return;
-        const csvText = await res.text();
-        const rows = csvText.split(/\r?\n/);
-        
-        const isFound = rows.some(row => {
-          const cols = row.split(',').map(c => c.replace(/['"]+/g, '').trim());
-          return cols.includes(id.trim());
+        const response = await fetch(`${SHEET_URL}&nocache=${new Date().getTime()}`, {
+          cache: 'no-store'
         });
-        
-        setIsSheetHidden(isFound);
-      } catch (e) {
-        console.warn("Gagal cek status sheet untuk ID:", id);
+        const csvText = await response.text();
+        const rows = csvText.split(/\r?\n/);
+        let found = false;
+
+        for (const row of rows) {
+          const columns = row.split(',').map(c => c.replace(/['"]+/g, '').trim());
+          if (columns.includes(id.trim())) {
+            found = true;
+            break;
+          }
+        }
+        setIsSheetHidden(found);
+      } catch (error) {
+        console.error("Gagal sinkronisasi Sheet:", error);
       }
     };
-    checkStatus();
+
+    checkTakedown();
   }, [id]);
 
   const finalIsHidden = isHidden || isSheetHidden;
   const showAdminUI = isAdminParam && isAuthorized;
 
-  // Filter Publik: Hilang jika status Takedown
+  // Filter Publik: Jika hidden dan bukan admin terverifikasi, kartu hilang
   if (finalIsHidden && !showAdminUI) return null;
 
-  const copyId = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(id);
-      alert(`ID ${id} berhasil disalin!`);
-    }
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency", currency: "IDR", minimumFractionDigits: 0,
+    }).format(price);
+  };
+
+  const getStatusColor = () => {
+    if (!status) return "bg-gray-500 text-white";
+    const s = status.toLowerCase();
+    if (s.includes("aktif") || s === "available") return "bg-green-200 text-green-900";
+    if (s.includes("segera") || s === "coming soon") return "bg-red-100 text-red-900";
+    return "bg-gray-500 text-white";
   };
 
   return (
-    <div className={`relative group/card h-full transition-all duration-500 ${finalIsHidden ? 'opacity-40 grayscale-[0.9]' : 'opacity-100'}`}>
+    <div className={`relative group/card h-full transition-all duration-500 ${finalIsHidden ? 'opacity-40 grayscale-[0.8]' : 'opacity-100'}`}>
       
-      {/* --- ADMIN TOOLS --- */}
+      {/* LABEL ADMIN (Hanya muncul jika Password Pop-up Benar) */}
       {showAdminUI && (
-        <div className="absolute top-3 left-3 z-[60] flex flex-col gap-2">
-          <button onClick={copyId} className="bg-black text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-xl border border-white/20 hover:bg-blue-600">
-            ID: {id} (Salin)
-          </button>
-          <a href={SHEET_EDIT_LINK} target="_blank" rel="noopener noreferrer" className="bg-green-700 text-white text-[9px] px-3 py-1.5 rounded-lg font-bold shadow-xl border border-white/20">
-            BUKA SHEET
-          </a>
+        <div className="absolute top-3 left-3 z-30 flex flex-col gap-1.5 pointer-events-none">
+          <span className="bg-black/80 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-md font-mono shadow-xl border border-white/20 w-fit">
+            ID: {id}
+          </span>
           {finalIsHidden && (
-            <div className="bg-red-600 text-white text-[10px] px-3 py-1.5 rounded-lg font-black uppercase shadow-2xl animate-pulse border-2 border-white">
-              TAKEN DOWN
-            </div>
+            <span className="bg-red-600 text-white text-[9px] px-2 py-1 rounded-md font-bold uppercase shadow-lg animate-pulse border border-red-400">
+              OFFLINE (Sheet)
+            </span>
           )}
         </div>
       )}
