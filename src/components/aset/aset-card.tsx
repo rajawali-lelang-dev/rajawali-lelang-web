@@ -35,24 +35,45 @@ export default function AsetCard({
 }: AsetCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isSheetHidden, setIsSheetHidden] = useState(false);
-  const searchParams = useSearchParams();
+  const [isAuthorized, setIsAuthorized] = useState(false); // Status Login Admin
   
-  // FITUR PASSWORD: Ganti 'rajawali2024' dengan password pilihan Anda
-  const ADMIN_PASSWORD = "rajawali2024"; 
-  const isAdminMode = searchParams.get('admin') === 'true' && searchParams.get('pass') === ADMIN_PASSWORD;
+  const searchParams = useSearchParams();
+  const isAdminParam = searchParams.get('admin') === 'true';
 
   const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
 
+  // 1. Logika Password Pop-up
+  useEffect(() => {
+    if (isAdminParam) {
+      // Cek apakah sudah pernah login di sesi ini (agar tidak pop-up terus saat pindah kartu)
+      const sessionAuth = sessionStorage.getItem("admin_auth");
+      
+      if (sessionAuth === "true") {
+        setIsAuthorized(true);
+      } else {
+        const password = prompt("PERTANYAAN KEAMANAN:\n\nSiapakah Patriot kita?");
+        
+        // Jawaban: LaLiLuLeLo (Case Sensitive)
+        if (password === "LaLiLuLeLo") {
+          sessionStorage.setItem("admin_auth", "true");
+          setIsAuthorized(true);
+        } else {
+          alert("Jawaban Salah! Akses Admin Ditolak.");
+          // Hilangkan parameter admin dari URL jika salah
+          window.location.href = window.location.pathname;
+        }
+      }
+    }
+  }, [isAdminParam]);
+
+  // 2. Logika Cek Takedown dari Google Sheets
   useEffect(() => {
     const checkTakedown = async () => {
       try {
-        // Anti-Cache: Memaksa browser mengambil data terbaru setiap detik
         const response = await fetch(`${SHEET_URL}&nocache=${new Date().getTime()}`, {
           cache: 'no-store'
         });
         const csvText = await response.text();
-        
-        // Logika scan ID yang lebih kuat (memeriksa semua kolom dan baris)
         const rows = csvText.split(/\r?\n/);
         let found = false;
 
@@ -63,7 +84,6 @@ export default function AsetCard({
             break;
           }
         }
-        
         setIsSheetHidden(found);
       } catch (error) {
         console.error("Gagal sinkronisasi Sheet:", error);
@@ -71,21 +91,17 @@ export default function AsetCard({
     };
 
     checkTakedown();
-    // Re-check setiap 30 detik jika halaman tidak di-refresh
-    const interval = setInterval(checkTakedown, 30000);
-    return () => clearInterval(interval);
   }, [id]);
 
   const finalIsHidden = isHidden || isSheetHidden;
+  const showAdminUI = isAdminParam && isAuthorized;
 
-  // Filter Publik: Jika hidden, langsung hilang
-  if (finalIsHidden && !isAdminMode) return null;
+  // Filter Publik: Jika hidden dan bukan admin terverifikasi, kartu hilang
+  if (finalIsHidden && !showAdminUI) return null;
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
+      style: "currency", currency: "IDR", minimumFractionDigits: 0,
     }).format(price);
   };
 
@@ -100,8 +116,8 @@ export default function AsetCard({
   return (
     <div className={`relative group/card h-full transition-all duration-500 ${finalIsHidden ? 'opacity-40 grayscale-[0.8]' : 'opacity-100'}`}>
       
-      {/* LABEL ADMIN (Hanya muncul jika Password Benar) */}
-      {isAdminMode && (
+      {/* LABEL ADMIN (Hanya muncul jika Password Pop-up Benar) */}
+      {showAdminUI && (
         <div className="absolute top-3 left-3 z-30 flex flex-col gap-1.5 pointer-events-none">
           <span className="bg-black/80 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-md font-mono shadow-xl border border-white/20 w-fit">
             ID: {id}
