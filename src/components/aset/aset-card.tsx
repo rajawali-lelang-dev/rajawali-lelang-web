@@ -15,10 +15,6 @@ interface AsetCardProps {
   type: 'properti' | 'mobil' | 'perhiasan' | 'mesin';
   mode: 'dijual' | 'lelang';
   isHidden?: boolean;
-  additionalInfo?: {
-    label: string;
-    value: string;
-  }[];
 }
 
 export default function AsetCard({
@@ -31,73 +27,67 @@ export default function AsetCard({
   type,
   mode,
   isHidden = false,
-  additionalInfo = []
 }: AsetCardProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isSheetHidden, setIsSheetHidden] = useState(false);
-  const [isAuthorized, setIsAuthorized] = useState(false); // Status Login Admin
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [mounted, setMounted] = useState(false);
   
   const searchParams = useSearchParams();
   const isAdminParam = searchParams.get('admin') === 'true';
 
   const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
 
-  // 1. Logika Password Pop-up
+  // Pastikan komponen sudah termuat di browser untuk menghindari error "Client-side Exception"
   useEffect(() => {
-    if (isAdminParam) {
-      // Cek apakah sudah pernah login di sesi ini (agar tidak pop-up terus saat pindah kartu)
-      const sessionAuth = sessionStorage.getItem("admin_auth");
-      
-      if (sessionAuth === "true") {
+    setMounted(true);
+  }, []);
+
+  // 1. Logika Password (Hanya jalan setelah mounted)
+  useEffect(() => {
+    if (mounted && isAdminParam && !isAuthorized) {
+      const password = prompt("PERTANYAAN KEAMANAN:\n\nSiapakah Patriot kita?");
+      if (password === "LaLiLuLeLo") {
         setIsAuthorized(true);
       } else {
-        const password = prompt("PERTANYAAN KEAMANAN:\n\nSiapakah Patriot kita?");
-        
-        // Jawaban: LaLiLuLeLo (Case Sensitive)
-        if (password === "LaLiLuLeLo") {
-          sessionStorage.setItem("admin_auth", "true");
-          setIsAuthorized(true);
-        } else {
-          alert("Jawaban Salah! Akses Admin Ditolak.");
-          // Hilangkan parameter admin dari URL jika salah
-          window.location.href = window.location.pathname;
-        }
+        alert("Akses Ditolak.");
+        window.location.href = window.location.pathname;
       }
     }
-  }, [isAdminParam]);
+  }, [mounted, isAdminParam, isAuthorized]);
 
-  // 2. Logika Cek Takedown dari Google Sheets
+  // 2. Logika Cek Takedown
   useEffect(() => {
     const checkTakedown = async () => {
       try {
-        const response = await fetch(`${SHEET_URL}&nocache=${new Date().getTime()}`, {
-          cache: 'no-store'
-        });
+        const response = await fetch(`${SHEET_URL}&t=${Date.now()}`, { cache: 'no-store' });
         const csvText = await response.text();
         const rows = csvText.split(/\r?\n/);
-        let found = false;
-
-        for (const row of rows) {
-          const columns = row.split(',').map(c => c.replace(/['"]+/g, '').trim());
-          if (columns.includes(id.trim())) {
-            found = true;
-            break;
-          }
-        }
+        const found = rows.some(row => 
+          row.split(',').map(c => c.replace(/['"]+/g, '').trim()).includes(id.trim())
+        );
         setIsSheetHidden(found);
       } catch (error) {
-        console.error("Gagal sinkronisasi Sheet:", error);
+        console.error("Gagal sinkronisasi:", error);
       }
     };
-
     checkTakedown();
   }, [id]);
+
+  if (!mounted) return null;
 
   const finalIsHidden = isHidden || isSheetHidden;
   const showAdminUI = isAdminParam && isAuthorized;
 
-  // Filter Publik: Jika hidden dan bukan admin terverifikasi, kartu hilang
+  // Publik: Jika hide, kartu hilang total
   if (finalIsHidden && !showAdminUI) return null;
+
+  // Fungsi Salin ID
+  const handleCopyId = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(id);
+    alert(`ID Aset: ${id} berhasil disalin!`);
+  };
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("id-ID", {
@@ -105,31 +95,30 @@ export default function AsetCard({
     }).format(price);
   };
 
-  const getStatusColor = () => {
-    if (!status) return "bg-gray-500 text-white";
-    const s = status.toLowerCase();
-    if (s.includes("aktif") || s === "available") return "bg-green-200 text-green-900";
-    if (s.includes("segera") || s === "coming soon") return "bg-red-100 text-red-900";
-    return "bg-gray-500 text-white";
-  };
-
   return (
     <div className={`relative group/card h-full transition-all duration-500 ${finalIsHidden ? 'opacity-40 grayscale-[0.8]' : 'opacity-100'}`}>
       
-      {/* LABEL ADMIN (Hanya muncul jika Password Pop-up Benar) */}
+      {/* LABEL & TOOLS ADMIN */}
       {showAdminUI && (
-        <div className="absolute top-3 left-3 z-30 flex flex-col gap-1.5 pointer-events-none">
-          <span className="bg-black/80 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-md font-mono shadow-xl border border-white/20 w-fit">
+        <div className="absolute top-3 left-3 z-50 flex flex-col gap-2">
+          {/* Tombol Copy ID */}
+          <button 
+            onClick={handleCopyId}
+            className="bg-black hover:bg-blue-700 text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-xl border border-white/20 transition-colors flex items-center gap-2"
+          >
             ID: {id}
-          </span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" ry="1" /></svg>
+          </button>
+
+          {/* Label Status Takedown */}
           {finalIsHidden && (
-            <span className="bg-red-600 text-white text-[9px] px-2 py-1 rounded-md font-bold uppercase shadow-lg animate-pulse border border-red-400">
-              OFFLINE (Sheet)
+            <span className="bg-red-600 text-white text-[9px] px-3 py-1.5 rounded-lg font-bold uppercase shadow-lg border border-red-400 animate-pulse">
+              TAKEN DOWN (HIDDEN)
             </span>
           )}
         </div>
       )}
-
+      
       {/* TAMPILAN KARTU */}
       <Link href={`/aset/${mode}/${type}/${id}`} className="block h-full shadow-sm hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden bg-white ring-1 ring-black/5">
         <div className="flex flex-col h-full">
