@@ -1622,7 +1622,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
     {
     id: "RLI_ELP_0056",
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Duren Panjer RT.003 RW.002, Desa Tunggalpager, Kec. Pungging, Kab. Mojokerto, Jawa Timur",
@@ -1637,7 +1637,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 8 menit dari SMKN 1 Pungging
       - 8 menit dari Stadion Gelora Gajah Mada
       - 12 menit dari Alun Alun Ngoro Mojokerto`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1zMgODqhHNIp47Jt3fwbNkZhbGtE8Qi5S"),
       getDriveImageUrl("https://drive.google.com/open?id=1zfCNY1GCAE7I_cgRtInJYUE7iDGINpBP"),
@@ -1645,8 +1645,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1LB3tT-zm98Ib-qyu1WsrS9caJJYY31QW")
     ],
     endPrice: 1475000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-13",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
     {
     id: "RLI_ELP_0057",
