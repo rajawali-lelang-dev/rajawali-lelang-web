@@ -35,97 +35,93 @@ export default function AsetCard({
 }: AsetCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isSheetHidden, setIsSheetHidden] = useState(false);
-  const [isAuthorized, setIsAuthorized] = useState(false); // Status Login Admin
+  const [isAuthorized, setIsAuthorized] = useState(false);
   
   const searchParams = useSearchParams();
   const isAdminParam = searchParams.get('admin') === 'true';
 
-  const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
+  // URL Google Sheets (CSV untuk cek & Link Edit untuk Admin)
+  const SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQj5_JImr11O2Vdx0DdBo785kS9ongzSJ27MaFtH6cI5n3xb3828kGUa9oPSQm_Pt9Ztc89ZPnvQpcj/pub?output=csv";
+  const SHEET_EDIT_LINK = "https://docs.google.com/spreadsheets/d/1oZ_zh6W6JIJIC0jnbeUujw2Sm0_v2LskfRZFsnNq10E/edit";
 
-  // 1. Logika Password Pop-up
+  // 1. Logika Password (Selalu tanya setiap akses/refresh)
   useEffect(() => {
-    if (isAdminParam) {
-      // Cek apakah sudah pernah login di sesi ini (agar tidak pop-up terus saat pindah kartu)
-      const sessionAuth = sessionStorage.getItem("admin_auth");
-      
-      if (sessionAuth === "true") {
+    if (isAdminParam && !isAuthorized) {
+      const password = prompt("PERTANYAAN KEAMANAN:\n\nSiapakah Patriot kita?");
+      if (password === "LaLiLuLeLo") {
         setIsAuthorized(true);
       } else {
-        const password = prompt("PERTANYAAN KEAMANAN:\n\nSiapakah Patriot kita?");
-        
-        // Jawaban: LaLiLuLeLo (Case Sensitive)
-        if (password === "LaLiLuLeLo") {
-          sessionStorage.setItem("admin_auth", "true");
-          setIsAuthorized(true);
-        } else {
-          alert("Jawaban Salah! Akses Admin Ditolak.");
-          // Hilangkan parameter admin dari URL jika salah
-          window.location.href = window.location.pathname;
-        }
+        alert("Akses Ditolak.");
+        window.location.href = window.location.pathname;
       }
     }
-  }, [isAdminParam]);
+  }, [isAdminParam, isAuthorized]);
 
-  // 2. Logika Cek Takedown dari Google Sheets
+  // 2. Cek Status Takedown
   useEffect(() => {
-    const checkTakedown = async () => {
+    const checkStatus = async () => {
       try {
-        const response = await fetch(`${SHEET_URL}&nocache=${new Date().getTime()}`, {
-          cache: 'no-store'
-        });
+        const response = await fetch(`${SHEET_CSV}&t=${new Date().getTime()}`);
         const csvText = await response.text();
         const rows = csvText.split(/\r?\n/);
-        let found = false;
-
-        for (const row of rows) {
-          const columns = row.split(',').map(c => c.replace(/['"]+/g, '').trim());
-          if (columns.includes(id.trim())) {
-            found = true;
-            break;
-          }
-        }
+        const found = rows.some(row => 
+          row.split(',').map(c => c.replace(/['"]+/g, '').trim()).includes(id.trim())
+        );
         setIsSheetHidden(found);
-      } catch (error) {
-        console.error("Gagal sinkronisasi Sheet:", error);
-      }
+      } catch (e) { console.error(e); }
     };
-
-    checkTakedown();
+    checkStatus();
   }, [id]);
 
   const finalIsHidden = isHidden || isSheetHidden;
   const showAdminUI = isAdminParam && isAuthorized;
 
-  // Filter Publik: Jika hidden dan bukan admin terverifikasi, kartu hilang
+  // Jika hidden dan bukan admin, jangan render apa pun
   if (finalIsHidden && !showAdminUI) return null;
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency", currency: "IDR", minimumFractionDigits: 0,
-    }).format(price);
+  // Fungsi Copy ID
+  const copyId = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(id);
+    alert(`ID ${id} berhasil disalin!`);
   };
 
-  const getStatusColor = () => {
-    if (!status) return "bg-gray-500 text-white";
-    const s = status.toLowerCase();
-    if (s.includes("aktif") || s === "available") return "bg-green-200 text-green-900";
-    if (s.includes("segera") || s === "coming soon") return "bg-red-100 text-red-900";
-    return "bg-gray-500 text-white";
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(price);
   };
 
   return (
-    <div className={`relative group/card h-full transition-all duration-500 ${finalIsHidden ? 'opacity-40 grayscale-[0.8]' : 'opacity-100'}`}>
+    <div className={`relative group/card h-full transition-all duration-500 ${finalIsHidden ? 'opacity-40 grayscale-[0.9]' : 'opacity-100'}`}>
       
-      {/* LABEL ADMIN (Hanya muncul jika Password Pop-up Benar) */}
+      {/* --- ADMIN TOOLS PANEL --- */}
       {showAdminUI && (
-        <div className="absolute top-3 left-3 z-30 flex flex-col gap-1.5 pointer-events-none">
-          <span className="bg-black/80 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-md font-mono shadow-xl border border-white/20 w-fit">
-            ID: {id}
-          </span>
+        <div className="absolute top-3 left-3 z-[60] flex flex-col gap-2">
+          {/* Label ID (Klik untuk Copy) */}
+          <button 
+            onClick={copyId}
+            className="bg-black text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-xl border border-white/20 hover:bg-blue-600 transition-colors flex items-center gap-2"
+          >
+            <span>ID: {id}</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" ry="1" /></svg>
+          </button>
+
+          {/* Tombol ke Sheet */}
+          <a 
+            href={SHEET_EDIT_LINK} 
+            target="_blank" 
+            className="bg-green-700 text-white text-[9px] px-3 py-1.5 rounded-lg font-bold shadow-xl border border-white/20 hover:bg-green-600 transition-colors flex items-center gap-2"
+          >
+            EDIT SHEET
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+          </a>
+
+          {/* Status Taken Down */}
           {finalIsHidden && (
-            <span className="bg-red-600 text-white text-[9px] px-2 py-1 rounded-md font-bold uppercase shadow-lg animate-pulse border border-red-400">
-              OFFLINE (Sheet)
-            </span>
+            <div className="bg-red-600 text-white text-[10px] px-3 py-1.5 rounded-lg font-black uppercase shadow-2xl animate-pulse border-2 border-white flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              TAKEN DOWN
+            </div>
           )}
         </div>
       )}
