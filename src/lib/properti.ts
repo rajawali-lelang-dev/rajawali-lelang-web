@@ -32,6 +32,261 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+     {
+    id: "RLI_ELP_0070",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Desa Lajokidul, Kecamatan Singgahan, Kabupaten Tuban, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Tuban",
+    landArea: 2434,
+    buildingArea: 489,
+    certificateType: "SHM",
+    description:
+    `- 7 menit dari Pasar Ngrojo
+      -	8 menit dari RS. Graha Husada Singgahan
+      - 8 menit dari SMPN 1 Bangilan
+      - 14 menit dari Air Terjun Nglirip
+      - 17 menit dari Sumber Mata Air Krawak`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1qMq_sZaLgMqVrRa44jb2TzXSng20anKM"),
+      getDriveImageUrl("https://drive.google.com/open?id=1UMi9cO0FoMY4V3JULoDPVzyh4RMR7s7k"),
+      getDriveImageUrl("https://drive.google.com/open?id=1moBl6j1mrCgQXNj25XJdr-FM6KYW3Kxi"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Lro1Fhlbs-_3Glak1BgiP0VJCxccNgE5"),
+      getDriveImageUrl("https://drive.google.com/open?id=19UKzgqiUAnh9piPrq-IyeWWSR26xP18c"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wlprJSFnLymXW0-vTlfDQNL43YwyZu4Q"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ao-A5op_aIoCl44oBhuGt7Ibb7cxXS44"),
+      getDriveImageUrl("https://drive.google.com/open?id=1k7aGrOSYsIyxKYXgdxrWRBOatN1iTcfh"),
+      getDriveImageUrl("https://drive.google.com/open?id=1W-qwCD4np7SfAf7po93Rqqg2J6ZTwgon"),
+      getDriveImageUrl("https://drive.google.com/open?id=1JsVWpbOjhq50YT1hkmSCMWI8HIhDFqP8"),
+    ],
+    endPrice: 876440000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+     {
+    id: "RLI_ELP_0069",
+    title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Desa Jatisari, Kec. Senori, Kab. Tuban, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Tuban",
+    landArea: 2096,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 7 menit dari Pasar Ngrojo
+      -	8 menit dari RS. Graha Husada Singgahan
+      - 8 menit dari SMPN 1 Bangilan
+      - 14 menit dari Air Terjun Nglirip
+      - 17 menit dari Sumber Mata Air Krawak`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1CWXqCqTHN5vqT3oKnDHW5MfeRXoI3bbu"),
+      getDriveImageUrl("https://drive.google.com/open?id=1EhoMY7CSJksSVVAz8kNgvXvs87b7XCcU"),
+      getDriveImageUrl("https://drive.google.com/open?id=1JoLUEds3CBrhm281K7q9K-d8kfJaFPJL"),
+      getDriveImageUrl("https://drive.google.com/open?id=1l5KzBpnJ4xgjj2NDXMsslXqEbooVTiou"),
+      getDriveImageUrl("https://drive.google.com/open?id=19PnaFPBcJ7L2PqGiZoGwFcf5X4Ag3vkj"),
+      getDriveImageUrl("https://drive.google.com/open?id=1vc5so1OCJkSQ_5LyFfUbxiUdn4TphXOP")
+    ],
+    endPrice: 211696000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  
+    {
+    id: "RLI_ELP_0068",
+    title: "SEGERA LELANG RUMAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Desa Tanjungharjo, Kec. Kapas, Kab. Bojonegoro, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Bojonegoro",
+    landArea: 281,
+    buildingArea: 172,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Pasar Tradisional Tanjungharjo
+      -	4 menit dari Kebun Raya Wedi
+      - 5 menit dari Puskesmas Tanjungharjo
+      - 9 menit dari SMA Negeri Model Terpadu
+      - 16 menit dari Alun-alun Bojonegoro`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1xehbAgMitL_dOFJTq_UuUWuABV5BigjO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Sms8MfFudnLmOtq4MD9UGgYt4ZjLSzMT"),
+      getDriveImageUrl("https://drive.google.com/open?id=1sL9fuTvdB-5VkojzvIL7ekQ3oJjvKEl8"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-Zo1Pg4y51SZR6y21qDbj0Tfkp6tuos_"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ok28rOB0b7SKiVirq8tjYHIjus-XchWo")
+    ],
+    endPrice: 375700000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+    {
+    id: "RLI_ELP_0067",
+    title: "SEGERA LELANG GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Gudang",
+    location: "Desa Tanjungharjo, Kec. Kapas, Kab. Bojonegoro, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Bojonegoro",
+    landArea: 3850,
+    buildingArea: 590,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Puskesmas Tanjungharjo
+      -	7 menit dari SMKN 4 Bojonegoro
+      - 9 menit dari Gofun Waterpark
+      - 10 menit ke RSUD Dr. R. Sosodoro Djatikoesoemo Bojonegoro
+      - 11 menit Stasiun Bojonegoro`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1tIgGxUx1aaZaZRHIcaJT20ZvWMztTTzI"),
+      getDriveImageUrl("https://drive.google.com/open?id=1lOMeKbzNdkxB8k76UiQac01tt1_prJUC"),
+      getDriveImageUrl("https://drive.google.com/open?id=1oS1qR_jMo7u_aK8YoZ9ct4SY1nT_Tm_D"),
+      getDriveImageUrl("https://drive.google.com/open?id=1I8pNTHXq393FZWRwzu3OC3KNriX0ik2a"),
+      getDriveImageUrl("https://drive.google.com/open?id=1WlM4-fIm0qP3sOflx9htTmTgMULS8Reo"),
+      getDriveImageUrl("https://drive.google.com/open?id=1NsvlF-tgzb1irk5xFvPpTWdrHovkMid0")
+    ],
+    endPrice: 2014500000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+   {
+    id: "RLI_ELP_0066",
+    title: "SEGERA LELANG tANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Jl. Raya Dlanggu - Pacet, Desa Kalen, Kecamatan Dlanggu, Kabupaten Mojokerto",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 2996,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 3 menit dari Puskesmas Gondang
+      -	3 menit dari SMAN 1 Gondang Mojokerto
+      - 4 menit dari Pasar Pohjejer
+      - 5 menit dari Wisata Air Padi Park
+      - 6 menit dari Wisata Air Balekambang`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1fHQF6OLOvzTmJBlg5nEvFwNdhwzrshWi"),
+      getDriveImageUrl("https://drive.google.com/open?id=1z7P76YS3S1t8Pba7_AyriIKjvhd3EWCj"),
+      getDriveImageUrl("https://drive.google.com/open?id=1e_OrfWTfyNjq0u4VaiRpXa0XTMQ4m1Oo"),
+      getDriveImageUrl("https://drive.google.com/open?id=1UjtF7mV94mBZryhtLgPoiRwQOUyWN8BG")
+    ],
+    endPrice: 675000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+     {
+    id: "RLI_ELP_0065",
+    title: "SEGERA LELANG TOKO DAN SHOWROOM",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Jl. Raya Dlanggu - Pacet, Dusun Kalang RT 04 RW 04, Desa Kalen, Kecamatan Dlanggu, Kabupaten Mojokerto",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 7560,
+    buildingArea: 684,
+    certificateType: "SHM",
+    description:
+    `- 3 menit dari Puskesmas Gondang
+      -	3 menit dari SMAN 1 Gondang Mojokerto
+      - 4 menit dari Pasar Pohjejer
+      - 5 menit dari Wisata Air Padi Park
+      - 6 menit dari Wisata Air Balekambang`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1mm06tcFwysDT08LrQl7k7n6N0aY9dAsd"),
+      getDriveImageUrl("https://drive.google.com/open?id=17dyNMx5j5R57L1z3uxOWITct6a52xfLW"),
+      getDriveImageUrl("https://drive.google.com/open?id=1z7yDUBlIiQ1ntHOZmUq8dUiOxgJfFpAx"),
+      getDriveImageUrl("https://drive.google.com/open?id=1423M9LyOqFCs9tUIQJF8jw7NNgh1GvwP"),
+      getDriveImageUrl("https://drive.google.com/open?id=17D0d3_2Zvr7KcmLrZNNlXjhFMyuXRNWk"),
+      getDriveImageUrl("https://drive.google.com/open?id=1f6oFq0U3o_vaUzPW8Hz1nsjrhcxGqhq4"),
+      getDriveImageUrl("https://drive.google.com/open?id=1w9lpmtCLiCVG40k4kQ2dju7GXEUkzbFB"),
+      getDriveImageUrl("https://drive.google.com/open?id=1EOwuVqY_vqm7w5j-ZUXsDhSzaT-QgT49"),
+      getDriveImageUrl("https://drive.google.com/open?id=18dU2Cvgtr6u8IGb4GP0M4MN5nPcDvjAB"),
+      getDriveImageUrl("https://drive.google.com/open?id=1tv6abYkp992x2WN0rmuTdzDuBbt8SqCz")
+    ],
+    endPrice: 3350000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+      {
+    id: "RLI_ELP_0064",
+    title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Desa Kepuhpandak, Kecamatan Kutorejo, Kabupaten Mojokerto",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 6180,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Pasar Kebon
+      -	5 menit dari SD Negeri Karangasem
+      - 11 menit dari Rumah Sakit Sido Waras
+      - 14 menit dari Stadion Gelora Gajah Mada
+      - 14 menit dari Kolam Renang Vanda Tirta`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1oBgCxYHjaAypdiPugxQAAOxz9_VgTWw8"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Bfr9-4Vj7NVIpKWexoXYMStqJnGX18e3"),
+      getDriveImageUrl("https://drive.google.com/open?id=1JwXzpNjxm9sIkiXdodMYAArlO23kFQ8x"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Cg0MiEltcfKwmcybJg411s7iJscMJIVr"),
+      getDriveImageUrl("https://drive.google.com/open?id=1WOozfNiAG2d2Oa0m0LpL3waf9CONJcQ_"),
+      getDriveImageUrl("https://drive.google.com/open?id=1t77UAnJxAp9Kdo_ob-93CLTDp8FMRmyE")
+    ],
+    endPrice: 923280000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+      {
+    id: "RLI_ELP_0063",
+    title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Desa Kepuhpandak, Kecamatan Kutorejo, Kabupaten Mojokerto",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 2310,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari Pasar Kebon
+      -	5 menit dari SD Negeri Karangasem
+      - 11 menit dari Rumah Sakit Sido Waras
+      - 14 menit dari Stadion Gelora Gajah Mada
+      - 14 menit dari Kolam Renang Vanda Tirta`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1OZ0Bad4i8DJOJ2wRZM1p4UwbxLOMEKG1"),
+      getDriveImageUrl("https://drive.google.com/open?id=1zHVmcMXBrpplOm_wQBb6SL9Y0mFhmhIW"),
+      getDriveImageUrl("https://drive.google.com/open?id=1WMX32BwtF_UfRcdEJtSZ4U9KORdr3lY0"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ijsICR1ZkVSsDPPCFJsQjZQZVQkPBUq0"),
+      getDriveImageUrl("https://drive.google.com/open?id=16bn5-CZlUy5hYSUQyGM20tDqIZwOygNZ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1xuG-8SC-tg8buVGrZXaLLpG_yIpVuHtG"),
+      getDriveImageUrl("https://drive.google.com/open?id=108cYE-_WCTco_lpqtpIU_h4xn1QIX88j"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Gr6YLDA3duCYTlhw0E8MZINAmBK7iWUe")
+    ],
+    endPrice: 360000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
       {
     id: "RLI_ELP_0062",
     title: "SEGERA LELANG TANAH KOSONG",
