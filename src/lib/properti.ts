@@ -32,6 +32,162 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+  {
+    id: "RLI_ELP_0075",
+    title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Desa Tlogowaru, Kecamatan Merakurak, Kabupaten Tuban, Propinsi Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Tuban",
+    landArea: 2325,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari SMKN 3 Tuban
+      -	3 menit dari Pasar Temandang
+      - 6 menit dari Puskesmas Temandang
+      - 12 menit ke Wisata Silowo Merakurak
+      - 19 menit Kampus C - IIK NU Tuban`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1RBBAf_fhUB8TPU2YrPvd_BqWmGglgGC-"),
+      getDriveImageUrl("https://drive.google.com/open?id=1H-Z8Y7GuXM-o0eDtlUfRzdAWAaRqlXtx"),
+      getDriveImageUrl("https://drive.google.com/open?id=166OfrYUNiIvQ-ba5VTvR-fhr4JdMKhk2"),
+      getDriveImageUrl("https://drive.google.com/open?id=1plNie6h3SVIHpmfL099Dvb0f9RWwo1rT"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Hltvsa26CkgvnvaQXMpKVGVfODxERKav"),
+      getDriveImageUrl("https://drive.google.com/open?id=11f6mtdqdZ7hAvKlsls-xuA56cY88oTv_"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ygvMGXJXwtozpFNRqXQ0sdlSI2nMOKVp"),
+      getDriveImageUrl("https://drive.google.com/open?id=1RyBtLGNfKi4oPTTA00AQUCn1JKSBTu_9"),
+      getDriveImageUrl("https://drive.google.com/open?id=1OJuUwUTTt4MFaDg5Qf8f4evWVmKvDFjU")
+    ],
+    endPrice: 358050000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+
+      {
+    id: "RLI_ELP_0074",
+    title: "SEGERA LELANG TANAH KOSONG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Desa Tlogowaru, Kecamatan Merakurak, Kabupaten Tuban, Propinsi Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Tuban",
+    landArea: 4700,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari SMKN 3 Tuban
+      -	4 menit dari Pasar Temandang
+      - 6 menit dari Puskesmas Temandang
+      - 14 menit ke Wisata Silowo Merakurak
+      - 20 menit Kampus C - IIK NU Tuban`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=14yTKnc4jP3RupzNDbxBAgYW5AQtdJoS6"),
+      getDriveImageUrl("https://drive.google.com/open?id=1M_rrLUsi9iF2Y5wTL8hsQNDVvI5rumoE"),
+      getDriveImageUrl("https://drive.google.com/open?id=1fWr1X8kSocUlcoxwCzO_Ee3-64J5g-Ci")
+    ],
+    endPrice: 611000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+    {
+    id: "RLI_ELP_0073",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Desa Tlogowaru, Kecamatan Merakurak, Kabupaten Tuban, Propinsi Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Tuban",
+    landArea: 332,
+    buildingArea: 257,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari SMKN 3 Tuban
+      -	4 menit dari Pasar Temandang
+      - 6 menit dari Puskesmas Temandang
+      - 13 menit ke Wisata Silowo Merakurak
+      - 19 menit Kampus C - IIK NU Tuban`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1Z6orVZBuTXi6yo3snf9gdg81DpyEl6B7"),
+      getDriveImageUrl("https://drive.google.com/open?id=1mUsUSZbIomMbtvJ5mx_XZwBcs0vubyqC"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Fnh8Up-Ry2j2QzgkTqvVmEFlxHJGSiqf"),
+      getDriveImageUrl("https://drive.google.com/open?id=1uoGHkHDumCPMJbXZMlhZFj7CKQnojyt9"),
+      getDriveImageUrl("https://drive.google.com/open?id=1f1ivFhMBi_YrnG-3Sdh83L7J8axtwjLE"),
+      getDriveImageUrl("https://drive.google.com/open?id=1eW_ouB8c9VU6Xh48kqQYqdWrTrUBPKvL"),
+      getDriveImageUrl("https://drive.google.com/open?id=1cAbJbeWJIGfjjTNb0d0LPmsEFooJnknT"),
+      getDriveImageUrl("https://drive.google.com/open?id=1w7_tx4hxFsXctcEbzSqbnVlMEU0nL2XE"),
+      getDriveImageUrl("https://drive.google.com/open?id=1PfyaywiK6IB9klcHS8pwj5yy7AtsN08a"),
+      getDriveImageUrl("https://drive.google.com/open?id=11-cQW93CgRe_2Q3CjksjxEikIRVkdo7M"),
+    ],
+    endPrice: 287000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+     {
+    id: "RLI_ELP_0072",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Perumahan Persada Prapen Mas, Jl. Prapen Indah Timur IV Blok AC No. 10 Kel. Panjangjiwo, Kec. Tenggilis Mejoyo, Surabaya",
+    provinsi: "Jawa Timur",
+    kota: "Surabaya",
+    landArea: 165,
+    buildingArea: 221.5,
+    certificateType: "SHM",
+    description:
+    `- 5 menit dari RS Ubaya
+      -	7 menit dari Universitas Surabaya
+      - 17 menit dari Royal Plaza
+      - 20 menit dari Pintu Tol Waru
+      - 20 menit dari Taman Bungkul Surabaya`,
+    status: "Lelang Aktif",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1CZNGMvtM4FcJJZNEoEnvY55gTHXc6wfU"),
+      getDriveImageUrl("https://drive.google.com/open?id=1c2B8xo8SxMAvdduS0Z8Yxiw_COUXWepI"),
+      getDriveImageUrl("https://drive.google.com/open?id=1_CU3CVMnV1qEGp2EjBs4LM_sAfhFuZOW"),
+      getDriveImageUrl("https://drive.google.com/open?id=17NAp5adK_0lTHMVWmSca7Wi9X-Y010Er")
+    ],
+    endPrice: 2251226225,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+     {
+    id: "RLI_ELP_0071",
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Desa Tasikmadu, Kec. Palang, Kab. Tuban, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Tuban",
+    landArea: 206,
+    buildingArea: 179,
+    certificateType: "SHM",
+    description:
+    `- 3 menit dari Pantai Kelapa Tuban
+      -	4 menit dari Puskesmas Sumurgung
+      - 7 menit dari Universitas Terbuka Tuban
+      - 7 menit dari SMA Negeri 1 Tuban
+      - 8 menit dari Citimall Tuban`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1jXJGnBq5M47v_dbSuCOUp0enNlmphkMz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wkZ3MQADp_7gfDueO8ADyqAPVW3NGtVl"),
+      getDriveImageUrl("https://drive.google.com/open?id=1yyCRUEmx7g8A4Vp33dxQGBjccKY6Cn2N"),
+      getDriveImageUrl("https://drive.google.com/open?id=15SNIQLWGC_KZ60KllBdNagqI6o1Rgs9K")
+    ],
+    endPrice: 570220000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
      {
     id: "RLI_ELP_0070",
     title: "SEGERA LELANG RUMAH TINGGAL",
@@ -317,9 +473,9 @@ export const lelangProperties: PropertiDilelang[] = [
 
     {
     id: "RLI_ELP_0061",
-    title: "SEGERA LELANG BENGKEL",
+    title: "SEGERA LELANG PABRIK",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
-    type: "Tanah",
+    type: "Gudang",
     location: "Jalan Kutorejo - Bangsal, Desa Kaligoro, Kec. Kutorejo, Kab. Mojokerto, Jawa Timur",
     provinsi: "Jawa Timur",
     kota: "Mojokerto",
@@ -363,7 +519,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 20 menit dari Bonderland Waterpark
       - 25 menit dari Rumah Sakit Panti Nirmala
       - 30 menit dari Mall Sarinah Malang`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/file/d/1AOed3A9fjfmN1KrWcNdUslz6Ob_YLpkF/view?usp=sharing"),
       getDriveImageUrl("https://drive.google.com/file/d/1QVI3RaLgW8nu3MCIDsmotyQY13dqEmRF/view?usp=sharing"),
@@ -371,8 +527,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=17RVM1f4l7p4-UUz4Nyh2pWQpA1v7R817/view?usp=sharing")
     ],
     endPrice: 995000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-28",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
   {
     id: "RLI_ELP_0001",
@@ -657,7 +814,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "RLI_ELP_0011",
-    title: "SEGERA LELANG TANAH",
+    title: "AGUNAN LELANG TANAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Desa Bogotanjung, Kec. Gabus, Kab. Pati, Prov. Jawa Tengah",
@@ -674,15 +831,16 @@ export const lelangProperties: PropertiDilelang[] = [
       - 16 menit dari Luwes Pati Mall
       - 21 menit dari Rumah Sakit Keluarga Sehat
     `,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1UaF56w87cVfpvWCysCKefXCPC2TT6O7q"),
       getDriveImageUrl("https://drive.google.com/open?id=1pOQh184CdbfziqRrXrdWgmX3b7fc6W3y"),
       getDriveImageUrl("https://drive.google.com/open?id=1bVWmRKpIdGOm9gD09N7-_gnJqaAjHR_H")
     ],
     endPrice: 340000000,
-    tanggalLelang: "",
+    tanggalLelang: "2026-02-11",
     batasWaktuLelang: "-",
+    jamLelang: "11:00 WIB",
   },
   {
     id: "RLI_ELP_0012",
@@ -1797,7 +1955,7 @@ export const lelangProperties: PropertiDilelang[] = [
       ⦁ 7 menit dari Mal Kalibata City Square
       ⦁ 10 menit dari Gerbang Tol Cawang
       ⦁ 14 menit dari RSU Budhi Asih`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1-uIVC1aFkxlppz5zjwt8zD89J69bxWkN"),
       getDriveImageUrl("https://drive.google.com/open?id=1JCduHLiG1hyZvhZYTZaxhKKMWTxWIAVy"),
@@ -1808,8 +1966,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1cGjMKO1IJLjC5lMf2JPOTn5mAmCzwSq-")
     ],
     endPrice: 390600000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-13",
     batasWaktuLelang: "-",
+    jamLelang: "10:40 WIB",
   },
   {
     id: "RLI_ELP_0052",
