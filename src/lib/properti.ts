@@ -263,7 +263,7 @@ export const lelangProperties: PropertiDilelang[] = [
     provinsi: "Jawa Timur",
     kota: "Bojonegoro",
     landArea: 281,
-    buildingArea: 172,
+    buildingArea: 162,
     certificateType: "SHM",
     description:
     `- 1 menit dari Pasar Tradisional Tanjungharjo
