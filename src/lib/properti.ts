@@ -679,7 +679,7 @@ export const lelangProperties: PropertiDilelang[] = [
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
-    location: "Desa Tegalgondo, Kecamatan Karangploso, Kabupaten Malang",
+    location: "Perumahan Mutiara Kampus Blok A-11, Desa Tegalgondo, Kec. Karangploso, Kab. Malang",
     provinsi: "Jawa Timur",
     kota: "Malang",
     landArea: 150,
