@@ -2252,23 +2252,27 @@ export const getCitiesByProvince = (provinsi: string): string[] => {
   ];
   return Array.from(new Set(allCities)).sort();
 };
+// Helper: Get all unique property types
+export const getPropertyTypes = (): PropertyType[] => {
+  return ["Rumah", "Ruko", "Villa", "Apartemen", "Tanah", "Gudang"];
+};
+
 // Tambahkan kredensial Supabase Anda di sini
 const SUPABASE_URL = "https://ghwmtfwrbkuvpyhylwrw.supabase.co";
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0";
 
+export const getDynamicProperties = async (): Promise<Property[]> => {
+  try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/properti?select=*`, {
-  headers: {
-    'apikey': eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0,
-    'Authorization': `Bearer ${eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0}`
-  },
-  cache: 'no-store' // <-- Tambahkan ini untuk memaksa ambil data terbaru
-});
+      headers: {
+        'apikey': ANON_KEY,
+        'Authorization': `Bearer ${ANON_KEY}`
+      },
+      cache: 'no-store'
+    });
     
-// ... kode fetch sebelumnya sudah benar
-
     const data = await res.json();
     
-    // Pastikan mapping di bawah ini tertutup dengan benar
     return data.map((item: any) => ({
       id: `WEB-${item.id}`,
       title: item.title,
@@ -2282,13 +2286,9 @@ const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsI
       image: item.image_urls || ["https://placehold.co/600x400"],
       endPrice: item.price,
       isHidden: item.is_hidden
-    })); // <--- Pastikan ada }); di sini sebelum catch
+    }));
   } catch (error) {
     console.error("Gagal menarik data dari Supabase:", error);
     return [];
   }
-};
-// Helper: Get all unique property types
-export const getPropertyTypes = (): PropertyType[] => {
-  return ["Rumah", "Ruko", "Villa", "Apartemen", "Tanah", "Gudang"];
 };
