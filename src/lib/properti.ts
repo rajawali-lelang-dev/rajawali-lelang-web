@@ -2250,21 +2250,27 @@ export const getDynamicProperties = async (): Promise<Property[]> => {
     
     const data = await res.json();
     
-    if (!Array.isArray(data)) return [];
-
+    // Validasi apakah data benar-benar array
+    if (!Array.isArray(data)) {
+      console.error("Data dari Supabase bukan array:", data);
+      return [];
+    }
+    
     return data.map((item: any) => ({
       id: `WEB-${item.id}`,
-      title: item.title,
-      type: item.type,
-      location: item.location,
-      landArea: item.land_area,
-      buildingArea: item.building_area,
-      certificateType: item.certificate_type,
-      description: item.description,
-      status: item.status,
-      image: item.image_urls || ["https://placehold.co/600x400"],
-      endPrice: item.price,
-      isHidden: item.is_hidden
+      title: item.title || "Tanpa Judul",
+      type: (item.type as PropertyType) || "Rumah",
+      location: item.location || "Lokasi tidak tersedia",
+      landArea: Number(item.land_area) || 0,
+      buildingArea: Number(item.building_area) || 0,
+      certificateType: item.certificate_type || "SHM",
+      description: item.description || "",
+      status: "Available", // Menyesuaikan dengan interface Property
+      image: Array.isArray(item.image_urls) ? item.image_urls : ["https://placehold.co/600x400"],
+      endPrice: Number(item.price) || 0, // Sesuaikan dengan kolom 'price' di gambar Supabase
+      isHidden: item.is_hidden || false,
+      provinsi: item.provinsi || "", // Tambahkan ini agar helper tidak error
+      kota: item.kota || ""         // Tambahkan ini agar helper tidak error
     }));
   } catch (error) {
     console.error("Gagal menarik data dari Supabase:", error);
