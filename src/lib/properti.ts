@@ -2263,9 +2263,12 @@ const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsI
   },
   cache: 'no-store' // <-- Tambahkan ini untuk memaksa ambil data terbaru
 });
+    
+// ... kode fetch sebelumnya sudah benar
+
     const data = await res.json();
     
-    // Mapping data dari database ke format kodingan website
+    // Pastikan mapping di bawah ini tertutup dengan benar
     return data.map((item: any) => ({
       id: `WEB-${item.id}`,
       title: item.title,
@@ -2279,7 +2282,7 @@ const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsI
       image: item.image_urls || ["https://placehold.co/600x400"],
       endPrice: item.price,
       isHidden: item.is_hidden
-    }));
+    })); // <--- Pastikan ada }); di sini sebelum catch
   } catch (error) {
     console.error("Gagal menarik data dari Supabase:", error);
     return [];
