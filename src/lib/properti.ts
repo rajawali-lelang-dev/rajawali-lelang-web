@@ -4,31 +4,67 @@ export const revalidate = 0;
 import { BaseItemDijual, BaseItemLelang } from './data';
 import { getDriveImageUrl } from './drive-utils';
 
-// Property Type
+// --- 1. SETTING KREDENSIAL SUPABASE (DITARUH DI ATAS AGAR TERBACA) ---
+const SUPABASE_URL = "https://ghwmtfwrbkuvpyhylwrw.supabase.co";
+const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0";
+
+// --- 2. INTERFACES ---
 export type PropertyType = "Rumah" | "Ruko" | "Villa" | "Apartemen" | "Tanah" | "Gudang" | "Hotel" | "Toko";
 
-// Property Interface - extends BaseItemDijual
 export interface Property extends BaseItemDijual {
   type: PropertyType;
   landArea: number;
   buildingArea: number;
   certificateType: "SHM" | "HGB";
   status: "Available" | "Featured" | "Sold";
-  isHidden?: boolean; // <-- Tambahkan ini
+  isHidden?: boolean;
 }
 
-// PropertiDilelang Interface - extends BaseItemLelang
 export interface PropertiDilelang extends BaseItemLelang {
   type: PropertyType;
   landArea: number;
   buildingArea: number;
   certificateType: "SHM" | "HGB" | "SHMSRS" | "SHP" | "SHSRS";
-  jamLelang? : string;
-  isHidden?: boolean; // <-- Tambahkan ini
+  jamLelang?: string;
+  isHidden?: boolean;
 }
 
-// Mock Data - PROPERTI LELANG
-export const lelangProperties: PropertiDilelang[] = [
+// --- 3. FUNGSI AMBIL DATA DARI SUPABASE ---
+export const getDynamicProperties = async (): Promise<Property[]> => {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/properti?select=*`, {
+      headers: {
+        'apikey': ANON_KEY,
+        'Authorization': `Bearer ${ANON_KEY}`
+      },
+      cache: 'no-store'
+    });
+    
+    const data = await res.json();
+    
+    return data.map((item: any) => ({
+      id: `WEB-${item.id}`,
+      title: item.title,
+      type: item.type,
+      location: item.location,
+      landArea: item.land_area,
+      buildingArea: item.building_area,
+      certificateType: item.certificate_type,
+      description: item.description,
+      status: item.status,
+      image: item.image_urls || ["https://placehold.co/600x400"],
+      endPrice: item.price,
+      isHidden: item.is_hidden
+    }));
+  } catch (error) {
+    console.error("Gagal menarik data dari Supabase:", error);
+    return [];
+  }
+};
+
+// --- 4. MOCK DATA (LelangProperties) ---
+// Pastikan nama variabel ini konsisten digunakan di bawahnya
+export const LelangProperties: PropertiDilelang[] = [
   {
     id: "RLI_ELP_0075",
     title: "SEGERA LELANG TANAH KOSONG",
@@ -2234,73 +2270,36 @@ export const lelangProperties: PropertiDilelang[] = [
   },
 
   // --- Baris 2234: Pastikan ada penutup array data manual Anda ---
-]; 
+];
 
+// --- 5. FUNGSI GABUNGAN (DIBAWAH AGAR VARIABEL DI ATAS TERBACA) ---
 export const getProperties = async (): Promise<Property[]> => {
   try {
     const dynamicData = await getDynamicProperties();
-    // Menggunakan variabel global LelangProperties yang sudah didefinisikan di atas
-    return [...dynamicData, ...LelangProperties]; 
+    // Menggabungkan Supabase + Data Manual
+    // Menggunakan LelangProperties (L besar) sesuai deklarasi di atas
+    return [...dynamicData, ...(LelangProperties as any)]; 
   } catch (error) {
     console.error("Gagal menggabungkan data:", error);
-    return LelangProperties; 
+    return LelangProperties as any; 
   }
 };
 
-// Helper: Get unique provinces from all properties
+// --- 6. HELPERS ---
 export const getUniqueProvinces = (): string[] => {
   const allProvinces = [
-    ...properties.map(p => p.provinsi),
-    ...lelangProperties.map(p => p.provinsi)
+    ...LelangProperties.map(p => p.provinsi)
   ];
   return Array.from(new Set(allProvinces)).sort();
 };
 
-// Helper: Get cities by province from all properties
 export const getCitiesByProvince = (provinsi: string): string[] => {
   const allCities = [
-    ...properties.filter(p => p.provinsi === provinsi).map(p => p.kota),
-    ...lelangProperties.filter(p => p.provinsi === provinsi).map(p => p.kota)
+    ...LelangProperties.filter(p => p.provinsi === provinsi).map(p => p.kota)
   ];
   return Array.from(new Set(allCities)).sort();
 };
-// Helper: Get all unique property types
+
 export const getPropertyTypes = (): PropertyType[] => {
   return ["Rumah", "Ruko", "Villa", "Apartemen", "Tanah", "Gudang"];
-};
-
-// Tambahkan kredensial Supabase Anda di sini
-const SUPABASE_URL = "https://ghwmtfwrbkuvpyhylwrw.supabase.co";
-const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0";
-
-export const getDynamicProperties = async (): Promise<Property[]> => {
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/properti?select=*`, {
-      headers: {
-        'apikey': ANON_KEY,
-        'Authorization': `Bearer ${ANON_KEY}`
-      },
-      cache: 'no-store'
-    });
-    
-    const data = await res.json();
-    
-    return data.map((item: any) => ({
-      id: `WEB-${item.id}`,
-      title: item.title,
-      type: item.type,
-      location: item.location,
-      landArea: item.land_area,
-      buildingArea: item.building_area,
-      certificateType: item.certificate_type,
-      description: item.description,
-      status: item.status,
-      image: item.image_urls || ["https://placehold.co/600x400"],
-      endPrice: item.price,
-      isHidden: item.is_hidden
-    }));
-  } catch (error) {
-    console.error("Gagal menarik data dari Supabase:", error);
-    return [];
-  }
 };
