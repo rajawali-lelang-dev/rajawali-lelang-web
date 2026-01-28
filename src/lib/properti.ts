@@ -4,7 +4,7 @@ export const revalidate = 0;
 import { BaseItemDijual, BaseItemLelang } from './data';
 import { getDriveImageUrl } from './drive-utils';
 
-// --- 1. SETTING KREDENSIAL SUPABASE (DITARUH DI ATAS AGAR TERBACA) ---
+// --- 1. KREDENSIAL SUPABASE ---
 const SUPABASE_URL = "https://ghwmtfwrbkuvpyhylwrw.supabase.co";
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0";
 
@@ -29,41 +29,7 @@ export interface PropertiDilelang extends BaseItemLelang {
   isHidden?: boolean;
 }
 
-// --- 3. FUNGSI AMBIL DATA DARI SUPABASE ---
-export const getDynamicProperties = async (): Promise<Property[]> => {
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/properti?select=*`, {
-      headers: {
-        'apikey': ANON_KEY,
-        'Authorization': `Bearer ${ANON_KEY}`
-      },
-      cache: 'no-store'
-    });
-    
-    const data = await res.json();
-    
-    return data.map((item: any) => ({
-      id: `WEB-${item.id}`,
-      title: item.title,
-      type: item.type,
-      location: item.location,
-      landArea: item.land_area,
-      buildingArea: item.building_area,
-      certificateType: item.certificate_type,
-      description: item.description,
-      status: item.status,
-      image: item.image_urls || ["https://placehold.co/600x400"],
-      endPrice: item.price,
-      isHidden: item.is_hidden
-    }));
-  } catch (error) {
-    console.error("Gagal menarik data dari Supabase:", error);
-    return [];
-  }
-};
-
-// --- 4. MOCK DATA (lelangProperties) ---
-// Pastikan nama variabel ini konsisten digunakan di bawahnya
+// --- 3. MOCK DATA (Gunakan lelangProperties L kecil agar sinkron dengan page.tsx) ---
 export const lelangProperties: PropertiDilelang[] = [
   {
     id: "RLI_ELP_0075",
@@ -2269,15 +2235,48 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
 
-  // --- Baris 2234: Pastikan ada penutup array data manual Anda ---
 ];
 
-// --- 5. FUNGSI GABUNGAN (DIBAWAH AGAR VARIABEL DI ATAS TERBACA) ---
+// --- 4. FUNGSI AMBIL DATA SUPABASE ---
+export const getDynamicProperties = async (): Promise<Property[]> => {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/properti?select=*`, {
+      headers: {
+        'apikey': ANON_KEY,
+        'Authorization': `Bearer ${ANON_KEY}`
+      },
+      cache: 'no-store'
+    });
+    
+    const data = await res.json();
+    
+    if (!Array.isArray(data)) return [];
+
+    return data.map((item: any) => ({
+      id: `WEB-${item.id}`,
+      title: item.title,
+      type: item.type,
+      location: item.location,
+      landArea: item.land_area,
+      buildingArea: item.building_area,
+      certificateType: item.certificate_type,
+      description: item.description,
+      status: item.status,
+      image: item.image_urls || ["https://placehold.co/600x400"],
+      endPrice: item.price,
+      isHidden: item.is_hidden
+    }));
+  } catch (error) {
+    console.error("Gagal menarik data dari Supabase:", error);
+    return [];
+  }
+};
+
+// --- 5. FUNGSI UTAMA GABUNGAN (Diletakkan di bawah agar bisa membaca lelangProperties) ---
 export const getProperties = async (): Promise<Property[]> => {
   try {
     const dynamicData = await getDynamicProperties();
-    // Menggabungkan Supabase + Data Manual
-    // Menggunakan lelangProperties (L besar) sesuai deklarasi di atas
+    // Gabungkan data Supabase (Barbershop) dengan data manual
     return [...dynamicData, ...(lelangProperties as any)]; 
   } catch (error) {
     console.error("Gagal menggabungkan data:", error);
@@ -2288,16 +2287,16 @@ export const getProperties = async (): Promise<Property[]> => {
 // --- 6. HELPERS ---
 export const getUniqueProvinces = (): string[] => {
   const allProvinces = [
-    ...lelangProperties.map(p => p.provinsi)
+    ...(lelangProperties || []).map(p => p.provinsi)
   ];
-  return Array.from(new Set(allProvinces)).sort();
+  return Array.from(new Set(allProvinces.filter(Boolean))).sort();
 };
 
 export const getCitiesByProvince = (provinsi: string): string[] => {
   const allCities = [
-    ...lelangProperties.filter(p => p.provinsi === provinsi).map(p => p.kota)
+    ...(lelangProperties || []).filter(p => p.provinsi === provinsi).map(p => p.kota)
   ];
-  return Array.from(new Set(allCities)).sort();
+  return Array.from(new Set(allCities.filter(Boolean))).sort();
 };
 
 export const getPropertyTypes = (): PropertyType[] => {
