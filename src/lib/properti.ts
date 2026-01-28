@@ -231,7 +231,7 @@ export const lelangProperties: PropertiDilelang[] = [
     location: "Desa Jatisari, Kec. Senori, Kab. Tuban, Jawa Timur",
     provinsi: "Jawa Timur",
     kota: "Tuban",
-    landArea: 2096,
+    landArea: 2434,
     buildingArea: 0,
     certificateType: "SHM",
     description:
@@ -473,7 +473,7 @@ export const lelangProperties: PropertiDilelang[] = [
 
     {
     id: "RLI_ELP_0061",
-    title: "SEGERA LELANG PABRIK",
+    title: "SEGERA LELANG BENGKEL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Jalan Kutorejo - Bangsal, Desa Kaligoro, Kec. Kutorejo, Kab. Mojokerto, Jawa Timur",
@@ -734,7 +734,7 @@ export const lelangProperties: PropertiDilelang[] = [
     title: "SEGERA LELANG RUMAH KOS",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
-    location: "Perumahan Mutiara Kampus Blok A-11, Desa Tegalgondo, Kec. Karangploso, Kab. Malang",
+    location: "Perumahan Mutiara Kampus Blok A-15 - A-16, Desa Tegalgondo, Kec. Karangploso, Kab. Malang",
     provinsi: "Jawa Timur",
     kota: "Malang",
     landArea: 103,
