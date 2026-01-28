@@ -2252,7 +2252,24 @@ export const getCitiesByProvince = (provinsi: string): string[] => {
   ];
   return Array.from(new Set(allCities)).sort();
 };
-
+export const getAllProperties = async (): Promise<Property[]> => {
+  try {
+    // Memanggil API Supabase secara langsung
+    const res = await fetch('https://ghwmtfwrbkuvpyhylwrw.supabase.co/rest/v1/properti?select=*', {
+      headers: {
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0'
+      }
+    });
+    const dynamicProperties = await res.json();
+    
+    // Gabungkan data manual lama dengan data baru
+    return [...manualProperties, ...dynamicProperties];
+  } catch (error) {
+    console.error("Gagal ambil data:", error);
+    return manualProperties;
+  }
+};
 // Helper: Get all unique property types
 export const getPropertyTypes = (): PropertyType[] => {
   return ["Rumah", "Ruko", "Villa", "Apartemen", "Tanah", "Gudang"];
