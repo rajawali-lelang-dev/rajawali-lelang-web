@@ -27,21 +27,6 @@ export interface PropertiDilelang extends BaseItemLelang {
   isHidden?: boolean; // <-- Tambahkan ini
 }
 
-export const getProperties = async (): Promise<Property[]> => {
-  try {
-    // 1. Ambil data dari Supabase
-    const dynamicData = await getDynamicProperties();
-    
-    // 2. Gabungkan dengan LelangProperties (Bukan manualProperties)
-    // Ini akan menghilangkan garis merah karena variabelnya sudah cocok
-    return [...dynamicData, ...LelangProperties]; 
-  } catch (error) {
-    console.error("Gagal menggabungkan data:", error);
-    // Jika gagal, kembalikan data manual agar web tidak kosong
-    return LelangProperties; 
-  }
-};
-
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
@@ -2247,6 +2232,19 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
+// ... (Pastikan ini diletakkan SETELAH variabel LelangProperties didefinisikan)
+
+export const getProperties = async (): Promise<Property[]> => {
+  try {
+    const dynamicData = await getDynamicProperties();
+    // Jika masih merah, pastikan ejaan 'LelangProperties' sama persis dengan variabelnya
+    return [...dynamicData, ...LelangProperties]; 
+  } catch (error) {
+    console.error("Gagal menggabungkan data:", error);
+    return LelangProperties; 
+  }
+};
+
 ];// Helper: Get unique provinces from all properties
 export const getUniqueProvinces = (): string[] => {
   const allProvinces = [
