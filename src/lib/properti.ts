@@ -1,3 +1,6 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { BaseItemDijual, BaseItemLelang } from './data';
 import { getDriveImageUrl } from './drive-utils';
 
@@ -24,19 +27,19 @@ export interface PropertiDilelang extends BaseItemLelang {
   isHidden?: boolean; // <-- Tambahkan ini
 }
 
-// Mock Data - Properties (NON-LELANG)
-export const properties: Property[] = [
-];
-
 export const getProperties = async (): Promise<Property[]> => {
-  // 1. Ambil data manual (yang sudah ada sebelumnya)
-  const manualData = manualProperties; 
-
-  // 2. Ambil data baru dari Supabase
-  const dynamicData = await getDynamicProperties();
-
-  // 3. Gabungkan keduanya agar data Supabase muncul di paling atas
-  return [...dynamicData, ...manualData];
+  try {
+    // 1. Ambil data dari Supabase
+    const dynamicData = await getDynamicProperties();
+    
+    // 2. Gabungkan dengan LelangProperties (Bukan manualProperties)
+    // Ini akan menghilangkan garis merah karena variabelnya sudah cocok
+    return [...dynamicData, ...LelangProperties]; 
+  } catch (error) {
+    console.error("Gagal menggabungkan data:", error);
+    // Jika gagal, kembalikan data manual agar web tidak kosong
+    return LelangProperties; 
+  }
 };
 
 // Mock Data - PROPERTI LELANG
