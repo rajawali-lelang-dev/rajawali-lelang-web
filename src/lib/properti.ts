@@ -62,9 +62,9 @@ export const getDynamicProperties = async (): Promise<Property[]> => {
   }
 };
 
-// --- 4. MOCK DATA (LelangProperties) ---
+// --- 4. MOCK DATA (lelangProperties) ---
 // Pastikan nama variabel ini konsisten digunakan di bawahnya
-export const LelangProperties: PropertiDilelang[] = [
+export const lelangProperties: PropertiDilelang[] = [
   {
     id: "RLI_ELP_0075",
     title: "SEGERA LELANG TANAH KOSONG",
@@ -2277,25 +2277,25 @@ export const getProperties = async (): Promise<Property[]> => {
   try {
     const dynamicData = await getDynamicProperties();
     // Menggabungkan Supabase + Data Manual
-    // Menggunakan LelangProperties (L besar) sesuai deklarasi di atas
-    return [...dynamicData, ...(LelangProperties as any)]; 
+    // Menggunakan lelangProperties (L besar) sesuai deklarasi di atas
+    return [...dynamicData, ...(lelangProperties as any)]; 
   } catch (error) {
     console.error("Gagal menggabungkan data:", error);
-    return LelangProperties as any; 
+    return lelangProperties as any; 
   }
 };
 
 // --- 6. HELPERS ---
 export const getUniqueProvinces = (): string[] => {
   const allProvinces = [
-    ...LelangProperties.map(p => p.provinsi)
+    ...lelangProperties.map(p => p.provinsi)
   ];
   return Array.from(new Set(allProvinces)).sort();
 };
 
 export const getCitiesByProvince = (provinsi: string): string[] => {
   const allCities = [
-    ...LelangProperties.filter(p => p.provinsi === provinsi).map(p => p.kota)
+    ...lelangProperties.filter(p => p.provinsi === provinsi).map(p => p.kota)
   ];
   return Array.from(new Set(allCities)).sort();
 };
