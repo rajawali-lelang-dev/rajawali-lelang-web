@@ -2232,19 +2232,6 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
-// ... (Pastikan ini diletakkan SETELAH variabel LelangProperties didefinisikan)
-
-export const getProperties = async (): Promise<Property[]> => {
-  try {
-    const dynamicData = await getDynamicProperties();
-    // Jika masih merah, pastikan ejaan 'LelangProperties' sama persis dengan variabelnya
-    return [...dynamicData, ...LelangProperties]; 
-  } catch (error) {
-    console.error("Gagal menggabungkan data:", error);
-    return LelangProperties; 
-  }
-};
-
 ];// Helper: Get unique provinces from all properties
 export const getUniqueProvinces = (): string[] => {
   const allProvinces = [
@@ -2302,3 +2289,18 @@ export const getDynamicProperties = async (): Promise<Property[]> => {
     return [];
   }
 };
+
+// --- PASTIKAN INI DI LUAR KURUNG MANAPUN ---
+
+export const getProperties = async (): Promise<Property[]> => {
+  try {
+    const dynamicData = await getDynamicProperties();
+    // Menggabungkan data Supabase dengan data manual LelangProperties
+    return [...dynamicData, ...LelangProperties]; 
+  } catch (error) {
+    console.error("Gagal menggabungkan data:", error);
+    return LelangProperties; 
+  }
+};
+
+// Pastikan tidak ada tanda }; atau ]; yang nyasar di bawah ini kecuali penutup helper lain
