@@ -2256,15 +2256,13 @@ export const getCitiesByProvince = (provinsi: string): string[] => {
 const SUPABASE_URL = "https://ghwmtfwrbkuvpyhylwrw.supabase.co";
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0";
 
-export const getDynamicProperties = async (): Promise<Property[]> => {
-  try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/properti?select=*`, {
-      headers: {
-        'apikey': ANON_KEY,
-        'Authorization': `Bearer ${ANON_KEY}`
-      }
-    });
-    
+  headers: {
+    'apikey': eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0,
+    'Authorization': `Bearer ${eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdod210ZndyYmt1dnB5aHlsd3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkxODUzNjMsImV4cCI6MjA4NDc2MTM2M30.unwlFrTRKhgj34USgeJooJTtpOa6H5I1uK1uBXzA9Z0}`
+  },
+  cache: 'no-store' // <-- Tambahkan ini untuk memaksa ambil data terbaru
+});
     const data = await res.json();
     
     // Mapping data dari database ke format kodingan website
