@@ -182,7 +182,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 6 menit dari Puskesmas Temandang
       - 12 menit ke Wisata Silowo Merakurak
       - 19 menit Kampus C - IIK NU Tuban`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1RBBAf_fhUB8TPU2YrPvd_BqWmGglgGC-"),
       getDriveImageUrl("https://drive.google.com/open?id=1H-Z8Y7GuXM-o0eDtlUfRzdAWAaRqlXtx"),
@@ -218,7 +218,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 6 menit dari Puskesmas Temandang
       - 14 menit ke Wisata Silowo Merakurak
       - 20 menit Kampus C - IIK NU Tuban`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=14yTKnc4jP3RupzNDbxBAgYW5AQtdJoS6"),
       getDriveImageUrl("https://drive.google.com/open?id=1M_rrLUsi9iF2Y5wTL8hsQNDVvI5rumoE"),
@@ -247,7 +247,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 6 menit dari Puskesmas Temandang
       - 13 menit ke Wisata Silowo Merakurak
       - 19 menit Kampus C - IIK NU Tuban`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1Z6orVZBuTXi6yo3snf9gdg81DpyEl6B7"),
       getDriveImageUrl("https://drive.google.com/open?id=1mUsUSZbIomMbtvJ5mx_XZwBcs0vubyqC"),
@@ -312,7 +312,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 7 menit dari Universitas Terbuka Tuban
       - 7 menit dari SMA Negeri 1 Tuban
       - 8 menit dari Citimall Tuban`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1jXJGnBq5M47v_dbSuCOUp0enNlmphkMz"),
       getDriveImageUrl("https://drive.google.com/open?id=1wkZ3MQADp_7gfDueO8ADyqAPVW3NGtVl"),
@@ -342,7 +342,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 8 menit dari SMPN 1 Bangilan
       - 14 menit dari Air Terjun Nglirip
       - 17 menit dari Sumber Mata Air Krawak`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1qMq_sZaLgMqVrRa44jb2TzXSng20anKM"),
       getDriveImageUrl("https://drive.google.com/open?id=1UMi9cO0FoMY4V3JULoDPVzyh4RMR7s7k"),
@@ -378,7 +378,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 8 menit dari SMPN 1 Bangilan
       - 14 menit dari Air Terjun Nglirip
       - 17 menit dari Sumber Mata Air Krawak`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1CWXqCqTHN5vqT3oKnDHW5MfeRXoI3bbu"),
       getDriveImageUrl("https://drive.google.com/open?id=1EhoMY7CSJksSVVAz8kNgvXvs87b7XCcU"),
@@ -773,7 +773,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Taman Rekreasi Sengkaling
       - 25 menit Alun-Alun Malang
       - 30 menit dari Stasiun Malang Kota`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1JXLtC0E0FPzNExyWyyGNeun6F2tbRTz-"),
       getDriveImageUrl("https://drive.google.com/open?id=1OjNJa-W-wvTBHigHEkSqrFiPBdZqo1tW"),
@@ -803,7 +803,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Stadion Gelora Tlogowaru
       - 10 menit dari RSUD Kota Malang
       - 30 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh"),
       getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU"),
@@ -2337,7 +2337,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 6 menit dari Puskesmas Penjaringan
       - 6 menit dari Halte Kampung Gusti
       - 10 menit dari Penjaringan City Forest Park`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1SuyraJ2sEqIJ5Ou20rvr-qIKcPc1IiPI"),
       getDriveImageUrl("https://drive.google.com/open?id=1PnpTu73Esed-S5WuhnQg2SWUEXT3gkvr"),
