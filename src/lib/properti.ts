@@ -32,6 +32,139 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+    {
+    id: "RLI_ELP_0079", // <-- ERLIN WIDYA SITORUS 
+    title: "SEGERA LELANG RUMAH VILLA",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Villa",
+    location: "Jalan Melang Kaja I (Masuk) Desa Kutuh, Kecamatan Kuta Selatan, Kabupaten Badung, Provinsi Bali.",
+    provinsi: "Bali",
+    kota: "Badung",
+    landArea: 200,
+    buildingArea: 231,
+    certificateType: "SHM",
+    description:
+    `- 5 menit dari SMA Negeri 1 Kuta Selatan
+      -	10 menit dari Universitas Udayana
+      - 12 menit dari Garuda Wisnu Kencana Cultural Park
+      - 12 menit dari Pantai Pandawa
+      - 12 menit dari Rumah Sakit Umum Bali Jimbaran`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=13Ljd8qk_VJ2EiEq3z0ME845ERFUC3g7f"),
+      getDriveImageUrl("https://drive.google.com/open?id=1djyIuywltJupqxdXqOKKrscH0dG2Osxf"),
+      getDriveImageUrl("https://drive.google.com/open?id=1rcKaLoEjtCqA2GlXYbFHW06vJORMjN83"),
+      getDriveImageUrl("https://drive.google.com/open?id=1g7q7QrczGTZx_y6hUaey_bs_iIZbzFLd"),
+      getDriveImageUrl("https://drive.google.com/open?id=1FbusFIDyYiKSTTBGB-sPryROwEZMtmZ8"),
+      getDriveImageUrl("https://drive.google.com/open?id=1RQsLjClLuJfMW-Ql8BprW657DfZJlQQU"),
+      getDriveImageUrl("https://drive.google.com/open?id=1X_JLV8Ung4lx09aoU26an7wI9l7AzZ6c"),
+      getDriveImageUrl("https://drive.google.com/open?id=1idvYumb0Bx1ZPv2h-OCojWw_E2hydgMn")
+    ],
+    endPrice: 3283200000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+  {
+    id: "RLI_ELP_0078", // <-- BUDI SETIAWAN  
+    title: "SEGERA LELANG RUMAH VILLA",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Villa",
+    location: "Jalan Blong Keker Super Blok A Villa Jabu 2 No. 9, Kelurahan  Jimbaran, Kecamatan Kuta Selatan, Kabupaten Badung",
+    provinsi: "Bali",
+    kota: "Badung",
+    landArea: 200,
+    buildingArea: 162,
+    certificateType: "SHM",
+    description:
+    `- 6 menit dari Garuda Wisnu Kencana Cultural Park
+      -	10 menit dari Asian Intercultural School Bali
+      - 11 menit dari Universitas Udayana
+      - 11 menit dari Pantai Jimbaran
+      - 14 menit dari Rumah Sakit Umum Bali Jimbaran`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1p9DUJ0J4omD_5zngA_hQLXZTg5YWddsF"),
+      getDriveImageUrl("https://drive.google.com/open?id=12JIOIgZbvys-yh0ZnNc1idzhWMGGaFNa"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ZQsY1EjXmtIJ1qJEhyEczKQYnJL9I2Fi"),
+      getDriveImageUrl("https://drive.google.com/open?id=18PT_sNaeQ7w7dDdPAh2NAyAq0-f1AFsO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1upjlCWARyGl0NPJriVBy_gRL6Bav3B91"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Oue4SCKvgJyNhyrhdxQIVxr165z77O32")
+    ],
+    endPrice: 3447500000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+  {
+    id: "RLI_ELP_0077", // <-- M. RAGIL BUDI SULISTYO 
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Jalan Tukad Jinah (Masuk) Desa Ungasan, Kecamatan Kuta Selatan, Kabupaten Badung, Provinsi Bali.",
+    provinsi: "Bali",
+    kota: "Badung",
+    landArea: 196,
+    buildingArea: 153,
+    certificateType: "SHM",
+    description:
+    `- 7 menit dari SD Negeri 7 Ungasan
+      -	9 menit dari Pantai Pandawa
+      - 10 menit dari Garuda Wisnu Kencana Cultural Park
+      - 14 menit dari Universitas Udayana
+      - 16 menit dari Rumah Sakit Umum Bali Jimbaran`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=15S4uyVafvYPXU0Qr6rAVs6FqQtonEZUi"),
+      getDriveImageUrl("https://drive.google.com/open?id=1TH6Gq8xOKIIe3SB7_prvUII2Q5fGHo42"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ktwx_-3zTUop6_YnXJsEYomY7LGeoFPx"),
+      getDriveImageUrl("https://drive.google.com/open?id=1LGcKTFkC8dzCOpwrRFvP8bi2kvcZFNdB"),
+      getDriveImageUrl("https://drive.google.com/open?id=1KV9UX5pIWHnshoE3ZJuLTu_s_jzettK_"),
+      getDriveImageUrl("https://drive.google.com/open?id=11z8cu0QztyrsGFdAyGY3aIW5zGVTO6Zn"),
+      getDriveImageUrl("https://drive.google.com/open?id=1nja4J8tGoqggllBeOAqg5o_SQ1c44ag2"),
+      getDriveImageUrl("https://drive.google.com/open?id=1QPW8LSw_qjOyA-_eoDJXgObOR3iQK7JC"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Ucx_BH9rN17wC1dA3hr3IPMR8LYp4Hl-"),
+      getDriveImageUrl("https://drive.google.com/open?id=18-xasRnbz9623Fd1PFLYc6g9GahOA2ZQ")
+    ],
+    endPrice: 2986200000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+  {
+    id: "RLI_ELP_0076", // <-- HAYATI KAMELIA 
+    title: "SEGERA LELANG RUMAH VILLA",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Villa",
+    location: "Jalan Pura Batu Pageh (Masuk) Desa Ungasan, Kecamatan Kuta Selatan, Kabupaten Badung, Provinsi Bali. ",
+    provinsi: "Bali",
+    kota: "Badung",
+    landArea: 195,
+    buildingArea: 167,
+    certificateType: "SHM",
+    description:
+    `- 7 menit dari SD Negeri 7 Ungasan
+      -	9 menit dari Pantai Pandawa
+      - 10 menit dari Garuda Wisnu Kencana Cultural Park
+      - 14 menit dari Universitas Udayana
+      - 16 menit dari Rumah Sakit Umum Bali Jimbaran`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1R82uA2nv5a-nK9MXNutVjwsi37ll7JxG"),
+      getDriveImageUrl("https://drive.google.com/open?id=1jpzaYKq3ZUBFeuCd02DEa0m9S52jYo1Z"),
+      getDriveImageUrl("https://drive.google.com/open?id=1W7thXx7I8ParHCPBQfgZz2oBn_Hcjwp0"),
+      getDriveImageUrl("https://drive.google.com/open?id=1IQd9rNvOZRMx4phiHAYm4Z86_7OZWvvp"),
+      getDriveImageUrl("https://drive.google.com/open?id=1UVtWohBr2WAarfIoHCQc5M6UMlD7Itg5"),
+      getDriveImageUrl("https://drive.google.com/open?id=1MbkShqtrz27hs1HU3NI0N7I1o8RaBykR"),
+      getDriveImageUrl("https://drive.google.com/open?id=14AzA8HblgwdSuUwq8RMw2rRKJLEvxkdP"),
+      getDriveImageUrl("https://drive.google.com/open?id=14Gc198xslU8ciAro25LTZj_4nKxSnMxz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1V3sUfRg2MPQdSPhqqFE7ac5N2lgGHY7g")
+    ],
+    endPrice: 2998300000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
   {
     id: "RLI_ELP_0075",
     title: "SEGERA LELANG TANAH KOSONG",
@@ -62,8 +195,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1OJuUwUTTt4MFaDg5Qf8f4evWVmKvDFjU")
     ],
     endPrice: 358050000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-25",
     batasWaktuLelang: "-",
+    jamLelang: "10:15 WIB",
   },
 
 
@@ -91,8 +225,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1fWr1X8kSocUlcoxwCzO_Ee3-64J5g-Ci")
     ],
     endPrice: 611000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-25",
     batasWaktuLelang: "-",
+    jamLelang: "10:15 WIB",
   },
 
     {
@@ -126,8 +261,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=11-cQW93CgRe_2Q3CjksjxEikIRVkdo7M"),
     ],
     endPrice: 287000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-25",
     batasWaktuLelang: "-",
+    jamLelang: "10:15 WIB",
   },
 
      {
@@ -184,8 +320,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=15SNIQLWGC_KZ60KllBdNagqI6o1Rgs9K")
     ],
     endPrice: 570220000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-18",
     batasWaktuLelang: "-",
+    jamLelang: "10:45 WIB",
   },
 
      {
@@ -219,8 +356,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1JsVWpbOjhq50YT1hkmSCMWI8HIhDFqP8"),
     ],
     endPrice: 876440000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-18",
     batasWaktuLelang: "-",
+    jamLelang: "10:15 WIB",
   },
 
      {
@@ -250,8 +388,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1vc5so1OCJkSQ_5LyFfUbxiUdn4TphXOP")
     ],
     endPrice: 211696000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-18",
     batasWaktuLelang: "-",
+    jamLelang: "10:15 WIB",
   },
   
     {
@@ -527,7 +666,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=17RVM1f4l7p4-UUz4Nyh2pWQpA1v7R817/view?usp=sharing")
     ],
     endPrice: 995000000,
-    tanggalLelang: "2026-02-28",
+    tanggalLelang: "2026-02-24",
     batasWaktuLelang: "-",
     jamLelang: "10:30 WIB",
   },
@@ -643,8 +782,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1PRBY8G17Dd0ZEKcYz1rlXpFp3yfkZ1D0")
     ],
     endPrice: 1000000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-26",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
   {
     id: "RLI_ELP_0005",
@@ -670,8 +810,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1PKVPY9FjBhGyQZE53c9W2RQLx1I2qD6t")
     ],
     endPrice: 850000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-26",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
   
   {
@@ -2205,8 +2346,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1IEzwtFD8XlDs-Gulxp6Ab5yc5CvN1sIV")
     ],
     endPrice: 163900000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-11",
     batasWaktuLelang: "-",
+    jamLelang: "10:45 WIB",
   },
       {
     id: "RLI_ELP_0060",
