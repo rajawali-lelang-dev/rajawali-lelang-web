@@ -26,6 +26,35 @@ export interface PropertiDilelang extends BaseItemLelang {
 
 // Mock Data - Properties (NON-LELANG)
 export const properties: Property[] = [
+{
+    id: "RLI_NELP_0001", // <-- CIPUTRA WORLD TOWER
+    title: "APARTEMEN MEWAH SIAP HUNI",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Villa",
+    location: "Apartemen Ciputra World Lantai 23, Jl. Mayjen Sungkono No.89, Gn. Sari, Kec. Dukuhpakis, Surabaya, Jawa Timur.",
+    provinsi: "Jawa Timur",
+    kota: "Surabaya",
+    landArea: 0,
+    buildingArea: 115,
+    certificateType: "SHM",
+    description:
+    `- Kondisi: Bagus
+- Jumlah kamar tidur: 2
+- Jumlah kamar mandi: 2
+- Perabotan lengkap: AC, kitchen set, kompor, kulkas, sofa, wastafel, meja kursi makan`,
+    status: "Dijual",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1dE_7tfKtTo6pAsoPVW_bDRvRuGMoj97P"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wRAoKKxxlSBN-qedoglf8Z5glynmdanO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1D56mojqu7qFmuGyWAJTvlZyXO4QuMmA5"),
+      getDriveImageUrl("https://drive.google.com/open?id=1l1YD2cF8pVqpJW_AOgyxiJ_SNbXltxdq"),
+      getDriveImageUrl("https://drive.google.com/open?id=12i_PT_buF2xgXSkRBa6gkSiFkE6cSlMs"),
+      getDriveImageUrl("https://drive.google.com/open?id=1XV05VRHQs46ouFZ5bWkQ44e82FflEEa9"),
+      getDriveImageUrl("https://drive.google.com/open?id=1jv2QhN0RfSRR7_h0JCBWv0DPBK289mDV"),
+      getDriveImageUrl("https://drive.google.com/open?id=1EkbYmJYgzOMUk2Z7pBcv2IWQIrA4xLpr")
+    ],
+    endPrice: 3000000000,
+  },
 
  
 ];
