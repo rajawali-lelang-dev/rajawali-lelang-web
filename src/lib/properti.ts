@@ -62,7 +62,7 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
           {
-    id: "RLI_ELP_0081", // <-- PT. ARTHA TEKNIK ABADI
+    id: "RLI_ELP_0083", // <-- PT. ARTHA TEKNIK ABADI
     title: "SEGERA LELANG RUKO",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
