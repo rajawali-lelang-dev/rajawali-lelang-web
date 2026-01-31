@@ -152,41 +152,6 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
 
-        {
-    id: "RLI_ELP_0080", // <-- PT. ADONG HALIMUN KONTRAKTOR
-    title: "SEGERA LELANG TANAH DAN BANGUNAN",
-    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
-    type: "Tanah dan Bangunan",
-    location: "Perumahan Wonowaru Residence, Kelurahan Tlogowaru, Kecamatan Kedungkandang, Kota Malang, Provinsi Jawa Timur",
-    provinsi: "Jawa Timur",
-    kota: "Malang",
-    landArea: 8.393,
-    buildingArea: 812,
-    certificateType: "SHM dan SHGB" ,
-    description:
-    `- 1 menit dari Politeknik Kota Malang
-- 1 menit dari SMKN 10 Malang
-- 5 menit dari RSUD Kota Malang
-- 17 menit dari Alun-Alun Malang
-- 20 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1GzixIveYrXclbVlgyV7CMPkeXYu5cLZq"),
-      getDriveImageUrl("https://drive.google.com/open?id=1Kxir4h-Mh9D9zwyXtqhsGXSEx8lVvb_n"),
-      getDriveImageUrl("https://drive.google.com/open?id=1-diTj0aZFY9Sse2Ct--LHuGv03mq-yGq"),
-      getDriveImageUrl("https://drive.google.com/open?id=13DuvAZbYwClEcdcNvOg-VoBbnP6GTwcQ"),
-      getDriveImageUrl("https://drive.google.com/open?id=1xcHmldlt8V7BI5JWm3dPAz2SlniEkF44"),
-      getDriveImageUrl("https://drive.google.com/open?id=1KbYvqQNR8u4uHRzAlqIeQTD-IyjFvNid"),
-      getDriveImageUrl("https://drive.google.com/open?id=10gxX_nD_xwOwjbRmR-C1FI2hTHttVCPu"),
-      getDriveImageUrl("https://drive.google.com/open?id=1-hbipl39bZD2LWRPkfsS-i_6Dz8iaeuD"),
-      getDriveImageUrl("https://drive.google.com/open?id=1z8FDEApJG0vqjfSVUU0NKpBxiX3dmXjp"),
-      getDriveImageUrl("https://drive.google.com/open?id=1ZhQRXRPYvbGLlo0GkFxYuFmXNqvVssYk")
-    ],
-    endPrice: 36099000000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-
       {
     id: "RLI_ELP_0080", // <-- PT. ADONG HALIMUN KONTRAKTOR
     title: "SEGERA LELANG TANAH DAN BANGUNAN",
