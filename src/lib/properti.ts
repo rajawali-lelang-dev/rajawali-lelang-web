@@ -2,15 +2,15 @@ import { BaseItemDijual, BaseItemLelang } from './data';
 import { getDriveImageUrl } from './drive-utils';
 
 // Property Type
-export type PropertyType = "Rumah" | "Ruko" | "Villa" | "Apartemen" | "Tanah" | "Gudang" | "Hotel" | "Toko";
+export type PropertyType = "Rumah" | "Ruko" | "Villa" | "Apartemen" | "Tanah" | "Gudang" | "Hotel" | "Toko"| "Tanah dan Bangunan";
 
 // Property Interface - extends BaseItemDijual
 export interface Property extends BaseItemDijual {
   type: PropertyType;
   landArea: number;
   buildingArea: number;
-  certificateType: "SHM" | "HGB";
-  status: "Available" | "Featured" | "Sold";
+  certificateType: "SHM" | "HGB" | "SHMASRS" ;
+  status: "Dijual" | "Featured" | "Sold";
   isHidden?: boolean; // <-- Tambahkan ini
 }
 
@@ -19,7 +19,7 @@ export interface PropertiDilelang extends BaseItemLelang {
   type: PropertyType;
   landArea: number;
   buildingArea: number;
-  certificateType: "SHM" | "HGB" | "SHMSRS" | "SHP" | "SHSRS";
+  certificateType: "SHM" | "SHGB" | "SHMSRS" | "SHGU" | "SHMSRS"|"SHM dan SHGB"| "SHMASRS";
   jamLelang? : string;
   isHidden?: boolean; // <-- Tambahkan ini
 }
@@ -36,7 +36,7 @@ export const properties: Property[] = [
     kota: "Surabaya",
     landArea: 0,
     buildingArea: 115,
-    certificateType: "SHM",
+    certificateType: "SHMASRS",
     description:
     `- Kondisi: Bagus
 - Jumlah kamar tidur: 2
@@ -61,6 +61,167 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+          {
+    id: "RLI_ELP_0081", // <-- PT. ARTHA TEKNIK ABADI
+    title: "SEGERA LELANG RUKO",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Ruko",
+    location: "Komplek Ruko Cilegon Business Square Blok D No. 20, 21, 22 dan 23, Kel. Kedaleman, Kec. Cibeber, Kota Cilegon, Banten",
+    provinsi: "Banten",
+    kota: "Cilegon",
+    landArea: 248,
+    buildingArea: 672,
+    certificateType: "SHGB" ,
+    description:
+    `- - 3 menit dari SDN 1 Kedaleman
+- 5 menit dari Rumah Sakit Permata Serdang
+- 6 menit dari GT Tol Cilegon Timur
+- 7 menit dari Cilegon Centre Mall (CCM)
+- 12 menit dari Alun-Alun Kramatwatu`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1mTWYkYI9b3GrtgCUwfMmruaJaDaBFQpE"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-kltStuGts0SKbQKxT3f4qLANDbtO4y7"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Gg2yeWG6ECbDhPfrX1AgHMbmNskwlCmB"),
+      getDriveImageUrl("https://drive.google.com/open?id=1s_MKeV0Ox3331TJtf8vwG3KQGWEpKuq2"),
+      getDriveImageUrl("https://drive.google.com/open?id=1srqs3qqtvq8_Pw84W4dFOnILgMDRtzA9"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dG6CgCqT98r_Y5ufymESvQfCxY-pgT3e")
+    ],
+    endPrice: 3024000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+          {
+    id: "RLI_ELP_0082", // <-- PT. ARTHA TEKNIK ABADI
+    title: "SEGERA LELANG UNIT APARTEMEN",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Apartemen",
+    location: "Kondominium Golf Karawaci, Tower Richmond Lantai 2 No. R.02.A, Jl. Boulevard Palem Raya, Kel. Kelapa Dua, Kec. Kelapa Dua, Kab. Tangerang, Banten",
+    provinsi: "Banten",
+    kota: "Tangerang",
+    landArea: 0,
+    buildingArea: 96,
+    certificateType: "SHMASRS" ,
+    description:
+    `- 2 menit dari Universitas Pelita Harapan
+- 3 menit dari Rumah Sakit Siloam Karawaci
+- 3 menit dari Supermall Karawaci
+- 4 menit dari Gerbang Tol Karawaci Barat
+- 4 menit dari Imperial Klub Golf`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=18WeZZd0koIIIzVUNZowhYP8h2TCLlDGT"),
+      getDriveImageUrl("https://drive.google.com/open?id=1CXah7RBkJLpKAMpXFpZUw_3dPg0HLCLL"),
+      getDriveImageUrl("https://drive.google.com/open?id=1GrswtfonXetz3u-u6w0YPYhlJ8_DL8wc"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ss8LQjFHWGqT_nxeTrX45Qk1CpSqWJgi")
+    ],
+    endPrice: 685440000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+          {
+    id: "RLI_ELP_0081", // <-- PT. ARTHA TEKNIK ABADI
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Taman Beverly Golf, Jl. Danau Semayang No. 2, Kel. Bencongan Indah, Kec. Kelapa Dua, Kab. Tangerang, Banten",
+    provinsi: "Banten",
+    kota: "Tangerang",
+    landArea: 812,
+    buildingArea: 352,
+    certificateType: "SHM" ,
+    description:
+    `- 4 menit dari Rumah Sakit Siloam Karawaci
+- 4 menit dari Supermall Karawaci
+- 4 menit dari Universitas Pelita Harapan
+- 4 menit dari Gerbang Tol Karawaci Barat
+- 5 menit dari Imperial Klub Golf`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1vsWG0O7wAsUB6oLruRgyn-ssd6CTLoi-"),
+      getDriveImageUrl("https://drive.google.com/open?id=15Gl_tFgO_GsD_63K1nrBEdMa93OwSB9X"),
+      getDriveImageUrl("https://drive.google.com/open?id=1FudDFFJKE5JD0mkYfQJ4mk14zam7ujAf"),
+      getDriveImageUrl("https://drive.google.com/open?id=1NuGJD2tiI0hQJ9hWZ6W2684NP9OUFNfD"),
+      getDriveImageUrl("https://drive.google.com/open?id=1TOl7MJ9itW6V-3Ok-mOAW245TZDPdYF6"),
+      getDriveImageUrl("https://drive.google.com/open?id=1rTB0MnouCAVOTN7rnTTU2phfkB4JCPEM")
+    ],
+    endPrice: 7000000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+        {
+    id: "RLI_ELP_0080", // <-- PT. ADONG HALIMUN KONTRAKTOR
+    title: "SEGERA LELANG TANAH DAN BANGUNAN",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah dan Bangunan",
+    location: "Perumahan Wonowaru Residence, Kelurahan Tlogowaru, Kecamatan Kedungkandang, Kota Malang, Provinsi Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 8.393,
+    buildingArea: 812,
+    certificateType: "SHM dan SHGB" ,
+    description:
+    `- 1 menit dari Politeknik Kota Malang
+- 1 menit dari SMKN 10 Malang
+- 5 menit dari RSUD Kota Malang
+- 17 menit dari Alun-Alun Malang
+- 20 menit dari Mall Olympic Garden (MOG)`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1GzixIveYrXclbVlgyV7CMPkeXYu5cLZq"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Kxir4h-Mh9D9zwyXtqhsGXSEx8lVvb_n"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-diTj0aZFY9Sse2Ct--LHuGv03mq-yGq"),
+      getDriveImageUrl("https://drive.google.com/open?id=13DuvAZbYwClEcdcNvOg-VoBbnP6GTwcQ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1xcHmldlt8V7BI5JWm3dPAz2SlniEkF44"),
+      getDriveImageUrl("https://drive.google.com/open?id=1KbYvqQNR8u4uHRzAlqIeQTD-IyjFvNid"),
+      getDriveImageUrl("https://drive.google.com/open?id=10gxX_nD_xwOwjbRmR-C1FI2hTHttVCPu"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-hbipl39bZD2LWRPkfsS-i_6Dz8iaeuD"),
+      getDriveImageUrl("https://drive.google.com/open?id=1z8FDEApJG0vqjfSVUU0NKpBxiX3dmXjp"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ZhQRXRPYvbGLlo0GkFxYuFmXNqvVssYk")
+    ],
+    endPrice: 36099000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+      {
+    id: "RLI_ELP_0080", // <-- PT. ADONG HALIMUN KONTRAKTOR
+    title: "SEGERA LELANG TANAH DAN BANGUNAN",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah dan Bangunan",
+    location: "Perumahan Wonowaru Residence, Kelurahan Tlogowaru, Kecamatan Kedungkandang, Kota Malang, Provinsi Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 8.393,
+    buildingArea: 812,
+    certificateType: "SHM dan SHGB" ,
+    description:
+    `- 1 menit dari Politeknik Kota Malang
+- 1 menit dari SMKN 10 Malang
+- 5 menit dari RSUD Kota Malang
+- 17 menit dari Alun-Alun Malang
+- 20 menit dari Mall Olympic Garden (MOG)`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1GzixIveYrXclbVlgyV7CMPkeXYu5cLZq"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Kxir4h-Mh9D9zwyXtqhsGXSEx8lVvb_n"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-diTj0aZFY9Sse2Ct--LHuGv03mq-yGq"),
+      getDriveImageUrl("https://drive.google.com/open?id=13DuvAZbYwClEcdcNvOg-VoBbnP6GTwcQ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1xcHmldlt8V7BI5JWm3dPAz2SlniEkF44"),
+      getDriveImageUrl("https://drive.google.com/open?id=1KbYvqQNR8u4uHRzAlqIeQTD-IyjFvNid"),
+      getDriveImageUrl("https://drive.google.com/open?id=10gxX_nD_xwOwjbRmR-C1FI2hTHttVCPu"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-hbipl39bZD2LWRPkfsS-i_6Dz8iaeuD"),
+      getDriveImageUrl("https://drive.google.com/open?id=1z8FDEApJG0vqjfSVUU0NKpBxiX3dmXjp"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ZhQRXRPYvbGLlo0GkFxYuFmXNqvVssYk")
+    ],
+    endPrice: 36099000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
     {
     id: "RLI_ELP_0079", // <-- ERLIN WIDYA SITORUS 
     title: "SEGERA LELANG RUMAH VILLA",
