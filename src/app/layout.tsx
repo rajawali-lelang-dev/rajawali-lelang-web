@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -93,15 +95,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Rajawali Lelang Indonesia",
-              "url": "https://rajawalilelangindo.com",
-              "logo": "https://rajawalilelangindo.com/images/assets/logo_rli.png",
-              "contactPoint": {
+              "@name": "Rajawali Lelang Indonesia",
+              "@url": "https://rajawalilelangindo.com",
+              "@logo": "https://rajawalilelangindo.com/images/assets/logo_rli.png",
+              "@contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+62-xxx-xxxx-xxxx", // Silakan ganti dengan nomor kantor Anda
-                "contactType": "customer service",
-                "areaServed": "ID",
-                "availableLanguage": "Indonesian"
+                "@telephone": "+62-xxx-xxxx-xxxx", // Silakan ganti dengan nomor kantor Anda
+                "@contactType": "customer service",
+                "@areaServed": "ID",
+                "@availableLanguage": "Indonesian"
               }
             }),
           }}
@@ -113,6 +115,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <GoogleAnalytics gaId="G-HVY0NDKS72" />
       </body>
     </html>
   );
