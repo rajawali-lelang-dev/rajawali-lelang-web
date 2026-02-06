@@ -965,7 +965,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Stadion Gelora Tlogowaru
       - 10 menit dari RSUD Kota Malang
       - 30 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=18grkZC6d61ztj699nzYMjDh6r54tQAUS"),
       getDriveImageUrl("https://drive.google.com/open?id=1Lj19rpbqYwIUY-Rsjb-KDQqFrVowMeEn"),
@@ -973,8 +973,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1HkH42v74D7c2mysvKOFkUqmSxtiqjN1u")
     ],
     endPrice: 700000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-02-24",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB", 
   },
   {
     id: "RLI_ELP_0002",
