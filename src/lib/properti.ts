@@ -61,6 +61,129 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+              {
+    id: "RLI_ELP_0087", // <-- YOGI PRASETYA WARDHANA
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Jalan Wukir Gang IV No. 45 RT. 001  RW. 001, Kel. Temas, Kec. Batu, Kota Batu, Provinsi Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Batu",
+    landArea: 198,
+    buildingArea: 198,
+    certificateType: "SHM" ,
+    description:
+    `- 1 menit dari Lippo Plaza Batu
+- 4 menit dari SMA Negeri 1 Batu
+- 5 menit dari Alun-Alun Batu
+- 5 menit dari Jawa Timur Park 1
+- 6 menit dari RSUD Karsa Husada Batu`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1RxSkLVq-vXC5WN-I5ZHdR9fm8ZgBAPKH"),
+      getDriveImageUrl("https://drive.google.com/open?id=1-h0L10wTkAHx8N63rKCNb75IpTVvKe3B"),
+      getDriveImageUrl("https://drive.google.com/open?id=1beMU-9tjhgzzbaijTi9sG-iFvs8iho3Q")
+    ],
+    endPrice: 933800000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+                {
+    id: "RLI_ELP_0086", // <-- PRIHATIN
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Jl. Memberamo No. 6A RT. 002 RW. 014, Kel. Bunulrejo, Kec. Blimbing, Kota Malang",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 244,
+    buildingArea: 216,
+    certificateType: "SHM" ,
+    description:
+    `- 4 menit dari Rumah Sakit Umum Lavalette
+- 6 menit dari Stasiun Kota Malang
+- 6 menit dari Pasar Klojen Malang
+- 9 menit dari Alun Alun Malang
+- 12 menit dari Gerbang Tol Kota Malang City`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1icjuZPWlpnaArD4hVOy9svwMzo-Fc6nk"),
+      getDriveImageUrl("https://drive.google.com/open?id=11gD-6OTTMCHgEKyeXbdp-5l-hxrWYtc6"),
+      getDriveImageUrl("https://drive.google.com/open?id=18ZQOPSv-HPdrQ56Ka7gopEr1NnOubrqE")
+    ],
+    endPrice: 1181800000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+              {
+    id: "RLI_ELP_0085", // <-- GIRAS SATRIO PRAMONO
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Perum mutiara tasikmadu kav. N Jl. Atletik kel. Tasikmadu, kec. Lowokwaru, Kota Malang ",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 84,
+    buildingArea: 130,
+    certificateType: "SHM" ,
+    description:
+    `- 8 menit dari Universitas Muhammadiyah Malang Kampus 3
+- 9 menit dari Rumah Sakit Universitas Muhammadiyah Malang
+- 11 menit dari Mall Dinoyo City
+- 12 menit dari Taman Rekreasi Sengkaling
+- 18 menit dari Gerbang Tol Singosari`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1JoVuhpMzms5msqrfsC9qwxv_zMY5_twc"),
+      getDriveImageUrl("https://drive.google.com/open?id=1x1uRcnPcQAw59ATPuxBtGMZ9cwztCEgt"),
+      getDriveImageUrl("https://drive.google.com/open?id=1_WjcmiCDReJN5V4O1gB7BDV3jWI4W-Eh"),
+      getDriveImageUrl("https://drive.google.com/open?id=1pRrwdPMxEQywMFb5HPJXjLyW8K_w3WNH"),
+      getDriveImageUrl("https://drive.google.com/open?id=1oKkkEP-QJGg5Bmy3m3E3I9ZXPy7D6Qb-"),
+      getDriveImageUrl("https://drive.google.com/open?id=1M19E8OgYARchvLn8JimsrpyLu-O7wUqz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ZfbPsVM3mFDNj4FWegblSh9dT8IjjYcK"),
+      getDriveImageUrl("https://drive.google.com/open?id=1rdyXjVO1Dm4jQt8WruSyQ0DpLLFkScBE"),
+      getDriveImageUrl("https://drive.google.com/open?id=1MELLzyxlUacaYFcnCha3bnzDUwdqM8k1"),
+      getDriveImageUrl("https://drive.google.com/open?id=1PLCnPwSb05IEY1SCIOpQJhyUPfehsUC7")
+    ],
+    endPrice: 728500000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+            {
+    id: "RLI_ELP_0084", // <-- EKO HANDOYO
+    title: "SEGERA LELANG WORKSHOP (BENGKEL)",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah dan Bangunan",
+    location: "Jl. Jayanegara 1, Desa Banjaragung, Kec. Puri, Kab. Mojokerto",
+    provinsi: "Jawa Timur",
+    kota: "Mojokerto",
+    landArea: 606,
+    buildingArea: 606,
+    certificateType: "SHM" ,
+    description:
+    `- 1 menit dari SMAN 1 Puri Mojokerto
+- 3 menit dari IHC Rumah Sakit Gatoel
+- 6 menit dari Sunrise Mall
+- 8 menit dari Alun-Alun Mojokerto
+- 15 menit dari Gerbang Tol Gedeg`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1ca2V_WE_2pzy7c2AhBDu7roOZ8ovt9oy"),
+      getDriveImageUrl("https://drive.google.com/open?id=1UE2zYgM1LXG0yjoXnZBoEKDG7oWmYKY5"),
+      getDriveImageUrl("https://drive.google.com/open?id=1oeJPJDGKBdZl4N5sFg6tlgH2qfEBMhAf"),
+      getDriveImageUrl("https://drive.google.com/open?id=1AmVmumZxjpM7OHHGoe1vQyFDnkgXtkWt"),
+      getDriveImageUrl("https://drive.google.com/open?id=15qDoEetG4VjT-ZkRYqJw0VJ8Ja7hJil0"),
+      getDriveImageUrl("https://drive.google.com/open?id=1k_nSuafSMtMjtoG9fazdK-feFuMjnfyR"),
+      getDriveImageUrl("https://drive.google.com/open?id=1E2o_PLMO-px260Q0SJSUMpR7n5QM2OYm"),
+      getDriveImageUrl("https://drive.google.com/open?id=1fusRxB96g4mI2WINgu8W2GRosBG3mJ6c"),
+      getDriveImageUrl("https://drive.google.com/open?id=1IZYjfDNfgz_Ydeh58l9BjJ5hGbqvYtDE")
+    ],
+    endPrice: 3344000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
           {
     id: "RLI_ELP_0083", // <-- PT. ARTHA TEKNIK ABADI
     title: "SEGERA LELANG RUKO",
@@ -73,7 +196,7 @@ export const lelangProperties: PropertiDilelang[] = [
     buildingArea: 672,
     certificateType: "SHGB" ,
     description:
-    `- - 3 menit dari SDN 1 Kedaleman
+    `- 3 menit dari SDN 1 Kedaleman
 - 5 menit dari Rumah Sakit Permata Serdang
 - 6 menit dari GT Tol Cilegon Timur
 - 7 menit dari Cilegon Centre Mall (CCM)
