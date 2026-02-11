@@ -575,7 +575,7 @@ export const lelangProperties: PropertiDilelang[] = [
 
      {
     id: "RLI_ELP_0071",
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "SEGERA LELANG RUMAH TINGGAL", // <-- Trinata
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Desa Tasikmadu, Kec. Palang, Kab. Tuban, Jawa Timur",
@@ -640,7 +640,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
 
      {
-    id: "RLI_ELP_0069",
+    id: "RLI_ELP_0069", // <-- Mathohir
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -672,7 +672,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   
     {
-    id: "RLI_ELP_0068",
+    id: "RLI_ELP_0068", // <-- Mathohir
     title: "SEGERA LELANG RUMAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -688,7 +688,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 5 menit dari Puskesmas Tanjungharjo
       - 9 menit dari SMA Negeri Model Terpadu
       - 16 menit dari Alun-alun Bojonegoro`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1xehbAgMitL_dOFJTq_UuUWuABV5BigjO"),
       getDriveImageUrl("https://drive.google.com/open?id=1Sms8MfFudnLmOtq4MD9UGgYt4ZjLSzMT"),
@@ -697,8 +697,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1ok28rOB0b7SKiVirq8tjYHIjus-XchWo")
     ],
     endPrice: 375700000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-3-12",
     batasWaktuLelang: "-",
+    jamLelang: "10:45 WIB",
   },
 
     {
@@ -728,8 +729,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1NsvlF-tgzb1irk5xFvPpTWdrHovkMid0")
     ],
     endPrice: 2014500000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-3-12",
     batasWaktuLelang: "-",
+    jamLelang: "10:45 WIB",
   },
 
    {
