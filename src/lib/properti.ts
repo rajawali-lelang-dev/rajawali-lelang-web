@@ -592,9 +592,9 @@ export const lelangProperties: PropertiDilelang[] = [
       - 8 menit dari Citimall Tuban`,
     status: "Lelang Aktif",
     image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1yyCRUEmx7g8A4Vp33dxQGBjccKY6Cn2N"),
       getDriveImageUrl("https://drive.google.com/open?id=1jXJGnBq5M47v_dbSuCOUp0enNlmphkMz"),
       getDriveImageUrl("https://drive.google.com/open?id=1wkZ3MQADp_7gfDueO8ADyqAPVW3NGtVl"),
-      getDriveImageUrl("https://drive.google.com/open?id=1yyCRUEmx7g8A4Vp33dxQGBjccKY6Cn2N"),
       getDriveImageUrl("https://drive.google.com/open?id=15SNIQLWGC_KZ60KllBdNagqI6o1Rgs9K")
     ],
     endPrice: 570220000,
@@ -719,7 +719,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 9 menit dari Gofun Waterpark
       - 10 menit ke RSUD Dr. R. Sosodoro Djatikoesoemo Bojonegoro
       - 11 menit Stasiun Bojonegoro`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1tIgGxUx1aaZaZRHIcaJT20ZvWMztTTzI"),
       getDriveImageUrl("https://drive.google.com/open?id=1lOMeKbzNdkxB8k76UiQac01tt1_prJUC"),
