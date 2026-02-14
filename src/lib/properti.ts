@@ -568,7 +568,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1_CU3CVMnV1qEGp2EjBs4LM_sAfhFuZOW"),
       getDriveImageUrl("https://drive.google.com/open?id=17NAp5adK_0lTHMVWmSca7Wi9X-Y010Er")
     ],
-    endPrice: 2251226225,
+    endPrice: 2046642465,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
@@ -2012,90 +2012,6 @@ export const lelangProperties: PropertiDilelang[] = [
       - 8 menit dari Jalan Raya Magelang-Yogya
       - 9 menit dari Puskesmas Mungkid
       - 17 menit dari Armada Town Square Mall`,
-    status: "Lelang Segera",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=14CxEtdWR47v8TkTcPAf0yvfMm4xlZNLY"),
-      getDriveImageUrl("https://drive.google.com/open?id=1FoOFKw9ZOk7HF5ZQ6MHMroc19dnj3sbI"),
-      getDriveImageUrl("https://drive.google.com/open?id=1zwuDQ5U30TGrwofGKmZZlS7OYeu9GkD_"),
-      getDriveImageUrl("https://drive.google.com/open?id=10T55vHa2CI7LGO1Sl5Yl2Qiv7Zr74cnH")
-    ],
-    endPrice: 233800000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-  {
-    id: "RLI_ELP_0039",
-    title: "SEGERA LELANG TANAH SAWAH",
-    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
-    type: "Tanah",
-    location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
-    provinsi: "Jawa Tengah",
-    kota: "Magelang",
-    landArea: 9990,
-    buildingArea: 0,
-    certificateType: "SHM",
-    description:
-    `⦁ 4 menit dari Jalan Raya Magelang-Yogya
-      ⦁ 5 menit dari Stadion Gondowangi
-      ⦁ 5 menit dari SDN Gondowangi 1
-      ⦁ 8 menit dari Puskesmas Mungkid
-      ⦁ 16 menit dari Armada Town Square Mall`,
-    status: "Lelang Segera",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1OyvLU5ufNWctNa6_iZyLJ32Pb3ohDr9P"),
-      getDriveImageUrl("https://drive.google.com/open?id=1gQqVCNv5P68YLqKLlXtaq46mbd2t8L4u"),
-      getDriveImageUrl("https://drive.google.com/open?id=1QkgJKSPkYDrzfdjDFytUyHAVCza_AlVE")
-    ],
-    endPrice: 1298700000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-  {
-    id: "RLI_ELP_0040",
-    title: "SEGERA LELANG TANAH KOSONG",
-    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
-    type: "Tanah",
-    location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
-    provinsi: "Jawa Tengah",
-    kota: "Magelang",
-    landArea: 8745,
-    buildingArea: 0,
-    certificateType: "SHM",
-    description:
-    `⦁ 5 menit dari Jalan Raya Magelang-Yogya
-      ⦁ 5 menit dari Stadion Gondowangi
-      ⦁ 5 menit dari SDN Gondowangi 1
-      ⦁ 8 menit dari Puskesmas Mungkid
-      ⦁ 17 menit dari Armada Town Square Mall`,
-    status: "Lelang Segera",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1v-X6hz1QblV2p8zWZ_a02X30P6llP6Cq"),
-      getDriveImageUrl("https://drive.google.com/open?id=14F9FDdf4sLHDKsCzGu2A1FJpNHV3dyTd"),
-      getDriveImageUrl("https://drive.google.com/open?id=1x0Uq-_pxOdJL22nCT10iO8xUmMxP4pjN"),
-      getDriveImageUrl("https://drive.google.com/open?id=1Bn4FpUqCbk2rCgSeR9JGBR130L44JrjF"),
-      getDriveImageUrl("https://drive.google.com/open?id=12FLFx_FrH7LT8v2AYYDdeUxV69kC_1rw")
-    ],
-    endPrice: 961950000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
-  },
-  {
-    id: "RLI_ELP_0041",
-    title: "SEGERA LELANG TANAH SAWAH",
-    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
-    type: "Tanah",
-    location: "Desa Gondowangi, Kec. Sawangan Kab. Magelang, Jawa Tengah",
-    provinsi: "Jawa Tengah",
-    kota: "Magelang",
-    landArea: 1670,
-    buildingArea: 0,
-    certificateType: "SHM",
-    description:
-    `⦁ 1 menit dari Stadion Gondowangi
-      ⦁ 1 menit dari SDN Gondowangi 1
-      ⦁ 8 menit dari Jalan Raya Magelang-Yogya
-      ⦁ 9 menit dari Puskesmas Mungkid
-      ⦁ 17 menit dari Armada Town Square Mall`,
     status: "Lelang Segera",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=14CxEtdWR47v8TkTcPAf0yvfMm4xlZNLY"),
