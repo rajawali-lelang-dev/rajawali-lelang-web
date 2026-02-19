@@ -360,7 +360,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 11 menit dari Universitas Udayana
       - 11 menit dari Pantai Jimbaran
       - 14 menit dari Rumah Sakit Umum Bali Jimbaran`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1p9DUJ0J4omD_5zngA_hQLXZTg5YWddsF"),
       getDriveImageUrl("https://drive.google.com/open?id=12JIOIgZbvys-yh0ZnNc1idzhWMGGaFNa"),
@@ -370,8 +370,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Oue4SCKvgJyNhyrhdxQIVxr165z77O32")
     ],
     endPrice: 3447500000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-01",
     batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
   },
 
   {
@@ -405,8 +406,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=18-xasRnbz9623Fd1PFLYc6g9GahOA2ZQ")
     ],
     endPrice: 2986200000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-01",
     batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
   },
 
   {
@@ -2303,7 +2305,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1TTrdk-XVKAmjL3VdUUg7ECz_kpa-TLGR"),
       getDriveImageUrl("https://drive.google.com/open?id=1cGjMKO1IJLjC5lMf2JPOTn5mAmCzwSq-")
     ],
-    endPrice: 390600000,
+    endPrice: 273430000,
     tanggalLelang: "2026-02-13",
     batasWaktuLelang: "-",
     jamLelang: "10:40 WIB",
