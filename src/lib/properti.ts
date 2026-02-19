@@ -392,7 +392,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Garuda Wisnu Kencana Cultural Park
       - 14 menit dari Universitas Udayana
       - 16 menit dari Rumah Sakit Umum Bali Jimbaran`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=15S4uyVafvYPXU0Qr6rAVs6FqQtonEZUi"),
       getDriveImageUrl("https://drive.google.com/open?id=1TH6Gq8xOKIIe3SB7_prvUII2Q5fGHo42"),
