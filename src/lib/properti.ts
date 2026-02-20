@@ -252,7 +252,7 @@ export const lelangProperties: PropertiDilelang[] = [
     location: "Taman Beverly Golf, Jl. Danau Semayang No. 2, Kel. Bencongan Indah, Kec. Kelapa Dua, Kab. Tangerang, Banten",
     provinsi: "Banten",
     kota: "Tangerang",
-    landArea: 812,
+    landArea: 512,
     buildingArea: 352,
     certificateType: "SHM" ,
     description:
@@ -547,7 +547,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
 
      {
-    id: "RLI_ELP_0072",
+    id: "RLI_ELP_0072", // <-- PT. Bintang Timur
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -571,8 +571,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=17NAp5adK_0lTHMVWmSca7Wi9X-Y010Er")
     ],
     endPrice: 2046642465,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-14",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
 
      {
@@ -1079,7 +1080,7 @@ export const lelangProperties: PropertiDilelang[] = [
     kota: "Malang",
     landArea: 200,
     buildingArea: 255,
-    certificateType: "HGB",
+    certificateType: "SHGB",
     description:
     `- 4 menit dari GOR Ken Arok
       - 5 menit dari Alun-Alun Kedungkandang
@@ -1099,7 +1100,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   
   {
-    id: "RLI_ELP_0006",
+    id: "RLI_ELP_0006", // <-- Haris Al Hisyam
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1108,25 +1109,26 @@ export const lelangProperties: PropertiDilelang[] = [
     kota: "Malang",
     landArea: 150,
     buildingArea: 93,
-    certificateType: "HGB",
+    certificateType: "SHGB",
     description:
     `- 5 menit dari Universitas Muhammadiyah Malang III
       - 16 menit dari Jatim Park III
       - 17 menit dari Mall Dinoyo City
       - 17 menit dari Malang Skyland
       - 20 menit dari Pintu Tol Singosari`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=18sA0rzUsUBVeKhLgLzJxteGlUACiBC70"),
       getDriveImageUrl("https://drive.google.com/open?id=14b5WfCRkio_o7s9SL4L5T0GIHHxIawPs"),
       getDriveImageUrl("https://drive.google.com/open?id=1I8CqC8y3nBFJexDH0AXo9hnHEIp0ClLg")
     ],
     endPrice: 728100000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-14",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
   {
-    id: "RLI_ELP_0007",
+    id: "RLI_ELP_0007", // <-- Haris Al Hisyam
     title: "SEGERA LELANG GUDANG DAN PABRIK",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1142,7 +1144,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari Universitas Negeri Malang
       - 15 menit dari Terminal Arjosari Malang
       - 20 menit dari Rumah Sakit Lavalette`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1EmLGbxODWt1228-tGnGJmRfe3qXSP_g7"),
       getDriveImageUrl("https://drive.google.com/open?id=1IEsHpYPVqLMd365TKoaKzH8JUGtha07v"),
@@ -1150,11 +1152,12 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1u_vEuWbtQUbHib0hEfJ6p7no0URmMh54")
     ],
     endPrice: 3265020000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-14",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
   {
-    id: "RLI_ELP_0008",
+    id: "RLI_ELP_0008", // <-- Haris Al Hisyam
     title: "SEGERA LELANG RUMAH KOS",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1163,22 +1166,23 @@ export const lelangProperties: PropertiDilelang[] = [
     kota: "Malang",
     landArea: 103,
     buildingArea: 162,
-    certificateType: "HGB",
+    certificateType: "SHGB",
     description:
     `- 5 menit dari Universitas Muhammadiyah Malang III
       - 10 menit dari Malang Dinoyo City
       - 10 menit dari Taman Rekreasi Sengkaling
       - 10 menit dari Rumah Sakit UMM
       - 30 menit dari Gerbang tol Singosari`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1MXHxN73N9dk8yrzXuPdao9jNRvS3EBzB"),
       getDriveImageUrl("https://drive.google.com/open?id=1NI1RzCDilSyObDclwv-z8cRijisAgG9g"),
       getDriveImageUrl("https://drive.google.com/open?id=1HKlWKZ8Eq9qDhoxBJYRNc-L1kSFfiFfe")
     ],
     endPrice: 900900000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-14",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
   {
     id: "RLI_ELP_0009",
