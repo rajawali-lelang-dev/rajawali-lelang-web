@@ -1125,7 +1125,7 @@ export const lelangProperties: PropertiDilelang[] = [
     endPrice: 728100000,
     tanggalLelang: "2026-04-14",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "11:00 WIB",
   },
   {
     id: "RLI_ELP_0007", // <-- Haris Al Hisyam
@@ -1154,7 +1154,7 @@ export const lelangProperties: PropertiDilelang[] = [
     endPrice: 3265020000,
     tanggalLelang: "2026-04-14",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "11:00 WIB",
   },
   {
     id: "RLI_ELP_0008", // <-- Haris Al Hisyam
@@ -1182,7 +1182,7 @@ export const lelangProperties: PropertiDilelang[] = [
     endPrice: 900900000,
     tanggalLelang: "2026-04-14",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "11:00 WIB",
   },
   {
     id: "RLI_ELP_0009",
