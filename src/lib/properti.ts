@@ -133,7 +133,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 11 menit dari Mall Dinoyo City
 - 12 menit dari Taman Rekreasi Sengkaling
 - 18 menit dari Gerbang Tol Singosari`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1JoVuhpMzms5msqrfsC9qwxv_zMY5_twc"),
       getDriveImageUrl("https://drive.google.com/open?id=1x1uRcnPcQAw59ATPuxBtGMZ9cwztCEgt"),
@@ -147,8 +147,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1PLCnPwSb05IEY1SCIOpQJhyUPfehsUC7")
     ],
     endPrice: 728500000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-03-31",
     batasWaktuLelang: "-",
+    jamLelang: "10:20 WIB",
   },
 
             {
@@ -738,7 +739,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
 
    {
-    id: "RLI_ELP_0066",
+    id: "RLI_ELP_0066", // <-- Saudi
     title: "SEGERA LELANG tANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -754,7 +755,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 4 menit dari Pasar Pohjejer
       - 5 menit dari Wisata Air Padi Park
       - 6 menit dari Wisata Air Balekambang`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1fHQF6OLOvzTmJBlg5nEvFwNdhwzrshWi"),
       getDriveImageUrl("https://drive.google.com/open?id=1z7P76YS3S1t8Pba7_AyriIKjvhd3EWCj"),
@@ -762,12 +763,13 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1UjtF7mV94mBZryhtLgPoiRwQOUyWN8BG")
     ],
     endPrice: 675000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-15",
     batasWaktuLelang: "-",
+    jamLelang: "11:00 WIB",
   },
 
      {
-    id: "RLI_ELP_0065",
+    id: "RLI_ELP_0065", // <-- Saudi
     title: "SEGERA LELANG TOKO DAN SHOWROOM",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -783,7 +785,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 4 menit dari Pasar Pohjejer
       - 5 menit dari Wisata Air Padi Park
       - 6 menit dari Wisata Air Balekambang`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1mm06tcFwysDT08LrQl7k7n6N0aY9dAsd"),
       getDriveImageUrl("https://drive.google.com/open?id=17dyNMx5j5R57L1z3uxOWITct6a52xfLW"),
@@ -797,8 +799,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1tv6abYkp992x2WN0rmuTdzDuBbt8SqCz")
     ],
     endPrice: 3350000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-15",
     batasWaktuLelang: "-",
+    jamLelang: "11:00 WIB",
   },
 
       {
@@ -1414,7 +1417,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "RLI_ELP_0017",
+    id: "RLI_ELP_0017", // <-- Heri Kuswoyo
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1430,7 +1433,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 21 menit dari Klinik Pertamina IHC Cinere
       - 22 menit dari Gerbang Tol Pamulang
       - 23 menit dari Taman Warga Bukit Cinere Indah`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1DQcB0bGrC3B1-NfyAJEjeNICclUtiZ_F"),
       getDriveImageUrl("https://drive.google.com/open?id=1I_f_AwY7atgputuU_ZfPct_9E7yFcXQB"),
@@ -1438,8 +1441,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1l0XqrUBy1HSAN-hccZiggkMqoU0xlqSD")
     ],
     endPrice: 234600000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-03-25",
     batasWaktuLelang: "-",
+    jamLelang: "09:30 WIB",
   },
   {
     id: "RLI_ELP_0018",
@@ -2315,7 +2319,7 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "10:40 WIB",
   },
   {
-    id: "RLI_ELP_0052",
+    id: "RLI_ELP_0052", // <-- CV. Aulian Jaya
     title: "SEGERA LELANG HOTEL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Hotel",
@@ -2331,7 +2335,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 3 menit dari RSI UNISMA
       - 10 menit dari Halte Veteran Kota Malang
       - 10 menit dari Taman Rekreasi Sengkaling`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=13fG8bethayU5SJcvK2MqrvZ_q2IIwQTI"),
       getDriveImageUrl("https://drive.google.com/open?id=1yF66lt1n4NaB-HuIZ6bmXXmnEgFVxn28"),
@@ -2344,8 +2348,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1ZM3tdpZ-8JsQRakEpePVbUBP8TamZVKV")
     ],
     endPrice: 2856000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-03-31",
     batasWaktuLelang: "-",
+    jamLelang: "10:10 WIB",
   },
    {
     id: "RLI_ELP_0053",
@@ -2408,7 +2413,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "RLI_ELP_0055",
+    id: "RLI_ELP_0055", // <-- Wisang Labimba
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -2424,7 +2429,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 13 menit dari Stasiun Jurangmangu
       - 13 menit dari UIN Syarif Hidayatullah
       - 15 menit dari Gerbang Tol Pamulang`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=16KwUBNpb1R6NdiAfpL7CuOobVyUBwNfc"),
       getDriveImageUrl("https://drive.google.com/open?id=19l2Y6tNhwtl9crj2qDx5XrYL0Gd7HKEz"),
@@ -2434,8 +2439,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1f1Sb8PJlKFPI7XJw9_GPt__cceLeTSZU")
     ],
     endPrice: 1377700000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-03-25",
     batasWaktuLelang: "-",
+    jamLelang: "09:30 WIB",
   },
     {
     id: "RLI_ELP_0056",
