@@ -246,7 +246,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
 
           {
-    id: "RLI_ELP_0081", // <-- PT. ARTHA TEKNIK ABADI
+    id: "RLI_ELP_0081", // <-- PT. ARTHA TEKNIK ABADI 1
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
