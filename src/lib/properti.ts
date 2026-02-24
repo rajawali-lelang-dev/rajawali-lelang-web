@@ -740,7 +740,7 @@ export const lelangProperties: PropertiDilelang[] = [
 
    {
     id: "RLI_ELP_0066", // <-- Saudi
-    title: "SEGERA LELANG tANAH KOSONG",
+    title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Jl. Raya Dlanggu - Pacet, Desa Kalen, Kecamatan Dlanggu, Kabupaten Mojokerto",
@@ -966,7 +966,7 @@ export const lelangProperties: PropertiDilelang[] = [
     kota: "Malang",
     landArea: 202,
     buildingArea: 204,
-    certificateType: "HGB",
+    certificateType: "SHGB",
     description:
     `- 4 menit dari GOR Ken Arok
       - 5 menit dari Alun-Alun Kedungkandang
