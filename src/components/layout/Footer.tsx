@@ -174,7 +174,7 @@ const Footer = () => {
               © {currentYear} Rajawali Lelang Indonesia. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/terms" className="font-manrope text-sm text-primary-500 hover:text-primary-500 transition-colors">
+              <Link href="/camgeo" className="font-manrope text-sm text-primary-500 hover:text-primary-500 transition-colors">
                 Syarat & Ketentuan
               </Link>
               <Link href="/privacy" className="font-manrope text-sm text-primary-500 hover:text-primary-500 transition-colors">
