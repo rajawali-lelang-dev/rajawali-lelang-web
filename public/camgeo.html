@@ -9,8 +9,61 @@
   <style>
     body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
     .glass { background: rgba(15,23,42,0.9); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-    .preview-overlay { background: rgba(10,10,10,0.92); border-left: 6px solid #facc15; min-height: 120px; }
     #canvas-output { display: none; }
+
+    /* ── LIVE PREVIEW OVERLAY ─────────────────────────────── */
+    #preview-wrap {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+    #pv-img {
+      display: block;
+      max-height: 72vh;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    /* Geotag bar — bottom, full width of image */
+    #pv-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      background: rgba(10,10,10,0.62);
+      border-top: 4px solid #facc15;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      padding: 10px 14px;
+      box-sizing: border-box;
+    }
+    #pv-map-box {
+      width: 80px;
+      height: 80px;
+      background: #1e293b;
+      border: 2px solid #facc15;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    #pv-map-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #pv-divider {
+      width: 3px;
+      background: #facc15;
+      margin: 0 12px;
+      border-radius: 2px;
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+    #pv-text { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+    #pv-row1 { display: flex; align-items: baseline; gap: 14px; flex-wrap: nowrap; }
+    #out-time { font-size: 2.6rem; font-weight: 900; color: #fff; line-height: 1; white-space: nowrap; }
+    #pv-dateblock { display: flex; flex-direction: column; }
+    #out-day  { font-size: 0.75rem; font-weight: 800; color: #facc15; line-height: 1; }
+    #out-date { font-size: 0.65rem; color: #94a3b8; font-weight: 600; margin-top: 2px; }
+    #out-loc  { font-size: 0.95rem; font-weight: 800; color: #facc15; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #out-addr { font-size: 0.65rem; color: #e2e8f0; opacity: 0.85; margin-top: 2px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.4; }
+    #out-gps  { font-size: 0.55rem; font-family: monospace; color: #64748b; margin-top: 4px; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -29,26 +82,24 @@
 
     <!-- PREVIEW -->
     <section class="flex-1 p-4 md:p-8 flex items-center justify-center bg-black/40 overflow-auto">
-      <div class="relative shadow-2xl max-w-full">
-        <img id="pv-img" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1000" class="max-h-[75vh] rounded-lg block">
-
-        <!-- Preview overlay — identik dengan Canvas render -->
-        <div class="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[45%] preview-overlay rounded-lg text-white pointer-events-none flex gap-5 p-4">
-          <div class="w-[100px] h-[100px] bg-slate-800 rounded-sm overflow-hidden shrink-0 border-2 border-yellow-400">
-            <img id="map-preview" src="" class="w-full h-full object-cover" onerror="this.style.display='none'">
+      <div id="preview-wrap">
+        <img id="pv-img" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1000" alt="preview">
+        <div id="pv-bar">
+          <div id="pv-map-box">
+            <img id="map-preview" src="" alt="map" onerror="this.style.display='none'">
           </div>
-          <div class="w-1 bg-yellow-400 rounded self-stretch my-1 shrink-0"></div>
-          <div class="flex-1 flex flex-col justify-center min-w-0">
-            <div class="flex items-center gap-4">
-              <span id="out-time" class="text-5xl font-black leading-none tracking-tighter shrink-0">00:00</span>
-              <div class="flex flex-col">
-                <span id="out-day" class="text-xs font-black text-yellow-400 leading-none">MONDAY</span>
-                <span id="out-date" class="text-[11px] text-slate-400 font-bold mt-1">01 JAN 2026</span>
+          <div id="pv-divider"></div>
+          <div id="pv-text">
+            <div id="pv-row1">
+              <span id="out-time">00:00</span>
+              <div id="pv-dateblock">
+                <span id="out-day">SENIN</span>
+                <span id="out-date">01 JAN 2026</span>
               </div>
             </div>
-            <div id="out-loc" class="text-lg font-black text-yellow-400 truncate mt-2 leading-none">LOKASI ANDA</div>
-            <div id="out-addr" class="text-[11px] opacity-90 line-clamp-2 leading-snug mt-1">Alamat lengkap akan muncul di sini...</div>
-            <div class="text-[9px] font-mono opacity-40 mt-2">GPS: <span id="out-lat">0</span>, <span id="out-long">0</span></div>
+            <div id="out-loc">LOKASI ANDA</div>
+            <div id="out-addr">Alamat lengkap akan muncul di sini...</div>
+            <div id="out-gps">GPS: <span id="out-lat">0</span>, <span id="out-long">0</span></div>
           </div>
         </div>
       </div>
@@ -99,7 +150,7 @@
         </div>
 
         <button onclick="generateAndDownload()" class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold py-4 rounded-xl shadow-lg shadow-yellow-400/20 active:scale-95 transition-all text-lg uppercase">
-          Generate & Download Foto
+          Generate &amp; Download Foto
         </button>
         <div id="progress" class="hidden text-center text-sm text-yellow-400 animate-pulse">⚙️ Memproses foto...</div>
       </div>
@@ -125,25 +176,30 @@
     let hasilDataUrl    = null;
 
     function sync() {
-      document.getElementById('out-time').innerText = document.getElementById('waktu').value   || '00:00';
-      document.getElementById('out-date').innerText = document.getElementById('tanggal').value || '';
-      document.getElementById('out-day').innerText  = (document.getElementById('hari').value   || '').toUpperCase();
-      document.getElementById('out-loc').innerText  = (document.getElementById('kota').value   || 'LOKASI').toUpperCase();
-      document.getElementById('out-addr').innerText = document.getElementById('alamat').value  || 'Alamat...';
-      document.getElementById('out-lat').innerText  = document.getElementById('lat').value     || '0';
-      document.getElementById('out-long').innerText = document.getElementById('long').value    || '0';
+      document.getElementById('out-time').innerText  = document.getElementById('waktu').value   || '00:00';
+      document.getElementById('out-date').innerText  = document.getElementById('tanggal').value || '';
+      document.getElementById('out-day').innerText   = (document.getElementById('hari').value   || '').toUpperCase();
+      document.getElementById('out-loc').innerText   = (document.getElementById('kota').value   || 'LOKASI').toUpperCase();
+      document.getElementById('out-addr').innerText  = document.getElementById('alamat').value  || 'Alamat...';
+      document.getElementById('out-lat').innerText   = document.getElementById('lat').value     || '0';
+      document.getElementById('out-long').innerText  = document.getElementById('long').value    || '0';
+
       const lat = document.getElementById('lat').value;
       const lon = document.getElementById('long').value;
       if (lat && lon) {
-        document.getElementById('map-preview').src =
-          `https://static-maps.yandex.ru/1.x/?ll=${lon},${lat}&z=15&l=map&size=200,200&lang=en_US&pt=${lon},${lat},pm2rdm`;
+        const mapImg = document.getElementById('map-preview');
+        mapImg.style.display = '';
+        mapImg.src = `https://static-maps.yandex.ru/1.x/?ll=${lon},${lat}&z=15&l=map&size=200,200&lang=en_US&pt=${lon},${lat},pm2rdm`;
       }
     }
 
     function loadImg(input) {
       if (!input.files || !input.files[0]) return;
       const reader = new FileReader();
-      reader.onload = e => { currentPhotoSrc = e.target.result; document.getElementById('pv-img').src = e.target.result; };
+      reader.onload = e => {
+        currentPhotoSrc = e.target.result;
+        document.getElementById('pv-img').src = e.target.result;
+      };
       reader.readAsDataURL(input.files[0]);
     }
 
@@ -191,115 +247,129 @@
       if (!currentPhotoSrc) { alert('Pilih foto terlebih dahulu!'); return; }
       document.getElementById('progress').classList.remove('hidden');
 
-      const waktu  = document.getElementById('waktu').value   || '00:00';
-      const tanggal= document.getElementById('tanggal').value || '';
-      const hari   = (document.getElementById('hari').value   || '').toUpperCase();
-      const kota   = (document.getElementById('kota').value   || '').toUpperCase();
-      const alamat = document.getElementById('alamat').value  || '';
-      const lat    = parseFloat(document.getElementById('lat').value)  || 0;
-      const lon    = parseFloat(document.getElementById('long').value) || 0;
+      const waktu   = document.getElementById('waktu').value   || '00:00';
+      const tanggal = document.getElementById('tanggal').value || '';
+      const hari    = (document.getElementById('hari').value   || '').toUpperCase();
+      const kota    = (document.getElementById('kota').value   || '').toUpperCase();
+      const alamat  = document.getElementById('alamat').value  || '';
+      const lat     = parseFloat(document.getElementById('lat').value)  || 0;
+      const lon     = parseFloat(document.getElementById('long').value) || 0;
 
       try {
         const photoImg = await loadImage(currentPhotoSrc);
         const sw = photoImg.naturalWidth;
         const sh = photoImg.naturalHeight;
 
-        const canvas  = document.getElementById('canvas-output');
-        canvas.width  = sw; canvas.height = sh;
+        const canvas = document.getElementById('canvas-output');
+        canvas.width  = sw;
+        canvas.height = sh;
         const ctx = canvas.getContext('2d');
         ctx.drawImage(photoImg, 0, 0, sw, sh);
 
-        // Dimensi — sinkron dengan PHP
-        const scale   = sw / 1920.0;
-        const boxW    = Math.round(sw * 0.45);
-        const boxH    = Math.max(180, Math.round(220 * scale));
-        const mapSize = Math.round(boxH * 0.88);
-        const mapPad  = Math.round(12 * scale);
-        const destX   = Math.round((sw - boxW) / 2);
-        const destY   = Math.max(0, Math.round(sh - boxH - sh * 0.05));
+        // ── Dimensi geotag bar ─────────────────────────────────────────────
+        // Bar memenuhi lebar penuh foto, posisi di bagian bawah
+        const scale    = sw / 1600.0;                          // referensi 1600px
+        const padH     = Math.round(20 * scale);               // padding horizontal
+        const padV     = Math.round(16 * scale);               // padding vertikal
+        const mapSize  = Math.round(140 * scale);              // ukuran kotak peta
+        const barH     = mapSize + padV * 2;                   // tinggi bar
+        const divW     = Math.max(3, Math.round(4 * scale));   // lebar divider kuning
+        const divGap   = Math.round(20 * scale);               // gap kiri-kanan divider
+        const topBdr   = Math.max(4, Math.round(5 * scale));   // border atas kuning
+        const barY     = sh - barH - Math.round(sh * 0.03);   // posisi Y bar
+        const barX     = 0;
+        const barW     = sw;
 
-        // Background box
+        // ── Background semi-transparan ─────────────────────────────────────
         ctx.save();
-        ctx.fillStyle = 'rgba(10,10,10,0.92)';
-        ctx.beginPath();
-        ctx.roundRect(destX, destY, boxW, boxH, 6);
-        ctx.fill();
+        ctx.fillStyle = 'rgba(10,10,10,0.58)';                 // transparan (bukan solid hitam)
+        ctx.fillRect(barX, barY, barW, barH);
 
-        // Border kiri kuning
+        // Border atas kuning
         ctx.fillStyle = '#facc15';
-        ctx.fillRect(destX, destY, 6, boxH);
+        ctx.fillRect(barX, barY, barW, topBdr);
 
-        // Map
-        let textStartX = destX + mapPad + 6;
+        // ── Kotak peta ─────────────────────────────────────────────────────
+        const mapX = barX + padH;
+        const mapY = barY + padV;
+        let textStartX = mapX + mapSize + divGap + divW + divGap;
+
         try {
-          const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=${lon},${lat}&z=15&l=map&size=300,300&lang=en_US&pt=${lon},${lat},pm2rdm`;
+          const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=${lon},${lat}&z=15&l=map&size=400,400&lang=en_US&pt=${lon},${lat},pm2rdm`;
           const mapImg = await loadImage(mapUrl);
-          const mapX   = destX + mapPad + 6;
-          const mapY   = destY + Math.round((boxH - mapSize) / 2);
           ctx.drawImage(mapImg, mapX, mapY, mapSize, mapSize);
-          ctx.strokeStyle = '#facc15'; ctx.lineWidth = 2;
+          ctx.strokeStyle = '#facc15';
+          ctx.lineWidth   = Math.max(2, Math.round(2 * scale));
           ctx.strokeRect(mapX, mapY, mapSize, mapSize);
-          textStartX = mapX + mapSize + Math.round(30 * scale);
         } catch {
-          const mapX = destX + mapPad + 6;
-          const mapY = destY + Math.round((boxH - mapSize) / 2);
-          ctx.fillStyle = '#3c3c3c'; ctx.fillRect(mapX, mapY, mapSize, mapSize);
-          ctx.strokeStyle = '#facc15'; ctx.lineWidth = 2; ctx.strokeRect(mapX, mapY, mapSize, mapSize);
+          // Placeholder map
+          ctx.fillStyle = '#1e293b';
+          ctx.fillRect(mapX, mapY, mapSize, mapSize);
+          ctx.strokeStyle = '#facc15';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(mapX, mapY, mapSize, mapSize);
           const cx = mapX + mapSize/2, cy = mapY + mapSize/2;
-          ctx.fillStyle = '#facc15'; ctx.beginPath(); ctx.arc(cx, cy-10, 12, 0, Math.PI*2); ctx.fill();
-          ctx.fillStyle = '#3c3c3c'; ctx.beginPath(); ctx.arc(cx, cy-10, 5, 0, Math.PI*2); ctx.fill();
-          ctx.strokeStyle = '#facc15'; ctx.lineWidth = 3;
-          ctx.beginPath(); ctx.moveTo(cx, cy+2); ctx.lineTo(cx, cy+18); ctx.stroke();
-          textStartX = mapX + mapSize + Math.round(30 * scale);
+          ctx.fillStyle = '#facc15';
+          ctx.beginPath(); ctx.arc(cx, cy - mapSize*0.12, mapSize*0.12, 0, Math.PI*2); ctx.fill();
+          ctx.fillStyle = '#1e293b';
+          ctx.beginPath(); ctx.arc(cx, cy - mapSize*0.12, mapSize*0.05, 0, Math.PI*2); ctx.fill();
+          ctx.strokeStyle = '#facc15'; ctx.lineWidth = Math.round(3*scale);
+          ctx.beginPath(); ctx.moveTo(cx, cy - mapSize*0.01); ctx.lineTo(cx, cy + mapSize*0.18); ctx.stroke();
         }
 
-        // Garis vertikal kuning
-        const lineX = textStartX - Math.round(15 * scale);
+        // ── Divider kuning vertikal ────────────────────────────────────────
+        const lineX = mapX + mapSize + divGap;
+        const lineY1 = barY + padV;
+        const lineY2 = barY + barH - padV;
         ctx.fillStyle = '#facc15';
-        ctx.fillRect(lineX, destY + Math.round(25*scale), Math.round(3*scale), boxH - Math.round(50*scale));
+        ctx.fillRect(lineX, lineY1, divW, lineY2 - lineY1);
 
-        // Font sizes — sinkron dengan PHP
-        const fsTime   = Math.max(28, Math.round(65 * scale));
-        const fsHari   = Math.max(11, Math.round(14 * scale));
-        const fsDate   = Math.max(10, Math.round(13 * scale));
-        const fsKota   = Math.max(14, Math.round(22 * scale));
-        const fsAlamat = Math.max(10, Math.round(13 * scale));
-        const fsGps    = Math.max(8,  Math.round(10 * scale));
+        // ── Font sizes skalabel ────────────────────────────────────────────
+        const fsTime   = Math.max(36, Math.round(78 * scale));
+        const fsHari   = Math.max(13, Math.round(18 * scale));
+        const fsDate   = Math.max(11, Math.round(15 * scale));
+        const fsKota   = Math.max(16, Math.round(26 * scale));
+        const fsAlamat = Math.max(11, Math.round(16 * scale));
+        const fsGps    = Math.max(9,  Math.round(12 * scale));
+        const lh       = Math.round(24 * scale);               // line height alamat
 
-        // Waktu
+        // ── Waktu (jam) ────────────────────────────────────────────────────
+        const textY0 = barY + padV + Math.round(fsTime * 0.9);
         ctx.fillStyle = '#ffffff';
-        ctx.font = `900 ${fsTime}px 'Inter', sans-serif`;
-        ctx.fillText(waktu, textStartX, destY + Math.round(85 * scale));
+        ctx.font = `900 ${fsTime}px 'Inter', Arial, sans-serif`;
+        ctx.fillText(waktu, textStartX, textY0);
 
-        // Hari & Tanggal di kanan waktu
+        // ── Hari & Tanggal di kanan jam ────────────────────────────────────
         const timeW = ctx.measureText(waktu).width;
-        const dateX = textStartX + timeW + Math.round(20 * scale);
+        const dateX = textStartX + timeW + Math.round(18 * scale);
         ctx.fillStyle = '#facc15';
-        ctx.font = `800 ${fsHari}px 'Inter', sans-serif`;
-        ctx.fillText(hari, dateX, destY + Math.round(55 * scale));
-        ctx.fillStyle = '#bebebe';
-        ctx.font = `400 ${fsDate}px 'Inter', sans-serif`;
-        ctx.fillText(tanggal, dateX, destY + Math.round(82 * scale));
+        ctx.font = `800 ${fsHari}px 'Inter', Arial, sans-serif`;
+        ctx.fillText(hari, dateX, textY0 - Math.round(fsTime * 0.42));
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = `600 ${fsDate}px 'Inter', Arial, sans-serif`;
+        ctx.fillText(tanggal, dateX, textY0 - Math.round(fsTime * 0.42) + fsHari + Math.round(4*scale));
 
-        // Kota
+        // ── Kota ──────────────────────────────────────────────────────────
+        const kotaY = textY0 + Math.round(fsKota * 1.4);
         ctx.fillStyle = '#facc15';
-        ctx.font = `800 ${fsKota}px 'Inter', sans-serif`;
-        ctx.fillText(kota, textStartX, destY + Math.round(130 * scale));
+        ctx.font = `800 ${fsKota}px 'Inter', Arial, sans-serif`;
+        ctx.fillText(kota, textStartX, kotaY);
 
-        // Alamat
-        ctx.fillStyle = '#ffffff';
-        ctx.font = `400 ${fsAlamat}px 'Inter', sans-serif`;
-        const addrLines = wrapText(ctx, alamat, boxW - (textStartX - destX) - mapPad);
-        let lineY = destY + Math.round(160 * scale);
+        // ── Alamat (wrap) ──────────────────────────────────────────────────
+        const maxAddrW = barW - textStartX - padH;
+        ctx.fillStyle = '#f1f5f9';
+        ctx.font = `400 ${fsAlamat}px 'Inter', Arial, sans-serif`;
+        const addrLines = wrapText(ctx, alamat, maxAddrW);
+        let addrY = kotaY + Math.round(fsAlamat * 1.6);
         addrLines.slice(0, 2).forEach(line => {
-          ctx.fillText(line, textStartX, lineY);
-          lineY += Math.round(22 * scale);
+          ctx.fillText(line, textStartX, addrY);
+          addrY += lh;
         });
 
-        // GPS
-        ctx.fillStyle = '#bebebe';
-        ctx.font = `400 ${fsGps}px 'Inter', sans-serif`;
-        ctx.fillText(`Lat ${lat.toFixed(6)}, Long ${lon.toFixed(6)}`, textStartX, destY + boxH - Math.round(15 * scale));
+        // ── GPS koordinat ──────────────────────────────────────────────────
+        ctx.fillStyle = '#64748b';
+        ctx.font = `400 ${fsGps}px 'Inter', Arial, sans-serif`;
+        ctx.fillText(`Lat ${lat.toFixed(6)}, Long ${lon.toFixed(6)}`, textStartX, barY + barH - Math.round(10 * scale));
 
         ctx.restore();
 
@@ -318,7 +388,7 @@
     function downloadHasil() {
       if (!hasilDataUrl) return;
       const a = document.createElement('a');
-      a.href = hasilDataUrl;
+      a.href     = hasilDataUrl;
       a.download = 'GeoCam_' + Date.now() + '.jpg';
       a.click();
     }
@@ -329,7 +399,7 @@
       document.getElementById('waktu').value   = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
       document.getElementById('tanggal').value = now.toLocaleDateString('id-ID', {day:'2-digit', month:'short', year:'numeric'}).toUpperCase();
       document.getElementById('hari').value    = now.toLocaleDateString('id-ID', {weekday:'long'}).toUpperCase();
-      document.getElementById('kota').value    = 'SURABAYA, JAWA TIMUR';
+      document.getElementById('kota').value    = 'SURABAYA, JAWA TIMUR, INDONESIA';
       document.getElementById('alamat').value  = 'Jl. Raya Gubeng No. 1, Surabaya, Jawa Timur';
       document.getElementById('lat').value     = '-7.257500';
       document.getElementById('long').value    = '112.752100';
