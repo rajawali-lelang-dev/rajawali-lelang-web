@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #ffffff; }
+    body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
     .glass { background: rgba(15,23,42,0.9); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
     #canvas-output { display: none; }
 
@@ -71,10 +71,10 @@
     }
     #pv-dateblock { display: flex; flex-direction: column; justify-content: center; gap: 2px; }
     #out-day  { font-size: 0.7rem; font-weight: 800; color: #facc15; line-height: 1; }
-    #out-date { font-size: 0.62rem; color: #ffffff; font-weight: 600; }
+    #out-date { font-size: 0.62rem; color: #94a3b8; font-weight: 600; }
     #out-loc  { font-size: 0.85rem; font-weight: 800; color: #facc15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    #out-addr { font-size: 0.6rem; color: #ffffff; opacity: 0.85; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.4; }
-    #out-gps  { font-size: 0.55rem; font-family: monospace; color: #ffffff; }
+    #out-addr { font-size: 0.6rem; color: #e2e8f0; opacity: 0.85; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.4; }
+    #out-gps  { font-size: 0.55rem; font-family: monospace; color: #94a3b8; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -293,8 +293,8 @@
         const fsTime   = Math.max(40, Math.round(86 * scale));
         const fsLabel  = Math.max(14, Math.round(20 * scale));
         const fsKota   = Math.max(18, Math.round(28 * scale));
-        const fsAlamat = Math.max(18, Math.round(26 * scale));
-        const fsGps    = Math.max(18, Math.round(26 * scale));
+        const fsAlamat = Math.max(13, Math.round(18 * scale));
+        const fsGps    = Math.max(11, Math.round(14 * scale));
         const lh       = Math.round(26 * scale);
 
         // ── Pre-measure untuk lebar bar adaptif ───────────────────────────
@@ -404,7 +404,7 @@
         ctx.fillStyle = '#facc15';
         ctx.font = `800 ${fsLabel}px 'Inter', Arial, sans-serif`;
         ctx.fillText(hari, dtX, dtMid - Math.round(fsLabel * 0.15));
-        ctx.fillStyle = '#94a3b8';
+        ctx.fillStyle = '#ffffff';
         ctx.font = `600 ${fsLabel}px 'Inter', Arial, sans-serif`;
         ctx.fillText(tanggal, dtX, dtMid + Math.round(fsLabel * 1.1));
 
@@ -427,7 +427,7 @@
 
         // ── BARIS 4: GPS koordinat (selalu terlihat) ──────────────────────
         const gpsY = addrY + Math.round(fsGps * 0.5);
-        ctx.fillStyle = '#94a3b8';
+        ctx.fillStyle = '#ffffff';
         ctx.font      = `400 ${fsGps}px 'Inter', Arial, sans-serif`;
         ctx.fillText(gpsStr, textStartX, gpsY);
 
