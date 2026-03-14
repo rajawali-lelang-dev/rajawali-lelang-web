@@ -38,32 +38,39 @@
       box-sizing: border-box;
     }
     #pv-map-box {
-      width: 80px;
-      height: 80px;
+      width: 72px;
+      height: 72px;
       background: #1e293b;
       border: 2px solid #facc15;
       border-radius: 4px;
       overflow: hidden;
       flex-shrink: 0;
+      align-self: center;
     }
     #pv-map-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
     #pv-divider {
       width: 3px;
       background: #facc15;
-      margin: 0 12px;
+      margin: 0 11px;
       border-radius: 2px;
       align-self: stretch;
       flex-shrink: 0;
     }
-    #pv-text { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
-    #pv-row1 { display: flex; align-items: baseline; gap: 14px; flex-wrap: nowrap; }
-    #out-time { font-size: 2.6rem; font-weight: 900; color: #fff; line-height: 1; white-space: nowrap; }
-    #pv-dateblock { display: flex; flex-direction: column; }
-    #out-day  { font-size: 0.75rem; font-weight: 800; color: #facc15; line-height: 1; }
-    #out-date { font-size: 0.65rem; color: #94a3b8; font-weight: 600; margin-top: 2px; }
-    #out-loc  { font-size: 0.95rem; font-weight: 800; color: #facc15; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    #out-addr { font-size: 0.65rem; color: #e2e8f0; opacity: 0.85; margin-top: 2px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.4; }
-    #out-gps  { font-size: 0.55rem; font-family: monospace; color: #64748b; margin-top: 4px; }
+    #pv-text { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; gap: 2px; }
+    /* Row 1: JAM + sekat + HARI/TANGGAL */
+    #pv-row1 { display: flex; align-items: center; gap: 0; }
+    #out-time { font-size: 2.2rem; font-weight: 900; color: #fff; line-height: 1; white-space: nowrap; }
+    #pv-sekat {
+      width: 2px; background: rgba(255,255,255,0.2);
+      align-self: stretch; margin: 2px 10px;
+      border-radius: 1px; flex-shrink: 0;
+    }
+    #pv-dateblock { display: flex; flex-direction: column; justify-content: center; gap: 2px; }
+    #out-day  { font-size: 0.7rem; font-weight: 800; color: #facc15; line-height: 1; }
+    #out-date { font-size: 0.62rem; color: #94a3b8; font-weight: 600; }
+    #out-loc  { font-size: 0.85rem; font-weight: 800; color: #facc15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #out-addr { font-size: 0.6rem; color: #e2e8f0; opacity: 0.85; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.4; }
+    #out-gps  { font-size: 0.55rem; font-family: monospace; color: #94a3b8; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -92,6 +99,7 @@
           <div id="pv-text">
             <div id="pv-row1">
               <span id="out-time">00:00</span>
+              <div id="pv-sekat"></div>
               <div id="pv-dateblock">
                 <span id="out-day">SENIN</span>
                 <span id="out-date">01 JAN 2026</span>
@@ -267,22 +275,57 @@
         ctx.drawImage(photoImg, 0, 0, sw, sh);
 
         // ── Dimensi geotag bar ─────────────────────────────────────────────
-        // Bar memenuhi lebar penuh foto, posisi di bagian bawah
-        const scale    = sw / 1600.0;                          // referensi 1600px
-        const padH     = Math.round(20 * scale);               // padding horizontal
-        const padV     = Math.round(16 * scale);               // padding vertikal
-        const mapSize  = Math.round(140 * scale);              // ukuran kotak peta
-        const barH     = mapSize + padV * 2;                   // tinggi bar
-        const divW     = Math.max(3, Math.round(4 * scale));   // lebar divider kuning
-        const divGap   = Math.round(20 * scale);               // gap kiri-kanan divider
-        const topBdr   = Math.max(4, Math.round(5 * scale));   // border atas kuning
-        const barY     = sh - barH - Math.round(sh * 0.03);   // posisi Y bar
-        const barX     = 0;
-        const barW     = sw;
+        const scale    = sw / 1600.0;
+        const padH     = Math.round(24 * scale);
+        const padV     = Math.round(18 * scale);
+        const mapSize  = Math.round(150 * scale);
+        const divW     = Math.max(3, Math.round(4 * scale));
+        const divGap   = Math.round(22 * scale);
+        const topBdr   = Math.max(4, Math.round(5 * scale));
+
+        // ── Font sizes (lebih besar) ────────────────────────────────────────
+        const fsTime   = Math.max(40, Math.round(86 * scale));
+        const fsLabel  = Math.max(14, Math.round(20 * scale));   // HARI & TANGGAL
+        const fsKota   = Math.max(18, Math.round(28 * scale));
+        const fsAlamat = Math.max(13, Math.round(18 * scale));
+        const fsGps    = Math.max(11, Math.round(14 * scale));
+        const lh       = Math.round(26 * scale);
+
+        // ── Pre-measure teks untuk lebar bar adaptif ───────────────────────
+        // Ukur dulu di canvas offscreen agar bar tidak terlalu lebar
+        ctx.font = `900 ${fsTime}px 'Inter', Arial, sans-serif`;
+        const timeW   = ctx.measureText(waktu).width;
+        ctx.font = `800 ${fsLabel}px 'Inter', Arial, sans-serif`;
+        const hariW   = ctx.measureText(hari).width;
+        ctx.font = `600 ${fsLabel}px 'Inter', Arial, sans-serif`;
+        const tglW    = ctx.measureText(tanggal).width;
+        ctx.font = `800 ${fsKota}px 'Inter', Arial, sans-serif`;
+        const kotaW   = ctx.measureText(kota).width;
+        ctx.font = `400 ${fsAlamat}px 'Inter', Arial, sans-serif`;
+        const alamatW = ctx.measureText(alamat).width;
+        ctx.font = `400 ${fsGps}px 'Inter', Arial, sans-serif`;
+        const gpsW    = ctx.measureText(`Lat ${lat.toFixed(6)}, Long ${lon.toFixed(6)}`).width;
+
+        // Sekat antar jam dan hari/tanggal
+        const sekatW  = Math.round(20 * scale);
+        const dateColW = Math.max(hariW, tglW);
+        // Lebar kolom teks = max dari semua baris
+        const textColW = Math.max(
+          timeW + sekatW + Math.round(3*scale) + sekatW + dateColW,
+          kotaW, alamatW, gpsW
+        );
+        // Total lebar bar = pad + map + gap + divider + gap + teks + pad
+        const neededW  = padH + mapSize + divGap + divW + divGap + textColW + padH;
+        // Bar tidak melebihi lebar foto, tidak kurang dari 50%
+        const barW     = Math.min(sw, Math.max(Math.round(sw * 0.5), neededW));
+        const barH     = mapSize + padV * 2;
+        // Posisi bar: tengah bawah foto
+        const barX     = Math.round((sw - barW) / 2);
+        const barY     = sh - barH;
 
         // ── Background semi-transparan ─────────────────────────────────────
         ctx.save();
-        ctx.fillStyle = 'rgba(10,10,10,0.58)';                 // transparan (bukan solid hitam)
+        ctx.fillStyle = 'rgba(10,10,10,0.58)';
         ctx.fillRect(barX, barY, barW, barH);
 
         // Border atas kuning
@@ -292,7 +335,7 @@
         // ── Kotak peta ─────────────────────────────────────────────────────
         const mapX = barX + padH;
         const mapY = barY + padV;
-        let textStartX = mapX + mapSize + divGap + divW + divGap;
+        const textStartX = mapX + mapSize + divGap + divW + divGap;
 
         try {
           const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=${lon},${lat}&z=15&l=map&size=400,400&lang=en_US&pt=${lon},${lat},pm2rdm`;
@@ -302,11 +345,9 @@
           ctx.lineWidth   = Math.max(2, Math.round(2 * scale));
           ctx.strokeRect(mapX, mapY, mapSize, mapSize);
         } catch {
-          // Placeholder map
           ctx.fillStyle = '#1e293b';
           ctx.fillRect(mapX, mapY, mapSize, mapSize);
-          ctx.strokeStyle = '#facc15';
-          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#facc15'; ctx.lineWidth = 2;
           ctx.strokeRect(mapX, mapY, mapSize, mapSize);
           const cx = mapX + mapSize/2, cy = mapY + mapSize/2;
           ctx.fillStyle = '#facc15';
@@ -314,62 +355,57 @@
           ctx.fillStyle = '#1e293b';
           ctx.beginPath(); ctx.arc(cx, cy - mapSize*0.12, mapSize*0.05, 0, Math.PI*2); ctx.fill();
           ctx.strokeStyle = '#facc15'; ctx.lineWidth = Math.round(3*scale);
-          ctx.beginPath(); ctx.moveTo(cx, cy - mapSize*0.01); ctx.lineTo(cx, cy + mapSize*0.18); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx, cy + mapSize*0.18); ctx.stroke();
         }
 
         // ── Divider kuning vertikal ────────────────────────────────────────
-        const lineX = mapX + mapSize + divGap;
-        const lineY1 = barY + padV;
-        const lineY2 = barY + barH - padV;
         ctx.fillStyle = '#facc15';
-        ctx.fillRect(lineX, lineY1, divW, lineY2 - lineY1);
+        ctx.fillRect(mapX + mapSize + divGap, barY + padV, divW, barH - padV * 2);
 
-        // ── Font sizes skalabel ────────────────────────────────────────────
-        const fsTime   = Math.max(36, Math.round(78 * scale));
-        const fsHari   = Math.max(13, Math.round(18 * scale));
-        const fsDate   = Math.max(11, Math.round(15 * scale));
-        const fsKota   = Math.max(16, Math.round(26 * scale));
-        const fsAlamat = Math.max(11, Math.round(16 * scale));
-        const fsGps    = Math.max(9,  Math.round(12 * scale));
-        const lh       = Math.round(24 * scale);               // line height alamat
-
-        // ── Waktu (jam) ────────────────────────────────────────────────────
-        const textY0 = barY + padV + Math.round(fsTime * 0.9);
+        // ── BARIS 1: JAM  |  HARI / TANGGAL ──────────────────────────────
+        // JAM besar
+        const textY0 = barY + padV + Math.round(fsTime * 0.88);
         ctx.fillStyle = '#ffffff';
         ctx.font = `900 ${fsTime}px 'Inter', Arial, sans-serif`;
         ctx.fillText(waktu, textStartX, textY0);
 
-        // ── Hari & Tanggal di kanan jam ────────────────────────────────────
-        const timeW = ctx.measureText(waktu).width;
-        const dateX = textStartX + timeW + Math.round(18 * scale);
-        ctx.fillStyle = '#facc15';
-        ctx.font = `800 ${fsHari}px 'Inter', Arial, sans-serif`;
-        ctx.fillText(hari, dateX, textY0 - Math.round(fsTime * 0.42));
-        ctx.fillStyle = '#94a3b8';
-        ctx.font = `600 ${fsDate}px 'Inter', Arial, sans-serif`;
-        ctx.fillText(tanggal, dateX, textY0 - Math.round(fsTime * 0.42) + fsHari + Math.round(4*scale));
+        // Sekat vertikal kecil antara jam dan hari/tanggal
+        const sekatX  = textStartX + timeW + sekatW;
+        const sekatH2 = Math.round(fsTime * 0.75);
+        ctx.fillStyle = 'rgba(255,255,255,0.25)';
+        ctx.fillRect(sekatX, textY0 - sekatH2, Math.round(2*scale), sekatH2);
 
-        // ── Kota ──────────────────────────────────────────────────────────
-        const kotaY = textY0 + Math.round(fsKota * 1.4);
+        // HARI (kuning, bold) & TANGGAL (abu, regular) sejajar kanan sekat
+        const dtX = sekatX + Math.round(sekatW * 0.8);
+        const dtMid = textY0 - Math.round(sekatH2 / 2);
+        ctx.fillStyle = '#facc15';
+        ctx.font = `800 ${fsLabel}px 'Inter', Arial, sans-serif`;
+        ctx.fillText(hari, dtX, dtMid - Math.round(fsLabel * 0.15));
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = `600 ${fsLabel}px 'Inter', Arial, sans-serif`;
+        ctx.fillText(tanggal, dtX, dtMid + Math.round(fsLabel * 1.1));
+
+        // ── BARIS 2: KOTA ─────────────────────────────────────────────────
+        const kotaY = textY0 + Math.round(fsKota * 1.3);
         ctx.fillStyle = '#facc15';
         ctx.font = `800 ${fsKota}px 'Inter', Arial, sans-serif`;
         ctx.fillText(kota, textStartX, kotaY);
 
-        // ── Alamat (wrap) ──────────────────────────────────────────────────
-        const maxAddrW = barW - textStartX - padH;
+        // ── BARIS 3: ALAMAT ───────────────────────────────────────────────
+        const maxAddrW = barX + barW - textStartX - padH;
         ctx.fillStyle = '#f1f5f9';
         ctx.font = `400 ${fsAlamat}px 'Inter', Arial, sans-serif`;
         const addrLines = wrapText(ctx, alamat, maxAddrW);
-        let addrY = kotaY + Math.round(fsAlamat * 1.6);
+        let addrY = kotaY + Math.round(fsAlamat * 1.5);
         addrLines.slice(0, 2).forEach(line => {
           ctx.fillText(line, textStartX, addrY);
           addrY += lh;
         });
 
-        // ── GPS koordinat ──────────────────────────────────────────────────
-        ctx.fillStyle = '#64748b';
+        // ── BARIS 4: GPS ──────────────────────────────────────────────────
+        ctx.fillStyle = '#94a3b8';
         ctx.font = `400 ${fsGps}px 'Inter', Arial, sans-serif`;
-        ctx.fillText(`Lat ${lat.toFixed(6)}, Long ${lon.toFixed(6)}`, textStartX, barY + barH - Math.round(10 * scale));
+        ctx.fillText(`Lat ${lat.toFixed(6)}, Long ${lon.toFixed(6)}`, textStartX, addrY + Math.round(fsGps * 0.6));
 
         ctx.restore();
 
