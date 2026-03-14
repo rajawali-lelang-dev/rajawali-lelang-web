@@ -71,10 +71,10 @@
     }
     #pv-dateblock { display: flex; flex-direction: column; justify-content: center; gap: 2px; }
     #out-day  { font-size: 0.7rem; font-weight: 800; color: #facc15; line-height: 1; }
-    #out-date { font-size: 0.62rem; color: #94a3b8; font-weight: 600; }
+    #out-date { font-size: 0.62rem; color: #e2e8f0; font-weight: 600; }
     #out-loc  { font-size: 0.85rem; font-weight: 800; color: #facc15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     #out-addr { font-size: 0.6rem; color: #e2e8f0; opacity: 0.85; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.4; }
-    #out-gps  { font-size: 0.55rem; font-family: monospace; color: #94a3b8; }
+    #out-gps  { font-size: 0.55rem; font-family: monospace; color: #e2e8f0; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -293,8 +293,8 @@
         const fsTime   = Math.max(40, Math.round(86 * scale));
         const fsLabel  = Math.max(14, Math.round(20 * scale));
         const fsKota   = Math.max(18, Math.round(28 * scale));
-        const fsAlamat = Math.max(13, Math.round(18 * scale));
-        const fsGps    = Math.max(11, Math.round(14 * scale));
+        const fsAlamat = Math.max(18, Math.round(26 * scale));
+        const fsGps    = Math.max(18, Math.round(26 * scale));
         const lh       = Math.round(26 * scale);
 
         // ── Pre-measure untuk lebar bar adaptif ───────────────────────────
