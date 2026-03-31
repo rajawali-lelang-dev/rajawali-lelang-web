@@ -61,6 +61,35 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+                  {
+    id: "RLI_ELP_0106", // <-- KWA HERJADI
+    title: "SEGERA LELANG RUMAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Perum The Oz Blok HF/10, Desa Karangwidoro, Kec. Dau, Kab. Malang, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 45,
+    buildingArea: 84,
+    certificateType: "SHM" ,
+    description:
+    `- 7 menit dari Dokter Umum (dr. Tanty Trismayasari)
+- 13 menit dari Wisata Agro Petik Jeruk
+- 16 menit dari SMK Negeri 13 Malang
+- 16 menit dari Universitas Negeri Malang
+- 17 menit dari Malang Town Square`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1m49tUoLbVyV1vA1ibOpMPEWB66SAoWH7"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Gk_WIAFFOkrAC91Jl_PL31Y9n7QUuqrQ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1uz6HdhuIVzQeGKmczj8eK46bkx8PwhNs"),
+      getDriveImageUrl("https://drive.google.com/open?id=1t698IC_xKfHhxv8t2fT-fFmqb5A9S_af"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wiKzhCBpsgd4oh8rgVpMVm-_dQJIGoYl"),
+    ],
+    endPrice: 683000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
                 {
     id: "RLI_ELP_0105", // <-- GUNAWAN WIBISONO (Tanah)
     title: "SEGERA LELANG TANAH",
@@ -326,8 +355,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1RSyF0VJsFuUy__Im04oN5EEOTXb3KpiV")
     ],
     endPrice: 1600000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-03",
     batasWaktuLelang: "-",
+    jamLelang: "14:00 WIB",
   },
           {
     id: "RLI_ELP_0096", // <-- PT. RUMAH SAKIT GRIYA MAHARDHIKA YOGYAKARTA (RS)
@@ -360,8 +390,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1RV3kkPeRuSwOX8bD6a180RQEpWsWpzbt")
     ],
     endPrice: 18000000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-03",
     batasWaktuLelang: "-",
+    jamLelang: "14:00 WIB",
   },
         {
     id: "RLI_ELP_0095", // <-- PT. GIRILANGGENG ARTA
@@ -424,11 +455,12 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=19OS1xagmL_6T6KT9Id6Mcm4V3d-iffyA"),
     ],
     endPrice: 2724000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-04-07",
     batasWaktuLelang: "-",
+    jamLelang: "13:40 WIB",
   },
         {
-    id: "RLI_ELP_0093", // <-- PT. BUMI BERKAH LELUHUR
+    id: "RLI_ELP_0093", // <-- PT. BUMI BERKAH LELUHUR (Surabaya)
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -692,7 +724,7 @@ export const lelangProperties: PropertiDilelang[] = [
 
             {
     id: "RLI_ELP_0084", // <-- EKO HANDOYO
-    title: "SEGERA LELANG WORKSHOP (BENGKEL)",
+    title: "AGUNAN LELANG WORKSHOP (BENGKEL)",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah dan Bangunan",
     location: "Jl. Jayanegara 1, Desa Banjaragung, Kec. Puri, Kab. Mojokerto",
@@ -707,7 +739,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 6 menit dari Sunrise Mall
 - 8 menit dari Alun-Alun Mojokerto
 - 15 menit dari Gerbang Tol Gedeg`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ca2V_WE_2pzy7c2AhBDu7roOZ8ovt9oy"),
       getDriveImageUrl("https://drive.google.com/open?id=1UE2zYgM1LXG0yjoXnZBoEKDG7oWmYKY5"),
@@ -720,8 +752,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1IZYjfDNfgz_Ydeh58l9BjJ5hGbqvYtDE")
     ],
     endPrice: 3344000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-05-05",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
           {
     id: "RLI_ELP_0083", // <-- PT. ARTHA TEKNIK ABADI
@@ -854,7 +887,7 @@ export const lelangProperties: PropertiDilelang[] = [
 
     {
     id: "RLI_ELP_0079", // <-- ERLIN WIDYA SITORUS 
-    title: "SEGERA LELANG RUMAH VILLA",
+    title: "AGUNAN LELANG RUMAH VILLA",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Villa",
     location: "Jalan Melang Kaja I (Masuk) Desa Kutuh, Kecamatan Kuta Selatan, Kabupaten Badung, Provinsi Bali.",
@@ -869,7 +902,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Garuda Wisnu Kencana Cultural Park
       - 12 menit dari Pantai Pandawa
       - 12 menit dari Rumah Sakit Umum Bali Jimbaran`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=13Ljd8qk_VJ2EiEq3z0ME845ERFUC3g7f"),
       getDriveImageUrl("https://drive.google.com/open?id=1djyIuywltJupqxdXqOKKrscH0dG2Osxf"),
@@ -881,8 +914,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1idvYumb0Bx1ZPv2h-OCojWw_E2hydgMn")
     ],
     endPrice: 3283200000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-05-28",
     batasWaktuLelang: "-",
+    jamLelang: "09:10 WIB",
   },
 
   {
@@ -955,7 +989,7 @@ export const lelangProperties: PropertiDilelang[] = [
 
   {
     id: "RLI_ELP_0076", // <-- HAYATI KAMELIA 
-    title: "SEGERA LELANG RUMAH VILLA",
+    title: "AGUNAN LELANG RUMAH VILLA",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Villa",
     location: "Jalan Pura Batu Pageh (Masuk) Desa Ungasan, Kecamatan Kuta Selatan, Kabupaten Badung, Provinsi Bali. ",
@@ -970,7 +1004,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Garuda Wisnu Kencana Cultural Park
       - 14 menit dari Universitas Udayana
       - 16 menit dari Rumah Sakit Umum Bali Jimbaran`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1R82uA2nv5a-nK9MXNutVjwsi37ll7JxG"),
       getDriveImageUrl("https://drive.google.com/open?id=1jpzaYKq3ZUBFeuCd02DEa0m9S52jYo1Z"),
@@ -983,8 +1017,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1V3sUfRg2MPQdSPhqqFE7ac5N2lgGHY7g")
     ],
     endPrice: 2998300000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-05-28",
     batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
   },
 
   {
@@ -1756,7 +1791,7 @@ export const lelangProperties: PropertiDilelang[] = [
     batasWaktuLelang: "-",
   },
   {
-    id: "RLI_ELP_0010",
+    id: "RLI_ELP_0010", // <-- PT. Dinamika Qualita
     title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1780,9 +1815,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1q68qVfrdhw9tOPDy_Mc3_dmrwEAQgfoj")
     ],
     endPrice: 10301214000,
-    tanggalLelang: "2026-01-22",
+    tanggalLelang: "2026-06-11",
     batasWaktuLelang: "-",
-    jamLelang: "14:15 WIB",
+    jamLelang: "10:15 WIB",
   },
   {
     id: "RLI_ELP_0011",
