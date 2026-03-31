@@ -61,6 +61,122 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+                      {
+    id: "RLI_ELP_0110", // <-- Nahdiya Sabrina
+    title: "SEGERA LELANG RUKO",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Ruko Ketawang, Jalan Panglima Sudirman No. 15, Desa Ngadilangkung, Kec. Kepanjen, Kab. Malang, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 77,
+    buildingArea: 127,
+    certificateType: "SHM" ,
+    description:
+    `- 2 menit dari Rumah Sakit Wava Husada
+- 3 menit dari SMAN 1 Kepanjen
+- 4 menit dari Wisata Lembah Dilem Kepanjen
+- 6 menit dari Pasar Besar Kepanjen
+- 6 menit dari Stasiun Kepanjen`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1qJV8RAqfvCZ7u-DU3sgkrt2itwiR9KLb"),
+      getDriveImageUrl("https://drive.google.com/open?id=1lSCP830t05FilR8t1vyMaqqPURLhmZJl"),
+      getDriveImageUrl("https://drive.google.com/open?id=1sI6N5ekg6ArBYIDIy7I73docYWkg5w_m"),
+      getDriveImageUrl("https://drive.google.com/open?id=1T6ZuDlmjH1TaYr2G-0QOG5triFQuKAyv")
+    ],
+    endPrice: 650000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+                    {
+    id: "RLI_ELP_0109", // <-- Irwanto
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Jalan Raya Singosari No. 69, Desa Candirenggo, Kec. Singosari, Kab. Malang, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 109,
+    buildingArea: 166,
+    certificateType: "SHM" ,
+    description:
+    `- 2 menit dari Rumah Sakit Muslimat Singosari
+- 2 menit dari SMPN 1 Singosari Malang
+- 3 menit dari Pasar Singosari
+- 5 menit dari Stasiun Singosari
+- 16 menit dari Tol Singosari`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1eEHb_DqTNxdJhZGwPc6zTMa8xPXEH4bQ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1fLJajfplPpd5jw3sZaNihGJcHuzXe-HR"),
+      getDriveImageUrl("https://drive.google.com/open?id=1elA9DMQtOAfBlq3v_sW61TThB0uAEyQ9"),
+      getDriveImageUrl("https://drive.google.com/open?id=1GwfJsQG1I5Cep3RSFN46cBDalOjA3O-q")
+    ],
+    endPrice: 1025600000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+                  {
+    id: "RLI_ELP_0108", // <-- Mahmudi
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Jalan Desa Bocek, Kec. Karangploso, Kab. Malang, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 77,
+    buildingArea: 74,
+    certificateType: "SHM" ,
+    description:
+    `- 7 menit dari Puskesmas Karangploso
+- 7 menit dari SMP Negeri 1 Karangploso
+- 7 menit dari Pasar Modern Karangploso
+- 10 menit dari POLTEKAD (Politeknik Angkatan Darat)
+- 13 menit dari Malang Skyland`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=15yTlLy1Prj3kmMGx1OrGk4zGzv7UqZ5k"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ZzFyGb40TZqYl4j2aHGV-Hn_w5kS3sTX"),
+      getDriveImageUrl("https://drive.google.com/open?id=1uLUoC2B68WiXYQHgClMzGJHBAsxPgoEz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1x419Cm4nXH5XA6bkPR2Kaghe_onflKSz")
+    ],
+    endPrice: 149000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+
+                    {
+    id: "RLI_ELP_0107", // <-- ADHISTIA VENTIANA DEVI
+    title: "AGUNAN LELANG TANAH DAN BANGUNAN",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah dan Bangunan",
+    location: "Jalan Gunungsari Brau RT. 001 RW. 010, Desa Gunungsari, Kec. Bumiaji Kota Batu, Provinsi Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Batu",
+    landArea: 184,
+    buildingArea: 63,
+    certificateType: "SHM" ,
+    description:
+    `- 1 menit dari SDN Gunungsari 04 Kota Batu 
+- 10 menit dari Wisata Paralayang
+- 12 menit dari Puskesmas Pujon
+- 17 menit dari Alun-Alun Batu
+- 19 menit dari Batu Paradise Factory Outlet`,
+    status: "Lelang Aktif",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1T9lSeXwjAF1bOj4L7Jbo6tzI6xiQLwnM"),
+      getDriveImageUrl("https://drive.google.com/open?id=1DXQIEbgqc7JcVE6LjYVkWHDhmTVVDMhS"),
+      getDriveImageUrl("https://drive.google.com/open?id=1td48u04ApVxJv7ue5TFGKxyQ9HmewGrd"),
+      getDriveImageUrl("https://drive.google.com/open?id=1pHT3W9tniIqNEimk-d3KmWbeQnLfWNQD"),
+      getDriveImageUrl("https://drive.google.com/open?id=1sNnqHliA2eP6CpBw0J9K-xGdLiy3-9_B"),
+      getDriveImageUrl("https://drive.google.com/open?id=1V9IiyEy0o6xIsWZjGh06w1E2JhYY4mqM")
+    ],
+    endPrice: 191000000,
+    tanggalLelang: "2026-04-24",
+    batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
+  },
                   {
     id: "RLI_ELP_0106", // <-- KWA HERJADI
     title: "SEGERA LELANG RUMAH",
@@ -84,7 +200,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Gk_WIAFFOkrAC91Jl_PL31Y9n7QUuqrQ"),
       getDriveImageUrl("https://drive.google.com/open?id=1uz6HdhuIVzQeGKmczj8eK46bkx8PwhNs"),
       getDriveImageUrl("https://drive.google.com/open?id=1t698IC_xKfHhxv8t2fT-fFmqb5A9S_af"),
-      getDriveImageUrl("https://drive.google.com/open?id=1wiKzhCBpsgd4oh8rgVpMVm-_dQJIGoYl"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wiKzhCBpsgd4oh8rgVpMVm-_dQJIGoYl")
     ],
     endPrice: 683000000,
     tanggalLelang: "-",
@@ -445,7 +561,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 8 menit dari UPN Veteran Jakarta Limo Depok
 - 13 menit dari Rumah Sakit Puri Cinere
 - 13 menit dari Mall Cinere`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1PXzjHqzqc7yHTIX3ZT2bCXYjCGbgi-cb"),
       getDriveImageUrl("https://drive.google.com/open?id=1JzhcRJyzsHz6hBRas89yye_zImcw0JMk"),
