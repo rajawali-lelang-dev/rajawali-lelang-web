@@ -62,6 +62,35 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+    id: "RLI_ELP_0123", // Agoes Slamet Wahyudi
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true,
+    type: "Rumah",
+    location: "Perumahan Pesona Mutiara Tidar Blok AL-02, Desa Karangwidoro, Kec. Dau, Kab. Malang, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Malang",
+    landArea: 84,
+    buildingArea: 70,
+    certificateType: "SHM",
+    description:
+    `- 2 menit dari SDN Karangwidoro 2
+- 11 menit dari Kolam Renang Lembah Dieng
+- 14 menit dari Universitas Brawijaya
+- 15 menit dari Mall Dinoyo City
+- 15 menit dari RSI UNISMA`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1bn7EKVBJulAkE7r3VLXBo7CJghHejEzu"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Sf4xIoLGoadpamDHtnYOXwq7PdR9ZHdT"),
+      getDriveImageUrl("https://drive.google.com/open?id=1LPIS70_0Q5wWcIzp7UgyjDCiNWHTeJXC"),
+      getDriveImageUrl("https://drive.google.com/open?id=1JkdZ51I4LyNoY1TBzZxM9HcnJkpXgzmQ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ArLoPpUAZ09jHZUyeMbey0GPSSU8Fe_-")
+    ],
+    endPrice: 420000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  {
     id: "RLI_ELP_0122", // CRR 05
     title: "SEGERA LELANG TANAH KOSONG",
     isHidden: true,
@@ -2325,7 +2354,7 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "11:00 WIB",
   },
   {
-    id: "RLI_ELP_0012",
+    id: "RLI_ELP_0012", // Diah Bagus Ariotejo
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -2341,18 +2370,19 @@ export const lelangProperties: PropertiDilelang[] = [
       - 12 menit dari Alun-Alun Malang
       - 16 menit dari Stasiun Malang
       - 16 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1EHJLs_ItHNpw3QFQJHmf3h8s2Ik-a7kU"),
       getDriveImageUrl("https://drive.google.com/open?id=1cNW2kjVK2xc4Et3Y4dgvJZtJ_M9WjtUB"),
       getDriveImageUrl("https://drive.google.com/open?id=1HfAD51PiTAN34N8CCCiOZU0nyNt9P3fP"),
     ],
     endPrice: 770000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-05-06",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
   {
-    id: "RLI_ELP_0013",
+    id: "RLI_ELP_0013", // Diah Bagus Ariotejo
     title: "SEGERA LELANG TOKO",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Ruko",
@@ -2368,18 +2398,19 @@ export const lelangProperties: PropertiDilelang[] = [
       - 14 menit dari Alun-Alun Malang
       - 15 menit dari Stasiun Pakisaji
       - 18 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1tg3chY_xJa6Yh247l97Un6yjh0_hAiIh"),
       getDriveImageUrl("https://drive.google.com/open?id=19KXYp2EtxmxG4U_WVdYawAMSajuSTm6i"),
       getDriveImageUrl("https://drive.google.com/open?id=1a1ltrfNqvrNm4au4VpODLsGVFcnTqqY4")
     ],
     endPrice: 625000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-05-06",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
   {
-    id: "RLI_ELP_0014",
+    id: "RLI_ELP_0014", // Diah Bagus Ariotejo
     title: "SEGERA LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -2395,15 +2426,16 @@ export const lelangProperties: PropertiDilelang[] = [
       - 13 menit dari Alun-Alun Malang
       - 16 menit dari Stasiun Malang
       - 17 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1PGpVzmGICVPD87uLvq0kHA66pMnJhFJD"),
       getDriveImageUrl("https://drive.google.com/open?id=1Vg8yqFKfZNYglcnxlQLyiFVJm3lwm57u"),
       getDriveImageUrl("https://drive.google.com/open?id=1x36j5cQ-qtVElwIQz-aommqdSXzlv7bq")
     ],
     endPrice: 1250000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-05-06",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
   {
     id: "RLI_ELP_0015",
