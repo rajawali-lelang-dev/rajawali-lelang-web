@@ -1563,7 +1563,7 @@ export const lelangProperties: PropertiDilelang[] = [
 
 
       {
-    id: "RLI_ELP_0074",
+    id: "RLI_ELP_0074", // Nusya
     title: "AGUNAN LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1586,7 +1586,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1fWr1X8kSocUlcoxwCzO_Ee3-64J5g-Ci")
     ],
     endPrice: 611000000,
-    tanggalLelang: "2026-02-25",
+    tanggalLelang: "2026-05-12",
     batasWaktuLelang: "-",
     jamLelang: "10:15 WIB",
   },
@@ -1682,13 +1682,13 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=15SNIQLWGC_KZ60KllBdNagqI6o1Rgs9K")
     ],
     endPrice: 570220000,
-    tanggalLelang: "2026-02-18",
+    tanggalLelang: "2026-05-12",
     batasWaktuLelang: "-",
-    jamLelang: "10:45 WIB",
+    jamLelang: "10:00 WIB",
   },
 
      {
-    id: "RLI_ELP_0070",
+    id: "RLI_ELP_0070", // M. ASief Rumah
     title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
@@ -1718,13 +1718,13 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1JsVWpbOjhq50YT1hkmSCMWI8HIhDFqP8"),
     ],
     endPrice: 876440000,
-    tanggalLelang: "2026-02-18",
+    tanggalLelang: "2026-05-12",
     batasWaktuLelang: "-",
-    jamLelang: "10:15 WIB",
+    jamLelang: "10:30 WIB",
   },
 
      {
-    id: "RLI_ELP_0069", // <-- Mathohir
+    id: "RLI_ELP_0069", // <-- M. Asief Sawah
     title: "AGUNAN LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
@@ -1750,9 +1750,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1vc5so1OCJkSQ_5LyFfUbxiUdn4TphXOP")
     ],
     endPrice: 211696000,
-    tanggalLelang: "2026-02-18",
+    tanggalLelang: "2026-05-12",
     batasWaktuLelang: "-",
-    jamLelang: "10:15 WIB",
+    jamLelang: "10:30 WIB",
   },
   
     {
