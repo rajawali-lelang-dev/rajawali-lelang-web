@@ -61,6 +61,128 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+     {
+    id: "RLI_ELP_0127", // PT. AFALIS INDONESIA
+    title: "SEGERA LELANG GUDANG PABRIK",
+    isHidden: true,
+    type: "Gudang",
+    location: "Jalan Poros Sidorogo, Desa Trosobo, Kec. Taman, Kab. Sidoarjo, Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Sidoarjo",
+    landArea: 905,
+    buildingArea: 918.75,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Jalan Raya Krian-Taman
+- 7 menit dari Klinik Medika Harmony
+- 8 menit dari Super Indo Citra Harmoni
+- 16 menit dari SMAN 1 Taman
+- 30 menit dari Gerbang Tol Menanggal`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1ob_A2iYB5GTmo-eYshvctRUi8ZfZu1AE"),
+      getDriveImageUrl("https://drive.google.com/open?id=1tJxxsD8fIm7LA5vB6ucmvupCaFzwEZ0D"),
+      getDriveImageUrl("https://drive.google.com/open?id=15W5S6wkvgW622jYxCqmn0sIdKbHYWrBT"),
+      getDriveImageUrl("https://drive.google.com/open?id=1S5GcL51swXWmEIUtPyry5C5jiSS1hlrh"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Msp-SMbvgaEuJZAJK5IqPBtSXA9iLv6j")
+    ],
+    endPrice: 5891059300,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+   {
+    id: "RLI_ELP_0126", // PT. BINTANG TIMUR STEEL
+    title: "SEGERA LELANG RUMAH TINGGAL",
+    isHidden: true,
+    type: "Rumah",
+    location: "Jalan Raya Cileungsi-Jonggol, RT.003 RW.003, Desa Cipeucang, Kec. Cileungsi, Kab. Bogor, Jawa Barat",
+    provinsi: "Jawa Barat",
+    kota: "Bogor",
+    landArea: 2486,
+    buildingArea: 2486,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari RSUD RH. Satibi
+- 1 menit dari SDN Cipeucang 01
+- 9 menit dari Fresh Market Citra Indah City
+- 11 menit dari Alun-Alun Kota Jonggol
+- 11 menit dari Citra Indah Waterpark`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1pjk15vYUTOq81Hu0GUTmKJuKRqon53b-"),
+      getDriveImageUrl("https://drive.google.com/open?id=1E-hCsN4ozcQ0Wu-0kjf6MUTd-6N8XVnC"),
+      getDriveImageUrl("https://drive.google.com/open?id=139mjygK2ZyStmhQmN25IW6pG0OVtdV_w"),
+      getDriveImageUrl("https://drive.google.com/open?id=1RL0dSYS9btGwYHZ-8MPaP_FTryYIwWKa"),
+      getDriveImageUrl("https://drive.google.com/open?id=1yg5NF906hRbWYGTci6Aq6JwC_YbOBkCW"),
+      getDriveImageUrl("https://drive.google.com/open?id=1vuCtxPXU7VvH1GR1z26v1L9JL3Sxj-NL")
+    ],
+    endPrice: 19135000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+      {
+    id: "RLI_ELP_0125", // PT. UDANG MAS MAKMUR
+    title: "SEGERA LELANG TANAH",
+    isHidden: true,
+    type: "Tanah",
+    location: "Jalan Raya Punduh Pedada, Desa Sukarame, Kec. Punduh Pedada, Kab. Pesawaran (dh. Kab. Lampung Selatan), Prov. Lampung",
+    provinsi: "Lampung",
+    kota: "Pesawaran",
+    landArea: 138.250,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Jalan Raya Dirt Road
+- 2 menit dari Puskesmas Pedada
+- 9 menit dari Pasar Al-Bina
+- 12 menit dari Pantai Pancur Permai
+- 16 menit dari SMAN 1 Punduh Pedada`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1eln3xnenWrtbl5HTv5OoeOoVyhfnaTBW"),
+      getDriveImageUrl("https://drive.google.com/open?id=1yCTFdmqGFUNgDb2Y3tpkeuuA27xJIgpm"),
+      getDriveImageUrl("https://drive.google.com/open?id=1L5jRzzz1nkv2lhIqHe9b8AH_P2y4iX6O"),
+      getDriveImageUrl("https://drive.google.com/open?id=14II-RhqCVoV8h0h_tmenZxRSUyFJ1dAr"),
+      getDriveImageUrl("https://drive.google.com/open?id=19FUdeWZHIpSuc7QCLqPwEKjdp8-DBx2s"),
+      getDriveImageUrl("https://drive.google.com/open?id=16-UJicZI74B7DOzL360_NIGBFyy_fT-E"),
+      getDriveImageUrl("https://drive.google.com/open?id=1FqwyZPPZN_9GVO9H4f_XMtja3IQH6Mdw")
+    ],
+    endPrice: 9000000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+    {
+    id: "RLI_ELP_0124", // PT. UDANG MAS MAKMUR
+    title: "SEGERA LELANG TANAH",
+    isHidden: true,
+    type: "Tanah",
+    location: "Desa Kekatang, Kec. Marga Punduh (dh. Kec. Punduh Pedada), Kab. Pesawaran (dh. Kab. Lampung Selatan), Prov. Lampung",
+    provinsi: "Lampung",
+    kota: "Pesawaran",
+    landArea: 265.349,
+    buildingArea: 0,
+    certificateType: "SHM",
+    description:
+    `- 1 menit dari Jalan Raya Dirt Road
+- 2 menit dari Puskesmas Pedada
+- 9 menit dari Pasar Al-Bina
+- 12 menit dari Pantai Pancur Permai
+- 16 menit dari SMAN 1 Punduh Pedada`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1wJwPKWRvj52LLpf5AJrnusbTxqQtkGAK"),
+      getDriveImageUrl("https://drive.google.com/open?id=1_XxnLL4Msob0jB0P5yscQFvMvdEMGTdL"),
+      getDriveImageUrl("https://drive.google.com/open?id=1my_gbAAeY_1ZWsUIk9uBGcyyrHra1FMU"),
+      getDriveImageUrl("https://drive.google.com/open?id=11OdMghSQED5-LlfcjhTK6eKIHUhga73-"),
+      getDriveImageUrl("https://drive.google.com/open?id=1NxzwmYtrsN1E7HFZH25pJ_Ybm_ZBhQii"),
+      getDriveImageUrl("https://drive.google.com/open?id=1A7vKYVLsmSkiRvR1eSc4sPTvMN6DeT3h"),
+      getDriveImageUrl("https://drive.google.com/open?id=1uI00SASEISzuVGYeIQec08nbzpuHSHGG"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Z4iaBhJJhtBXWsyREYNldA0dZaxwIakG")
+    ],
+    endPrice: 14050000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
   {
     id: "RLI_ELP_0123", // Agoes Slamet Wahyudi
     title: "SEGERA LELANG RUMAH TINGGAL",
@@ -3438,7 +3560,7 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "10:10 WIB",
   },
    {
-    id: "RLI_ELP_0053",
+    id: "RLI_ELP_0053", // Hendar
     title: "SEGERA LELANG KIOS",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Toko",
@@ -3463,8 +3585,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=12wpweOuhWeapw9OcdtbfRH8ilUT2TNNA")
     ],
     endPrice: 480000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-07",
     batasWaktuLelang: "-",
+    jamLelang: "09:40 WIB",
   },
   {
     id: "RLI_ELP_0054",
@@ -3524,9 +3647,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1f1Sb8PJlKFPI7XJw9_GPt__cceLeTSZU")
     ],
     endPrice: 1377700000,
-    tanggalLelang: "2026-03-25",
+    tanggalLelang: "2026-04-29",
     batasWaktuLelang: "-",
-    jamLelang: "09:30 WIB",
+    jamLelang: "09:15 WIB",
   },
     {
     id: "RLI_ELP_0056",
