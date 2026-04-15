@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAJAWALI-NEST — Internal Management System [DEMO]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --accent: #0078d4;
+            --accent2: #005a9e;
+            --text: #ffffff;
+            --text-dim: rgba(255,255,255,0.65);
+            --text-muted: rgba(255,255,255,0.35);
+            --bg: #000;
+            --card-bg: rgba(14,20,36,0.96);
+            --glass: rgba(255,255,255,0.05);
+            --green: #22c55e;
+            --amber: #f59e0b;
+            --red: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #000;
+            color: var(--text);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: radial-gradient(ellipse at 15% 20%, rgba(0,80,180,0.18) 0%, transparent 50%),
+                        radial-gradient(ellipse at 85% 80%, rgba(0,40,120,0.12) 0%, transparent 50%),
+                        linear-gradient(160deg, #05091a 0%, #080c14 60%, #040710 100%);
+            pointer-events: none;
+        }
+
+        /* WALLPAPER CANVAS */
+        #wallpaper {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        /* LOGIN SCREEN */
+        .login-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .login-time {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 76px;
+            color: #fff;
+            text-shadow: 0 0 40px rgba(0,120,212,0.5);
+            letter-spacing: 4px;
+            line-height: 1;
+        }
+
+        .login-date {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-top: -20px;
+            letter-spacing: 1px;
+        }
+
+        .login-card {
+            width: 360px;
+            background: rgba(18,18,26,0.88);
+            border: 1px solid rgba(0,120,212,0.35);
+            border-radius: 8px;
+            padding: 34px 30px 28px;
+            backdrop-filter: blur(32px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.75);
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .login-eagle {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 8px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .login-brand {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .login-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+
+        .inp-wrap {
+            margin-bottom: 12px;
+        }
+
+        .inp-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .win-input {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 4px;
+            padding: 10px 14px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: border-color .2s, background .2s;
+        }
+
+        .win-input:focus {
+            border-color: var(--accent);
+            background: rgba(0,120,212,.08);
+        }
+
+        .win-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .win-btn {
+            width: 100%;
+            margin-top: 6px;
+            padding: 11px;
+            background: var(--accent);
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .15s;
+        }
+
+        .win-btn:hover {
+            background: #1084d8;
+        }
+
+        .win-btn:active {
+            background: var(--accent2);
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* DEMO VERSION BADGE */
+        .demo-badge {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 10000;
+            background: rgba(245,158,11,0.92);
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* DESKTOP */
+        .desktop {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .center-widget {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .welcome-text {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .welcome-name {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.75);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0,120,212,0.4);
+        }
+
+        .big-clock {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 96px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1;
+            letter-spacing: 6px;
+            text-shadow: 0 0 60px rgba(0,120,212,0.35), 0 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .big-date {
+            font-size: 15px;
+            color: rgba(255,255,255,0.45);
+            margin-top: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .role-badge {
+            display: inline-block;
+            margin-top: 14px;
+            background: rgba(0,120,212,0.2);
+            border: 1px solid rgba(0,120,212,0.4);
+            color: #60b4ff;
+            font-size: 11px;
+            padding: 3px 12px;
+            border-radius: 3px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* ICON GRID */
+        .icon-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-start;
+            position: relative;
+            z-index: 3;
+        }
+
+        .desktop-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            width: 80px;
+            padding: 8px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background .12s;
+            border: 1px solid transparent;
+        }
+
+        .desktop-icon:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .desktop-icon:active {
+            background: rgba(0,120,212,.2);
+            border-color: rgba(0,120,212,.4);
+        }
+
+        .folder-svg {
+            width: 48px;
+            height: 48px;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
+        }
+
+        .icon-label {
+            font-size: 11.5px;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 1px 4px rgba(0,0,0,.9);
+            line-height: 1.3;
+        }
+
+        /* LOGOUT BUTTON */
+        .logout-corner {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .tb-logout {
+            background: rgba(196,43,28,.18);
+            border: 1px solid rgba(196,43,28,.35);
+            color: #ff7b72;
+            font-size: 12px;
+            padding: 7px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background .12s;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .tb-logout:hover {
+            background: rgba(196,43,28,.35);
+        }
+
+        /* OVERLAY */
+        .win-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 800;
+            display: none;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .win-overlay.active {
+            display: block;
+        }
+
+        /* FOLDER WINDOW */
+        .folder-window {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.97);
+            width: 580px;
+            background: rgba(22,22,32,0.97);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            box-shadow: 0 28px 80px rgba(0,0,0,.9), 0 0 0 1px rgba(0,120,212,.15);
+            z-index: 900;
+            display: none;
+            opacity: 0;
+            transition: opacity .16s ease, transform .16s ease;
+            backdrop-filter: blur(20px);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .folder-window.open {
+            display: block;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .win-titlebar {
+            display: flex;
+            align-items: center;
+            height: 32px;
+            padding: 0 0 0 12px;
+            background: rgba(0,0,0,.25);
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            border-radius: 8px 8px 0 0;
+            cursor: default;
+            gap: 7px;
+            position: sticky;
+            top: 0;
+        }
+
+        .win-title-text {
+            font-size: 12px;
+            color: var(--text-dim);
+            flex: 1;
+        }
+
+        .win-controls {
+            display: flex;
+            margin-left: auto;
+        }
+
+        .wc {
+            width: 46px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: background .12s;
+        }
+
+        .wc:hover {
+            background: rgba(255,255,255,.1);
+            color: #fff;
+        }
+
+        .wc.close:hover {
+            background: #c42b1c;
+            color: #fff;
+        }
+
+        .wc.close {
+            border-radius: 0 8px 0 0;
+        }
+
+        .win-addrbar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            height: 28px;
+            padding: 0 12px;
+            background: rgba(0,0,0,.12);
+            border-bottom: 1px solid rgba(255,255,255,.05);
+            font-size: 11px;
+            color: var(--text-muted);
+            position: sticky;
+            top: 32px;
+        }
+
+        .win-path {
+            color: var(--text-dim);
+            font-size: 11px;
+        }
+
+        .win-content {
+            padding: 14px;
+        }
+
+        .menu-tile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all .12s;
+            text-decoration: none;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .menu-tile:hover {
+            background: rgba(0,120,212,.15);
+            border-color: rgba(0,120,212,.4);
+        }
+
+        .tile-icon {
+            font-size: 24px;
+            width: 34px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .tile-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .tile-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+
+        /* DATABASE ASET VIEW */
+        .aset-container {
+            padding: 14px;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 180px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 6px;
+            padding: 7px 10px;
+            color: #fff;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .search-box:focus {
+            border-color: rgba(0,120,212,0.6);
+            background: rgba(0,120,212,.08);
+        }
+
+        .btn-sm {
+            padding: 7px 12px;
+            background: rgba(0,120,212,0.8);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .15s;
+        }
+
+        .btn-sm:hover {
+            background: var(--accent);
+        }
+
+        .aset-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            transition: border-color .2s;
+        }
+
+        .aset-card:hover {
+            border-color: rgba(0,120,212,0.4);
+        }
+
+        .aset-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 12px;
+            background: rgba(0,120,212,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .aset-debitur {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .aset-bank {
+            font-size: 9px;
+            background: rgba(0,120,212,0.3);
+            padding: 2px 7px;
+            border-radius: 3px;
+            color: #7dbeff;
+        }
+
+        .aset-badge {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        .badge-laku {
+            background: rgba(34,197,94,0.3);
+            color: #4ade80;
+        }
+
+        .badge-progress {
+            background: rgba(0,120,212,0.3);
+            color: #60a5fa;
+        }
+
+        .badge-pending {
+            background: rgba(245,158,11,0.3);
+            color: #fbbf24;
+        }
+
+        .aset-body {
+            padding: 10px 12px;
+            font-size: 11px;
+            color: var(--text-dim);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .aset-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .aset-label {
+            color: var(--text-muted);
+        }
+
+        .aset-value {
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* MAP VIEW */
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background: rgba(0,50,100,0.4);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .marker-pin {
+            width: 30px;
+            height: 40px;
+            background: #ef4444;
+            border: 2px solid #fff;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: -10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: rotate(-45deg) translateY(0); }
+            50% { transform: rotate(-45deg) translateY(-8px); }
+        }
+
+        .marker-popup {
+            position: absolute;
+            top: -120px;
+            left: -80px;
+            width: 160px;
+            background: rgba(0,0,0,0.95);
+            border: 1px solid rgba(0,120,212,0.4);
+            border-radius: 6px;
+            padding: 8px;
+            font-size: 10px;
+            color: var(--text-dim);
+            white-space: nowrap;
+            z-index: 100;
+            display: none;
+        }
+
+        .map-marker:hover .marker-popup {
+            display: block;
+        }
+
+        /* BERITA ACARA VIEW */
+        .ba-container {
+            padding: 14px;
+        }
+
+        .ba-timeline {
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .ba-event {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .ba-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid rgba(0,0,0,0.8);
+            flex-shrink: 0;
+            margin-top: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ba-event:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 7.5px;
+            top: 24px;
+            width: 1px;
+            height: calc(100% + 20px);
+            background: rgba(0,120,212,0.3);
+        }
+
+        .ba-content {
+            flex: 1;
+            padding-bottom: 8px;
+        }
+
+        .ba-date {
+            font-size: 10px;
+            color: var(--text-muted);
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 3px;
+        }
+
+        .ba-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .ba-desc {
+            font-size: 11px;
+            color: var(--text-dim);
+            line-height: 1.4;
+        }
+
+        .ba-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 700;
+            margin-top: 5px;
+            background: rgba(0,120,212,0.2);
+            color: #60a5fa;
+        }
+
+        .ba-status.success {
+            background: rgba(34,197,94,0.2);
+            color: #4ade80;
+        }
+
+        .ba-status.warning {
+            background: rgba(245,158,11,0.2);
+            color: #fbbf24;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .folder-window {
+                width: 95vw;
+                max-height: 95vh;
+                border-radius: 20px;
+            }
+
+            .win-titlebar {
+                border-radius: 20px 20px 0 0;
+            }
+
+            .aset-body {
+                grid-template-columns: 1fr;
+            }
+
+            .big-clock {
+                font-size: 48px;
+            }
+
+            .welcome-name {
+                font-size: 18px;
+            }
+
+            .center-widget {
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+
+        /* LOADING */
+        .loading {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="wallpaper"></canvas>
+
+    <div class="demo-badge">
+        🎬 DEMO VERSION 1.0
+    </div>
+
+    <!-- LOGIN SCREEN (Initially shown) -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-time" id="login-clock">08:45</div>
+        <div class="login-date" id="login-date">Wednesday, 15 April 2026</div>
+        <div class="login-card">
+            <div class="login-logo">
+                <span class="login-eagle">🦅</span>
+                <div class="login-brand">RAJAWALI-NEST</div>
+                <div class="login-sub">Internal Management System</div>
+            </div>
+            <form onsubmit="return loginUser(event)">
+                <div class="inp-wrap">
+                    <label class="inp-label">Username</label>
+                    <input type="text" id="username" class="win-input" placeholder="Username" value="admin" required>
+                </div>
+                <div class="inp-wrap">
+                    <label class="inp-label">Password</label>
+                    <input type="password" id="password" class="win-input" placeholder="Password" value="demo123" required>
+                </div>
+                <button type="submit" class="win-btn">Sign in →</button>
+            </form>
+            <div class="login-footer">RAJAWALI-NEST © 2026 — PT. RAJAWALI LELANG INDONESIA [DEMO]</div>
+        </div>
+    </div>
+
+    <!-- DESKTOP (Hidden by default) -->
+    <div id="desktop" class="desktop" style="display: none;">
+        <div class="center-widget">
+            <div class="welcome-text">Welcome</div>
+            <div class="welcome-name" id="welcomeName">Admin User</div>
+            <div class="big-clock" id="big-clock">08:45</div>
+            <div class="big-date" id="big-date">Wednesday, 15 April 2026</div>
+            <div class="role-badge">ADMINISTRATOR</div>
+        </div>
+
+        <div class="icon-grid">
+            <div class="desktop-icon" onclick="openFolder('it')">
+                <svg class="folder-svg" viewBox="0 0 48 48" fill="none">
+                    <path d="M4 10C4 8.34 5.34 7 7 7H20L24 13H41C42.66 13 44 14.34 44 16V38C44 39.66 42.66 41 41 41H7C5.34 41 4 39.66 4 38V10Z" fill="url(#it1)"/>
+                    <path d="M4 18H44V38C44 39.66 42.66 41 41 41H7C5.34 41 4 39.66 4 38V18Z" fill="url(#it2)"/>
+                    <defs>
+                        <linearGradient id="it1" x1="4" y1="7" x2="44" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB900"/><stop offset="1" stop-color="#D78200"/></linearGradient>
+                        <linearGradient id="it2" x1="4" y1="18" x2="44" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#FFC833"/><stop offset="1" stop-color="#E89500"/></linearGradient>
+                    </defs>
+                </svg>
+                <span class="icon-label">Database Aset</span>
+            </div>
+
+            <div class="desktop-icon" onclick="openFolder('ga')">
+                <svg class="folder-svg" viewBox="0 0 48 48" fill="none">
+                    <path d="M4 10C4 8.34 5.34 7 7 7H20L24 13H41C42.66 13 44 14.34 44 16V38C44 39.66 42.66 41 41 41H7C5.34 41 4 39.66 4 38V10Z" fill="url(#ga1)"/>
+                    <path d="M4 18H44V38C44 39.66 42.66 41 41 41H7C5.34 41 4 39.66 4 38V18Z" fill="url(#ga2)"/>
+                    <defs>
+                        <linearGradient id="ga1" x1="4" y1="7" x2="44" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#0078D4"/><stop offset="1" stop-color="#005a9e"/></linearGradient>
+                        <linearGradient id="ga2" x1="4" y1="18" x2="44" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#1A8FE3"/><stop offset="1" stop-color="#006cbf"/></linearGradient>
+                    </defs>
+                </svg>
+                <span class="icon-label">GA Monitoring</span>
+            </div>
+
+            <div class="desktop-icon" onclick="openFolder('ba')">
+                <svg class="folder-svg" viewBox="0 0 48 48" fill="none">
+                    <rect x="6" y="4" width="36" height="40" rx="3" fill="url(#ba1)"/>
+                    <rect x="6" y="4" width="36" height="40" rx="3" fill="url(#ba2)" opacity="0.6"/>
+                    <line x1="13" y1="16" x2="35" y2="16" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="13" y1="22" x2="35" y2="22" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="13" y1="28" x2="28" y2="28" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="ba1" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#8B5CF6"/><stop offset="1" stop-color="#6D28D9"/></linearGradient>
+                        <linearGradient id="ba2" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#A78BFA" stop-opacity="0.3"/><stop offset="1" stop-color="transparent"/></linearGradient>
+                    </defs>
+                </svg>
+                <span class="icon-label">Berita Acara</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="logout-corner">
+        <a href="#" class="tb-logout" onclick="logoutUser(event)">⏻ Logout</a>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="win-overlay" id="overlay" onclick="closeAllFolders()"></div>
+
+    <!-- DATABASE ASET WINDOW -->
+    <div class="folder-window" id="win-it">
+        <div class="win-titlebar">
+            <span style="font-size:13px;">📁</span>
+            <span class="win-title-text">Database Aset — RAJAWALI-NEST</span>
+            <div class="win-controls">
+                <div class="wc">─</div><div class="wc">□</div>
+                <div class="wc close" onclick="closeFolder('it')">✕</div>
+            </div>
+        </div>
+        <div class="win-addrbar"><span>🏠</span><span class="win-path">RAJAWALI-NEST › Database Aset</span></div>
+        <div class="aset-container">
+            <div class="toolbar">
+                <input type="text" class="search-box" placeholder="Cari aset..." id="searchAset">
+                <button class="btn-sm" onclick="filterAset('all')">Semua</button>
+                <button class="btn-sm" onclick="filterAset('progress')">Progress</button>
+                <button class="btn-sm" onclick="filterAset('laku')">Laku</button>
+            </div>
+            <div id="asetList"></div>
+        </div>
+    </div>
+
+    <!-- GA MONITORING WINDOW -->
+    <div class="folder-window" id="win-ga">
+        <div class="win-titlebar">
+            <span style="font-size:13px;">🏢</span>
+            <span class="win-title-text">GA Monitoring & Pinpoint Aset — RAJAWALI-NEST</span>
+            <div class="win-controls">
+                <div class="wc">─</div><div class="wc">□</div>
+                <div class="wc close" onclick="closeFolder('ga')">✕</div>
+            </div>
+        </div>
+        <div class="win-addrbar"><span>🏠</span><span class="win-path">RAJAWALI-NEST › General Affair › Pinpoint Aset</span></div>
+        <div style="padding: 14px;">
+            <div class="map-container">
+                <div id="mapContent" style="width: 100%; height: 100%; position: relative; background: linear-gradient(135deg, #0a2342 0%, #1a3a5c 100%); overflow: hidden;">
+                    <!-- Markers akan di-render dengan posisi absolute -->
+                </div>
+            </div>
+            <div style="margin-top: 12px; font-size: 11px; color: var(--text-dim);">
+                <strong>Legenda:</strong> Merah = Aset Aktif | Total Aset Dipantau: 3
+            </div>
+        </div>
+    </div>
+
+    <!-- BERITA ACARA WINDOW -->
+    <div class="folder-window" id="win-ba">
+        <div class="win-titlebar">
+            <span style="font-size:13px;">📝</span>
+            <span class="win-title-text">Berita Acara — RAJAWALI-NEST</span>
+            <div class="win-controls">
+                <div class="wc">─</div><div class="wc">□</div>
+                <div class="wc close" onclick="closeFolder('ba')">✕</div>
+            </div>
+        </div>
+        <div class="win-addrbar"><span>🏠</span><span class="win-path">RAJAWALI-NEST › Berita Acara</span></div>
+        <div class="ba-container">
+            <div class="ba-timeline" id="baTimeline"></div>
+        </div>
+    </div>
+
+    <script>
+        // ===== WALLPAPER ANIMATION =====
+        const canvas = document.getElementById('wallpaper');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const stars = Array.from({ length: 110 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 1.4 + 0.2,
+            dx: (Math.random() - 0.5) * 0.25,
+            dy: (Math.random() - 0.5) * 0.25,
+            o: Math.random() * 0.5 + 0.1
+        }));
+
+        let t = 0;
+
+        function drawWallpaper() {
+            t += 0.003;
+            const W = canvas.width;
+            const H = canvas.height;
+
+            const g = ctx.createRadialGradient(W * 0.35, H * 0.4, 0, W * 0.5, H * 0.5, W * 0.85);
+            g.addColorStop(0, '#0a1628');
+            g.addColorStop(0.5, '#060d18');
+            g.addColorStop(1, '#020508');
+            ctx.fillStyle = g;
+            ctx.fillRect(0, 0, W, H);
+
+            const a = ctx.createLinearGradient(0, H * 0.15, W, H * 0.65);
+            a.addColorStop(0, `rgba(0,80,180,${0.07 + Math.sin(t) * 0.03})`);
+            a.addColorStop(0.5, `rgba(0,100,200,${0.04 + Math.cos(t * 0.8) * 0.02})`);
+            a.addColorStop(1, 'transparent');
+            ctx.fillStyle = a;
+            ctx.fillRect(0, 0, W, H);
+
+            stars.forEach(s => {
+                s.x += s.dx;
+                s.y += s.dy;
+                if (s.x < 0) s.x = W;
+                if (s.x > W) s.x = 0;
+                if (s.y < 0) s.y = H;
+                if (s.y > H) s.y = 0;
+
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255,255,255,${s.o * (0.6 + Math.sin(t * 2 + s.x * 0.01) * 0.4)})`;
+                ctx.fill();
+            });
+
+            ctx.strokeStyle = 'rgba(0,100,200,0.03)';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < W; x += 60) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, H);
+                ctx.stroke();
+            }
+            for (let y = 0; y < H; y += 60) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(W, y);
+                ctx.stroke();
+            }
+
+            requestAnimationFrame(drawWallpaper);
+        }
+
+        drawWallpaper();
+
+        // ===== CLOCK & TIME =====
+        function updateClock() {
+            const now = new Date();
+            const hm = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const dateStr = days[now.getDay()] + ', ' + String(now.getDate()).padStart(2, '0') + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+
+            if (document.getElementById('big-clock')) document.getElementById('big-clock').textContent = hm;
+            if (document.getElementById('login-clock')) document.getElementById('login-clock').textContent = hm;
+            if (document.getElementById('big-date')) document.getElementById('big-date').textContent = dateStr;
+            if (document.getElementById('login-date')) document.getElementById('login-date').textContent = dateStr;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // ===== AUTHENTICATION =====
+        function loginUser(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            document.getElementById('welcomeName').textContent = username.charAt(0).toUpperCase() + username.slice(1);
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('desktop').style.display = 'block';
+            renderAsetData();
+            renderMapMarkers();
+            renderBeritaAcara();
+            return false;
+        }
+
+        function logoutUser(e) {
+            e.preventDefault();
+            document.getElementById('loginScreen').style.display = 'flex';
+            document.getElementById('desktop').style.display = 'none';
+            closeAllFolders();
+            return false;
+        }
+
+        // ===== SAMPLE DATA =====
+        const asetData = [
+            {
+                id: 1,
+                debitur: 'PT. BUMI JAYA PUTRA',
+                bank: 'BNI',
+                noSpk: 'SPK-2026-001',
+                tipeAset: 'Rumah 2 Lantai',
+                luas: '180 m²',
+                alamat: 'Jl. Merdeka No. 45, Jakarta Pusat',
+                nilaiPasar: 'Rp 2.500.000.000',
+                status: 'laku',
+                progress: 'selesai',
+                lat: -6.1945,
+                lng: 106.8270,
+                lastMonitoring: '2026-04-15 08:30'
+            },
+            {
+                id: 2,
+                debitur: 'CV TEKNOLOGI MODERN',
+                bank: 'BNI',
+                noSpk: 'SPK-2026-002',
+                tipeAset: 'Ruko Komersial',
+                luas: '120 m² + 80 m²',
+                alamat: 'Jl. Ahmad Yani No. 128, Surabaya',
+                nilaiPasar: 'Rp 3.200.000.000',
+                status: 'progress',
+                progress: 'progress',
+                lat: -7.2506,
+                lng: 112.7508,
+                lastMonitoring: '2026-04-15 07:45'
+            },
+            {
+                id: 3,
+                debitur: 'PT. SINAR MANDIRI',
+                bank: 'BNI',
+                noSpk: 'SPK-2026-003',
+                tipeAset: 'Tanah Kavling',
+                luas: '850 m²',
+                alamat: 'Jl. Gatot Subroto, Bandung',
+                nilaiPasar: 'Rp 1.750.000.000',
+                status: 'progress',
+                progress: 'pending',
+                lat: -6.9271,
+                lng: 107.6412,
+                lastMonitoring: '2026-04-14 14:20'
+            }
+        ];
+
+        const beritaAcaraData = [
+            {
+                id: 1,
+                date: '2026-04-15 10:30',
+                title: 'Penetapan Lelang SPK-2026-001',
+                description: 'Aset PT. BUMI JAYA PUTRA ditetapkan untuk dilakukan lelang umum dengan nilai limit Rp 2.500.000.000.',
+                status: 'success',
+                type: 'penetapan'
+            },
+            {
+                id: 2,
+                date: '2026-04-15 09:15',
+                title: 'Lelang Turun untuk SPK-2026-002',
+                description: 'Ruko komersial CV TEKNOLOGI MODERN diturunkan ke lelang dengan perkiraan harga limit Rp 3.200.000.000. Pengumuman dilakukan melalui portal lelang resmi.',
+                status: 'success',
+                type: 'lelang_turun'
+            },
+            {
+                id: 3,
+                date: '2026-04-14 15:45',
+                title: 'Monitoring Lapangan SPK-2026-003',
+                description: 'Tim GA melakukan kunjungan lapangan ke lokasi tanah kavling di Bandung. Kondisi aset baik, sertifikat dalam proses pemeriksaan.',
+                status: 'warning',
+                type: 'monitoring'
+            },
+            {
+                id: 4,
+                date: '2026-04-14 11:00',
+                title: 'Hasil Lelang SPK-2026-001: LAKU',
+                description: 'Aset berhasil dilelang dengan nilai penjualan Rp 2.650.000.000 (melebihi harga limit). Pembeli: PT. INVESTASI CERDAS.',
+                status: 'success',
+                type: 'hasil_lelang'
+            },
+            {
+                id: 5,
+                date: '2026-04-13 14:20',
+                title: 'Update Dokumen SPK-2026-002',
+                description: 'Sertifikat dan dokumen kepemilikan sudah lengkap dari bank. Siap untuk pengumuman lelang minggu depan.',
+                status: 'success',
+                type: 'update_dokumen'
+            }
+        ];
+
+        // ===== RENDER ASET DATA =====
+        function renderAsetData() {
+            const list = document.getElementById('asetList');
+            list.innerHTML = asetData.map(a => `
+                <div class="aset-card">
+                    <div class="aset-header">
+                        <div>
+                            <div class="aset-debitur">${a.debitur}</div>
+                            <span class="aset-bank">${a.bank}</span>
+                            <span class="aset-badge badge-${a.status}">${a.status.toUpperCase()}</span>
+                        </div>
+                    </div>
+                    <div class="aset-body">
+                        <div class="aset-item">
+                            <span class="aset-label">SPK:</span>
+                            <span class="aset-value">${a.noSpk}</span>
+                        </div>
+                        <div class="aset-item">
+                            <span class="aset-label">Aset:</span>
+                            <span class="aset-value">${a.tipeAset}</span>
+                        </div>
+                        <div class="aset-item">
+                            <span class="aset-label">Luas:</span>
+                            <span class="aset-value">${a.luas}</span>
+                        </div>
+                        <div class="aset-item">
+                            <span class="aset-label">Nilai:</span>
+                            <span class="aset-value">${a.nilaiPasar}</span>
+                        </div>
+                        <div class="aset-item">
+                            <span class="aset-label">Lokasi:</span>
+                            <span class="aset-value">${a.alamat}</span>
+                        </div>
+                        <div class="aset-item">
+                            <span class="aset-label">Progress:</span>
+                            <span class="aset-value">${a.progress}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ===== FILTER ASET =====
+        function filterAset(status) {
+            const list = document.getElementById('asetList');
+            if (status === 'all') {
+                renderAsetData();
+            } else {
+                const filtered = asetData.filter(a => a.status === status);
+                list.innerHTML = filtered.map(a => `
+                    <div class="aset-card">
+                        <div class="aset-header">
+                            <div>
+                                <div class="aset-debitur">${a.debitur}</div>
+                                <span class="aset-bank">${a.bank}</span>
+                                <span class="aset-badge badge-${a.status}">${a.status.toUpperCase()}</span>
+                            </div>
+                        </div>
+                        <div class="aset-body">
+                            <div class="aset-item">
+                                <span class="aset-label">SPK:</span>
+                                <span class="aset-value">${a.noSpk}</span>
+                            </div>
+                            <div class="aset-item">
+                                <span class="aset-label">Aset:</span>
+                                <span class="aset-value">${a.tipeAset}</span>
+                            </div>
+                            <div class="aset-item">
+                                <span class="aset-label">Luas:</span>
+                                <span class="aset-value">${a.luas}</span>
+                            </div>
+                            <div class="aset-item">
+                                <span class="aset-label">Nilai:</span>
+                                <span class="aset-value">${a.nilaiPasar}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // ===== RENDER MAP MARKERS =====
+        function renderMapMarkers() {
+            const mapContent = document.getElementById('mapContent');
+            mapContent.innerHTML = '';
+
+            asetData.forEach((aset, idx) => {
+                const markerDiv = document.createElement('div');
+                markerDiv.className = 'map-marker';
+                
+                const x = ((aset.lng + 120) / 120) * 100;
+                const y = ((aset.lat + 10) / 20) * 100;
+                
+                markerDiv.style.position = 'absolute';
+                markerDiv.style.left = x + '%';
+                markerDiv.style.top = y + '%';
+                markerDiv.style.transform = 'translate(-50%, -50%)';
+
+                markerDiv.innerHTML = `
+                    <div class="marker-pin">${idx + 1}</div>
+                    <div class="marker-popup">
+                        <strong>${aset.debitur}</strong>
+                        <br>Updated: ${aset.lastMonitoring}
+                    </div>
+                `;
+
+                mapContent.appendChild(markerDiv);
+            });
+        }
+
+        // ===== RENDER BERITA ACARA =====
+        function renderBeritaAcara() {
+            const timeline = document.getElementById('baTimeline');
+            timeline.innerHTML = beritaAcaraData.map(ba => `
+                <div class="ba-event">
+                    <div class="ba-dot"></div>
+                    <div class="ba-content">
+                        <div class="ba-date">${ba.date}</div>
+                        <div class="ba-title">${ba.title}</div>
+                        <div class="ba-desc">${ba.description}</div>
+                        <span class="ba-status ${ba.status}">${ba.type.replace('_', ' ').toUpperCase()}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ===== FOLDER MANAGEMENT =====
+        let activeFolder = null;
+
+        function openFolder(name) {
+            const win = document.getElementById('win-' + name);
+            const overlay = document.getElementById('overlay');
+
+            if (!win) return;
+
+            if (activeFolder && activeFolder !== name) {
+                const prev = document.getElementById('win-' + activeFolder);
+                if (prev) {
+                    prev.classList.remove('open');
+                    setTimeout(() => prev.style.display = 'none', 160);
+                }
+            }
+
+            if (activeFolder === name && win.classList.contains('open')) {
+                win.classList.remove('open');
+                setTimeout(() => win.style.display = 'none', 160);
+                overlay.classList.remove('active');
+                activeFolder = null;
+                return;
+            }
+
+            win.style.display = 'block';
+            requestAnimationFrame(() => requestAnimationFrame(() => win.classList.add('open')));
+            overlay.classList.add('active');
+            activeFolder = name;
+        }
+
+        function closeFolder(name) {
+            const win = document.getElementById('win-' + name);
+            if (win) {
+                win.classList.remove('open');
+                setTimeout(() => win.style.display = 'none', 160);
+            }
+            document.getElementById('overlay').classList.remove('active');
+            activeFolder = null;
+        }
+
+        function closeAllFolders() {
+            ['it', 'ga', 'ba'].forEach(n => {
+                const w = document.getElementById('win-' + n);
+                if (w) {
+                    w.classList.remove('open');
+                    w.style.display = 'none';
+                }
+            });
+            document.getElementById('overlay').classList.remove('active');
+            activeFolder = null;
+        }
+
+        // ===== DRAG WINDOWS =====
+        document.querySelectorAll('.folder-window').forEach(win => {
+            const tb = win.querySelector('.win-titlebar');
+            let drag = false, sx, sy, il, it;
+
+            tb.addEventListener('mousedown', e => {
+                if (e.target.classList.contains('wc')) return;
+                drag = true;
+                const r = win.getBoundingClientRect();
+                sx = e.clientX;
+                sy = e.clientY;
+                il = r.left;
+                it = r.top;
+                win.style.transition = 'none';
+                win.style.transform = 'none';
+                win.style.left = il + 'px';
+                win.style.top = it + 'px';
+            });
+
+            document.addEventListener('mousemove', e => {
+                if (!drag) return;
+                win.style.left = (il + e.clientX - sx) + 'px';
+                win.style.top = (it + e.clientY - sy) + 'px';
+            });
+
+            document.addEventListener('mouseup', () => drag = false);
+        });
+    </script>
+</body>
+</html>
