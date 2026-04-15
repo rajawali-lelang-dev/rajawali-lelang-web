@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAJAWALI NEST — Sistem Manajemen Internal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray-50: #f9f9f9;
+  --gray-100: #f2f2f7;
+  --gray-200: #e5e5ea;
+  --gray-400: #aeaeb2;
+  --gray-600: #636366;
+  --gray-900: #1c1c1e;
+  --blue: #0071e3;
+  --blue-light: #2997ff;
+  --blue-glow: rgba(0,113,227,0.15);
+  --gold: #bf8700;
+  --gold-light: #f5a623;
+  --green: #30d158;
+  --red: #ff453a;
+  --amber: #ffd60a;
+  --r-navy: #020917;
+  --r-blue: #0a1628;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #fff;
+  color: var(--gray-900);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--r-navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 24px 60px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,113,227,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(0,113,227,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 70%, rgba(191,135,0,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+
+.hero-eagle {
+  font-size: 72px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 40px rgba(0,113,227,0.5));
+  opacity: 0;
+  animation: fadeUp 0.8s 0.3s forwards;
+}
+
+.hero-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 1.0;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #60a5fa 0%, #2997ff 40%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle-brand {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+
+.hero-desc {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  max-width: 580px;
+  line-height: 1.65;
+  margin-bottom: 44px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+
+.hero-desc strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.7s forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 980px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: #0077ed; transform: scale(1.02); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  border-radius: 980px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+  backdrop-filter: blur(8px);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.14); transform: scale(1.02); }
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  animation: fadeUp 1s 1.2s forwards;
+}
+.hero-scroll-hint span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 1.5px solid rgba(255,255,255,0.25);
+  border-bottom: 1.5px solid rgba(255,255,255,0.25);
+  transform: rotate(45deg);
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(2,9,23,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-brand {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.nav-brand span { color: var(--blue-light); }
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-demo-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 18px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+.nav-demo-btn:hover { background: #0077ed; }
+
+/* ─── SECTIONS ─── */
+section {
+  padding: 100px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  color: var(--gray-900);
+  margin-bottom: 16px;
+}
+
+.section-title span { color: var(--blue); }
+
+.section-sub {
+  font-size: clamp(16px, 2vw, 19px);
+  color: var(--gray-600);
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 64px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ─── PAIN POINTS (WHY) ─── */
+.why-section {
+  background: var(--gray-100);
+  padding: 100px 24px;
+}
+.why-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.pain-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff453a, #ff9f0a);
+}
+
+.pain-icon { font-size: 32px; margin-bottom: 14px; }
+.pain-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff453a;
+  margin-bottom: 8px;
+}
+.pain-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.pain-desc { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+
+.vs-arrow {
+  text-align: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--blue);
+  margin: 16px 0;
+  letter-spacing: 2px;
+}
+
+/* ─── VISION PILLARS ─── */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.pillar-card {
+  background: var(--gray-100);
+  border-radius: 22px;
+  padding: 36px 30px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+}
+
+.pillar-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+.pillar-icon-wrap.blue { background: rgba(0,113,227,0.12); }
+.pillar-icon-wrap.green { background: rgba(48,209,88,0.12); }
+.pillar-icon-wrap.gold { background: rgba(245,166,35,0.12); }
+.pillar-icon-wrap.purple { background: rgba(175,82,222,0.12); }
+
+.pillar-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.pillar-desc { font-size: 15px; color: var(--gray-600); line-height: 1.65; }
+
+/* ─── MENU FEATURES ─── */
+.menu-feature-section {
+  padding: 100px 0;
+  overflow: hidden;
+}
+.menu-feature-section.dark {
+  background: var(--r-navy);
+}
+.menu-feature-section.dark .section-title { color: #fff; }
+.menu-feature-section.dark .section-sub { color: rgba(255,255,255,0.5); }
+.menu-feature-section.dark .section-eyebrow { color: var(--blue-light); }
+
+.feature-bento {
+  display: grid;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.bento-2col { grid-template-columns: 1fr 1fr; }
+.bento-3col { grid-template-columns: 1fr 1fr 1fr; }
+
+@media (max-width: 768px) {
+  .bento-2col, .bento-3col { grid-template-columns: 1fr; }
+}
+
+.bento-card {
+  border-radius: 24px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.bento-card:hover { transform: translateY(-3px); }
+
+.bento-card.light {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+}
+.bento-card.dark-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.bento-card.blue-card {
+  background: linear-gradient(135deg, #0a1628 0%, #0a2040 100%);
+  border: 1px solid rgba(41,151,255,0.2);
+}
+.bento-card.span-2 { grid-column: span 2; }
+
+@media (max-width: 768px) { .bento-card.span-2 { grid-column: span 1; } }
+
+.bento-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.bento-eyebrow.blue { color: var(--blue); }
+.bento-eyebrow.blue-light { color: var(--blue-light); }
+.bento-eyebrow.green { color: var(--green); }
+.bento-eyebrow.gold { color: var(--gold-light); }
+.bento-eyebrow.red { color: var(--red); }
+.bento-eyebrow.purple { color: #bf5af2; }
+
+.bento-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.bento-title.white { color: #fff; }
+
+.bento-desc {
+  font-size: 15px;
+  line-height: 1.65;
+}
+.bento-desc.muted { color: var(--gray-600); }
+.bento-desc.dim { color: rgba(255,255,255,0.55); }
+
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.tag.blue { background: rgba(0,113,227,0.12); color: var(--blue); }
+.tag.green { background: rgba(48,209,88,0.12); color: var(--green); }
+.tag.gold { background: rgba(245,166,35,0.12); color: var(--gold-light); }
+.tag.purple { background: rgba(175,82,222,0.12); color: #bf5af2; }
+.tag.red { background: rgba(255,69,58,0.12); color: var(--red); }
+.tag.dark-blue { background: rgba(41,151,255,0.15); color: var(--blue-light); }
+.tag.dark-green { background: rgba(48,209,88,0.15); color: var(--green); }
+.tag.dark-gold { background: rgba(245,166,35,0.15); color: var(--gold-light); }
+
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Mock UI inside cards */
+.mock-table {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 11px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.mock-table-head {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr;
+  background: rgba(0,113,227,0.15);
+  padding: 8px 10px;
+  gap: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.mock-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr;
+  padding: 8px 10px;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  align-items: center;
+  color: rgba(255,255,255,0.75);
+}
+.mock-table-row:nth-child(even) { background: rgba(255,255,255,0.02); }
+
+.mock-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+}
+.mock-badge.green { background: rgba(48,209,88,0.2); color: #30d158; }
+.mock-badge.amber { background: rgba(255,214,10,0.2); color: #ffd60a; }
+.mock-badge.red { background: rgba(255,69,58,0.2); color: #ff453a; }
+.mock-badge.blue { background: rgba(41,151,255,0.2); color: #2997ff; }
+
+.mock-map {
+  margin-top: 18px;
+  height: 110px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0d2137 0%, #0a3040 100%);
+  border: 1px solid rgba(41,151,255,0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mock-map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(41,151,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(41,151,255,0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.mock-pin {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  box-shadow: 0 0 12px var(--blue-light);
+  position: absolute;
+}
+
+.mock-form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mock-input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  font-family: inherit;
+}
+.mock-btn {
+  background: var(--blue);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  cursor: default;
+  font-family: inherit;
+  text-align: center;
+}
+
+/* ─── DEVICE SECTION ─── */
+.device-section {
+  background: var(--gray-100);
+  padding: 100px 24px;
+}
+.device-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.device-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+@media (max-width: 768px) { .device-split { grid-template-columns: 1fr; } }
+
+.device-panel {
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.device-panel.windows {
+  background: linear-gradient(145deg, #020b1a 0%, #050f25 100%);
+  border: 1px solid rgba(0,113,227,0.2);
+  padding: 0;
+  min-height: 340px;
+}
+
+.device-panel.ios {
+  background: linear-gradient(145deg, #0a0a12 0%, #12121e 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Windows mock */
+.win-taskbar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 44px;
+  background: rgba(15,15,25,0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.win-taskbar-icon {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  background: rgba(255,255,255,0.08);
+  cursor: default;
+  transition: background 0.15s;
+}
+
+.win-desktop-area {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  top: 0; left: 0;
+}
+.win-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 64px;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: default;
+}
+.win-icon-item:hover { background: rgba(255,255,255,0.08); }
+.win-icon-em { font-size: 28px; }
+.win-icon-lbl { font-size: 10px; color: rgba(255,255,255,0.7); text-align: center; }
+
+.win-clock-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+}
+.win-clock-time {
+  font-family: 'Sora', sans-serif;
+  font-size: 52px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 4px;
+}
+.win-clock-date {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.win-label {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: rgba(0,113,227,0.2);
+  border: 1px solid rgba(0,113,227,0.4);
+  color: var(--blue-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* iOS mock */
+.ios-status-bar {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.ios-notch {
+  width: 90px; height: 22px;
+  background: #000;
+  border-radius: 11px;
+  position: absolute;
+  top: 8px; left: 50%;
+  transform: translateX(-50%);
+}
+.ios-home-grid {
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-content: start;
+}
+.ios-app-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.ios-icon-box {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+}
+.ios-icon-lbl { font-size: 10px; color: #fff; text-align: center; }
+.ios-dock {
+  width: calc(100% - 32px);
+  margin: 0 16px 16px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border-radius: 22px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.ios-dock-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.ios-label-pill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.device-info {
+  padding: 28px 4px 0;
+}
+.device-platform {
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.device-platform span { color: var(--blue); }
+.device-info p { font-size: 15px; color: var(--gray-600); line-height: 1.65; }
+
+/* ─── ROADMAP ─── */
+.roadmap-section {
+  background: var(--r-navy);
+  padding: 100px 24px;
+}
+.roadmap-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.roadmap-list {
+  margin-top: 56px;
+  position: relative;
+}
+.roadmap-list::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(41,151,255,0.5), rgba(41,151,255,0.05));
+}
+
+.roadmap-item {
+  display: flex;
+  gap: 28px;
+  padding: 0 0 44px 0;
+  position: relative;
+}
+
+.roadmap-dot {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.roadmap-dot.active {
+  background: var(--blue);
+  box-shadow: 0 0 20px rgba(0,113,227,0.5);
+}
+.roadmap-dot.soon {
+  background: rgba(245,166,35,0.15);
+  border: 1px solid rgba(245,166,35,0.3);
+}
+.roadmap-dot.future {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.roadmap-content { flex: 1; padding-top: 6px; }
+.roadmap-phase {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.roadmap-phase.active { color: var(--blue-light); }
+.roadmap-phase.soon { color: var(--gold-light); }
+.roadmap-phase.future { color: rgba(255,255,255,0.3); }
+
+.roadmap-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.roadmap-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+.roadmap-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+.roadmap-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ─── CTA ─── */
+.cta-section {
+  padding: 120px 24px;
+  text-align: center;
+  background: var(--gray-100);
+}
+.cta-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--r-navy);
+  border-radius: 32px;
+  padding: 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,113,227,0.25), transparent 70%);
+}
+.cta-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.cta-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 36px;
+  position: relative;
+  line-height: 1.6;
+}
+.cta-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(5px); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── DIVIDER ─── */
+.section-divider {
+  width: 48px; height: 3px;
+  background: var(--blue);
+  border-radius: 2px;
+  margin: 0 auto 60px;
+}
+
+/* ─── STATS ROW ─── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2px;
+  background: var(--gray-200);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 60px 0;
+}
+.stat-cell {
+  background: #fff;
+  padding: 32px 24px;
+  text-align: center;
+}
+.stat-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+/* ─── MOBILE ADJUSTMENTS ─── */
+@media (max-width: 600px) {
+  nav .nav-links { display: none; }
+  .hero { padding: 80px 20px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">🦅 RAJAWALI <span>NEST</span></div>
+  <ul class="nav-links">
+    <li><a href="#why">Kenapa NEST</a></li>
+    <li><a href="#admin">Menu Admin</a></li>
+    <li><a href="#finance">Finance</a></li>
+    <li><a href="#ga">Menu GA</a></li>
+    <li><a href="#device">Platform</a></li>
+  </ul>
+  <a href="https://rajawalilelangindo.com/rajawali-nest-demo.html" target="_blank" class="nav-demo-btn">Lihat Demo →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-eyebrow">Sistem Manajemen Internal</div>
+  <div class="hero-eagle">🦅</div>
+  <h1 class="hero-title">RAJAWALI<br><span>NEST</span></h1>
+  <div class="hero-subtitle-brand">PT. Rajawali Lelang Indonesia</div>
+  <p class="hero-desc">
+    Satu platform terpadu yang menggantikan spreadsheet, grup WhatsApp, dan dokumen terpisah. <strong>Lebih cepat. Lebih rapi. Lebih terkontrol.</strong>
+  </p>
+  <div class="hero-cta-row">
+    <a href="https://rajawalilelangindo.com/rajawali-nest-demo.html" target="_blank" class="btn-primary">🚀 Kunjungi Demo Live</a>
+    <a href="#why" class="btn-ghost">Pelajari Lebih Lanjut ↓</a>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- WHY NEST -->
+<div class="why-section" id="why">
+  <div class="why-inner">
+    <div class="section-eyebrow reveal">Mengapa NEST?</div>
+    <h2 class="section-title reveal">Dari Masalah Nyata,<br><span>Solusi Nyata</span></h2>
+    <p class="section-sub reveal">Sebelum NEST, pekerjaan harian penuh dengan hambatan yang mestinya tidak ada.</p>
+
+    <div class="pain-grid reveal">
+      <div class="pain-card">
+        <div class="pain-icon">📊</div>
+        <div class="pain-label">Masalah Saat Ini</div>
+        <div class="pain-title">Spreadsheet Tidak Efisien</div>
+        <p class="pain-desc">Data aset tersebar di banyak file Excel, sulit dibaca, rawan salah input, dan tidak bisa diakses bersama secara real-time.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💬</div>
+        <div class="pain-label">Masalah Saat Ini</div>
+        <div class="pain-title">Koordinasi via Grup WA</div>
+        <p class="pain-desc">Hasil survey GA dikirim lewat grup WhatsApp, mudah tertimbun pesan lain, tidak terstruktur, dan sulit dilacak historinya.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🖨️</div>
+        <div class="pain-label">Masalah Saat Ini</div>
+        <div class="pain-title">Katalog & Selebaran Manual</div>
+        <p class="pain-desc">Pembuatan katalog dan selebaran koran membutuhkan waktu lama karena input satu per satu dan format tidak konsisten.</p>
+      </div>
+    </div>
+
+    <div class="vs-arrow reveal">↓ &nbsp; NEST mengatasinya &nbsp; ↓</div>
+
+    <div class="pillar-grid reveal">
+      <div class="pillar-card">
+        <div class="pillar-icon-wrap blue">👁️</div>
+        <div class="pillar-title">Mudah Dilihat</div>
+        <p class="pillar-desc">Tampilan visual yang jauh lebih intuitif dibanding spreadsheet. Data terstruktur, berwarna, dan langsung bisa dipahami.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon-wrap green">🔗</div>
+        <div class="pillar-title">Komunikasi Antar Divisi</div>
+        <p class="pillar-desc">Staff Admin, Finance, dan GA terhubung dalam satu sistem. Tidak perlu bolak-balik WA atau email untuk koordinasi.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon-wrap gold">📈</div>
+        <div class="pillar-title">Monitoring Direktur</div>
+        <p class="pillar-desc">Direktur dapat memantau kinerja semua divisi dari satu dashboard — kapan saja, di mana saja.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon-wrap purple">✅</div>
+        <div class="pillar-title">Terima Beres</div>
+        <p class="pillar-desc">Workflow yang jelas dari input hingga output. Setiap tugas punya status, penanggung jawab, dan rekam jejak yang lengkap.</p>
+      </div>
+    </div>
+
+    <div class="stats-row reveal">
+      <div class="stat-cell">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Modul Utama</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Role Pengguna</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Berbasis Web</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Install Diperlukan</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN MENU -->
+<div class="menu-feature-section dark" id="admin">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div class="section-eyebrow reveal">Menu Admin</div>
+    <h2 class="section-title reveal">Kendali Penuh<br><span>di Tangan Admin</span></h2>
+    <p class="section-sub reveal">Semua alat yang dibutuhkan tim admin untuk mengelola data aset, jawaban beauty contest, katalog, dan materi promosi.</p>
+  </div>
+
+  <div class="feature-bento bento-2col reveal" style="margin-top:0;">
+
+    <!-- Database Aset -->
+    <div class="bento-card blue-card span-2">
+      <div class="bento-eyebrow blue-light">📁 Database Aset</div>
+      <div class="bento-title white">Semua Data Aset dalam Satu Tempat</div>
+      <p class="bento-desc dim">Debitur, foto aset, nomor PL, status SPK expired, harga limit, dan semua data penting — tersaji rapi, bisa dicari dan difilter dalam hitungan detik. Tidak lagi buka 10 file Excel berbeda.</p>
+      <div class="mock-table">
+        <div class="mock-table-head">
+          <span>Debitur</span>
+          <span>Aset</span>
+          <span>Harga Limit</span>
+          <span>Status</span>
+        </div>
+        <div class="mock-table-row">
+          <span>PT. Maju Bersama</span>
+          <span>Ruko SHM 2Lt</span>
+          <span>Rp 1,2M</span>
+          <span><span class="mock-badge green">AKTIF</span></span>
+        </div>
+        <div class="mock-table-row">
+          <span>Hendra Susanto</span>
+          <span>Toyota Avanza '20</span>
+          <span>Rp 165Jt</span>
+          <span><span class="mock-badge amber">SPK Exp</span></span>
+        </div>
+        <div class="mock-table-row">
+          <span>CV. Karya Indah</span>
+          <span>Gudang 500m²</span>
+          <span>Rp 3,8M</span>
+          <span><span class="mock-badge blue">PROSES</span></span>
+        </div>
+        <div class="mock-table-row">
+          <span>Dewi Rahayu</span>
+          <span>Honda CRV '19</span>
+          <span>Rp 280Jt</span>
+          <span><span class="mock-badge green">AKTIF</span></span>
+        </div>
+      </div>
+      <div class="bento-tags">
+        <span class="tag dark-blue">🔍 Filter & Search</span>
+        <span class="tag dark-blue">📷 Foto Aset</span>
+        <span class="tag dark-blue">📄 Export PDF</span>
+        <span class="tag dark-green">⏱️ Status Real-time</span>
+      </div>
+    </div>
+
+    <!-- Beauty Contest -->
+    <div class="bento-card dark-card">
+      <span class="feature-icon">🏆</span>
+      <div class="bento-eyebrow blue-light">Jawaban Beauty Contest</div>
+      <div class="bento-title white">Input Mudah, Siapapun Bisa Akses</div>
+      <p class="bento-desc dim">Tidak perlu mengetik di Word. Cukup buka NEST, isi form terstruktur, dan jawaban beauty contest tersimpan otomatis — bisa diakses seluruh tim kapan saja.</p>
+      <div class="mock-form">
+        <input class="mock-input" type="text" value="Nama Aset: Ruko Jl. Ahmad Yani No. 45" readonly>
+        <input class="mock-input" type="text" value="Penilai: Rajawali Lelang Indonesia" readonly>
+        <input class="mock-input" type="text" value="Nilai Limit: Rp 2.500.000.000" readonly>
+        <div class="mock-btn">✅ Simpan Jawaban BC</div>
+      </div>
+    </div>
+
+    <!-- Catalog Editor -->
+    <div class="bento-card dark-card">
+      <span class="feature-icon">📘</span>
+      <div class="bento-eyebrow gold">Catalog Editor</div>
+      <div class="bento-title white">Cetak Katalog Tanpa Ribet</div>
+      <p class="bento-desc dim">GA lapor hasil survey → Admin koreksi di sistem → Katalog siap cetak. Tidak perlu input ulang satu per satu. Satu klik, katalog profesional langsung jadi.</p>
+      <div class="bento-tags" style="margin-top:auto;padding-top:20px;">
+        <span class="tag dark-gold">📤 Import Survey GA</span>
+        <span class="tag dark-gold">✏️ Edit Inline</span>
+        <span class="tag dark-gold">🖨️ Cetak Langsung</span>
+      </div>
+    </div>
+
+    <!-- Selebaran Koran -->
+    <div class="bento-card dark-card span-2" style="background: linear-gradient(135deg, rgba(191,135,0,0.08) 0%, rgba(10,22,40,0.98) 100%); border-color: rgba(191,135,0,0.2);">
+      <span class="feature-icon">📰</span>
+      <div class="bento-eyebrow gold">Selebaran Koran Generator</div>
+      <div class="bento-title white">Iklan Koran Siap Publikasi dalam Menit</div>
+      <p class="bento-desc dim" style="max-width:560px;">Buat selebaran koran untuk lelang secara otomatis dari data yang sudah ada di sistem. Format sudah sesuai standar, tinggal pilih aset, generate, dan kirim ke koran. Hemat waktu desain berjam-jam.</p>
+      <div class="bento-tags">
+        <span class="tag dark-gold">📐 Format Standar</span>
+        <span class="tag dark-gold">⚡ Generate Otomatis</span>
+        <span class="tag dark-gold">📋 Multi-Aset</span>
+        <span class="tag dark-green">💾 Export Siap Kirim</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FINANCE MENU -->
+<div class="menu-feature-section" id="finance" style="background:#fff;padding:100px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div class="section-eyebrow reveal" style="color:var(--blue);">Menu Finance</div>
+    <h2 class="section-title reveal">Keuangan Tercatat<br><span>Tanpa Celah</span></h2>
+    <p class="section-sub reveal">Dari invoice hingga buku besar, semua proses akuntansi terintegrasi dalam satu alur yang rapi dan terlacak.</p>
+  </div>
+
+  <div class="feature-bento bento-3col reveal" style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div class="bento-card light">
+      <span class="feature-icon">🧾</span>
+      <div class="bento-eyebrow blue">Invoice</div>
+      <div class="bento-title">Invoice Digital Profesional</div>
+      <p class="bento-desc muted">Buat, kirim, dan lacak invoice langsung dari sistem. Status pembayaran terlihat real-time — tidak perlu cek manual satu per satu.</p>
+      <div class="bento-tags">
+        <span class="tag blue">📤 Kirim Digital</span>
+        <span class="tag green">✅ Status Bayar</span>
+      </div>
+    </div>
+    <div class="bento-card light">
+      <span class="feature-icon">📒</span>
+      <div class="bento-eyebrow green">Jurnal</div>
+      <div class="bento-title">Jurnal Transaksi Otomatis</div>
+      <p class="bento-desc muted">Setiap transaksi tercatat rapi dalam jurnal harian. Tidak ada yang terlewat, semua teraudit dengan jelas dan mudah ditelusuri.</p>
+      <div class="bento-tags">
+        <span class="tag blue">📅 Harian</span>
+        <span class="tag green">🔎 Audit Trail</span>
+      </div>
+    </div>
+    <div class="bento-card light">
+      <span class="feature-icon">📚</span>
+      <div class="bento-eyebrow purple">Buku Besar</div>
+      <div class="bento-title">Laporan Keuangan Real-time</div>
+      <p class="bento-desc muted">Buku besar terisi otomatis dari jurnal. Direktur bisa melihat posisi keuangan kapan saja tanpa menunggu laporan akhir bulan.</p>
+      <div class="bento-tags">
+        <span class="tag purple">📊 Auto-Update</span>
+        <span class="tag blue">👁️ Live View</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GA MENU -->
+<div class="menu-feature-section dark" id="ga">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div class="section-eyebrow reveal">Menu GA (General Affairs)</div>
+    <h2 class="section-title reveal">Lapangan Terpantau,<br><span>Koordinasi Terstruktur</span></h2>
+    <p class="section-sub reveal">Tim GA bekerja lebih efisien dengan tools yang dirancang khusus untuk pekerjaan lapangan dan survey aset.</p>
+  </div>
+
+  <div class="feature-bento bento-2col reveal">
+
+    <!-- Pinpoint Aset -->
+    <div class="bento-card blue-card">
+      <span class="feature-icon">📍</span>
+      <div class="bento-eyebrow blue-light">Pinpoint Aset</div>
+      <div class="bento-title white">Semua Aset Terpetakan</div>
+      <p class="bento-desc dim">Aset milik Rajawali dipantau posisinya di peta interaktif. Tim GA tahu di mana setiap aset berada, Direktur bisa monitor dari kantor.</p>
+      <div class="mock-map">
+        <div class="mock-map-grid"></div>
+        <div class="mock-pin" style="top:35%;left:30%;"></div>
+        <div class="mock-pin" style="top:55%;left:60%;background:#30d158;box-shadow:0 0 12px #30d158;"></div>
+        <div class="mock-pin" style="top:25%;left:70%;background:#ffd60a;box-shadow:0 0 12px #ffd60a;"></div>
+        <div class="mock-pin" style="top:65%;left:40%;"></div>
+        <div class="mock-pin" style="top:45%;left:80%;background:#ff453a;box-shadow:0 0 12px #ff453a;"></div>
+        <span style="font-size:11px;color:rgba(255,255,255,0.4);position:relative;z-index:1;">Peta Interaktif Aset</span>
+      </div>
+      <div class="bento-tags">
+        <span class="tag dark-blue">🗺️ Peta Interaktif</span>
+        <span class="tag dark-blue">📌 Koordinat GPS</span>
+        <span class="tag dark-green">🟢 Status Visual</span>
+      </div>
+    </div>
+
+    <!-- Survey BC & SKOL -->
+    <div class="bento-card dark-card">
+      <span class="feature-icon">📋</span>
+      <div class="bento-eyebrow gold">Hasil Survey BC & SKOL</div>
+      <div class="bento-title white">Ganti Grup WA dengan NEST</div>
+      <p class="bento-desc dim">GA tidak lagi kirim foto dan data ke grup WhatsApp. Semua hasil survey — Beauty Contest maupun SKOL — diunggah langsung ke NEST, otomatis terstruktur dan siap diproses admin.</p>
+      <div class="bento-tags" style="margin-top:20px;">
+        <span class="tag dark-gold">📸 Upload Foto Langsung</span>
+        <span class="tag dark-gold">📏 Data Survey Terstruktur</span>
+        <span class="tag dark-green">🔄 Sync ke Admin</span>
+      </div>
+    </div>
+
+    <!-- Survey SKOL Katalog -->
+    <div class="bento-card dark-card">
+      <span class="feature-icon">📖</span>
+      <div class="bento-eyebrow green">Survey SKOL → Katalog</div>
+      <div class="bento-title white">Survey Langsung Jadi Katalog</div>
+      <p class="bento-desc dim">Hasil survey SKOL dari GA otomatis menjadi bahan katalog. Admin tinggal koreksi dan cetak — tidak ada input ulang, tidak ada data yang terlewat.</p>
+      <div class="bento-tags">
+        <span class="tag dark-green">⚡ Auto-Compile</span>
+        <span class="tag dark-blue">🖨️ Siap Cetak</span>
+      </div>
+    </div>
+
+    <!-- Karakteristik Debitur -->
+    <div class="bento-card dark-card">
+      <span class="feature-icon">👤</span>
+      <div class="bento-eyebrow purple">Karakteristik Debitur</div>
+      <div class="bento-title white">Profil Lengkap Setiap Debitur</div>
+      <p class="bento-desc dim">Rekam jejak, catatan lapangan, dan karakteristik setiap debitur tersimpan rapi. Membantu tim dalam pengambilan keputusan yang lebih tepat di lapangan.</p>
+      <div class="bento-tags">
+        <span class="tag purple">📝 Catatan Lapangan</span>
+        <span class="tag dark-blue">📂 Riwayat Lengkap</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BERITA ACARA -->
+<div class="menu-feature-section" style="background: var(--gray-100); padding:100px 0;" id="berita">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div class="section-eyebrow reveal" style="color:var(--red);">Berita Acara</div>
+    <h2 class="section-title reveal">Perubahan Terdokumentasi,<br><span>Tidak Ada yang Jatuh di Celah</span></h2>
+    <p class="section-sub reveal">Setiap perubahan nilai, permintaan PIC bank, hingga penetapan lelang baru — semua punya dokumen resmi yang tersimpan dan terlacak.</p>
+  </div>
+
+  <div class="feature-bento bento-3col reveal" style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div class="bento-card light">
+      <span class="feature-icon">💰</span>
+      <div class="bento-eyebrow red">Perubahan Nilai Limit</div>
+      <div class="bento-title">Revisi Harga Terdokumentasi</div>
+      <p class="bento-desc muted">Setiap perubahan nilai limit aset dicatat dalam berita acara resmi — lengkap dengan tanggal, alasan, dan persetujuan yang diperlukan.</p>
+    </div>
+    <div class="bento-card light">
+      <span class="feature-icon">🏦</span>
+      <div class="bento-eyebrow blue">Request PIC Bank</div>
+      <div class="bento-title">Permintaan Bank Terstruktur</div>
+      <p class="bento-desc muted">Request dari PIC bank tidak lagi via WA atau telepon tanpa jejak. Semua masuk sebagai berita acara yang wajib ditindaklanjuti dan tercatat statusnya.</p>
+    </div>
+    <div class="bento-card light">
+      <span class="feature-icon">⚖️</span>
+      <div class="bento-eyebrow gold">Penetapan Lelang Baru</div>
+      <div class="bento-title">Lelang Baru Langsung di Sistem</div>
+      <p class="bento-desc muted">Penetapan jadwal dan detail lelang baru diinput langsung di NEST — otomatis tersinkron ke semua divisi terkait tanpa perlu rapat koordinasi tambahan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DEVICE PLATFORM -->
+<div class="device-section" id="device">
+  <div class="device-inner">
+    <div class="section-eyebrow reveal" style="color:var(--blue);">Platform & Tampilan</div>
+    <h2 class="section-title reveal">Dirancang untuk<br><span>Setiap Perangkat</span></h2>
+    <p class="section-sub reveal">Full release NEST hadir dalam dua pengalaman yang dioptimalkan — satu untuk produktivitas desktop, satu untuk mobilitas di lapangan.</p>
+
+    <div class="device-split reveal">
+
+      <!-- Windows Desktop -->
+      <div>
+        <div class="device-panel windows">
+          <div class="win-label">DESKTOP</div>
+          <div class="win-desktop-area">
+            <div class="win-icon-item">
+              <span class="win-icon-em">📁</span>
+              <span class="win-icon-lbl">Database Aset</span>
+            </div>
+            <div class="win-icon-item">
+              <span class="win-icon-em">📊</span>
+              <span class="win-icon-lbl">Finance</span>
+            </div>
+            <div class="win-icon-item">
+              <span class="win-icon-em">🗺️</span>
+              <span class="win-icon-lbl">Pinpoint</span>
+            </div>
+          </div>
+          <div class="win-clock-center">
+            <div class="win-clock-time" id="winClock">08:30</div>
+            <div class="win-clock-date">Rabu, 15 April 2026</div>
+          </div>
+          <div class="win-taskbar">
+            <div class="win-taskbar-icon">🦅</div>
+            <div class="win-taskbar-icon">📁</div>
+            <div class="win-taskbar-icon">📊</div>
+            <div class="win-taskbar-icon">🗺️</div>
+            <div class="win-taskbar-icon">📰</div>
+          </div>
+        </div>
+        <div class="device-info">
+          <div class="device-platform">Tampilan <span>Desktop</span></div>
+          <p>Mirip dengan Windows — menu di taskbar bawah, ikon di desktop, jendela bisa dibuka dan digeser. Staff yang sudah terbiasa komputer langsung familiar tanpa perlu training panjang.</p>
+        </div>
+      </div>
+
+      <!-- iOS Mobile -->
+      <div>
+        <div class="device-panel ios">
+          <div class="ios-status-bar">
+            <span>9:41</span>
+            <div class="ios-notch"></div>
+            <span>● ● ▲</span>
+          </div>
+          <div class="ios-home-grid">
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#0071e3,#2997ff);">📁</div>
+              <span class="ios-icon-lbl">Aset</span>
+            </div>
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#30d158,#34c759);">📋</div>
+              <span class="ios-icon-lbl">Survey</span>
+            </div>
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#ff9f0a,#ff6b00);">📍</div>
+              <span class="ios-icon-lbl">Pinpoint</span>
+            </div>
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#bf5af2,#9b59b6);">📊</div>
+              <span class="ios-icon-lbl">Finance</span>
+            </div>
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#ff453a,#c0392b);">⚖️</div>
+              <span class="ios-icon-lbl">B. Acara</span>
+            </div>
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#ffd60a,#f5a623);">🏆</div>
+              <span class="ios-icon-lbl">Beauty C.</span>
+            </div>
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#64d2ff,#2997ff);">📰</div>
+              <span class="ios-icon-lbl">Selebaran</span>
+            </div>
+            <div class="ios-app-icon">
+              <div class="ios-icon-box" style="background:linear-gradient(135deg,#636366,#48484a);">⚙️</div>
+              <span class="ios-icon-lbl">Pengaturan</span>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:center;">
+            <span class="ios-label-pill">iOS Style</span>
+          </div>
+          <div class="ios-dock">
+            <div class="ios-dock-icon" style="background:linear-gradient(135deg,#0071e3,#2997ff);">🦅</div>
+            <div class="ios-dock-icon" style="background:linear-gradient(135deg,#30d158,#34c759);">📋</div>
+            <div class="ios-dock-icon" style="background:linear-gradient(135deg,#ff9f0a,#f5a623);">📍</div>
+            <div class="ios-dock-icon" style="background:linear-gradient(135deg,#bf5af2,#9b59b6);">📊</div>
+          </div>
+        </div>
+        <div class="device-info">
+          <div class="device-platform">Tampilan <span>Mobile</span></div>
+          <p>Mirip dengan iOS — ikon aplikasi di home screen, dock di bawah untuk akses cepat, desain bersih dan intuitif. Tim GA di lapangan bisa input survey langsung dari HP tanpa kerepotan.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ROADMAP -->
+<div class="roadmap-section" id="roadmap">
+  <div class="roadmap-inner">
+    <div class="section-eyebrow reveal" style="color:var(--blue-light);text-align:center;">Roadmap</div>
+    <h2 class="section-title reveal" style="color:#fff;">Dari Demo ke<br><span style="color:var(--blue-light);">Full Release</span></h2>
+    <p class="section-sub reveal">Sistem ini dibangun secara bertahap dengan prioritas yang jelas — fungsionalitas inti lebih dulu, lalu fitur-fitur lanjutan.</p>
+
+    <div class="roadmap-list reveal">
+      <div class="roadmap-item">
+        <div class="roadmap-dot active">✓</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase active">Tersedia Sekarang</div>
+          <div class="roadmap-name">Demo Live</div>
+          <p class="roadmap-desc">Database Aset dasar, Pinpoint Aset di peta, Login multi-role (Admin, Finance, GA), dan tampilan desktop Windows-style sudah bisa dicoba.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag">Database Aset</span>
+            <span class="roadmap-tag">Pinpoint</span>
+            <span class="roadmap-tag">Multi-Role Login</span>
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot soon">🔨</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase soon">Full Release — Segera</div>
+          <div class="roadmap-name">Modul Admin & GA Lengkap</div>
+          <p class="roadmap-desc">Beauty Contest, Catalog Editor, Selebaran Koran Generator, Survey BC & SKOL, dan Karakteristik Debitur akan diaktifkan penuh.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag">Beauty Contest</span>
+            <span class="roadmap-tag">Catalog Editor</span>
+            <span class="roadmap-tag">Selebaran Koran</span>
+            <span class="roadmap-tag">Survey SKOL</span>
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot soon">💼</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase soon">Full Release — Menyusul</div>
+          <div class="roadmap-name">Modul Finance & Berita Acara</div>
+          <p class="roadmap-desc">Invoice, Jurnal, Buku Besar, serta seluruh alur Berita Acara untuk perubahan nilai limit, request PIC bank, dan penetapan lelang baru.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag">Invoice</span>
+            <span class="roadmap-tag">Jurnal</span>
+            <span class="roadmap-tag">Buku Besar</span>
+            <span class="roadmap-tag">Berita Acara</span>
+          </div>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot future">📱</div>
+        <div class="roadmap-content">
+          <div class="roadmap-phase future">Jangka Panjang</div>
+          <div class="roadmap-name">Tampilan Mobile iOS-Style</div>
+          <p class="roadmap-desc">Versi mobile dengan navigasi ala iOS — home screen dengan ikon aplikasi dan dock bawah, dioptimalkan untuk penggunaan di lapangan oleh tim GA.</p>
+          <div class="roadmap-tags">
+            <span class="roadmap-tag">iOS Navigation</span>
+            <span class="roadmap-tag">Mobile-Optimized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-box">
+    <div class="cta-title">Coba NEST Sekarang</div>
+    <p class="cta-sub">Demo sudah live dan bisa langsung dijajal.</p>
+    <div class="cta-btns">
+      <a href="https://rajawalilelangindo.com/rajawali-nest-demo.html" target="_blank" class="btn-primary">🚀 Kunjungi Demo Live</a>
+    </div>
+    <p style="font-size:12px;color:rgba(255,255,255,0.25);margin-top:24px;position:relative;">rajawalilelangindo.com/rajawali-nest-demo.html</p>
+  </div>
+</div>
+
+<script>
+// Reveal on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Live clock for windows mock
+function updateClock() {
+  const el = document.getElementById('winClock');
+  if (!el) return;
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  el.textContent = h + ':' + m;
+}
+updateClock();
+setInterval(updateClock, 10000);
+</script>
+</body>
+</html>
