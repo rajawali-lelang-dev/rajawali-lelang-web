@@ -726,8 +726,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1w92GsGsgpew-XgzYw6y2BRccFn6jrzkZ")
     ],
     endPrice: 450000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-03",
     batasWaktuLelang: "-",
+    jamLelang: "11:30 WIB",
   },
 {
     id: "RLI_ELP_0112", // <-- Husniati
@@ -839,8 +840,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1GwfJsQG1I5Cep3RSFN46cBDalOjA3O-q")
     ],
     endPrice: 1025600000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-08",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
                   {
     id: "RLI_ELP_0108", // <-- Mahmudi
@@ -1356,8 +1358,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=19OSisEfueag0ZM8VKcJISo1WaUQkBcT6")
     ],
     endPrice: 2446000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-03",
     batasWaktuLelang: "-",
+    jamLelang: "11:30 WIB",
   },
       {
     id: "RLI_ELP_0091", // <-- Agus Yulianto
