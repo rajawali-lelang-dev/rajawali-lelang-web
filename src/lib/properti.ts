@@ -61,6 +61,192 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+            {
+    id: "RLI_ELP_0140", // <-- PT. EPTCO DIAN PERSADA
+    title: "AGUNAN LELANG RUKO",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Toko",
+    location: "Komplek Ruko Luwuk Shopping Mall No. T-18, Jalan MT Haryono, Kel. Luwuk, Kec. Luwuk, Kab. Banggai, Prov. Sulawesi Tengah",
+    provinsi: "Sulawesi Selatan",
+    kota: "Banggai",
+    landArea: 68,
+    buildingArea: 130,
+    certificateType: "SHGB" ,
+    description:
+    `- 1 menit dari Luwuk Shopping Mall
+- 1 menit dari Teluk Luwuk
+- 4 menit dari Universitas Muhammadiyah Luwuk
+- 5 menit dari RS Claire Medika Luwuk
+- 8 menit dari Pelabuhan Luwuk`,
+    status: "Lelang Aktif",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1heLa87ITql-mzHIZmwCZBbIFdMowFur2"),
+      getDriveImageUrl("https://drive.google.com/open?id=1J1wO43awGG5vsWp1hsu6IrWogv3AiIbJ"),
+      getDriveImageUrl("https://drive.google.com/open?id=13osz8lonVsnkvMx_UQ4X82-pdM-rNsMf"),
+      getDriveImageUrl("https://drive.google.com/open?id=1AW9x_C2BSJBfBIfa2ywZzahY0iJaDzGO")
+    ],
+    endPrice: 903500000,
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
+  },
+          {
+    id: "RLI_ELP_0139", // <-- PT. EPTCO DIAN PERSADA
+    title: "AGUNAN LELANG TANAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Jalan Trans Luwuk, Desa Honbola, Kec. Batui, Kab. Banggai, Prov. Sulawesi Tengah",
+    provinsi: "Sulawesi Selatan",
+    kota: "Banggai",
+    landArea: 47731,
+    buildingArea: 0,
+    certificateType: "SHM" ,
+    description:
+    `- 4 menit dari Pasar Batui
+- 4 menit dari SPBU Batui
+- 7 menit dari Puskesmas Batui
+- 9 menit dari SMAN 1 Batui
+- 13 menit dari Pantai Makakata`,
+    status: "Lelang Aktif",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=11erYH9O0h1EzYf4_tIen4RhCzcAFVYW6"),
+      getDriveImageUrl("https://drive.google.com/open?id=1WQ5hICNyrqrFiIWTc_ASGdz8oCHCzw0R"),
+      getDriveImageUrl("https://drive.google.com/open?id=1QnEVTFjNkJC0U-X_KbRP4AQJnZEDXkho"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Qc-Sk7MN9GOkvOaDjbNuaxUQkSAzSoUG"),
+      getDriveImageUrl("https://drive.google.com/open?id=1me2XUruFAySW8byM-l-GO8I8cH-5duHw"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Xe4LQGhN8f-_SBratVIUWbMaRV3YkiCt"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dhfGBhRqQISUSHXgI99ZValgxOgU6dCO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1rh7Vodhh-jeH7P-LsX-j8tmjjmZ7_cK9")
+    ],
+    endPrice: 15816364000,
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
+  },
+        {
+    id: "RLI_ELP_0138", // <-- PT. EPTCO DIAN PERSADA
+    title: "AGUNAN LELANG TANAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Jalan Trans Luwuk, Desa Honbola, Kec. Batui, Kab. Banggai, Prov. Sulawesi Tengah",
+    provinsi: "Sulawesi Selatan",
+    kota: "Banggai",
+    landArea: 47731,
+    buildingArea: 0,
+    certificateType: "SHM" ,
+    description:
+    `- 4 menit dari Pasar Batui
+- 4 menit dari SPBU Batui
+- 7 menit dari Puskesmas Batui
+- 9 menit dari SMAN 1 Batui
+- 13 menit dari Pantai Makakata`,
+    status: "Lelang Aktif",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=11erYH9O0h1EzYf4_tIen4RhCzcAFVYW6"),
+      getDriveImageUrl("https://drive.google.com/open?id=1WQ5hICNyrqrFiIWTc_ASGdz8oCHCzw0R"),
+      getDriveImageUrl("https://drive.google.com/open?id=1QnEVTFjNkJC0U-X_KbRP4AQJnZEDXkho"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Qc-Sk7MN9GOkvOaDjbNuaxUQkSAzSoUG"),
+      getDriveImageUrl("https://drive.google.com/open?id=1me2XUruFAySW8byM-l-GO8I8cH-5duHw"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Xe4LQGhN8f-_SBratVIUWbMaRV3YkiCt"),
+      getDriveImageUrl("https://drive.google.com/open?id=1dhfGBhRqQISUSHXgI99ZValgxOgU6dCO"),
+      getDriveImageUrl("https://drive.google.com/open?id=1rh7Vodhh-jeH7P-LsX-j8tmjjmZ7_cK9")
+    ],
+    endPrice: 15816364000,
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
+  },
+      {
+    id: "RLI_ELP_0137", // <-- PT. EPTCO DIAN PERSADA
+    title: "AGUNAN LELANG TANAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Jalan Ahmad Yani, Kel. Balantang, Kec. Batui, Kab. Banggai, Prov. Sulawesi Tengah",
+    provinsi: "Sulawesi Selatan",
+    kota: "Banggai",
+    landArea: 763,
+    buildingArea: 0,
+    certificateType: "SHM" ,
+    description:
+    `- 2 menit dari Puskesmas Batui
+- 2 menit dari SMPN 1 Batui
+- 2 menit dari Pasar Batui
+- 4 menit dari SPBU Batui
+- 11 menit dari Pantai Makakata`,
+    status: "Lelang Aktif",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1lxcHFiypoDxPgXb9o6dPEsKk52oNcviZ"),
+      getDriveImageUrl("https://drive.google.com/open?id=1qzs9Usktjq8IF5AZPXxoVT4DApm8a_sC"),
+      getDriveImageUrl("https://drive.google.com/open?id=1XVGRAx1y-c0-W5zQdIOTma8OUGGkJmaa"),
+      getDriveImageUrl("https://drive.google.com/open?id=1fve2GqqgGh5TcoGzNebJVKTIJLZweePj"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Nmn2gGPDVoAxU7hnbufAD5cOCTWIPpVu")
+    ],
+    endPrice: 305200000,
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
+  },
+      {
+    id: "RLI_ELP_0136", // <-- PT. MULTI TRADING PRATAMA (BIRINGKANAYA SHM 21016)
+    title: "SEGERA LELANG TANAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Jl. Ir. Sutami (masuk kedalam), Kel. Parang Loe (dh. Bira), Kec. Tamalanrea (dh. Biringkanaya), Kota Makassar (dh. Ujung Pandang), Prov. Sulawesi Selatan",
+    provinsi: "Sulawesi Selatan",
+    kota: "Makassar",
+    landArea: 54000,
+    buildingArea: 0,
+    certificateType: "SHM" ,
+    description:
+    `- 16 menit dari Pelabuhan Makassar New Port
+- 16 menit dari RS Primaya Makassar
+- 20 menit dari Gerbang Tol Parangloe
+- 21 menit dari Nipah Mall Makassar
+- 30 menit dari Bandara Internasional Sultan Hasanuddin`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1oyTREpjRbkejnqxy58EBhfsnfx638x-J"),
+      getDriveImageUrl("https://drive.google.com/open?id=1nWXtXun8hzGu7YUHb07QY4CYWdo9dGvF"),
+      getDriveImageUrl("https://drive.google.com/open?id=14jVqo_C0PPbyD2EhcpbQr0gOuH-GJDfr"),
+      getDriveImageUrl("https://drive.google.com/open?id=1rKWjVYrGkniCHxtKCoDY0watlvH3N8Sa")
+    ],
+    endPrice: 21060000000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+    {
+    id: "RLI_ELP_0135", // <-- PT. GOLDEN STONE INDONESIA
+    title: "SEGERA LELANG TANAH",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Tanah",
+    location: "Dukuh Nganginan, RT 005/RW 001, Kel. Besole, Kec. Besuki, Kab. Tulungagung, Prov. Jawa Timur",
+    provinsi: "Jawa Timur",
+    kota: "Tulungagung",
+    landArea: 54050,
+    buildingArea: 0,
+    certificateType: "SHGB" ,
+    description:
+    `- 2 menit dari SDN Besole 1
+- 3 menit dari Klinik Pratama Zamzam Medika Besole
+- 5 menit dari Pasar Desa Besole
+- 5 menit dari SPBU Pertamina Ngentrong
+- 5 menit dari Telaga Bedalem`,
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1ji3KlnADHhToL49ubTICPqd2eHSUSKIz"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Cp00DwdzbJwWNWMNDg_Veeu2OlN_uvJK"),
+      getDriveImageUrl("https://drive.google.com/open?id=1yqb_xejgEB5WAUvhdyEl_O8C406-zKrn"),
+      getDriveImageUrl("https://drive.google.com/open?id=1Elm_0zFEutSXstQAto9b6mNqci2Q2uqx"),
+      getDriveImageUrl("https://drive.google.com/open?id=19_NIQAGFvKxD801w7EHC2VG45HKAOEJi"),
+      getDriveImageUrl("https://drive.google.com/open?id=1TJZsBhR2GlesEMaEa_cFkZGsuD4HwDlR"),
+      getDriveImageUrl("https://drive.google.com/open?id=1wexhL5YeoJaNysWS5KlHBn_B2lTxficu"),
+      getDriveImageUrl("https://drive.google.com/open?id=1hFeebi2nK5xO_x7srvN7KjjNmlhT5InM"),
+      getDriveImageUrl("https://drive.google.com/open?id=1ejJKAzjSyZBL5F3m3M9Xq0D8rLlFqP2i")
+    ],
+    endPrice: 22625330000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
                {
     id: "RLI_ELP_0134", // ZULFITRI NASUTION
     title: "SEGERA LELANG RUKO",
@@ -149,8 +335,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1jxGlOKH43DsNAFEq790seNHfhwHbWNGU")
     ],
     endPrice: 289000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-08",
     batasWaktuLelang: "-",
+    jamLelang: "11:15 WIB",
   },
              {
     id: "RLI_ELP_0131", // SUMANTRI (SHM 96)
@@ -181,8 +368,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1afiacM2Kbs0aCLcvaVcOXWJaELK1ta4J")
     ],
     endPrice: 1155000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-08",
     batasWaktuLelang: "-",
+    jamLelang: "11:15 WIB",
   },
            {
     id: "RLI_ELP_0130", // SUMANTRI (SHM 108&187)
@@ -210,8 +398,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=13eRndZG1lf19eDKh475MBL7GC7AsCN2S")
     ],
     endPrice: 5448000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-08",
     batasWaktuLelang: "-",
+    jamLelang: "11:15 WIB",
   },
          {
     id: "RLI_ELP_0129", // RULLY ACHMAD SANUSI
@@ -1791,7 +1980,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Oue4SCKvgJyNhyrhdxQIVxr165z77O32")
     ],
     endPrice: 2413300000,
-    tanggalLelang: "2026-04-01",
+    tanggalLelang: "2026-05-19",
     batasWaktuLelang: "-",
     jamLelang: "09:00 WIB",
   },
@@ -3899,8 +4088,8 @@ export const lelangProperties: PropertiDilelang[] = [
     jamLelang: "10:00 WIB",
   },
     {
-    id: "RLI_ELP_0057",
-    title: "SEGERA LELANG BENGKEL",
+    id: "RLI_ELP_0057", // Sumber Mulyo
+    title: "AGUNAN LELANG PABRIK DAN GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Jl. KH. Romli Tamim No. 18, Kel. Jelakombo, Kec. Jombang, Kab. Jombang",
@@ -3915,7 +4104,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 9 menit dari Rumah Sakit Sido Waras
       - 12 menit dari Stadion Gelora Gajah Mada
       - 12 menit dari Kolam Renang Vanda Tirta`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1qavcAEmbR0Z1C0c6zJMSGPT2HuTneNbi"),
       getDriveImageUrl("https://drive.google.com/open?id=1BsEoX546T7pskXa0GxJTB2CkADNEqjeM"),
@@ -3923,8 +4112,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1lAIJomju7lZFR7u2CHJMVUJhaFtb6YVL")
     ],
     endPrice: 6500000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-11",
     batasWaktuLelang: "-",
+    jamLelang: "11:00 WIB",
   },
       {
     id: "RLI_ELP_0058", // <-- Sinta Wati
@@ -3952,7 +4142,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1NlhYpwe7QfPtMSgMStJZg3nLCgkKbiWX")
     ],
     endPrice: 950040000,
-    tanggalLelang: "2026-04-08",
+    tanggalLelang: "2026-06-02",
     batasWaktuLelang: "-",
     jamLelang: "09:25 WIB",
   },
