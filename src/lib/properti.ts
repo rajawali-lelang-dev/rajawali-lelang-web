@@ -61,6 +61,590 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+{
+  id: "RLI_ELP_0163", // <-- ASET BNI (MALANG)
+  title: "AGUNAN LELANG TANAH KOSONG",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Terusan Yonkav, Desa Ardimulyo, Dusun Gembolo RT.02 RW.04, Desa Ardimulyo, Kec. Singosari, Kab. Malang, Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Malang",
+  landArea: 12140,
+  buildingArea: 0,
+  certificateType: "SHGB",
+  description:
+  `- 5 menit dari SMPN 1 Singosari Malang
+- 7 menit dari RS Lawang Medika
+- 7 menit dari Gerbang Tol Lawang
+- 8 menit dari Pasar Singosari
+- 10 menit dari Singosari`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1DFbnsNNlW6lDpuMTzxwNVJV1HwhRhjGp"),
+    getDriveImageUrl("https://drive.google.com/open?id=1R3MFELHMUTiaCE3ZzWW8KGe1cGO4WBgO"),
+    getDriveImageUrl("https://drive.google.com/open?id=1rtbiWJwEedXnQifOz6YHhv-fPvA-i0K8"),
+    getDriveImageUrl("https://drive.google.com/open?id=1yhantlaBIMWKAKrfYGRV40Dk2EFDIuku"),
+    getDriveImageUrl("https://drive.google.com/open?id=115zZuX_krO4zwPtzqxYUYw8bErnTphfZ")
+  ],
+  endPrice: 19424000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0162", // <-- ASET BNI (KEMANGGISAN, PALMERAH)
+  title: "AGUNAN LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan H. Saili Blok F No. 37, RT. 005 RW. 005, Kel. Kemanggisan, Kec. Palmerah, Kota Jakarta Barat",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Barat",
+  landArea: 714,
+  buildingArea: 555,
+  certificateType: "SHM",
+  description:
+  `- 4 menit dari Gerbang Tol Slipi 1
+- 4 menit dari RS Patria IKKT
+- 9 menit dari Stasiun Palmerah
+- 10 menit dari Universitas Bina Nusantara Kampus Anggrek
+- 13 menit dari Central Park Mall`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1t7OHk7snLP8lmi2jnaSvnPXPVYomFJc7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1r0-HD_jFIPU9d6nX12uytaQfc3GAPw8F"),
+    getDriveImageUrl("https://drive.google.com/open?id=1zw-0Jv5cYZUWdBhlQrTsG7-Bcqhj7Lfq"),
+    getDriveImageUrl("https://drive.google.com/open?id=1yPdhEUC2_6HSJ8MOeOwEQELtazYJKe1i"),
+    getDriveImageUrl("https://drive.google.com/open?id=1416AVZoPM8VIoPzQQDXWfkIMvjtgbe0i")
+  ],
+  endPrice: 7100000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0161", // <-- ASET BNI (KEBON JERUK, JAKBAR)
+  title: "AGUNAN LELANG RUKO",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jl Raya Kebayoran Lama No. 17 ABC, Kel. Sukabumi Selatan, Kec. Kebon Jeruk, Jakarta Barat",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Barat",
+  landArea: 389,
+  buildingArea: 861,
+  certificateType: "SHGB",
+  description:
+  `- 3 menit dari Eka Hospital Permata Hijau
+- 8 menit dari BINUS School Simprug
+- 9 menit dari Stasiun Kebayoran
+- 14 menit dari Senayan City Mall
+- 15 menit dari Gerbang Tol Senayan`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1fAAa68W3uDWPfB033JWIPoDFPQaEE3Ye"),
+    getDriveImageUrl("https://drive.google.com/open?id=1RkVg2ZbnODX7_idowZD7ZBqqtdfS9izq"),
+    getDriveImageUrl("https://drive.google.com/open?id=1zrcZLngx8SpGOgjtQ7RXvaG94ALzhb14"),
+    getDriveImageUrl("https://drive.google.com/open?id=1wKWHP9XRErU834gt-BpSI_www3RKi4cd"),
+    getDriveImageUrl("https://drive.google.com/open?id=1UumAT4Woj86ROcC6jM9rZ2vPZCDwFP-N")
+  ],
+  endPrice: 11700000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0160", // <-- ASET BNI (KEBON JERUK, JAKSEL)
+  title: "AGUNAN LELANG RUMAH",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Mampang Prapatan XI Blok C No.1, Kel. Tegal Parang, Kec. Mampang Prapatan, Kota Jakarta Selatan, DKI Jakarta",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Selatan",
+  landArea: 160,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari RS Siloam Mampang
+- 8 menit dari Stasiun LRT Pancoran bank bjb
+- 12 menit dari Gerbang Tol Cawang
+- 15 menit dari Universitas Sampoerna
+- 16 menit dari Kuningan City Mall`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1r3xxXl8RzIcV9VDLgraPxFDljflRtHKb"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ptht8afG_2x96bVMTyjUW4cGE-0pqP4G"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lrf6YCyCZocr7VfRnvppMN42h9J82jzj")
+  ],
+  endPrice: 2125600000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0159", // <-- KRISTIANTONO
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Ikan Gurami, Kel. Karangrejo, Kec. Banyuwangi, Kab. Banyuwangi, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Banyuwangi",
+  landArea: 4824,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 4 menit dari Taman Blambangan
+- 5 menit dari SMPN 1 Banyuwangi
+- 6 menit dari Roxy Banyuwangi
+- 6 menit dari Alun-Alun Kota Banyuwangi
+- 7 menit dari RSUD Blambangan`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1JWU02H4l_rAgfH9q4QiirA7cpta5ZztT"),
+    getDriveImageUrl("https://drive.google.com/open?id=1dPhEMwZhoW57dyYmWL0ckGz2wGnDh7j7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1862UuTC4fTNBRKS6UwDZjdYft8kXKyDM"),
+    getDriveImageUrl("https://drive.google.com/open?id=1q8gbg26Fg-7pYXVw89JIA2rIfNeaz6NK"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qqJl9haH5NoAccFw5_3jxTXwm5RKZBv-")
+  ],
+  endPrice: 2670000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0158", // <-- MUHAMMAD RUJI
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Dusun Blobo, Desa Sukoraharjo, Kec. Kepanjen, Kab. Malang, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Malang",
+  landArea: 1509,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 9 menit dari RSUD Kanjuruhan Kota Kepanjen
+- 9 menit dari Stasiun Kepanjen
+- 9 menit dari Univ. Islam Raden Rahmat
+- 10 menit dari SMAN 1 Kepanjen
+- 18 menit dari Pasar Bululawang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1kfkCrPmg7sTskuBfKMOofFcUCkKB5nlK"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ppMgQuYbPZs-702EE5uHXJPk-FPw1jx8"),
+    getDriveImageUrl("https://drive.google.com/open?id=1fWk3X3T8D663KbaTN5zLT6-SRZ8aGOqe"),
+    getDriveImageUrl("https://drive.google.com/open?id=1sC9XnoCPzoGJArKQNcqV8zsfDXMuSH8M"),
+    getDriveImageUrl("https://drive.google.com/open?id=1riLbiePaiBxWTT1pWe0FmBk5i88i24Oq"),
+    getDriveImageUrl("https://drive.google.com/open?id=1OlF-JnhcPie6NJM6qrLlbbfIP1VI9R6W"),
+    getDriveImageUrl("https://drive.google.com/open?id=1PCaYZHT1Ide3lPZbh_F9vFdlxani23e3"),
+    getDriveImageUrl("https://drive.google.com/open?id=1OlxPLYSz6450aR4ShwrH8MXNRRPokUM6"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Ww9_hVImdC-thJcwgw7prRsfkeXNAObj")
+  ],
+  endPrice: 209800000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0157", // <-- SUWANDI SHM 1953
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Dusun Krajan, Desa Clumprit, Kec. Pagelaran, Kab. Malang, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Malang",
+  landArea: 1543,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 9 menit dari RSUD Kanjuruhan Kota Kepanjen
+- 9 menit dari Stasiun Kepanjen
+- 9 menit dari Univ. Islam Raden Rahmat
+- 10 menit dari SMAN 1 Kepanjen
+- 18 menit dari Pasar Bululawang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1-WVtP1v8XYQZAZ62KG9VuodvIv3yRug8"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qbe5uj4E0AlSwJeJ0CUOu2cnZ-ILUwwJ"),
+    getDriveImageUrl("https://drive.google.com/open?id=1juoBhePkPHs67_SL_9F-igelH-gWYYxa"),
+    getDriveImageUrl("https://drive.google.com/open?id=1sDtUzgX66QUW11SB_v2WlQ1JSO8ropEq")
+  ],
+  endPrice: 401200000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0156", // <-- SUWANDI SHM 1954
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Dusun Krajan, Desa Clumprit, Kec. Pagelaran, Kab. Malang, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Malang",
+  landArea: 713,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 9 menit dari RSUD Kanjuruhan Kota Kepanjen
+- 9 menit dari Stasiun Kepanjen
+- 9 menit dari Univ. Islam Raden Rahmat
+- 10 menit dari SMAN 1 Kepanjen
+- 18 menit dari Pasar Bululawang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1Bw9xkdpYH-6BYPaWeHH6w4YGEAV7qEfW"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Wj6Db-m_RofA4XeUP8aJLc3MFTo_aiTT"),
+    getDriveImageUrl("https://drive.google.com/open?id=1VmLU8tqxCQQa5BuJjQUb_ZACax8i-eLE"),
+    getDriveImageUrl("https://drive.google.com/open?id=19fY1ATFP46xOn8zFdufYVY1cJ-rfV9YP")
+  ],
+  endPrice: 156900000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0153", // <-- PT. UDANG MAS MAKMUR (RUMAH)
+  title: "SEGERA LELANG RUMAH",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Villa City Garden, Blok C No. 1, Kel. Sukaraja, Kec. Telukbelung Selatan, Kota Bandarlampung, Prov. Lampung",
+  provinsi: "Lampung",
+  kota: "Bandar Lampung",
+  landArea: 446,
+  buildingArea: 631.44,
+  certificateType: "SHM",
+  description:
+  `- 4 menit dari Pantai Sukaraja Lampung
+- 5 menit dari Lampung City Mall
+- 7 menit dari SMAN 6 Bandar Lampung
+- 7 menit dari Gunung Kunyit
+- 7 menit dari Pahoman Stadium`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1EfPXmeNvywlgAr0CcdTPT9v5AiCe9Rar"),
+    getDriveImageUrl("https://drive.google.com/open?id=16UNXflV-Ik_c9Wp1pbIRbaIJqAp42KQQ"),
+    getDriveImageUrl("https://drive.google.com/open?id=1jUAMiZmcl78Xl2VEnnV-hYMFmEKmqAjv"),
+    getDriveImageUrl("https://drive.google.com/open?id=1R_5d1Lt0Sz9Kn3wrnqgZOdtWVDttAgWg")
+  ],
+  endPrice: 4350000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0152", // <-- PT. SAMALINDO JAYA MANDIRI (RUKO JAKARTA)
+  title: "SEGERA LELANG RUKO",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jalan Senen Raya III (Jalan Kenanga), Komplek Ruko Atrium Senen Blok C No. 2, 3 dan 4, Kel. Senen, Kec. Senen, Kota Jakarta Pusat",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Pusat",
+  landArea: 231,
+  buildingArea: 924,
+  certificateType: "SHGB",
+  description:
+  `- 3 menit dari Mal Atrium Senen
+- 6 menit dari Stasiun Pasar Senen
+- 6 menit dari RSPAD Gatot Soebroto
+- 10 menit dari Monumen Nasional
+- 19 menit dari Gerbang Tol Rawamangun`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1DCPVXzLCzPDqIk98aIQKur9wD4Ns9uxI"),
+    getDriveImageUrl("https://drive.google.com/open?id=1RjGkiRTdJi7gnxPyKlEq2GzaZRbObJoU"),
+    getDriveImageUrl("https://drive.google.com/open?id=1BqBSEO0XG6aqU09B4XS34quC6puK7P3A"),
+    getDriveImageUrl("https://drive.google.com/open?id=1YIGSkQjxUkSf89F6xA6LaX4pfRJNW_tz"),
+    getDriveImageUrl("https://drive.google.com/open?id=1tcMqykJ_2cV0MIS5nzLkksVkxNY5qZbL"),
+    getDriveImageUrl("https://drive.google.com/open?id=1fetmeutwhyof3a5fFtZCy9oxh5fmNzVJ")
+  ],
+  endPrice: 3691400000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0151", // <-- PT. SAMALINDO JAYA MANDIRI TANGERANG
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Prof Dr. Hamka No. 6, Kel. Gaga, Kec. Larangan, Kota Tangerang, Prov. Banten",
+  provinsi: "Banten",
+  kota: "Tangerang",
+  landArea: 1480,
+  buildingArea: 1115,
+  certificateType: "SHGB",
+  description:
+  `- 7 menit dari Pasar Kreo Ciledug
+- 8 menit dari SMAN 12 Kota Tangerang
+- 9 menit dari RS Hermina Ciledug
+- 10 menit dari Universitas Budi Luhur
+- 16 menit dari Gerbang Tol Joglo 1`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1ws0ZCnL-3_l3nlf22AbqnYNLsZ5W-Uoa"),
+    getDriveImageUrl("https://drive.google.com/open?id=11JU4_YfwFOvZyKyrN8GV0dK_hNLRI8R5"),
+    getDriveImageUrl("https://drive.google.com/open?id=1bhmtlFeMSBRQ6_x1SCkH9a7B683ODHgN"),
+    getDriveImageUrl("https://drive.google.com/open?id=1vAWAIGevc-czN2ZuqJAWUD5Vh6xOOxl-")
+  ],
+  endPrice: 5100000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0150", // <-- LUTFIA ANDRIANI
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Samani Residence Kav. C3, Jalan Tunjung, Desa Ungasan, Kec. Kuta Selatan, Kab. Badung, Prov. Bali",
+  provinsi: "Bali",
+  kota: "Badung",
+  landArea: 178,
+  buildingArea: 158,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari SDN 7 Ungasan
+- 8 menit dari Pasar Telaga Saru Ungasan
+- 8 menit dari Puskesmas Ungasan
+- 10 menit dari Pantai Melasti Ungasan
+- 11 menit dari Garuda Wisnu Kencana Cultural Park`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1XoA77jReVRSMtPZ1NQ1ZHGbEXELFxMhX"),
+    getDriveImageUrl("https://drive.google.com/open?id=1OmmHSl_4Qs1Hp_Z3N-mhPIh9WlDRD-3t"),
+    getDriveImageUrl("https://drive.google.com/open?id=1hNtaATCDMr4Mfyj5LtvjqQFd7vYA4vsY"),
+    getDriveImageUrl("https://drive.google.com/open?id=1mw8AwUUU4CrGC92phpNNCy2YV42venID"),
+    getDriveImageUrl("https://drive.google.com/open?id=1aWT1PkCVHoyVnsTHLRdBpv0BMlTYAFIM"),
+    getDriveImageUrl("https://drive.google.com/open?id=1V0ssXmFUuBcatSzodEwVcmp31Cf5Yxik"),
+    getDriveImageUrl("https://drive.google.com/open?id=1RUgt20yFImDxKgKgzRNVfcozwxbcFt3T"),
+    getDriveImageUrl("https://drive.google.com/open?id=1mBzvTWHczWy8vSIuSg5tjYqdBdGJkqPB")
+  ],
+  endPrice: 1443870000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0149", // <-- PT. JUMBO JADE
+  title: "SEGERA LELANG RUKO",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jalan Landak/Serigala No. 67, Kelurahan Mamajang Dalam, Kecamatan Mamajang, Kota Makassar, Provinsi Sulawesi Selatan",
+  provinsi: "Sulawesi Selatan",
+  kota: "Makassar",
+  landArea: 483,
+  buildingArea: 560,
+  certificateType: "SHM",
+  description:
+  `- 4 menit dari Mal Ratu Indah
+- 6 menit dari RSUD Haji Makassar
+- 10 menit dari Universitas Negeri Makassar
+- 18 menit dari Pantai Akkarena
+- 19 menit dari Gerbang Tol Cambaya`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1Vt6zj9gL7LRvwPPIo2illF_wMcn31GYu"),
+    getDriveImageUrl("https://drive.google.com/open?id=1nidBjMOQEDG2QMVypQ-bhqBb87LvQmag"),
+    getDriveImageUrl("https://drive.google.com/open?id=1_xYVVlB84ixiZmoIlhlfYXmjSUcJLIl_"),
+    getDriveImageUrl("https://drive.google.com/open?id=1iNTRWM9fYq6Pey9Ip3j-mXBwbJ2lnqw8"),
+    getDriveImageUrl("https://drive.google.com/open?id=1IxevgmcWNikeVtda-vqDD1x0SyceFCEv")
+  ],
+  endPrice: 5320000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0148", // <-- PT. MULTI TRADING PRATAMA SHGB 21399
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Lingkungan Bukit Villa Mas, Kel. Pandang, Kec. Panakkukang, Kota Makassar, Prov. Sulawesi Selatan",
+  provinsi: "Sulawesi Selatan",
+  kota: "Makassar",
+  landArea: 396,
+  buildingArea: 0,
+  certificateType: "SHGB",
+  description:
+  `- 9 menit dari Univ. Muslim Indonesia
+- 10 menit dari Mall Panakkukang
+- 11 menit dari RS. Hermina Makassar
+- 12 menit dari Pakui Sayang Park
+- 18 menit dari Gerbang Tol Cambaya`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=10fbvFq-w5FYMgiEfHDiJX3pccA12O_uQ"),
+    getDriveImageUrl("https://drive.google.com/open?id=1QIs0WPS7n9HfW9y7WcUt75hMjEzYSlmc"),
+    getDriveImageUrl("https://drive.google.com/open?id=1aWF4JAi3OTPxxBNWP4SwpUXIOUIjlkkx"),
+    getDriveImageUrl("https://drive.google.com/open?id=1okMSIJBsrGFG9wHOcClRhllHfdMrqVkn"),
+    getDriveImageUrl("https://drive.google.com/open?id=1LbddFELXq2G1mRdpwu7Lij336gvBwoJy")
+  ],
+  endPrice: 6110280000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0147", // <-- PT. MULTI TRADING PRATAMA SHGB 21384, 21385
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Lingkungan Bukit Villa Mas, Kel. Pandang, Kec. Panakkukang, Kota Makassar, Prov. Sulawesi Selatan",
+  provinsi: "Sulawesi Selatan",
+  kota: "Makassar",
+  landArea: 1288,
+  buildingArea: 0,
+  certificateType: "SHGB",
+  description:
+  `- 9 menit dari Univ. Muslim Indonesia
+- 10 menit dari Mall Panakkukang
+- 11 menit dari RS. Hermina Makassar
+- 12 menit dari Pakui Sayang Park
+- 18 menit dari Gerbang Tol Cambaya`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1U4U3Py0hK9iB1Kz4jl-oRek24CuVncpN"),
+    getDriveImageUrl("https://drive.google.com/open?id=1LzYrIS_Of-uoMfuVMEm94OIm5ddTuIkR"),
+    getDriveImageUrl("https://drive.google.com/open?id=1rIfyeJZOFzStxVrRMFxh-bhWQy6cg0MA"),
+    getDriveImageUrl("https://drive.google.com/open?id=1atF2Wvzv-MUlMPByDsMg5WbUdEJGari_")
+  ],
+  endPrice: 19229840000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0146", // <-- PT. MULTI TRADING PRATAMA 5 SHGB
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Lingkungan Bukit Villa Mas, Kel. Pandang, Kec. Panakkukang, Kota Makassar, Prov. Sulawesi Selatan",
+  provinsi: "Sulawesi Selatan",
+  kota: "Makassar",
+  landArea: 3286,
+  buildingArea: 0,
+  certificateType: "SHGB",
+  description:
+  `- 9 menit dari Univ. Muslim Indonesia
+- 10 menit dari Mall Panakkukang
+- 11 menit dari RS. Hermina Makassar
+- 12 menit dari Pakui Sayang Park
+- 18 menit dari Gerbang Tol Cambaya`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1q0izytAq1GsOHvtNOjK8Qbd73lBK9TxO"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Bxj71Q5cwX2JfsJwg6djtEtJF0aVx4F3"),
+    getDriveImageUrl("https://drive.google.com/open?id=1IWyMPBwtg3Bj8dLGMllBfvw7D8jR5dZP"),
+    getDriveImageUrl("https://drive.google.com/open?id=1K8UEwgLoZ1rU7ZH7KhC8XfwAGMLN_iRE")
+  ],
+  endPrice: 48402780000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0145", // <-- AINUN JARIYAH
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Desa Simoanginangin, Kec. Wonoayu, Kab. Sidoarjo, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 193,
+  buildingArea: 107,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Jalan Raya Simo Angin-Angin
+- 5 menit dari Pasar Wonoayu
+- 6 menit dari SMAN 1 Wonoayu
+- 6 menit dari Kolam Renang Jedong Cangkring
+- 7 menit dari RSU Al-Islam H.M Mawardi`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1zA1hlwcJdbSsXgEmNAMFU6bNWeR6Vjky"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Y3_E7a2i6Aikge2Immfv28eKeLXmM3fV"),
+    getDriveImageUrl("https://drive.google.com/open?id=1pQK3NPSnN5xbXkRws_kZWHQCUUVxbKK4"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ytF3y1o3oBmgTLm76sy7VHAstF3cjK3C")
+  ],
+  endPrice: 388000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+ {
+  id: "RLI_ELP_0143", // <-- PT. SERUNI INDAH
+  title: "SEGERA LELANG PABRIK, KANTOR DAN GUDANG",
+  isHidden: true,
+  type: "Gudang",
+  location: "Jalan Raya Kletek No. 59-61, Desa Kletek, Kec. Taman, Kab. Sidoarjo, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 2352,
+  buildingArea: 1378,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari SPBU Kletek
+- 7 menit dari RS Siti Khodijah
+- 8 menit dari Stasiun Sepanjang
+- 8 menit dari Puspa Agro
+- 14 menit dari Gerbang Tol Menanggal`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1A8YWr_-bi-mmqZHU6LFf0RatNtcz_M1c"),
+    getDriveImageUrl("https://drive.google.com/open?id=1v4q3hVTW--i7QRtEVmi38_YN_ru-ikZT"),
+    getDriveImageUrl("https://drive.google.com/open?id=1VccsSgZwYUlkXuQsSqmmKaprmP2tOJGM"),
+    getDriveImageUrl("https://drive.google.com/open?id=1KFgjNM_nA7G33Hqh3pC5rjIao6PsfSRu"),
+    getDriveImageUrl("https://drive.google.com/open?id=1P7pgRhqgL6szjD9E8-IvThWlWQvdXNu2")
+  ],
+  endPrice: 17825989000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0142", // <-- PT. SERUNI INDAH
+  title: "SEGERA LELANG PABRIK, KANTOR DAN GUDANG",
+  isHidden: true,
+  type: "Gudang",
+  location: "Jalan Raya Kletek No. 11, Desa Kletek, Kec. Taman, Kab. Sidoarjo, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 4303,
+  buildingArea: 4229,
+  certificateType: "SHGB",
+  description:
+  `- 4 menit dari SPBU Kletek
+- 9 menit dari Puspa Agro
+- 10 menit dari RS Siti Khodijah
+- 11 menit dari Stasiun Sepanjang
+- 17 menit dari Gerbang Tol Menanggal`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1FkZGlU3OJUfiCzax9hTXxFsp46B0PiZo"),
+    getDriveImageUrl("https://drive.google.com/open?id=1IeAZdu6YGlcF77M3j3hbpthApBddaMw6"),
+    getDriveImageUrl("https://drive.google.com/open?id=1XBn6FbZq2Pulrsuiyqy3ENQ0ZBp9UeoV"),
+    getDriveImageUrl("https://drive.google.com/open?id=1mUQyoQxI8C1PC6znhCmfVkZogO-kUPyd"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lzhUMZaR8njwR-gzEWGf2JKBigjiDN4h"),
+    getDriveImageUrl("https://drive.google.com/open?id=13unuUeRPxvkxMPWPW03arOWDOIH4j45M"),
+    getDriveImageUrl("https://drive.google.com/open?id=1TPSEjs-TtKcOqN9aEzmtxTzMvZj2tpK5"),
+    getDriveImageUrl("https://drive.google.com/open?id=11rDXP-uENAdjM15da5QkKksvMeygS-9Q"),
+    getDriveImageUrl("https://drive.google.com/open?id=1EW_amQKyePjyiPEA9kPcc4PlIGBtcuwx"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lhyEVajW2dTohHbkIg1lc4qh3rpX71J0")
+  ],
+  endPrice: 22000000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+            {
+    id: "RLI_ELP_0141", // <-- PT. SERUNI INDAH
+    title: "SEGERA LELANG PABRIK, KANTOR DAN GUDANG",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Gudang",
+    location: "Komplek Ruko Luwuk Shopping Mall No. T-18, Jalan MT Haryono, Kel. Luwuk, Kec. Luwuk, Kab. Banggai, Prov. Sulawesi Tengah",
+    provinsi: "Sulawesi Selatan",
+    kota: "Banggai",
+    landArea: 4136,
+    buildingArea: 5079,
+    certificateType: "SHM" ,
+    description:
+    `- 1 menit dari Luwuk Shopping Mall
+- 1 menit dari Teluk Luwuk
+- 4 menit dari Universitas Muhammadiyah Luwuk
+- 5 menit dari RS Claire Medika Luwuk
+- 8 menit dari Pelabuhan Luwuk`,
+    status: "Lelang Aktif",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1k-O1jjXRJpcuu1vscAuit6rXQWkRm0aT"),
+      getDriveImageUrl("https://drive.google.com/open?id=1mWPmwiT4yN10NntfKwWx1eCli-SuHiJB"),
+      getDriveImageUrl("https://drive.google.com/open?id=1QsB67FA_sm1t3AhvWScR9E6aiJyHyMdP"),
+      getDriveImageUrl("https://drive.google.com/open?id=1mQ5a9WZosTCP0jZ7UUNI8AkHX3EI0igb")
+    ],
+    endPrice: 903500000,
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "09:00 WIB",
+  },
             {
     id: "RLI_ELP_0140", // <-- PT. EPTCO DIAN PERSADA
     title: "AGUNAN LELANG RUKO",
