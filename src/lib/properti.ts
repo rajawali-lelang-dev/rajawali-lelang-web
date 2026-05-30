@@ -62,6 +62,62 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+  id: "RLI_ELP_0172", // <-- ALVIAN KUSUMA WIJAYA
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jl. Simo Magerejo I/10, RT.001 RW.001, Kel. Simomulyo, Kec. Sukomanunggal, Kota Surabaya, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Surabaya",
+  landArea: 129,
+  buildingArea: 123,
+  certificateType: "SHM",
+  description:
+  `- 10 menit dari Tunjungan Plaza
+- 13 menit dari Univ. Wijaya Kusuma Surabaya
+- 14 menit dari Lapangan Thor
+- 14 menit dari Gerbang Tol Banyu Urip
+- 17 menit dari RS Mitra Keluarga Surabaya`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1TIBpUO1q7d9Erycxnru6jLHyqjMNgpKr"),
+    getDriveImageUrl("https://drive.google.com/open?id=19apkrXMV0kmkgbJXnxanrO6UrEZ9LBA5"),
+    getDriveImageUrl("https://drive.google.com/open?id=1W2jXwmA5GoH4EHSsGRC4Pxui6zxryWT_"),
+  ],
+  endPrice: 699052000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0171", // <-- SUWARDI
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perum Pondok Blimbing Indah I-2 No. 15, Kel. Pandanwangi, Kec. Blimbing, Kota Malang, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Malang",
+  landArea: 150,
+  buildingArea: 126,
+  certificateType: "SHGB",
+  description:
+  `- 4 menit dari Plaza Araya
+- 5 menit dari Terminal Arjosari
+- 6 menit dari Persada Hospital
+- 9 menit dari Stasiun Blimbing
+- 10 menit dari Hawai Waterpark`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1jXFB-4yWF9OtgZhju_a_XlMI3ShicgTN"),
+    getDriveImageUrl("https://drive.google.com/open?id=1AQUtnJqeH6OzjT6TBTGNVVRDvDxvCOIv"),
+    getDriveImageUrl("https://drive.google.com/open?id=1JV_t4RqGanSR8ndimRa8QKSf5sJEjFVk"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Tgsk-e2C8ACOi627Jq1rIDl32cteW63H"),
+    getDriveImageUrl("https://drive.google.com/open?id=1WzWrp0tpg_SY6ydhk1KI5Ptv3ieJiu-e"),
+  ],
+  endPrice: 1132000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELP_0170", // <-- JUALI
   title: "SEGERA LELANG RUMAH TINGGAL",
   isHidden: true,
