@@ -540,7 +540,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
 {
   id: "RLI_ELP_0152", // <-- PT. SAMALINDO JAYA MANDIRI (RUKO JAKARTA)
-  title: "SEGERA LELANG RUKO",
+  title: "AGUNAN LELANG RUKO",
   isHidden: true,
   type: "Ruko",
   location: "Jalan Senen Raya III (Jalan Kenanga), Komplek Ruko Atrium Senen Blok C No. 2, 3 dan 4, Kel. Senen, Kec. Senen, Kota Jakarta Pusat",
@@ -555,7 +555,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 6 menit dari RSPAD Gatot Soebroto
 - 10 menit dari Monumen Nasional
 - 19 menit dari Gerbang Tol Rawamangun`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1DCPVXzLCzPDqIk98aIQKur9wD4Ns9uxI"),
     getDriveImageUrl("https://drive.google.com/open?id=1RjGkiRTdJi7gnxPyKlEq2GzaZRbObJoU"),
@@ -565,12 +565,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1fetmeutwhyof3a5fFtZCy9oxh5fmNzVJ")
   ],
   endPrice: 3691400000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-07-28",
+    batasWaktuLelang: "-",
+    jamLelang: "13:50 WIB",
 },
 {
   id: "RLI_ELP_0151", // <-- PT. SAMALINDO JAYA MANDIRI TANGERANG
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jalan Prof Dr. Hamka No. 6, Kel. Gaga, Kec. Larangan, Kota Tangerang, Prov. Banten",
@@ -585,7 +586,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 9 menit dari RS Hermina Ciledug
 - 10 menit dari Universitas Budi Luhur
 - 16 menit dari Gerbang Tol Joglo 1`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1ws0ZCnL-3_l3nlf22AbqnYNLsZ5W-Uoa"),
     getDriveImageUrl("https://drive.google.com/open?id=11JU4_YfwFOvZyKyrN8GV0dK_hNLRI8R5"),
@@ -593,8 +594,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1vAWAIGevc-czN2ZuqJAWUD5Vh6xOOxl-")
   ],
   endPrice: 5100000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-06-25",
+    batasWaktuLelang: "-",
+    jamLelang: "11:45 WIB",
 },
 {
   id: "RLI_ELP_0150", // <-- LUTFIA ANDRIANI
@@ -630,7 +632,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
 {
   id: "RLI_ELP_0149", // <-- PT. JUMBO JADE
-  title: "SEGERA LELANG RUKO",
+  title: "AGUNAN LELANG RUKO",
   isHidden: true,
   type: "Ruko",
   location: "Jalan Landak/Serigala No. 67, Kelurahan Mamajang Dalam, Kecamatan Mamajang, Kota Makassar, Provinsi Sulawesi Selatan",
@@ -645,7 +647,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 10 menit dari Universitas Negeri Makassar
 - 18 menit dari Pantai Akkarena
 - 19 menit dari Gerbang Tol Cambaya`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1Vt6zj9gL7LRvwPPIo2illF_wMcn31GYu"),
     getDriveImageUrl("https://drive.google.com/open?id=1nidBjMOQEDG2QMVypQ-bhqBb87LvQmag"),
@@ -654,12 +656,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1IxevgmcWNikeVtda-vqDD1x0SyceFCEv")
   ],
   endPrice: 5320000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "13:00 WIB",
 },
 {
   id: "RLI_ELP_0148", // <-- PT. MULTI TRADING PRATAMA SHGB 21399
-  title: "SEGERA LELANG TANAH",
+  title: "AGUNAN LELANG TANAH",
   isHidden: true,
   type: "Tanah",
   location: "Jalan Lingkungan Bukit Villa Mas, Kel. Pandang, Kec. Panakkukang, Kota Makassar, Prov. Sulawesi Selatan",
@@ -674,7 +677,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 11 menit dari RS. Hermina Makassar
 - 12 menit dari Pakui Sayang Park
 - 18 menit dari Gerbang Tol Cambaya`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=10fbvFq-w5FYMgiEfHDiJX3pccA12O_uQ"),
     getDriveImageUrl("https://drive.google.com/open?id=1QIs0WPS7n9HfW9y7WcUt75hMjEzYSlmc"),
@@ -683,12 +686,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1LbddFELXq2G1mRdpwu7Lij336gvBwoJy")
   ],
   endPrice: 6110280000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "12:30 WIB",
 },
 {
   id: "RLI_ELP_0147", // <-- PT. MULTI TRADING PRATAMA SHGB 21384, 21385
-  title: "SEGERA LELANG TANAH",
+  title: "AGUNAN LELANG TANAH",
   isHidden: true,
   type: "Tanah",
   location: "Jalan Lingkungan Bukit Villa Mas, Kel. Pandang, Kec. Panakkukang, Kota Makassar, Prov. Sulawesi Selatan",
@@ -703,7 +707,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 11 menit dari RS. Hermina Makassar
 - 12 menit dari Pakui Sayang Park
 - 18 menit dari Gerbang Tol Cambaya`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1U4U3Py0hK9iB1Kz4jl-oRek24CuVncpN"),
     getDriveImageUrl("https://drive.google.com/open?id=1LzYrIS_Of-uoMfuVMEm94OIm5ddTuIkR"),
@@ -711,12 +715,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1atF2Wvzv-MUlMPByDsMg5WbUdEJGari_")
   ],
   endPrice: 19229840000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "12:30 WIB",
 },
 {
   id: "RLI_ELP_0146", // <-- PT. MULTI TRADING PRATAMA 5 SHGB
-  title: "SEGERA LELANG TANAH",
+  title: "AGUNAN LELANG TANAH",
   isHidden: true,
   type: "Tanah",
   location: "Jalan Lingkungan Bukit Villa Mas, Kel. Pandang, Kec. Panakkukang, Kota Makassar, Prov. Sulawesi Selatan",
@@ -731,7 +736,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 11 menit dari RS. Hermina Makassar
 - 12 menit dari Pakui Sayang Park
 - 18 menit dari Gerbang Tol Cambaya`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1q0izytAq1GsOHvtNOjK8Qbd73lBK9TxO"),
     getDriveImageUrl("https://drive.google.com/open?id=1Bxj71Q5cwX2JfsJwg6djtEtJF0aVx4F3"),
@@ -739,8 +744,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1K8UEwgLoZ1rU7ZH7KhC8XfwAGMLN_iRE")
   ],
   endPrice: 48402780000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-06-24",
+    batasWaktuLelang: "-",
+    jamLelang: "12:30 WIB",
 },
 {
   id: "RLI_ELP_0145", // <-- AINUN JARIYAH
@@ -772,7 +778,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
  {
   id: "RLI_ELP_0143", // <-- PT. SERUNI INDAH
-  title: "SEGERA LELANG PABRIK, KANTOR DAN GUDANG",
+  title: "AGUNAN LELANG PABRIK, KANTOR DAN GUDANG",
   isHidden: true,
   type: "Gudang",
   location: "Jalan Raya Kletek No. 59-61, Desa Kletek, Kec. Taman, Kab. Sidoarjo, Prov. Jawa Timur",
@@ -787,7 +793,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 8 menit dari Stasiun Sepanjang
 - 8 menit dari Puspa Agro
 - 14 menit dari Gerbang Tol Menanggal`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1A8YWr_-bi-mmqZHU6LFf0RatNtcz_M1c"),
     getDriveImageUrl("https://drive.google.com/open?id=1v4q3hVTW--i7QRtEVmi38_YN_ru-ikZT"),
@@ -796,12 +802,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1P7pgRhqgL6szjD9E8-IvThWlWQvdXNu2")
   ],
   endPrice: 17825989000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-07-01",
+    batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
 },
 {
   id: "RLI_ELP_0142", // <-- PT. SERUNI INDAH
-  title: "SEGERA LELANG PABRIK, KANTOR DAN GUDANG",
+  title: "AGUNAN LELANG PABRIK, KANTOR DAN GUDANG",
   isHidden: true,
   type: "Gudang",
   location: "Jalan Raya Kletek No. 11, Desa Kletek, Kec. Taman, Kab. Sidoarjo, Prov. Jawa Timur",
@@ -816,7 +823,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 10 menit dari RS Siti Khodijah
 - 11 menit dari Stasiun Sepanjang
 - 17 menit dari Gerbang Tol Menanggal`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1FkZGlU3OJUfiCzax9hTXxFsp46B0PiZo"),
     getDriveImageUrl("https://drive.google.com/open?id=1IeAZdu6YGlcF77M3j3hbpthApBddaMw6"),
@@ -830,12 +837,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1lhyEVajW2dTohHbkIg1lc4qh3rpX71J0")
   ],
   endPrice: 22000000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-07-01",
+    batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
 },
             {
     id: "RLI_ELP_0141", // <-- PT. SERUNI INDAH
-    title: "SEGERA LELANG PABRIK, KANTOR DAN GUDANG",
+    title: "AGUNAN LELANG PABRIK, KANTOR DAN GUDANG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Gudang",
     location: "Komplek Ruko Luwuk Shopping Mall No. T-18, Jalan MT Haryono, Kel. Luwuk, Kec. Luwuk, Kab. Banggai, Prov. Sulawesi Tengah",
@@ -858,9 +866,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1mQ5a9WZosTCP0jZ7UUNI8AkHX3EI0igb")
     ],
     endPrice: 903500000,
-    tanggalLelang: "2026-06-24",
+    tanggalLelang: "2026-07-01",
     batasWaktuLelang: "-",
-    jamLelang: "09:00 WIB",
+    jamLelang: "10:30 WIB",
   },
             {
     id: "RLI_ELP_0140", // <-- PT. EPTCO DIAN PERSADA
@@ -1050,7 +1058,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
                {
     id: "RLI_ELP_0134", // ZULFITRI NASUTION
-    title: "SEGERA LELANG RUKO",
+    title: "AGUNAN LELANG RUKO",
     isHidden: true,
     type: "Ruko",
     location: "Puri Matahari Persada, RT. 001 RW.010, Desa Laladon, Kec. Ciomas, Kab. Bogor, Prov. Jawa Barat",
@@ -1065,7 +1073,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 9 menit dari Hari Hari Dramaga Bogor
 - 9 menit dari RS Graha Medika Bogor
 - 17 menit dari Akses Tol Borr Arah Barat`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1_JyWBizVAlrSvr9kMmCs0UNJ5JGGbv1P"),
       getDriveImageUrl("https://drive.google.com/open?id=1S3naibMqrAkIN7UQcYMR1nXj4JUGmyg5"),
@@ -1075,8 +1083,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1lN5hhFx6cLRLNmfluJYDmFiHI_GrXI3M")
     ],
     endPrice: 862900000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-14",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
                {
     id: "RLI_ELP_0133", // LAUW SWIE NGIT
@@ -1112,7 +1121,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
              {
     id: "RLI_ELP_0132", // SUMANTRI (SHM 155)
-    title: "SEGERA LELANG WARKOP/TOKO",
+    title: "AGUNAN LELANG WARKOP/TOKO",
     isHidden: true,
     type: "Toko",
     location: "Jl. Lingkar Pertamina Rahayu, Desa Kebonagung, Kec. Rengel, Kab. Tuban",
@@ -1127,7 +1136,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 2 menit dari SPBU Pertamina Pekuwon
 - 6 menit dari D'fresh Waterpark Rengel
 - 8 menit dari Pasar Desa Rengel`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ZSD7fmxIjw0Fyfpo65r19bqX6Ys-f_8s"),
       getDriveImageUrl("https://drive.google.com/open?id=17L2vBJ1dLMoE9-3wIHex_5Ll-Np3xnVy"),
@@ -1142,7 +1151,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
              {
     id: "RLI_ELP_0131", // SUMANTRI (SHM 96)
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true,
     type: "Rumah",
     location: "Desa Kebonagung, Kec. Rengel, Kab. Tuban",
@@ -1157,7 +1166,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 3 menit dari SPBU Pertamina Pekuwon
 - 8 menit dari D'fresh Waterpark Rengel
 - 10 menit dari Pasar Desa Rengel`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1AQvU8Y3tvx4pNznHUeY4PV8p6nKTLzlL"),
       getDriveImageUrl("https://drive.google.com/open?id=195nKHSxNwTK-ZEdpHefbdHxrzbhUxyzU"),
@@ -1175,7 +1184,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
            {
     id: "RLI_ELP_0130", // SUMANTRI (SHM 108&187)
-    title: "SEGERA LELANG TOKO DAN RUMAH TINGGAL",
+    title: "AGUNAN LELANG TOKO DAN RUMAH TINGGAL",
     isHidden: true,
     type: "Rumah",
     location: "Jl. Logawe, Desa Kebonagung, Kec. Rengel, Kab. Tuban",
@@ -1190,7 +1199,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 2 menit dari SPBU Pertamina Pekuwon
 - 6 menit dari D'fresh Waterpark Rengel
 - 8 menit dari Pasar Desa Rengel`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1vLbt7JAYqwKhQKvLDev-OzVQt8AQICZQ"),
       getDriveImageUrl("https://drive.google.com/open?id=14vpbr1jjANxwRFygFImE5z_5svMPNRgg"),
@@ -1266,7 +1275,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
      {
     id: "RLI_ELP_0127", // PT. AFALIS INDONESIA
-    title: "SEGERA LELANG GUDANG PABRIK",
+    title: "AGUNAN LELANG GUDANG PABRIK",
     isHidden: true,
     type: "Gudang",
     location: "Jalan Poros Sidorogo, Desa Trosobo, Kec. Taman, Kab. Sidoarjo, Jawa Timur",
@@ -1281,7 +1290,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 8 menit dari Super Indo Citra Harmoni
 - 16 menit dari SMAN 1 Taman
 - 30 menit dari Gerbang Tol Menanggal`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ob_A2iYB5GTmo-eYshvctRUi8ZfZu1AE"),
       getDriveImageUrl("https://drive.google.com/open?id=1tJxxsD8fIm7LA5vB6ucmvupCaFzwEZ0D"),
@@ -1290,8 +1299,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Msp-SMbvgaEuJZAJK5IqPBtSXA9iLv6j")
     ],
     endPrice: 5891059300,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-24",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
    {
     id: "RLI_ELP_0126", // PT. BINTANG TERANG STEEL
@@ -1513,7 +1523,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "RLI_ELP_0119", // HIRNI SUDARTI
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true,
     type: "Rumah",
     location: "Perum Bukit Az - Zikra, Jl. Tawaqal I, Blok A3 - 4 No. 16, Kel. Cipambuan, Kec. Babakan Madang, Kab. Bogor, Jawa Barat",
@@ -1528,7 +1538,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 9 menit dari Gerbang Tol Sentul Barat
 - 10 menit dari Bellanova Country Mall
 - 11 menit dari RS EMC Sentul`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1elHJgshh_88gGXyGuzdYN1DSfdYZRBL3"),
       getDriveImageUrl("https://drive.google.com/open?id=17kXpUowxHJ-rRSEzwTtxa-wRZzdFTuZV"),
@@ -1536,8 +1546,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1z3CGrqcZGyU-rXepxfbo63INcfG4wUXB")
     ],
     endPrice: 605988000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-22",
     batasWaktuLelang: "-",
+    jamLelang: "09:30 WIB",
   },
     {
     id: "RLI_ELP_0118", // PT. ERA USAHA JAYA
@@ -1629,7 +1640,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
       {
     id: "RLI_ELP_0115", // <-- Riki Triyo
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan de Adisucipto Residence Blok E8, Kel. Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur",
@@ -1644,7 +1655,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 2 menit dari Puskesmas Pandanwangi
 - 8 menit dari Terminal Arjosari Malang
 - 8 menit dari Kolam Pemancingan Telaga Kencana`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1NHka1OPtw3c6BGNCAypS2glM4kYJLY8J"),
       getDriveImageUrl("https://drive.google.com/open?id=1yrBnOcb1PoQ2Hf7kKMdBkRYeu-qhzF7q"),
@@ -1653,8 +1664,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1sfKkmMnQ3aO48fvVoiBhHTHiTjsMCzG2")
     ],
     endPrice: 402000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-04",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
     {
     id: "RLI_ELP_0114", // <-- Muhammad Saihin
@@ -1690,7 +1702,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
   {
     id: "RLI_ELP_0113", // <-- Endang Sukmawati
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jalan Ahmad Yani, Dusun Krajan, RT. 003 RW. 001, Desa Bandungrejo, Kec. Bantur, Kab. Malang, Jawa Timur",
@@ -1705,7 +1717,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 5 menit dari Puskesmas Sumbermanjing Kulon
 - 6 menit dari SMPN 1 Pagak
 - 10 menit dari Kolam Renang Anugerah`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1pZn4yRgSHXFHsaU6cJRu3pdyk9CQdia1"),
       getDriveImageUrl("https://drive.google.com/open?id=1IZbqY92wgJbbvSKHtnyF5FtYnGrgWFcs"),
@@ -1807,7 +1819,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
                     {
     id: "RLI_ELP_0109", // <-- Irwanto
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jalan Raya Singosari No. 69, Desa Candirenggo, Kec. Singosari, Kab. Malang, Jawa Timur",
@@ -1822,7 +1834,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 3 menit dari Pasar Singosari
 - 5 menit dari Stasiun Singosari
 - 16 menit dari Tol Singosari`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1eEHb_DqTNxdJhZGwPc6zTMa8xPXEH4bQ"),
       getDriveImageUrl("https://drive.google.com/open?id=1fLJajfplPpd5jw3sZaNihGJcHuzXe-HR"),
@@ -1982,7 +1994,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
               {
     id: "RLI_ELP_0103", // <-- IRWAN PRASETYO
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Puri Bunga Estate, Blok D, No. 7, Kel. Jatimulyo, Kec. Lowokwaru, Kota Malang",
@@ -1997,7 +2009,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 6 menit dari Mall Dinoyo City
 - 6 menit dari Stadium Sepak Bola UMM
 - 8 menit dari Tlogomas Park`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1QJIVUYXTOBctO-3dGSN5MkfrWEShCpQK"),
       getDriveImageUrl("https://drive.google.com/open?id=1Pijt3rokKzlycP6cK512GszqqLzvTbX4"),
@@ -2006,8 +2018,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1y3IazyjmmiTNZvaOr1NAlkJcEz7hUv0a")
     ],
     endPrice: 850000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-23",
     batasWaktuLelang: "-",
+    jamLelang: "10:50 WIB",
   },
               {
     id: "RLI_ELP_0102", // <-- PT. EMSINDO POLA CITRA
@@ -2036,9 +2049,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1eIS4UUkmfYDJTi7oHlfF3CU0P0enGiCV")
     ],
     endPrice: 6700000000,
-    tanggalLelang: "2026-04-29",
+    tanggalLelang: "2026-06-18",
     batasWaktuLelang: "-",
-    jamLelang: "13:35 WIB",
+    jamLelang: "13:50 WIB",
   },
             {
     id: "RLI_ELP_0101", // <-- CV. PUTRO UTOMO (Tanah Pakisaji Malang)
@@ -2102,7 +2115,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
           {
     id: "RLI_ELP_0099", // <-- CV. PUTRO UTOMO (Tanah Lumajang)
-    title: "SEGERA LELANG TANAH",
+    title: "AGUNAN LELANG TANAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Desa Tempeh Lor, Kec. Tempeh, Kab. Lumajang, Jawa Timur",
@@ -2117,7 +2130,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 4 menit dari SMK Negeri 1 Tempeh
 - 9 menit dari Graha Mulia Plaza Lumajang
 - 15 menit dari Wisata Gunung Tambuh Raya`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1jriiiL14DpmVlPaJx92cpR070u1VqXQZ"),
       getDriveImageUrl("https://drive.google.com/open?id=1wd1kcHy1ser2WLg8Cn-bjvFppbaB0Nbl"),
@@ -2127,8 +2140,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1pRcxUrgdh3SDTlUpKLwF9nxgtYSmH5iG")
     ],
     endPrice: 662400000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-06-10",
     batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
   },
           {
     id: "RLI_ELP_0098", // <-- CV. PUTRO UTOMO (Gudang)
@@ -2289,9 +2303,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=19OS1xagmL_6T6KT9Id6Mcm4V3d-iffyA"),
     ],
     endPrice: 2724000000,
-    tanggalLelang: "2026-04-07",
+    tanggalLelang: "2026-05-18",
     batasWaktuLelang: "-",
-    jamLelang: "13:40 WIB",
+    jamLelang: "16:40 WIB",
   },
         {
     id: "RLI_ELP_0093", // <-- PT. BUMI BERKAH LELUHUR (Surabaya)
@@ -2324,7 +2338,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
         {
     id: "RLI_ELP_0092", // <-- FIKRI NIAM AFIF FAHMI
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jalan Urip Sumoharjo, Kel. Pohjentrek, Kec. Purworejo, Kota Pasuruan, Jawa Timur",
@@ -2339,7 +2353,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 3 menit dari RSUD Pasuruan Dr. R. Soedarsono
 - 5 menit dari Universitas PGRI Wiranegara
 - 7 menit dari Alun-Alun Pasuruan`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=15Y2xsv0RU8gM6B4GcZdU3-nkFnP6x6CD"),
       getDriveImageUrl("https://drive.google.com/open?id=1M-Lme95R--iTULl-Dl6AZKK5LLxjelC9"),
@@ -4913,7 +4927,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1lAIJomju7lZFR7u2CHJMVUJhaFtb6YVL")
     ],
     endPrice: 6500000000,
-    tanggalLelang: "2026-06-11",
+     tanggalLelang: "2026-06-11",
     batasWaktuLelang: "-",
     jamLelang: "11:00 WIB",
   },
@@ -5000,9 +5014,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1t_xZGjcRvyG27z5ustODzcW6-d79OKlZ")
     ],
     endPrice: 580200000,
-    tanggalLelang: "2026-04-09",
+    tanggalLelang: "2026-06-04",
     batasWaktuLelang: "-",
-    jamLelang: "09:45 WIB",
+    jamLelang: "10:45 WIB",
   },
 ];// Helper: Get unique provinces from all properties
 export const getUniqueProvinces = (): string[] => {
