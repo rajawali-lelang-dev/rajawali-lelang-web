@@ -62,6 +62,65 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+  id: "RLI_ELP_0164", // <-- PT. ANDALAN TRANSPORT INDONESIA
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Komp. Griya Selabumi Indah Blok H No. 8, Kel. Sriwidari, Kec. Gunung Puyuh, Kota Sukabumi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Sukabumi",
+  landArea: 167,
+  buildingArea: 2053,
+  certificateType: "SHM",
+  description:
+  `- 7 menit dari SMAN 2 Kota Sukabumi
+- 10 menit dari Citimall Sukabumi
+- 13 menit dari Alun-Alun Kota Sukabumi
+- 16 menit dari Stasiun Sukabumi
+- 19 menit dari RS Betha Medika`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1JIMoGtIHhBDVPkcgbQeflIVGXpDMIxcV"),
+    getDriveImageUrl("https://drive.google.com/open?id=1WshrB8FbjdEQAKZJjKa0pt-F6l1ru00k"),
+    getDriveImageUrl("https://drive.google.com/open?id=1-Y2DZ3Q4O3GcH2ElxVtv3HXuJJuyfHDa"),
+    getDriveImageUrl("https://drive.google.com/open?id=16qIWJjmOiOIQoQGTsyySDdfg8-24YMJ6"),
+    getDriveImageUrl("https://drive.google.com/open?id=14y9niXOogizROd8Y58NLvakEVVyNYGH_"),
+    getDriveImageUrl("https://drive.google.com/open?id=15oDByKlyRBjZNv0mRbU5r8lYArNwTB4H"),
+  ],
+  endPrice: 1483962000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0173", // <-- LAUW SWIE NGIT
+  title: "AGUNAN LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Raya Mataram – Tanjung, Desa Sokong, Kec. Tanjung, Kab. Lombok Utara, Prov. Nusa Tenggara Barat",
+  provinsi: "Nusa Tenggara Barat",
+  kota: "Lombok Utara",
+  landArea: 7320,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Jalan Raya Mataram-Tanjung
+- 3 menit dari Pantai Impos
+- 3 menit dari SMAN 1 Tanjung
+- 5 menit dari Pasar Tanjung
+- 6 menit dari RSUD Kabupaten Lombok Utara`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1NoWDnU5DkflMUColX9S4j24pkFyoZmSR"),
+    getDriveImageUrl("https://drive.google.com/open?id=1TMibycB8iKohrSojvAC1Xc5dGRygDo6F"),
+    getDriveImageUrl("https://drive.google.com/open?id=1i8SN9dfvyA--o_BXKK_uyHR6yjgPksg3"),
+    getDriveImageUrl("https://drive.google.com/open?id=1i71iLQ4eAjMjm1-Zn8hBmI0gmc9nPy05"),
+    getDriveImageUrl("https://drive.google.com/open?id=1pzcsLt8WRKGtOPLC6nWZqf9OLwL5Algp"),
+  ],
+  endPrice: 4026000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELP_0172", // <-- ALVIAN KUSUMA WIJAYA
   title: "SEGERA LELANG RUMAH TINGGAL",
   isHidden: true,
@@ -925,35 +984,6 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "2026-07-01",
     batasWaktuLelang: "-",
     jamLelang: "10:30 WIB",
-  },
-            {
-    id: "RLI_ELP_0140", // <-- PT. EPTCO DIAN PERSADA
-    title: "AGUNAN LELANG RUKO",
-    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
-    type: "Toko",
-    location: "Komplek Ruko Luwuk Shopping Mall No. T-18, Jalan MT Haryono, Kel. Luwuk, Kec. Luwuk, Kab. Banggai, Prov. Sulawesi Tengah",
-    provinsi: "Sulawesi Selatan",
-    kota: "Banggai",
-    landArea: 68,
-    buildingArea: 130,
-    certificateType: "SHGB" ,
-    description:
-    `- 1 menit dari Luwuk Shopping Mall
-- 1 menit dari Teluk Luwuk
-- 4 menit dari Universitas Muhammadiyah Luwuk
-- 5 menit dari RS Claire Medika Luwuk
-- 8 menit dari Pelabuhan Luwuk`,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1heLa87ITql-mzHIZmwCZBbIFdMowFur2"),
-      getDriveImageUrl("https://drive.google.com/open?id=1J1wO43awGG5vsWp1hsu6IrWogv3AiIbJ"),
-      getDriveImageUrl("https://drive.google.com/open?id=13osz8lonVsnkvMx_UQ4X82-pdM-rNsMf"),
-      getDriveImageUrl("https://drive.google.com/open?id=1AW9x_C2BSJBfBIfa2ywZzahY0iJaDzGO")
-    ],
-    endPrice: 903500000,
-    tanggalLelang: "2026-06-24",
-    batasWaktuLelang: "-",
-    jamLelang: "09:00 WIB",
   },
           {
     id: "RLI_ELP_0139", // <-- PT. EPTCO DIAN PERSADA
