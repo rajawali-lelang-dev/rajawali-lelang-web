@@ -108,7 +108,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 3 menit dari SMAN 1 Tanjung
 - 5 menit dari Pasar Tanjung
 - 6 menit dari RSUD Kabupaten Lombok Utara`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1NoWDnU5DkflMUColX9S4j24pkFyoZmSR"),
     getDriveImageUrl("https://drive.google.com/open?id=1TMibycB8iKohrSojvAC1Xc5dGRygDo6F"),
@@ -117,8 +117,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1pzcsLt8WRKGtOPLC6nWZqf9OLwL5Algp"),
   ],
   endPrice: 4026000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-07-07",
+    batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
 },
   {
   id: "RLI_ELP_0172", // <-- ALVIAN KUSUMA WIJAYA
@@ -178,7 +179,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
   {
   id: "RLI_ELP_0170", // <-- JUALI
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jl. Pulo Wonokromo No. 218, Kel. Wonokromo, Kec. Wonokromo, Kota Surabaya, Prov. Jawa Timur",
@@ -193,7 +194,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 7 menit dari Stasiun Wonokromo
 - 8 menit dari Univ. Negeri Surabaya - Kampus 1
 - 9 menit dari Taman Bungkul`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1k7srWS32DhKiY9ju9C2Xv8vSVLBXrtS7"),
     getDriveImageUrl("https://drive.google.com/open?id=1MQYqKKeCjjvHKWsuc4fAtbTY9ME8pNqO"),
@@ -202,12 +203,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1VoI_3eBL4n5B7woYAPPyEe7wuQ__SKat"),
   ],
   endPrice: 1478500000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-07-13",
   batasWaktuLelang: "-",
+      jamLelang: "09:50 WIB",
 },
 {
   id: "RLI_ELP_0169", // <-- NURUL QOMARIYAH
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jl. Karangrejo IV No. 30B, Kel. Wonokromo, Kec. Wonokromo, Kota Surabaya, Prov. Jawa Timur",
@@ -222,7 +224,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 9 menit dari Stasiun Wonokromo
 - 9 menit dari Univ. Negeri Surabaya - Kampus 1
 - 10 menit dari Taman Bungkul`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1wtmTGpSi9EVQDJjv_ASnDyfD1Awb4TfI"),
     getDriveImageUrl("https://drive.google.com/open?id=1x6atzU1y4aJYg8GH2Tyae5b9h9Yhxx-u"),
@@ -232,8 +234,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1TGLo-nPOc7xlnaRvXEkIeAxvmZ0HqglZ"),
   ],
   endPrice: 894000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-07-07",
+    batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
 },
 {
   id: "RLI_ELP_0168", // <-- SYAIFUDIN ARIEF FIRMANSYAH
@@ -571,7 +574,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
 {
   id: "RLI_ELP_0157", // <-- SUWANDI SHM 1953
-  title: "SEGERA LELANG TANAH",
+  title: "AGUNAN LELANG TANAH",
   isHidden: true,
   type: "Tanah",
   location: "Dusun Krajan, Desa Clumprit, Kec. Pagelaran, Kab. Malang, Prov. Jawa Timur",
@@ -586,7 +589,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 9 menit dari Univ. Islam Raden Rahmat
 - 10 menit dari SMAN 1 Kepanjen
 - 18 menit dari Pasar Bululawang`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1-WVtP1v8XYQZAZ62KG9VuodvIv3yRug8"),
     getDriveImageUrl("https://drive.google.com/open?id=1qbe5uj4E0AlSwJeJ0CUOu2cnZ-ILUwwJ"),
@@ -594,12 +597,13 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1sDtUzgX66QUW11SB_v2WlQ1JSO8ropEq")
   ],
   endPrice: 401200000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-07-15",
   batasWaktuLelang: "-",
+      jamLelang: "10:30 WIB",
 },
 {
   id: "RLI_ELP_0156", // <-- SUWANDI SHM 1954
-  title: "SEGERA LELANG TANAH",
+  title: "AGUNAN LELANG TANAH",
   isHidden: true,
   type: "Tanah",
   location: "Dusun Krajan, Desa Clumprit, Kec. Pagelaran, Kab. Malang, Prov. Jawa Timur",
@@ -614,7 +618,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 9 menit dari Univ. Islam Raden Rahmat
 - 10 menit dari SMAN 1 Kepanjen
 - 18 menit dari Pasar Bululawang`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1Bw9xkdpYH-6BYPaWeHH6w4YGEAV7qEfW"),
     getDriveImageUrl("https://drive.google.com/open?id=1Wj6Db-m_RofA4XeUP8aJLc3MFTo_aiTT"),
@@ -622,8 +626,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=19fY1ATFP46xOn8zFdufYVY1cJ-rfV9YP")
   ],
   endPrice: 156900000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-07-15",
   batasWaktuLelang: "-",
+      jamLelang: "10:30 WIB",
 },
 {
   id: "RLI_ELP_0153", // <-- PT. UDANG MAS MAKMUR (RUMAH)
@@ -2718,7 +2723,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1dG6CgCqT98r_Y5ufymESvQfCxY-pgT3e")
     ],
     endPrice: 3024000000,
-    tanggalLelang: "2026-04-08",
+    tanggalLelang: "2026-07-23",
     batasWaktuLelang: "-",
     jamLelang: "10:05 WIB",
   },
@@ -2748,9 +2753,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1ss8LQjFHWGqT_nxeTrX45Qk1CpSqWJgi")
     ],
     endPrice: 603000000,
-    tanggalLelang: "2026-05-19",
+    tanggalLelang: "2026-07-23",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "09:30 WIB",
   },
 
           {
@@ -2780,9 +2785,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1rTB0MnouCAVOTN7rnTTU2phfkB4JCPEM")
     ],
     endPrice: 6231100000,
-    tanggalLelang: "2026-05-19",
+    tanggalLelang: "2026-07-23",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "09:30 WIB",
   },
 
       {
