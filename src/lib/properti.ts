@@ -62,7 +62,270 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
-  id: "RLI_ELP_0164", // <-- PT. ANDALAN TRANSPORT INDONESIA
+  id: "RLI_ELP_0183", // <-- RISKHA AULIA
+  title: "SEGERA LELANG TOKO",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jalan Pahlawan No. 23, Desa Gapurosukolilo, Kec. Gresik, Kab. Gresik, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Gresik",
+  landArea: 58,
+  buildingArea: 116,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Alun-Alun Gresik
+- 4 menit dari SMAN 1 Gresik
+- 7 menit dari RS Semen Gresik
+- 7 menit dari Univ. Internasional Semen Indonesia
+- 14 menit dari Gressmall`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=10nts_4BNuDI0MCKxi-NUU628M6AUfOB1"),
+    getDriveImageUrl("https://drive.google.com/open?id=1fnBWT5N7kq-PXdyKiPRmy2kEpU5j_ov-"),
+    getDriveImageUrl("https://drive.google.com/open?id=1SdyqpJtSGnoyIrj4qVH099tXa9E-XTAu"),
+  ],
+  endPrice: 487759000,
+  tanggalLelang: "2026-07-16",
+  batasWaktuLelang: "-",
+  jamLelang: "10:45 WIB",
+},
+{
+  id: "RLI_ELP_0182", // <-- TITIK INDRAWATI
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Raya Bungah Dukun, Desa Masangan, Kec. Bungah, Kab. Gresik, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Gresik",
+  landArea: 801,
+  buildingArea: 485,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari RSI Mabarrot MWC NU Bungah
+- 7 menit dari Pasar Sembayat
+- 15 menit dari SMAN 1 Sidayu
+- 17 menit dari Alun Alun Sidayu
+- 19 menit dari Tugu Perbatasan Gresik-Lamongan`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1PSMMkM1RkSzArGBX0pW1Hz9zX1GCsQ-k"),
+    getDriveImageUrl("https://drive.google.com/open?id=1evdM4RE4v31Pw7nLZutapL8NGHTyk5Av"),
+    getDriveImageUrl("https://drive.google.com/open?id=1nnt1lJZYOl3c-AnWhf-4tYesEmwH7AGn"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Svp_7MSi1sfPqZIDniS94lez23_a9Tlp"),
+    getDriveImageUrl("https://drive.google.com/open?id=1w9XqsfeydH2EmkD9SHVp--tGIjZ2yAWh"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Lx77Mitf34QUt-1ldOiCD5dmuDHxyFmY"),
+  ],
+  endPrice: 1704660000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0181", // <-- TAUFIQ
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan KH. Ismail, Desa Gemekan, Kec. Sooko, Kab. Mojokerto, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Mojokerto",
+  landArea: 468,
+  buildingArea: 248,
+  certificateType: "SHM",
+  description:
+  `- 3 menit dari RS Dian Husada Mojokerto
+- 6 menit dari Waterland Mojokerto
+- 8 menit dari SMAN 1 Sooko Mojokerto
+- 15 menit dari Candi Tikus
+- 18 menit dari Pasar Tanjung Anyar`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1-9X2nr4ItfT3-tfAnmeDWYM77nZ1J8Sp"),
+    getDriveImageUrl("https://drive.google.com/open?id=1T3bf5m7NQUkFA3fD9gzkiUxf3NOU8Vm_"),
+    getDriveImageUrl("https://drive.google.com/open?id=1jA44HR42bJdIiLa4ZvJ2p5u2rPz_wa_u"),
+    getDriveImageUrl("https://drive.google.com/open?id=1rL4vLJwdr-0IXiRb7eIxpt9xY8h51oe9"),
+    getDriveImageUrl("https://drive.google.com/open?id=1JPekPuSWteBl4v7YfPMbI0JKBx7zE2Df"),
+  ],
+  endPrice: 876900000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0180", // <-- CV. HAITA IRON WORKS
+  title: "AGUNAN LELANG PABRIK, GUDANG, KANTOR DAN MESIN",
+  isHidden: true,
+  type: "Gudang",
+  location: "Jl. Mayjend Sungkono Gang X No. 14, Desa Gulomantung, Kec. Kebomas, Kab. Gresik, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Gresik",
+  landArea: 4229,
+  buildingArea: 3198,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari Stadion Gelora Joko Samudro (GJS)
+- 10 menit dari RS Semen Gresik
+- 13 menit dari Gerbang Tol Romokalisari
+- 15 menit dari Gress Mall
+- 18 menit dari Pelabuhan Terminal Petikemas Teluk Lamong`,
+  status: "Lelang Aktif",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1dKWNaOzFDBBpq6lYgUO1QvRUktMB-BxO"),
+    getDriveImageUrl("https://drive.google.com/open?id=1WC9zRBq5CUsafROYwIUnaQ-EdbUmfP0l"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qWyAbxLJ3ynCot4MI11VVwRElsFjIZRX"),
+    getDriveImageUrl("https://drive.google.com/open?id=1EEDiOd9OZx8_EKkrJngnAkbSoda2KfII"),
+    getDriveImageUrl("https://drive.google.com/open?id=14goXkvW879lJJRVhfkxPNv162YXJwVX3"),
+    getDriveImageUrl("https://drive.google.com/open?id=1FYKPJqzyQ5SFXFHK9XgmaH2NLJYVHIua"),
+    getDriveImageUrl("https://drive.google.com/open?id=1OygeLXPlqGxIfMKHnYJeFK9xQo4_CzPX"),
+  ],
+  endPrice: 19701800000,
+  tanggalLelang: "2026-07-09",
+  batasWaktuLelang: "-",
+  jamLelang: "09:30 WIB",
+},
+{
+  id: "RLI_ELP_0179", // <-- CHARLIE
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Alam Tirta Lestari, Jl. Jayawijaya I Blok C1 No. 19, RT.12 RW.14, Desa Pagelaran, Kec. Ciomas, Kab. Bogor, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bogor",
+  landArea: 60,
+  buildingArea: 36,
+  certificateType: "SHM",
+  description:
+  `- 3 menit dari Zam Zam Tirta Waterpark
+- 7 menit dari Puskesmas Ciapus
+- 9 menit dari SMAN 1 Ciomas
+- 9 menit dari Pasar Ciomas
+- 17 menit dari Halte Gunung Batu`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1vMAVd3JLgoNWac_tgEvTDiAoSkMH429s"),
+    getDriveImageUrl("https://drive.google.com/open?id=119IrE7AGbfo02d3FcL83PWK6aWoUB1Wj"),
+    getDriveImageUrl("https://drive.google.com/open?id=1kBo0k9Ds0dqtpqBHZBbO1Y8iy_Ss59fc"),
+    getDriveImageUrl("https://drive.google.com/open?id=1hs0Gb-tMJ7UKoEQ-SzCakT5-u-GeDbS5"),
+    getDriveImageUrl("https://drive.google.com/open?id=1VS-7mtSc2WKTaPCCCocaRV6jbBdFryA2"),
+  ],
+  endPrice: 225600000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0178", // <-- FERRY FIRDHAUS
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan D Cimanggu Hills, Blok B No. 02, Kel. Mekarwangi, Kec. Tanah Sareal, Kota Bogor, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bogor",
+  landArea: 87,
+  buildingArea: 51,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari Marcopolo Water Adventure
+- 11 menit dari Akses tol Borr arah Barat
+- 12 menit dari Bogor Great Mall
+- 12 menit dari RS Hermina Bogor
+- 13 menit dari SMAN 2 Bogor`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1zYfi8gS1heEZcAPHqwET3PasaUhkla5G"),
+    getDriveImageUrl("https://drive.google.com/open?id=1rxjTprBGI3y7lCuwZyfjV4CBPx6DfqDn"),
+    getDriveImageUrl("https://drive.google.com/open?id=1_PBpXjUwIIK6P6nlUDvP6uxWg7AKiTfT"),
+    getDriveImageUrl("https://drive.google.com/open?id=1yMEYSurXZ8GQdf3fbCDYZhO5JAAX_Wik"),
+    getDriveImageUrl("https://drive.google.com/open?id=1GNATByFg4njJvH2bc-f5YOxFTvupbBFn"),
+  ],
+  endPrice: 484200000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0177", // <-- ICHWAN FAUZY
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Geriya Selaras Blok B6 No. 09, Desa Bojong Jengkol, Kec. Ciampea, Kab. Bogor, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bogor",
+  landArea: 72,
+  buildingArea: 36,
+  certificateType: "SHM",
+  description:
+  `- 15 menit dari IPB Darmaga
+- 15 menit dari Pasar Ciampea Baru
+- 18 menit dari Klinik dr. Suhendra Medika Cihideung
+- 20 menit dari Puncak Lalana
+- 20 menit dari SMAN 1 Ciampea`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=10lBTNxEo2ISIyC-RdIzXio4Zcvg85zGq"),
+    getDriveImageUrl("https://drive.google.com/open?id=12gcXrCBac7gLDolW78u0hQsR0Jn7qS4y"),
+    getDriveImageUrl("https://drive.google.com/open?id=1cG5w3Zy_84tP9bLW5eZirHjKZ2HKmhzf"),
+    getDriveImageUrl("https://drive.google.com/open?id=1xsUGW9FZy3wP0KdzaZJD7WumhXWXqvhs"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Jz7tAattiSjaY0CpFma7Fs6iU0cWGyEY"),
+  ],
+  endPrice: 532800000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0176", // <-- IRFAI RIZAL FAHRURI
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Panorama Bali Residence Blok F-1 No.03, Desa Putat Nutug, Kec. Ciseeng, Kab. Bogor, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bogor",
+  landArea: 90,
+  buildingArea: 50,
+  certificateType: "SHM",
+  description:
+  `- 4 menit dari Lembah Cisadane
+- 6 menit dari Politeknik Siber dan Sandi Negara
+- 10 menit dari Puskesmas Ciseeng
+- 16 menit dari Pasar Rakyat Kecamatan Ciseeng
+- 20 menit dari SMAN 1 Parung`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1BRGy9JIb8FG-fBAcCouawHvcdqi7YwMw"),
+    getDriveImageUrl("https://drive.google.com/open?id=189wBdiRS76rOpmM2blDXTmpbUe56XZay"),
+    getDriveImageUrl("https://drive.google.com/open?id=1k_mU7jujbeuWHFzvl-b-KxIJKWYyk3qj"),
+    getDriveImageUrl("https://drive.google.com/open?id=1aCAXjMxGpLBDU4IzxRXd3DG7LvC4Pg53"),
+    getDriveImageUrl("https://drive.google.com/open?id=13JiRoCDsFaIt7d34jw8VLn1Ax-LJNNbe"),
+    getDriveImageUrl("https://drive.google.com/open?id=1DBhwnexnAO5vQYxT0FWcmB_EmnU4bwoK"),
+  ],
+  endPrice: 467000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0175", // <-- AKBAR PRAWIRA SAMUDERA
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Rawa Selatan 1 No. 6, RT.003 RW.004, Kel. Kampung Rawa, Kec. Johar Baru, Kota Jakarta Pusat, Prov. DKI Jakarta",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Pusat",
+  landArea: 63,
+  buildingArea: 50,
+  certificateType: "SHM",
+  description:
+  `- 6 menit dari Stasiun Gang Sentiong
+- 6 menit dari SMPN 156 Jakarta
+- 6 menit dari RSUD Johar Baru
+- 14 menit dari Mal Atrium Senen
+- 15 menit dari Taman Ismail Marzuki`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=19wMmkAF1QRgMHcFawW-I_RQHcuLY3uh_"),
+    getDriveImageUrl("https://drive.google.com/open?id=1BrgINfKPTtO88xVVWl2fPB06I4lZfIb9"),
+    getDriveImageUrl("https://drive.google.com/open?id=14YXa8DTD1IKwmn32G2-JnGRCs3OJ0dFY"),
+  ],
+  endPrice: 576100000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
+  id: "RLI_ELP_0174", // <-- PT. ANDALAN TRANSPORT INDONESIA
   title: "SEGERA LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
@@ -720,7 +983,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
 {
   id: "RLI_ELP_0150", // <-- LUTFIA ANDRIANI
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Perumahan Samani Residence Kav. C3, Jalan Tunjung, Desa Ungasan, Kec. Kuta Selatan, Kab. Badung, Prov. Bali",
@@ -735,7 +998,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 8 menit dari Puskesmas Ungasan
 - 10 menit dari Pantai Melasti Ungasan
 - 11 menit dari Garuda Wisnu Kencana Cultural Park`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1XoA77jReVRSMtPZ1NQ1ZHGbEXELFxMhX"),
     getDriveImageUrl("https://drive.google.com/open?id=1OmmHSl_4Qs1Hp_Z3N-mhPIh9WlDRD-3t"),
@@ -747,8 +1010,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1mBzvTWHczWy8vSIuSg5tjYqdBdGJkqPB")
   ],
   endPrice: 1443870000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-07-14",
   batasWaktuLelang: "-",
+  jamLelang: "09:30 WIB",
 },
 {
   id: "RLI_ELP_0149", // <-- PT. JUMBO JADE
@@ -2567,9 +2831,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1vESseIhp9kBZcnnzmnvWQB6gQj9e4_cS")
     ],
     endPrice: 2721842780,
-    tanggalLelang: "2026-04-16",
+    tanggalLelang: "2026-07-21",
     batasWaktuLelang: "-",
-    jamLelang: "13:15 WIB",
+    jamLelang: "14:35 WIB",
   },
               {
     id: "RLI_ELP_0087", // <-- YOGI PRASETYA WARDHANA
@@ -3902,13 +4166,13 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1hWOFOsuCXCuatZ8eCrRM1qtA-4Q68klw")
     ],
     endPrice: 3250000000,
-    tanggalLelang: "2026-04-23",
-    batasWaktuLelang: "-",
-    jamLelang: "10:10 WIB",
+  tanggalLelang: "2026-07-15",
+  batasWaktuLelang: "-",
+  jamLelang: "11:30 WIB",
   },
   {
     id: "RLI_ELP_0016", // Elis Tanah Kosong
-    title: "SEGERA LELANG TANAH KOSONG",
+    title: "AGUNAN LELANG TANAH KOSONG",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Jl. Setapak Desa Tlekung, Kec. Junrejo, Kota Batu",
@@ -3923,7 +4187,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 10 menit dari Rumah Sakit Baptis Batu
       - 13 menit dari Jatim Park 3
       - 15 menit dari Batu Secret Zoo`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1newpHYXbOT7UWlSaRNV7TZuqDPusoO4d"),
       getDriveImageUrl("https://drive.google.com/open?id=1nGcaUd6uYxPlAG5FZWiZnD2bGTL3ZGbi"),
@@ -3931,8 +4195,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Kei9XFkJi4cbW6t7o28xWx7hAvsdPWjX")
     ],
     endPrice: 635000000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
+  tanggalLelang: "2026-07-15",
+  batasWaktuLelang: "-",
+  jamLelang: "11:30 WIB",
   },
   {
     id: "RLI_ELP_0017", // <-- Heri Kuswoyo
@@ -5054,7 +5319,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
       {
     id: "RLI_ELP_0059",
-    title: "SEGERA LELANG RUMAH TINGGAL", // Oey Kim Foe
+    title: "AGUNAN LELANG RUMAH TINGGAL", // Oey Kim Foe
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: " Jalan Kapuk Muara No. 25, RT.007 RW 004, Kel. Kapuk Muara, Kec. Penjaringan, Kotamadya Jakarta Utara, DKI Jakarta",
@@ -5069,7 +5334,7 @@ export const lelangProperties: PropertiDilelang[] = [
       - 6 menit dari Puskesmas Penjaringan
       - 6 menit dari Halte Kampung Gusti
       - 10 menit dari Penjaringan City Forest Park`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1SuyraJ2sEqIJ5Ou20rvr-qIKcPc1IiPI"),
       getDriveImageUrl("https://drive.google.com/open?id=1PnpTu73Esed-S5WuhnQg2SWUEXT3gkvr"),
@@ -5078,8 +5343,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1IEzwtFD8XlDs-Gulxp6Ab5yc5CvN1sIV")
     ],
     endPrice: 114700000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-22",
     batasWaktuLelang: "-",
+    jamLelang: "10:45 WIB",
   },
       {
     id: "RLI_ELP_0060", // <-- Momon
