@@ -1,5 +1,5 @@
 import { BaseItemDijual, BaseItemLelang } from './data';
-import { getDriveImageUrl } from '@/lib/utils';
+import { getDriveImageUrl } from '@/lib/drive-utils';
 
 // Mesin Type
 export type MesinType = "Alat Berat" | "Mesin Industri" | "Generator" | "Kompresor" | "Forklift" | "Crane";
@@ -39,7 +39,6 @@ export const lelangMesins: MesinLelang[] = [
   {
     id: "RLI_ELM_3", // <-- PT. BERKAH SATU DELAPAN
     title: "SEGERA LELANG MESIN-MESIN PERALATAN PRODUKSI",
-    isHidden: true,
     type: "Mesin Industri",
     brand: "Berbagai Merek",
     model: "Paket Lini Produksi Tepung Tapioka",
@@ -131,7 +130,6 @@ export const lelangMesins: MesinLelang[] = [
   {
     id: "RLI_ELM_2", // <-- PT. BERKAH SATU DELAPAN
     title: "SEGERA LELANG WHEEL LOADER 2020",
-    isHidden: true,
     type: "Alat Berat",
     brand: "SDLG",
     model: "LG933L",
@@ -157,7 +155,6 @@ Akta Jaminan Fidusia`,
   {
     id: "RLI_ELM_01", // <-- PT. BERKAH SATU DELAPAN
     title: "SEGERA LELANG WHEEL LOADER 950H",
-    isHidden: true,
     type: "Alat Berat",
     brand: "Caterpillar (CAT)",
     model: "950H",
