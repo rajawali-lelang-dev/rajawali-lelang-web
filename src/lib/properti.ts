@@ -62,6 +62,263 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+  id: "RLI_ELP_0192", // <-- ADE SETIAWAN
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Brotowali V Blok B-30 No. 11, Kel. Jurangmangu Barat, Kec. Pondok Aren, Kota Tangerang Selatan, Prov. Banten",
+  provinsi: "Banten",
+  kota: "Tangerang Selatan",
+  landArea: 124,
+  buildingArea: 54,
+  certificateType: "SHM",
+  description:
+  `- 13 menit dari Politeknik Keuangan Negara STAN (PKN STAN)
+- 19 menit dari RS Mitra Keluarga Bintaro
+- 20 menit dari Stasiun Pondok Ranji
+- 20 menit dari Bintaro Jaya Xchange Mall
+- 22 menit dari Gerbang Tol Pondok Aren 1`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1RNWw9JtDmY9_-rQkCJepKAIeQDpZ9L4I"),
+    getDriveImageUrl("https://drive.google.com/open?id=1TJNXgdrpI7v8GtgH_YzYMZwYEgb69pj0"),
+    getDriveImageUrl("https://drive.google.com/open?id=10Nu90MHR08qWmUFayVvWvQLEjZW9VICI"),
+    getDriveImageUrl("https://drive.google.com/open?id=1TrnWELWE581hOaqt9gX-hbptVxeDWBs_"),
+    getDriveImageUrl("https://drive.google.com/open?id=1FQ6e5dHaXbMGfyWZh-KjLupMySVW3aOG"),
+    getDriveImageUrl("https://drive.google.com/open?id=1fmN8G9UMWnqFg0ylN8_0-BQltkUkbrX2"),
+  ],
+  endPrice: 769000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0191", // <-- IVANDER ADRIEL WAKANO
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Paradise Serpong City 2, Cluster Ecoscape Residence Blok BD.3 No. 19, Desa Gunung Sindur, Kec. Gunung Sindur, Kab. Bogor, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bogor",
+  landArea: 60,
+  buildingArea: 56,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari SMPN 1 Gunung Sindur
+- 8 menit dari RS PENA 98
+- 6 menit dari Pasar Parungpung Gunungsindur
+- 18 menit dari Haruma Bay Waterpark Serpong
+- 20 menit dari Univ. Pamulang Kampus 2`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1SJbjBeSYoAsid-oZqzaFIwaKmH8vjPiK"),
+    getDriveImageUrl("https://drive.google.com/open?id=1b9mVbKrAVZEq-OM2peQ1xzO6lJVDresa"),
+    getDriveImageUrl("https://drive.google.com/open?id=1-_Hm7tIjGUfnivOIY6n-upPpKctnfJ2M"),
+    getDriveImageUrl("https://drive.google.com/open?id=1sD4w_RjFLkLApxI6ro9Qk8ZWX5ECYwOr"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Ms0TUMhIHlTmgigeTtDXKNDZ19JzKZa5"),
+  ],
+  endPrice: 749000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0190", // <-- NINIK SRI WAHYUNI SHM 108
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Klepek Utara, RT.09 RW.04, Desa Sukoiber, Kec. Gudo, Kab. Jombang, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Jombang",
+  landArea: 820,
+  buildingArea: 335,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari SMPN 1 Gudo
+- 4 menit dari Puskesmas Blimbing Gudo
+- 4 menit dari Pasar Pahing Gudo
+- 7 menit dari Kolam Renang Nuansa Samudra
+- 17 menit dari Alun-Alun Jombang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1Z1HkO4EwVY8xIG-PCXCNnsFauxmssjC2"),
+    getDriveImageUrl("https://drive.google.com/open?id=1uz_rQ2R_XDPB8hX-AmvenBStAoPmWq9I"),
+    getDriveImageUrl("https://drive.google.com/open?id=1GkL56f7l4yyFkeKUQmdWYu1XTLbeht3m"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ae0rRAjcQOoi-s6KnZLefNFQ3tO1O9iB"),
+    getDriveImageUrl("https://drive.google.com/open?id=18JMf6WxZJTNtllYJMUGRkV_9OQ1LkZD7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1pIS3J-aG8bdB5X3FkMbRSiqmBrh_t8ov"),
+    getDriveImageUrl("https://drive.google.com/open?id=1pzcrOGZ6Wx7OotRCcF08BCAeNKrL4SIz"),
+  ],
+  endPrice: 914600000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0189", // <-- NINIK SRI WAHYUNI SHM 277
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Desa Plumbon Gambang, RT.05 RW.04, Desa Plumbon Gambang, Kec. Gudo, Kab. Jombang, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Jombang",
+  landArea: 339,
+  buildingArea: 125,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Puskesmas Plumbon Gambang Gudo
+- 3 menit dari Pasar Pahing Gudo
+- 3 menit dari SMKN Gudo
+- 14 menit dari Kolam Renang Nuansa Samudra
+- 17 menit dari Alun-Alun Jombang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1Z6Fn9iwGDm-f2ANLWbL-sx4yaGtRjAaC"),
+    getDriveImageUrl("https://drive.google.com/open?id=1nR5qbB4luoLXWcPP9UgBDdrf3jBpv9Pm"),
+    getDriveImageUrl("https://drive.google.com/open?id=1u3s6fJxJiKk-ZPb2N-usM5t3dfiyF92K"),
+  ],
+  endPrice: 287100000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0188", // <-- NINIK SRI WAHYUNI SHM 299
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Klepek Kidul, Desa Sukoiber, Kec. Gudo, Kab. Jombang, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Jombang",
+  landArea: 827,
+  buildingArea: 313,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari Pasar Pahing Gudo
+- 6 menit dari SMKN Gudo
+- 6 menit dari Kolam Renang Nuansa Samudra
+- 9 menit dari Puskesmas Plumbon Gambang Gudo
+- 18 menit dari Alun-Alun Jombang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1qJDIfhxjZrVuJrK1IRUVJtSCEDEOZ4zX"),
+    getDriveImageUrl("https://drive.google.com/open?id=14W6jsBD8FdEVAkZIcTycAVSZeI5cTB1j"),
+    getDriveImageUrl("https://drive.google.com/open?id=1uyucjTpFhl8OjBvVQg8hIubl4B8s6zTj"),
+    getDriveImageUrl("https://drive.google.com/open?id=1KcZ9aW1BQhvbvUqaYUGjDuFS-ri3Z1ar"),
+    getDriveImageUrl("https://drive.google.com/open?id=184vBJ1PaNjqemSlJI_RlQuhWZGwwhh8L"),
+    getDriveImageUrl("https://drive.google.com/open?id=1DRp1FTjAwSERjUiAG_-00jvGSCHXfn7l"),
+  ],
+  endPrice: 945900000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0187", // <-- PT. TEGUH MANDIRI SENTRATAMA
+  title: "SEGERA LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jl. HM. Noerdin Pandji, Kel. Sukajaya, Kec. Sukarami, Kota Palembang, Prov. Sumatera Selatan",
+  provinsi: "Sumatera Selatan",
+  kota: "Palembang",
+  landArea: 7792,
+  buildingArea: 0,
+  certificateType: "SHGB",
+  description:
+  `- 2 menit dari Pasar Sukawinatan
+- 15 menit dari SMKN 7 Palembang
+- 17 menit dari Puskesmas Sukarami Palembang
+- 17 menit dari Bandara Internasional Sultan Mahmud Badaruddin II
+- 17 menit dari Taman Wisata Alam Punti Kayu`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1nUuC4aspfbIjIQXPJN7dYl_Q7h81rFiL"),
+    getDriveImageUrl("https://drive.google.com/open?id=1LpDWK0Kgg4nGmiZJNg_6DWWVXfR-433H"),
+    getDriveImageUrl("https://drive.google.com/open?id=1di0ho_UO2WNNftZk40p511z2ypI70Ofq"),
+  ],
+  endPrice: 16441120000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0186", // <-- PT. TEGUH MANDIRI SENTRATAMA
+  title: "SEGERA LELANG RUKO",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jl. Kolonel H. Burlian, Kel. Sukabangun (dh. Sukaraja), Kec. Sukarami, Kota Palembang, Prov. Sumatera Selatan",
+  provinsi: "Sumatera Selatan",
+  kota: "Palembang",
+  landArea: 140,
+  buildingArea: 160,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari RSUD Siti Fatimah Az-Zahra
+- 9 menit dari SDN 157 Palembang
+- 12 menit dari Palembang Square
+- 14 menit dari UIN Raden Fatah Palembang
+- 19 menit dari Alun - Alun Palembang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1OHUwjkXmrNllawPqBuM3qxJZ2wHHU1xM"),
+    getDriveImageUrl("https://drive.google.com/open?id=1H3dhCavIH7UMbM-jaX8DkJsxu8S6mlb9"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lksDlYRirwU5wm4hbLMFrNDA7WMTw7tB"),
+    getDriveImageUrl("https://drive.google.com/open?id=1-pOrFTNCy9hnZwFI12QSVE1S6UTMUGsX"),
+  ],
+  endPrice: 1776960000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0185", // <-- PT. TEGUH MANDIRI SENTRATAMA
+  title: "SEGERA LELANG MESS & WORKSHOP",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jl. Letkol Moehsin Syamsuddin, Kel. Sukajaya, Kec. Sukarami, Kota Palembang, Prov. Sumatera Selatan",
+  provinsi: "Sumatera Selatan",
+  kota: "Palembang",
+  landArea: 900,
+  buildingArea: 310,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Pasar Sukawinatan
+- 6 menit dari SMA Plus Negeri 17 Palembang
+- 13 menit dari RSUD Siti Fatimah Az-Zahra
+- 16 menit dari Bandara Internasional Sultan Mahmud Badaruddin II
+- 18 menit dari UIN Raden Fatah Palembang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1Q0fy-5uRIjeCEtJNc5r4ynf9FpQvYyun"),
+    getDriveImageUrl("https://drive.google.com/open?id=1wOaNb195TwYLCH9Ot-T1ZRR2tDCRAp7x"),
+    getDriveImageUrl("https://drive.google.com/open?id=1aQv5IwXT64SAa6KGK_JiTZij-sHKplBq"),
+  ],
+  endPrice: 1493190000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0184", // <-- PT. BERKAH SATU DELAPAN
+  title: "SEGERA LELANG PABRIK, GUDANG DAN KANTOR",
+  isHidden: true,
+  type: "Gudang",
+  location: "Desa Cahyou Randu, Kec. Pagar Dewa, Kab. Tulang Bawang Barat, Prov. Lampung",
+  provinsi: "Lampung",
+  kota: "Tulang Bawang Barat",
+  landArea: 293777,
+  buildingArea: 3703,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari SPBU Pertamina Unit 5
+- 6 menit dari Puskesmas Pagar Dewa
+- 8 menit dari Gerbang Tol Lambu Kibang
+- 15 menit dari Jembatan Cakat
+- 15 menit dari Pasar Unit 2 Banjar Agung`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1q9doFUVmrJOh0bpdNwjjrfhGzuFL9Lvl"),
+    getDriveImageUrl("https://drive.google.com/open?id=1O5c93aP0NmRD5HmXaoFBD_TIv3vMFCA_"),
+    getDriveImageUrl("https://drive.google.com/open?id=1s_rI66PrArvfNw6ab2VtF59RY8FZLnE9"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qQuAEjEGh9J-FRRuBFFQfawS-SDapqAs"),
+  ],
+  endPrice: 36108576000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELP_0183", // <-- RISKHA AULIA
   title: "SEGERA LELANG TOKO",
   isHidden: true,
