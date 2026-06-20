@@ -1,4 +1,5 @@
 import { BaseItemDijual, BaseItemLelang } from './data';
+import { getDriveImageUrl } from '@/lib/utils';
 
 // Mesin Type
 export type MesinType = "Alat Berat" | "Mesin Industri" | "Generator" | "Kompresor" | "Forklift" | "Crane";
@@ -36,18 +37,19 @@ export const mesins: Mesin[] = [
 // Mock Data - Mesin Lelang
 export const lelangMesins: MesinLelang[] = [
   {
-  id: "RLI_ELM_3", // <-- PT. BERKAH SATU DELAPAN
-  title: "SEGERA LELANG MESIN-MESIN PERALATAN PRODUKSI",
-  isHidden: true,
-  type: "Alat Berat",
-  location: "Desa Cahyou Randu, Kec. Pagar Dewa, Kab. Tulang Bawang Barat, Prov. Lampung",
-  provinsi: "Lampung",
-  kota: "Tulang Bawang Barat",
-  landArea: 0,
-  buildingArea: 0,
-  certificateType: "Sertifikat Jaminan Fidusia",
-  description:
-  `Mesin-mesin Peralatan Produksi
+    id: "RLI_ELM_3", // <-- PT. BERKAH SATU DELAPAN
+    title: "SEGERA LELANG MESIN-MESIN PERALATAN PRODUKSI",
+    isHidden: true,
+    type: "Mesin Industri",
+    brand: "Berbagai Merek",
+    model: "Paket Lini Produksi Tepung Tapioka",
+    year: 2018,
+    condition: "Bekas - Baik",
+    location: "Desa Cahyou Randu, Kec. Pagar Dewa, Kab. Tulang Bawang Barat, Prov. Lampung",
+    provinsi: "Lampung",
+    kota: "Tulang Bawang Barat",
+    description:
+    `Mesin-mesin Peralatan Produksi
 1. Stasiun Penerimaan Bahan Baku
 - 1 Unit Root Hopper
 - 2 Unit Belt Conveyor
@@ -113,57 +115,60 @@ export const lelangMesins: MesinLelang[] = [
 - 2 Unit Pompa Air Bersih
 - 2 Unit Sumur Bor c/w Pompa Sumur Bor
 - 1 Unit Mesin Bubut`,
-  status: "Lelang Segera",
-  image: [
-    getDriveImageUrl("https://drive.google.com/open?id=1-z8hgp8NEh0Mw5L6kzKUqsWe-glGfROc"),
-    getDriveImageUrl("https://drive.google.com/open?id=1JN797jMoGjCOgT7pTKcAaRHa_Q29hktK"),
-    getDriveImageUrl("https://drive.google.com/open?id=1FYGf0ulDAQPcJ6skjN_8Xixy7zi5yu76"),
-    getDriveImageUrl("https://drive.google.com/open?id=1bz32IVHrKyN0aAdkVrjXeEEGC_KYUYa7"),
-    getDriveImageUrl("https://drive.google.com/open?id=1RJO573qgTjIdMQwFjR9ZztEEBa0H4EFb"),
-    getDriveImageUrl("https://drive.google.com/open?id=1baPmMjVYlhauQTjoyYlFKcO_dZTGrOQT"),
-  ],
-  endPrice: 32788870000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
-},
-{
-  id: "RLI_ELM_2", // <-- PT. BERKAH SATU DELAPAN
-  title: "SEGERA LELANG WHEEL LOADER 2020",
-  isHidden: true,
-  type: "Alat Berat",
-  location: "Desa Cahyou Randu, Kec. Pagar Dewa, Kab. Tulang Bawang Barat, Prov. Lampung",
-  provinsi: "Lampung",
-  kota: "Tulang Bawang Barat",
-  landArea: 0,
-  buildingArea: 0,
-  certificateType: "Akta Jaminan Fidusia",
-  description:
-  `Jenis : Wheel Loader
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1-z8hgp8NEh0Mw5L6kzKUqsWe-glGfROc"),
+      getDriveImageUrl("https://drive.google.com/open?id=1JN797jMoGjCOgT7pTKcAaRHa_Q29hktK"),
+      getDriveImageUrl("https://drive.google.com/open?id=1FYGf0ulDAQPcJ6skjN_8Xixy7zi5yu76"),
+      getDriveImageUrl("https://drive.google.com/open?id=1bz32IVHrKyN0aAdkVrjXeEEGC_KYUYa7"),
+      getDriveImageUrl("https://drive.google.com/open?id=1RJO573qgTjIdMQwFjR9ZztEEBa0H4EFb"),
+      getDriveImageUrl("https://drive.google.com/open?id=1baPmMjVYlhauQTjoyYlFKcO_dZTGrOQT"),
+    ],
+    endPrice: 32788870000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  {
+    id: "RLI_ELM_2", // <-- PT. BERKAH SATU DELAPAN
+    title: "SEGERA LELANG WHEEL LOADER 2020",
+    isHidden: true,
+    type: "Alat Berat",
+    brand: "SDLG",
+    model: "LG933L",
+    year: 2020,
+    condition: "Bekas - Baik",
+    location: "Desa Cahyou Randu, Kec. Pagar Dewa, Kab. Tulang Bawang Barat, Prov. Lampung",
+    provinsi: "Lampung",
+    kota: "Tulang Bawang Barat",
+    description:
+    `Jenis : Wheel Loader
 Merek : SDLG
 Model : LG933L
 Tahun : 2020
 Akta Jaminan Fidusia`,
-  status: "Lelang Segera",
-  image: [
-    getDriveImageUrl("https://drive.google.com/open?id=1Gdy6peQTqWXpD-EMzqJ5_m8uA5FTsChe"),
-  ],
-  endPrice: 292770000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
-},
-{
-  id: "RLI_ELM_01", // <-- PT. BERKAH SATU DELAPAN
-  title: "SEGERA LELANG WHEEL LOADER 950H",
-  isHidden: true,
-  type: "Alat Berat",
-  location: "Desa Cahyou Randu, Kec. Pagar Dewa, Kab. Tulang Bawang Barat, Prov. Lampung",
-  provinsi: "Lampung",
-  kota: "Tulang Bawang Barat",
-  landArea: 18.5,
-  buildingArea: 0,
-  certificateType: "Akta Jaminan Fidusia",
-  description:
-  `Jenis : Wheel Loader
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1Gdy6peQTqWXpD-EMzqJ5_m8uA5FTsChe"),
+    ],
+    endPrice: 292770000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
+  {
+    id: "RLI_ELM_01", // <-- PT. BERKAH SATU DELAPAN
+    title: "SEGERA LELANG WHEEL LOADER 950H",
+    isHidden: true,
+    type: "Alat Berat",
+    brand: "Caterpillar (CAT)",
+    model: "950H",
+    year: 2015,
+    condition: "Bekas - Baik",
+    capacity: "± 2,7–4,0 m³ (Bucket)",
+    location: "Desa Cahyou Randu, Kec. Pagar Dewa, Kab. Tulang Bawang Barat, Prov. Lampung",
+    provinsi: "Lampung",
+    kota: "Tulang Bawang Barat",
+    description:
+    `Jenis : Wheel Loader
 Merek : Caterpillar (CAT)
 Model : 950H
 Mesin : Cat C7 ACERT
@@ -171,15 +176,14 @@ Daya Mesin : ± 217 HP
 Kapasitas Bucket : ± 2,7–4,0 m³
 Berat Operasional : ± 18,3–18,5 Ton
 Akta Jaminan Fidusia`,
-  status: "Lelang Segera",
-  image: [
-    getDriveImageUrl("https://drive.google.com/open?id=1MYGz0zRRJjLMI8OBw3Inw3kAaF1jIUSC"),
-  ],
-  endPrice: 320100000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
-},
- 
+    status: "Lelang Segera",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=1MYGz0zRRJjLMI8OBw3Inw3kAaF1jIUSC"),
+    ],
+    endPrice: 320100000,
+    tanggalLelang: "-",
+    batasWaktuLelang: "-",
+  },
 ];
 
 // Helper functions
