@@ -888,7 +888,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
 {
   id: "RLI_ELP_0164", // <-- EKA WAHYUDIANTO
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jl. Dusun Kembangan, RT.04 RW.02, Desa Kembangsri, Kec. Ngoro, Kab. Mojokerto, Prov. Jawa Timur",
@@ -903,7 +903,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 5 menit dari RS Dharma Husada
 - 13 menit dari Pasar Krembung
 - 15 menit dari Bumi Perkemahan Tanjek Wagir`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1D0bSrVDR-LK5Obvr2Im2vR-G91Udlsfy"),
     getDriveImageUrl("https://drive.google.com/open?id=1Ri2wc5R4BdxxJq9ESsqwKz3EkHJp1zD6"),
@@ -913,8 +913,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1kILwr4bqGtKOqV7oNw_TnuOB9Vt286nD"),
   ],
   endPrice: 982800000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-07-22",
+    batasWaktuLelang: "-",
+    jamLelang: "09:45 WIB",
 },
 {
   id: "RLI_ELP_0163", // <-- ASET BNI (MALANG)
@@ -2856,7 +2857,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
         {
     id: "RLI_ELP_0095", // <-- PT. GIRILANGGENG ARTA
-    title: "SEGERA LELANG HOTEL",
+    title: "AGUNAN LELANG HOTEL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Hotel",
     location: "Jalan Dr. Setiabudi No. 323-325, Kelurahan Isola, Kecamatan Sukasari, Kota Bandung, Provinsi Jawa Barat",
@@ -2871,7 +2872,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 13 menit dari Paris Van Java
 - 14 menit dari Alun Alun Lembang
 - 16 menit dari Lembang Park & Zoo`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ZVWdYKscJ7LJkLiGFc3Eb53nqlp7m-rU"),
       getDriveImageUrl("https://drive.google.com/open?id=1_SByGEj8RjxuvTv9YEkk4iUyK217Evyg"),
@@ -2885,8 +2886,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1TdK_aGof1RbhHgYQNojkjmTIGbCu5YfP")
     ],
     endPrice: 125256000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-21",
     batasWaktuLelang: "-",
+    jamLelang: "14:05 WIB",
   },
         {
     id: "RLI_ELP_0094", // <-- PT. BUMI BERKAH LELUHUR (DEPOK)
@@ -3002,9 +3004,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1OYQRgUSRZ2dLeTo6VRzxRnLou_eLINse")
     ],
     endPrice: 535000000,
-    tanggalLelang: "2026-04-09",
+    tanggalLelang: "2026-07-22",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "11:00 WIB",
   },
     {
     id: "RLI_ELP_0090", // <-- Beni Lasmono
