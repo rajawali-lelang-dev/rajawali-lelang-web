@@ -62,6 +62,96 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+  id: "RLI_ELP_0195", // <-- PT. ANTARA MAS GEMILANG
+  title: "AGUNAN LELANG TANAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jl. Raya Manyar, Desa Betoyoguci, Kec. Manyar, Kab. Gresik, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Gresik",
+  landArea: 26567,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari SPBU Pertamina 54.611.17 Manyar
+- 4 menit dari RS Fathma Medika
+- 7 menit dari Pasar Sembayat
+- 12 menit dari Gerbang Tol Manyar
+- 19 menit dari Pelabuhan JIIPE`,
+  status: "Lelang Aktif",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1U1aAqYCZYvvMa_Kf9L9niC028XpuSuAY"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qmtiMCA5I9Cna7s8iTZur9OzvC7ETm6v"),
+    getDriveImageUrl("https://drive.google.com/open?id=1GgseuVM94ig_sNHMHNjmKK8o0PFOsoGR"),
+    getDriveImageUrl("https://drive.google.com/open?id=1l8YfqEnH9d6kjmTIE971pkSIhrWLU-_S"),
+    getDriveImageUrl("https://drive.google.com/open?id=1YyOQ5EnQ9p0o2B6YxwvhpR1lcuJm_Rk5"),
+    getDriveImageUrl("https://drive.google.com/open?id=13Z8Wracnk15owdHYBpgfUpugeYgBRVSV"),
+    getDriveImageUrl("https://drive.google.com/open?id=1DZigYzT5nMiI7QxT_K5EwfaVll4_SZJg"),
+    getDriveImageUrl("https://drive.google.com/open?id=1d7J1Zj93M0EQjXyjks5zQmFOE_xasE1m"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Ea7m0uN7aZVfbV9s5JOFSMcsnF02OFg7"),
+  ],
+  endPrice: 19500000000,
+    tanggalLelang: "2026-07-28",
+    batasWaktuLelang: "-",
+    jamLelang: "09:30 WIB",
+},
+{
+  id: "RLI_ELP_0194", // <-- ROSIHAN ANSJORI
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jl. Taman Mulya No. 47, RT.003 RW.007, Kel. Kalimulya, Kec. Cilodong, Kota Depok, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Depok",
+  landArea: 100,
+  buildingArea: 73,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari RS Citra Medika
+- 2 menit dari SMKN 3 Depok
+- 6 menit dari Pasar Pucung
+- 10 menit dari Setu Cilodong
+- 11 menit dari Stasiun Depok`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=16CC5mc4BLiILYQwigtICc8vhoS6hVjTn"),
+    getDriveImageUrl("https://drive.google.com/open?id=1yO-jJf4gyLBuqY9DXq4qVDKf_X5nUyYm"),
+    getDriveImageUrl("https://drive.google.com/open?id=1dltIfvLcZ5v1A0TTbWjxxq3aMgdaZLbC"),
+    getDriveImageUrl("https://drive.google.com/open?id=16H0EUjT9tZhZUcezEyGfQ5OeHuj-VK3T"),
+  ],
+  endPrice: 520000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0193", // <-- ARIEL WINATA
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan TNI AL Blok B-1 No. 18, Desa Sugihwaras, Kec. Candi, Kab. Sidoarjo, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 180,
+  buildingArea: 268,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari SMPN 3 Candi
+- 7 menit dari RS Pusura Candi
+- 7 menit dari Pasar Larangan
+- 14 menit dari Stasiun Sidoarjo
+- 19 menit dari Gerbang Tol Sidoarjo`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=194qjHjB5z3OxzhW7Evxxd6eZPW8McRIq"),
+    getDriveImageUrl("https://drive.google.com/open?id=1hbiabFiK8lJ4v8WSgnn9kFRIo4gNMnX5"),
+    getDriveImageUrl("https://drive.google.com/open?id=1umcrtZliy13m23yhvqKaDyukCuZrTCGI"),
+    getDriveImageUrl("https://drive.google.com/open?id=1PaeX-2cWX_M92k8aAEqW1YC4VUdZHUy7"),
+  ],
+  endPrice: 635000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELP_0192", // <-- ADE SETIAWAN
   title: "SEGERA LELANG RUMAH TINGGAL",
   isHidden: true,
@@ -643,7 +733,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
   {
   id: "RLI_ELP_0172", // <-- ALVIAN KUSUMA WIJAYA
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jl. Simo Magerejo I/10, RT.001 RW.001, Kel. Simomulyo, Kec. Sukomanunggal, Kota Surabaya, Prov. Jawa Timur",
@@ -658,15 +748,16 @@ export const lelangProperties: PropertiDilelang[] = [
 - 14 menit dari Lapangan Thor
 - 14 menit dari Gerbang Tol Banyu Urip
 - 17 menit dari RS Mitra Keluarga Surabaya`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1TIBpUO1q7d9Erycxnru6jLHyqjMNgpKr"),
     getDriveImageUrl("https://drive.google.com/open?id=19apkrXMV0kmkgbJXnxanrO6UrEZ9LBA5"),
     getDriveImageUrl("https://drive.google.com/open?id=1W2jXwmA5GoH4EHSsGRC4Pxui6zxryWT_"),
   ],
   endPrice: 699052000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-07-29",
+    batasWaktuLelang: "-",
+    jamLelang: "10:05 WIB",
 },
 {
   id: "RLI_ELP_0171", // <-- SUWARDI
@@ -1638,7 +1729,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
     {
     id: "RLI_ELP_0135", // <-- PT. GOLDEN STONE INDONESIA
-    title: "SEGERA LELANG TANAH",
+    title: "AGUNAN LELANG TANAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Tanah",
     location: "Dukuh Nganginan, RT 005/RW 001, Kel. Besole, Kec. Besuki, Kab. Tulungagung, Prov. Jawa Timur",
@@ -1653,7 +1744,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 5 menit dari Pasar Desa Besole
 - 5 menit dari SPBU Pertamina Ngentrong
 - 5 menit dari Telaga Bedalem`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ji3KlnADHhToL49ubTICPqd2eHSUSKIz"),
       getDriveImageUrl("https://drive.google.com/open?id=1Cp00DwdzbJwWNWMNDg_Veeu2OlN_uvJK"),
@@ -1666,8 +1757,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1ejJKAzjSyZBL5F3m3M9Xq0D8rLlFqP2i")
     ],
     endPrice: 22625330000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-08-13",
     batasWaktuLelang: "-",
+    jamLelang: "10:15 WIB",
   },
                {
     id: "RLI_ELP_0134", // ZULFITRI NASUTION
@@ -2165,7 +2257,7 @@ export const lelangProperties: PropertiDilelang[] = [
   },
     {
     id: "RLI_ELP_0118", // PT. ERA USAHA JAYA
-    title: "SEGERA LELANG TANAH KOSONG",
+    title: "AGUNAN LELANG TANAH KOSONG",
     isHidden: true,
     type: "Tanah",
     location: "Jl. Desa Luwung Blok Karang Endong, Desa Luwung, Kec. Mundu, Kab. Cirebon, Jawa Barat",
@@ -2180,7 +2272,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 14 menit dari RS Putera Bahagia Siloam Cirebon
 - 14 menit dari Terminal Harjamukti
 - 20 menit dari Stasiun Cirebon`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1NaPTqZ-rLDfZTDD_C3SBIOLqxQoFcgde"),
       getDriveImageUrl("https://drive.google.com/open?id=1G37lV8n83Xl_7KAE12pd9c0Karj9QRuR"),
@@ -2191,8 +2283,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1kvV00JJaHoIoYq565rqtjRRHmcqwVA3")
     ],
     endPrice: 750000000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-07-28",
     batasWaktuLelang: "-",
+    jamLelang: "13:30 WIB",
   },
 {
     id: "RLI_ELP_0117", // <-- Handoyo
@@ -3148,7 +3241,6 @@ export const lelangProperties: PropertiDilelang[] = [
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
-
               {
     id: "RLI_ELP_0085", // <-- GIRAS SATRIO PRAMONO
     title: "AGUNAN LELANG RUMAH TINGGAL",
@@ -3180,9 +3272,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1PLCnPwSb05IEY1SCIOpQJhyUPfehsUC7")
     ],
     endPrice: 728500000,
-    tanggalLelang: "2026-03-31",
+    tanggalLelang: "2026-08-12",
     batasWaktuLelang: "-",
-    jamLelang: "10:20 WIB",
+    jamLelang: "10:00 WIB",
   },
 
             {
