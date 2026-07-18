@@ -62,6 +62,34 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+  id: "RLI_ELP_0215", // <-- HANDY KOESNADI
+  title: "SEGERA LELANG UNIT APARTEMEN",
+  isHidden: true,
+  type: "Apartemen",
+  location: "Apartemen Garden Residence Kemang Jaya, Tower Heliconia LT. 5 No. 1055, Kel. Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Selatan",
+  landArea: 0,
+  buildingArea: 93.5,
+  certificateType: "SHMASRS",
+  description:
+  `- 9 menit dari Lippo Mall Kemang
+- 9 menit dari Sekolah Pelita Harapan Kemang Village
+- 9 menit dari COMO Park
+- 16 menit dari Gerbang Tol Fatmawati
+- 10 menit dari Brawijaya Hospital Antasari`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1vrNzy4XSq5IhzEF67avlC3QMKbnIdTDB"),
+    getDriveImageUrl("https://drive.google.com/open?id=1RtOCrCjW9yQg_JIlB5UvGQKMirk-w34K"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qCr-4TivHZ82iS93zYbH5C_LOgi3CZuq"),
+    getDriveImageUrl("https://drive.google.com/open?id=1kAlxN4mY0RTHgpifg1tBZGpMaS_TOsGu"),
+  ],
+  endPrice: 863000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELP_0214", // <-- PT. SUNWAY YASA MANDIRI
   title: "AGUNAN LELANG TANAH KOSONG",
   isHidden: true,
