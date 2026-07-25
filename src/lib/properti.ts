@@ -145,8 +145,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1O3o5-RGxpPk-jjccPcwUiZo5cUY_iwA0"),
   ],
   endPrice: 6770000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-08-27",
+    batasWaktuLelang: "-",
+    jamLelang: "13:35 WIB",
 },
 {
   id: "RLI_ELP_0212", // <-- KARYONO
@@ -438,8 +439,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1mvjKSoPJwJ4gU-mEr9uKvBm48ydn8PXy"),
   ],
   endPrice: 1693000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-08-13",
+    batasWaktuLelang: "-",
+    jamLelang: "09:35 WIB",
 },
 {
   id: "RLI_ELP_0202", // <-- CV. MITRA MUDA PADAELO
@@ -760,8 +762,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1fmN8G9UMWnqFg0ylN8_0-BQltkUkbrX2"),
   ],
   endPrice: 769000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-08-12",
+    batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
 },
 {
   id: "RLI_ELP_0191", // <-- IVANDER ADRIEL WAKANO
@@ -987,8 +990,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1qQuAEjEGh9J-FRRuBFFQfawS-SDapqAs"),
   ],
   endPrice: 36108576000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-08-21",
+    batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
 },
   {
   id: "RLI_ELP_0183", // <-- RISKHA AULIA
@@ -1014,9 +1018,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1SdyqpJtSGnoyIrj4qVH099tXa9E-XTAu"),
   ],
   endPrice: 487759000,
-  tanggalLelang: "2026-07-16",
-  batasWaktuLelang: "-",
-  jamLelang: "10:45 WIB",
+    tanggalLelang: "2026-08-12",
+    batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
 },
 {
   id: "RLI_ELP_0182", // <-- TITIK INDRAWATI
@@ -1106,9 +1110,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1OygeLXPlqGxIfMKHnYJeFK9xQo4_CzPX"),
   ],
   endPrice: 19701800000,
-  tanggalLelang: "2026-07-09",
-  batasWaktuLelang: "-",
-  jamLelang: "09:30 WIB",
+    tanggalLelang: "2026-08-26",
+    batasWaktuLelang: "-",
+    jamLelang: "13:00 WIB",
 },
 {
   id: "RLI_ELP_0179", // <-- CHARLIE
@@ -1496,8 +1500,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1n4vT4IwjgwktkcrU9_bEZe9bRuMEmU2o"),
   ],
   endPrice: 1728000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-08-19",
+    batasWaktuLelang: "-",
+    jamLelang: "14:00 WIB",
 },
 {
   id: "RLI_ELP_0166", // <-- JUMADI
@@ -1732,8 +1737,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1qqJl9haH5NoAccFw5_3jxTXwm5RKZBv-")
   ],
   endPrice: 2670000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-09-08",
+    batasWaktuLelang: "-",
+    jamLelang: "10:10 WIB",
 },
 {
   id: "RLI_ELP_0158", // <-- MUHAMMAD RUJI
@@ -1882,9 +1888,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1fetmeutwhyof3a5fFtZCy9oxh5fmNzVJ")
   ],
   endPrice: 3691400000,
-    tanggalLelang: "2026-07-28",
+    tanggalLelang: "2026-07-30",
     batasWaktuLelang: "-",
-    jamLelang: "13:50 WIB",
+    jamLelang: "10:00 WIB",
 },
 {
   id: "RLI_ELP_0151", // <-- PT. SAMALINDO JAYA MANDIRI TANGERANG
@@ -1911,9 +1917,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1vAWAIGevc-czN2ZuqJAWUD5Vh6xOOxl-")
   ],
   endPrice: 5100000000,
-    tanggalLelang: "2026-06-25",
+    tanggalLelang: "2026-07-30",
     batasWaktuLelang: "-",
-    jamLelang: "11:45 WIB",
+    jamLelang: "10:00 WIB",
 },
 {
   id: "RLI_ELP_0150", // <-- LUTFIA ANDRIANI
@@ -2217,9 +2223,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1rh7Vodhh-jeH7P-LsX-j8tmjjmZ7_cK9")
     ],
     endPrice: 15816364000,
-    tanggalLelang: "2026-06-24",
+    tanggalLelang: "2026-08-12",
     batasWaktuLelang: "-",
-    jamLelang: "09:00 WIB",
+    jamLelang: "09:30 WIB",
   },
         {
     id: "RLI_ELP_0138", // <-- PT. EPTCO DIAN PERSADA
@@ -3136,9 +3142,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1GwfJsQG1I5Cep3RSFN46cBDalOjA3O-q")
     ],
     endPrice: 1025600000,
-    tanggalLelang: "2026-07-08",
+    tanggalLelang: "2026-08-04",
     batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+    jamLelang: "11:15 WIB",
   },
                   {
     id: "RLI_ELP_0108", // <-- Mahmudi
@@ -3598,39 +3604,11 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=19OS1xagmL_6T6KT9Id6Mcm4V3d-iffyA"),
     ],
     endPrice: 2724000000,
-    tanggalLelang: "2026-05-18",
+    tanggalLelang: "2026-08-12",
     batasWaktuLelang: "-",
-    jamLelang: "15:40 WIB",
+    jamLelang: "13:40 WIB",
   },
-        {
-    id: "RLI_ELP_0093", // <-- PT. BUMI BERKAH LELUHUR (Surabaya)
-    title: "AGUNAN LELANG RUMAH TINGGAL",
-    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
-    type: "Rumah",
-    location: "Jl. Manyar Airdas No. 15, Kel. Manyar Sabrangan, Kec. Mulyorejo, Kota Surabaya, Jawa Timur",
-    provinsi: "Jawa Timur",
-    kota: "Surabaya",
-    landArea: 260,
-    buildingArea: 166,
-    certificateType: "SHM" ,
-    description:
-    `- 3 menit dari Rumah Sakit Manyar Medical Centre
-- 6 menit dari Univeritas Airlangga Kampus B
-- 8 menit dari Lapangan Koni
-- 9 menit dari Stasiun Surabaya Gubeng
-- 9 menit dari Galaxy Mall`,
-    status: "Lelang Aktif",
-    image: [
-      getDriveImageUrl("https://drive.google.com/open?id=1tzXqzBvHA5j_OEUs-6GocV7g8KCnymCW"),
-      getDriveImageUrl("https://drive.google.com/open?id=11jLY5QZ8tgSVKry8MwAujRC2avMm4lbR"),
-      getDriveImageUrl("https://drive.google.com/open?id=1uvZ3Y_4KmMWA5Op1Q69IV--TC_GrYfFU"),
-      getDriveImageUrl("https://drive.google.com/open?id=1aETdQoHahkZW8i97Y_Da_wxiyS6GPsoT")
-    ],
-    endPrice: 2491000000,
-    tanggalLelang: "2026-07-13",
-    batasWaktuLelang: "-",
-    jamLelang: "11:00 WIB",
-  },
+
         {
     id: "RLI_ELP_0092", // <-- FIKRI NIAM AFIF FAHMI
     title: "AGUNAN LELANG RUMAH TINGGAL",
@@ -3799,8 +3777,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1beMU-9tjhgzzbaijTi9sG-iFvs8iho3Q")
     ],
     endPrice: 933800000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-08-20",
     batasWaktuLelang: "-",
+    jamLelang: "11:15 WIB",
   },
                 {
     id: "RLI_ELP_0086", // <-- PRIHATIN
@@ -4291,9 +4270,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=17NAp5adK_0lTHMVWmSca7Wi9X-Y010Er")
     ],
     endPrice: 2046642465,
-    tanggalLelang: "2026-04-14",
+    tanggalLelang: "2026-08-19",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "10:45 WIB",
   },
 
      {
@@ -4321,9 +4300,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=15SNIQLWGC_KZ60KllBdNagqI6o1Rgs9K")
     ],
     endPrice: 400000000,
-    tanggalLelang: "2026-05-12",
+    tanggalLelang: "2026-08-19",
     batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+    jamLelang: "10:15 WIB",
   },
 
      {
@@ -4357,7 +4336,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1JsVWpbOjhq50YT1hkmSCMWI8HIhDFqP8"),
     ],
     endPrice: 550000000,
-    tanggalLelang: "2026-05-12",
+    tanggalLelang: "2026-08-19",
     batasWaktuLelang: "-",
     jamLelang: "10:30 WIB",
   },
@@ -4389,7 +4368,7 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1vc5so1OCJkSQ_5LyFfUbxiUdn4TphXOP")
     ],
     endPrice: 130000000,
-    tanggalLelang: "2026-05-12",
+    tanggalLelang: "2026-08-19",
     batasWaktuLelang: "-",
     jamLelang: "10:30 WIB",
   },
@@ -5016,9 +4995,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1HfAD51PiTAN34N8CCCiOZU0nyNt9P3fP"),
     ],
     endPrice: 770000000,
-    tanggalLelang: "2026-05-06",
+    tanggalLelang: "2026-09-02",
     batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+    jamLelang: "10:10 WIB",
   },
   {
     id: "RLI_ELP_0013", // Diah Bagus Ariotejo Toko
@@ -5044,9 +5023,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1a1ltrfNqvrNm4au4VpODLsGVFcnTqqY4")
     ],
     endPrice: 625000000,
-    tanggalLelang: "2026-05-06",
+    tanggalLelang: "2026-09-02",
     batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+    jamLelang: "10:10 WIB",
   },
   {
     id: "RLI_ELP_0014", // Diah Bagus Ariotejo Blok C1
@@ -5072,9 +5051,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1x36j5cQ-qtVElwIQz-aommqdSXzlv7bq")
     ],
     endPrice: 1250000000,
-    tanggalLelang: "2026-05-06",
+    tanggalLelang: "2026-09-02",
     batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+    jamLelang: "10:10 WIB",
   },
   {
     id: "RLI_ELP_0015",
