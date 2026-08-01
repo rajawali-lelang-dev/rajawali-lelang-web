@@ -54,16 +54,185 @@ export const properties: Property[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1EkbYmJYgzOMUk2Z7pBcv2IWQIrA4xLpr")
     ],
     endPrice: 3000000000,
+    
   },
-
+{
+    id: "RLI_NELP_0002", // <-- Raden Djoko
+    title: "DIJUAL SEGERA HUNIAN NYAMAN DUA LANTAI",
+    isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
+    type: "Rumah",
+    location: "Jl. Dempo Blok DG No.01, Panyunan, Kepuhkiriman, Kec. Waru, Kabupaten Sidoarjo, Jawa Timur.",
+    provinsi: "Jawa Timur",
+    kota: "Sidoarjo",
+    landArea: 162,
+    buildingArea: 200,
+    certificateType: "SHM",
+    description:
+    `- 4 menit dari SMAN 1 Waru
+- 15 menit dari Sekolah Vision Pondok Tjandra
+- 16 menit dari Gerbang Tol Juanda
+- 18 menit dari Bandara Internasional Juanda
+- 11 menit dari RS Mitra Keluarga Pondok Tjandra`,
+    status: "Dijual",
+    image: [
+      getDriveImageUrl("https://drive.google.com/open?id=15aPzBVuTHGjYGAOlN3TcbnbWkuSMhkpc"),
+      getDriveImageUrl("https://drive.google.com/open?id=1fX0-6S2cV2JycgCF8yb6318jZC4dGLFm"),
+      getDriveImageUrl("https://drive.google.com/open?id=1pCqK8QS1iPypx1VN45ZCXmMLdr13-s9-"),
+      getDriveImageUrl("https://drive.google.com/open?id=1nnrf-qHbp_cVIUL4LmwLTR-vJjfMaIhF"),
+      getDriveImageUrl("https://drive.google.com/open?id=1QUaLZlxJdhxjmvt5bqxUnNg_8oB_sDnF")
+    ],
+    endPrice: 2000000000,
+    
+  },
  
 ];
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+  id: "RLI_ELP_0220", // <-- MEGA INTI PERSADA
+  title: "SEGERA LELANG BANGUNAN GUDANG DAN KANTOR",
+  isHidden: true,
+  type: "Gudang",
+  location: "Jl. KH. Abdul Rojak No. 97, Kelurahan Jatiluhur, Kecamatan Jatiasih, Kota Bekasi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bekasi",
+  landArea: 906,
+  buildingArea: 1358,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari SMPN 47 Kota Bekasi
+- 5 menit dari Gereja Santo Servatius
+- 6 menit dari Masjid Al Ma'ruf
+- 11 menit dari Gerbang Tol Jatiwarna
+- 15 menit dari Mitra Keluarga Jatiasih`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1PRpOAaok9lr2yO8teqiP9EvjYJ_DGhuU"),
+    getDriveImageUrl("https://drive.google.com/open?id=1i_1_hErJZ5_eTm37RGHruxJGg_Obuuej"),
+    getDriveImageUrl("https://drive.google.com/open?id=1epTJLntKNo5oKsOwwsx0dnWGG9MqjPxF"),
+    getDriveImageUrl("https://drive.google.com/open?id=1NJ7cR_nmec4CqZZm9KvhkN6hn25mz2C1"),
+  ],
+  endPrice: 7867108000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0219", // <-- PT. SAMALINDO
+  title: "AGUNAN LELANG RUKO APARTEMEN",
+  isHidden: true,
+  type: "Apartemen",
+  location: "Apartemen Mediterania Palace Residence, Jl. Komplek Kemayoran Blok A1 LT. Ground No. B/or/C, Kel. Kebon Kosong, Kec. Kemayoran, Kota Jakarta Pusat",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Pusat",
+  landArea: 0,
+  buildingArea: 139.61,
+  certificateType: "SHMASRS",
+  description:
+  `- 3 menit SMK Negeri 21 Jakarta Pusat
+- 4 menit dari Pasar Kemayoran
+- 6 menit dari PRJ kemayoran Expo
+- 8 menit dari pintu gerbang Tol Kemayoran
+- 3 menit dari Rumah Sakit Mitra Keluarga Kemayoran`,
+  status: "Lelang Aktif",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1yZ_lbnOt-sBu98e7SUU1wvnhGw8wLwhd"),
+    getDriveImageUrl("https://drive.google.com/open?id=1R-rU1FLMNz1BoysZPt7U89mfVxVFELzM"),
+    getDriveImageUrl("https://drive.google.com/open?id=1VXG3oDBBDVUG_TDMrxvBVDNVfrRelYgh"),
+    getDriveImageUrl("https://drive.google.com/open?id=1-z9wr_igdgbLwyeVkEj8WlzNFgfQjW4Q"),
+  ],
+  endPrice: 2094150000,
+  tanggalLelang: "2026-08-20",
+  batasWaktuLelang: "-",
+      jamLelang: "11:30 WIB",
+},
+{
+  id: "RLI_ELP_0218", // <-- YUNI ANI
+  title: "AGUNAN LELANG RUMAH 2 LANTAI",
+  isHidden: true,
+  type: "Rumah",
+  location: "Kandangan Jaya Gang Lebar No. 23 Kel. Kandangan, Kec. Benowo, Kota Surabaya",
+  provinsi: "Jawa Timur",
+  kota: "Surabaya",
+  landArea: 343,
+  buildingArea: 349,
+  certificateType: "SHM",
+  description:
+  `- 4 menit dari Grand Pakuwon
+- 9 menit dari SMAN 11 Surabaya
+- 9 menit dari Food Junction Grand Pakuwon
+- 17 menit dari Graha Natura Park
+- 17 menit dari Mitra Keluarga Surabaya`,
+  status: "Lelang Aktif",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1fKy8VKcLRkjhpCeCuFudVD00EmoaVy-u"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lCmmh7SBKzuLcVd9j2EvviiXE9yTAlP9"),
+    getDriveImageUrl("https://drive.google.com/open?id=1-mqw0CDMCOR0NNVxH7Q1hZVxJEFcavH1"),
+    getDriveImageUrl("https://drive.google.com/open?id=1FnlUe94mBKWWKndIDfhwm_HbEOIW8QIA"),
+  ],
+  endPrice: 1435000000,
+  tanggalLelang: "2026-09-01",
+  batasWaktuLelang: "-",
+      jamLelang: "10:00 WIB",
+},
+{
+  id: "RLI_ELP_0217", // <-- ZULFITRI NASUTION
+  title: "SEGERA LELANG RUKO DUA LANTAI",
+  isHidden: true,
+  type: "Ruko",
+  location: "Puri Matahari Persada, RT. 001 RW.010, Desa Laladon, Kec. Ciomas, Kab. Bogor, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bogor",
+  landArea: 72,
+  buildingArea: 216,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari Terminal Laladon
+- 8 menit dari SMAN 1 Dramaga
+- 9 menit dari Hari Hari Dramaga Bogor
+- 9 menit dari RS Graha Medika Bogor
+- 17 menit dari Akses Tol Borr Arah Barat`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1KmkYKX4DdZSiV1XjedZ5wsMBnbZx1pLH"),
+    getDriveImageUrl("https://drive.google.com/open?id=1IbbTYmbj_9xAULU01fquazk7u7z3nvVk"),
+    getDriveImageUrl("https://drive.google.com/open?id=1YuYNn-krkXHqF-z8lpx-eg9vAWhrQGU_"),
+  ],
+  endPrice: 862900000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0216", // <-- MIYA NOVIANDRI
+  title: "SEGERA LELANG RUMAH TINGGAL",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Serpong Garden Village Cluster Bougenville Blok B 3 No. 22, Desa Lumpang, Kec. Parung Panjang, Kab. Bogor, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bogor",
+  landArea: 60,
+  buildingArea: 30,
+  certificateType: "SHM",
+  description:
+  `- 3 menit dari SDN Lumpang 02
+- 6 menit dari Ponpes Lumpang
+- 5 menit dari Klinik Harapan Sehat
+- 10 menit dari Stasiun Parung Panjang
+- 7 menit dari Pasar Modern Sentraland Parung Panjang`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1st3vIQ5qpW-Z7XB9Me8IqdTR3v3cMTSJ"),
+    getDriveImageUrl("https://drive.google.com/open?id=1enpzSuLKa3IfabrrGYD3Sol6k6Q7yv50"),
+    getDriveImageUrl("https://drive.google.com/open?id=1jaL2Vd5xtN9mrJEsGfHw9DqO0UU1Z8LS"),
+    getDriveImageUrl("https://drive.google.com/open?id=1BpHZkV-I5RCdNw-XuCqASWYL_EQBxGkH"),
+  ],
+  endPrice: 356370000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELP_0215", // <-- HANDY KOESNADI
-  title: "SEGERA LELANG UNIT APARTEMEN",
+  title: "AGUNAN LELANG UNIT APARTEMEN",
   isHidden: true,
   type: "Apartemen",
   location: "Apartemen Garden Residence Kemang Jaya, Tower Heliconia LT. 5 No. 1055, Kel. Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan",
@@ -78,7 +247,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 9 menit dari COMO Park
 - 16 menit dari Gerbang Tol Fatmawati
 - 10 menit dari Brawijaya Hospital Antasari`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1vrNzy4XSq5IhzEF67avlC3QMKbnIdTDB"),
     getDriveImageUrl("https://drive.google.com/open?id=1RtOCrCjW9yQg_JIlB5UvGQKMirk-w34K"),
@@ -86,8 +255,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1kAlxN4mY0RTHgpifg1tBZGpMaS_TOsGu"),
   ],
   endPrice: 863000000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-09-01",
   batasWaktuLelang: "-",
+      jamLelang: "11:10 WIB",
 },
   {
   id: "RLI_ELP_0214", // <-- PT. SUNWAY YASA MANDIRI
@@ -385,7 +555,7 @@ export const lelangProperties: PropertiDilelang[] = [
 },
 {
   id: "RLI_ELP_0204", // <-- TANIA NURUL HUDA SYAHAR
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Perum. Golf Estate Bogor Raya Blok H4 No. 2B, Kel. Sukaraja, Kec. Sukaraja, Kab. Bogor, Prov. Jawa Barat",
@@ -400,7 +570,7 @@ export const lelangProperties: PropertiDilelang[] = [
 - 13 menit dari Botani Square Mall Bogor
 - 14 menit dari Gerbang Tol Sentul Barat
 - 17 menit dari RS Mayapada Bogor`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1o5ESro1lmHlRD9OLkjodlo-kU8vSGvFf"),
     getDriveImageUrl("https://drive.google.com/open?id=1qJ60KumKCBHG_aMBuOt1FwCQsneb7Nte"),
@@ -409,8 +579,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1t6oQBWSLAAbqOL7hNdyirAdsyyeJMv3C"),
   ],
   endPrice: 1893100000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-09-15",
   batasWaktuLelang: "-",
+      jamLelang: "11:50 WIB",
 },
 {
   id: "RLI_ELP_0203", // <-- PT. PROFIT NIKEL INDONESIA
@@ -1433,9 +1604,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1TGLo-nPOc7xlnaRvXEkIeAxvmZ0HqglZ"),
   ],
   endPrice: 894000000,
-    tanggalLelang: "2026-07-07",
-    batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+  tanggalLelang: "2026-08-13",
+  batasWaktuLelang: "-",
+      jamLelang: "09:20 WIB",
 },
 {
   id: "RLI_ELP_0168", // <-- SYAIFUDIN ARIEF FIRMANSYAH
@@ -1799,9 +1970,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1sDtUzgX66QUW11SB_v2WlQ1JSO8ropEq")
   ],
   endPrice: 401200000,
-  tanggalLelang: "2026-07-15",
+  tanggalLelang: "2026-08-26",
   batasWaktuLelang: "-",
-      jamLelang: "10:30 WIB",
+      jamLelang: "13:30 WIB",
 },
 {
   id: "RLI_ELP_0156", // <-- SUWANDI SHM 1954
@@ -1828,9 +1999,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=19fY1ATFP46xOn8zFdufYVY1cJ-rfV9YP")
   ],
   endPrice: 156900000,
-  tanggalLelang: "2026-07-15",
+  tanggalLelang: "2026-08-26",
   batasWaktuLelang: "-",
-      jamLelang: "10:30 WIB",
+      jamLelang: "13:30 WIB",
 },
 {
   id: "RLI_ELP_0153", // <-- PT. UDANG MAS MAKMUR (RUMAH)
@@ -1888,9 +2059,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1fetmeutwhyof3a5fFtZCy9oxh5fmNzVJ")
   ],
   endPrice: 3691400000,
-    tanggalLelang: "2026-07-30",
-    batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+  tanggalLelang: "2026-08-20",
+  batasWaktuLelang: "-",
+      jamLelang: "11:30 WIB",
 },
 {
   id: "RLI_ELP_0151", // <-- PT. SAMALINDO JAYA MANDIRI TANGERANG
@@ -1917,9 +2088,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1vAWAIGevc-czN2ZuqJAWUD5Vh6xOOxl-")
   ],
   endPrice: 5100000000,
-    tanggalLelang: "2026-07-30",
-    batasWaktuLelang: "-",
-    jamLelang: "10:00 WIB",
+  tanggalLelang: "2026-08-20",
+  batasWaktuLelang: "-",
+      jamLelang: "11:30 WIB",
 },
 {
   id: "RLI_ELP_0150", // <-- LUTFIA ANDRIANI
