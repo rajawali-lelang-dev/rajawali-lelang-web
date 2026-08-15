@@ -90,6 +90,394 @@ export const properties: Property[] = [
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
   {
+  id: "RLI_ELP_0233", // <-- PT. SPARTA WOODS
+  title: "SEGERA LELANG GUDANG PRODUKSI",
+  isHidden: true,
+  type: "Gudang",
+  location: "Jl. Santren, Desa Keboananom, Kec. Gedangan, Kab. Sidoarjo, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 10018,
+  buildingArea: 7641,
+  certificateType: "SHGB",
+  description:
+  `- 5 menit dari RSIA Metro Hospitals Sidoarjo
+- 9 menit dari PT. Aneka Indomakmur
+- 9 menit dari Depo Bangunan Sidoarjo
+- 10 menit dari Surya Breeze Residence
+- 14 menit dari Swiss-belinn Airport Surabaya
+Rincian Bangunan: Kantor, Ruang Arsip, 3 Gudang, 3 Ruang Produksi, Bengkel, Klin Dry, Toilet, Ruang Genset dan Sarana Pelengkap`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1l3KKHLKjgMtbsLeh8eLWg81RM_j9ySyP"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lwh-vnEXV2tNG23Yl728vOd6rkfmovV7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1PrZ1tt2tzyC1waWRvDZspbvRsSqko6F7"),
+  ],
+  endPrice: 50667287000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0232", // <-- PT. SPARTA WOODS
+  title: "SEGERA LELANG BANGUNAN GUDANG LUAS",
+  isHidden: true,
+  type: "Gudang",
+  location: "Jl. Santren, Desa Keboananom, Kec. Gedangan, Kab. Sidoarjo, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 5860,
+  buildingArea: 2602,
+  certificateType: "SHM",
+  description:
+  `- 5 menit dari RSIA Metro Hospitals Sidoarjo
+- 9 menit dari PT. Aneka Indomakmur
+- 9 menit dari Depo Bangunan Sidoarjo
+- 10 menit dari Surya Breeze Residence
+- 14 menit dari Swiss-belinn Airport Surabaya
+Total Bangunan: 4 Gudang, 1 Gudang Terbuka & 1 Mess Karyawan`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1V7xkFpfHM982f2lLE3E-OCEpTpP3NdyU"),
+    getDriveImageUrl("https://drive.google.com/open?id=1LIzUhsXO4XvMNtDPQoRJe3bPeDK9lKfz"),
+    getDriveImageUrl("https://drive.google.com/open?id=10rwUKiJGTU2H6QNbrMhrlnEpn23QFf60"),
+    getDriveImageUrl("https://drive.google.com/open?id=1AIBasRg59alev5rok3s_2GnFuIJDfQtP"),
+  ],
+  endPrice: 27073902000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0231", // <-- PT. AMI WOOD
+  title: "SEGERA LELANG GUDANG & KANTOR LUAS",
+  isHidden: true,
+  type: "Gudang",
+  location: "Jl. Inspektur Soewoto Desa Sidodadi, Kec. Lawang, Kab. Malang, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Malang",
+  landArea: 4420,
+  buildingArea: 3464,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Kantor Desa Sidodadi
+- 5 menit dari PT. Molindo Raya Industrial
+- 7 menit dari Lawang Medical Hospital
+- 7 menit dari PT. Otsuka Indonesia
+- 8 menit ke Gerbang Tol Lawang
+Bangunan Terdiri dari: 2 Gudang, Kantor 2 Lantai, Pos Satpam
+Aset Menghadap: Selatan
+Kondisi Aset: Sangat Terawat
+Tersedia Air PDAM dan Listrik 164.000 VA`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1v1LTnHDWeCUDueoUvxI-CNVoJUxfNqT4"),
+    getDriveImageUrl("https://drive.google.com/open?id=1TFcO_6aVTArCEVNgI--2jlihLy0neR4v"),
+    getDriveImageUrl("https://drive.google.com/open?id=1vzGXufoP8vx2YPfAWPnIWOH1Lj2E_wy6"),
+    getDriveImageUrl("https://drive.google.com/open?id=1O7DfHH1-RtgDjjB4ixAcSoT21aaELUrg"),
+    getDriveImageUrl("https://drive.google.com/open?id=1n1iPcIYcverAAR16Lvw_gFDOFcvC3WWB"),
+    getDriveImageUrl("https://drive.google.com/open?id=19QiVJiQ4M5jaZEFCRh8ftrAPpe9ZUJR1"),
+    getDriveImageUrl("https://drive.google.com/open?id=1dklvUDKJDTjwsEQi6pZ4NzMEA-EwvTyw"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ikGxo_QrtUlQXY78DM17JvyZyVeWD8YH"),
+    getDriveImageUrl("https://drive.google.com/open?id=1TNTpNzfeQLXPgHjjZAmgHf6Vobt6YXFV"),
+    getDriveImageUrl("https://drive.google.com/open?id=1W7z_JGPl3AL90-jRY8VqoYJ5RRcQB5ME"),
+  ],
+  endPrice: 7000000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
+  id: "RLI_ELP_0230", // <-- PT. BINTANG MANDIRI HANAFINDO
+  title: "SEGERA LELANG PABRIK 3 LANTAI STRATEGIS",
+  isHidden: true,
+  type: "Tanah dan Bangunan",
+  location: "Jl. Bendengan Utara No. 40, RT.03 RW.15, Kelurahan Penjaringan, Kecamatan Penjaringan, Kota Jakarta Utara, Provinsi DKI Jakarta",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Utara",
+  landArea: 4605,
+  buildingArea: 4867,
+  certificateType: "SHGB",
+  description:
+  `- 4 menit dari SMA Negeri 111 Jakarta
+- 5 menit dari Hariston Hotel & Suites
+- 6 menit dari Rumah Sakit Atma Jaya
+- 13 menit dari Pluit Junction Mall
+- 10 menit dari Gerbang Tol Gedong Panjang I`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1SmFgkwCIjDUg8jCtib-zjAHYmbpnp7Fa"),
+    getDriveImageUrl("https://drive.google.com/open?id=1yR98bNx_7YqEIQkHJ_B7b0LpV3mVmud5"),
+    getDriveImageUrl("https://drive.google.com/open?id=1T1wD2D4cmA16GhETey251pLeDs1sFsdA"),
+    getDriveImageUrl("https://drive.google.com/open?id=18siQBwYTfdJYooTDARI9NDac9rDIa27g"),
+    getDriveImageUrl("https://drive.google.com/open?id=18Ee1iv3_iJUwYVM_KGdeinPidKIemh1Q"),
+    getDriveImageUrl("https://drive.google.com/open?id=1npq6IaTeywY7EHQhDx7VIQLy_H-fHhZm"),
+    getDriveImageUrl("https://drive.google.com/open?id=1dOiq1k6_90cZB4iLPIHC9rAcJ_oEIk5u"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ebnk_xE3_DzJwdC-y61Pt4ElHeuQXt1C"),
+    getDriveImageUrl("https://drive.google.com/open?id=1kWzEr-BR5Nz6DiP8hYSOFQnAfby3-r7D"),
+    getDriveImageUrl("https://drive.google.com/open?id=1N3qyjl5jWNclqiK47huBz-sEA67EtRuw"),
+  ],
+  endPrice: 40500000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0229", // <-- PT ANTARA MAS GEMILANG
+  title: "SEGERA LELANG TANAH KOSONG LUAS",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jl. Raya Manyar, Desa Betoyoguci, Kec. Manyar, Kab. Gresik, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Gresik",
+  landArea: 26567,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari SPBU Pertamina 54.611.17 Manyar
+- 4 menit dari RS Fathma Medika
+- 7 menit dari Pasar Sembayat
+- 12 menit dari Gerbang Tol Manyar
+- 19 menit dari Pelabuhan JIIPE`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1CDY9Beg0O3qxLJrtL0y-Y8xr_Rp-JV6z"),
+    getDriveImageUrl("https://drive.google.com/open?id=12kEtd_auoHasB3yx3W8fMwLs8O9ucGz7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1jJwaS9yjAMAHyeeDCPHYJf27ujhLl6sc"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lVOcJeBrIdShwQAO9tskPA1ceGzKBLai"),
+    getDriveImageUrl("https://drive.google.com/open?id=1rBFmiGawu_G6jLuls3WAZqgN4vXuaEhT"),
+    getDriveImageUrl("https://drive.google.com/open?id=1_Z2740EUqDIIHYNcDXKraA_9_T01zQek"),
+  ],
+  endPrice: 19500000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0228", // <-- BERLIANTI SUTIANTO
+  title: "SEGERA LELANG RUMAH MEWAH DUA LANTAI",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jl. Way Sekampung Atas No:5A Kec. Enggal Kel. Rawa Laut, Kota Bandar Lampung Prov. Lampung",
+  provinsi: "Lampung",
+  kota: "Bandar Lampung",
+  landArea: 1487,
+  buildingArea: 774,
+  certificateType: "SHM",
+  description:
+  `- 1 menit ke Cafe BUN coffee
+- 2 menit ke RS Ibu & Anak Mutiara Putri
+- 2 menit ke Resto LG
+- 3 menit ke Stadion Pahoman
+- 7 menit ke RS Ibu & Anak Bunda Assyifa`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=15YOIaq8NPH7tKFJJCOMYvaBAVvhLE7lS"),
+    getDriveImageUrl("https://drive.google.com/open?id=1-_oAhgycfYzeA6vguL-uV6p0eiMDdN15"),
+    getDriveImageUrl("https://drive.google.com/open?id=18unIPyJPAjAHPCNNCpbQ6rASWJ0f3164"),
+    getDriveImageUrl("https://drive.google.com/open?id=1PfPbeQQZZ3-L6LTlyeCUm8k_DHpCDhK5"),
+    getDriveImageUrl("https://drive.google.com/open?id=1MCBkbBTSub4IlysqpfWd7Tf8E0UZhd-S"),
+    getDriveImageUrl("https://drive.google.com/open?id=1akUlv-FCzFOi1p68YLy6XMPbWEbyN4iz"),
+    getDriveImageUrl("https://drive.google.com/open?id=12UnBs30d4JkfbEx0Lp-PWfd-us4kQDkY"),
+  ],
+  endPrice: 13159000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0227", // <-- PT. KEBAYORAN JAYA INDAH UTAMA
+  title: "SEGERA LELANG RUMAH DUA LANTAI & RESTORAN",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Kelapa Gading Permai Jl. Pelepah Asri I Blok QJ-2 Kav No. 1, Kel. Kelapa Gading Barat, Kec. Kelapa Gading, Kota Jakarta Utara, Prov. DKI Jakarta",
+  provinsi: "DKI Jakarta",
+  kota: "Jakarta Utara",
+  landArea: 334,
+  buildingArea: 292,
+  certificateType: "SHM",
+  description:
+  `- 8 menit ke SMAK 5 PENABUR Jakarta
+- 12 menit dari RS Mitra Keluarga Kelapa Gading
+- 14 menit ke Hotel Santika Kelapa Gading
+- 16 menit ke Summarecon Mall Kelapa Gading
+- 16 menit ke Mall of Indonesia (MOI)`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1_pyHyxNQSht4iNAPWvIwLKzWMEbE27r0"),
+    getDriveImageUrl("https://drive.google.com/open?id=1QahdfW1RWwmiSDbmMfLF4jb6LWsH8zS6"),
+    getDriveImageUrl("https://drive.google.com/open?id=1orMepo0jlGKU1OMQURNR9IQtOE7DppeN"),
+    getDriveImageUrl("https://drive.google.com/open?id=1zGXu1CqCgYslPvUYo9JB29waATnXRZtj"),
+    getDriveImageUrl("https://drive.google.com/open?id=1bAgwYCdZcGlwnmEyEtST2-VaItWjoD7B"),
+    getDriveImageUrl("https://drive.google.com/open?id=1gijvKxD5o9sHKP46BOBhDUjjBbq3JeIz"),
+  ],
+  endPrice: 9433160000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0226", // <-- HERWANTO AGUS SUBIANTO
+  title: "SEGERA LELANG RUMAH TINGGAL & TOKO",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jalan Raya Mangaran RT. 01 RW. 01, Desa Mangaran, Kecamatan Mangaran, Kabupaten Situbondo, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Situbondo",
+  landArea: 935,
+  buildingArea: 217,
+  certificateType: "SHM",
+  description:
+  `- 1 menit ke Lapangan Mangaran
+- 2 menit ke Pasar Mangaran
+- 2 menit ke Puskesmas Mangaran
+- 3 menit ke Masjid Al-Ikhlas
+- 10 menit ke Pertamina Situbondo`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1pGV7t2lcw50i-FFko81PP69_4rVJWZek"),
+    getDriveImageUrl("https://drive.google.com/open?id=1DqJlfDYVVK-3qY5BXwgvCnBQA5LQwseC"),
+    getDriveImageUrl("https://drive.google.com/open?id=11haFWfATo5Uhrfxm5aHf0F-84KUeIJo8"),
+    getDriveImageUrl("https://drive.google.com/open?id=135CA2Tt-D4bGhkuztKB-PQomLvCavatm"),
+    getDriveImageUrl("https://drive.google.com/open?id=1bYCMpXf5n8dCxzho_pas85tnLNTJmWnm"),
+  ],
+  endPrice: 1102000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0225", // <-- DIVI IKA RAHMAWATI
+  title: "SEGERA LELANG HUNIAN NYAMAN DUA LANTAI",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Safira Garden Blok D6 No. 2, Desa Sepande, Kec. Candi, Kab. Sidoarjo, Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 105,
+  buildingArea: 88,
+  certificateType: "SHM",
+  description:
+  `- 9 menit dari Puri Indah Tennis Court
+- 10 menit dari Lippo Plaza Sidoarjo
+- 11 menit dari SMAN 4 Sidoarjo
+- 12 menit dari Rumah Sakit Delta Surya
+- 12 menit Suncity Waterpark Sidoarjo`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=19uNuae3_Mz59-rBSe7yAra3tM4RdZm01"),
+    getDriveImageUrl("https://drive.google.com/open?id=13Zn4U3oinDu7DKxubTuMJbaO7e3MPkup"),
+    getDriveImageUrl("https://drive.google.com/open?id=1o_CunHmL-vMZttLmyZfQulbhQv0ZUdCg"),
+  ],
+  endPrice: 1026000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0224", // <-- FEBE KURNIASARI
+  title: "SEGERA LELANG RUKO 2 LANTAI",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jl. Pemuda Blok A no 6, Desa Randubango, Kec. Mojosari, Kab. Mojokerto",
+  provinsi: "Jawa Timur",
+  kota: "Mojokerto",
+  landArea: 52,
+  buildingArea: 104,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari PT. Hume Sakti Indonesia
+- 2 menit dari Lapangan Randubango
+- 4 menit dari UPT Puskesmas Watukenongo
+- 4 menit dari Stadion Gelora Gajah Mada
+- 5 menit dari MTSN 1 Mojokerto`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1TATW9l_k64qNax7Huel6VETPsfXn4Uws"),
+    getDriveImageUrl("https://drive.google.com/open?id=182ChWalhGc4B_36KTaK47-Gz3xdkiyvD"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qbzpSTYuk13OHUfIMOYYwtm263bvj-zY"),
+    getDriveImageUrl("https://drive.google.com/open?id=1BwyObK2lPcNkiWFVA--RzS-27OWHcYhR"),
+    getDriveImageUrl("https://drive.google.com/open?id=1EU9Sf-RxiZYEx7nYm3XIsWelVdzsoptI"),
+  ],
+  endPrice: 449000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0223", // <-- HAPPY
+  title: "SEGERA LELANG RUMAH TOKO STRATEGIS",
+  isHidden: true,
+  type: "Ruko",
+  location: "Jalan Mayjen Bambang Yuwono No. 162, Desa Bakalanwringinpitu, Kecamatan Balongbendo, Kabupaten Sidoarjo, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Sidoarjo",
+  landArea: 270,
+  buildingArea: 63,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Indomaret Balong Bendo
+- 3 menit dari POLSEK Balong Bendo
+- 5 menit dari gerbang Tol Lebani Gresik
+- 5 menit dari RS Anwar Medika
+- 15 menit dari RSUD Sidoarjo Barat`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1tcjE0uTHZnHWe9XcLfRdSo5NPUpuu1yb"),
+    getDriveImageUrl("https://drive.google.com/open?id=1HL_NQufCypux_N1JLxuMlAinr_NWnkfm"),
+    getDriveImageUrl("https://drive.google.com/open?id=1hcEdMAILNFvrKAO9MM7WhksZk2xJSPSq"),
+    getDriveImageUrl("https://drive.google.com/open?id=15T0tTvw---KjLKkQnT-zdxZGFDEYBRf7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1pyP3HufGuJ3c4_q-fy7kbwmL69nu2l23"),
+  ],
+  endPrice: 365000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0222", // <-- SYAIFUL AMAR
+  title: "SEGERA LELANG HUNIAN NYAMAN",
+  isHidden: true,
+  type: "Rumah",
+  location: "Perumahan Eramas Regency No. 8, Desa Curahjeru, Kecamatan Panji, Kabupaten Situbondo, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Situbondo",
+  landArea: 122,
+  buildingArea: 102,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Kantor Desa Curahjeru
+- 1 menit dari Puskesmas Panji
+- 1 menit dari SDIT Anak Insan Panji
+- 3 menit dari Pabrik Gula Panji
+- 4 menit ke Pasar Panji`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1YO7wGMEwBCWz9wbyCBVLQoOq0CfIeCMn"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Bht0kSlhgI0V03AgqcdiOJbBhr6isBU_"),
+    getDriveImageUrl("https://drive.google.com/open?id=1QPW_0k_asEDBEnmWp310gtbiu6Abpc7N"),
+  ],
+  endPrice: 353000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0221", // <-- AHMAD MARFUA
+  title: "SEGERA LELANG RUKO STRATEGIS",
+  isHidden: true,
+  type: "Ruko",
+  location: "Istana Eramas No. 2, Jl. Raya Mangaran, Desa Curahjeru, Kecamatan Panji, Kabupaten Situbondo, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Situbondo",
+  landArea: 78,
+  buildingArea: 55,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Kantor Desa Curahjeru
+- 1 menit dari Puskesmas Panji
+- 1 menit dari SDIT Anak Insan Panji
+- 3 menit dari Pabrik Gula Panji
+- 4 menit ke Pasar Panji`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1SeB-vUuyPfKwtYfl9yUBpFFfjPgTm8oK"),
+    getDriveImageUrl("https://drive.google.com/open?id=1zT14kBIJ2C4NszP_DtJlmDtR_QIveLaD"),
+    getDriveImageUrl("https://drive.google.com/open?id=1y7EleTstN1E3ShjBf-zRmALjC28pTDsF"),
+  ],
+  endPrice: 206000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELP_0220", // <-- MEGA INTI PERSADA
   title: "SEGERA LELANG BANGUNAN GUDANG DAN KANTOR",
   isHidden: true,
@@ -199,8 +587,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1YuYNn-krkXHqF-z8lpx-eg9vAWhrQGU_"),
   ],
   endPrice: 862900000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+   tanggalLelang: "2026-08-31",
+    batasWaktuLelang: "-",
+    jamLelang: "08:50 WIB",
 },
 {
   id: "RLI_ELP_0216", // <-- MIYA NOVIANDRI
@@ -285,9 +674,10 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=19NEqhp2hM2Zf9KqM9Gs81LGZIG8Ouj18"),
     getDriveImageUrl("https://drive.google.com/open?id=1flqFcW9FSxErKGod4EsWN627DWLZSVv5"),
   ],
-  endPrice: 28000000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+  endPrice: 27500000000,
+    tanggalLelang: "2026-08-21",
+    batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
 },
 {
   id: "RLI_ELP_0213", // <-- PT. INDONESIA INKUBATOR TEKNOLOGI
@@ -903,8 +1293,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1PaeX-2cWX_M92k8aAEqW1YC4VUdZHUy7"),
   ],
   endPrice: 635000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+    tanggalLelang: "2026-09-09",
+    batasWaktuLelang: "-",
+    jamLelang: "10:30 WIB",
 },
   {
   id: "RLI_ELP_0192", // <-- ADE SETIAWAN
@@ -1486,9 +1877,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1pzcsLt8WRKGtOPLC6nWZqf9OLwL5Algp"),
   ],
   endPrice: 4026000000,
-    tanggalLelang: "2026-08-11",
+    tanggalLelang: "2026-08-27",
     batasWaktuLelang: "-",
-    jamLelang: "09:30 WIB",
+    jamLelang: "09:00 WIB",
 },
   {
   id: "RLI_ELP_0172", // <-- ALVIAN KUSUMA WIJAYA
@@ -1573,9 +1964,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1VoI_3eBL4n5B7woYAPPyEe7wuQ__SKat"),
   ],
   endPrice: 1478500000,
-  tanggalLelang: "2026-07-13",
-  batasWaktuLelang: "-",
-      jamLelang: "09:50 WIB",
+    tanggalLelang: "2026-08-27",
+    batasWaktuLelang: "-",
+    jamLelang: "11:10 WIB",
 },
 {
   id: "RLI_ELP_0169", // <-- NURUL QOMARIYAH
@@ -2059,9 +2450,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1fetmeutwhyof3a5fFtZCy9oxh5fmNzVJ")
   ],
   endPrice: 3691400000,
-  tanggalLelang: "2026-08-20",
+  tanggalLelang: "2026-09-16",
   batasWaktuLelang: "-",
-      jamLelang: "11:30 WIB",
+      jamLelang: "10:30 WIB",
 },
 {
   id: "RLI_ELP_0151", // <-- PT. SAMALINDO JAYA MANDIRI TANGERANG
@@ -2332,9 +2723,9 @@ export const lelangProperties: PropertiDilelang[] = [
     getDriveImageUrl("https://drive.google.com/open?id=1lhyEVajW2dTohHbkIg1lc4qh3rpX71J0")
   ],
   endPrice: 22000000000,
-    tanggalLelang: "2026-07-28",
+   tanggalLelang: "2026-08-27",
     batasWaktuLelang: "-",
-    jamLelang: "10:45 WIB",
+    jamLelang: "14:30 WIB",
 },
             {
     id: "RLI_ELP_0141", // <-- PT. SERUNI INDAH
@@ -2612,9 +3003,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1jxGlOKH43DsNAFEq790seNHfhwHbWNGU")
     ],
     endPrice: 289000000,
-    tanggalLelang: "2026-06-08",
+    tanggalLelang: "2026-09-16",
     batasWaktuLelang: "-",
-    jamLelang: "11:15 WIB",
+    jamLelang: "10:00 WIB",
   },
              {
     id: "RLI_ELP_0131", // SUMANTRI (SHM 96)
@@ -2645,9 +3036,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1afiacM2Kbs0aCLcvaVcOXWJaELK1ta4J")
     ],
     endPrice: 1155000000,
-    tanggalLelang: "2026-06-08",
+    tanggalLelang: "2026-09-16",
     batasWaktuLelang: "-",
-    jamLelang: "11:15 WIB",
+    jamLelang: "10:00 WIB",
   },
            {
     id: "RLI_ELP_0130", // SUMANTRI (SHM 108&187)
@@ -2675,9 +3066,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=13eRndZG1lf19eDKh475MBL7GC7AsCN2S")
     ],
     endPrice: 5448000000,
-    tanggalLelang: "2026-06-08",
+    tanggalLelang: "2026-09-16",
     batasWaktuLelang: "-",
-    jamLelang: "11:15 WIB",
+    jamLelang: "10:00 WIB",
   },
          {
     id: "RLI_ELP_0129", // RULLY ACHMAD SANUSI
@@ -2766,9 +3157,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1Msp-SMbvgaEuJZAJK5IqPBtSXA9iLv6j")
     ],
     endPrice: 5891059300,
-    tanggalLelang: "2026-06-24",
+    tanggalLelang: "2026-09-02",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "14:15 WIB",
   },
    {
     id: "RLI_ELP_0126", // PT. BINTANG TERANG STEEL
@@ -3077,9 +3468,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1TERcGpVxLvkFbwO6lemL41cyw-oSUJCu")
     ],
     endPrice: 1266000000,
-    tanggalLelang: "2026-05-11",
+    tanggalLelang: "2026-09-10",
     batasWaktuLelang: "-",
-    jamLelang: "10:55 WIB",
+    jamLelang: "10:15 WIB",
   },
       {
     id: "RLI_ELP_0116", // <-- Nanang Ismail
@@ -4106,9 +4497,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1ss8LQjFHWGqT_nxeTrX45Qk1CpSqWJgi")
     ],
     endPrice: 603000000,
-    tanggalLelang: "2026-07-23",
+    tanggalLelang: "2026-09-16",
     batasWaktuLelang: "-",
-    jamLelang: "09:30 WIB",
+    jamLelang: "09:00 WIB",
   },
 
           {
@@ -4138,9 +4529,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1rTB0MnouCAVOTN7rnTTU2phfkB4JCPEM")
     ],
     endPrice: 6231100000,
-    tanggalLelang: "2026-07-23",
+    tanggalLelang: "2026-09-16",
     batasWaktuLelang: "-",
-    jamLelang: "09:30 WIB",
+    jamLelang: "09:00 WIB",
   },
 
       {
@@ -4275,9 +4666,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=18-xasRnbz9623Fd1PFLYc6g9GahOA2ZQ")
     ],
     endPrice: 2388900000,
-    tanggalLelang: "2026-04-01",
+    tanggalLelang: "2026-09-16",
     batasWaktuLelang: "-",
-    jamLelang: "09:00 WIB",
+    jamLelang: "09:50 WIB",
   },
 
   {
@@ -6404,9 +6795,9 @@ export const lelangProperties: PropertiDilelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1NlhYpwe7QfPtMSgMStJZg3nLCgkKbiWX")
     ],
     endPrice: 950040000,
-    tanggalLelang: "2026-06-02",
+     tanggalLelang: "2026-09-29",
     batasWaktuLelang: "-",
-    jamLelang: "09:25 WIB",
+    jamLelang: "10:25 WIB",
   },
       {
     id: "RLI_ELP_0059",
