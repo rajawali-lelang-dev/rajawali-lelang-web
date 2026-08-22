@@ -335,8 +335,9 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
     getDriveImageUrl("https://drive.google.com/open?id=1bYCMpXf5n8dCxzho_pas85tnLNTJmWnm"),
   ],
   endPrice: 1102000000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-09-21",
   batasWaktuLelang: "-",
+      jamLelang: "10:10 WIB",
 },
 {
   id: "RLI_ELP_0225", // <-- DIVI IKA RAHMAWATI
@@ -880,8 +881,9 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
     getDriveImageUrl("https://drive.google.com/open?id=13gV7Hs8XoWYAVznulq8PYWw-8HWQQedl"),
   ],
   endPrice: 10403000000,
-  tanggalLelang: "-",
+  tanggalLelang: "2026-09-23",
   batasWaktuLelang: "-",
+      jamLelang: "10:00 WIB",
 },
   {
   id: "RLI_ELP_0206", // <-- AGUSFATHA YASIN
@@ -3795,8 +3797,9 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=1wiKzhCBpsgd4oh8rgVpMVm-_dQJIGoYl")
     ],
     endPrice: 683000000,
-    tanggalLelang: "-",
-    batasWaktuLelang: "-",
+  tanggalLelang: "2026-09-22",
+  batasWaktuLelang: "-",
+      jamLelang: "09:45 WIB",
   },
                 {
     id: "RLI_ELP_0105", // <-- GUNAWAN WIBISONO (Tanah)
