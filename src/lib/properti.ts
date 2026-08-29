@@ -89,6 +89,289 @@ export const properties: Property[] = [
 
 // Mock Data - PROPERTI LELANG
 export const lelangProperties: PropertiDilelang[] = [
+{
+  id: "RLI_ELP_0242", // <-- PT. HASHIMA WIRA BERSAUDARA
+  title: "SEGERA LELANG RUMAH TINGGAL, GUDANG & MESS",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jl. Damai, No. 170, RT/RW. 006/002, Kel. Jatikramat, Kec. Jatiasih, Kota Bekasi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Bekasi",
+  landArea: 1874,
+  buildingArea: 779.47,
+  certificateType: "SHM",
+  description:
+  `- 2 menit ke Masjid Ziyadatul Akmal
+- 5 menit ke RS Mitra Keluarga Jatiasih
+- 10 menit dari Pintu Tol Jatiasih 1
+- 14 menit ke SMKN 9 Kota Bekasi
+- 22 menit ke Grand Galaxy Park`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1etIa6JY2GsUCreMl593gmMmyO-CHavbL"),
+    getDriveImageUrl("https://drive.google.com/open?id=1CVis3uULu3C7wiCsU3AgZ0HOroEYWx2D"),
+    getDriveImageUrl("https://drive.google.com/open?id=1zlYbLxY6gwpRIB2HBZBjSA6RoBb2HX3t"),
+    getDriveImageUrl("https://drive.google.com/open?id=19lCOSMqpgPvs6a8GWCHFbX1_HS035Eyr"),
+    getDriveImageUrl("https://drive.google.com/open?id=1qDlX65zPrbg3gGSsH-_vSAvCZzJ-eqgP"),
+    getDriveImageUrl("https://drive.google.com/open?id=1rEq3u_cncTroQuNigcKogf1t-lWl6qxQ"),
+    getDriveImageUrl("https://drive.google.com/open?id=1IcF6groVmlk9Aq7MOi2jy4kGzjA2EmZI"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Ji4Ch9VbgmOrl6HnvjOKj6GqCxHyXdpc"),
+    getDriveImageUrl("https://drive.google.com/open?id=1XaGjgS8ovsIjN0tzuxjFTEnu12a_ACA9"),
+    getDriveImageUrl("https://drive.google.com/open?id=1vwIL8CsQae3a-g3Xca71mFBVol3_qhE2"),
+  ],
+  endPrice: 3699000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0241", // <-- NUR KHOLIS
+  title: "SEGERA LELANG TANAH KOSONG (PEMAKAIAN GUDANG)",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Kutorejo - Bangsal, Desa Kaligoro, Kecamatan Kutorejo, Kabupaten Mojokerto, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Mojokerto",
+  landArea: 1871,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Masjid Baiturrohim
+- 3 menit dari Pasar Kebon
+- 4 menit dari Balai Dusun Sudimoro
+- 5 menit dari Pondok Pesantren Wenang
+- 8 menit dari RS Sido Waras`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=10KWr3tkulHiJTTBtPn6pzhWtOwMMs3Gt"),
+    getDriveImageUrl("https://drive.google.com/open?id=1kh20GkC53olPm2SUnFgHYXgIhfxMYcN0"),
+    getDriveImageUrl("https://drive.google.com/open?id=13utuwl9bxyZECNUfGgB29RjCrAEeP4kx"),
+    getDriveImageUrl("https://drive.google.com/open?id=1njRnnmKYwl7zp44MfsIZzY_QfXJEOY4D"),
+    getDriveImageUrl("https://drive.google.com/open?id=1bBNU1GMs-Bwv3Aa16o5Jg6nswhpALHk_"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Xj8hUvDZXjjUAvmvvcZLjlHCr6lN6P3m"),
+    getDriveImageUrl("https://drive.google.com/open?id=1f2McM7Gpv66KZM9LjIhb2AWR3Y0U2bU7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1DdpsgCxrSiCZ4rcHgqVS8tjuvXoBWLcP"),
+    getDriveImageUrl("https://drive.google.com/open?id=1g5YH9OX92s7leQt3MTxLacpQ9cwM9uAv"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Lprs_PJF-2bSVA_1o_7dxOOiIlc_2lZa"),
+  ],
+  endPrice: 1908000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0240", // <-- EMY DYAH SUSANTI
+  title: "SEGERA LELANG RUMAH TINGGAL NYAMAN",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Raya Permata Suci No. 94, Desa Suci, Kecamatan Manyar, Kabupaten Gresik, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Gresik",
+  landArea: 180,
+  buildingArea: 150,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari Menara Eifel World Park
+- 4 menit dari Sekar Kedaton Gresik
+- 13 menit dari RSUD Ibnu Sina Gresik
+- 14 menit dari Gerbang Tol Kebomas
+- 16 menit Icon Mall Gresik`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1QJfKSEE6rivW-DetC2wF1TgmTJ6NkKAK"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lrcxHJwJBqgRNRm_KnpzjlTN70zXNke4"),
+    getDriveImageUrl("https://drive.google.com/open?id=1YrbO7Qh0EKprf0LbokRWUm2hvxV48VEO"),
+    getDriveImageUrl("https://drive.google.com/open?id=1UC-7JduRkuLTu_aw7H2VqBQp7hK-oS9L"),
+    getDriveImageUrl("https://drive.google.com/open?id=1uiFm5WGIpn74BX9Vw8dLX5Y8H4uCQwMw"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ulZboQVWlqWQ4BpQ0EsyNwdG6S1NEeOe"),
+  ],
+  endPrice: 1400000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0239", // <-- RATNA ENY MOERJATI
+  title: "SEGERA LELANG RUMAH 2 LANTAI STRATEGIS",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Gunung Anyar Jaya IIIA RT 010 RW 04, Kel. Gununganyar, Kec. Gununganyar, Kota Surabaya, Prov. Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Surabaya",
+  landArea: 104,
+  buildingArea: 104,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari SMP Negeri 62 Surabaya
+- 4 menit dari UPN "Veteran"
+- 7 menit dari Griya Pesona Asri (YKP)
+- 8 menit dari RSUD Eka Candrarini
+- 13 menit dari Transmart Rungkut Surabaya
+Listrik PLN & Saluran Air Bersih. Lantai 1 terdiri dari: Carport, Ruang tamu, 1 Kamar tidur, 1 Kamar mandi, Dapur. Lantai 2 terdiri dari: 4 Kamar tidur, 1 Kamar Mandi, Jemuran/Balkon.`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1PuGI0gpV7vd2K6GRN--EP0Ncg7-_iWlr"),
+    getDriveImageUrl("https://drive.google.com/open?id=1_eDs1aYCJVEPFFgcmMqpN6IRTZLG5GnP"),
+    getDriveImageUrl("https://drive.google.com/open?id=1sms4XjwD6eZJg9_F6yv9AOMUUOwvn2VI"),
+    getDriveImageUrl("https://drive.google.com/open?id=1jq-yns2XjWpX6NdbkYH5DXRbNS0Wfg6C"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ZNMI0jb31RB8o2C5K9P1qtc2Rhs-AkVa"),
+    getDriveImageUrl("https://drive.google.com/open?id=1FEv1_TKj2zKxfszxhbYVXUANgzBCZfbX"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ce8VvOzPwxX_oxuJCUhPxE_ZeOhxbgKF"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Jt-r7IwqTmInuTRSQzPLJJrxO0fPw52K"),
+    getDriveImageUrl("https://drive.google.com/open?id=1S-2V154PaJ5zbHsW2zj-XCLgT3YbpIji"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ImE7gif_oBU492tanJuXzLoR9L3dE2FE"),
+  ],
+  endPrice: 478000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0238", // <-- NUR KHOLIS
+  title: "SEGERA LELANG TANAH SAWAH LUAS & STRATEGIS",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Desa Lingkungan, Desa Kaligoro, Kecamatan Kutorejo, Kabupaten Mojokerto, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Mojokerto",
+  landArea: 2350,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Masjid Baiturrohim
+- 3 menit dari Pasar Kebon
+- 4 menit dari Balai Dusun Sudimoro
+- 5 menit dari Pondok Pesantren Wenang
+- 8 menit dari RS Sido Waras`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1X8xZWziQzRhLbmojj8Wed4y1tvR1ocJX"),
+    getDriveImageUrl("https://drive.google.com/open?id=1bG31iKD6x5NIaGHZsT3WcvaiAw0G7v25"),
+    getDriveImageUrl("https://drive.google.com/open?id=1NMthRe0TylQMv-TpbhR3u2pzmOxHs63L"),
+    getDriveImageUrl("https://drive.google.com/open?id=1gxfBuzlr4VC4ayirgdVv4IRRhuufon-O"),
+    getDriveImageUrl("https://drive.google.com/open?id=1a9s2b2mKY529I0kbNkD4JQV29_lIkseO"),
+  ],
+  endPrice: 400000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0237", // <-- UMAR HARDY
+  title: "SEGERA LELANG TANAH LADANG PERTANIAN STRATEGIS",
+  isHidden: true,
+  type: "Tanah",
+  location: "Desa Temaji, Kecamatan Jenu, Kab. Tuban, Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Tuban",
+  landArea: 698,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 2 menit dari Kawasan Industri Tuban
+- 2 menit dari Masjid An-Nur Desa Temaji
+- 4 menit dari BNI Semen Gresik Tuban
+- 5 menit dari Pantai Karangdowo
+- 6 menit dari SPBU Pertamina 54.623.03
+Lebar jalan aset +- 5 meter (mobil bisa simpangan). Aset menghadap ke utara. Aset memiliki listrik (diluar aset) dan air tanah.`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1z1AqmM0aWiJ877nEifmemcREhPG6svBm"),
+    getDriveImageUrl("https://drive.google.com/open?id=1_NYomVa0SaROnHW1_cEl8ojvUxXGNzS3"),
+    getDriveImageUrl("https://drive.google.com/open?id=19EfGqvjCFNeubHpX5WGccz75rU7z7wNc"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Z_3j5GkQuPpAP1mvkKKbwKQH2Uf28NTE"),
+    getDriveImageUrl("https://drive.google.com/open?id=1BMPEoaS5dQ9z5i7XT42YFks151fFmdWw"),
+    getDriveImageUrl("https://drive.google.com/open?id=1uFZ4ZbqqQJvYgd6Aw-aa4c9ZnlN_35ED"),
+  ],
+  endPrice: 392904000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0236", // <-- NUR KHOLIS
+  title: "SEGERA LELANG TANAH SAWAH LUAS & STRATEGIS",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Desa Kaligoro, Desa Kaligoro, Kecamatan Kutorejo, Kabupaten Mojokerto, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Mojokerto",
+  landArea: 1813,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Masjid Baiturrohim
+- 3 menit dari Pasar Kebon
+- 4 menit dari Balai Dusun Sudimoro
+- 5 menit dari Pondok Pesantren Wenang
+- 8 menit dari RS Sido Waras`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=15VieTEJB1U6bi0GlPRdGsaXadB5w1Lx3"),
+    getDriveImageUrl("https://drive.google.com/open?id=1E1yK8n7qPaGsXFhhLUe1-i2CCT_a_T1P"),
+    getDriveImageUrl("https://drive.google.com/open?id=1BaENI8uKJ9nXeBqNhAPBM-d3fmTZ9WVF"),
+    getDriveImageUrl("https://drive.google.com/open?id=1l8E9C-M2oxEEMeADoBrI6sc94Gxxr5X7"),
+    getDriveImageUrl("https://drive.google.com/open?id=1xDGS2_54romrVvo9hwG8Ti9CvaI7-5h3"),
+  ],
+  endPrice: 310000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0235", // <-- NUR KHOLIS
+  title: "SEGERA LELANG TANAH SAWAH",
+  isHidden: true,
+  type: "Tanah",
+  location: "Jalan Desa Kaligoro, Desa Kaligoro, Kecamatan Kutorejo, Kabupaten Mojokerto, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Mojokerto",
+  landArea: 1247,
+  buildingArea: 0,
+  certificateType: "SHM",
+  description:
+  `- 1 menit dari Masjid Baiturrohim
+- 3 menit dari Pasar Kebon
+- 4 menit dari Balai Dusun Sudimoro
+- 5 menit dari Pondok Pesantren Wenang
+- 8 menit dari RS Sido Waras`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1QcbY3SIlyzxywkD1nD5fXs4Dy_fjY_2S"),
+    getDriveImageUrl("https://drive.google.com/open?id=1p41BLIymbRmnK39m91nwwzBSYZSFljXx"),
+    getDriveImageUrl("https://drive.google.com/open?id=1DIRe73mVD6u6afSzTlhTelzwE_Iiht1v"),
+    getDriveImageUrl("https://drive.google.com/open?id=17hSLQLQ02BFcv8iZcP-W23rR0VXDUbAt"),
+    getDriveImageUrl("https://drive.google.com/open?id=1GFIftE8ZKvKh6ieXnOZ5tJ44hHkIaefT"),
+    getDriveImageUrl("https://drive.google.com/open?id=1lq9ANjUcuDoj8O3Bb6e62ErJmcXndTis"),
+    getDriveImageUrl("https://drive.google.com/open?id=1wItIUWC7hSTwl-D45ySjvCUZr4JNKLQ6"),
+  ],
+  endPrice: 212000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELP_0234", // <-- NUR KHOLIS
+  title: "SEGERA LELANG RUMAH 1 LANTAI",
+  isHidden: true,
+  type: "Rumah",
+  location: "Jalan Lingkungan, Desa Mojotamping, Kecamatan Bangsal, Kabupaten Mojokerto, Provinsi Jawa Timur",
+  provinsi: "Jawa Timur",
+  kota: "Mojokerto",
+  landArea: 111,
+  buildingArea: 39,
+  certificateType: "SHM",
+  description:
+  `- 3 menit dari SMP Islam Terpadu Wenang
+- 4 menit dari Pondok Pesantren Wenang
+- 1 menit dari Masjid Baiturrohim
+- 3 menit dari Pasar Kebon
+- 8 menit dari RS Sido Waras
+Aset menghadap ke timur. Lebar jalan depan aset ± 6 meter (mobil bisa simpangan).`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1sTP4OwsjkhkomzzH8EHB8A0veaAv9H5Z"),
+    getDriveImageUrl("https://drive.google.com/open?id=1zgcIMG1UNsHvnR45XxFLIkOdeBNWeqYX"),
+    getDriveImageUrl("https://drive.google.com/open?id=1zV69-g4VI0gEaczF-qrmylh4uK43edbs"),
+    getDriveImageUrl("https://drive.google.com/open?id=1Hl8Jm88aoHMiC7WXYKTlOyCLpWGQAa5N"),
+    getDriveImageUrl("https://drive.google.com/open?id=1QNDox6Xf-076bR7lLCmlJg7SPykoCjeM"),
+  ],
+  endPrice: 117000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
   {
   id: "RLI_ELP_0233", // <-- PT. SPARTA WOODS
   title: "SEGERA LELANG GUDANG PRODUKSI",
@@ -220,7 +503,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0229", // <-- PT ANTARA MAS GEMILANG
-  title: "SEGERA LELANG TANAH KOSONG LUAS",
+  title: "AGUNAN LELANG TANAH KOSONG LUAS",
   isHidden: true,
   type: "Tanah",
   location: "Jl. Raya Manyar, Desa Betoyoguci, Kec. Manyar, Kab. Gresik, Prov. Jawa Timur",
@@ -235,7 +518,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 7 menit dari Pasar Sembayat
 - 12 menit dari Gerbang Tol Manyar
 - 19 menit dari Pelabuhan JIIPE`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1CDY9Beg0O3qxLJrtL0y-Y8xr_Rp-JV6z"),
     getDriveImageUrl("https://drive.google.com/open?id=12kEtd_auoHasB3yx3W8fMwLs8O9ucGz7"),
@@ -244,9 +527,10 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
     getDriveImageUrl("https://drive.google.com/open?id=1rBFmiGawu_G6jLuls3WAZqgN4vXuaEhT"),
     getDriveImageUrl("https://drive.google.com/open?id=1_Z2740EUqDIIHYNcDXKraA_9_T01zQek"),
   ],
-  endPrice: 19500000000,
-  tanggalLelang: "-",
-  batasWaktuLelang: "-",
+  endPrice: 17250000000,
+    tanggalLelang: "2026-09-03",
+    batasWaktuLelang: "-",
+    jamLelang: "11:00 WIB",
 },
 {
   id: "RLI_ELP_0228", // <-- BERLIANTI SUTIANTO
@@ -311,7 +595,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0226", // <-- HERWANTO AGUS SUBIANTO
-  title: "SEGERA LELANG RUMAH TINGGAL & TOKO",
+  title: "AGUNAN LELANG RUMAH TINGGAL & TOKO",
   isHidden: true,
   type: "Ruko",
   location: "Jalan Raya Mangaran RT. 01 RW. 01, Desa Mangaran, Kecamatan Mangaran, Kabupaten Situbondo, Provinsi Jawa Timur",
@@ -326,7 +610,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 2 menit ke Puskesmas Mangaran
 - 3 menit ke Masjid Al-Ikhlas
 - 10 menit ke Pertamina Situbondo`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1pGV7t2lcw50i-FFko81PP69_4rVJWZek"),
     getDriveImageUrl("https://drive.google.com/open?id=1DqJlfDYVVK-3qY5BXwgvCnBQA5LQwseC"),
@@ -566,7 +850,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0217", // <-- ZULFITRI NASUTION
-  title: "SEGERA LELANG RUKO DUA LANTAI",
+  title: "AGUNAN LELANG RUKO DUA LANTAI",
   isHidden: true,
   type: "Ruko",
   location: "Puri Matahari Persada, RT. 001 RW.010, Desa Laladon, Kec. Ciomas, Kab. Bogor, Prov. Jawa Barat",
@@ -581,7 +865,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 9 menit dari Hari Hari Dramaga Bogor
 - 9 menit dari RS Graha Medika Bogor
 - 17 menit dari Akses Tol Borr Arah Barat`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1KmkYKX4DdZSiV1XjedZ5wsMBnbZx1pLH"),
     getDriveImageUrl("https://drive.google.com/open?id=1IbbTYmbj_9xAULU01fquazk7u7z3nvVk"),
@@ -682,7 +966,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0213", // <-- PT. INDONESIA INKUBATOR TEKNOLOGI
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jalan H. Saili Blok F No.37, RT.005 RW.05, Kel. Kemanggisan, Kec. Palmerah, Kota Jakarta Barat, Prov. DKI Jakarta",
@@ -697,7 +981,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 10 menit dari Univ. Bina Nusantara Kampus Anggrek
 - 11 menit dari Plaza Senayan Mall
 - 12 menit dari Gelora Bung Karno Stadium`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=14d2pJK0lCna_z0xatQ_u1HzZkKIrvH-o"),
     getDriveImageUrl("https://drive.google.com/open?id=1h60gp1RQx4JwmF99QWWjjdHNwD8euY0w"),
@@ -856,7 +1140,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0207", // <-- PT. PETRA INDONESIA GEMILANG
-  title: "SEGERA LELANG TANAH DAN BANGUNAN",
+  title: "AGUNAN LELANG TANAH DAN BANGUNAN",
   isHidden: true,
   type: "Tanah",
   location: "Jl. Trans Kalimantan KM 12, Ds. Anjir Serapat Tengah, Kec. Kapuas Timur, Kab. Kapuas, Prov. Kalimantan Tengah",
@@ -871,7 +1155,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 6 menit dari Pasar Senin Anjir Serapat
 - 9 menit dari Puskesmas Anjir Pasar
 - 19 menit dari Jembatan Barito`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1spvWZMtL-YxJY9EgNyWfb3WqTR5jeDPb"),
     getDriveImageUrl("https://drive.google.com/open?id=1TBkpD0GFVzbfC0dBA378EblncafwNtoL"),
@@ -977,7 +1261,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0203", // <-- PT. PROFIT NIKEL INDONESIA
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Perumahan Residence One, Cluster Ruby, Jalan Ruby 8 No. 28, Kel. Jalupang, Kec. Serpong Utara, Kota Tangerang Selatan, Prov. Banten",
@@ -992,7 +1276,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 15 menit dari (ICE) BSD City
 - 15 menit dari The Breeze BSD City
 - 17 menit dari Stasiun Rawa Buntu`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=191gPOzO4_E0EbEg-p9LlVBfm7kRAMyb5"),
     getDriveImageUrl("https://drive.google.com/open?id=13P9dyyAvwMjqHnJMExGbLh_Tv5eECoyH"),
@@ -1272,7 +1556,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0193", // <-- ARIEL WINATA
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Perumahan TNI AL Blok B-1 No. 18, Desa Sugihwaras, Kec. Candi, Kab. Sidoarjo, Prov. Jawa Timur",
@@ -1287,7 +1571,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 7 menit dari Pasar Larangan
 - 14 menit dari Stasiun Sidoarjo
 - 19 menit dari Gerbang Tol Sidoarjo`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=194qjHjB5z3OxzhW7Evxxd6eZPW8McRIq"),
     getDriveImageUrl("https://drive.google.com/open?id=1hbiabFiK8lJ4v8WSgnn9kFRIo4gNMnX5"),
@@ -1301,7 +1585,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
   {
   id: "RLI_ELP_0192", // <-- ADE SETIAWAN
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jalan Brotowali V Blok B-30 No. 11, Kel. Jurangmangu Barat, Kec. Pondok Aren, Kota Tangerang Selatan, Prov. Banten",
@@ -1316,7 +1600,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 20 menit dari Stasiun Pondok Ranji
 - 20 menit dari Bintaro Jaya Xchange Mall
 - 22 menit dari Gerbang Tol Pondok Aren 1`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1RNWw9JtDmY9_-rQkCJepKAIeQDpZ9L4I"),
     getDriveImageUrl("https://drive.google.com/open?id=1TJNXgdrpI7v8GtgH_YzYMZwYEgb69pj0"),
@@ -1560,7 +1844,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
   {
   id: "RLI_ELP_0183", // <-- RISKHA AULIA
-  title: "SEGERA LELANG TOKO",
+  title: "AGUNAN LELANG TOKO",
   isHidden: true,
   type: "Ruko",
   location: "Jalan Pahlawan No. 23, Desa Gapurosukolilo, Kec. Gresik, Kab. Gresik, Prov. Jawa Timur",
@@ -1575,7 +1859,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 7 menit dari RS Semen Gresik
 - 7 menit dari Univ. Internasional Semen Indonesia
 - 14 menit dari Gressmall`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=10nts_4BNuDI0MCKxi-NUU628M6AUfOB1"),
     getDriveImageUrl("https://drive.google.com/open?id=1fnBWT5N7kq-PXdyKiPRmy2kEpU5j_ov-"),
@@ -1588,7 +1872,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0182", // <-- TITIK INDRAWATI
-  title: "SEGERA LELANG RUMAH TINGGAL",
+  title: "AGUNAN LELANG RUMAH TINGGAL",
   isHidden: true,
   type: "Rumah",
   location: "Jalan Raya Bungah Dukun, Desa Masangan, Kec. Bungah, Kab. Gresik, Prov. Jawa Timur",
@@ -1603,7 +1887,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 15 menit dari SMAN 1 Sidayu
 - 17 menit dari Alun Alun Sidayu
 - 19 menit dari Tugu Perbatasan Gresik-Lamongan`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1PSMMkM1RkSzArGBX0pW1Hz9zX1GCsQ-k"),
     getDriveImageUrl("https://drive.google.com/open?id=1evdM4RE4v31Pw7nLZutapL8NGHTyk5Av"),
@@ -1673,7 +1957,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
     getDriveImageUrl("https://drive.google.com/open?id=1FYKPJqzyQ5SFXFHK9XgmaH2NLJYVHIua"),
     getDriveImageUrl("https://drive.google.com/open?id=1OygeLXPlqGxIfMKHnYJeFK9xQo4_CzPX"),
   ],
-  endPrice: 19701800000,
+  endPrice: 12025000000,
     tanggalLelang: "2026-08-26",
     batasWaktuLelang: "-",
     jamLelang: "13:00 WIB",
@@ -1818,7 +2102,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
     getDriveImageUrl("https://drive.google.com/open?id=1BrgINfKPTtO88xVVWl2fPB06I4lZfIb9"),
     getDriveImageUrl("https://drive.google.com/open?id=14YXa8DTD1IKwmn32G2-JnGRCs3OJ0dFY"),
   ],
-  endPrice: 576100000,
+  endPrice: 345660000,
     tanggalLelang: "2026-08-12",
     batasWaktuLelang: "-",
     jamLelang: "10:45 WIB",
@@ -2036,7 +2320,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0167", // <-- ACHMAD ADZIR FATAH
-  title: "SEGERA LELANG TOKO",
+  title: "AGUNAN LELANG TOKO",
   isHidden: true,
   type: "Ruko",
   location: "Jl. Sultan Agung No. 8, Kel. Kepanjen, Kec. Kepanjen, Kab. Malang, Prov. Jawa Timur",
@@ -2051,7 +2335,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 4 menit dari RSUD Kanjuruhan Kota Kepanjen
 - 4 menit dari Pasar Besar Kepanjen
 - 7 menit dari Universitas Kepanjen`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1K5kkhY3J_lHJpVCrc1M1BkPmit3NImlC"),
     getDriveImageUrl("https://drive.google.com/open?id=1LQYAe77n6JnYoNX02rwUDzQ7iTXNY1PX"),
@@ -2156,7 +2440,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
     getDriveImageUrl("https://drive.google.com/open?id=1W-Ru7CvWeRxtkAnBZh3QKHcGan6D0Khi"),
     getDriveImageUrl("https://drive.google.com/open?id=1kILwr4bqGtKOqV7oNw_TnuOB9Vt286nD"),
   ],
-  endPrice: 982800000,
+  endPrice: 697800000,
     tanggalLelang: "2026-07-22",
     batasWaktuLelang: "-",
     jamLelang: "09:45 WIB",
@@ -2277,7 +2561,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0159", // <-- KRISTIANTONO
-  title: "SEGERA LELANG TANAH",
+  title: "AGUNAN LELANG TANAH",
   isHidden: true,
   type: "Tanah",
   location: "Jalan Ikan Gurami, Kel. Karangrejo, Kec. Banyuwangi, Kab. Banyuwangi, Prov. Jawa Timur",
@@ -2292,7 +2576,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 6 menit dari Roxy Banyuwangi
 - 6 menit dari Alun-Alun Kota Banyuwangi
 - 7 menit dari RSUD Blambangan`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1JWU02H4l_rAgfH9q4QiirA7cpta5ZztT"),
     getDriveImageUrl("https://drive.google.com/open?id=1dPhEMwZhoW57dyYmWL0ckGz2wGnDh7j7"),
@@ -2398,7 +2682,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 },
 {
   id: "RLI_ELP_0153", // <-- PT. UDANG MAS MAKMUR (RUMAH)
-  title: "SEGERA LELANG RUMAH",
+  title: "AGUNAN LELANG RUMAH",
   isHidden: true,
   type: "Rumah",
   location: "Perumahan Villa City Garden, Blok C No. 1, Kel. Sukaraja, Kec. Telukbelung Selatan, Kota Bandarlampung, Prov. Lampung",
@@ -2413,14 +2697,14 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 7 menit dari SMAN 6 Bandar Lampung
 - 7 menit dari Gunung Kunyit
 - 7 menit dari Pahoman Stadium`,
-  status: "Lelang Segera",
+  status: "Lelang Aktif",
   image: [
     getDriveImageUrl("https://drive.google.com/open?id=1EfPXmeNvywlgAr0CcdTPT9v5AiCe9Rar"),
     getDriveImageUrl("https://drive.google.com/open?id=16UNXflV-Ik_c9Wp1pbIRbaIJqAp42KQQ"),
     getDriveImageUrl("https://drive.google.com/open?id=1jUAMiZmcl78Xl2VEnnV-hYMFmEKmqAjv"),
     getDriveImageUrl("https://drive.google.com/open?id=1R_5d1Lt0Sz9Kn3wrnqgZOdtWVDttAgWg")
   ],
-  endPrice: 4350000000,
+  endPrice: 3286000000,
   tanggalLelang: "2026-07-29",
   batasWaktuLelang: "-",
   jamLelang: "10:30 WIB",
@@ -2911,7 +3195,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=1hFeebi2nK5xO_x7srvN7KjjNmlhT5InM"),
       getDriveImageUrl("https://drive.google.com/open?id=1ejJKAzjSyZBL5F3m3M9Xq0D8rLlFqP2i")
     ],
-    endPrice: 22625330000,
+    endPrice: 19393140000,
     tanggalLelang: "2026-08-13",
     batasWaktuLelang: "-",
     jamLelang: "10:15 WIB",
@@ -2975,7 +3259,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=11tH9CGq1DE9cN-AqgRV0tT59n-I0-aTP"),
       getDriveImageUrl("https://drive.google.com/open?id=1fo4bptxNN83Dd-xnr0T96s2WNDotqJoq")
     ],
-    endPrice: 5753000000,
+    endPrice: 4027000000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
@@ -3196,7 +3480,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
   },
       {
     id: "RLI_ELP_0125", // PT. UDANG MAS MAKMUR
-    title: "SEGERA LELANG TANAH",
+    title: "AGUNAN LELANG TANAH",
     isHidden: true,
     type: "Tanah",
     location: "Jalan Raya Punduh Pedada, Desa Sukarame, Kec. Punduh Pedada, Kab. Pesawaran (dh. Kab. Lampung Selatan), Prov. Lampung",
@@ -3211,7 +3495,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 9 menit dari Pasar Al-Bina
 - 12 menit dari Pantai Pancur Permai
 - 16 menit dari SMAN 1 Punduh Pedada`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1eln3xnenWrtbl5HTv5OoeOoVyhfnaTBW"),
       getDriveImageUrl("https://drive.google.com/open?id=1yCTFdmqGFUNgDb2Y3tpkeuuA27xJIgpm"),
@@ -3221,14 +3505,14 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=16-UJicZI74B7DOzL360_NIGBFyy_fT-E"),
       getDriveImageUrl("https://drive.google.com/open?id=1FqwyZPPZN_9GVO9H4f_XMtja3IQH6Mdw")
     ],
-    endPrice: 9000000000,
+    endPrice: 4940000000,
   tanggalLelang: "2026-07-29",
   batasWaktuLelang: "-",
   jamLelang: "10:30 WIB",
   },
     {
     id: "RLI_ELP_0124", // PT. UDANG MAS MAKMUR
-    title: "SEGERA LELANG TANAH",
+    title: "AGUNAN LELANG TANAH",
     isHidden: true,
     type: "Tanah",
     location: "Desa Kekatang, Kec. Marga Punduh (dh. Kec. Punduh Pedada), Kab. Pesawaran (dh. Kab. Lampung Selatan), Prov. Lampung",
@@ -3243,7 +3527,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 9 menit dari Pasar Al-Bina
 - 12 menit dari Pantai Pancur Permai
 - 16 menit dari SMAN 1 Punduh Pedada`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1wJwPKWRvj52LLpf5AJrnusbTxqQtkGAK"),
       getDriveImageUrl("https://drive.google.com/open?id=1_XxnLL4Msob0jB0P5yscQFvMvdEMGTdL"),
@@ -3254,7 +3538,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=1uI00SASEISzuVGYeIQec08nbzpuHSHGG"),
       getDriveImageUrl("https://drive.google.com/open?id=1Z4iaBhJJhtBXWsyREYNldA0dZaxwIakG")
     ],
-    endPrice: 14050000000,
+    endPrice: 8141000000,
   tanggalLelang: "2026-07-29",
   batasWaktuLelang: "-",
   jamLelang: "10:30 WIB",
@@ -3439,10 +3723,10 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=1aAvemGd7XFhjPiS26j3REDCidmtI3ZAl"),
       getDriveImageUrl("https://drive.google.com/open?id=1kvV00JJaHoIoYq565rqtjRRHmcqwVA3")
     ],
-    endPrice: 750000000,
-    tanggalLelang: "2026-07-28",
+    endPrice: 583176000,
+    tanggalLelang: "2026-09-16",
     batasWaktuLelang: "-",
-    jamLelang: "13:30 WIB",
+    jamLelang: "11:30 WIB",
   },
 {
     id: "RLI_ELP_0117", // <-- Handoyo
@@ -3654,7 +3938,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
   },
                       {
     id: "RLI_ELP_0110", // <-- Nahdiya Sabrina
-    title: "SEGERA LELANG RUKO",
+    title: "AGUNAN LELANG RUKO",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Ruko Ketawang, Jalan Panglima Sudirman No. 15, Desa Ngadilangkung, Kec. Kepanjen, Kab. Malang, Jawa Timur",
@@ -3669,7 +3953,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 4 menit dari Wisata Lembah Dilem Kepanjen
 - 6 menit dari Pasar Besar Kepanjen
 - 6 menit dari Stasiun Kepanjen`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1qJV8RAqfvCZ7u-DU3sgkrt2itwiR9KLb"),
       getDriveImageUrl("https://drive.google.com/open?id=1lSCP830t05FilR8t1vyMaqqPURLhmZJl"),
@@ -3773,7 +4057,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
   },
                   {
     id: "RLI_ELP_0106", // <-- KWA HERJADI
-    title: "SEGERA LELANG RUMAH",
+    title: "AGUNAN LELANG RUMAH",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perum The Oz Blok HF/10, Desa Karangwidoro, Kec. Dau, Kab. Malang, Jawa Timur",
@@ -3788,7 +4072,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 16 menit dari SMK Negeri 13 Malang
 - 16 menit dari Universitas Negeri Malang
 - 17 menit dari Malang Town Square`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1m49tUoLbVyV1vA1ibOpMPEWB66SAoWH7"),
       getDriveImageUrl("https://drive.google.com/open?id=1Gk_WIAFFOkrAC91Jl_PL31Y9n7QUuqrQ"),
@@ -3796,7 +4080,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=1t698IC_xKfHhxv8t2fT-fFmqb5A9S_af"),
       getDriveImageUrl("https://drive.google.com/open?id=1wiKzhCBpsgd4oh8rgVpMVm-_dQJIGoYl")
     ],
-    endPrice: 683000000,
+    endPrice: 638400000,
   tanggalLelang: "2026-09-22",
   batasWaktuLelang: "-",
       jamLelang: "09:45 WIB",
@@ -4004,10 +4288,10 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=1bqshLaCjjOje8PaflZo1y-KBehKLbJQH"),
       getDriveImageUrl("https://drive.google.com/open?id=1pRcxUrgdh3SDTlUpKLwF9nxgtYSmH5iG")
     ],
-    endPrice: 662400000,
-    tanggalLelang: "2026-06-10",
+    endPrice: 398000000,
+    tanggalLelang: "2026-09-30",
     batasWaktuLelang: "-",
-    jamLelang: "10:30 WIB",
+    jamLelang: "10:00 WIB",
   },
           {
     id: "RLI_ELP_0098", // <-- CV. PUTRO UTOMO (Gudang)
@@ -4320,7 +4604,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
   },
               {
     id: "RLI_ELP_0087", // <-- YOGI PRASETYA WARDHANA
-    title: "SEGERA LELANG RUMAH TINGGAL",
+    title: "AGUNAN LELANG RUMAH TINGGAL",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Jalan Wukir Gang IV No. 45 RT. 001  RW. 001, Kel. Temas, Kec. Batu, Kota Batu, Provinsi Jawa Timur",
@@ -4335,7 +4619,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
 - 5 menit dari Alun-Alun Batu
 - 5 menit dari Jawa Timur Park 1
 - 6 menit dari RSUD Karsa Husada Batu`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1RxSkLVq-vXC5WN-I5ZHdR9fm8ZgBAPKH"),
       getDriveImageUrl("https://drive.google.com/open?id=1-h0L10wTkAHx8N63rKCNb75IpTVvKe3B"),
@@ -5221,7 +5505,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
   },
   {
     id: "RLI_ELP_0001",
-    title: "SEGERA LELANG RUMAH 2 LANTAI", // CV. Tania
+    title: "AGUNAN LELANG RUMAH 2 LANTAI", // CV. Tania
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Puncak Buring Indah Blok B7 No. 06, Kelurahan Buring, Kecamatan Kedungkandang, Kota Malang",
@@ -5236,7 +5520,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       - 11 menit dari Stadion Gelora Tlogowaru
       - 10 menit dari RSUD Kota Malang
       - 30 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=18grkZC6d61ztj699nzYMjDh6r54tQAUS"),
       getDriveImageUrl("https://drive.google.com/open?id=1Lj19rpbqYwIUY-Rsjb-KDQqFrVowMeEn"),
@@ -5338,7 +5622,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
   },
   {
     id: "RLI_ELP_0005", // CV Tania
-    title: "SEGERA LELANG RUMAH 2 LANTAI",
+    title: "AGUNAN LELANG RUMAH 2 LANTAI",
     isHidden: true, // <-- Tambahkan ini untuk menyembunyikan
     type: "Rumah",
     location: "Perumahan Puncak Buring Indah Blok B7 No. 18, Kelurahan Buring, Kecamatan Kedungkandang, Kota Malang",
@@ -5353,7 +5637,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       - 11 menit dari Stadion Gelora Tlogowaru
       - 10 menit dari RSUD Kota Malang
       - 30 menit dari Mall Olympic Garden (MOG)`,
-    status: "Lelang Segera",
+    status: "Lelang Aktif",
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1ZlRPsTvepRGvn3BfCcHGQVIDXslT30Nh"),
       getDriveImageUrl("https://drive.google.com/open?id=1okomRFfRM4rJkfy8B4Ewcau6hG8-dkqU"),
@@ -6709,7 +6993,7 @@ Tersedia Air PDAM dan Listrik 164.000 VA`,
       getDriveImageUrl("https://drive.google.com/open?id=1p8_Cxh8vKLoI1-2g6GVJlMFdHI12fOLS"),
       getDriveImageUrl("https://drive.google.com/open?id=1f1Sb8PJlKFPI7XJw9_GPt__cceLeTSZU")
     ],
-    endPrice: 895500000,
+    endPrice: 776000000,
     tanggalLelang: "2026-04-29",
     batasWaktuLelang: "-",
     jamLelang: "09:15 WIB",
