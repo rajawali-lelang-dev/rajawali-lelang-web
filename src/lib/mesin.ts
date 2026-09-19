@@ -37,6 +37,153 @@ export const mesins: Mesin[] = [
 // Mock Data - Mesin Lelang
 export const lelangMesins: MesinLelang[] = [
   {
+  id: "RLI_ELM_8", // <-- PT. BAHTERA DINGGA JAYA (Hot Press 15 Layer)
+  title: "SEGERA LELANG 1 UNIT MESIN HOT PRESS 15 LAYER",
+  type: "Mesin Industri",
+  brand: "Green Forest",
+  model: "HP 4x8/5-15 ZIID",
+  year: "-",
+  condition: "Bekas - Baik",
+  location: "Jl. Raya Pangleseran Km. 15, Desa Parakanlim, Kec. Cikembar, Sukabumi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Sukabumi",
+  description:
+  `- 3 menit dari Klinik Harapan Hidup
+- 4 menit dari Wisata Kebun Pinus CMV
+- 5 menit dari Pasar Pangleseran
+- 6 menit dari Penggilingan Padi Cikiray
+- 8 menit dari Gerbang Tol Lambu Kibang
+Jenis: Hot Press
+Merek: Green Forest
+Model: HP 4x8/5-15 ZIID`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1BuDzv25iNbUfRpj_mtgWNkQy1XGvuWta"),
+    getDriveImageUrl("https://drive.google.com/open?id=16-Fx--XUVhZHSVsOjV458iYoLhN1cZ5F"),
+    getDriveImageUrl("https://drive.google.com/open?id=1M_AQoiTgObeNbzGxMqOKw8vHenMMQAyT"),
+  ],
+  endPrice: 458000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELM_7", // <-- PT. BAHTERA DINGGA JAYA (Short Core Press Dryer)
+  title: "SEGERA LELANG 2 UNIT MESIN SHORT CORE PRESS DRYER",
+  type: "Mesin Industri",
+  brand: "Green Forest",
+  model: "Solid Platen HPD 4x8/100-15IIC",
+  year: "-",
+  condition: "Bekas - Baik",
+  location: "Jl. Raya Pangleseran Km. 17, Desa Parakanlim, Kec. Cikembar, Sukabumi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Sukabumi",
+  description:
+  `- 3 menit dari Klinik Harapan Hidup
+- 4 menit dari Wisata Kebun Pinus CMV
+- 5 menit dari Pasar Pangleseran
+- 6 menit dari Penggilingan Padi Cikiray
+- 8 menit dari Gerbang Tol Lambu Kibang
+Jenis: Short Core Press Dryer (Model Solid Platen HPD 4x8/100-15IIC)
+Penggunaan: Alat Produksi Pembuatan Kayu Lapis
+Kepemilikan: Invoice PT. Selaras Indo Technology No. 009-08/X/2021`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=17o_gQbTB8rw2ZCSbVkf58no6WeNYKYWN"),
+    getDriveImageUrl("https://drive.google.com/open?id=1b7Yx5zmtnRCb1KBQHu3KQcHfLdrscMKE"),
+    getDriveImageUrl("https://drive.google.com/open?id=1W7Hnmib-wU1yLfLJI-YzUSlgsIUzc5Kg"),
+  ],
+  endPrice: 279000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELM_6", // <-- PT. BAHTERA DINGGA JAYA (Automatic Calibrating Sanding)
+  title: "SEGERA LELANG 1 UNIT MESIN AUTOMATIC CALIBRATING SANDING",
+  type: "Mesin Industri",
+  brand: "-",
+  model: "Model TSINTAO ISO9001 2000",
+  year: "-",
+  condition: "Bekas - Baik",
+  location: "Jl. Raya Pangleseran Km. 15, Desa Parakanlim, Kec. Cikembar, Sukabumi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Sukabumi",
+  description:
+  `- 3 menit dari Klinik Harapan Hidup
+- 4 menit dari Wisata Kebun Pinus CMV
+- 5 menit dari Pasar Pangleseran
+- 6 menit dari Penggilingan Padi Cikiray
+- 8 menit dari Gerbang Tol Lambu Kibang
+Jenis: Automatic Calibrating Sanding
+Model: TSINTAO ISO9001 2000`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1NuSy6UV9Jp9szgaQwnLoko7PCUDFkols"),
+    getDriveImageUrl("https://drive.google.com/open?id=13JsB1GU963gfY8OWKiZiQLeb1NVmmefW"),
+    getDriveImageUrl("https://drive.google.com/open?id=1KKl8mqdsiYHn0wl9HaGFG33DOm69OSCF"),
+  ],
+  endPrice: 277000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELM_5", // <-- PT. BAHTERA DINGGA JAYA (Glue Speader 9 FT)
+  title: "SEGERA LELANG 1 UNIT MESIN GLUE SPEADER 9 FT",
+  type: "Mesin Industri",
+  brand: "Sanji",
+  model: "Mod Rubber 418mm",
+  year: "-",
+  condition: "Bekas - Baik",
+  location: "Jl. Raya Pangleseran Km. 17, Desa Parakanlim, Kec. Cikembar, Sukabumi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Sukabumi",
+  description:
+  `- 3 menit dari Klinik Harapan Hidup
+- 4 menit dari Wisata Kebun Pinus CMV
+- 5 menit dari Pasar Pangleseran
+- 6 menit dari Penggilingan Padi Cikiray
+- 8 menit dari Gerbang Tol Lambu Kibang
+Jenis: Glue Speader 9 FT
+Merek: Sanji
+Model: Mod Rubber 418mm`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1XS1Z4le2m1_pUR4_XUlPDN-XB7K7keBR"),
+    getDriveImageUrl("https://drive.google.com/open?id=1mHgr_xrbvb7WuZo3npBNn4MZQUBQEU7I"),
+  ],
+  endPrice: 143000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+{
+  id: "RLI_ELM_4", // <-- PT. BAHTERA DINGGA JAYA (Cold (Pre) Press 15 Layer)
+  title: "SEGERA LELANG 1 UNIT MESIN COLD (PRE) PRESS 15 LAYER",
+  type: "Mesin Industri",
+  brand: "Green Forest",
+  model: "Model CPT 4x8/5 Automatic",
+  year: "-",
+  condition: "Bekas - Baik",
+  location: "Jl. Raya Pangleseran Km. 15, Desa Parakanlim, Kec. Cikembar, Sukabumi, Prov. Jawa Barat",
+  provinsi: "Jawa Barat",
+  kota: "Sukabumi",
+  description:
+  `- 3 menit dari Klinik Harapan Hidup
+- 4 menit dari Wisata Kebun Pinus CMV
+- 5 menit dari Pasar Pangleseran
+- 6 menit dari Penggilingan Padi Cikiray
+- 8 menit dari Gerbang Tol Lambu Kibang
+Jenis: Cold (Pre) Press 15 Layer
+Merek: Green Forest
+Model: CPT 4x8/5 Automatic`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1WiCJ_r9y1ftBepgzoLnE9EsU_NDF0_9F"),
+    getDriveImageUrl("https://drive.google.com/open?id=1QRDjYb-dHZ1Gci8bdbF70DxBkq4yM535"),
+  ],
+  endPrice: 118000000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
     id: "RLI_ELM_3", // <-- PT. BERKAH SATU DELAPAN
     title: "SEGERA LELANG MESIN-MESIN PERALATAN PRODUKSI",
     type: "Mesin Industri",
@@ -123,7 +270,7 @@ export const lelangMesins: MesinLelang[] = [
       getDriveImageUrl("https://drive.google.com/open?id=1RJO573qgTjIdMQwFjR9ZztEEBa0H4EFb"),
       getDriveImageUrl("https://drive.google.com/open?id=1baPmMjVYlhauQTjoyYlFKcO_dZTGrOQT"),
     ],
-    endPrice: 32788870000,
+    endPrice: 27870539500,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
@@ -148,7 +295,7 @@ Akta Jaminan Fidusia`,
     image: [
       getDriveImageUrl("https://drive.google.com/open?id=1Gdy6peQTqWXpD-EMzqJ5_m8uA5FTsChe"),
     ],
-    endPrice: 292770000,
+    endPrice: 612870000,
     tanggalLelang: "-",
     batasWaktuLelang: "-",
   },
