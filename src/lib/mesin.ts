@@ -271,8 +271,9 @@ Model: CPT 4x8/5 Automatic`,
       getDriveImageUrl("https://drive.google.com/open?id=1baPmMjVYlhauQTjoyYlFKcO_dZTGrOQT"),
     ],
     endPrice: 27870539500,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-10-15",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
   {
     id: "RLI_ELM_2", // <-- PT. BERKAH SATU DELAPAN
@@ -296,8 +297,9 @@ Akta Jaminan Fidusia`,
       getDriveImageUrl("https://drive.google.com/open?id=1Gdy6peQTqWXpD-EMzqJ5_m8uA5FTsChe"),
     ],
     endPrice: 612870000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-10-15",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
   {
     id: "RLI_ELM_01", // <-- PT. BERKAH SATU DELAPAN
@@ -325,8 +327,9 @@ Akta Jaminan Fidusia`,
       getDriveImageUrl("https://drive.google.com/open?id=1MYGz0zRRJjLMI8OBw3Inw3kAaF1jIUSC"),
     ],
     endPrice: 320100000,
-    tanggalLelang: "-",
+    tanggalLelang: "2026-10-15",
     batasWaktuLelang: "-",
+    jamLelang: "10:00 WIB",
   },
 ];
 
