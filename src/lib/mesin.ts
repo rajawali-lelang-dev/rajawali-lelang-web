@@ -37,6 +37,41 @@ export const mesins: Mesin[] = [
 // Mock Data - Mesin Lelang
 export const lelangMesins: MesinLelang[] = [
   {
+  id: "RLI_ELM_6", // <-- PT. PAKONS HOTELINDO SUKSES
+  title: "SEGERA LELANG MESIN, FURNITURE & PERALATAN HOTEL",
+  type: "Mesin Produksi",
+  brand: "-",
+  model: "-",
+  year: "-",
+  condition: "-",
+  location: "Pakons Prime Hotel, Jalan Raya Daan Mogot No.62, RT.001 RW.005, Kelurahan Sukarasa, Kecamatan Tangerang, Kota Tangerang, Provinsi Banten",
+  provinsi: "Banten",
+  kota: "Tangerang",
+  description:
+  `- 2 menit dari Hutan Kota Tangerang
+- 3 menit dari RS Hermina Tangerang
+- 7 menit dari Stadion Benteng Reborn
+- 11 menit dari Tangerang City Mall
+- 11 menit dari Universitas Buddi Dharma
+Include: Mesin & Peralatan Gedung, Furniture & Peralatan 7 tipe kamar hotel, Mesin & Peralatan Kantor, Mesin Outdoor`,
+  status: "Lelang Segera",
+  image: [
+    getDriveImageUrl("https://drive.google.com/open?id=1I6hoa8NJoAdf2KeBfHcbIwY8lzRL4sg4"),
+    getDriveImageUrl("https://drive.google.com/open?id=1_ZbSVatmYM08VIaXLwkRSmZFdwxUhspJ"),
+    getDriveImageUrl("https://drive.google.com/open?id=10IaM0lV-sLutaoWnvo7LDWWO5dK5f7RN"),
+    getDriveImageUrl("https://drive.google.com/open?id=1ChKi9fbNL2J27zLESmHPLoPwIhOv5kbd"),
+    getDriveImageUrl("https://drive.google.com/open?id=1fWI2M1Mg8rBb7jvq0XIigCwbzrR7k-QV"),
+    getDriveImageUrl("https://drive.google.com/open?id=1l_BFQZPAtQiyui7pjcVR2QBDiuGldTVX"),
+    getDriveImageUrl("https://drive.google.com/open?id=13NFtYoc79vUuBkTzmhNX20ypcjgSpS1A"),
+    getDriveImageUrl("https://drive.google.com/open?id=1W21O9OEtxtw7r3ODRovYfwG8GHKE-8JR"),
+    getDriveImageUrl("https://drive.google.com/open?id=1yR_cIMzKTdfm8HU4MvQdQ2DYkPhnircP"),
+    getDriveImageUrl("https://drive.google.com/open?id=1VrhEw_OSGYTNZ9ugKkZIRFHwjPCROWwT"),
+  ],
+  endPrice: 10394600000,
+  tanggalLelang: "-",
+  batasWaktuLelang: "-",
+},
+  {
   id: "RLI_ELM_8", // <-- PT. BAHTERA DINGGA JAYA (Hot Press 15 Layer)
   title: "SEGERA LELANG 1 UNIT MESIN HOT PRESS 15 LAYER",
   type: "Mesin Industri",
