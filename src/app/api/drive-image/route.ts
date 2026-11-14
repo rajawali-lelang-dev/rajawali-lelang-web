@@ -79,7 +79,9 @@ export async function GET(request: NextRequest) {
       status: 200,
       headers: {
         "Content-Type": metadata.data.mimeType || "image/jpeg",
-        "Cache-Control": "public, max-age=31536000, immutable",
+        // s-maxage: agar CDN Vercel ikut menyimpan gambar, bukan hanya browser.
+        // Tanpa ini setiap pengunjung baru menarik ulang file lewat function.
+        "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable",
         "Content-Disposition": `inline; filename="${metadata.data.name}"`,
         "Content-Length": imageBuffer.length.toString(),
         "ETag": `"${etag}"`,
